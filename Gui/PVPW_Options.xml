@@ -1,0 +1,383 @@
+<Ui xmlns="http://www.blizzard.com/wow/ui/">
+  <Include file="PVPW_Templates.xml"/>
+
+  <Frame name="PVPW_OptionsFrame" parent="UIParent" movable="true" hidden="true">
+    <Size x="600" y="390"/>
+    <Anchors>
+      <Anchor point="CENTER"/>
+    </Anchors>
+    <Backdrop bgFile="Interface\Addons\PVPWarn\Assets\Images\UI-DialogBox-Background-Dark"
+      edgeFile="Interface\Tooltips\UI-Tooltip-Border" tile="true">
+      <EdgeSize>
+        <AbsValue val="16" />
+      </EdgeSize>
+      <TileSize>
+        <AbsValue val="16" />
+      </TileSize>
+      <BackgroundInsets>
+        <AbsInset left="3" right="3" top="3" bottom="3" />
+      </BackgroundInsets>
+      <BorderColor r="0" g="0" b="0" a="0.8"/>
+      <Color r="0" g="0" b="0" a=".8"/>
+    </Backdrop>
+    <Layers>
+      <Layer level="OVERLAY">
+        <FontString name="PVPW_OptionsTitle" inherits="GameFontNormalHuge">
+          <Anchors>
+            <Anchor point="TOPLEFT">
+              <Offset>
+                <AbsDimension x="10" y="-25"/>
+              </Offset>
+            </Anchor>
+          </Anchors>
+          <Color r="0.94" g="0.76" b="0"/>
+        </FontString>
+      </Layer>
+    </Layers>
+    <Frames>
+      <Button name="PVPW_CloseButton">
+        <Size>
+          <AbsDimension x="32" y="32"/>
+        </Size>
+        <Anchors>
+          <Anchor point="TOPRIGHT">
+            <Offset>
+              <AbsDimension x="3" y="2"/>
+            </Offset>
+          </Anchor>
+        </Anchors>
+        <HighlightTexture file="Interface\AddOns\PVPWarn\Assets\Images\UI-Button-Close-Highlight" alphaMode="ADD">
+        </HighlightTexture>
+        <NormalTexture file="Interface\AddOns\PVPWarn\Assets\Images\UI-Button-Close-Up">
+        </NormalTexture>
+        <PushedTexture file="Interface\AddOns\PVPWarn\Assets\Images\UI-Button-Close-Down">
+        </PushedTexture>
+        <DisabledTexture file="Interface\AddOns\PVPWarn\Assets\Images\UI-Button-Close-Disabled">
+        </DisabledTexture>
+        <Scripts>
+          <OnClick>
+            PVPW_CloseButton_OnClick()
+          </OnClick>
+        </Scripts>
+      </Button>
+
+      <!-- left navigation frame -->
+      <Frame name="PVPW_LeftNavigationMenu">
+        <Size x="128" y="320"/>
+        <Anchors>
+          <Anchor point="TOPLEFT">
+            <Offset>
+              <AbsDimension x="10" y="-60"/>
+            </Offset>
+          </Anchor>
+        </Anchors>
+        <Layers>
+          <Layer level="BACKGROUND">
+            <Texture>
+              <Size x="128" y="320"/>
+              <Anchors>
+                <Anchor point="TOPLEFT" relativeTo="$parent" relativePoint="TOPLEFT">
+                  <Offset x="0" y="0" />
+                </Anchor>
+              </Anchors>
+              <Color r="0" g="0" b="0" a="0.7"/>
+            </Texture>
+          </Layer>
+        </Layers>
+        <Frames>
+          <Button name="PVPW_Navigation_Button_1" inherits="PVPW_NavigationButtonTemplate">
+            <Anchors>
+              <Anchor point="TOP">
+                <Offset x="0" y="-5"/>
+              </Anchor>
+            </Anchors>
+          </Button>
+          <Button name="PVPW_Navigation_Button_2" inherits="PVPW_NavigationButtonTemplate">
+            <Anchors>
+              <Anchor point="TOP" relativeTo="PVPW_Navigation_Button_1" relativePoint="BOTTOM"/>
+            </Anchors>
+          </Button>
+          <Button name="PVPW_Navigation_Button_3" inherits="PVPW_NavigationButtonTemplate">
+            <Anchors>
+              <Anchor point="TOP" relativeTo="PVPW_Navigation_Button_2" relativePoint="BOTTOM"/>
+            </Anchors>
+          </Button>
+          <Button name="PVPW_Navigation_Button_4" inherits="PVPW_NavigationButtonTemplate">
+            <Anchors>
+              <Anchor point="TOP" relativeTo="PVPW_Navigation_Button_3" relativePoint="BOTTOM"/>
+            </Anchors>
+          </Button>
+          <Button name="PVPW_Navigation_Button_5" inherits="PVPW_NavigationButtonTemplate">
+            <Anchors>
+              <Anchor point="TOP" relativeTo="PVPW_Navigation_Button_4" relativePoint="BOTTOM"/>
+            </Anchors>
+          </Button>
+          <Button name="PVPW_Navigation_Button_6" inherits="PVPW_NavigationButtonTemplate">
+            <Anchors>
+              <Anchor point="TOP" relativeTo="PVPW_Navigation_Button_5" relativePoint="BOTTOM"/>
+            </Anchors>
+          </Button>
+          <Button name="PVPW_Navigation_Button_7" inherits="PVPW_NavigationButtonTemplate">
+            <Anchors>
+              <Anchor point="TOP" relativeTo="PVPW_Navigation_Button_6" relativePoint="BOTTOM"/>
+            </Anchors>
+          </Button>
+          <Button name="PVPW_Navigation_Button_8" inherits="PVPW_NavigationButtonTemplate">
+            <Anchors>
+              <Anchor point="TOP" relativeTo="PVPW_Navigation_Button_7" relativePoint="BOTTOM"/>
+            </Anchors>
+          </Button>
+          <Button name="PVPW_Navigation_Button_9" inherits="PVPW_NavigationButtonTemplate">
+            <Anchors>
+              <Anchor point="TOP" relativeTo="PVPW_Navigation_Button_8" relativePoint="BOTTOM"/>
+            </Anchors>
+          </Button>
+          <Button name="PVPW_Navigation_Button_10" inherits="PVPW_NavigationButtonTemplate">
+            <Anchors>
+              <Anchor point="TOP" relativeTo="PVPW_Navigation_Button_9" relativePoint="BOTTOM"/>
+            </Anchors>
+          </Button>
+          <Button name="PVPW_Navigation_Button_11" inherits="PVPW_NavigationButtonTemplate">
+            <Anchors>
+              <Anchor point="TOP" relativeTo="PVPW_Navigation_Button_10" relativePoint="BOTTOM"/>
+            </Anchors>
+          </Button>
+          <Button name="PVPW_Navigation_Button_12" inherits="PVPW_NavigationButtonTemplate">
+            <Anchors>
+              <Anchor point="TOP" relativeTo="PVPW_Navigation_Button_11" relativePoint="BOTTOM"/>
+            </Anchors>
+          </Button>
+          <Button name="PVPW_Navigation_Button_13" inherits="PVPW_NavigationButtonTemplate">
+            <Anchors>
+              <Anchor point="TOP" relativeTo="PVPW_Navigation_Button_12" relativePoint="BOTTOM"/>
+            </Anchors>
+          </Button>
+          <Button name="PVPW_Navigation_Button_14" inherits="PVPW_NavigationButtonTemplate">
+            <Anchors>
+              <Anchor point="TOP" relativeTo="PVPW_Navigation_Button_13" relativePoint="BOTTOM"/>
+            </Anchors>
+          </Button>
+          <Button name="PVPW_Navigation_Button_15" inherits="PVPW_NavigationButtonTemplate">
+            <Anchors>
+              <Anchor point="TOP" relativeTo="PVPW_Navigation_Button_14" relativePoint="BOTTOM"/>
+            </Anchors>
+          </Button>
+        </Frames>
+        <Scripts>
+          <OnShow>
+            PVPW_LeftNavigationMenu_OnLoad()
+          </OnShow>
+        </Scripts>
+      </Frame>
+
+      <!-- right options frame -->
+      <Frame name="PVPW_RightContentMenu">
+        <Size x="440" y="320"/>
+        <Anchors>
+          <Anchor point="TOPLEFT">
+            <Offset x="138" y="-60"/>
+          </Anchor>
+        </Anchors>
+        <Layers>
+          <Layer level="BACKGROUND">
+            <Texture>
+              <Size x="440" y="320"/>
+              <Anchors>
+                <Anchor point="TOPLEFT" relativeTo="$parent" relativePoint="TOPLEFT">
+                  <Offset x="0" y="0" />
+                </Anchor>
+              </Anchors>
+              <Color r="0.0" g="0.0" b="0.0" a="0.7"/>
+            </Texture>
+          </Layer>
+        </Layers>
+        <Frames>
+          <Frame name="PVPW_ContentGeneral" hidden="true">
+            <Size x="440" y="320"/>
+            <Anchors>
+              <Anchor point="TOPLEFT"/>
+            </Anchors>
+            <Frames>
+              <CheckButton name="PVPW_OptDisableAddon" inherits="PVPW_CheckButtonTemplate">
+                <Anchors>
+                  <Anchor point="TOPLEFT" relativeTo="PVPW_RightContentMenu" relativePoint="TOPLEFT">
+                    <Offset>
+                      <AbsDimension x="10" y="-10"/>
+                    </Offset>
+                  </Anchor>
+                </Anchors>
+                <Scripts>
+                  <OnClick>
+                    PVPW_DisableAddon_OnClick()
+                  </OnClick>
+                  <OnShow>
+                    PVPW_DisableAddon_OnShow()
+                  </OnShow>
+                </Scripts>
+              </CheckButton>
+              <CheckButton name="PVPW_OptDisableAddonInBattlegrounds" inherits="PVPW_CheckButtonTemplate">
+                <Anchors>
+                  <Anchor point="TOPLEFT" relativeTo="PVPW_RightContentMenu" relativePoint="TOPLEFT">
+                    <Offset>
+                      <AbsDimension x="10" y="-40"/>
+                    </Offset>
+                  </Anchor>
+                </Anchors>
+                <Scripts>
+                  <OnClick>
+                    PVPW_DisableAddonInBattlegrounds_OnClick()
+                  </OnClick>
+                  <OnShow>
+                    PVPW_DisableAddonInBattlegrounds_OnShow()
+                  </OnShow>
+                </Scripts>
+              </CheckButton>
+              <CheckButton name="PVPW_OptIgnoreEventsWhileDead" inherits="PVPW_CheckButtonTemplate">
+                <Anchors>
+                  <Anchor point="TOPLEFT" relativeTo="PVPW_RightContentMenu" relativePoint="TOPLEFT">
+                    <Offset>
+                      <AbsDimension x="10" y="-70"/>
+                    </Offset>
+                  </Anchor>
+                </Anchors>
+                <Scripts>
+                  <OnClick>
+                    PVPW_IgnoreEventsWhileDead_OnClick()
+                  </OnClick>
+                  <OnShow>
+                    PVPW_IgnoreEventsWhileDead_OnShow()
+                  </OnShow>
+                </Scripts>
+              </CheckButton>
+            </Frames>
+            <Scripts>
+              <OnShow>
+                PVPW_InitGeneralMenu()
+              </OnShow>
+            </Scripts>
+          </Frame>
+          <Frame name="PVPW_ClassFrame" hidden="true">
+            <Size x="420" y="320"/>
+            <Anchors>
+              <Anchor point="TOPLEFT" relativeTo="PVPW_RightContentMenu" relativePoint="TOPLEFT"/>
+            </Anchors>
+            <Frames>
+              <Button name="$parent_TabButton1" inherits="PVPW_TabNavigationButtonTemplate" id="1">
+                <Anchors>
+                  <Anchor point="TOPLEFT" relativeTo="$parent" relativePoint="TOPLEFT">
+                    <Offset x="20" y="32"/>
+                  </Anchor>
+                </Anchors>
+                <Scripts>
+                  <OnShow>
+                    this:SetText(pvpw.L["spell_warn_tab"])
+                    PanelTemplates_TabResize(self)
+                  </OnShow>
+                </Scripts>
+              </Button>
+              <Button name="$parent_TabButton2" inherits="PVPW_TabNavigationButtonTemplate" id="2">
+                <Anchors>
+                  <Anchor point="LEFT" relativeTo="$parent_TabButton1" relativePoint="RIGHT"/>
+                </Anchors>
+                <Scripts>
+                  <OnShow>
+                    this:SetText(pvpw.L["spell_resist_tab"])
+                    PanelTemplates_TabResize(self)
+                  </OnShow>
+                </Scripts>
+              </Button>
+              <!-- content frame for tab 1 -->
+              <Frame name="$parent_TabContentFrame1" inherits="PVPW_TabContentFrameTemplate"></Frame>
+              <!-- content frame for tab 2 -->
+              <Frame name="$parent_TabContentFrame2" inherits="PVPW_TabContentFrameTemplate"></Frame>
+            </Frames>
+          </Frame>
+          <Frame name="PVPW_ContentEnemyAvoid" hidden="true">
+            <Size x="420" y="320"/>
+            <Anchors>
+              <Anchor point="TOPLEFT" relativeTo="PVPW_RightContentMenu" relativePoint="TOPLEFT"/>
+            </Anchors>
+            <Scripts>
+              <OnShow>
+                pvpw.spellResistMenu.Init()
+              </OnShow>
+            </Scripts>
+          </Frame>
+          <Frame name="PVPW_ContentAbout" hidden="true">
+            <Size x="420" y="320"/>
+            <Anchors>
+              <Anchor point="TOPLEFT"/>
+            </Anchors>
+            <Layers>
+              <Layer level="OVERLAY">
+                <Texture file="Interface\AddOns\PVPWarn\Assets\Images\UI-Logo-RagedUnicorn">
+                  <Size>
+                    <AbsDimension x="128" y="128"/>
+                  </Size>
+                  <Anchors>
+                    <Anchor point="TOPLEFT">
+                      <Offset>
+                        <AbsDimension x="10" y="-10"/>
+                      </Offset>
+                    </Anchor>
+                  </Anchors>
+                </Texture>
+                <FontString name="PVPW_AboutAuthor" inherits="GameFontNormalSmall">
+                  <Anchors>
+                    <Anchor point="TOPLEFT" relativeTo="PVPW_RightContentMenu" relativePoint="TOPLEFT">
+                      <Offset>
+                        <AbsDimension x="10" y="-148"/>
+                      </Offset>
+                    </Anchor>
+                  </Anchors>
+                  <Color r="1" g="1" b="1"/>
+                </FontString>
+                <FontString name="PVPW_AboutEmail" inherits="GameFontNormalSmall">
+                  <Anchors>
+                    <Anchor point="TOPLEFT" relativeTo="PVPW_RightContentMenu" relativePoint="TOPLEFT">
+                      <Offset>
+                        <AbsDimension x="10" y="-163"/>
+                      </Offset>
+                    </Anchor>
+                  </Anchors>
+                  <Color r="1" g="1" b="1"/>
+                </FontString>
+                <FontString name="PVPW_AboutVersion" inherits="GameFontNormalSmall">
+                  <Anchors>
+                    <Anchor point="TOPLEFT" relativeTo="PVPW_RightContentMenu" relativePoint="TOPLEFT">
+                      <Offset>
+                        <AbsDimension x="10" y="-178"/>
+                      </Offset>
+                    </Anchor>
+                  </Anchors>
+                  <Color r="1" g="1" b="1"/>
+                </FontString>
+                <FontString name="PVPW_AboutIssues" inherits="GameFontNormalSmall">
+                  <Anchors>
+                    <Anchor point="TOPLEFT" relativeTo="PVPW_RightContentMenu" relativePoint="TOPLEFT">
+                      <Offset>
+                        <AbsDimension x="10" y="-193"/>
+                      </Offset>
+                    </Anchor>
+                  </Anchors>
+                  <Color r="1" g="1" b="1"/>
+                </FontString>
+              </Layer>
+            </Layers>
+          </Frame>
+        </Frames>
+      </Frame>
+    </Frames>
+    <Scripts>
+      <OnLoad>
+        this:RegisterForDrag("LeftButton")
+      </OnLoad>
+      <OnDragStart>
+        this:StartMoving()
+      </OnDragStart>
+      <OnDragStop>
+        this:StopMovingOrSizing()
+      </OnDragStop>
+    </Scripts>
+  </Frame>
+</Ui>

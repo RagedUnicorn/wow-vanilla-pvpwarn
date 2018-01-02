@@ -1,0 +1,41 @@
+<Ui xmlns="http://www.blizzard.com/wow/ui/">
+  <!-- MainFrame -->
+  <Frame name="PVPW_MainFrame" toplevel="true" frameStrata="LOW" enableMouse="true" movable="true" parent="UIParent" hidden="true">
+    <Anchors>
+      <Anchor point="TOPLEFT" relativeTo="UIParent" relativePoint="BOTTOMLEFT">
+        <Offset>
+          <AbsDimension x="400" y="400"/>
+        </Offset>
+      </Anchor>
+    </Anchors>
+    <!-- script events -->
+    <Scripts>
+      <OnLoad>
+        pvpw.OnLoad()
+      </OnLoad>
+      <OnEvent>
+        pvpw.OnEvent()
+      </OnEvent>
+    </Scripts>
+  </Frame>
+
+  <!-- OnUpdate to process all timers -->
+  <Frame name="PVPW_TimersFrame" hidden="true">
+    <Scripts>
+      <OnUpdate>
+        PVPW_TimersFrame_OnUpdate()
+      </OnUpdate>
+    </Scripts>
+  </Frame>
+
+  <Frame name="PVPW_AlertFrame" parent="UIParent" inherits="ScrollingMessageFrame" hidden="true" strata="BACKGROUND"></Frame>
+
+  <!-- Gametooltip -->
+  <GameTooltip name="PVPW_Tooltip" inherits="GameTooltipTemplate">
+    <Scripts>
+      <OnLoad>
+        this:SetOwner(WorldFrame, "ANCHOR_NONE")
+      </OnLoad>
+    </Scripts>
+  </GameTooltip>
+</Ui>

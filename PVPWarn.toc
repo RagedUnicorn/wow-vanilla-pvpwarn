@@ -1,0 +1,67 @@
+## Interface: 11200
+## Title: PVPWarn
+## Author: Michael Wiesendanger <michael.wiesendanger@gmail.com>
+## Notes: Addon that warns players visually and acoustically about pvp events
+## SavedVariables: PVPWarnOptions, PVPWarnLog
+## SavedVariablesPerCharacter: PVPWarnOptions, PVPWarnLog
+
+# constant values
+Code\PVPW_Constants.lua
+
+# localisation
+Localization\enUS.lua
+Localization\deDE.lua
+
+# code
+Code\PVPW_Core.lua
+Code\PVPW_SpellMap.lua
+Code\PVPW_SpellAvoidMap.lua
+Code\PVPW_Parser.lua
+Code\PVPW_Timer.lua
+Code\PVPW_Common.lua
+Code\PVPW_Logger.lua
+Code\PVPW_EventHandler.lua
+Code\PVPW_Sound.lua
+Code\PVPW_Visual.lua
+Code\PVPW_WarnQueue.lua
+Code\PVPW_Tooltip.lua
+Code\PVPW_Player.lua
+Code\PVPW_Zone.lua
+Code\PVPW_Cmd.lua
+
+# gui
+Gui\PVPW_Gui.lua
+Gui\PVPW_NavigationMenu.lua
+Gui\PVPW_Options.lua
+Gui\PVPW_Options.xml
+
+Gui\PVPW_GeneralMenu.lua
+Gui\PVPW_ConfigurationMenu.lua
+Gui\PVPW_ResistMenu.lua
+
+# configuration tabs for items/racials/classes/misc
+Gui\PVPW_GuiHelper.lua
+Gui\PVPW_SpellWarnCastTab.lua
+Gui\PVPW_SpellWarnResistTab.lua
+
+Gui\PVPW_Frame.xml
+
+# debug
+Code\PVPW_Debug.lua
+
+# test
+Test\PVPW_TestReporter.lua
+Test\PVPW_TestHelper.lua
+Test\PVPW_TestWarrior.lua
+Test\PVPW_TestWarlock.lua
+Test\PVPW_TestPriest.lua
+Test\PVPW_TestRogue.lua
+Test\PVPW_TestMage.lua
+Test\PVPW_TestHunter.lua
+Test\PVPW_TestPaladin.lua
+Test\PVPW_TestDruid.lua
+Test\PVPW_TestShaman.lua
+Test\PVPW_TestRacials.lua
+Test\PVPW_TestItems.lua
+Test\PVPW_TestMisc.lua
+Test\PVPW_TestAll.lua

@@ -1,0 +1,212 @@
+<Ui xmlns="http://www.blizzard.com/wow/ui/">
+  <!-- Checkbutton template for GeneralMenu-->
+  <CheckButton name="PVPW_CheckButtonTemplate" inherits="UICheckButtonTemplate" virtual="true">
+    <Size>
+      <AbsDimension x="24" y="24"/>
+    </Size>
+  </CheckButton>
+
+  <!-- Navigationbutton for optionsframe -->
+  <Button name="PVPW_NavigationButtonTemplate" virtual="true">
+    <Size x="120" y="14"/>
+    <Layers>
+      <Layer level="OVERLAY">
+        <FontString name="$parentText" inherits="GameFontNormalSmall" justifyH="LEFT" justifyV="CENTER">
+          <Size x="120" y="14"/>
+          <Anchors>
+            <Anchor point="TOPLEFT">
+              <Offset x="3" y="0"/>
+            </Anchor>
+          </Anchors>
+        </FontString>
+      </Layer>
+      <Layer level="ARTWORK">
+        <Texture name="$parentTexture" file="Interface\AddOns\GearMenu\Assets\UI-Listbox-Highlight.tga" hidden="true">
+          <Size x="120" y="14"/>
+        </Texture>
+      </Layer>
+    </Layers>
+    <Scripts>
+      <OnLoad>
+        PVPW_Navigation_Button_OnLoad()
+      </OnLoad>
+      <OnClick>
+        PVPW_Navigation_Button_OnClick()
+      </OnClick>
+    </Scripts>
+    <HighlightTexture file="Interface\AddOns\GearMenu\Assets\UI-Listbox-Highlight.tga" alphaMode="ADD"/>
+  </Button>
+
+  <Button name="PVPW_TabNavigationButtonTemplate" inherits="TabButtonTemplate" virtual="true">
+    <Scripts>
+      <OnClick>
+        PVPW_Tab_Navigation_Button_OnClick()
+      </OnClick>
+    </Scripts>
+  </Button>
+
+  <Frame name="PVPW_TabContentFrameTemplate" virtual="true">
+    <Anchors>
+      <Anchor point="TOPLEFT" relativeTo="$parent" relativePoint="TOPLEFT"/>
+    </Anchors>
+    <Size x="420" y="320"/>
+  </Frame>
+
+  <Frame name="PVPW_SpellConfigurationTemplate" virtual="true" hidden="true">
+    <Size x="420" y="140" />
+    <Backdrop edgeFile="Interface\Tooltips\UI-Tooltip-Border" bgFile="Interface\Tooltips\UI-Tooltip-Background" tile="true">
+      <EdgeSize>
+        <AbsValue val="16" />
+      </EdgeSize>
+      <TileSize>
+        <AbsValue val="16" />
+      </TileSize>
+      <BackgroundInsets>
+        <AbsInset left="5" right="5" top="5" bottom="5" />
+      </BackgroundInsets>
+      <BorderColor r="0.0" g="0.0" b="0.0" a="0.8"/>
+      <Color r="0.0" g="0.0" b="0.0" a="0.5"/>
+    </Backdrop>
+    <Anchors>
+      <Anchor point="TOPLEFT" relativeTo="$parent" relativePoint="TOPLEFT">
+        <Offset x="0" y="0" />
+      </Anchor>
+    </Anchors>
+    <Layers>
+      <Layer level="OVERLAY">
+        <FontString name="$parent_SpellName" inherits="GameFontNormalLarge">
+          <Anchors>
+            <Anchor point="TOPLEFT" relativeTo="$parent" relativePoint="TOPLEFT">
+              <Offset>
+                <AbsDimension x="75" y="-10"/>
+              </Offset>
+            </Anchor>
+          </Anchors>
+          <Color r="1" g="1" b="1"/>
+        </FontString>
+      </Layer>
+    </Layers>
+    <Frames>
+      <Button name="$parent_SpellIcon">
+        <Size x="32" y="32"/>
+        <Anchors>
+          <Anchor point="TOPLEFT" relativeTo="$parent" relativePoint="TOPLEFT">
+            <Offset>
+              <AbsDimension x="13" y="-10"/>
+            </Offset>
+          </Anchor>
+        </Anchors>
+        <Layers>
+          <Layer level="BACKGROUND">
+            <Texture name="$parent_SpellTexture"/>
+          </Layer>
+        </Layers>
+      </Button>
+      <CheckButton name="$parent_SpellStatus" inherits="PVPW_CheckButtonTemplate">
+        <Anchors>
+          <Anchor point="TOPLEFT" relativeTo="$parent" relativePoint="TOPLEFT">
+            <Offset>
+              <AbsDimension x="52" y="-6"/>
+            </Offset>
+          </Anchor>
+        </Anchors>
+        <Scripts>
+          <OnClick>
+              PVPW_ToggleSpellStatus_OnClick()
+          </OnClick>
+        </Scripts>
+      </CheckButton>
+      <CheckButton name="$parent_SoundWarning" inherits="PVPW_CheckButtonTemplate" hidden="true">
+        <Anchors>
+          <Anchor point="TOPLEFT" relativeTo="$parent" relativePoint="TOPLEFT">
+            <Offset>
+              <AbsDimension x="10" y="-45"/>
+            </Offset>
+          </Anchor>
+        </Anchors>
+        <Scripts>
+          <OnClick>
+              PVPW_ToggleSoundWarning_OnClick()
+          </OnClick>
+        </Scripts>
+      </CheckButton>
+      <CheckButton name="$parent_SoundFadeWarning" inherits="PVPW_CheckButtonTemplate" hidden="true">
+        <Anchors>
+          <Anchor point="TOPLEFT" relativeTo="$parent" relativePoint="TOPLEFT">
+            <Offset>
+              <AbsDimension x="10" y="-65"/>
+            </Offset>
+          </Anchor>
+        </Anchors>
+        <Scripts>
+          <OnClick>
+              PVPW_ToggleSoundDownWarning_OnClick()
+          </OnClick>
+        </Scripts>
+      </CheckButton>
+      <CheckButton name="$parent_VisualWarning" inherits="PVPW_CheckButtonTemplate" hidden="true">
+        <Anchors>
+          <Anchor point="TOPLEFT" relativeTo="$parent" relativePoint="TOPLEFT">
+            <Offset>
+              <AbsDimension x="10" y="-85"/>
+            </Offset>
+          </Anchor>
+        </Anchors>
+        <Scripts>
+          <OnClick>
+              PVPW_ToggleVisualWarning_OnClick()
+          </OnClick>
+        </Scripts>
+      </CheckButton>
+      <Button name="$parent_SelectVisualWarningAppearance" inherits="UIDropDownMenuTemplate" hidden="true">
+        <Anchors>
+          <Anchor point="TOPLEFT" relativeTo="$parent" relativePoint="TOPLEFT">
+            <Offset>
+              <AbsDimension x="70" y="-80"/>
+            </Offset>
+          </Anchor>
+        </Anchors>
+        <!-- OnShow initializeDropdownmenu has to be implemented by the user -->
+      </Button>
+      <Button name="$parent_PlaySound" inherits="UIPanelButtonTemplate" hidden="true">
+        <Size x="80" y="25"/>
+        <Anchors>
+          <Anchor point="TOPLEFT" relativeTo="$parent" relativePoint="TOPLEFT">
+            <Offset x="10" y="-110"/>
+          </Anchor>
+        </Anchors>
+        <Scripts>
+          <OnClick>
+            PVPW_PlaySound_OnClick()
+          </OnClick>
+        </Scripts>
+      </Button>
+      <Button name="$parent_PlaySoundFade" inherits="UIPanelButtonTemplate" hidden="true">
+        <Size x="110" y="25"/>
+        <Anchors>
+          <Anchor point="TOPLEFT" relativeTo="$parent" relativePoint="TOPLEFT">
+            <Offset x="95" y="-110"/>
+          </Anchor>
+        </Anchors>
+        <Scripts>
+          <OnClick>
+            PVPW_PlaySoundFade_OnClick()
+          </OnClick>
+        </Scripts>
+      </Button>
+      <Button name="$parent_ShowVisual" inherits="UIPanelButtonTemplate" hidden="true">
+        <Size x="120" y="25"/>
+        <Anchors>
+          <Anchor point="TOPLEFT" relativeTo="$parent" relativePoint="TOPLEFT">
+            <Offset x="210" y="-110"/>
+          </Anchor>
+        </Anchors>
+        <Scripts>
+          <OnClick>
+            PVPW_ShowVisual_OnClick()
+          </OnClick>
+        </Scripts>
+      </Button>
+    </Frames>
+  </Frame>
+</Ui>
