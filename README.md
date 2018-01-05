@@ -1,5 +1,7 @@
 # PVPWarn
 
+![](/Docs/pvpw_raged_unicorn_logo.png)
+
 > PVPWarn aims to help the player to hear and see enemy spells casted on himself and also spells that an enemy player resisted or spells that the player himself resisted
 
 PVPWarn uses both visual and acoustic effects to make the player aware of certain events. The addon aims to be configurable to the players preferences and allows customization on exactly what spells should be brought to the attention of the player and in what form.
