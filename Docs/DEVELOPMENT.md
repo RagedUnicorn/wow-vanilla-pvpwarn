@@ -6,6 +6,7 @@
 
 Spelltemplate:
 
+```
 ["category"] = {
   ["spellname"] = {
     ["name"] = "",
@@ -16,6 +17,7 @@ Spelltemplate:
     ["active"] =
   }
 }
+```
 
 For a full explanation of the fields see `PVPW_SpellMap.lua`
 
@@ -26,6 +28,7 @@ or and enemy.
 
 Spelltemplate:
 
+```
 ["category"] = {
   ["spell_name"] = {
     ["name"] = "",
@@ -39,6 +42,7 @@ Spelltemplate:
     ["ignoreEvents"] = []
   }
 }
+```
 
 For a full explanation of the fields see `PVPW_SpellAvoidMap.lua`
 
