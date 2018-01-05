@@ -32,7 +32,7 @@ me.tag = "SpellMap"
         {string} spellname in ingame format
       ["soundFileName"] = "",
         {string} name of the soundfile
-      ["itemID"] = 0000
+      ["itemID"] = 0000,
         {number} optional item id
       ["spellID"] = 0000,
         {number} id of the spell
@@ -48,7 +48,7 @@ me.tag = "SpellMap"
         "CHAT_MSG_SPELL_AURA_GONE_OTHER",
         "CHAT_MSG_SPELL_HOSTILEPLAYER_DAMAGE",
         "CHAT_MSG_SPELL_HOSTILEPLAYER_BUFF",
-        CHAT_MSG_SPELL_PERIODIC_HOSTILEPLAYER_BUFFS
+        "CHAT_MSG_SPELL_PERIODIC_HOSTILEPLAYER_BUFFS"
       ]
         {table} marks events that are ignored for this spell
 
