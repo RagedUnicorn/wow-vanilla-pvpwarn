@@ -1,14 +1,16 @@
-# wow-pvpwarn
+# PVPWarn
 
 > PVPWarn aims to help the player to hear and see enemy spells casted on himself and also spells that an enemy player resisted or spells that the player himself resisted
 
-PVPWarn uses both visual and acoustic effects to make the player aware of certain events. The addon aims to be configurable to the players preferences and allows customisation on exactly what spells should be brought to the attention of the player and in what form.
+PVPWarn uses both visual and acoustic effects to make the player aware of certain events. The addon aims to be configurable to the players preferences and allows customization on exactly what spells should be brought to the attention of the player and in what form.
 
 ## Demo
 
-TODO should add a youtube video with some examples
+TODO should add a YouTube video with some examples
 
 ## Configuration
+
+### Configure Spells
 
 Configurable spells are grouped into different categories. Other than the different class categories there are also categories for misc, racials and items.
 
@@ -25,13 +27,13 @@ Inside such a category a list of spells is displayed that can be enabled or disa
 
 The category itself is additionally separated into two tabs.
 
-SpellWarn tab:
+#### SpellWarn Tab
 
 Inside this tab spells that are cast by the enemy can be configured.
 
 ![](/Docs/pvpw_doc_spellwarn.png)
 
-SpellResist tab:
+#### SpellResist Tab
 
 This tab is responsible for the configuration of spells that the player itself resisted. An example for this would be that a warning is fired whenever you resist an enemy mages's counterspell.
 
@@ -41,25 +43,33 @@ For the opposite warning if an enemy player resisted an important spell of yours
 
 ![](/Docs/pvpw_doc_enemy_avoid.png)
 
-*Note:* A spell that is enabled but no sound and no visual warning are enabled will not show a warning to the player. The spell is tracked by the addon but never alerted to the player.
+*Note:* A spell that is enabled but has no sound and no visual warning enabled will not show a warning to the player. The spell is tracked by the addon but never alerted to the player.
+
+### Disable Addon
+
+The addon can be configured to be either completely disabled or disable in all Battlegrounds. This includes `Warsong Gulch`, `Arathi Basin` and `Alterac Valley`. This can be useful to prevent the warnQueue to get to annoying in places where a lot of such events are triggered
+
+### Ignore events while is dead
+
+Events can be ignored while the player is dead and wishes to not see any warning during this state.
 
 ## FAQ
 
-##### The addon is not showing up in WoW. What can I do?
+#### The addon is not showing up in WoW. What can I do?
 
 Make to recheck the installation part of this Readme and check that the addon is placed inside `[WoW-installation-directory]\Interface\AddOns` and is correctly named as `PVPWarn`.
 
-##### I'm getting the following warning: Skipping warn message because max age was reached. Why is that?
+#### I'm getting the following warning: Skipping warn message because max age was reached. Why is that?
 
 When a warning events is detected it is put into a queue before it is played to the user. This prevents the addon to play multiple of those warning at the same time to the user. However this means that it can take some time until an event is played when there is already an event playing. The more warning events that are active the higher the chance that an event has to wait until it is played to the player. This can lead to a point that a warning event might be considered as no longer relevant because it happened some seconds ago. While this should usually not be the case if you see this warning often you should consider disabling some of the warning events in the options menu.
 
 This is also more likely to happen in a crowed place with lots of players. You can either temporarily disable the addon in the settings or use the option to disable the addon in battlegrounds.
 
-##### No Sound is played when a player used [certain spell]. What should I do?
+#### No Sound is played when a player used [certain spell]. What should I do?
 
 This can have different reasons. Make sure to check that the spell you would like to be alerted is configured and active in the addon. If you cannot find the spell list chances are the spell cannot be tracked or is not yet included in the addon. While certain spells are untraceable other might simply be missing. Create a Github issue with a enhancement request for the spell to be added to the addon.
 
-##### I get a red error (Lua Error) on my screen. What is this?
+#### I get a red error (Lua Error) on my screen. What is this?
 
 This is what we call a LUA error and it usually happens because of an oversight or error by the developer (in this case me). Take a screenshot off the error and create a Github Issue with it and I will see if I can resolve it. It also helps if you can add any additional information of what you we're doing at the time.
 
@@ -116,7 +126,6 @@ Turning things around and you are a Warrior that walks into a Frost Nova of an e
 
 This is considered a self avoid. You as a player resisted an enemy spell.
 
-
 ## Installation
 
 WoW-Addons are installed directly in your WoW directory:
@@ -125,14 +134,13 @@ WoW-Addons are installed directly in your WoW directory:
 
 Make sure to get the newest version of the Addon from the releases tab:
 
--- TODO path fixing
 [PVPWarn-Releases](https://github.com/RagedUnicorn/wow-pvpwarn/releases)
 
 > Note: If the Addon is not showing up in your ingame Addonlist make sure that the Addon is named `PVPWarn` in your Addons folder
 
 ## License
 
-Copyright (c) 2017 Michael Wiesendanger
+Copyright (c) 2018 Michael Wiesendanger
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
