@@ -1,6 +1,6 @@
 --[[
   PVPWarn - A WoW 1.12.1 Addon to alert the player of pvp events
-  Copyright (C) 2017 Michael Wiesendanger <michael.wiesendanger@gmail.com>
+  Copyright (C) 2018 Michael Wiesendanger <michael.wiesendanger@gmail.com>
 
   This file is part of PVPWarn.
 
