@@ -31,7 +31,7 @@ me.tag = "TestDruid"
 
 -- global
 local _G = getfenv(0)
-local className = "druid"
+local className = PVPW_CLASSLIST[8]
 
 --[[
   global function to start all tests
@@ -198,7 +198,7 @@ end
 
 function me.TestSoundBarkskin()
   mod.testHelper.TestSound(
-    "druid",
+    className,
     "TestSoundBarkskin",
     "barkskin"
   )
@@ -206,7 +206,7 @@ end
 
 function me.TestSoundDownBarkskin()
   mod.testHelper.TestSoundDown(
-    "druid",
+    className,
     "TestSoundDownBarkskin",
     "barkskin"
   )
@@ -214,7 +214,7 @@ end
 
 function me.TestSoundNaturesGrasp()
   mod.testHelper.TestSound(
-    "druid",
+    className,
     "TestSoundNaturesGrasp",
     "natures_grasp"
   )
@@ -222,7 +222,7 @@ end
 
 function me.TestSoundDownNaturesGrasp()
   mod.testHelper.TestSoundDown(
-    "druid",
+    className,
     "TestSoundDownNaturesGrasp",
     "natures_grasp"
   )
@@ -230,7 +230,7 @@ end
 
 function me.TestSoundBash()
   mod.testHelper.TestSound(
-    "druid",
+    className,
     "TestSoundBash",
     "bash"
   )
@@ -238,7 +238,7 @@ end
 
 function me.TestSoundFeralCharge()
   mod.testHelper.TestSound(
-    "druid",
+    className,
     "TestSoundFeralCharge",
     "feral_charge"
   )
@@ -246,7 +246,7 @@ end
 
 function me.TestSoundFrenziedRegeneration()
   mod.testHelper.TestSound(
-    "druid",
+    className,
     "TestSoundFrenziedRegeneration",
     "frenzied_regeneration"
   )
@@ -254,7 +254,7 @@ end
 
 function me.TestSoundDownFrenziedRegeneration()
   mod.testHelper.TestSoundDown(
-    "druid",
+    className,
     "TestSoundDownFrenziedRegeneration",
     "frenzied_regeneration"
   )
@@ -262,7 +262,7 @@ end
 
 function me.TestSoundAbolishPoison()
   mod.testHelper.TestSound(
-    "druid",
+    className,
     "TestSoundAbolishPoison",
     "abolish_poison"
   )
@@ -270,7 +270,7 @@ end
 
 function me.TestSoundDownAbolishPoison()
   mod.testHelper.TestSoundDown(
-    "druid",
+    className,
     "TestSoundDownAbolishPoison",
     "abolish_poison"
   )
@@ -278,7 +278,7 @@ end
 
 function me.TestSoundInnervate()
   mod.testHelper.TestSound(
-    "druid",
+    className,
     "TestSoundInnervate",
     "innervate"
   )
@@ -286,7 +286,7 @@ end
 
 function me.TestSoundDownInnervate()
   mod.testHelper.TestSoundDown(
-    "druid",
+    className,
     "TestSoundDownInnervate",
     "innervate"
   )
@@ -294,7 +294,7 @@ end
 
 function me.TestSoundNaturesSwiftness()
   mod.testHelper.TestSound(
-    "druid",
+    className,
     "TestSoundNaturesSwiftness",
     "natures_swiftness"
   )
@@ -302,7 +302,7 @@ end
 
 function me.TestSoundDownNaturesSwiftness()
   mod.testHelper.TestSoundDown(
-    "druid",
+    className,
     "TestSoundDownNaturesSwiftness",
     "natures_swiftness"
   )
@@ -310,7 +310,7 @@ end
 
 function me.TestSoundFaerieFire()
   mod.testHelper.TestSound(
-    "druid",
+    className,
     "TestSoundFaerieFire",
     "faerie_fire"
   )
@@ -318,7 +318,7 @@ end
 
 function me.TestSoundEnemyAvoidEntanglingRoots()
   mod.testHelper.TestSoundEnemyAvoid(
-    "druid",
+    className,
     "TestSoundEnemyAvoidEntanglingRoots",
     "entangling_roots"
   )
@@ -326,7 +326,7 @@ end
 
 function me.TestSoundEnemyAvoidFaerieFire()
   mod.testHelper.TestSoundEnemyAvoid(
-    "druid",
+    className,
     "TestSoundEnemyAvoidFaerieFire",
     "faerie_fire"
   )
@@ -334,7 +334,7 @@ end
 
 function me.TestSoundEnemyAvoidBash()
   mod.testHelper.TestSoundEnemyAvoid(
-    "druid",
+    className,
     "TestSoundEnemyAvoidBash",
     "bash"
   )
@@ -342,7 +342,7 @@ end
 
 function me.TestSoundEnemyAvoidFeralChargeEffect()
   mod.testHelper.TestSoundEnemyAvoid(
-    "druid",
+    className,
     "TestSoundEnemyAvoidFeralChargeEffect",
     "feral_charge_effect"
   )
@@ -350,7 +350,7 @@ end
 
 function me.TestSoundSelfAvoidEntanglingRoots()
   mod.testHelper.TestSoundSelfAvoid(
-    "druid",
+    className,
     "TestSoundSelfAvoidEntanglingRoots",
     "entangling_roots"
   )
@@ -358,7 +358,7 @@ end
 
 function me.TestSoundSelfAvoidFaerieFire()
   mod.testHelper.TestSoundSelfAvoid(
-    "druid",
+    className,
     "TestSoundSelfAvoidFaerieFire",
     "faerie_fire"
   )
@@ -366,7 +366,7 @@ end
 
 function me.TestSoundSelfAvoidBash()
   mod.testHelper.TestSoundSelfAvoid(
-    "druid",
+    className,
     "TestSoundSelfAvoidBash",
     "bash"
   )
@@ -374,7 +374,7 @@ end
 
 function me.TestSoundSelfAvoidFeralChargeEffect()
   mod.testHelper.TestSoundSelfAvoid(
-    "druid",
+    className,
     "TestSoundSelfAvoidFeralChargeEffect",
     "feral_charge_effect"
   )
@@ -382,7 +382,7 @@ end
 
 function me.TestParseBarkskin()
   mod.testHelper.TestParse(
-    "druid",
+    className,
     "TestParseBarkskin",
     "barkskin",
     "$player$ gains Barkskin.",
@@ -392,7 +392,7 @@ end
 
 function me.TestParseDownBarkskin()
   mod.testHelper.TestParseDown(
-    "druid",
+    className,
     "TestParseDownBarkskin",
     "barkskin",
     "Barkskin fades from $player$.",
@@ -402,7 +402,7 @@ end
 
 function me.TestParseNaturesGrasp()
   mod.testHelper.TestParse(
-    "druid",
+    className,
     "TestParseNaturesGrasp",
     "natures_grasp",
     "$player$ gains Nature's Grasp.",
@@ -412,7 +412,7 @@ end
 
 function me.TestParseDownNaturesGrasp()
   mod.testHelper.TestParseDown(
-    "druid",
+    className,
     "TestParseDownNaturesGrasp",
     "natures_grasp",
     "Nature's Grasp fades from $player$.",
@@ -422,7 +422,7 @@ end
 
 function me.TestParseBash()
   mod.testHelper.TestParse(
-    "druid",
+    className,
     "TestParseBash",
     "bash",
     "You are afflicted by Bash.",
@@ -432,7 +432,7 @@ end
 
 function me.TestParseFeralCharge()
   mod.testHelper.TestParse(
-    "druid",
+    className,
     "TestParseFeralCharge",
     "feral_charge",
     "You are afflicted by Feral Charge Effect.",
@@ -442,7 +442,7 @@ end
 
 function me.TestParseFrenziedRegeneration()
   mod.testHelper.TestParse(
-    "druid",
+    className,
     "TestParseFrenziedRegeneration",
     "frenzied_regeneration",
     "$player$ gains Frenzied Regeneration.",
@@ -452,7 +452,7 @@ end
 
 function me.TestParseDownFrenziedRegeneration()
   mod.testHelper.TestParseDown(
-    "druid",
+    className,
     "TestParseDownFrenziedRegeneration",
     "frenzied_regeneration",
     "Frenzied Regeneration fades from $player$.",
@@ -462,7 +462,7 @@ end
 
 function me.TestParseAbolishPoison()
   mod.testHelper.TestParse(
-    "druid",
+    className,
     "TestParseAbolishPoison",
     "abolish_poison",
     "$player$ gains Abolish Poison.",
@@ -472,7 +472,7 @@ end
 
 function me.TestParseDownAbolishPoison()
   mod.testHelper.TestParseDown(
-    "druid",
+    className,
     "TestParseDownAbolishPoison",
     "abolish_poison",
     "Abolish Poison fades from $player$.",
@@ -482,7 +482,7 @@ end
 
 function me.TestParseInnervate()
   mod.testHelper.TestParse(
-    "druid",
+    className,
     "TestParseInnervate",
     "innervate",
     "$player$ gains Innervate.",
@@ -492,7 +492,7 @@ end
 
 function me.TestParseDownInnervate()
   mod.testHelper.TestParseDown(
-    "druid",
+    className,
     "TestParseDownInnervate",
     "innervate",
     "Innervate fades from $player$.",
@@ -502,7 +502,7 @@ end
 
 function me.TestParseNaturesSwiftness()
   mod.testHelper.TestParse(
-    "druid",
+    className,
     "TestParseNaturesSwiftness",
     "natures_swiftness",
     "$player$ gains Nature's Swiftness.",
@@ -512,7 +512,7 @@ end
 
 function me.TestParseDownNaturesSwiftness()
   mod.testHelper.TestParseDown(
-    "druid",
+    className,
     "TestParseDownNaturesSwiftness",
     "natures_swiftness",
     "Nature's Swiftness fades from $player$.",
@@ -522,7 +522,7 @@ end
 
 function me.TestParseFaerieFire()
   mod.testHelper.TestParse(
-    "druid",
+    className,
     "TestParseFaerieFire",
     "faerie_fire",
     "You are afflicted by Faerie Fire.",
@@ -532,7 +532,7 @@ end
 
 function me.TestParseEnemyAvoidImmuneEntanglingRoots()
   mod.testHelper.TestParseEnemyAvoid(
-    "druid",
+    className,
     "TestParseEnemyAvoidImmuneEntanglingRoots",
     "entangling_roots",
     "Your Entangling Roots failed. $player$ is immune.",
@@ -543,7 +543,7 @@ end
 
 function me.TestParseEnemyAvoidResistEntanglingRoots()
   mod.testHelper.TestParseEnemyAvoid(
-    "druid",
+    className,
     "TestParseEnemyAvoidImmuneEntanglingRoots",
     "entangling_roots",
     "Your Entangling Roots failed. $player$ is immune.",
@@ -554,7 +554,7 @@ end
 
 function me.TestParseEnemyAvoidImmuneFaerieFire()
   mod.testHelper.TestParseEnemyAvoid(
-    "druid",
+    className,
     "TestParseEnemyAvoidImmuneFaerieFire",
     "faerie_fire",
     "Your Faerie Fire failed. $player$ is immune.",
@@ -565,7 +565,7 @@ end
 
 function me.TestParseEnemyAvoidResistFaerieFire()
   mod.testHelper.TestParseEnemyAvoid(
-    "druid",
+    className,
     "TestParseEnemyAvoidResistFaerieFire",
     "faerie_fire",
     "Your Faerie Fire was resisted by $player$.",
@@ -576,7 +576,7 @@ end
 
 function me.TestParseEnemyAvoidDodgeBash()
   mod.testHelper.TestParseEnemyAvoid(
-    "druid",
+    className,
     "TestParseEnemyAvoidDodgeBash",
     "bash",
     "Your Bash was dodged by $player$.",
@@ -587,7 +587,7 @@ end
 
 function me.TestParseEnemyAvoidParryBash()
   mod.testHelper.TestParseEnemyAvoid(
-    "druid",
+    className,
     "TestParseEnemyAvoidParryBash",
     "bash",
     "Your Bash is parried by $player$.",
@@ -598,7 +598,7 @@ end
 
 function me.TestParseEnemyAvoidImmuneBash()
   mod.testHelper.TestParseEnemyAvoid(
-    "druid",
+    className,
     "TestParseEnemyAvoidImmuneBash",
     "bash",
     "Your Bash failed. $player$ is immune.",
@@ -609,7 +609,7 @@ end
 
 function me.TestParseEnemyAvoidMissBash()
   mod.testHelper.TestParseEnemyAvoid(
-    "druid",
+    className,
     "TestParseEnemyAvoidMissBash",
     "bash",
     "Your Bash missed $player$.",
@@ -620,7 +620,7 @@ end
 
 function me.TestParseEnemyAvoidResistBash()
   mod.testHelper.TestParseEnemyAvoid(
-    "druid",
+    className,
     "TestParseEnemyAvoidResistBash",
     "bash",
     "Your Bash was resisted by $player$.",
@@ -631,7 +631,7 @@ end
 
 function me.TestParseEnemyAvoidImmuneFeralChargeEffect()
   mod.testHelper.TestParseEnemyAvoid(
-    "druid",
+    className,
     "TestParseEnemyAvoidImmuneFeralChargeEffect",
     "feral_charge",
     "Your Feral Charge Effect failed. $player$ is immune.",
@@ -642,7 +642,7 @@ end
 
 function me.TestParseEnemyAvoidResistFeralChargeEffect()
   mod.testHelper.TestParseEnemyAvoid(
-    "druid",
+    className,
     "TestParseEnemyAvoidResistFeralChargeEffect",
     "feral_charge",
     "Your Feral Charge Effect was resisted by $player$.",
@@ -653,7 +653,7 @@ end
 
 function me.TestParseSelfAvoidImmuneEntanglingRoots()
   mod.testHelper.TestParseSelfAvoid(
-    "druid",
+    className,
     "TestParseSelfAvoidImmuneEntanglingRoots",
     "entangling_roots",
     "$player$'s Entangling Roots failed. You are immune.",
@@ -664,7 +664,7 @@ end
 
 function me.TestParseSelfAvoidResistEntanglingRoots()
   mod.testHelper.TestParseSelfAvoid(
-    "druid",
+    className,
     "TestParseSelfAvoidResistEntanglingRoots",
     "entangling_roots",
     "$player$'s Entangling Roots was resisted.",
@@ -675,7 +675,7 @@ end
 
 function me.TestParseSelfAvoidImmuneFaerieFire()
   mod.testHelper.TestParseSelfAvoid(
-    "druid",
+    className,
     "TestParseSelfAvoidImmuneFaerieFire",
     "faerie_fire",
     "$player$'s Faerie Fire failed. You are immune.",
@@ -686,7 +686,7 @@ end
 
 function me.TestParseSelfAvoidResistFaerieFire()
   mod.testHelper.TestParseSelfAvoid(
-    "druid",
+    className,
     "TestParseSelfAvoidResistFaerieFire",
     "faerie_fire",
     "$player$'s Faerie Fire was resisted.",
@@ -697,7 +697,7 @@ end
 
 function me.TestParseSelfAvoidDodgeBash()
   mod.testHelper.TestParseSelfAvoid(
-    "druid",
+    className,
     "TestParseSelfAvoidDodgeBash",
     "bash",
     "$player$'s Bash was dodged.",
@@ -708,7 +708,7 @@ end
 
 function me.TestParseSelfAvoidParryBash()
   mod.testHelper.TestParseSelfAvoid(
-    "druid",
+    className,
     "TestParseSelfAvoidParryBash",
     "bash",
     "$player$'s Bash was parried.",
@@ -719,7 +719,7 @@ end
 
 function me.TestParseSelfAvoidImmuneBash()
   mod.testHelper.TestParseSelfAvoid(
-    "druid",
+    className,
     "TestParseSelfAvoidImmuneBash",
     "bash",
     "$player$'s Bash failed. You are immune.",
@@ -730,7 +730,7 @@ end
 
 function me.TestParseSelfAvoidMissBash()
   mod.testHelper.TestParseSelfAvoid(
-    "druid",
+    className,
     "TestParseSelfAvoidMissBash",
     "bash",
     "$player$'s Bash misses you.",
@@ -741,7 +741,7 @@ end
 
 function me.TestParseSelfAvoidResistBash()
   mod.testHelper.TestParseSelfAvoid(
-    "druid",
+    className,
     "TestParseSelfAvoidResistBash",
     "bash",
     "$player$'s Bash was resisted.",
@@ -752,7 +752,7 @@ end
 
 function me.TestParseSelfAvoidImmuneFeralChargeEffect()
   mod.testHelper.TestParseSelfAvoid(
-    "druid",
+    className,
     "TestParseSelfAvoidImmuneFeralChargeEffect",
     "feral_charge",
     "$player$'s Feral Charge Effect failed. You are immune.",
@@ -763,7 +763,7 @@ end
 
 function me.TestParseSelfAvoidResistFeralChargeEffect()
   mod.testHelper.TestParseSelfAvoid(
-    "druid",
+    className,
     "TestParseSelfAvoidResistFeralChargeEffect",
     "feral_charge",
     "$player$'s Feral Charge Effect was resisted.",
