@@ -513,3 +513,238 @@ function me.TestShouldHaveASelfAvoidParseTestForEachSpell(module, className)
 
   mod.testReporter.EndTest(className, testType, testName)
 end
+
+--[[
+  Test playing sound for a certain spell to the player
+
+  @param {string} className
+  @param {string} testName
+  @param {string} spellName
+]]--
+function me.TestSound(className, testName, spellName)
+  local _, spellData = mod.spellMap.SearchByName(spellName)
+  local testType = mod.testHelper.testType.sound
+  local soundType = PVPW_CONSTANTS.SOUND_TYPES.SPELL
+  local status = 0
+
+  mod.testReporter.StartTest(className, testType, testName)
+
+  status = mod.sound.PlaySound(className, soundType, spellData.soundFileName)
+
+  if status == 1 then
+    mod.testReporter.ReportSuccessTest(className, testName, testType,
+      string.format("Successfully played sound for %s", spellName))
+  else
+    mod.testReporter.ReportFailTest(className, testName, testType,
+      string.format("Failed to play sound for %s", spellName))
+  end
+
+  mod.testReporter.EndTest(className, testType, testName)
+end
+
+--[[
+  Test playing sound down for a certain spell to the player
+
+  @param {string} className
+  @param {string} testName
+  @param {string} spellName
+]]--
+function me.TestSoundDown(className, testName, spellName)
+  local _, spellData = mod.spellMap.SearchByName(spellName)
+  local testType = mod.testHelper.testType.soundDown
+  local soundType = PVPW_CONSTANTS.SOUND_TYPES.SPELL_DOWN
+  local status = 0
+
+  mod.testReporter.StartTest(className, testType, testName)
+
+  status = mod.sound.PlaySound(className, soundType, spellData.soundFileName)
+
+  if status == 1 then
+    mod.testReporter.ReportSuccessTest(className, testName, testType,
+      string.format("Successfully played sound down for %s", spellName))
+  else
+    mod.testReporter.ReportFailTest(className, testName, testType,
+      string.format("Failed to play sound down for %s", spellName))
+  end
+
+  mod.testReporter.EndTest(className, testType, testName)
+end
+
+--[[
+  Test playing sound enemy avoid for a certain spell to the player
+
+  @param {string} className
+  @param {string} testName
+  @param {string} spellName
+]]--
+function me.TestSoundEnemyAvoid(className, testName, spellName)
+  local _, spellData = mod.spellAvoidMap.SearchByName(spellName)
+  local testType = mod.testHelper.testType.soundAvoid
+  local soundType = PVPW_CONSTANTS.SOUND_TYPES.ENEMY_AVOIDED
+  local status = 0
+
+  mod.testReporter.StartTest(className, testType, testName)
+
+  status = mod.sound.PlaySound(className, soundType, spellData.soundFileName)
+
+  if status == 1 then
+    mod.testReporter.ReportSuccessTest(className, testName, testType,
+      string.format("Successfully played sound enemy avoid for %s", spellName))
+  else
+    mod.testReporter.ReportFailTest(className, testName, testType,
+      string.format("Failed to play sound enemy avoid for %s", spellName))
+  end
+
+  mod.testReporter.EndTest(className, testType, testName)
+end
+
+--[[
+  Test playing sound self avoid for a certain spell to the player
+
+  @param {string} className
+  @param {string} testName
+  @param {string} spellName
+]]--
+function me.TestSoundSelfAvoid(className, testName, spellName)
+  local _, spellData = mod.spellAvoidMap.SearchByName(spellName)
+  local testType = mod.testHelper.testType.soundSelfAvoid
+  local soundType = PVPW_CONSTANTS.SOUND_TYPES.SELF_AVOIDED
+  local status = 0
+
+  mod.testReporter.StartTest(className, testType, testName)
+
+  status = mod.sound.PlaySound(className, soundType, spellData.soundFileName)
+
+  if status == 1 then
+    mod.testReporter.ReportSuccessTest(className, testName, testType,
+      string.format("Successfully played sound enemy avoid for %s", spellName))
+  else
+    mod.testReporter.ReportFailTest(className, testName, testType,
+      string.format("Failed to play sound enemy avoid for %s", spellName))
+  end
+
+  mod.testReporter.EndTest(className, testType, testName)
+end
+
+--[[
+  Test parsing a normal spell combat message
+
+  @param {string} className
+  @param {string} testName
+  @param {string} spellName
+  @param {string} combatMessage
+  @param {string} eventType
+
+]]--
+function me.TestParse(className, testName, spellName, combatMessage, eventType)
+  local testType = mod.testHelper.testType.parse
+  local status = 0
+
+  mod.testReporter.StartTest(className, testType, testName)
+
+  combatMessage = mod.testHelper.PrepareCombatMessage(combatMessage)
+  status, _ = mod.parser.ParseCombatText(combatMessage, eventType)
+
+  if status == 1 then
+    mod.testReporter.ReportSuccessTest(className, testName, testType,
+      string.format("Successfully parsed combatText for %s", spellName))
+  else
+    mod.testReporter.ReportFailTest(className, testName, testType,
+      string.format("Failed to parse combatText for %s", spellName))
+  end
+
+  mod.testReporter.EndTest(className, testType, testName)
+end
+
+--[[
+  Test parsing a spell down combat message
+
+  @param {string} className
+  @param {string} testName
+  @param {string} spellName
+  @param {string} combatMessage
+  @param {string} eventType
+]]--
+function me.TestParseDown(className, testName, spellName, combatMessage, eventType)
+  local testType = mod.testHelper.testType.parseDown
+  local status = 0
+
+  mod.testReporter.StartTest(className, testType, testName)
+
+  combatMessage = mod.testHelper.PrepareCombatMessage(combatMessage)
+  status, _ = mod.parser.ParseCombatText(combatMessage, eventType)
+
+  if status == 1 then
+    mod.testReporter.ReportSuccessTest(className, testName, testType,
+      string.format("Successfully parsed combatText down for %s", spellName))
+  else
+    mod.testReporter.ReportFailTest(className, testName, testType,
+      string.format("Failed to parse combatText down for %s", spellName))
+  end
+
+  mod.testReporter.EndTest(className, testType, testName)
+end
+
+--[[
+  Test parsing an enemy spell avoid combat message
+
+  @param {string} className
+  @param {string} testName
+  @param {string} spellName
+  @param {string} combatMessage
+  @param {string} eventType
+  @param {string} avoidType
+]]--
+function me.TestParseEnemyAvoid(className, testName, spellName, combatMessage, eventType, avoidType)
+  local testType = mod.testHelper.testType.parseAvoid
+  local status = 0
+
+  mod.testReporter.StartTest(className, testType, testName)
+
+  combatMessage = mod.testHelper.PrepareCombatMessage(combatMessage)
+  status, _ = mod.parser.ParseCombatText(combatMessage, eventType)
+
+  if status == 1 then
+    mod.testReporter.ReportSuccessTest(className, testName, testType,
+      string.format("Successfully parsed combatText enemy "
+        .. avoidType .. " for %s", spellName))
+  else
+    mod.testReporter.ReportFailTest(className, testName, testType,
+      string.format("Failed to parse combatText enemy "
+        .. avoidType .. " for %s", spellName))
+  end
+
+  mod.testReporter.EndTest(className, testType, testName)
+end
+
+--[[
+  Test parsing a self spell avoid combat message
+
+  @param {string} className
+  @param {string} testName
+  @param {string} spellName
+  @param {string} combatMessage
+  @param {string} eventType
+  @param {string} avoidType
+]]--
+function me.TestParseSelfAvoid(className, testName, spellName, combatMessage, eventType, avoidType)
+  local testType = mod.testHelper.testType.parseSelfAvoid
+  local status = 0
+
+  mod.testReporter.StartTest(className, testType, testName)
+
+  combatMessage = mod.testHelper.PrepareCombatMessage(combatMessage)
+  status, _ = mod.parser.ParseCombatText(combatMessage, eventType)
+
+  if status == 1 then
+    mod.testReporter.ReportSuccessTest(className, testName, testType,
+      string.format("Successfully parsed combatText self "
+        .. avoidType .. " for %s", spellName))
+  else
+    mod.testReporter.ReportFailTest(className, testName, testType,
+      string.format("Failed to parse combatText self "
+        .. avoidType .. " for %s", spellName))
+  end
+
+  mod.testReporter.EndTest(className, testType, testName)
+end

@@ -33,6 +33,14 @@ PVPW_CONSTANTS = {
     ["SELF_AVOIDED"] = 4
   },
 
+  AVOID_TYPES = {
+    ["IMMUNE"] = "immune",
+    ["RESIST"] = "resist",
+    ["DODGE"] = "dodge",
+    ["PARRY"] = "parry",
+    ["MISS"] = "miss"
+  },
+
   --[[
     Spelllist corresponding to the saved addon variable and its configured
     spelllists. See PVPWarnOptions in PVPW_Core
