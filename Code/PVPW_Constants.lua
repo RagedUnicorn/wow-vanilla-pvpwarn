@@ -38,7 +38,8 @@ PVPW_CONSTANTS = {
     ["RESIST"] = "resist",
     ["DODGE"] = "dodge",
     ["PARRY"] = "parry",
-    ["MISS"] = "miss"
+    ["MISS"] = "miss",
+    ["BLOCK"] = "block"
   },
 
   --[[
