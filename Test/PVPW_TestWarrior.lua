@@ -31,7 +31,7 @@ me.tag = "TestWarrior"
 
 -- global
 local _G = getfenv(0)
-local className = "warrior"
+local className = PVPW_CLASSLIST[1]
 
 --[[
   global function to start all tests
@@ -290,3475 +290,1524 @@ function me.RunAll(playManual)
 end
 
 function me.TestSoundDeathWish()
-  local testName = "TestSoundDeathWish"
-  local spellName = "death_wish"
-  local _, spellData = mod.spellMap.SearchByName(spellName)
-  local testType = mod.testHelper.testType.sound
-  local status
-
-  mod.testReporter.StartTest(className, testType, testName)
-
-  status = mod.sound.PlaySound(className, PVPW_CONSTANTS.SOUND_TYPES.SPELL, spellData.soundFileName)
-
-  if status == 1 then
-    mod.testReporter.ReportSuccessTest(className, testName, testType,
-      string.format("Successfully played sound for %s", spellName))
-  else
-    mod.testReporter.ReportFailTest(className, testName, testType,
-      string.format("Failed to play sound for %s", spellName))
-  end
-
-  mod.testReporter.EndTest(className, testType, testName)
+  mod.testHelper.TestSound(
+    className,
+    "TestSoundDeathWish",
+    "death_wish"
+  )
 end
 
 function me.TestSoundDownDeathWish()
-  local testName = "TestSoundDownDeathWish"
-  local spellName = "death_wish"
-  local _, spellData = mod.spellMap.SearchByName(spellName)
-  local testType = mod.testHelper.testType.soundDown
-  local status
-
-  mod.testReporter.StartTest(className, testType, testName)
-
-  status = mod.sound.PlaySound(className, PVPW_CONSTANTS.SOUND_TYPES.SPELL_DOWN, spellData.soundFileName)
-
-  if status == 1 then
-    mod.testReporter.ReportSuccessTest(className, testName, testType,
-      string.format("Successfully played sound for %s", spellName))
-  else
-    mod.testReporter.ReportFailTest(className, testName, testType,
-      string.format("Failed to play sound for %s", spellName))
-  end
-
-  mod.testReporter.EndTest(className, testType, testName)
+  mod.testHelper.TestSoundDown(
+    className,
+    "TestSoundDownDeathWish",
+    "death_wish"
+  )
 end
 
 function me.TestSoundBerserkerRage()
-  local testName = "TestSoundBerserkerRage"
-  local spellName = "berserker_rage"
-  local _, spellData = mod.spellMap.SearchByName(spellName)
-  local testType = mod.testHelper.testType.sound
-  local status
-
-  mod.testReporter.StartTest(className, testType, testName)
-
-  status = mod.sound.PlaySound(className, PVPW_CONSTANTS.SOUND_TYPES.SPELL, spellData.soundFileName)
-
-  if status == 1 then
-    mod.testReporter.ReportSuccessTest(className, testName, testType,
-      string.format("Successfully played sound for %s", spellName))
-  else
-    mod.testReporter.ReportFailTest(className, testName, testType,
-      string.format("Failed to play sound for %s", spellName))
-  end
-
-  mod.testReporter.EndTest(className, testType, testName)
+  mod.testHelper.TestSound(
+    className,
+    "TestSoundBerserkerRage",
+    "berserker_rage"
+  )
 end
 
 function me.TestSoundDownBerserkerRage()
-  local testName = "TestSoundDownBerserkerRage"
-  local spellName = "berserker_rage"
-  local _, spellData = mod.spellMap.SearchByName(spellName)
-  local testType = mod.testHelper.testType.soundDown
-  local status
-
-  mod.testReporter.StartTest(className, testType, testName)
-
-  status = mod.sound.PlaySound(className, PVPW_CONSTANTS.SOUND_TYPES.SPELL_DOWN, spellData.soundFileName)
-
-  if status == 1 then
-    mod.testReporter.ReportSuccessTest(className, testName, testType,
-      string.format("Successfully played sound for %s", spellName))
-  else
-    mod.testReporter.ReportFailTest(className, testName, testType,
-      string.format("Failed to play sound for %s", spellName))
-  end
-
-  mod.testReporter.EndTest(className, testType, testName)
+  mod.testHelper.TestSoundDown(
+    className,
+    "TestSoundDownBerserkerRage",
+    "berserker_rage"
+  )
 end
 
 function me.TestSoundRecklessness()
-  local testName = "TestSoundRecklessness"
-  local spellName = "recklessness"
-  local _, spellData = mod.spellMap.SearchByName(spellName)
-  local testType = mod.testHelper.testType.sound
-  local status
-
-  mod.testReporter.StartTest(className, testType, testName)
-
-  status = mod.sound.PlaySound(className, PVPW_CONSTANTS.SOUND_TYPES.SPELL, spellData.soundFileName)
-
-  if status == 1 then
-    mod.testReporter.ReportSuccessTest(className, testName, testType,
-      string.format("Successfully played sound for %s", spellName))
-  else
-    mod.testReporter.ReportFailTest(className, testName, testType,
-      string.format("Failed to play sound for %s", spellName))
-  end
-
-  mod.testReporter.EndTest(className, testType, testName)
+  mod.testHelper.TestSound(
+    className,
+    "TestSoundRecklessness",
+    "recklessness"
+  )
 end
 
 function me.TestSoundDownRecklessness()
-  local testName = "TestSoundDownRecklessness"
-  local spellName = "recklessness"
-  local _, spellData = mod.spellMap.SearchByName(spellName)
-  local testType = mod.testHelper.testType.soundDown
-  local status
-
-  mod.testReporter.StartTest(className, testType, testName)
-
-  status = mod.sound.PlaySound(className, PVPW_CONSTANTS.SOUND_TYPES.SPELL_DOWN, spellData.soundFileName)
-
-  if status == 1 then
-    mod.testReporter.ReportSuccessTest(className, testName, testType,
-      string.format("Successfully played sound for %s", spellName))
-  else
-    mod.testReporter.ReportFailTest(className, testName, testType,
-      string.format("Failed to play sound for %s", spellName))
-  end
-
-  mod.testReporter.EndTest(className, testType, testName)
+  mod.testHelper.TestSoundDown(
+    className,
+    "TestSoundDownRecklessness",
+    "recklessness"
+  )
 end
 
 function me.TestSoundShieldWall()
-  local testName = "TestSoundShieldWall"
-  local spellName = "shield_wall"
-  local _, spellData = mod.spellMap.SearchByName(spellName)
-  local testType = mod.testHelper.testType.sound
-  local status
-
-  mod.testReporter.StartTest(className, testType, testName)
-
-  status = mod.sound.PlaySound(className, PVPW_CONSTANTS.SOUND_TYPES.SPELL, spellData.soundFileName)
-
-  if status == 1 then
-    mod.testReporter.ReportSuccessTest(className, testName, testType,
-      string.format("Successfully played sound for %s", spellName))
-  else
-    mod.testReporter.ReportFailTest(className, testName, testType,
-      string.format("Failed to play sound for %s", spellName))
-  end
-
-  mod.testReporter.EndTest(className, testType, testName)
+  mod.testHelper.TestSound(
+    className,
+    "TestSoundShieldWall",
+    "shield_wall"
+  )
 end
 
 function me.TestSoundDownShieldWall()
-  local testName = "TestSoundDownShieldWall"
-  local spellName = "shield_wall"
-  local _, spellData = mod.spellMap.SearchByName(spellName)
-  local testType = mod.testHelper.testType.soundDown
-  local status
-
-  mod.testReporter.StartTest(className, testType, testName)
-
-  status = mod.sound.PlaySound(className, PVPW_CONSTANTS.SOUND_TYPES.SPELL_DOWN, spellData.soundFileName)
-
-  if status == 1 then
-    mod.testReporter.ReportSuccessTest(className, testName, testType,
-      string.format("Successfully played sound for %s", spellName))
-  else
-    mod.testReporter.ReportFailTest(className, testName, testType,
-      string.format("Failed to play sound for %s", spellName))
-  end
-
-  mod.testReporter.EndTest(className, testType, testName)
+  mod.testHelper.TestSoundDown(
+    className,
+    "TestSoundDownShieldWall",
+    "shield_wall"
+  )
 end
 
 function me.TestSoundBattleStance()
-  local testName = "TestSoundBattleStance"
-  local spellName = "battle_stance"
-  local _, spellData = mod.spellMap.SearchByName(spellName)
-  local testType = mod.testHelper.testType.sound
-  local status
-
-  mod.testReporter.StartTest(className, testType, testName)
-
-  status = mod.sound.PlaySound(className, PVPW_CONSTANTS.SOUND_TYPES.SPELL, spellData.soundFileName)
-
-  if status == 1 then
-    mod.testReporter.ReportSuccessTest(className, testName, testType,
-      string.format("Successfully played sound for %s", spellName))
-  else
-    mod.testReporter.ReportFailTest(className, testName, testType,
-      string.format("Failed to play sound for %s", spellName))
-  end
-
-  mod.testReporter.EndTest(className, testType, testName)
+  mod.testHelper.TestSound(
+    className,
+    "TestSoundBattleStance",
+    "battle_stance"
+  )
 end
 
 function me.TestSoundBerserkerStance()
-  local testName = "TestSoundBerserkerStance"
-  local spellName = "berserker_stance"
-  local _, spellData = mod.spellMap.SearchByName(spellName)
-  local testType = mod.testHelper.testType.sound
-  local status
-
-  mod.testReporter.StartTest(className, testType, testName)
-
-  status = mod.sound.PlaySound(className, PVPW_CONSTANTS.SOUND_TYPES.SPELL, spellData.soundFileName)
-
-  if status == 1 then
-    mod.testReporter.ReportSuccessTest(className, testName, testType,
-      string.format("Successfully played sound for %s", spellName))
-  else
-    mod.testReporter.ReportFailTest(className, testName, testType,
-      string.format("Failed to play sound for %s", spellName))
-  end
-
-  mod.testReporter.EndTest(className, testType, testName)
+  mod.testHelper.TestSound(
+    className,
+    "TestSoundBerserkerStance",
+    "berserker_stance"
+  )
 end
 
 function me.TestSoundDefensiveStance()
-  local testName = "TestSoundDefensiveStance"
-  local spellName = "defensive_stance"
-  local _, spellData = mod.spellMap.SearchByName(spellName)
-  local testType = mod.testHelper.testType.sound
-  local status
-
-  mod.testReporter.StartTest(className, testType, testName)
-
-  status = mod.sound.PlaySound(className, PVPW_CONSTANTS.SOUND_TYPES.SPELL, spellData.soundFileName)
-
-  if status == 1 then
-    mod.testReporter.ReportSuccessTest(className, testName, testType,
-      string.format("Successfully played sound for %s", spellName))
-  else
-    mod.testReporter.ReportFailTest(className, testName, testType,
-      string.format("Failed to play sound for %s", spellName))
-  end
-
-  mod.testReporter.EndTest(className, testType, testName)
+  mod.testHelper.TestSound(
+    className,
+    "TestSoundDefensiveStance",
+    "defensive_stance"
+  )
 end
 
 function me.TestSoundInterceptStun()
-  local testName = "TestSoundInterceptStun"
-  local spellName = "intercept_stun"
-  local _, spellData = mod.spellMap.SearchByName(spellName)
-  local testType = mod.testHelper.testType.sound
-  local status
-
-  mod.testReporter.StartTest(className, testType, testName)
-
-  status = mod.sound.PlaySound(className, PVPW_CONSTANTS.SOUND_TYPES.SPELL, spellData.soundFileName)
-
-  if status == 1 then
-    mod.testReporter.ReportSuccessTest(className, testName, testType,
-      string.format("Successfully played sound for %s", spellName))
-  else
-    mod.testReporter.ReportFailTest(className, testName, testType,
-      string.format("Failed to play sound for %s", spellName))
-  end
-
-  mod.testReporter.EndTest(className, testType, testName)
+  mod.testHelper.TestSound(
+    className,
+    "TestSoundInterceptStun",
+    "intercept_stun"
+  )
 end
 
 function me.TestSoundLastStand()
-  local testName = "TestSoundLastStand"
-  local spellName = "last_stand"
-  local _, spellData = mod.spellMap.SearchByName(spellName)
-  local testType = mod.testHelper.testType.sound
-  local status
-
-  mod.testReporter.StartTest(className, testType, testName)
-
-  status = mod.sound.PlaySound(className, PVPW_CONSTANTS.SOUND_TYPES.SPELL, spellData.soundFileName)
-
-  if status == 1 then
-    mod.testReporter.ReportSuccessTest(className, testName, testType,
-      string.format("Successfully played sound for %s", spellName))
-  else
-    mod.testReporter.ReportFailTest(className, testName, testType,
-      string.format("Failed to play sound for %s", spellName))
-  end
-
-  mod.testReporter.EndTest(className, testType, testName)
+  mod.testHelper.TestSound(
+    className,
+    "TestSoundLastStand",
+    "last_stand"
+  )
 end
 
 function me.TestSoundDownLastStand()
-  local testName = "TestSoundDownLastStand"
-  local spellName = "last_stand"
-  local _, spellData = mod.spellMap.SearchByName(spellName)
-  local testType = mod.testHelper.testType.soundDown
-  local status
-
-  mod.testReporter.StartTest(className, testType, testName)
-
-  status = mod.sound.PlaySound(className, PVPW_CONSTANTS.SOUND_TYPES.SPELL_DOWN, spellData.soundFileName)
-
-  if status == 1 then
-    mod.testReporter.ReportSuccessTest(className, testName, testType,
-      string.format("Successfully played sound for %s", spellName))
-  else
-    mod.testReporter.ReportFailTest(className, testName, testType,
-      string.format("Failed to play sound for %s", spellName))
-  end
-
-  mod.testReporter.EndTest(className, testType, testName)
+  mod.testHelper.TestSoundDown(
+    className,
+    "TestSoundDownLastStand",
+    "last_stand"
+  )
 end
 
 function me.TestSoundDisarm()
-  local testName = "TestSoundDisarm"
-  local spellName = "disarm"
-  local _, spellData = mod.spellMap.SearchByName(spellName)
-  local testType = mod.testHelper.testType.sound
-  local status
-
-  mod.testReporter.StartTest(className, testType, testName)
-
-  status = mod.sound.PlaySound(className, PVPW_CONSTANTS.SOUND_TYPES.SPELL, spellData.soundFileName)
-
-  if status == 1 then
-    mod.testReporter.ReportSuccessTest(className, testName, testType,
-      string.format("Successfully played sound for %s", spellName))
-  else
-    mod.testReporter.ReportFailTest(className, testName, testType,
-      string.format("Failed to play sound for %s", spellName))
-  end
-
-  mod.testReporter.EndTest(className, testType, testName)
+  mod.testHelper.TestSound(
+    className,
+    "TestSoundDisarm",
+    "disarm"
+  )
 end
 
 function me.TestSoundConcussionBlow()
-  local testName = "TestSoundConcussionBlow"
-  local spellName = "concussion_blow"
-  local _, spellData = mod.spellMap.SearchByName(spellName)
-  local testType = mod.testHelper.testType.sound
-  local status
-
-  mod.testReporter.StartTest(className, testType, testName)
-
-  status = mod.sound.PlaySound(className, PVPW_CONSTANTS.SOUND_TYPES.SPELL, spellData.soundFileName)
-
-  if status == 1 then
-    mod.testReporter.ReportSuccessTest(className, testName, testType,
-      string.format("Successfully played sound for %s", spellName))
-  else
-    mod.testReporter.ReportFailTest(className, testName, testType,
-      string.format("Failed to play sound for %s", spellName))
-  end
-
-  mod.testReporter.EndTest(className, testType, testName)
+  mod.testHelper.TestSound(
+    className,
+    "TestSoundConcussionBlow",
+    "concussion_blow"
+  )
 end
 
 function me.TestSoundBloodrage()
-  local testName = "TestSoundBloodrage"
-  local spellName = "bloodrage"
-  local _, spellData = mod.spellMap.SearchByName(spellName)
-  local testType = mod.testHelper.testType.sound
-  local status
-
-  mod.testReporter.StartTest(className, testType, testName)
-
-  status = mod.sound.PlaySound(className, PVPW_CONSTANTS.SOUND_TYPES.SPELL, spellData.soundFileName)
-
-  if status == 1 then
-    mod.testReporter.ReportSuccessTest(className, testName, testType,
-      string.format("Successfully played sound for %s", spellName))
-  else
-    mod.testReporter.ReportFailTest(className, testName, testType,
-      string.format("Failed to play sound for %s", spellName))
-  end
-
-  mod.testReporter.EndTest(className, testType, testName)
+  mod.testHelper.TestSound(
+    className,
+    "TestSoundBloodrage",
+    "bloodrage"
+  )
 end
 
 function me.TestSoundDownBloodrage()
-  local testName = "TestSoundDownBloodrage"
-  local spellName = "bloodrage"
-  local _, spellData = mod.spellMap.SearchByName(spellName)
-  local testType = mod.testHelper.testType.sound
-  local status
-
-  mod.testReporter.StartTest(className, testType, testName)
-
-  status = mod.sound.PlaySound(className, PVPW_CONSTANTS.SOUND_TYPES.SPELL_DOWN, spellData.soundFileName)
-
-  if status == 1 then
-    mod.testReporter.ReportSuccessTest(className, testName, testType,
-      string.format("Successfully played sound for %s", spellName))
-  else
-    mod.testReporter.ReportFailTest(className, testName, testType,
-      string.format("Failed to play sound for %s", spellName))
-  end
-
-  mod.testReporter.EndTest(className, testType, testName)
+  mod.testHelper.TestSoundDown(
+    className,
+    "TestSoundDownBloodrage",
+    "bloodrage"
+  )
 end
 
 function me.TestSoundPummel()
-  local testName = "TestSoundPummel"
-  local spellName = "pummel"
-  local _, spellData = mod.spellMap.SearchByName(spellName)
-  local testType = mod.testHelper.testType.sound
-  local status
-
-  mod.testReporter.StartTest(className, testType, testName)
-
-  status = mod.sound.PlaySound(className, PVPW_CONSTANTS.SOUND_TYPES.SPELL, spellData.soundFileName)
-
-  if status == 1 then
-    mod.testReporter.ReportSuccessTest(className, testName, testType,
-      string.format("Successfully played sound for %s", spellName))
-  else
-    mod.testReporter.ReportFailTest(className, testName, testType,
-      string.format("Failed to play sound for %s", spellName))
-  end
-
-  mod.testReporter.EndTest(className, testType, testName)
+  mod.testHelper.TestSound(
+    className,
+    "TestSoundPummel",
+    "pummel"
+  )
 end
 
 function me.TestSoundChargeStun()
-  local testName = "TestSoundChargeStun"
-  local spellName = "charge_stun"
-  local _, spellData = mod.spellMap.SearchByName(spellName)
-  local testType = mod.testHelper.testType.sound
-  local status
-
-  mod.testReporter.StartTest(className, testType, testName)
-
-  status = mod.sound.PlaySound(className, PVPW_CONSTANTS.SOUND_TYPES.SPELL, spellData.soundFileName)
-
-  if status == 1 then
-    mod.testReporter.ReportSuccessTest(className, testName, testType,
-      string.format("Successfully played sound for %s", spellName))
-  else
-    mod.testReporter.ReportFailTest(className, testName, testType,
-      string.format("Failed to play sound for %s", spellName))
-  end
-
-  mod.testReporter.EndTest(className, testType, testName)
+  mod.testHelper.TestSound(
+    className,
+    "TestSoundChargeStun",
+    "charge_stun"
+  )
 end
 
 function me.TestSoundIntimidatingShout()
-  local testName = "TestSoundIntimidatingShout"
-  local spellName = "intimidating_shout"
-  local _, spellData = mod.spellMap.SearchByName(spellName)
-  local testType = mod.testHelper.testType.sound
-  local status
-
-  mod.testReporter.StartTest(className, testType, testName)
-
-  status = mod.sound.PlaySound(className, PVPW_CONSTANTS.SOUND_TYPES.SPELL, spellData.soundFileName)
-
-  if status == 1 then
-    mod.testReporter.ReportSuccessTest(className, testName, testType,
-      string.format("Successfully played sound for %s", spellName))
-  else
-    mod.testReporter.ReportFailTest(className, testName, testType,
-      string.format("Failed to play sound for %s", spellName))
-  end
-
-  mod.testReporter.EndTest(className, testType, testName)
+  mod.testHelper.TestSound(
+    className,
+    "TestSoundIntimidatingShout",
+    "intimidating_shout"
+  )
 end
 
 function me.TestSoundShieldBlock()
-  local testName = "TestSoundShieldBlock"
-  local spellName = "shield_block"
-  local _, spellData = mod.spellMap.SearchByName(spellName)
-  local testType = mod.testHelper.testType.sound
-  local status
-
-  mod.testReporter.StartTest(className, testType, testName)
-
-  status = mod.sound.PlaySound(className, PVPW_CONSTANTS.SOUND_TYPES.SPELL, spellData.soundFileName)
-
-  if status == 1 then
-    mod.testReporter.ReportSuccessTest(className, testName, testType,
-      string.format("Successfully played sound for %s", spellName))
-  else
-    mod.testReporter.ReportFailTest(className, testName, testType,
-      string.format("Failed to play sound for %s", spellName))
-  end
-
-  mod.testReporter.EndTest(className, testType, testName)
+  mod.testHelper.TestSound(
+    className,
+    "TestSoundShieldBlock",
+    "shield_block"
+  )
 end
 
 function me.TestSoundDownShieldBlock()
-  local testName = "TestSoundDownShieldBlock"
-  local spellName = "shield_block"
-  local _, spellData = mod.spellMap.SearchByName(spellName)
-  local testType = mod.testHelper.testType.sound
-  local status
-
-  mod.testReporter.StartTest(className, testType, testName)
-
-  status = mod.sound.PlaySound(className, PVPW_CONSTANTS.SOUND_TYPES.SPELL_DOWN, spellData.soundFileName)
-
-  if status == 1 then
-    mod.testReporter.ReportSuccessTest(className, testName, testType,
-      string.format("Successfully played sound for %s", spellName))
-  else
-    mod.testReporter.ReportFailTest(className, testName, testType,
-      string.format("Failed to play sound for %s", spellName))
-  end
-
-  mod.testReporter.EndTest(className, testType, testName)
+  mod.testHelper.TestSoundDown(
+    className,
+    "TestSoundDownShieldBlock",
+    "shield_block"
+  )
 end
 
 function me.TestSoundEnemyAvoidChargeStun()
-  local testName = "TestSoundEnemyAvoidChargeStun"
-  local spellName = "charge_stun"
-  local _, spellData = mod.spellAvoidMap.SearchByName(spellName)
-  local testType = mod.testHelper.testType.soundAvoid
-  local status
-
-  mod.testReporter.StartTest(className, testType, testName)
-
-  status = mod.sound.PlaySound(className, PVPW_CONSTANTS.SOUND_TYPES.ENEMY_AVOIDED, spellData.soundFileName)
-
-  if status == 1 then
-    mod.testReporter.ReportSuccessTest(className, testName, testType,
-      string.format("Successfully played enemy avoid sound for %s", spellName))
-  else
-    mod.testReporter.ReportFailTest(className, testName, testType,
-      string.format("Failed to play enemy avoid sound for %s", spellName))
-  end
-
-  mod.testReporter.EndTest(className, testType, testName)
+  mod.testHelper.TestSound(
+    className,
+    "TestSoundEnemyAvoidChargeStun",
+    "charge_stun"
+  )
 end
 
 function me.TestSoundEnemyAvoidHamstring()
-  local testName = "TestSoundEnemyAvoidHamstring"
-  local spellName = "hamstring"
-  local _, spellData = mod.spellAvoidMap.SearchByName(spellName)
-  local testType = mod.testHelper.testType.soundAvoid
-  local status
-
-  mod.testReporter.StartTest(className, testType, testName)
-
-  status = mod.sound.PlaySound(className, PVPW_CONSTANTS.SOUND_TYPES.ENEMY_AVOIDED, spellData.soundFileName)
-
-  if status == 1 then
-    mod.testReporter.ReportSuccessTest(className, testName, testType,
-      string.format("Successfully played enemy avoid sound for %s", spellName))
-  else
-    mod.testReporter.ReportFailTest(className, testName, testType,
-      string.format("Failed to play enemy avoid sound for %s", spellName))
-  end
-
-  mod.testReporter.EndTest(className, testType, testName)
+  mod.testHelper.TestSoundEnemyAvoid(
+    className,
+    "TestSoundEnemyAvoidHamstring",
+    "hamstring"
+  )
 end
 
 function me.TestSoundEnemyAvoidMortalStrike()
-  local testName = "TestSoundEnemyAvoidMortalStrike"
-  local spellName = "mortal_strike"
-  local _, spellData = mod.spellAvoidMap.SearchByName(spellName)
-  local testType = mod.testHelper.testType.soundAvoid
-  local status
-
-  mod.testReporter.StartTest(className, testType, testName)
-
-  status = mod.sound.PlaySound(className, PVPW_CONSTANTS.SOUND_TYPES.ENEMY_AVOIDED, spellData.soundFileName)
-
-  if status == 1 then
-    mod.testReporter.ReportSuccessTest(className, testName, testType,
-      string.format("Successfully played enemy avoid sound for %s", spellName))
-  else
-    mod.testReporter.ReportFailTest(className, testName, testType,
-      string.format("Failed to play enemy avoid sound for %s", spellName))
-  end
-
-  mod.testReporter.EndTest(className, testType, testName)
+  mod.testHelper.TestSoundEnemyAvoid(
+    className,
+    "TestSoundEnemyAvoidMortalStrike",
+    "mortal_strike"
+  )
 end
 
 function me.TestSoundEnemyAvoidOverpower()
-  local testName = "TestSoundEnemyAvoidOverpower"
-  local spellName = "overpower"
-  local _, spellData = mod.spellAvoidMap.SearchByName(spellName)
-  local testType = mod.testHelper.testType.soundAvoid
-  local status
-
-  mod.testReporter.StartTest(className, testType, testName)
-
-  status = mod.sound.PlaySound(className, PVPW_CONSTANTS.SOUND_TYPES.ENEMY_AVOIDED, spellData.soundFileName)
-
-  if status == 1 then
-    mod.testReporter.ReportSuccessTest(className, testName, testType,
-      string.format("Successfully played enemy avoid sound for %s", spellName))
-  else
-    mod.testReporter.ReportFailTest(className, testName, testType,
-      string.format("Failed to play enemy avoid sound for %s", spellName))
-  end
-
-  mod.testReporter.EndTest(className, testType, testName)
+  mod.testHelper.TestSoundEnemyAvoid(
+    className,
+    "TestSoundEnemyAvoidOverpower",
+    "overpower"
+  )
 end
 
 function me.TestSoundEnemyAvoidBloodthirst()
-  local testName = "TestSoundEnemyAvoidBloodthirst"
-  local spellName = "bloodthirst"
-  local _, spellData = mod.spellAvoidMap.SearchByName(spellName)
-  local testType = mod.testHelper.testType.soundAvoid
-  local status
-
-  mod.testReporter.StartTest(className, testType, testName)
-
-  status = mod.sound.PlaySound(className, PVPW_CONSTANTS.SOUND_TYPES.ENEMY_AVOIDED, spellData.soundFileName)
-
-  if status == 1 then
-    mod.testReporter.ReportSuccessTest(className, testName, testType,
-      string.format("Successfully played enemy avoid sound for %s", spellName))
-  else
-    mod.testReporter.ReportFailTest(className, testName, testType,
-      string.format("Failed to play enemy avoid sound for %s", spellName))
-  end
-
-  mod.testReporter.EndTest(className, testType, testName)
+  mod.testHelper.TestSoundEnemyAvoid(
+    className,
+    "TestSoundEnemyAvoidBloodthirst",
+    "bloodthirst"
+  )
 end
 
 function me.TestSoundEnemyAvoidInterceptStun()
-  local testName = "TestSoundEnemyAvoidInterceptStun"
-  local spellName = "intercept_stun"
-  local _, spellData = mod.spellAvoidMap.SearchByName(spellName)
-  local testType = mod.testHelper.testType.soundAvoid
-  local status
-
-  mod.testReporter.StartTest(className, testType, testName)
-
-  status = mod.sound.PlaySound(className, PVPW_CONSTANTS.SOUND_TYPES.ENEMY_AVOIDED, spellData.soundFileName)
-
-  if status == 1 then
-    mod.testReporter.ReportSuccessTest(className, testName, testType,
-      string.format("Successfully played enemy avoid sound for %s", spellName))
-  else
-    mod.testReporter.ReportFailTest(className, testName, testType,
-      string.format("Failed to play enemy avoid sound for %s", spellName))
-  end
-
-  mod.testReporter.EndTest(className, testType, testName)
+  mod.testHelper.TestSoundEnemyAvoid(
+    className,
+    "TestSoundEnemyAvoidInterceptStun",
+    "intercept_stun"
+  )
 end
 
 function me.TestSoundEnemyAvoidIntimidatingShout()
-  local testName = "TestSoundEnemyAvoidIntimidatingShout"
-  local spellName = "intimidating_shout"
-  local _, spellData = mod.spellAvoidMap.SearchByName(spellName)
-  local testType = mod.testHelper.testType.soundAvoid
-  local status
-
-  mod.testReporter.StartTest(className, testType, testName)
-
-  status = mod.sound.PlaySound(className, PVPW_CONSTANTS.SOUND_TYPES.ENEMY_AVOIDED, spellData.soundFileName)
-
-  if status == 1 then
-    mod.testReporter.ReportSuccessTest(className, testName, testType,
-      string.format("Successfully played enemy avoid sound for %s", spellName))
-  else
-    mod.testReporter.ReportFailTest(className, testName, testType,
-      string.format("Failed to play enemy avoid sound for %s", spellName))
-  end
-
-  mod.testReporter.EndTest(className, testType, testName)
+  mod.testHelper.TestSoundEnemyAvoid(
+    className,
+    "TestSoundEnemyAvoidIntimidatingShout",
+    "intimidating_shout"
+  )
 end
 
 function me.TestSoundEnemyAvoidPummel()
-  local testName = "TestSoundEnemyAvoidPummel"
-  local spellName = "pummel"
-  local _, spellData = mod.spellAvoidMap.SearchByName(spellName)
-  local testType = mod.testHelper.testType.soundAvoid
-  local status
-
-  mod.testReporter.StartTest(className, testType, testName)
-
-  status = mod.sound.PlaySound(className, PVPW_CONSTANTS.SOUND_TYPES.ENEMY_AVOIDED, spellData.soundFileName)
-
-  if status == 1 then
-    mod.testReporter.ReportSuccessTest(className, testName, testType,
-      string.format("Successfully played enemy avoid sound for %s", spellName))
-  else
-    mod.testReporter.ReportFailTest(className, testName, testType,
-      string.format("Failed to play enemy avoid sound for %s", spellName))
-  end
-
-  mod.testReporter.EndTest(className, testType, testName)
+  mod.testHelper.TestSoundEnemyAvoid(
+    className,
+    "TestSoundEnemyAvoidPummel",
+    "pummel"
+  )
 end
 
 function me.TestSoundEnemyAvoidConcussionBlow()
-  local testName = "TestSoundEnemyAvoidConcussionBlow"
-  local spellName = "concussion_blow"
-  local _, spellData = mod.spellAvoidMap.SearchByName(spellName)
-  local testType = mod.testHelper.testType.soundAvoid
-  local status
-
-  mod.testReporter.StartTest(className, testType, testName)
-
-  status = mod.sound.PlaySound(className, PVPW_CONSTANTS.SOUND_TYPES.ENEMY_AVOIDED, spellData.soundFileName)
-
-  if status == 1 then
-    mod.testReporter.ReportSuccessTest(className, testName, testType,
-      string.format("Successfully played enemy avoid sound for %s", spellName))
-  else
-    mod.testReporter.ReportFailTest(className, testName, testType,
-      string.format("Failed to play enemy avoid sound for %s", spellName))
-  end
-
-  mod.testReporter.EndTest(className, testType, testName)
+  mod.testHelper.TestSoundEnemyAvoid(
+    className,
+    "TestSoundEnemyAvoidConcussionBlow",
+    "concussion_blow"
+  )
 end
 
 function me.TestSoundEnemyAvoidDisarm()
-  local testName = "TestSoundEnemyAvoidDisarm"
-  local spellName = "disarm"
-  local _, spellData = mod.spellAvoidMap.SearchByName(spellName)
-  local testType = mod.testHelper.testType.soundAvoid
-  local status
-
-  mod.testReporter.StartTest(className, testType, testName)
-
-  status = mod.sound.PlaySound(className, PVPW_CONSTANTS.SOUND_TYPES.ENEMY_AVOIDED, spellData.soundFileName)
-
-  if status == 1 then
-    mod.testReporter.ReportSuccessTest(className, testName, testType,
-      string.format("Successfully played enemy avoid sound for %s", spellName))
-  else
-    mod.testReporter.ReportFailTest(className, testName, testType,
-      string.format("Failed to play enemy avoid sound for %s", spellName))
-  end
-
-  mod.testReporter.EndTest(className, testType, testName)
+  mod.testHelper.TestSoundEnemyAvoid(
+    className,
+    "TestSoundEnemyAvoidDisarm",
+    "disarm"
+  )
 end
 
 function me.TestSoundEnemyAvoidShieldBash()
-  local testName = "TestSoundEnemyAvoidShieldBash"
-  local spellName = "shield_bash"
-  local _, spellData = mod.spellAvoidMap.SearchByName(spellName)
-  local testType = mod.testHelper.testType.soundAvoid
-  local status
-
-  mod.testReporter.StartTest(className, testType, testName)
-
-  status = mod.sound.PlaySound(className, PVPW_CONSTANTS.SOUND_TYPES.ENEMY_AVOIDED, spellData.soundFileName)
-
-  if status == 1 then
-    mod.testReporter.ReportSuccessTest(className, testName, testType,
-      string.format("Successfully played enemy avoid sound for %s", spellName))
-  else
-    mod.testReporter.ReportFailTest(className, testName, testType,
-      string.format("Failed to play enemy avoid sound for %s", spellName))
-  end
-
-  mod.testReporter.EndTest(className, testType, testName)
+  mod.testHelper.TestSoundEnemyAvoid(
+    className,
+    "TestSoundEnemyAvoidShieldBash",
+    "shield_bash"
+  )
 end
 
 function me.TestSoundSelfAvoidChargeStun()
-  local testName = "TestSoundSelfAvoidChargeStun"
-  local spellName = "charge_stun"
-  local _, spellData = mod.spellAvoidMap.SearchByName(spellName)
-  local testType = mod.testHelper.testType.soundSelfAvoid
-  local status
-
-  mod.testReporter.StartTest(className, testType, testName)
-
-  status = mod.sound.PlaySound(className, PVPW_CONSTANTS.SOUND_TYPES.SELF_AVOIDED, spellData.soundFileName)
-
-  if status == 1 then
-    mod.testReporter.ReportSuccessTest(className, testName, testType,
-      string.format("Successfully played self avoid sound for %s", spellName))
-  else
-    mod.testReporter.ReportFailTest(className, testName, testType,
-      string.format("Failed to play self avoid sound for %s", spellName))
-  end
-
-  mod.testReporter.EndTest(className, testType, testName)
+  mod.testHelper.TestSoundSelfAvoid(
+    className,
+    "TestSoundSelfAvoidChargeStun",
+    "charge_stun"
+  )
 end
 
 function me.TestSoundSelfAvoidHamstring()
-  local testName = "TestSoundSelfAvoidHamstring"
-  local spellName = "hamstring"
-  local _, spellData = mod.spellAvoidMap.SearchByName(spellName)
-  local testType = mod.testHelper.testType.soundSelfAvoid
-  local status
-
-  mod.testReporter.StartTest(className, testType, testName)
-
-  status = mod.sound.PlaySound(className, PVPW_CONSTANTS.SOUND_TYPES.SELF_AVOIDED, spellData.soundFileName)
-
-  if status == 1 then
-    mod.testReporter.ReportSuccessTest(className, testName, testType,
-      string.format("Successfully played self avoid sound for %s", spellName))
-  else
-    mod.testReporter.ReportFailTest(className, testName, testType,
-      string.format("Failed to play self avoid sound for %s", spellName))
-  end
-
-  mod.testReporter.EndTest(className, testType, testName)
+  mod.testHelper.TestSoundSelfAvoid(
+    className,
+    "TestSoundSelfAvoidHamstring",
+    "hamstring"
+  )
 end
 
 function me.TestSoundSelfAvoidMortalStrike()
-  local testName = "TestSoundSelfAvoidMortalStrike"
-  local spellName = "mortal_strike"
-  local _, spellData = mod.spellAvoidMap.SearchByName(spellName)
-  local testType = mod.testHelper.testType.soundSelfAvoid
-  local status
-
-  mod.testReporter.StartTest(className, testType, testName)
-
-  status = mod.sound.PlaySound(className, PVPW_CONSTANTS.SOUND_TYPES.SELF_AVOIDED, spellData.soundFileName)
-
-  if status == 1 then
-    mod.testReporter.ReportSuccessTest(className, testName, testType,
-      string.format("Successfully played self avoid sound for %s", spellName))
-  else
-    mod.testReporter.ReportFailTest(className, testName, testType,
-      string.format("Failed to play self avoid sound for %s", spellName))
-  end
-
-  mod.testReporter.EndTest(className, testType, testName)
+  mod.testHelper.TestSoundSelfAvoid(
+    className,
+    "TestSoundSelfAvoidMortalStrike",
+    "mortal_strike"
+  )
 end
 
 function me.TestSoundSelfAvoidOverpower()
-  local testName = "TestSoundSelfAvoidOverpower"
-  local spellName = "overpower"
-  local _, spellData = mod.spellAvoidMap.SearchByName(spellName)
-  local testType = mod.testHelper.testType.soundSelfAvoid
-  local status
-
-  mod.testReporter.StartTest(className, testType, testName)
-
-  status = mod.sound.PlaySound(className, PVPW_CONSTANTS.SOUND_TYPES.SELF_AVOIDED, spellData.soundFileName)
-
-  if status == 1 then
-    mod.testReporter.ReportSuccessTest(className, testName, testType,
-      string.format("Successfully played self avoid sound for %s", spellName))
-  else
-    mod.testReporter.ReportFailTest(className, testName, testType,
-      string.format("Failed to play self avoid sound for %s", spellName))
-  end
-
-  mod.testReporter.EndTest(className, testType, testName)
+  mod.testHelper.TestSoundSelfAvoid(
+    className,
+    "TestSoundSelfAvoidOverpower",
+    "overpower"
 end
 
 function me.TestSoundSelfAvoidBloodthirst()
-  local testName = "TestSoundSelfAvoidBloodthirst"
-  local spellName = "bloodthirst"
-  local _, spellData = mod.spellAvoidMap.SearchByName(spellName)
-  local testType = mod.testHelper.testType.soundSelfAvoid
-  local status
-
-  mod.testReporter.StartTest(className, testType, testName)
-
-  status = mod.sound.PlaySound(className, PVPW_CONSTANTS.SOUND_TYPES.SELF_AVOIDED, spellData.soundFileName)
-
-  if status == 1 then
-    mod.testReporter.ReportSuccessTest(className, testName, testType,
-      string.format("Successfully played self avoid sound for %s", spellName))
-  else
-    mod.testReporter.ReportFailTest(className, testName, testType,
-      string.format("Failed to play self avoid sound for %s", spellName))
-  end
-
-  mod.testReporter.EndTest(className, testType, testName)
+  mod.testHelper.TestSoundSelfAvoid(
+    className,
+    "TestSoundSelfAvoidBloodthirst",
+    "bloodthirst"
+  )
 end
 
 function me.TestSoundSelfAvoidInterceptStun()
-  local testName = "TestSoundSelfAvoidInterceptStun"
-  local spellName = "intercept_stun"
-  local _, spellData = mod.spellAvoidMap.SearchByName(spellName)
-  local testType = mod.testHelper.testType.soundSelfAvoid
-  local status
-
-  mod.testReporter.StartTest(className, testType, testName)
-
-  status = mod.sound.PlaySound(className, PVPW_CONSTANTS.SOUND_TYPES.SELF_AVOIDED, spellData.soundFileName)
-
-  if status == 1 then
-    mod.testReporter.ReportSuccessTest(className, testName, testType,
-      string.format("Successfully played self avoid sound for %s", spellName))
-  else
-    mod.testReporter.ReportFailTest(className, testName, testType,
-      string.format("Failed to play self avoid sound for %s", spellName))
-  end
-
-  mod.testReporter.EndTest(className, testType, testName)
+  mod.testHelper.TestSoundSelfAvoid(
+    className,
+    "TestSoundSelfAvoidInterceptStun",
+    "intercept_stun"
+  )
 end
 
 function me.TestSoundSelfAvoidIntimidatingShout()
-  local testName = "TestSoundSelfAvoidIntimidatingShout"
-  local spellName = "intimidating_shout"
-  local _, spellData = mod.spellAvoidMap.SearchByName(spellName)
-  local testType = mod.testHelper.testType.soundSelfAvoid
-  local status
-
-  mod.testReporter.StartTest(className, testType, testName)
-
-  status = mod.sound.PlaySound(className, PVPW_CONSTANTS.SOUND_TYPES.SELF_AVOIDED, spellData.soundFileName)
-
-  if status == 1 then
-    mod.testReporter.ReportSuccessTest(className, testName, testType,
-      string.format("Successfully played self avoid sound for %s", spellName))
-  else
-    mod.testReporter.ReportFailTest(className, testName, testType,
-      string.format("Failed to play self avoid sound for %s", spellName))
-  end
-
-  mod.testReporter.EndTest(className, testType, testName)
+  mod.testHelper.TestSoundSelfAvoid(
+    className,
+    "TestSoundSelfAvoidIntimidatingShout",
+    "intimidating_shout"
+  )
 end
 
 function me.TestSoundSelfAvoidPummel()
-  local testName = "TestSoundSelfAvoidPummel"
-  local spellName = "pummel"
-  local _, spellData = mod.spellAvoidMap.SearchByName(spellName)
-  local testType = mod.testHelper.testType.soundSelfAvoid
-  local status
-
-  mod.testReporter.StartTest(className, testType, testName)
-
-  status = mod.sound.PlaySound(className, PVPW_CONSTANTS.SOUND_TYPES.SELF_AVOIDED, spellData.soundFileName)
-
-  if status == 1 then
-    mod.testReporter.ReportSuccessTest(className, testName, testType,
-      string.format("Successfully played self avoid sound for %s", spellName))
-  else
-    mod.testReporter.ReportFailTest(className, testName, testType,
-      string.format("Failed to play self avoid sound for %s", spellName))
-  end
-
-  mod.testReporter.EndTest(className, testType, testName)
+  mod.testHelper.TestSoundSelfAvoid(
+    className,
+    "TestSoundSelfAvoidPummel",
+    "pummel"
+  )
 end
 
 function me.TestSoundSelfAvoidConcussionBlow()
-  local testName = "TestSoundSelfAvoidConcussionBlow"
-  local spellName = "concussion_blow"
-  local _, spellData = mod.spellAvoidMap.SearchByName(spellName)
-  local testType = mod.testHelper.testType.soundSelfAvoid
-  local status
-
-  mod.testReporter.StartTest(className, testType, testName)
-
-  status = mod.sound.PlaySound(className, PVPW_CONSTANTS.SOUND_TYPES.SELF_AVOIDED, spellData.soundFileName)
-
-  if status == 1 then
-    mod.testReporter.ReportSuccessTest(className, testName, testType,
-      string.format("Successfully played self avoid sound for %s", spellName))
-  else
-    mod.testReporter.ReportFailTest(className, testName, testType,
-      string.format("Failed to play self avoid sound for %s", spellName))
-  end
-
-  mod.testReporter.EndTest(className, testType, testName)
+  mod.testHelper.TestSoundSelfAvoid(
+    className,
+    "TestSoundSelfAvoidConcussionBlow",
+    "concussion_blow"
+  )
 end
 
 function me.TestSoundSelfAvoidDisarm()
-  local testName = "TestSoundSelfAvoidDisarm"
-  local spellName = "disarm"
-  local _, spellData = mod.spellAvoidMap.SearchByName(spellName)
-  local testType = mod.testHelper.testType.soundSelfAvoid
-  local status
-
-  mod.testReporter.StartTest(className, testType, testName)
-
-  status = mod.sound.PlaySound(className, PVPW_CONSTANTS.SOUND_TYPES.SELF_AVOIDED, spellData.soundFileName)
-
-  if status == 1 then
-    mod.testReporter.ReportSuccessTest(className, testName, testType,
-      string.format("Successfully played self avoid sound for %s", spellName))
-  else
-    mod.testReporter.ReportFailTest(className, testName, testType,
-      string.format("Failed to play self avoid sound for %s", spellName))
-  end
-
-  mod.testReporter.EndTest(className, testType, testName)
+  mod.testHelper.TestSoundSelfAvoid(
+    className,
+    "TestSoundSelfAvoidDisarm",
+    "disarm"
+  )
 end
 
 function me.TestSoundSelfAvoidShieldBash()
-  local testName = "TestSoundSelfAvoidShieldBash"
-  local spellName = "shield_bash"
-  local _, spellData = mod.spellAvoidMap.SearchByName(spellName)
-  local testType = mod.testHelper.testType.soundSelfAvoid
-  local status
-
-  mod.testReporter.StartTest(className, testType, testName)
-
-  status = mod.sound.PlaySound(className, PVPW_CONSTANTS.SOUND_TYPES.SELF_AVOIDED, spellData.soundFileName)
-
-  if status == 1 then
-    mod.testReporter.ReportSuccessTest(className, testName, testType,
-      string.format("Successfully played self avoid sound for %s", spellName))
-  else
-    mod.testReporter.ReportFailTest(className, testName, testType,
-      string.format("Failed to play self avoid sound for %s", spellName))
-  end
-
-  mod.testReporter.EndTest(className, testType, testName)
+  mod.testHelper.TestSoundSelfAvoid(
+    className,
+    "TestSoundSelfAvoidShieldBash",
+    "shield_bash"
+  )
 end
 
 function me.TestParseDeathWish()
-  local spellName = "death_wish"
-  local testName = "TestParseDeathWish"
-  local combatMessage = "$player$ gains Death Wish."
-  local testType = mod.testHelper.testType.parse
-  local status
-
-  mod.testReporter.StartTest(className, testType, testName)
-
-  combatMessage = mod.testHelper.PrepareCombatMessage(combatMessage)
-  status, _ = mod.parser.ParseCombatText(combatMessage, mod.testHelper.eventTypeSpellPeriodicHostilePlayerBuffs)
-
-  if status == 1 then
-    mod.testReporter.ReportSuccessTest(className, testName, testType,
-      string.format("Successfully parsed combatText for %s", spellName))
-  else
-    mod.testReporter.ReportFailTest(className, testName, testType,
-      string.format("Failed to parse combatText for %s", spellName))
-  end
-
-  mod.testReporter.EndTest(className, testType, testName)
+  mod.testHelper.TestParse(
+    className,
+    "death_wish",
+    "rapid_fire",
+    "$player$ gains Death Wish.",
+    mod.testHelper.eventTypeSpellPeriodicHostilePlayerBuffs
+  )
 end
 
 function me.TestParseDownDeathWish()
-  local testName = "TestParseDownDeathWish"
-  local spellName = "death_wish"
-  local combatMessage = "Death Wish fades from $player$."
-  local testType = mod.testHelper.testType.parseDown
-  local status
-
-  mod.testReporter.StartTest(className, testType, testName)
-
-  combatMessage = mod.testHelper.PrepareCombatMessage(combatMessage)
-  status, _ = mod.parser.ParseCombatText(combatMessage, mod.testHelper.eventTypeSpellAuraGoneOther)
-
-  if status == 1 then
-    mod.testReporter.ReportSuccessTest(className, testName, testType,
-      string.format("Successfully parsed combatText for %s", spellName))
-  else
-    mod.testReporter.ReportFailTest(className, testName, testType,
-      string.format("Failed to parse combatText for %s", spellName))
-  end
-
-  mod.testReporter.EndTest(className, testType, testName)
+  mod.testHelper.TestParseDown(
+    className,
+    "TestParseDownDeathWish",
+    "death_wish",
+    "Death Wish fades from $player$.",
+    mod.testHelper.eventTypeSpellAuraGoneOther
+  )
 end
 
 function me.TestParseBerserkerRage()
-  local testName = "TestParseBerserkerRage"
-  local spellName = "berserker_rage"
-  local combatMessage = "$player$ gains Berserker Rage."
-  local testType = mod.testHelper.testType.parse
-  local status
-
-  mod.testReporter.StartTest(className, testType, testName)
-
-  combatMessage = mod.testHelper.PrepareCombatMessage(combatMessage)
-  status, _ = mod.parser.ParseCombatText(combatMessage, mod.testHelper.eventTypeSpellPeriodicHostilePlayerBuffs)
-
-  if status == 1 then
-    mod.testReporter.ReportSuccessTest(className, testName, testType,
-      string.format("Successfully parsed combatText for %s", spellName))
-  else
-    mod.testReporter.ReportFailTest(className, testName, testType,
-      string.format("Failed to parse combatText for %s", spellName))
-  end
-
-  mod.testReporter.EndTest(className, testType, testName)
+  mod.testHelper.TestParse(
+    className,
+    "TestParseBerserkerRage",
+    "berserker_rage",
+    "$player$ gains Berserker Rage.",
+    mod.testHelper.eventTypeSpellPeriodicHostilePlayerBuffs
+  )
 end
 
 function me.TestParseDownBerserkerRage()
-  local testName = "TestParseDownBerserkerRage"
-  local spellName = "barkskin"
-  local combatMessage = "Berserker Rage fades from $player$."
-  local testType = mod.testHelper.testType.parseDown
-  local status
-
-  mod.testReporter.StartTest(className, testType, testName)
-
-  combatMessage = mod.testHelper.PrepareCombatMessage(combatMessage)
-  status, _ = mod.parser.ParseCombatText(combatMessage, mod.testHelper.eventTypeSpellAuraGoneOther)
-
-  if status == 1 then
-    mod.testReporter.ReportSuccessTest(className, testName, testType,
-      string.format("Successfully parsed combatText for %s", spellName))
-  else
-    mod.testReporter.ReportFailTest(className, testName, testType,
-      string.format("Failed to parse combatText for %s", spellName))
-  end
-
-  mod.testReporter.EndTest(className, testType, testName)
+  mod.testHelper.TestParseDown(
+    className,
+    "TestParseDownBerserkerRage",
+    "barkskin",
+    "Berserker Rage fades from $player$.",
+    mod.testHelper.eventTypeSpellAuraGoneOther
+  )
 end
 
 function me.TestParseRecklessness()
-  local testName = "TestParseRecklessness"
-  local spellName = "recklessness"
-  local combatMessage = "$player$ gains Recklessness."
-  local testType = mod.testHelper.testType.parse
-  local status
-
-  mod.testReporter.StartTest(className, testType, testName)
-
-  combatMessage = mod.testHelper.PrepareCombatMessage(combatMessage)
-  status, _ = mod.parser.ParseCombatText(combatMessage, mod.testHelper.eventTypeSpellPeriodicHostilePlayerBuffs)
-
-  if status == 1 then
-    mod.testReporter.ReportSuccessTest(className, testName, testType,
-      string.format("Successfully parsed combatText for %s", spellName))
-  else
-    mod.testReporter.ReportFailTest(className, testName, testType,
-      string.format("Failed to parse combatText for %s", spellName))
-  end
-
-  mod.testReporter.EndTest(className, testType, testName)
+  mod.testHelper.TestParse(
+    className,
+    "TestParseRecklessness",
+    "recklessness",
+    "$player$ gains Recklessness.",
+    mod.testHelper.eventTypeSpellPeriodicHostilePlayerBuffs
+  )
 end
 
 function me.TestParseDownRecklessness()
-  local testName = "TestParseDownRecklessness"
-  local spellName = "recklessness"
-  local combatMessage = "Recklessness fades from $player$."
-  local testType = mod.testHelper.testType.parseDown
-  local status
-
-  mod.testReporter.StartTest(className, testType, testName)
-
-  combatMessage = mod.testHelper.PrepareCombatMessage(combatMessage)
-  status, _ = mod.parser.ParseCombatText(combatMessage, mod.testHelper.eventTypeSpellAuraGoneOther)
-
-  if status == 1 then
-    mod.testReporter.ReportSuccessTest(className, testName, testType,
-      string.format("Successfully parsed combatText for %s", spellName))
-  else
-    mod.testReporter.ReportFailTest(className, testName, testType,
-      string.format("Failed to parse combatText for %s", spellName))
-  end
-
-  mod.testReporter.EndTest(className, testType, testName)
+  mod.testHelper.TestParseDown(
+    className,
+    "TestParseDownRecklessness",
+    "recklessness",
+    "Recklessness fades from $player$.",
+    mod.testHelper.eventTypeSpellAuraGoneOther
+  )
 end
 
 function me.TestParseShieldWall()
-  local testName = "TestParseShieldWall"
-  local spellName = "shield_wall"
-  local combatMessage = "$player$ gains Shield Wall."
-  local testType = mod.testHelper.testType.parse
-  local status
-
-  mod.testReporter.StartTest(className, testType, testName)
-
-  combatMessage = mod.testHelper.PrepareCombatMessage(combatMessage)
-  status, _ = mod.parser.ParseCombatText(combatMessage, mod.testHelper.eventTypeSpellPeriodicHostilePlayerBuffs)
-
-  if status == 1 then
-    mod.testReporter.ReportSuccessTest(className, testName, testType,
-      string.format("Successfully parsed combatText for %s", spellName))
-  else
-    mod.testReporter.ReportFailTest(className, testName, testType,
-      string.format("Failed to parse combatText for %s", spellName))
-  end
-
-  mod.testReporter.EndTest(className, testType, testName)
+  mod.testHelper.TestParse(
+    className,
+    "TestParseShieldWall",
+    "shield_wall",
+    "$player$ gains Shield Wall.",
+    mod.testHelper.eventTypeSpellPeriodicHostilePlayerBuffs
+  )
 end
 
 function me.TestParseDownShieldWall()
-  local testName = "TestParseDownShieldWall"
-  local spellName = "shield_wall"
-  local combatMessage = "Shield Wall fades from $player$."
-  local testType = mod.testHelper.testType.parseDown
-  local status
-
-  mod.testReporter.StartTest(className, testType, testName)
-
-  combatMessage = mod.testHelper.PrepareCombatMessage(combatMessage)
-  status, _ = mod.parser.ParseCombatText(combatMessage, mod.testHelper.eventTypeSpellAuraGoneOther)
-
-  if status == 1 then
-    mod.testReporter.ReportSuccessTest(className, testName, testType,
-      string.format("Successfully parsed combatText for %s", spellName))
-  else
-    mod.testReporter.ReportFailTest(className, testName, testType,
-      string.format("Failed to parse combatText for %s", spellName))
-  end
-
-  mod.testReporter.EndTest(className, testType, testName)
+  mod.testHelper.TestParseDown(
+    className,
+    "TestParseDownShieldWall",
+    "shield_wall",
+    "Shield Wall fades from $player$.",
+    mod.testHelper.eventTypeSpellAuraGoneOther
+  )
 end
 
 function me.TestParseBattleStance()
-  local testName = "TestParseBattleStance"
-  local spellName = "battle_stance"
-  local combatMessage = "$player$ gains Battle Stance."
-  local testType = mod.testHelper.testType.parse
-  local status
-
-  mod.testReporter.StartTest(className, testType, testName)
-
-  combatMessage = mod.testHelper.PrepareCombatMessage(combatMessage)
-  status, _ = mod.parser.ParseCombatText(combatMessage, mod.testHelper.eventTypeSpellPeriodicHostilePlayerBuffs)
-
-  if status == 1 then
-    mod.testReporter.ReportSuccessTest(className, testName, testType,
-      string.format("Successfully parsed combatText for %s", spellName))
-  else
-    mod.testReporter.ReportFailTest(className, testName, testType,
-      string.format("Failed to parse combatText for %s", spellName))
-  end
-
-  mod.testReporter.EndTest(className, testType, testName)
+  mod.testHelper.TestParse(
+    className,
+    "TestParseBattleStance",
+    "battle_stance",
+    "$player$ gains Battle Stance.",
+    mod.testHelper.eventTypeSpellPeriodicHostilePlayerBuffs
+  )
 end
 
 function me.TestParseBerserkerStance()
-  local testName = "TestParseBerserkerStance"
-  local spellName = "berserker_stance"
-  local combatMessage = "$player$ gains Berserker Stance."
-  local testType = mod.testHelper.testType.parse
-  local status
-
-  mod.testReporter.StartTest(className, testType, testName)
-
-  combatMessage = mod.testHelper.PrepareCombatMessage(combatMessage)
-  status, _ = mod.parser.ParseCombatText(combatMessage, mod.testHelper.eventTypeSpellPeriodicHostilePlayerBuffs)
-
-  if status == 1 then
-    mod.testReporter.ReportSuccessTest(className, testName, testType,
-      string.format("Successfully parsed combatText for %s", spellName))
-  else
-    mod.testReporter.ReportFailTest(className, testName, testType,
-      string.format("Failed to parse combatText for %s", spellName))
-  end
-
-  mod.testReporter.EndTest(className, testType, testName)
+  mod.testHelper.TestParse(
+    className,
+    "TestParseBerserkerStance",
+    "berserker_stance",
+    "$player$ gains Berserker Stance.",
+    mod.testHelper.eventTypeSpellPeriodicHostilePlayerBuffs
+  )
 end
 
 function me.TestParseDefensiveStance()
-  local testName = "TestParseDefensiveStance"
-  local spellName = "defensive_stance"
-  local combatMessage = "$player$ gains Defensive Stance."
-  local testType = mod.testHelper.testType.parse
-  local status
-
-  mod.testReporter.StartTest(className, testType, testName)
-
-  combatMessage = mod.testHelper.PrepareCombatMessage(combatMessage)
-  status, _ = mod.parser.ParseCombatText(combatMessage, mod.testHelper.eventTypeSpellPeriodicHostilePlayerBuffs)
-
-  if status == 1 then
-    mod.testReporter.ReportSuccessTest(className, testName, testType,
-      string.format("Successfully parsed combatText for %s", spellName))
-  else
-    mod.testReporter.ReportFailTest(className, testName, testType,
-      string.format("Failed to parse combatText for %s", spellName))
-  end
-
-  mod.testReporter.EndTest(className, testType, testName)
+  mod.testHelper.TestParse(
+    className,
+    "TestParseDefensiveStance",
+    "defensive_stance",
+    "$player$ gains Defensive Stance.",
+    mod.testHelper.eventTypeSpellPeriodicHostilePlayerBuffs
+  )
 end
 
 function me.TestParseLastStand()
-  local testName = "TestParseLastStand"
-  local spellName = "last_stand"
-  local combatMessage = "$player$ gains Last Stand."
-  local testType = mod.testHelper.testType.parse
-  local status
-
-  mod.testReporter.StartTest(className, testType, testName)
-
-  combatMessage = mod.testHelper.PrepareCombatMessage(combatMessage)
-  status, _ = mod.parser.ParseCombatText(combatMessage, mod.testHelper.eventTypeSpellPeriodicHostilePlayerBuffs)
-
-  if status == 1 then
-    mod.testReporter.ReportSuccessTest(className, testName, testType,
-      string.format("Successfully parsed combatText for %s", spellName))
-  else
-    mod.testReporter.ReportFailTest(className, testName, testType,
-      string.format("Failed to parse combatText for %s", spellName))
-  end
-
-  mod.testReporter.EndTest(className, testType, testName)
+  mod.testHelper.TestParse(
+    className,
+    "TestParseLastStand",
+    "last_stand",
+    "$player$ gains Last Stand.",
+    mod.testHelper.eventTypeSpellPeriodicHostilePlayerBuffs
+  )
 end
 
 function me.TestParseDownLastStand()
-  local testName = "TestParseDownLastStand"
-  local spellName = "last_stand"
-  local combatMessage = "Last Stand fades from $player$."
-  local testType = mod.testHelper.testType.parseDown
-  local status
-
-  mod.testReporter.StartTest(className, testType, testName)
-
-  combatMessage = mod.testHelper.PrepareCombatMessage(combatMessage)
-  status, _ = mod.parser.ParseCombatText(combatMessage, mod.testHelper.eventTypeSpellAuraGoneOther)
-
-  if status == 1 then
-    mod.testReporter.ReportSuccessTest(className, testName, testType,
-      string.format("Successfully parsed combatText for %s", spellName))
-  else
-    mod.testReporter.ReportFailTest(className, testName, testType,
-      string.format("Failed to parse combatText for %s", spellName))
-  end
-
-  mod.testReporter.EndTest(className, testType, testName)
+  mod.testHelper.TestParseDown(
+    className,
+    "TestParseDownLastStand",
+    "last_stand",
+    "Last Stand fades from $player$.",
+    mod.testHelper.eventTypeSpellAuraGoneOther
+  )
 end
 
 function me.TestParseBloodrage()
-  local testName = "TestParseBloodrage"
-  local spellName = "bloodrage"
-  local combatMessage = "$player$ gains Bloodrage."
-  local testType = mod.testHelper.testType.parse
-  local status
-
-  mod.testReporter.StartTest(className, testType, testName)
-
-  combatMessage = mod.testHelper.PrepareCombatMessage(combatMessage)
-  status, _ = mod.parser.ParseCombatText(combatMessage, mod.testHelper.eventTypeSpellPeriodicHostilePlayerBuffs)
-
-  if status == 1 then
-    mod.testReporter.ReportSuccessTest(className, testName, testType,
-      string.format("Successfully parsed combatText for %s", spellName))
-  else
-    mod.testReporter.ReportFailTest(className, testName, testType,
-      string.format("Failed to parse combatText for %s", spellName))
-  end
-
-  mod.testReporter.EndTest(className, testType, testName)
+  mod.testHelper.TestParse(
+    className,
+    "TestParseBloodrage",
+    "bloodrage",
+    "$player$ gains Bloodrage.",
+    mod.testHelper.eventTypeSpellPeriodicHostilePlayerBuffs
+  )
 end
 
 function me.TestParseDownBloodrage()
-  local testName = "TestParseDownBloodrage"
-  local spellName = "bloodrage"
-  local combatMessage = "Bloodrage fades from $player$."
-  local testType = mod.testHelper.testType.parseDown
-  local status
-
-  mod.testReporter.StartTest(className, testType, testName)
-
-  combatMessage = mod.testHelper.PrepareCombatMessage(combatMessage)
-  status, _ = mod.parser.ParseCombatText(combatMessage, mod.testHelper.eventTypeSpellAuraGoneOther)
-
-  if status == 1 then
-    mod.testReporter.ReportSuccessTest(className, testName, testType,
-      string.format("Successfully parsed combatText for %s", spellName))
-  else
-    mod.testReporter.ReportFailTest(className, testName, testType,
-      string.format("Failed to parse combatText for %s", spellName))
-  end
-
-  mod.testReporter.EndTest(className, testType, testName)
+  mod.testHelper.TestParseDown(
+    className,
+    "TestParseDownBloodrage",
+    "bloodrage",
+    "Bloodrage fades from $player$.",
+    mod.testHelper.eventTypeSpellAuraGoneOther
+  )
 end
 
 function me.TestParseInterceptStun()
-  local testName = "TestParseInterceptStun"
-  local spellName = "intercept_stun"
-  local combatMessage = "You are afflicted by Intercept Stun."
-  local testType = mod.testHelper.testType.parse
-  local status
-
-  mod.testReporter.StartTest(className, testType, testName)
-
-  combatMessage = mod.testHelper.PrepareCombatMessage(combatMessage)
-  status, _ = mod.parser.ParseCombatText(combatMessage, mod.testHelper.eventTypeSpellPeriodicSelfDamage)
-
-  if status == 1 then
-    mod.testReporter.ReportSuccessTest(className, testName, testType,
-      string.format("Successfully parsed combatText for %s", spellName))
-  else
-    mod.testReporter.ReportFailTest(className, testName, testType,
-      string.format("Failed to parse combatText for %s", spellName))
-  end
-
-  mod.testReporter.EndTest(className, testType, testName)
+  mod.testHelper.TestParse(
+    className,
+    "TestParseInterceptStun",
+    "intercept_stun",
+    "You are afflicted by Intercept Stun.",
+    mod.testHelper.eventTypeSpellPeriodicSelfDamage
+  )
 end
 
 function me.TestParseDisarm()
-  local testName = "TestParseDisarm"
-  local spellName = "disarm"
-  local combatMessage = "You are afflicted by Disarm."
-  local testType = mod.testHelper.testType.parse
-  local status
-
-  mod.testReporter.StartTest(className, testType, testName)
-
-  combatMessage = mod.testHelper.PrepareCombatMessage(combatMessage)
-  status, _ = mod.parser.ParseCombatText(combatMessage, mod.testHelper.eventTypeSpellPeriodicSelfDamage)
-
-  if status == 1 then
-    mod.testReporter.ReportSuccessTest(className, testName, testType,
-      string.format("Successfully parsed combatText for %s", spellName))
-  else
-    mod.testReporter.ReportFailTest(className, testName, testType,
-      string.format("Failed to parse combatText for %s", spellName))
-  end
-
-  mod.testReporter.EndTest(className, testType, testName)
+  mod.testHelper.TestParse(
+    className,
+    "TestParseDisarm",
+    "disarm",
+    "You are afflicted by Disarm.",
+    mod.testHelper.eventTypeSpellPeriodicSelfDamage
+  )
 end
 
 function me.TestParseConcussionBlow()
-  local testName = "TestParseConcussionBlow"
-  local spellName = "concussion_blow"
-  local combatMessage = "You are afflicted by Concussion Blow."
-  local testType = mod.testHelper.testType.parse
-  local status
-
-  mod.testReporter.StartTest(className, testType, testName)
-
-  combatMessage = mod.testHelper.PrepareCombatMessage(combatMessage)
-  status, _ = mod.parser.ParseCombatText(combatMessage, mod.testHelper.eventTypeSpellPeriodicSelfDamage)
-
-  if status == 1 then
-    mod.testReporter.ReportSuccessTest(className, testName, testType,
-      string.format("Successfully parsed combatText for %s", spellName))
-  else
-    mod.testReporter.ReportFailTest(className, testName, testType,
-      string.format("Failed to parse combatText for %s", spellName))
-  end
-
-  mod.testReporter.EndTest(className, testType, testName)
+  mod.testHelper.TestParse(
+    className,
+    "TestParseConcussionBlow",
+    "concussion_blow",
+    "You are afflicted by Concussion Blow.",
+    mod.testHelper.eventTypeSpellPeriodicSelfDamage
+  )
 end
 
 function me.TestParseChargeStun()
-  local testName = "TestParseChargeStun"
-  local spellName = "charge_stun"
-  local combatMessage = "You are afflicted by Charge Stun."
-  local testType = mod.testHelper.testType.parse
-  local status
-
-  mod.testReporter.StartTest(className, testType, testName)
-
-  combatMessage = mod.testHelper.PrepareCombatMessage(combatMessage)
-  status, _ = mod.parser.ParseCombatText(combatMessage, mod.testHelper.eventTypeSpellPeriodicSelfDamage)
-
-  if status == 1 then
-    mod.testReporter.ReportSuccessTest(className, testName, testType,
-      string.format("Successfully parsed combatText for %s", spellName))
-  else
-    mod.testReporter.ReportFailTest(className, testName, testType,
-      string.format("Failed to parse combatText for %s", spellName))
-  end
-
-  mod.testReporter.EndTest(className, testType, testName)
+  mod.testHelper.TestParse(
+    className,
+    "TestParseChargeStun",
+    "charge_stun",
+    "You are afflicted by Charge Stun.",
+    mod.testHelper.eventTypeSpellPeriodicSelfDamage
+  )
 end
 
 function me.TestParseIntimidatingShout()
-  local testName = "TestParseIntimidatingShout"
-  local spellName = "intimidating_shout"
-  local combatMessage = "You are afflicted by Intimidating Shout."
-  local testType = mod.testHelper.testType.parse
-  local status
-
-  mod.testReporter.StartTest(className, testType, testName)
-
-  combatMessage = mod.testHelper.PrepareCombatMessage(combatMessage)
-  status, _ = mod.parser.ParseCombatText(combatMessage, mod.testHelper.eventTypeSpellPeriodicSelfDamage)
-
-  if status == 1 then
-    mod.testReporter.ReportSuccessTest(className, testName, testType,
-      string.format("Successfully parsed combatText for %s", spellName))
-  else
-    mod.testReporter.ReportFailTest(className, testName, testType,
-      string.format("Failed to parse combatText for %s", spellName))
-  end
-
-  mod.testReporter.EndTest(className, testType, testName)
+  mod.testHelper.TestParse(
+    className,
+    "TestParseIntimidatingShout",
+    "intimidating_shout",
+    "You are afflicted by Intimidating Shout.",
+    mod.testHelper.eventTypeSpellPeriodicSelfDamage
+  )
 end
 
 function me.TestParsePummel()
-  local testName = "TestParsePummel"
-  local spellName = "pummel"
-  local combatMessage = "$player$'s Pummel hits you for $amount$."
-  local testType = mod.testHelper.testType.parse
-  local status
-
-  mod.testReporter.StartTest(className, testType, testName)
-
-  combatMessage = mod.testHelper.PrepareCombatMessage(combatMessage)
-  status, _ = mod.parser.ParseCombatText(combatMessage, mod.testHelper.eventTypeSpellHostilePlayerDamage)
-
-  if status == 1 then
-    mod.testReporter.ReportSuccessTest(className, testName, testType,
-      string.format("Successfully parsed combatText for %s", spellName))
-  else
-    mod.testReporter.ReportFailTest(className, testName, testType,
-      string.format("Failed to parse combatText for %s", spellName))
-  end
-
-  mod.testReporter.EndTest(className, testType, testName)
+  mod.testHelper.TestParse(
+    className,
+    "TestParsePummel",
+    "pummel",
+    "$player$'s Pummel hits you for $amount$.",
+    mod.testHelper.eventTypeSpellHostilePlayerDamage
+  )
 end
 
 function me.TestParseCritPummel()
-  local testName = "TestParseCritPummel"
-  local spellName = "pummel"
-  local combatMessage = "$player$'s Pummel crits you for $amount$."
-  local testType = mod.testHelper.testType.parse
-  local status
-
-  mod.testReporter.StartTest(className, testType, testName)
-
-  combatMessage = mod.testHelper.PrepareCombatMessage(combatMessage)
-  status, _ = mod.parser.ParseCombatText(combatMessage, mod.testHelper.eventTypeSpellHostilePlayerDamage)
-
-  if status == 1 then
-    mod.testReporter.ReportSuccessTest(className, testName, testType,
-      string.format("Successfully parsed combatText for %s", spellName))
-  else
-    mod.testReporter.ReportFailTest(className, testName, testType,
-      string.format("Failed to parse combatText for %s", spellName))
-  end
-
-  mod.testReporter.EndTest(className, testType, testName)
+  mod.testHelper.TestParse(
+    className,
+    "TestParseCritPummel",
+    "pummel",
+    "$player$'s Pummel crits you for $amount$.",
+    mod.testHelper.eventTypeSpellHostilePlayerDamage
+  )
 end
 
 function me.TestParseShieldBlock()
-  local testName = "TestParseShieldBlock"
-  local spellName = "shield_block"
-  local combatMessage = "$player$ gains Shield Block."
-  local testType = mod.testHelper.testType.parse
-  local status
-
-  mod.testReporter.StartTest(className, testType, testName)
-
-  combatMessage = mod.testHelper.PrepareCombatMessage(combatMessage)
-  status, _ = mod.parser.ParseCombatText(combatMessage, mod.testHelper.eventTypeSpellPeriodicHostilePlayerBuffs)
-
-  if status == 1 then
-    mod.testReporter.ReportSuccessTest(className, testName, testType,
-      string.format("Successfully parsed combatText for %s", spellName))
-  else
-    mod.testReporter.ReportFailTest(className, testName, testType,
-      string.format("Failed to parse combatText for %s", spellName))
-  end
-
-  mod.testReporter.EndTest(className, testType, testName)
+  mod.testHelper.TestParse(
+    className,
+    "TestParseShieldBlock",
+    "shield_block",
+    "$player$ gains Shield Block.",
+    mod.testHelper.eventTypeSpellPeriodicHostilePlayerBuffs
+  )
 end
 
 function me.TestParseDownShieldBlock()
-  local testName = "TestParseDownShieldBlock"
-  local spellName = "shield_block"
-  local combatMessage = "Shield Block fades from $player$."
-  local testType = mod.testHelper.testType.parseDown
-  local status
-
-  mod.testReporter.StartTest(className, testType, testName)
-
-  combatMessage = mod.testHelper.PrepareCombatMessage(combatMessage)
-  status, _ = mod.parser.ParseCombatText(combatMessage, mod.testHelper.eventTypeSpellAuraGoneOther)
-
-  if status == 1 then
-    mod.testReporter.ReportSuccessTest(className, testName, testType,
-      string.format("Successfully parsed combatText for %s", spellName))
-  else
-    mod.testReporter.ReportFailTest(className, testName, testType,
-      string.format("Failed to parse combatText for %s", spellName))
-  end
-
-  mod.testReporter.EndTest(className, testType, testName)
+  mod.testHelper.TestParseDown(
+    className,
+    "TestParseDownShieldBlock",
+    "shield_block",
+    "Shield Block fades from $player$.",
+    mod.testHelper.eventTypeSpellAuraGoneOther
+  )
 end
 
 function me.TestParseEnemyAvoidImmuneChargeStun()
-  local testName = "TestParseEnemyAvoidImmuneChargeStun"
-  local spellName = "charge_stun"
-  local combatMessage = "Your Charge Stun failed. $player$ is immune."
-  local testType = mod.testHelper.testType.parseAvoid
-  local status
-
-  mod.testReporter.StartTest(className, testType, testName)
-
-  combatMessage = mod.testHelper.PrepareCombatMessage(combatMessage)
-  status, _ = mod.parser.ParseCombatText(combatMessage, mod.testHelper.eventTypeSpellDamageShieldsOnSelf)
-
-  if status == 1 then
-    mod.testReporter.ReportSuccessTest(className, testName, testType,
-      string.format("Successfully parsed avoid immune combatText for %s", spellName))
-  else
-    mod.testReporter.ReportFailTest(className, testName, testType,
-      string.format("Failed to parse avoid immune combatText for %s", spellName))
-  end
-
-  mod.testReporter.EndTest(className, testType, testName)
+  mod.testHelper.TestParseEnemyAvoid(
+    className,
+    "TestParseEnemyAvoidImmuneChargeStun",
+    "charge_stun",
+    "Your Charge Stun failed. $player$ is immune.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    PVPW_CONSTANTS.AVOID_TYPES.IMMUNE
+  )
 end
 
 function me.TestParseEnemyAvoidResistChargeStun()
-  local testName = "TestParseEnemyAvoidResistChargeStun"
-  local spellName = "charge_stun"
-  local combatMessage = "Your Charge Stun was resisted by $player$."
-  local testType = mod.testHelper.testType.parseAvoid
-  local status
-
-  mod.testReporter.StartTest(className, testType, testName)
-
-  combatMessage = mod.testHelper.PrepareCombatMessage(combatMessage)
-  status, _ = mod.parser.ParseCombatText(combatMessage, mod.testHelper.eventTypeSpellDamageShieldsOnSelf)
-
-  if status == 1 then
-    mod.testReporter.ReportSuccessTest(className, testName, testType,
-      string.format("Successfully parsed avoid resist combatText for %s", spellName))
-  else
-    mod.testReporter.ReportFailTest(className, testName, testType,
-      string.format("Failed to parse avoid resist combatText for %s", spellName))
-  end
-
-  mod.testReporter.EndTest(className, testType, testName)
+  mod.testHelper.TestParseEnemyAvoid(
+    className,
+    "TestParseEnemyAvoidResistChargeStun",
+    "charge_stun",
+    "Your Charge Stun was resisted by $player$.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    PVPW_CONSTANTS.AVOID_TYPES.RESIST
+  )
 end
 
 function me.TestParseEnemyAvoidDodgeHamstring()
-  local testName = "TestParseEnemyAvoidDodgeHamstring"
-  local spellName = "hamstring"
-  local combatMessage = "Your Hamstring was dodged by $player$."
-  local testType = mod.testHelper.testType.parseAvoid
-  local status
-
-  mod.testReporter.StartTest(className, testType, testName)
-
-  combatMessage = mod.testHelper.PrepareCombatMessage(combatMessage)
-  status, _ = mod.parser.ParseCombatText(combatMessage, mod.testHelper.eventTypeSpellDamageShieldsOnSelf)
-
-  if status == 1 then
-    mod.testReporter.ReportSuccessTest(className, testName, testType,
-      string.format("Successfully parsed avoid dodge combatText for %s", spellName))
-  else
-    mod.testReporter.ReportFailTest(className, testName, testType,
-      string.format("Failed to parse avoid dodge combatText for %s", spellName))
-  end
-
-  mod.testReporter.EndTest(className, testType, testName)
+  mod.testHelper.TestParseEnemyAvoid(
+    className,
+    "TestParseEnemyAvoidDodgeHamstring",
+    "hamstring",
+    "Your Hamstring was dodged by $player$.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    PVPW_CONSTANTS.AVOID_TYPES.DODGE
+  )
 end
 
 function me.TestParseEnemyAvoidParryHamstring()
-  local testName = "TestParseEnemyAvoidParryHamstring"
-  local spellName = "hamstring"
-  local combatMessage = "Your Hamstring is parried by $player$."
-  local testType = mod.testHelper.testType.parseAvoid
-  local status
-
-  mod.testReporter.StartTest(className, testType, testName)
-
-  combatMessage = mod.testHelper.PrepareCombatMessage(combatMessage)
-  status, _ = mod.parser.ParseCombatText(combatMessage, mod.testHelper.eventTypeSpellDamageShieldsOnSelf)
-
-  if status == 1 then
-    mod.testReporter.ReportSuccessTest(className, testName, testType,
-      string.format("Successfully parsed avoid parry combatText for %s", spellName))
-  else
-    mod.testReporter.ReportFailTest(className, testName, testType,
-      string.format("Failed to parse avoid parry combatText for %s", spellName))
-  end
-
-  mod.testReporter.EndTest(className, testType, testName)
+  mod.testHelper.TestParseEnemyAvoid(
+    className,
+    "TestParseEnemyAvoidParryHamstring",
+    "hamstring",
+    "Your Hamstring is parried by $player$.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    PVPW_CONSTANTS.AVOID_TYPES.PARRY
+  )
 end
 
 function me.TestParseEnemyAvoidImmuneHamstring()
-  local testName = "TestParseEnemyAvoidImmuneHamstring"
-  local spellName = "hamstring"
-  local combatMessage = "Your Hamstring failed. $player$ is immune."
-  local testType = mod.testHelper.testType.parseAvoid
-  local status
-
-  mod.testReporter.StartTest(className, testType, testName)
-
-  combatMessage = mod.testHelper.PrepareCombatMessage(combatMessage)
-  status, _ = mod.parser.ParseCombatText(combatMessage, mod.testHelper.eventTypeSpellDamageShieldsOnSelf)
-
-  if status == 1 then
-    mod.testReporter.ReportSuccessTest(className, testName, testType,
-      string.format("Successfully parsed avoid immune combatText for %s", spellName))
-  else
-    mod.testReporter.ReportFailTest(className, testName, testType,
-      string.format("Failed to parse avoid immune combatText for %s", spellName))
-  end
-
-  mod.testReporter.EndTest(className, testType, testName)
+  mod.testHelper.TestParseEnemyAvoid(
+    className,
+    "TestParseEnemyAvoidImmuneHamstring",
+    "hamstring",
+    "Your Hamstring failed. $player$ is immune.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    PVPW_CONSTANTS.AVOID_TYPES.IMMUNE
+  )
 end
 
 function me.TestParseEnemyAvoidMissHamstring()
-  local testName = "TestParseEnemyAvoidMissHamstring"
-  local spellName = "hamstring"
-  local combatMessage = "Your Hamstring missed $player$."
-  local testType = mod.testHelper.testType.parseAvoid
-  local status
-
-  mod.testReporter.StartTest(className, testType, testName)
-
-  combatMessage = mod.testHelper.PrepareCombatMessage(combatMessage)
-  status, _ = mod.parser.ParseCombatText(combatMessage, mod.testHelper.eventTypeSpellDamageShieldsOnSelf)
-
-  if status == 1 then
-    mod.testReporter.ReportSuccessTest(className, testName, testType,
-      string.format("Successfully parsed avoid miss combatText for %s", spellName))
-  else
-    mod.testReporter.ReportFailTest(className, testName, testType,
-      string.format("Failed to parse avoid miss combatText for %s", spellName))
-  end
-
-  mod.testReporter.EndTest(className, testType, testName)
+  mod.testHelper.TestParseEnemyAvoid(
+    className,
+    "TestParseEnemyAvoidMissHamstring",
+    "hamstring",
+    "Your Hamstring missed $player$.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    PVPW_CONSTANTS.AVOID_TYPES.MISS
+  )
 end
 
 function me.TestParseEnemyAvoidBlockHamstring()
-  local testName = "TestParseEnemyAvoidBlockHamstring"
-  local spellName = "hamstring"
-  local combatMessage = "Your Hamstring was blocked by $player$."
-  local testType = mod.testHelper.testType.parseAvoid
-  local status
-
-  mod.testReporter.StartTest(className, testType, testName)
-
-  combatMessage = mod.testHelper.PrepareCombatMessage(combatMessage)
-  status, _ = mod.parser.ParseCombatText(combatMessage, mod.testHelper.eventTypeSpellSelfDamage)
-
-  if status == 1 then
-    mod.testReporter.ReportSuccessTest(className, testName, testType,
-      string.format("Successfully parsed avoid block combatText for %s", spellName))
-  else
-    mod.testReporter.ReportFailTest(className, testName, testType,
-      string.format("Failed to parse avoid block combatText for %s", spellName))
-  end
-
-  mod.testReporter.EndTest(className, testType, testName)
+  mod.testHelper.TestParseEnemyAvoid(
+    className,
+    "TestParseEnemyAvoidBlockHamstring",
+    "hamstring",
+    "Your Hamstring was blocked by $player$.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    PVPW_CONSTANTS.AVOID_TYPES.BLOCK
+  )
 end
 
 function me.TestParseEnemyAvoidDodgeMortalStrike()
-  local testName = "TestParseEnemyAvoidDodgeMortalStrike"
-  local spellName = "mortal_strike"
-  local combatMessage = "Your Mortal Strike was dodged by $player$."
-  local testType = mod.testHelper.testType.parseAvoid
-  local status
-
-  mod.testReporter.StartTest(className, testType, testName)
-
-  combatMessage = mod.testHelper.PrepareCombatMessage(combatMessage)
-  status, _ = mod.parser.ParseCombatText(combatMessage, mod.testHelper.eventTypeSpellDamageShieldsOnSelf)
-
-  if status == 1 then
-    mod.testReporter.ReportSuccessTest(className, testName, testType,
-      string.format("Successfully parsed avoid dodge combatText for %s", spellName))
-  else
-    mod.testReporter.ReportFailTest(className, testName, testType,
-      string.format("Failed to parse avoid dodge combatText for %s", spellName))
-  end
-
-  mod.testReporter.EndTest(className, testType, testName)
+  mod.testHelper.TestParseEnemyAvoid(
+    className,
+    "TestParseEnemyAvoidDodgeMortalStrike",
+    "mortal_strike",
+    "Your Mortal Strike was dodged by $player$.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    PVPW_CONSTANTS.AVOID_TYPES.DODGE
+  )
 end
 
 function me.TestParseEnemyAvoidParryMortalStrike()
-  local testName = "TestParseEnemyAvoidParryMortalStrike"
-  local spellName = "mortal_strike"
-  local combatMessage = "Your Mortal Strike is parried by $player$."
-  local testType = mod.testHelper.testType.parseAvoid
-  local status
-
-  mod.testReporter.StartTest(className, testType, testName)
-
-  combatMessage = mod.testHelper.PrepareCombatMessage(combatMessage)
-  status, _ = mod.parser.ParseCombatText(combatMessage, mod.testHelper.eventTypeSpellDamageShieldsOnSelf)
-
-  if status == 1 then
-    mod.testReporter.ReportSuccessTest(className, testName, testType,
-      string.format("Successfully parsed avoid parry combatText for %s", spellName))
-  else
-    mod.testReporter.ReportFailTest(className, testName, testType,
-      string.format("Failed to parse avoid parry combatText for %s", spellName))
-  end
-
-  mod.testReporter.EndTest(className, testType, testName)
+  mod.testHelper.TestParseEnemyAvoid(
+    className,
+    "TestParseEnemyAvoidParryMortalStrike",
+    "mortal_strike",
+    "Your Mortal Strike is parried by $player$.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    PVPW_CONSTANTS.AVOID_TYPES.PARRY
+  )
 end
 
 function me.TestParseEnemyAvoidImmuneMortalStrike()
-  local testName = "TestParseEnemyAvoidImmuneMortalStrike"
-  local spellName = "mortal_strike"
-  local combatMessage = "Your Mortal Strike failed. $player$ is immune."
-  local testType = mod.testHelper.testType.parseAvoid
-  local status
-
-  mod.testReporter.StartTest(className, testType, testName)
-
-  combatMessage = mod.testHelper.PrepareCombatMessage(combatMessage)
-  status, _ = mod.parser.ParseCombatText(combatMessage, mod.testHelper.eventTypeSpellDamageShieldsOnSelf)
-
-  if status == 1 then
-    mod.testReporter.ReportSuccessTest(className, testName, testType,
-      string.format("Successfully parsed avoid immune combatText for %s", spellName))
-  else
-    mod.testReporter.ReportFailTest(className, testName, testType,
-      string.format("Failed to parse avoid immune combatText for %s", spellName))
-  end
-
-  mod.testReporter.EndTest(className, testType, testName)
+  mod.testHelper.TestParseEnemyAvoid(
+    className,
+    "TestParseEnemyAvoidImmuneMortalStrike",
+    "mortal_strike",
+    "Your Mortal Strike failed. $player$ is immune.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    PVPW_CONSTANTS.AVOID_TYPES.IMMUNE
+  )
 end
 
 function me.TestParseEnemyAvoidMissMortalStrike()
-  local testName = "TestParseEnemyAvoidMissMortalStrike"
-  local spellName = "mortal_strike"
-  local combatMessage = "Your Mortal Strike missed $player$."
-  local testType = mod.testHelper.testType.parseAvoid
-  local status
-
-  mod.testReporter.StartTest(className, testType, testName)
-
-  combatMessage = mod.testHelper.PrepareCombatMessage(combatMessage)
-  status, _ = mod.parser.ParseCombatText(combatMessage, mod.testHelper.eventTypeSpellDamageShieldsOnSelf)
-
-  if status == 1 then
-    mod.testReporter.ReportSuccessTest(className, testName, testType,
-      string.format("Successfully parsed avoid miss combatText for %s", spellName))
-  else
-    mod.testReporter.ReportFailTest(className, testName, testType,
-      string.format("Failed to parse avoid miss combatText for %s", spellName))
-  end
-
-  mod.testReporter.EndTest(className, testType, testName)
+  mod.testHelper.TestParseEnemyAvoid(
+    className,
+    "TestParseEnemyAvoidMissMortalStrike",
+    "mortal_strike",
+    "Your Mortal Strike missed $player$.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    PVPW_CONSTANTS.AVOID_TYPES.MISS
+  )
 end
 
 function me.TestParseEnemyAvoidBlockMortalStrike()
-  local testName = "TestParseEnemyAvoidBlockMortalStrike"
-  local spellName = "mortal_strike"
-  local combatMessage = "Your Mortal Strike was blocked by $player$."
-  local testType = mod.testHelper.testType.parseAvoid
-  local status
-
-  mod.testReporter.StartTest(className, testType, testName)
-
-  combatMessage = mod.testHelper.PrepareCombatMessage(combatMessage)
-  status, _ = mod.parser.ParseCombatText(combatMessage, mod.testHelper.eventTypeSpellSelfDamage)
-
-  if status == 1 then
-    mod.testReporter.ReportSuccessTest(className, testName, testType,
-      string.format("Successfully parsed avoid block combatText for %s", spellName))
-  else
-    mod.testReporter.ReportFailTest(className, testName, testType,
-      string.format("Failed to parse avoid block combatText for %s", spellName))
-  end
-
-  mod.testReporter.EndTest(className, testType, testName)
+  mod.testHelper.TestParseEnemyAvoid(
+    className,
+    "TestParseEnemyAvoidBlockMortalStrike",
+    "mortal_strike",
+    "Your Mortal Strike was blocked by $player$.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    PVPW_CONSTANTS.AVOID_TYPES.BLOCK
+  )
 end
 
 function me.TestParseEnemyAvoidImmuneOverpower()
-  local testName = "TestParseEnemyAvoidImmuneOverpower"
-  local spellName = "overpower"
-  local combatMessage = "Your Overpower failed. $player$ is immune."
-  local testType = mod.testHelper.testType.parseAvoid
-  local status
-
-  mod.testReporter.StartTest(className, testType, testName)
-
-  combatMessage = mod.testHelper.PrepareCombatMessage(combatMessage)
-  status, _ = mod.parser.ParseCombatText(combatMessage, mod.testHelper.eventTypeSpellDamageShieldsOnSelf)
-
-  if status == 1 then
-    mod.testReporter.ReportSuccessTest(className, testName, testType,
-      string.format("Successfully parsed avoid immune combatText for %s", spellName))
-  else
-    mod.testReporter.ReportFailTest(className, testName, testType,
-      string.format("Failed to parse avoid immune combatText for %s", spellName))
-  end
-
-  mod.testReporter.EndTest(className, testType, testName)
+  mod.testHelper.TestParseEnemyAvoid(
+    className,
+    "TestParseEnemyAvoidImmuneOverpower",
+    "overpower",
+    "Your Overpower failed. $player$ is immune.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    PVPW_CONSTANTS.AVOID_TYPES.IMMUNE
+  )
 end
 
 function me.TestParseEnemyAvoidMissOverpower()
-  local testName = "TestParseEnemyAvoidMissOverpower"
-  local spellName = "overpower"
-  local combatMessage = "Your Overpower missed $player$."
-  local testType = mod.testHelper.testType.parseAvoid
-  local status
-
-  mod.testReporter.StartTest(className, testType, testName)
-
-  combatMessage = mod.testHelper.PrepareCombatMessage(combatMessage)
-  status, _ = mod.parser.ParseCombatText(combatMessage, mod.testHelper.eventTypeSpellDamageShieldsOnSelf)
-
-  if status == 1 then
-    mod.testReporter.ReportSuccessTest(className, testName, testType,
-      string.format("Successfully parsed avoid miss combatText for %s", spellName))
-  else
-    mod.testReporter.ReportFailTest(className, testName, testType,
-      string.format("Failed to parse avoid miss combatText for %s", spellName))
-  end
-
-  mod.testReporter.EndTest(className, testType, testName)
+  mod.testHelper.TestParseEnemyAvoid(
+    className,
+    "TestParseEnemyAvoidMissOverpower",
+    "overpower",
+    "Your Overpower missed $player$.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    PVPW_CONSTANTS.AVOID_TYPES.MISS
+  )
 end
 
 function me.TestParseEnemyAvoidDodgeBloodthirst()
-  local testName = "TestParseEnemyAvoidDodgeBloodthirst"
-  local spellName = "bloodthirst"
-  local combatMessage = "Your Bloodthirst was dodged by $player$."
-  local testType = mod.testHelper.testType.parseAvoid
-  local status
-
-  mod.testReporter.StartTest(className, testType, testName)
-
-  combatMessage = mod.testHelper.PrepareCombatMessage(combatMessage)
-  status, _ = mod.parser.ParseCombatText(combatMessage, mod.testHelper.eventTypeSpellDamageShieldsOnSelf)
-
-  if status == 1 then
-    mod.testReporter.ReportSuccessTest(className, testName, testType,
-      string.format("Successfully parsed avoid dodge combatText for %s", spellName))
-  else
-    mod.testReporter.ReportFailTest(className, testName, testType,
-      string.format("Failed to parse avoid dodge combatText for %s", spellName))
-  end
-
-  mod.testReporter.EndTest(className, testType, testName)
+  mod.testHelper.TestParseEnemyAvoid(
+    className,
+    "TestParseEnemyAvoidDodgeBloodthirst",
+    "bloodthirst",
+    "Your Bloodthirst was dodged by $player$.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    PVPW_CONSTANTS.AVOID_TYPES.DODGE
+  )
 end
 
 function me.TestParseEnemyAvoidParryBloodthirst()
-  local testName = "TestParseEnemyAvoidParryBloodthirst"
-  local spellName = "bloodthirst"
-  local combatMessage = "Your Bloodthirst is parried by $player$."
-  local testType = mod.testHelper.testType.parseAvoid
-  local status
-
-  mod.testReporter.StartTest(className, testType, testName)
-
-  combatMessage = mod.testHelper.PrepareCombatMessage(combatMessage)
-  status, _ = mod.parser.ParseCombatText(combatMessage, mod.testHelper.eventTypeSpellDamageShieldsOnSelf)
-
-  if status == 1 then
-    mod.testReporter.ReportSuccessTest(className, testName, testType,
-      string.format("Successfully parsed avoid parry combatText for %s", spellName))
-  else
-    mod.testReporter.ReportFailTest(className, testName, testType,
-      string.format("Failed to parse avoid parry combatText for %s", spellName))
-  end
-
-  mod.testReporter.EndTest(className, testType, testName)
+  mod.testHelper.TestParseEnemyAvoid(
+    className,
+    "TestParseEnemyAvoidParryBloodthirst",
+    "bloodthirst",
+    "Your Bloodthirst is parried by $player$.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    PVPW_CONSTANTS.AVOID_TYPES.PARRY
+  )
 end
 
 function me.TestParseEnemyAvoidImmuneBloodthirst()
-  local testName = "TestParseEnemyAvoidImmuneBloodthirst"
-  local spellName = "bloodthirst"
-  local combatMessage = "Your Bloodthirst failed. $player$ is immune."
-  local testType = mod.testHelper.testType.parseAvoid
-  local status
-
-  mod.testReporter.StartTest(className, testType, testName)
-
-  combatMessage = mod.testHelper.PrepareCombatMessage(combatMessage)
-  status, _ = mod.parser.ParseCombatText(combatMessage, mod.testHelper.eventTypeSpellDamageShieldsOnSelf)
-
-  if status == 1 then
-    mod.testReporter.ReportSuccessTest(className, testName, testType,
-      string.format("Successfully parsed avoid immune combatText for %s", spellName))
-  else
-    mod.testReporter.ReportFailTest(className, testName, testType,
-      string.format("Failed to parse avoid immune combatText for %s", spellName))
-  end
-
-  mod.testReporter.EndTest(className, testType, testName)
+  mod.testHelper.TestParseEnemyAvoid(
+    className,
+    "TestParseEnemyAvoidImmuneBloodthirst",
+    "bloodthirst",
+    "Your Bloodthirst failed. $player$ is immune.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    PVPW_CONSTANTS.AVOID_TYPES.IMMUNE
+  )
 end
 
 function me.TestParseEnemyAvoidMissBloodthirst()
-  local testName = "TestParseEnemyAvoidMissBloodthirst"
-  local spellName = "bloodthirst"
-  local combatMessage = "Your Bloodthirst missed $player$."
-  local testType = mod.testHelper.testType.parseAvoid
-  local status
-
-  mod.testReporter.StartTest(className, testType, testName)
-
-  combatMessage = mod.testHelper.PrepareCombatMessage(combatMessage)
-  status, _ = mod.parser.ParseCombatText(combatMessage, mod.testHelper.eventTypeSpellDamageShieldsOnSelf)
-
-  if status == 1 then
-    mod.testReporter.ReportSuccessTest(className, testName, testType,
-      string.format("Successfully parsed avoid miss combatText for %s", spellName))
-  else
-    mod.testReporter.ReportFailTest(className, testName, testType,
-      string.format("Failed to parse avoid miss combatText for %s", spellName))
-  end
-
-  mod.testReporter.EndTest(className, testType, testName)
+  mod.testHelper.TestParseEnemyAvoid(
+    className,
+    "TestParseEnemyAvoidMissBloodthirst",
+    "bloodthirst",
+    "Your Bloodthirst missed $player$.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    PVPW_CONSTANTS.AVOID_TYPES.MISS
+  )
 end
 
 function me.TestParseEnemyAvoidBlockBloodthirst()
-  local testName = "TestParseEnemyAvoidBlockBloodthirst"
-  local spellName = "bloodthirst"
-  local combatMessage = "Your Bloodthirst was blocked by $player$."
-  local testType = mod.testHelper.testType.parseAvoid
-  local status
-
-  mod.testReporter.StartTest(className, testType, testName)
-
-  combatMessage = mod.testHelper.PrepareCombatMessage(combatMessage)
-  status, _ = mod.parser.ParseCombatText(combatMessage, mod.testHelper.eventTypeSpellSelfDamage)
-
-  if status == 1 then
-    mod.testReporter.ReportSuccessTest(className, testName, testType,
-      string.format("Successfully parsed avoid block combatText for %s", spellName))
-  else
-    mod.testReporter.ReportFailTest(className, testName, testType,
-      string.format("Failed to parse avoid block combatText for %s", spellName))
-  end
-
-  mod.testReporter.EndTest(className, testType, testName)
+  mod.testHelper.TestParseEnemyAvoid(
+    className,
+    "TestParseEnemyAvoidBlockBloodthirst",
+    "bloodthirst",
+    "Your Bloodthirst was blocked by $player$.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    PVPW_CONSTANTS.AVOID_TYPES.BLOCK
+  )
 end
 
 function me.TestParseEnemyAvoidImmuneInterceptStun()
-  local testName = "TestParseEnemyAvoidImmuneInterceptStun"
-  local spellName = "intercept_stun"
-  local combatMessage = "Your Intercept Stun failed. $player$ is immune."
-  local testType = mod.testHelper.testType.parseAvoid
-  local status
-
-  mod.testReporter.StartTest(className, testType, testName)
-
-  combatMessage = mod.testHelper.PrepareCombatMessage(combatMessage)
-  status, _ = mod.parser.ParseCombatText(combatMessage, mod.testHelper.eventTypeSpellDamageShieldsOnSelf)
-
-  if status == 1 then
-    mod.testReporter.ReportSuccessTest(className, testName, testType,
-      string.format("Successfully parsed avoid immune combatText for %s", spellName))
-  else
-    mod.testReporter.ReportFailTest(className, testName, testType,
-      string.format("Failed to parse avoid immune combatText for %s", spellName))
-  end
-
-  mod.testReporter.EndTest(className, testType, testName)
+  mod.testHelper.TestParseEnemyAvoid(
+    className,
+    "TestParseEnemyAvoidImmuneInterceptStun",
+    "intercept_stun",
+    "Your Intercept Stun failed. $player$ is immune.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    PVPW_CONSTANTS.AVOID_TYPES.IMMUNE
+  )
 end
 
 function me.TestParseEnemyAvoidResistInterceptStun()
-  local testName = "TestParseEnemyAvoidResistInterceptStun"
-  local spellName = "intercept_stun"
-  local combatMessage = "Your Intercept Stun was resisted by $player$."
-  local testType = mod.testHelper.testType.parseAvoid
-  local status
-
-  mod.testReporter.StartTest(className, testType, testName)
-
-  combatMessage = mod.testHelper.PrepareCombatMessage(combatMessage)
-  status, _ = mod.parser.ParseCombatText(combatMessage, mod.testHelper.eventTypeSpellDamageShieldsOnSelf)
-
-  if status == 1 then
-    mod.testReporter.ReportSuccessTest(className, testName, testType,
-      string.format("Successfully parsed avoid resist combatText for %s", spellName))
-  else
-    mod.testReporter.ReportFailTest(className, testName, testType,
-      string.format("Failed to parse avoid resist combatText for %s", spellName))
-  end
-
-  mod.testReporter.EndTest(className, testType, testName)
+  mod.testHelper.TestParseEnemyAvoid(
+    className,
+    "TestParseEnemyAvoidResistInterceptStun",
+    "intercept_stun",
+    "Your Intercept Stun was resisted by $player$.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    PVPW_CONSTANTS.AVOID_TYPES.RESIST
+  )
 end
 
 function me.TestParseEnemyAvoidImmuneIntimidatingShout()
-  local testName = "TestParseEnemyAvoidImmuneIntimidatingShout"
-  local spellName = "intimidating_shout"
-  local combatMessage = "Your Intimidating Shout failed. $player$ is immune."
-  local testType = mod.testHelper.testType.parseAvoid
-  local status
-
-  mod.testReporter.StartTest(className, testType, testName)
-
-  combatMessage = mod.testHelper.PrepareCombatMessage(combatMessage)
-  status, _ = mod.parser.ParseCombatText(combatMessage, mod.testHelper.eventTypeSpellDamageShieldsOnSelf)
-
-  if status == 1 then
-    mod.testReporter.ReportSuccessTest(className, testName, testType,
-      string.format("Successfully parsed avoid immune combatText for %s", spellName))
-  else
-    mod.testReporter.ReportFailTest(className, testName, testType,
-      string.format("Failed to parse avoid immune combatText for %s", spellName))
-  end
-
-  mod.testReporter.EndTest(className, testType, testName)
+  mod.testHelper.TestParseEnemyAvoid(
+    className,
+    "TestParseEnemyAvoidImmuneIntimidatingShout",
+    "intimidating_shout",
+    "Your Intimidating Shout failed. $player$ is immune.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    PVPW_CONSTANTS.AVOID_TYPES.IMMUNE
+  )
 end
 
 function me.TestParseEnemyAvoidResistIntimidatingShout()
-  local testName = "TestParseEnemyAvoidResistIntimidatingShout"
-  local spellName = "intimidating_shout"
-  local combatMessage = "Your Intimidating Shout was resisted by $player$."
-  local testType = mod.testHelper.testType.parseAvoid
-  local status
-
-  mod.testReporter.StartTest(className, testType, testName)
-
-  combatMessage = mod.testHelper.PrepareCombatMessage(combatMessage)
-  status, _ = mod.parser.ParseCombatText(combatMessage, mod.testHelper.eventTypeSpellDamageShieldsOnSelf)
-
-  if status == 1 then
-    mod.testReporter.ReportSuccessTest(className, testName, testType,
-      string.format("Successfully parsed avoid resist combatText for %s", spellName))
-  else
-    mod.testReporter.ReportFailTest(className, testName, testType,
-      string.format("Failed to parse avoid resist combatText for %s", spellName))
-  end
-
-  mod.testReporter.EndTest(className, testType, testName)
+  mod.testHelper.TestParseEnemyAvoid(
+    className,
+    "TestParseEnemyAvoidResistIntimidatingShout",
+    "intimidating_shout",
+    "Your Intimidating Shout was resisted by $player$.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    PVPW_CONSTANTS.AVOID_TYPES.RESIST
+  )
 end
 
 function me.TestParseEnemyAvoidDodgePummel()
-  local testName = "TestParseEnemyAvoidDodgePummel"
-  local spellName = "pummel"
-  local combatMessage = "Your Pummel was dodged by $player$."
-  local testType = mod.testHelper.testType.parseAvoid
-  local status
-
-  mod.testReporter.StartTest(className, testType, testName)
-
-  combatMessage = mod.testHelper.PrepareCombatMessage(combatMessage)
-  status, _ = mod.parser.ParseCombatText(combatMessage, mod.testHelper.eventTypeSpellDamageShieldsOnSelf)
-
-  if status == 1 then
-    mod.testReporter.ReportSuccessTest(className, testName, testType,
-      string.format("Successfully parsed avoid dodge combatText for %s", spellName))
-  else
-    mod.testReporter.ReportFailTest(className, testName, testType,
-      string.format("Failed to parse avoid dodge combatText for %s", spellName))
-  end
-
-  mod.testReporter.EndTest(className, testType, testName)
+  mod.testHelper.TestParseEnemyAvoid(
+    className,
+    "TestParseEnemyAvoidDodgePummel",
+    "pummel",
+    "Your Pummel was dodged by $player$.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    PVPW_CONSTANTS.AVOID_TYPES.DODGE
+  )
 end
 
 function me.TestParseEnemyAvoidParryPummel()
-  local testName = "TestParseEnemyAvoidParryPummel"
-  local spellName = "pummel"
-  local combatMessage = "Your Pummel is parried by $player$."
-  local testType = mod.testHelper.testType.parseAvoid
-  local status
-
-  mod.testReporter.StartTest(className, testType, testName)
-
-  combatMessage = mod.testHelper.PrepareCombatMessage(combatMessage)
-  status, _ = mod.parser.ParseCombatText(combatMessage, mod.testHelper.eventTypeSpellDamageShieldsOnSelf)
-
-  if status == 1 then
-    mod.testReporter.ReportSuccessTest(className, testName, testType,
-      string.format("Successfully parsed avoid parry combatText for %s", spellName))
-  else
-    mod.testReporter.ReportFailTest(className, testName, testType,
-      string.format("Failed to parse avoid parry combatText for %s", spellName))
-  end
-
-  mod.testReporter.EndTest(className, testType, testName)
+  mod.testHelper.TestParseEnemyAvoid(
+    className,
+    "TestParseEnemyAvoidParryPummel",
+    "pummel",
+    "Your Pummel is parried by $player$.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    PVPW_CONSTANTS.AVOID_TYPES.PARRY
+  )
 end
 
 function me.TestParseEnemyAvoidImmunePummel()
-  local testName = "TestParseEnemyAvoidImmunePummel"
-  local spellName = "pummel"
-  local combatMessage = "Your Pummel failed. $player$ is immune."
-  local testType = mod.testHelper.testType.parseAvoid
-  local status
-
-  mod.testReporter.StartTest(className, testType, testName)
-
-  combatMessage = mod.testHelper.PrepareCombatMessage(combatMessage)
-  status, _ = mod.parser.ParseCombatText(combatMessage, mod.testHelper.eventTypeSpellDamageShieldsOnSelf)
-
-  if status == 1 then
-    mod.testReporter.ReportSuccessTest(className, testName, testType,
-      string.format("Successfully parsed avoid immune combatText for %s", spellName))
-  else
-    mod.testReporter.ReportFailTest(className, testName, testType,
-      string.format("Failed to parse avoid immune combatText for %s", spellName))
-  end
-
-  mod.testReporter.EndTest(className, testType, testName)
+  mod.testHelper.TestParseEnemyAvoid(
+    className,
+    "TestParseEnemyAvoidImmunePummel",
+    "pummel",
+    "Your Pummel failed. $player$ is immune.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    PVPW_CONSTANTS.AVOID_TYPES.IMMUNE
+  )
 end
 
 function me.TestParseEnemyAvoidMissPummel()
-  local testName = "TestParseEnemyAvoidMissPummel"
-  local spellName = "pummel"
-  local combatMessage = "Your Pummel missed $player$."
-  local testType = mod.testHelper.testType.parseAvoid
-  local status
-
-  mod.testReporter.StartTest(className, testType, testName)
-
-  combatMessage = mod.testHelper.PrepareCombatMessage(combatMessage)
-  status, _ = mod.parser.ParseCombatText(combatMessage, mod.testHelper.eventTypeSpellDamageShieldsOnSelf)
-
-  if status == 1 then
-    mod.testReporter.ReportSuccessTest(className, testName, testType,
-      string.format("Successfully parsed avoid miss combatText for %s", spellName))
-  else
-    mod.testReporter.ReportFailTest(className, testName, testType,
-      string.format("Failed to parse avoid miss combatText for %s", spellName))
-  end
-
-  mod.testReporter.EndTest(className, testType, testName)
+  mod.testHelper.TestParseEnemyAvoid(
+    className,
+    "TestParseEnemyAvoidMissPummel",
+    "pummel",
+    "Your Pummel missed $player$.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    PVPW_CONSTANTS.AVOID_TYPES.MISS
+  )
 end
 
 function me.TestParseEnemyAvoidBlockPummel()
-  local testName = "TestParseEnemyAvoidBlockPummel"
-  local spellName = "pummel"
-  local combatMessage = "Your Pummel was blocked by $player$."
-  local testType = mod.testHelper.testType.parseAvoid
-  local status
-
-  mod.testReporter.StartTest(className, testType, testName)
-
-  combatMessage = mod.testHelper.PrepareCombatMessage(combatMessage)
-  status, _ = mod.parser.ParseCombatText(combatMessage, mod.testHelper.eventTypeSpellSelfDamage)
-
-  if status == 1 then
-    mod.testReporter.ReportSuccessTest(className, testName, testType,
-      string.format("Successfully parsed avoid block combatText for %s", spellName))
-  else
-    mod.testReporter.ReportFailTest(className, testName, testType,
-      string.format("Failed to parse avoid block combatText for %s", spellName))
-  end
-
-  mod.testReporter.EndTest(className, testType, testName)
+  mod.testHelper.TestParseEnemyAvoid(
+    className,
+    "TestParseEnemyAvoidBlockPummel",
+    "pummel",
+    "Your Pummel was blocked by $player$.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    PVPW_CONSTANTS.AVOID_TYPES.BLOCK
+  )
 end
 
 function me.TestParseEnemyAvoidDodgeConcussionBlow()
-  local testName = "TestParseEnemyAvoidDodgeConcussionBlow"
-  local spellName = "concussion_blow"
-  local combatMessage = "Your Concussion Blow was dodged by $player$."
-  local testType = mod.testHelper.testType.parseAvoid
-  local status
-
-  mod.testReporter.StartTest(className, testType, testName)
-
-  combatMessage = mod.testHelper.PrepareCombatMessage(combatMessage)
-  status, _ = mod.parser.ParseCombatText(combatMessage, mod.testHelper.eventTypeSpellDamageShieldsOnSelf)
-
-  if status == 1 then
-    mod.testReporter.ReportSuccessTest(className, testName, testType,
-      string.format("Successfully parsed avoid dodge combatText for %s", spellName))
-  else
-    mod.testReporter.ReportFailTest(className, testName, testType,
-      string.format("Failed to parse avoid dodge combatText for %s", spellName))
-  end
-
-  mod.testReporter.EndTest(className, testType, testName)
+  mod.testHelper.TestParseEnemyAvoid(
+    className,
+    "TestParseEnemyAvoidDodgeConcussionBlow",
+    "concussion_blow",
+    "Your Concussion Blow was dodged by $player$.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    PVPW_CONSTANTS.AVOID_TYPES.DODGE
+  )
 end
 
 function me.TestParseEnemyAvoidParryConcussionBlow()
-  local testName = "TestParseEnemyAvoidParryConcussionBlow"
-  local spellName = "concussion_blow"
-  local combatMessage = "Your Concussion Blow is parried by $player$."
-  local testType = mod.testHelper.testType.parseAvoid
-  local status
-
-  mod.testReporter.StartTest(className, testType, testName)
-
-  combatMessage = mod.testHelper.PrepareCombatMessage(combatMessage)
-  status, _ = mod.parser.ParseCombatText(combatMessage, mod.testHelper.eventTypeSpellDamageShieldsOnSelf)
-
-  if status == 1 then
-    mod.testReporter.ReportSuccessTest(className, testName, testType,
-      string.format("Successfully parsed avoid parry combatText for %s", spellName))
-  else
-    mod.testReporter.ReportFailTest(className, testName, testType,
-      string.format("Failed to parse avoid parry combatText for %s", spellName))
-  end
-
-  mod.testReporter.EndTest(className, testType, testName)
+  mod.testHelper.TestParseEnemyAvoid(
+    className,
+    "TestParseEnemyAvoidParryConcussionBlow",
+    "concussion_blow",
+    "Your Concussion Blow is parried by $player$.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    PVPW_CONSTANTS.AVOID_TYPES.PARRY
+  )
 end
 
 function me.TestParseEnemyAvoidImmuneConcussionBlow()
-  local testName = "TestParseEnemyAvoidImmuneConcussionBlow"
-  local spellName = "concussion_blow"
-  local combatMessage = "Your Concussion Blow failed. $player$ is immune."
-  local testType = mod.testHelper.testType.parseAvoid
-  local status
-
-  mod.testReporter.StartTest(className, testType, testName)
-
-  combatMessage = mod.testHelper.PrepareCombatMessage(combatMessage)
-  status, _ = mod.parser.ParseCombatText(combatMessage, mod.testHelper.eventTypeSpellDamageShieldsOnSelf)
-
-  if status == 1 then
-    mod.testReporter.ReportSuccessTest(className, testName, testType,
-      string.format("Successfully parsed avoid immune combatText for %s", spellName))
-  else
-    mod.testReporter.ReportFailTest(className, testName, testType,
-      string.format("Failed to parse avoid immune combatText for %s", spellName))
-  end
-
-  mod.testReporter.EndTest(className, testType, testName)
+  mod.testHelper.TestParseEnemyAvoid(
+    className,
+    "TestParseEnemyAvoidImmuneConcussionBlow",
+    "concussion_blow",
+    "Your Concussion Blow failed. $player$ is immune.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    PVPW_CONSTANTS.AVOID_TYPES.IMMUNE
+  )
 end
 
 function me.TestParseEnemyAvoidMissConcussionBlow()
-  local testName = "TestParseEnemyAvoidMissConcussionBlow"
-  local spellName = "concussion_blow"
-  local combatMessage = "Your Concussion Blow missed $player$."
-  local testType = mod.testHelper.testType.parseAvoid
-  local status
-
-  mod.testReporter.StartTest(className, testType, testName)
-
-  combatMessage = mod.testHelper.PrepareCombatMessage(combatMessage)
-  status, _ = mod.parser.ParseCombatText(combatMessage, mod.testHelper.eventTypeSpellDamageShieldsOnSelf)
-
-  if status == 1 then
-    mod.testReporter.ReportSuccessTest(className, testName, testType,
-      string.format("Successfully parsed avoid miss combatText for %s", spellName))
-  else
-    mod.testReporter.ReportFailTest(className, testName, testType,
-      string.format("Failed to parse avoid miss combatText for %s", spellName))
-  end
-
-  mod.testReporter.EndTest(className, testType, testName)
+  mod.testHelper.TestParseEnemyAvoid(
+    className,
+    "TestParseEnemyAvoidMissConcussionBlow",
+    "concussion_blow",
+    "Your Concussion Blow missed $player$.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    PVPW_CONSTANTS.AVOID_TYPES.MISS
+  )
 end
 
 function me.TestParseEnemyAvoidResistConcussionBlow()
-  local testName = "TestParseEnemyAvoidResistConcussionBlow"
-  local spellName = "concussion_blow"
-  local combatMessage = "Your Concussion Blow was resisted by $player$."
-  local testType = mod.testHelper.testType.parseAvoid
-  local status
-
-  mod.testReporter.StartTest(className, testType, testName)
-
-  combatMessage = mod.testHelper.PrepareCombatMessage(combatMessage)
-  status, _ = mod.parser.ParseCombatText(combatMessage, mod.testHelper.eventTypeSpellDamageShieldsOnSelf)
-
-  if status == 1 then
-    mod.testReporter.ReportSuccessTest(className, testName, testType,
-      string.format("Successfully parsed avoid resist combatText for %s", spellName))
-  else
-    mod.testReporter.ReportFailTest(className, testName, testType,
-      string.format("Failed to parse avoid resist combatText for %s", spellName))
-  end
-
-  mod.testReporter.EndTest(className, testType, testName)
+  mod.testHelper.TestParseEnemyAvoid(
+    className,
+    "TestParseEnemyAvoidResistConcussionBlow",
+    "concussion_blow",
+    "Your Concussion Blow was resisted by $player$.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    PVPW_CONSTANTS.AVOID_TYPES.RESIST
+  )
 end
 
 function me.TestParseEnemyAvoidDodgeDisarm()
-  local testName = "TestParseEnemyAvoidDodgeDisarm"
-  local spellName = "disarm"
-  local combatMessage = "Your Disarm was dodged by $player$."
-  local testType = mod.testHelper.testType.parseAvoid
-  local status
-
-  mod.testReporter.StartTest(className, testType, testName)
-
-  combatMessage = mod.testHelper.PrepareCombatMessage(combatMessage)
-  status, _ = mod.parser.ParseCombatText(combatMessage, mod.testHelper.eventTypeSpellDamageShieldsOnSelf)
-
-  if status == 1 then
-    mod.testReporter.ReportSuccessTest(className, testName, testType,
-      string.format("Successfully parsed avoid dodge combatText for %s", spellName))
-  else
-    mod.testReporter.ReportFailTest(className, testName, testType,
-      string.format("Failed to parse avoid dodge combatText for %s", spellName))
-  end
-
-  mod.testReporter.EndTest(className, testType, testName)
+  mod.testHelper.TestParseEnemyAvoid(
+    className,
+    "TestParseEnemyAvoidDodgeDisarm",
+    "disarm",
+    "Your Disarm was dodged by $player$.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    PVPW_CONSTANTS.AVOID_TYPES.DODGE
+  )
 end
 
 function me.TestParseEnemyAvoidParryDisarm()
-  local testName = "TestParseEnemyAvoidParryDisarm"
-  local spellName = "disarm"
-  local combatMessage = "Your Disarm is parried by $player$."
-  local testType = mod.testHelper.testType.parseAvoid
-  local status
-
-  mod.testReporter.StartTest(className, testType, testName)
-
-  combatMessage = mod.testHelper.PrepareCombatMessage(combatMessage)
-  status, _ = mod.parser.ParseCombatText(combatMessage, mod.testHelper.eventTypeSpellDamageShieldsOnSelf)
-
-  if status == 1 then
-    mod.testReporter.ReportSuccessTest(className, testName, testType,
-      string.format("Successfully parsed avoid parry combatText for %s", spellName))
-  else
-    mod.testReporter.ReportFailTest(className, testName, testType,
-      string.format("Failed to parse avoid parry combatText for %s", spellName))
-  end
-
-  mod.testReporter.EndTest(className, testType, testName)
+  mod.testHelper.TestParseEnemyAvoid(
+    className,
+    "TestParseEnemyAvoidParryDisarm",
+    "disarm",
+    "Your Disarm is parried by $player$.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    PVPW_CONSTANTS.AVOID_TYPES.PARRY
+  )
 end
 
 function me.TestParseEnemyAvoidImmuneDisarm()
-  local testName = "TestParseEnemyAvoidImmuneDisarm"
-  local spellName = "disarm"
-  local combatMessage = "Your Disarm failed. $player$ is immune."
-  local testType = mod.testHelper.testType.parseAvoid
-  local status
-
-  mod.testReporter.StartTest(className, testType, testName)
-
-  combatMessage = mod.testHelper.PrepareCombatMessage(combatMessage)
-  status, _ = mod.parser.ParseCombatText(combatMessage, mod.testHelper.eventTypeSpellDamageShieldsOnSelf)
-
-  if status == 1 then
-    mod.testReporter.ReportSuccessTest(className, testName, testType,
-      string.format("Successfully parsed avoid immune combatText for %s", spellName))
-  else
-    mod.testReporter.ReportFailTest(className, testName, testType,
-      string.format("Failed to parse avoid immune combatText for %s", spellName))
-  end
-
-  mod.testReporter.EndTest(className, testType, testName)
+  mod.testHelper.TestParseEnemyAvoid(
+    className,
+    "TestParseEnemyAvoidImmuneDisarm",
+    "disarm",
+    "Your Disarm failed. $player$ is immune.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    PVPW_CONSTANTS.AVOID_TYPES.IMMUNE
+  )
 end
 
 function me.TestParseEnemyAvoidMissDisarm()
-  local testName = "TestParseEnemyAvoidMissDisarm"
-  local spellName = "disarm"
-  local combatMessage = "Your Disarm missed $player$."
-  local testType = mod.testHelper.testType.parseAvoid
-  local status
-
-  mod.testReporter.StartTest(className, testType, testName)
-
-  combatMessage = mod.testHelper.PrepareCombatMessage(combatMessage)
-  status, _ = mod.parser.ParseCombatText(combatMessage, mod.testHelper.eventTypeSpellDamageShieldsOnSelf)
-
-  if status == 1 then
-    mod.testReporter.ReportSuccessTest(className, testName, testType,
-      string.format("Successfully parsed avoid miss combatText for %s", spellName))
-  else
-    mod.testReporter.ReportFailTest(className, testName, testType,
-      string.format("Failed to parse avoid miss combatText for %s", spellName))
-  end
-
-  mod.testReporter.EndTest(className, testType, testName)
+  mod.testHelper.TestParseEnemyAvoid(
+    className,
+    "TestParseEnemyAvoidMissDisarm",
+    "disarm",
+    "Your Disarm missed $player$.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    PVPW_CONSTANTS.AVOID_TYPES.MISS
+  )
 end
 
 function me.TestParseEnemyAvoidDodgeShieldBash()
-  local testName = "TestParseEnemyAvoidDodgeShieldBash"
-  local spellName = "shield_bash"
-  local combatMessage = "Your Shield Bash was dodged by $player$."
-  local testType = mod.testHelper.testType.parseAvoid
-  local status
-
-  mod.testReporter.StartTest(className, testType, testName)
-
-  combatMessage = mod.testHelper.PrepareCombatMessage(combatMessage)
-  status, _ = mod.parser.ParseCombatText(combatMessage, mod.testHelper.eventTypeSpellDamageShieldsOnSelf)
-
-  if status == 1 then
-    mod.testReporter.ReportSuccessTest(className, testName, testType,
-      string.format("Successfully parsed avoid dodge combatText for %s", spellName))
-  else
-    mod.testReporter.ReportFailTest(className, testName, testType,
-      string.format("Failed to parse avoid dodge combatText for %s", spellName))
-  end
-
-  mod.testReporter.EndTest(className, testType, testName)
+  mod.testHelper.TestParseEnemyAvoid(
+    className,
+    "TestParseEnemyAvoidDodgeShieldBash",
+    "shield_bash",
+    "Your Shield Bash was dodged by $player$.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    PVPW_CONSTANTS.AVOID_TYPES.DODGE
+  )
 end
 
 function me.TestParseEnemyAvoidParryShieldBash()
-  local testName = "TestParseEnemyAvoidParryShieldBash"
-  local spellName = "shield_bash"
-  local combatMessage = "Your Shield Bash is parried by $player$."
-  local testType = mod.testHelper.testType.parseAvoid
-  local status
-
-  mod.testReporter.StartTest(className, testType, testName)
-
-  combatMessage = mod.testHelper.PrepareCombatMessage(combatMessage)
-  status, _ = mod.parser.ParseCombatText(combatMessage, mod.testHelper.eventTypeSpellDamageShieldsOnSelf)
-
-  if status == 1 then
-    mod.testReporter.ReportSuccessTest(className, testName, testType,
-      string.format("Successfully parsed avoid parry combatText for %s", spellName))
-  else
-    mod.testReporter.ReportFailTest(className, testName, testType,
-      string.format("Failed to parse avoid parry combatText for %s", spellName))
-  end
-
-  mod.testReporter.EndTest(className, testType, testName)
+  mod.testHelper.TestParseEnemyAvoid(
+    className,
+    "TestParseEnemyAvoidParryShieldBash",
+    "shield_bash",
+    "Your Shield Bash is parried by $player$.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    PVPW_CONSTANTS.AVOID_TYPES.PARRY
+  )
 end
 
 function me.TestParseEnemyAvoidImmuneShieldBash()
-  local testName = "TestParseEnemyAvoidImmuneShieldBash"
-  local spellName = "shield_bash"
-  local combatMessage = "Your Shield Bash failed. $player$ is immune."
-  local testType = mod.testHelper.testType.parseAvoid
-  local status
-
-  mod.testReporter.StartTest(className, testType, testName)
-
-  combatMessage = mod.testHelper.PrepareCombatMessage(combatMessage)
-  status, _ = mod.parser.ParseCombatText(combatMessage, mod.testHelper.eventTypeSpellDamageShieldsOnSelf)
-
-  if status == 1 then
-    mod.testReporter.ReportSuccessTest(className, testName, testType,
-      string.format("Successfully parsed avoid immune combatText for %s", spellName))
-  else
-    mod.testReporter.ReportFailTest(className, testName, testType,
-      string.format("Failed to parse avoid immune combatText for %s", spellName))
-  end
-
-  mod.testReporter.EndTest(className, testType, testName)
+  mod.testHelper.TestParseEnemyAvoid(
+    className,
+    "TestParseEnemyAvoidImmuneShieldBash",
+    "shield_bash",
+    "Your Shield Bash failed. $player$ is immune.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    PVPW_CONSTANTS.AVOID_TYPES.IMMUNE
+  )
 end
 
 function me.TestParseEnemyAvoidMissShieldBash()
-  local testName = "TestParseEnemyAvoidMissShieldBash"
-  local spellName = "shield_bash"
-  local combatMessage = "Your Shield Bash missed $player$."
-  local testType = mod.testHelper.testType.parseAvoid
-  local status
-
-  mod.testReporter.StartTest(className, testType, testName)
-
-  combatMessage = mod.testHelper.PrepareCombatMessage(combatMessage)
-  status, _ = mod.parser.ParseCombatText(combatMessage, mod.testHelper.eventTypeSpellDamageShieldsOnSelf)
-
-  if status == 1 then
-    mod.testReporter.ReportSuccessTest(className, testName, testType,
-      string.format("Successfully parsed avoid miss combatText for %s", spellName))
-  else
-    mod.testReporter.ReportFailTest(className, testName, testType,
-      string.format("Failed to parse avoid miss combatText for %s", spellName))
-  end
-
-  mod.testReporter.EndTest(className, testType, testName)
+  mod.testHelper.TestParseEnemyAvoid(
+    className,
+    "TestParseEnemyAvoidMissShieldBash",
+    "shield_bash",
+    "Your Shield Bash missed $player$.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    PVPW_CONSTANTS.AVOID_TYPES.MISS
+  )
 end
 
 function me.TestParseEnemyAvoidBlockShieldBash()
-  local testName = "TestParseEnemyAvoidBlockShieldBash"
-  local spellName = "shield_bash"
-  local combatMessage = "Your Shield Bash was blocked by $player$."
-  local testType = mod.testHelper.testType.parseAvoid
-  local status
-
-  mod.testReporter.StartTest(className, testType, testName)
-
-  combatMessage = mod.testHelper.PrepareCombatMessage(combatMessage)
-  status, _ = mod.parser.ParseCombatText(combatMessage, mod.testHelper.eventTypeSpellSelfDamage)
-
-  if status == 1 then
-    mod.testReporter.ReportSuccessTest(className, testName, testType,
-      string.format("Successfully parsed avoid block combatText for %s", spellName))
-  else
-    mod.testReporter.ReportFailTest(className, testName, testType,
-      string.format("Failed to parse avoid block combatText for %s", spellName))
-  end
-
-  mod.testReporter.EndTest(className, testType, testName)
+  mod.testHelper.TestParseEnemyAvoid(
+    className,
+    "TestParseEnemyAvoidBlockShieldBash",
+    "shield_bash",
+    "Your Shield Bash was blocked by $player$.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    PVPW_CONSTANTS.AVOID_TYPES.BLOCK
+  )
 end
 
 function me.TestParseSelfAvoidImmuneChargeStun()
-  local testName = "TestParseSelfAvoidImmuneChargeStun"
-  local spellName = "charge_stun"
-  local combatMessage = "$player$'s Charge Stun failed. You are immune."
-  local testType = mod.testHelper.testType.parseSelfAvoid
-  local status
-
-  mod.testReporter.StartTest(className, testType, testName)
-
-  combatMessage = mod.testHelper.PrepareCombatMessage(combatMessage)
-  status, _ = mod.parser.ParseCombatText(combatMessage, mod.testHelper.eventTypeSpellDamageShieldsOnOthers)
-
-  if status == 1 then
-    mod.testReporter.ReportSuccessTest(className, testName, testType,
-      string.format("Successfully parsed self avoid immune combatText for %s", spellName))
-  else
-    mod.testReporter.ReportFailTest(className, testName, testType,
-      string.format("Failed to parse self avoid immune combatText for %s", spellName))
-  end
-
-  mod.testReporter.EndTest(className, testType, testName)
+  mod.testHelper.TestParseSelfAvoid(
+    className,
+    "TestParseSelfAvoidImmuneChargeStun",
+    "charge_stun",
+    "$player$'s Charge Stun failed. You are immune.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    PVPW_CONSTANTS.AVOID_TYPES.IMMUNE
+  )
 end
 
 function me.TestParseSelfAvoidResistChargeStun()
-  local testName = "TestParseSelfAvoidResistChargeStun"
-  local spellName = "charge_stun"
-  local combatMessage = "$player$'s Charge Stun was resisted."
-  local testType = mod.testHelper.testType.parseSelfAvoid
-  local status
-
-  mod.testReporter.StartTest(className, testType, testName)
-
-  combatMessage = mod.testHelper.PrepareCombatMessage(combatMessage)
-  status, _ = mod.parser.ParseCombatText(combatMessage, mod.testHelper.eventTypeSpellDamageShieldsOnOthers)
-
-  if status == 1 then
-    mod.testReporter.ReportSuccessTest(className, testName, testType,
-      string.format("Successfully parsed self avoid resist combatText for %s", spellName))
-  else
-    mod.testReporter.ReportFailTest(className, testName, testType,
-      string.format("Failed to parse self avoid resist combatText for %s", spellName))
-  end
-
-  mod.testReporter.EndTest(className, testType, testName)
+  mod.testHelper.TestParseSelfAvoid(
+    className,
+    "TestParseSelfAvoidResistChargeStun",
+    "charge_stun",
+    "$player$'s Charge Stun was resisted.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    PVPW_CONSTANTS.AVOID_TYPES.RESIST
+  )
 end
 
 function me.TestParseSelfAvoidDodgeHamstring()
-  local testName = "TestParseSelfAvoidDodgeHamstring"
-  local spellName = "hamstring"
-  local combatMessage = "$player$'s Hamstring was dodged."
-  local testType = mod.testHelper.testType.parseSelfAvoid
-  local status
-
-  mod.testReporter.StartTest(className, testType, testName)
-
-  combatMessage = mod.testHelper.PrepareCombatMessage(combatMessage)
-  status, _ = mod.parser.ParseCombatText(combatMessage, mod.testHelper.eventTypeSpellDamageShieldsOnOthers)
-
-  if status == 1 then
-    mod.testReporter.ReportSuccessTest(className, testName, testType,
-      string.format("Successfully parsed self avoid dodge combatText for %s", spellName))
-  else
-    mod.testReporter.ReportFailTest(className, testName, testType,
-      string.format("Failed to parse self avoid dodge combatText for %s", spellName))
-  end
-
-  mod.testReporter.EndTest(className, testType, testName)
+  mod.testHelper.TestParseSelfAvoid(
+    className,
+    "TestParseSelfAvoidDodgeHamstring",
+    "hamstring",
+    "$player$'s Hamstring was dodged.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    PVPW_CONSTANTS.AVOID_TYPES.DODGE
+  )
 end
 
 function me.TestParseSelfAvoidParryHamstring()
-  local testName = "TestParseSelfAvoidParryHamstring"
-  local spellName = "hamstring"
-  local combatMessage = "$player$'s Hamstring was parried."
-  local testType = mod.testHelper.testType.parseSelfAvoid
-  local status
-
-  mod.testReporter.StartTest(className, testType, testName)
-
-  combatMessage = mod.testHelper.PrepareCombatMessage(combatMessage)
-  status, _ = mod.parser.ParseCombatText(combatMessage, mod.testHelper.eventTypeSpellDamageShieldsOnOthers)
-
-  if status == 1 then
-    mod.testReporter.ReportSuccessTest(className, testName, testType,
-      string.format("Successfully parsed self avoid parry combatText for %s", spellName))
-  else
-    mod.testReporter.ReportFailTest(className, testName, testType,
-      string.format("Failed to parse self avoid parry combatText for %s", spellName))
-  end
-
-  mod.testReporter.EndTest(className, testType, testName)
+  mod.testHelper.TestParseSelfAvoid(
+    className,
+    "TestParseSelfAvoidParryHamstring",
+    "hamstring",
+    "$player$'s Hamstring was parried.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    PVPW_CONSTANTS.AVOID_TYPES.PARRY
+  )
 end
 
 function me.TestParseSelfAvoidImmuneHamstring()
-  local testName = "TestParseSelfAvoidImmuneHamstring"
-  local spellName = "hamstring"
-  local combatMessage = "$player$'s Hamstring failed. You are immune."
-  local testType = mod.testHelper.testType.parseSelfAvoid
-  local status
-
-  mod.testReporter.StartTest(className, testType, testName)
-
-  combatMessage = mod.testHelper.PrepareCombatMessage(combatMessage)
-  status, _ = mod.parser.ParseCombatText(combatMessage, mod.testHelper.eventTypeSpellDamageShieldsOnOthers)
-
-  if status == 1 then
-    mod.testReporter.ReportSuccessTest(className, testName, testType,
-      string.format("Successfully parsed self avoid immune combatText for %s", spellName))
-  else
-    mod.testReporter.ReportFailTest(className, testName, testType,
-      string.format("Failed to parse self avoid immune combatText for %s", spellName))
-  end
-
-  mod.testReporter.EndTest(className, testType, testName)
+  mod.testHelper.TestParseSelfAvoid(
+    className,
+    "TestParseSelfAvoidImmuneHamstring",
+    "hamstring",
+    "$player$'s Hamstring failed. You are immune.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    PVPW_CONSTANTS.AVOID_TYPES.IMMUNE
+  )
 end
 
 function me.TestParseSelfAvoidMissHamstring()
-  local testName = "TestParseSelfAvoidMissHamstring"
-  local spellName = "hamstring"
-  local combatMessage = "$player$'s Hamstring misses you."
-  local testType = mod.testHelper.testType.parseSelfAvoid
-  local status
-
-  mod.testReporter.StartTest(className, testType, testName)
-
-  combatMessage = mod.testHelper.PrepareCombatMessage(combatMessage)
-  status, _ = mod.parser.ParseCombatText(combatMessage, mod.testHelper.eventTypeSpellDamageShieldsOnOthers)
-
-  if status == 1 then
-    mod.testReporter.ReportSuccessTest(className, testName, testType,
-      string.format("Successfully parsed self avoid miss combatText for %s", spellName))
-  else
-    mod.testReporter.ReportFailTest(className, testName, testType,
-      string.format("Failed to parse self avoid miss combatText for %s", spellName))
-  end
-
-  mod.testReporter.EndTest(className, testType, testName)
+  mod.testHelper.TestParseSelfAvoid(
+    className,
+    "TestParseSelfAvoidMissHamstring",
+    "hamstring",
+    "$player$'s Hamstring misses you.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    PVPW_CONSTANTS.AVOID_TYPES.MISS
+  )
 end
 
 function me.TestParseSelfAvoidBlockHamstring()
-  local testName = "TestParseSelfAvoidBlockHamstring"
-  local spellName = "hamstring"
-  local combatMessage = "$player$'s Hamstring was blocked."
-  local testType = mod.testHelper.testType.parseSelfAvoid
-  local status
-
-  mod.testReporter.StartTest(className, testType, testName)
-
-  combatMessage = mod.testHelper.PrepareCombatMessage(combatMessage)
-  status, _ = mod.parser.ParseCombatText(combatMessage, mod.testHelper.eventTypeSpellDamageShieldsOnOthers)
-
-  if status == 1 then
-    mod.testReporter.ReportSuccessTest(className, testName, testType,
-      string.format("Successfully parsed self avoid block combatText for %s", spellName))
-  else
-    mod.testReporter.ReportFailTest(className, testName, testType,
-      string.format("Failed to parse self avoid block combatText for %s", spellName))
-  end
-
-  mod.testReporter.EndTest(className, testType, testName)
+  mod.testHelper.TestParseSelfAvoid(
+    className,
+    "TestParseSelfAvoidBlockHamstring",
+    "hamstring",
+    "$player$'s Hamstring was blocked.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    PVPW_CONSTANTS.AVOID_TYPES.BLOCK
+  )
 end
 
 function me.TestParseSelfAvoidDodgeMortalStrike()
-  local testName = "TestParseSelfAvoidDodgeMortalStrike"
-  local spellName = "mortal_strike"
-  local combatMessage = "$player$'s Mortal Strike was dodged."
-  local testType = mod.testHelper.testType.parseSelfAvoid
-  local status
-
-  mod.testReporter.StartTest(className, testType, testName)
-
-  combatMessage = mod.testHelper.PrepareCombatMessage(combatMessage)
-  status, _ = mod.parser.ParseCombatText(combatMessage, mod.testHelper.eventTypeSpellDamageShieldsOnOthers)
-
-  if status == 1 then
-    mod.testReporter.ReportSuccessTest(className, testName, testType,
-      string.format("Successfully parsed self avoid dodge combatText for %s", spellName))
-  else
-    mod.testReporter.ReportFailTest(className, testName, testType,
-      string.format("Failed to parse self avoid dodge combatText for %s", spellName))
-  end
-
-  mod.testReporter.EndTest(className, testType, testName)
+  mod.testHelper.TestParseSelfAvoid(
+    className,
+    "TestParseSelfAvoidDodgeMortalStrike",
+    "mortal_strike",
+    "$player$'s Mortal Strike was dodged.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    PVPW_CONSTANTS.AVOID_TYPES.DODGE
+  )
 end
 
 function me.TestParseSelfAvoidParryMortalStrike()
-  local testName = "TestParseSelfAvoidParryMortalStrike"
-  local spellName = "mortal_strike"
-  local combatMessage = "$player$'s Mortal Strike was parried."
-  local testType = mod.testHelper.testType.parseSelfAvoid
-  local status
-
-  mod.testReporter.StartTest(className, testType, testName)
-
-  combatMessage = mod.testHelper.PrepareCombatMessage(combatMessage)
-  status, _ = mod.parser.ParseCombatText(combatMessage, mod.testHelper.eventTypeSpellDamageShieldsOnOthers)
-
-  if status == 1 then
-    mod.testReporter.ReportSuccessTest(className, testName, testType,
-      string.format("Successfully parsed self avoid parry combatText for %s", spellName))
-  else
-    mod.testReporter.ReportFailTest(className, testName, testType,
-      string.format("Failed to parse self avoid parry combatText for %s", spellName))
-  end
-
-  mod.testReporter.EndTest(className, testType, testName)
+  mod.testHelper.TestParseSelfAvoid(
+    className,
+    "TestParseSelfAvoidParryMortalStrike",
+    "mortal_strike",
+    "$player$'s Mortal Strike was parried.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    PVPW_CONSTANTS.AVOID_TYPES.PARRY
+  )
 end
 
 function me.TestParseSelfAvoidImmuneMortalStrike()
-  local testName = "TestParseSelfAvoidImmuneMortalStrike"
-  local spellName = "mortal_strike"
-  local combatMessage = "$player$'s Mortal Strike failed. You are immune."
-  local testType = mod.testHelper.testType.parseSelfAvoid
-  local status
-
-  mod.testReporter.StartTest(className, testType, testName)
-
-  combatMessage = mod.testHelper.PrepareCombatMessage(combatMessage)
-  status, _ = mod.parser.ParseCombatText(combatMessage, mod.testHelper.eventTypeSpellDamageShieldsOnOthers)
-
-  if status == 1 then
-    mod.testReporter.ReportSuccessTest(className, testName, testType,
-      string.format("Successfully parsed self avoid immune combatText for %s", spellName))
-  else
-    mod.testReporter.ReportFailTest(className, testName, testType,
-      string.format("Failed to parse self avoid immune combatText for %s", spellName))
-  end
-
-  mod.testReporter.EndTest(className, testType, testName)
+  mod.testHelper.TestParseSelfAvoid(
+    className,
+    "TestParseSelfAvoidImmuneMortalStrike",
+    "mortal_strike",
+    "$player$'s Mortal Strike failed. You are immune.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    PVPW_CONSTANTS.AVOID_TYPES.IMMUNE
+  )
 end
 
 function me.TestParseSelfAvoidMissMortalStrike()
-  local testName = "TestParseSelfAvoidMissMortalStrike"
-  local spellName = "mortal_strike"
-  local combatMessage = "$player$'s Mortal Strike misses you."
-  local testType = mod.testHelper.testType.parseSelfAvoid
-  local status
-
-  mod.testReporter.StartTest(className, testType, testName)
-
-  combatMessage = mod.testHelper.PrepareCombatMessage(combatMessage)
-  status, _ = mod.parser.ParseCombatText(combatMessage, mod.testHelper.eventTypeSpellDamageShieldsOnOthers)
-
-  if status == 1 then
-    mod.testReporter.ReportSuccessTest(className, testName, testType,
-      string.format("Successfully parsed self avoid miss combatText for %s", spellName))
-  else
-    mod.testReporter.ReportFailTest(className, testName, testType,
-      string.format("Failed to parse self avoid miss combatText for %s", spellName))
-  end
-
-  mod.testReporter.EndTest(className, testType, testName)
+  mod.testHelper.TestParseSelfAvoid(
+    className,
+    "TestParseSelfAvoidMissMortalStrike",
+    "mortal_strike",
+    "$player$'s Mortal Strike misses you.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    PVPW_CONSTANTS.AVOID_TYPES.MISS
+  )
 end
 
 function me.TestParseSelfAvoidBlockMortalStrike()
-  local testName = "TestParseSelfAvoidBlockMortalStrike"
-  local spellName = "mortal_strike"
-  local combatMessage = "$player$'s Mortal Strike was blocked."
-  local testType = mod.testHelper.testType.parseSelfAvoid
-  local status
-
-  mod.testReporter.StartTest(className, testType, testName)
-
-  combatMessage = mod.testHelper.PrepareCombatMessage(combatMessage)
-  status, _ = mod.parser.ParseCombatText(combatMessage, mod.testHelper.eventTypeSpellDamageShieldsOnOthers)
-
-  if status == 1 then
-    mod.testReporter.ReportSuccessTest(className, testName, testType,
-      string.format("Successfully parsed self avoid block combatText for %s", spellName))
-  else
-    mod.testReporter.ReportFailTest(className, testName, testType,
-      string.format("Failed to parse self avoid block combatText for %s", spellName))
-  end
-
-  mod.testReporter.EndTest(className, testType, testName)
+  mod.testHelper.TestParseSelfAvoid(
+    className,
+    "TestParseSelfAvoidBlockMortalStrike",
+    "mortal_strike",
+    "$player$'s Mortal Strike was blocked.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    PVPW_CONSTANTS.AVOID_TYPES.BLOCK
+  )
 end
 
 function me.TestParseSelfAvoidImmuneOverpower()
-  local testName = "TestParseSelfAvoidImmuneOverpower"
-  local spellName = "overpower"
-  local combatMessage = "$player$'s Overpower failed. You are immune."
-  local testType = mod.testHelper.testType.parseSelfAvoid
-  local status
-
-  mod.testReporter.StartTest(className, testType, testName)
-
-  combatMessage = mod.testHelper.PrepareCombatMessage(combatMessage)
-  status, _ = mod.parser.ParseCombatText(combatMessage, mod.testHelper.eventTypeSpellDamageShieldsOnOthers)
-
-  if status == 1 then
-    mod.testReporter.ReportSuccessTest(className, testName, testType,
-      string.format("Successfully parsed self avoid immune combatText for %s", spellName))
-  else
-    mod.testReporter.ReportFailTest(className, testName, testType,
-      string.format("Failed to parse self avoid immune combatText for %s", spellName))
-  end
-
-  mod.testReporter.EndTest(className, testType, testName)
+  mod.testHelper.TestParseSelfAvoid(
+    className,
+    "TestParseSelfAvoidImmuneOverpower",
+    "overpower",
+    "$player$'s Overpower failed. You are immune.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    PVPW_CONSTANTS.AVOID_TYPES.IMMUNE
+  )
 end
 
 function me.TestParseSelfAvoidMissOverpower()
-  local testName = "TestParseSelfAvoidMissOverpower"
-  local spellName = "overpower"
-  local combatMessage = "$player$'s Overpower misses you."
-  local testType = mod.testHelper.testType.parseSelfAvoid
-  local status
-
-  mod.testReporter.StartTest(className, testType, testName)
-
-  combatMessage = mod.testHelper.PrepareCombatMessage(combatMessage)
-  status, _ = mod.parser.ParseCombatText(combatMessage, mod.testHelper.eventTypeSpellDamageShieldsOnOthers)
-
-  if status == 1 then
-    mod.testReporter.ReportSuccessTest(className, testName, testType,
-      string.format("Successfully parsed self avoid miss combatText for %s", spellName))
-  else
-    mod.testReporter.ReportFailTest(className, testName, testType,
-      string.format("Failed to parse self avoid miss combatText for %s", spellName))
-  end
-
-  mod.testReporter.EndTest(className, testType, testName)
+  mod.testHelper.TestParseSelfAvoid(
+    className,
+    "TestParseSelfAvoidMissOverpower",
+    "overpower",
+    "$player$'s Overpower misses you.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    PVPW_CONSTANTS.AVOID_TYPES.MISS
+  )
 end
 
 function me.TestParseSelfAvoidDodgeBloodthirst()
-  local testName = "TestParseSelfAvoidDodgeBloodthirst"
-  local spellName = "bloodthirst"
-  local combatMessage = "$player$'s Bloodthirst was dodged."
-  local testType = mod.testHelper.testType.parseSelfAvoid
-  local status
-
-  mod.testReporter.StartTest(className, testType, testName)
-
-  combatMessage = mod.testHelper.PrepareCombatMessage(combatMessage)
-  status, _ = mod.parser.ParseCombatText(combatMessage, mod.testHelper.eventTypeSpellDamageShieldsOnOthers)
-
-  if status == 1 then
-    mod.testReporter.ReportSuccessTest(className, testName, testType,
-      string.format("Successfully parsed self avoid dodge combatText for %s", spellName))
-  else
-    mod.testReporter.ReportFailTest(className, testName, testType,
-      string.format("Failed to parse self avoid dodge combatText for %s", spellName))
-  end
-
-  mod.testReporter.EndTest(className, testType, testName)
+  mod.testHelper.TestParseSelfAvoid(
+    className,
+    "TestParseSelfAvoidDodgeBloodthirst",
+    "bloodthirst",
+    "$player$'s Bloodthirst was dodged.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    PVPW_CONSTANTS.AVOID_TYPES.DODGE
+  )
 end
 
 function me.TestParseSelfAvoidParryBloodthirst()
-  local testName = "TestParseSelfAvoidParryBloodthirst"
-  local spellName = "bloodthirst"
-  local combatMessage = "$player$'s Bloodthirst was parried."
-  local testType = mod.testHelper.testType.parseSelfAvoid
-  local status
-
-  mod.testReporter.StartTest(className, testType, testName)
-
-  combatMessage = mod.testHelper.PrepareCombatMessage(combatMessage)
-  status, _ = mod.parser.ParseCombatText(combatMessage, mod.testHelper.eventTypeSpellDamageShieldsOnOthers)
-
-  if status == 1 then
-    mod.testReporter.ReportSuccessTest(className, testName, testType,
-      string.format("Successfully parsed self avoid parry combatText for %s", spellName))
-  else
-    mod.testReporter.ReportFailTest(className, testName, testType,
-      string.format("Failed to parse self avoid parry combatText for %s", spellName))
-  end
-
-  mod.testReporter.EndTest(className, testType, testName)
+  mod.testHelper.TestParseSelfAvoid(
+    className,
+    "TestParseSelfAvoidParryBloodthirst",
+    "bloodthirst",
+    "$player$'s Bloodthirst was parried.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    PVPW_CONSTANTS.AVOID_TYPES.PARRY
+  )
 end
 
 function me.TestParseSelfAvoidImmuneBloodthirst()
-  local testName = "TestParseSelfAvoidImmuneBloodthirst"
-  local spellName = "bloodthirst"
-  local combatMessage = "$player$'s Bloodthirst failed. You are immune."
-  local testType = mod.testHelper.testType.parseSelfAvoid
-  local status
-
-  mod.testReporter.StartTest(className, testType, testName)
-
-  combatMessage = mod.testHelper.PrepareCombatMessage(combatMessage)
-  status, _ = mod.parser.ParseCombatText(combatMessage, mod.testHelper.eventTypeSpellDamageShieldsOnOthers)
-
-  if status == 1 then
-    mod.testReporter.ReportSuccessTest(className, testName, testType,
-      string.format("Successfully parsed self avoid immune combatText for %s", spellName))
-  else
-    mod.testReporter.ReportFailTest(className, testName, testType,
-      string.format("Failed to parse self avoid immune combatText for %s", spellName))
-  end
-
-  mod.testReporter.EndTest(className, testType, testName)
+  mod.testHelper.TestParseSelfAvoid(
+    className,
+    "TestParseSelfAvoidImmuneBloodthirst",
+    "bloodthirst",
+    "$player$'s Bloodthirst failed. You are immune.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    PVPW_CONSTANTS.AVOID_TYPES.IMMUNE
+  )
 end
 
 function me.TestParseSelfAvoidMissBloodthirst()
-  local testName = "TestParseSelfAvoidMissBloodthirst"
-  local spellName = "bloodthirst"
-  local combatMessage = "$player$'s Bloodthirst misses you."
-  local testType = mod.testHelper.testType.parseSelfAvoid
-  local status
-
-  mod.testReporter.StartTest(className, testType, testName)
-
-  combatMessage = mod.testHelper.PrepareCombatMessage(combatMessage)
-  status, _ = mod.parser.ParseCombatText(combatMessage, mod.testHelper.eventTypeSpellDamageShieldsOnOthers)
-
-  if status == 1 then
-    mod.testReporter.ReportSuccessTest(className, testName, testType,
-      string.format("Successfully parsed self avoid miss combatText for %s", spellName))
-  else
-    mod.testReporter.ReportFailTest(className, testName, testType,
-      string.format("Failed to parse self avoid miss combatText for %s", spellName))
-  end
-
-  mod.testReporter.EndTest(className, testType, testName)
+  mod.testHelper.TestParseSelfAvoid(
+    className,
+    "TestParseSelfAvoidMissBloodthirst",
+    "bloodthirst",
+    "$player$'s Bloodthirst misses you.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    PVPW_CONSTANTS.AVOID_TYPES.MISS
+  )
 end
 
 function me.TestParseSelfAvoidBlockBloodthirst()
-  local testName = "TestParseSelfAvoidBlockBloodthirst"
-  local spellName = "bloodthirst"
-  local combatMessage = "$player$'s Bloodthirst was blocked."
-  local testType = mod.testHelper.testType.parseSelfAvoid
-  local status
-
-  mod.testReporter.StartTest(className, testType, testName)
-
-  combatMessage = mod.testHelper.PrepareCombatMessage(combatMessage)
-  status, _ = mod.parser.ParseCombatText(combatMessage, mod.testHelper.eventTypeSpellDamageShieldsOnOthers)
-
-  if status == 1 then
-    mod.testReporter.ReportSuccessTest(className, testName, testType,
-      string.format("Successfully parsed self avoid block combatText for %s", spellName))
-  else
-    mod.testReporter.ReportFailTest(className, testName, testType,
-      string.format("Failed to parse self avoid block combatText for %s", spellName))
-  end
-
-  mod.testReporter.EndTest(className, testType, testName)
+  mod.testHelper.TestParseSelfAvoid(
+    className,
+    "TestParseSelfAvoidBlockBloodthirst",
+    "bloodthirst",
+    "$player$'s Bloodthirst was blocked.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    PVPW_CONSTANTS.AVOID_TYPES.BLOCK
+  )
 end
 
 function me.TestParseSelfAvoidImmuneInterceptStun()
-  local testName = "TestParseSelfAvoidImmuneInterceptStun"
-  local spellName = "intercept_stun"
-  local combatMessage = "$player$'s Intercept Stun failed. You are immune."
-  local testType = mod.testHelper.testType.parseSelfAvoid
-  local status
-
-  mod.testReporter.StartTest(className, testType, testName)
-
-  combatMessage = mod.testHelper.PrepareCombatMessage(combatMessage)
-  status, _ = mod.parser.ParseCombatText(combatMessage, mod.testHelper.eventTypeSpellDamageShieldsOnOthers)
-
-  if status == 1 then
-    mod.testReporter.ReportSuccessTest(className, testName, testType,
-      string.format("Successfully parsed self avoid immune combatText for %s", spellName))
-  else
-    mod.testReporter.ReportFailTest(className, testName, testType,
-      string.format("Failed to parse self avoid immune combatText for %s", spellName))
-  end
-
-  mod.testReporter.EndTest(className, testType, testName)
+  mod.testHelper.TestParseSelfAvoid(
+    className,
+    "TestParseSelfAvoidImmuneInterceptStun",
+    "intercept_stun",
+    "$player$'s Intercept Stun failed. You are immune.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    PVPW_CONSTANTS.AVOID_TYPES.IMMUNE
+  )
 end
 
 function me.TestParseSelfAvoidResistInterceptStun()
-  local testName = "TestParseSelfAvoidResistInterceptStun"
-  local spellName = "intercept_stun"
-  local combatMessage = "$player$'s Intercept Stun was resisted."
-  local testType = mod.testHelper.testType.parseSelfAvoid
-  local status
-
-  mod.testReporter.StartTest(className, testType, testName)
-
-  combatMessage = mod.testHelper.PrepareCombatMessage(combatMessage)
-  status, _ = mod.parser.ParseCombatText(combatMessage, mod.testHelper.eventTypeSpellDamageShieldsOnOthers)
-
-  if status == 1 then
-    mod.testReporter.ReportSuccessTest(className, testName, testType,
-      string.format("Successfully parsed self avoid resist combatText for %s", spellName))
-  else
-    mod.testReporter.ReportFailTest(className, testName, testType,
-      string.format("Failed to parse self avoid resist combatText for %s", spellName))
-  end
-
-  mod.testReporter.EndTest(className, testType, testName)
+  mod.testHelper.TestParseSelfAvoid(
+    className,
+    "TestParseSelfAvoidResistInterceptStun",
+    "intercept_stun",
+    "$player$'s Intercept Stun was resisted.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    PVPW_CONSTANTS.AVOID_TYPES.RESIST
+  )
 end
 
 function me.TestParseSelfAvoidImmuneIntimidatingShout()
-  local testName = "TestParseSelfAvoidImmuneIntimidatingShout"
-  local spellName = "intimidating_shout"
-  local combatMessage = "$player$'s Intimidating Shout failed. You are immune."
-  local testType = mod.testHelper.testType.parseSelfAvoid
-  local status
-
-  mod.testReporter.StartTest(className, testType, testName)
-
-  combatMessage = mod.testHelper.PrepareCombatMessage(combatMessage)
-  status, _ = mod.parser.ParseCombatText(combatMessage, mod.testHelper.eventTypeSpellDamageShieldsOnOthers)
-
-  if status == 1 then
-    mod.testReporter.ReportSuccessTest(className, testName, testType,
-      string.format("Successfully parsed self avoid immune combatText for %s", spellName))
-  else
-    mod.testReporter.ReportFailTest(className, testName, testType,
-      string.format("Failed to parse self avoid immune combatText for %s", spellName))
-  end
-
-  mod.testReporter.EndTest(className, testType, testName)
+  mod.testHelper.TestParseSelfAvoid(
+    className,
+    "TestParseSelfAvoidImmuneIntimidatingShout",
+    "intimidating_shout",
+    "$player$'s Intimidating Shout failed. You are immune.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    PVPW_CONSTANTS.AVOID_TYPES.IMMUNE
+  )
 end
 
 function me.TestParseSelfAvoidResistIntimidatingShout()
-  local testName = "TestParseSelfAvoidResistIntimidatingShout"
-  local spellName = "intimidating_shout"
-  local combatMessage = "$player$'s Intimidating Shout was resisted."
-  local testType = mod.testHelper.testType.parseSelfAvoid
-  local status
-
-  mod.testReporter.StartTest(className, testType, testName)
-
-  combatMessage = mod.testHelper.PrepareCombatMessage(combatMessage)
-  status, _ = mod.parser.ParseCombatText(combatMessage, mod.testHelper.eventTypeSpellDamageShieldsOnOthers)
-
-  if status == 1 then
-    mod.testReporter.ReportSuccessTest(className, testName, testType,
-      string.format("Successfully parsed self avoid resist combatText for %s", spellName))
-  else
-    mod.testReporter.ReportFailTest(className, testName, testType,
-      string.format("Failed to parse self avoid resist combatText for %s", spellName))
-  end
-
-  mod.testReporter.EndTest(className, testType, testName)
+  mod.testHelper.TestParseSelfAvoid(
+    className,
+    "TestParseSelfAvoidResistIntimidatingShout",
+    "intimidating_shout",
+    "$player$'s Intimidating Shout was resisted.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    PVPW_CONSTANTS.AVOID_TYPES.RESIST
+  )
 end
 
 function me.TestParseSelfAvoidDodgePummel()
-  local testName = "TestParseSelfAvoidDodgePummel"
-  local spellName = "pummel"
-  local combatMessage = "$player$'s Pummel was dodged."
-  local testType = mod.testHelper.testType.parseSelfAvoid
-  local status
-
-  mod.testReporter.StartTest(className, testType, testName)
-
-  combatMessage = mod.testHelper.PrepareCombatMessage(combatMessage)
-  status, _ = mod.parser.ParseCombatText(combatMessage, mod.testHelper.eventTypeSpellDamageShieldsOnOthers)
-
-  if status == 1 then
-    mod.testReporter.ReportSuccessTest(className, testName, testType,
-      string.format("Successfully parsed self avoid dodge combatText for %s", spellName))
-  else
-    mod.testReporter.ReportFailTest(className, testName, testType,
-      string.format("Failed to parse self avoid dodge combatText for %s", spellName))
-  end
-
-  mod.testReporter.EndTest(className, testType, testName)
+  mod.testHelper.TestParseSelfAvoid(
+    className,
+    "TestParseSelfAvoidDodgePummel",
+    "pummel",
+    "$player$'s Pummel was dodged.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    PVPW_CONSTANTS.AVOID_TYPES.DODGE
+  )
 end
 
 function me.TestParseSelfAvoidParryPummel()
-  local testName = "TestParseSelfAvoidParryPummel"
-  local spellName = "pummel"
-  local combatMessage = "$player$'s Pummel was parried."
-  local testType = mod.testHelper.testType.parseSelfAvoid
-  local status
-
-  mod.testReporter.StartTest(className, testType, testName)
-
-  combatMessage = mod.testHelper.PrepareCombatMessage(combatMessage)
-  status, _ = mod.parser.ParseCombatText(combatMessage, mod.testHelper.eventTypeSpellDamageShieldsOnOthers)
-
-  if status == 1 then
-    mod.testReporter.ReportSuccessTest(className, testName, testType,
-      string.format("Successfully parsed self avoid parry combatText for %s", spellName))
-  else
-    mod.testReporter.ReportFailTest(className, testName, testType,
-      string.format("Failed to parse self avoid parry combatText for %s", spellName))
-  end
-
-  mod.testReporter.EndTest(className, testType, testName)
+  mod.testHelper.TestParseSelfAvoid(
+    className,
+    "TestParseSelfAvoidParryPummel",
+    "pummel",
+    "$player$'s Pummel was parried.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    PVPW_CONSTANTS.AVOID_TYPES.PARRY
+  )
 end
 
 function me.TestParseSelfAvoidImmunePummel()
-  local testName = "TestParseSelfAvoidImmunePummel"
-  local spellName = "pummel"
-  local combatMessage = "$player$'s Pummel failed. You are immune."
-  local testType = mod.testHelper.testType.parseSelfAvoid
-  local status
-
-  mod.testReporter.StartTest(className, testType, testName)
-
-  combatMessage = mod.testHelper.PrepareCombatMessage(combatMessage)
-  status, _ = mod.parser.ParseCombatText(combatMessage, mod.testHelper.eventTypeSpellDamageShieldsOnOthers)
-
-  if status == 1 then
-    mod.testReporter.ReportSuccessTest(className, testName, testType,
-      string.format("Successfully parsed self avoid immune combatText for %s", spellName))
-  else
-    mod.testReporter.ReportFailTest(className, testName, testType,
-      string.format("Failed to parse self avoid immune combatText for %s", spellName))
-  end
-
-  mod.testReporter.EndTest(className, testType, testName)
+  mod.testHelper.TestParseSelfAvoid(
+    className,
+    "TestParseSelfAvoidImmunePummel",
+    "pummel",
+    "$player$'s Pummel failed. You are immune.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    PVPW_CONSTANTS.AVOID_TYPES.IMMUNE
+  )
 end
 
 function me.TestParseSelfAvoidMissPummel()
-  local testName = "TestParseSelfAvoidMissPummel"
-  local spellName = "pummel"
-  local combatMessage = "$player$'s Pummel misses you."
-  local testType = mod.testHelper.testType.parseSelfAvoid
-  local status
-
-  mod.testReporter.StartTest(className, testType, testName)
-
-  combatMessage = mod.testHelper.PrepareCombatMessage(combatMessage)
-  status, _ = mod.parser.ParseCombatText(combatMessage, mod.testHelper.eventTypeSpellDamageShieldsOnOthers)
-
-  if status == 1 then
-    mod.testReporter.ReportSuccessTest(className, testName, testType,
-      string.format("Successfully parsed self avoid miss combatText for %s", spellName))
-  else
-    mod.testReporter.ReportFailTest(className, testName, testType,
-      string.format("Failed to parse self avoid miss combatText for %s", spellName))
-  end
-
-  mod.testReporter.EndTest(className, testType, testName)
+  mod.testHelper.TestParseSelfAvoid(
+    className,
+    "TestParseSelfAvoidMissPummel",
+    "pummel",
+    "$player$'s Pummel misses you.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    PVPW_CONSTANTS.AVOID_TYPES.MISS
+  )
 end
 
 function me.TestParseSelfAvoidBlockPummel()
-  local testName = "TestParseSelfAvoidBlockPummel"
-  local spellName = "pummel"
-  local combatMessage = "$player$'s Pummel was blocked."
-  local testType = mod.testHelper.testType.parseSelfAvoid
-  local status
-
-  mod.testReporter.StartTest(className, testType, testName)
-
-  combatMessage = mod.testHelper.PrepareCombatMessage(combatMessage)
-  status, _ = mod.parser.ParseCombatText(combatMessage, mod.testHelper.eventTypeSpellDamageShieldsOnOthers)
-
-  if status == 1 then
-    mod.testReporter.ReportSuccessTest(className, testName, testType,
-      string.format("Successfully parsed self avoid block combatText for %s", spellName))
-  else
-    mod.testReporter.ReportFailTest(className, testName, testType,
-      string.format("Failed to parse self avoid block combatText for %s", spellName))
-  end
-
-  mod.testReporter.EndTest(className, testType, testName)
+  mod.testHelper.TestParseSelfAvoid(
+    className,
+    "TestParseSelfAvoidBlockPummel",
+    "pummel",
+    "$player$'s Pummel was blocked.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    PVPW_CONSTANTS.AVOID_TYPES.BLOCK
+  )
 end
 
 function me.TestParseSelfAvoidDodgeConcussionBlow()
-  local testName = "TestParseSelfAvoidDodgeConcussionBlow"
-  local spellName = "concussion_blow"
-  local combatMessage = "$player$'s Concussion Blow was dodged."
-  local testType = mod.testHelper.testType.parseSelfAvoid
-  local status
-
-  mod.testReporter.StartTest(className, testType, testName)
-
-  combatMessage = mod.testHelper.PrepareCombatMessage(combatMessage)
-  status, _ = mod.parser.ParseCombatText(combatMessage, mod.testHelper.eventTypeSpellDamageShieldsOnOthers)
-
-  if status == 1 then
-    mod.testReporter.ReportSuccessTest(className, testName, testType,
-      string.format("Successfully parsed self avoid dodge combatText for %s", spellName))
-  else
-    mod.testReporter.ReportFailTest(className, testName, testType,
-      string.format("Failed to parse self avoid dodge combatText for %s", spellName))
-  end
-
-  mod.testReporter.EndTest(className, testType, testName)
+  mod.testHelper.TestParseSelfAvoid(
+    className,
+    "TestParseSelfAvoidDodgeConcussionBlow",
+    "concussion_blow",
+    "$player$'s Concussion Blow was dodged.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    PVPW_CONSTANTS.AVOID_TYPES.DODGE
+  )
 end
 
 function me.TestParseSelfAvoidParryConcussionBlow()
-  local testName = "TestParseSelfAvoidParryConcussionBlow"
-  local spellName = "concussion_blow"
-  local combatMessage = "$player$'s Concussion Blow was parried."
-  local testType = mod.testHelper.testType.parseSelfAvoid
-  local status
-
-  mod.testReporter.StartTest(className, testType, testName)
-
-  combatMessage = mod.testHelper.PrepareCombatMessage(combatMessage)
-  status, _ = mod.parser.ParseCombatText(combatMessage, mod.testHelper.eventTypeSpellDamageShieldsOnOthers)
-
-  if status == 1 then
-    mod.testReporter.ReportSuccessTest(className, testName, testType,
-      string.format("Successfully parsed self avoid parry combatText for %s", spellName))
-  else
-    mod.testReporter.ReportFailTest(className, testName, testType,
-      string.format("Failed to parse self avoid parry combatText for %s", spellName))
-  end
-
-  mod.testReporter.EndTest(className, testType, testName)
+  mod.testHelper.TestParseSelfAvoid(
+    className,
+    "TestParseSelfAvoidParryConcussionBlow",
+    "concussion_blow",
+    "$player$'s Concussion Blow was parried.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    PVPW_CONSTANTS.AVOID_TYPES.PARRY
+  )
 end
 
 function me.TestParseSelfAvoidImmuneConcussionBlow()
-  local testName = "TestParseSelfAvoidImmuneConcussionBlow"
-  local spellName = "concussion_blow"
-  local combatMessage = "$player$'s Concussion Blow failed. You are immune."
-  local testType = mod.testHelper.testType.parseSelfAvoid
-  local status
-
-  mod.testReporter.StartTest(className, testType, testName)
-
-  combatMessage = mod.testHelper.PrepareCombatMessage(combatMessage)
-  status, _ = mod.parser.ParseCombatText(combatMessage, mod.testHelper.eventTypeSpellDamageShieldsOnOthers)
-
-  if status == 1 then
-    mod.testReporter.ReportSuccessTest(className, testName, testType,
-      string.format("Successfully parsed self avoid immune combatText for %s", spellName))
-  else
-    mod.testReporter.ReportFailTest(className, testName, testType,
-      string.format("Failed to parse self avoid immune combatText for %s", spellName))
-  end
-
-  mod.testReporter.EndTest(className, testType, testName)
+  mod.testHelper.TestParseSelfAvoid(
+    className,
+    "TestParseSelfAvoidImmuneConcussionBlow",
+    "concussion_blow",
+    "$player$'s Concussion Blow failed. You are immune.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    PVPW_CONSTANTS.AVOID_TYPES.IMMUNE
+  )
 end
 
 function me.TestParseSelfAvoidMissConcussionBlow()
-  local testName = "TestParseSelfAvoidMissConcussionBlow"
-  local spellName = "concussion_blow"
-  local combatMessage = "$player$'s Concussion Blow misses you."
-  local testType = mod.testHelper.testType.parseSelfAvoid
-  local status
-
-  mod.testReporter.StartTest(className, testType, testName)
-
-  combatMessage = mod.testHelper.PrepareCombatMessage(combatMessage)
-  status, _ = mod.parser.ParseCombatText(combatMessage, mod.testHelper.eventTypeSpellDamageShieldsOnOthers)
-
-  if status == 1 then
-    mod.testReporter.ReportSuccessTest(className, testName, testType,
-      string.format("Successfully parsed self avoid miss combatText for %s", spellName))
-  else
-    mod.testReporter.ReportFailTest(className, testName, testType,
-      string.format("Failed to parse self avoid miss combatText for %s", spellName))
-  end
-
-  mod.testReporter.EndTest(className, testType, testName)
+  mod.testHelper.TestParseSelfAvoid(
+    className,
+    "TestParseSelfAvoidMissConcussionBlow",
+    "concussion_blow",
+    "$player$'s Concussion Blow misses you.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    PVPW_CONSTANTS.AVOID_TYPES.MISS
+  )
 end
 
 function me.TestParseSelfAvoidResistConcussionBlow()
-  local testName = "TestParseSelfAvoidResistConcussionBlow"
-  local spellName = "concussion_blow"
-  local combatMessage = "$player$'s Concussion Blow was resisted."
-  local testType = mod.testHelper.testType.parseSelfAvoid
-  local status
-
-  mod.testReporter.StartTest(className, testType, testName)
-
-  combatMessage = mod.testHelper.PrepareCombatMessage(combatMessage)
-  status, _ = mod.parser.ParseCombatText(combatMessage, mod.testHelper.eventTypeSpellDamageShieldsOnOthers)
-
-  if status == 1 then
-    mod.testReporter.ReportSuccessTest(className, testName, testType,
-      string.format("Successfully parsed self avoid resist combatText for %s", spellName))
-  else
-    mod.testReporter.ReportFailTest(className, testName, testType,
-      string.format("Failed to parse self avoid resist combatText for %s", spellName))
-  end
-
-  mod.testReporter.EndTest(className, testType, testName)
+  mod.testHelper.TestParseSelfAvoid(
+    className,
+    "TestParseSelfAvoidResistConcussionBlow",
+    "concussion_blow",
+    "$player$'s Concussion Blow was resisted.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    PVPW_CONSTANTS.AVOID_TYPES.RESIST
+  )
 end
 
 function me.TestParseSelfAvoidDodgeDisarm()
-  local testName = "TestParseSelfAvoidDodgeDisarm"
-  local spellName = "disarm"
-  local combatMessage = "$player$'s Disarm was dodged."
-  local testType = mod.testHelper.testType.parseSelfAvoid
-  local status
-
-  mod.testReporter.StartTest(className, testType, testName)
-
-  combatMessage = mod.testHelper.PrepareCombatMessage(combatMessage)
-  status, _ = mod.parser.ParseCombatText(combatMessage, mod.testHelper.eventTypeSpellDamageShieldsOnOthers)
-
-  if status == 1 then
-    mod.testReporter.ReportSuccessTest(className, testName, testType,
-      string.format("Successfully parsed self avoid dodge combatText for %s", spellName))
-  else
-    mod.testReporter.ReportFailTest(className, testName, testType,
-      string.format("Failed to parse self avoid dodge combatText for %s", spellName))
-  end
-
-  mod.testReporter.EndTest(className, testType, testName)
+  mod.testHelper.TestParseSelfAvoid(
+    className,
+    "TestParseSelfAvoidDodgeDisarm",
+    "disarm",
+    "$player$'s Disarm was dodged.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    PVPW_CONSTANTS.AVOID_TYPES.DODGE
+  )
 end
 
 function me.TestParseSelfAvoidParryDisarm()
-  local testName = "TestParseSelfAvoidParryDisarm"
-  local spellName = "disarm"
-  local combatMessage = "$player$'s Disarm was parried."
-  local testType = mod.testHelper.testType.parseSelfAvoid
-  local status
-
-  mod.testReporter.StartTest(className, testType, testName)
-
-  combatMessage = mod.testHelper.PrepareCombatMessage(combatMessage)
-  status, _ = mod.parser.ParseCombatText(combatMessage, mod.testHelper.eventTypeSpellDamageShieldsOnOthers)
-
-  if status == 1 then
-    mod.testReporter.ReportSuccessTest(className, testName, testType,
-      string.format("Successfully parsed self avoid parry combatText for %s", spellName))
-  else
-    mod.testReporter.ReportFailTest(className, testName, testType,
-      string.format("Failed to parse self avoid parry combatText for %s", spellName))
-  end
-
-  mod.testReporter.EndTest(className, testType, testName)
+  mod.testHelper.TestParseSelfAvoid(
+    className,
+    "TestParseSelfAvoidParryDisarm",
+    "disarm",
+    "$player$'s Disarm was parried.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    PVPW_CONSTANTS.AVOID_TYPES.PARRY
+  )
 end
 
 function me.TestParseSelfAvoidImmuneDisarm()
-  local testName = "TestParseSelfAvoidImmuneDisarm"
-  local spellName = "disarm"
-  local combatMessage = "$player$'s Disarm failed. You are immune."
-  local testType = mod.testHelper.testType.parseSelfAvoid
-  local status
-
-  mod.testReporter.StartTest(className, testType, testName)
-
-  combatMessage = mod.testHelper.PrepareCombatMessage(combatMessage)
-  status, _ = mod.parser.ParseCombatText(combatMessage, mod.testHelper.eventTypeSpellDamageShieldsOnOthers)
-
-  if status == 1 then
-    mod.testReporter.ReportSuccessTest(className, testName, testType,
-      string.format("Successfully parsed self avoid immune combatText for %s", spellName))
-  else
-    mod.testReporter.ReportFailTest(className, testName, testType,
-      string.format("Failed to parse self avoid immune combatText for %s", spellName))
-  end
-
-  mod.testReporter.EndTest(className, testType, testName)
+  mod.testHelper.TestParseSelfAvoid(
+    className,
+    "TestParseSelfAvoidImmuneDisarm",
+    "disarm",
+    "$player$'s Disarm failed. You are immune.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    PVPW_CONSTANTS.AVOID_TYPES.IMMUNE
+  )
 end
 
 function me.TestParseSelfAvoidMissDisarm()
-  local testName = "TestParseSelfAvoidMissDisarm"
-  local spellName = "disarm"
-  local combatMessage = "$player$'s Disarm misses you."
-  local testType = mod.testHelper.testType.parseSelfAvoid
-  local status
-
-  mod.testReporter.StartTest(className, testType, testName)
-
-  combatMessage = mod.testHelper.PrepareCombatMessage(combatMessage)
-  status, _ = mod.parser.ParseCombatText(combatMessage, mod.testHelper.eventTypeSpellDamageShieldsOnOthers)
-
-  if status == 1 then
-    mod.testReporter.ReportSuccessTest(className, testName, testType,
-      string.format("Successfully parsed self avoid miss combatText for %s", spellName))
-  else
-    mod.testReporter.ReportFailTest(className, testName, testType,
-      string.format("Failed to parse self avoid miss combatText for %s", spellName))
-  end
-
-  mod.testReporter.EndTest(className, testType, testName)
+  mod.testHelper.TestParseSelfAvoid(
+    className,
+    "TestParseSelfAvoidMissDisarm",
+    "disarm",
+    "$player$'s Disarm misses you.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    PVPW_CONSTANTS.AVOID_TYPES.MISS
+  )
 end
 
 function me.TestParseSelfAvoidDodgeShieldBash()
-  local testName = "TestParseSelfAvoidDodgeShieldBash"
-  local spellName = "shield_bash"
-  local combatMessage = "$player$'s Shield Bash was dodged."
-  local testType = mod.testHelper.testType.parseSelfAvoid
-  local status
-
-  mod.testReporter.StartTest(className, testType, testName)
-
-  combatMessage = mod.testHelper.PrepareCombatMessage(combatMessage)
-  status, _ = mod.parser.ParseCombatText(combatMessage, mod.testHelper.eventTypeSpellDamageShieldsOnOthers)
-
-  if status == 1 then
-    mod.testReporter.ReportSuccessTest(className, testName, testType,
-      string.format("Successfully parsed self avoid dodge combatText for %s", spellName))
-  else
-    mod.testReporter.ReportFailTest(className, testName, testType,
-      string.format("Failed to parse self avoid dodge combatText for %s", spellName))
-  end
-
-  mod.testReporter.EndTest(className, testType, testName)
+  mod.testHelper.TestParseSelfAvoid(
+    className,
+    "TestParseSelfAvoidDodgeShieldBash",
+    "shield_bash",
+    "$player$'s Shield Bash was dodged.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    PVPW_CONSTANTS.AVOID_TYPES.DODGE
+  )
 end
 
 function me.TestParseSelfAvoidParryShieldBash()
-  local testName = "TestParseSelfAvoidParryShieldBash"
-  local spellName = "shield_bash"
-  local combatMessage = "$player$'s Shield Bash was parried."
-  local testType = mod.testHelper.testType.parseSelfAvoid
-  local status
-
-  mod.testReporter.StartTest(className, testType, testName)
-
-  combatMessage = mod.testHelper.PrepareCombatMessage(combatMessage)
-  status, _ = mod.parser.ParseCombatText(combatMessage, mod.testHelper.eventTypeSpellDamageShieldsOnOthers)
-
-  if status == 1 then
-    mod.testReporter.ReportSuccessTest(className, testName, testType,
-      string.format("Successfully parsed self avoid parry combatText for %s", spellName))
-  else
-    mod.testReporter.ReportFailTest(className, testName, testType,
-      string.format("Failed to parse self avoid parry combatText for %s", spellName))
-  end
-
-  mod.testReporter.EndTest(className, testType, testName)
+  mod.testHelper.TestParseSelfAvoid(
+    className,
+    "TestParseSelfAvoidParryShieldBash",
+    "shield_bash",
+    "$player$'s Shield Bash was parried.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    PVPW_CONSTANTS.AVOID_TYPES.PARRY
+  )
 end
 
 function me.TestParseSelfAvoidImmuneShieldBash()
-  local testName = "TestParseSelfAvoidImmuneShieldBash"
-  local spellName = "shield_bash"
-  local combatMessage = "$player$'s Shield Bash failed. You are immune."
-  local testType = mod.testHelper.testType.parseSelfAvoid
-  local status
-
-  mod.testReporter.StartTest(className, testType, testName)
-
-  combatMessage = mod.testHelper.PrepareCombatMessage(combatMessage)
-  status, _ = mod.parser.ParseCombatText(combatMessage, mod.testHelper.eventTypeSpellDamageShieldsOnOthers)
-
-  if status == 1 then
-    mod.testReporter.ReportSuccessTest(className, testName, testType,
-      string.format("Successfully parsed self avoid immune combatText for %s", spellName))
-  else
-    mod.testReporter.ReportFailTest(className, testName, testType,
-      string.format("Failed to parse self avoid immune combatText for %s", spellName))
-  end
-
-  mod.testReporter.EndTest(className, testType, testName)
+  mod.testHelper.TestParseSelfAvoid(
+    className,
+    "TestParseSelfAvoidImmuneShieldBash",
+    "shield_bash",
+    "$player$'s Shield Bash failed. You are immune.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    PVPW_CONSTANTS.AVOID_TYPES.IMMUNE
+  )
 end
 
 function me.TestParseSelfAvoidMissShieldBash()
-  local testName = "TestParseSelfAvoidMissShieldBash"
-  local spellName = "shield_bash"
-  local combatMessage = "$player$'s Shield Bash misses you."
-  local testType = mod.testHelper.testType.parseSelfAvoid
-  local status
-
-  mod.testReporter.StartTest(className, testType, testName)
-
-  combatMessage = mod.testHelper.PrepareCombatMessage(combatMessage)
-  status, _ = mod.parser.ParseCombatText(combatMessage, mod.testHelper.eventTypeSpellDamageShieldsOnOthers)
-
-  if status == 1 then
-    mod.testReporter.ReportSuccessTest(className, testName, testType,
-      string.format("Successfully parsed self avoid miss combatText for %s", spellName))
-  else
-    mod.testReporter.ReportFailTest(className, testName, testType,
-      string.format("Failed to parse self avoid miss combatText for %s", spellName))
-  end
-
-  mod.testReporter.EndTest(className, testType, testName)
+  mod.testHelper.TestParseSelfAvoid(
+    className,
+    "TestParseSelfAvoidMissShieldBash",
+    "shield_bash",
+    "$player$'s Shield Bash misses you.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    PVPW_CONSTANTS.AVOID_TYPES.MISS
+  )
 end
 
 function me.TestParseSelfAvoidBlockShieldBash()
-  local testName = "TestParseSelfAvoidBlockShieldBash"
-  local spellName = "shield_bash"
-  local combatMessage = "$player$'s Shield Bash was blocked."
-  local testType = mod.testHelper.testType.parseSelfAvoid
-  local status
-
-  mod.testReporter.StartTest(className, testType, testName)
-
-  combatMessage = mod.testHelper.PrepareCombatMessage(combatMessage)
-  status, _ = mod.parser.ParseCombatText(combatMessage, mod.testHelper.eventTypeSpellDamageShieldsOnOthers)
-
-  if status == 1 then
-    mod.testReporter.ReportSuccessTest(className, testName, testType,
-      string.format("Successfully parsed self avoid block combatText for %s", spellName))
-  else
-    mod.testReporter.ReportFailTest(className, testName, testType,
-      string.format("Failed to parse self avoid block combatText for %s", spellName))
-  end
-
-  mod.testReporter.EndTest(className, testType, testName)
+  mod.testHelper.TestParseSelfAvoid(
+    className,
+    "TestParseSelfAvoidBlockShieldBash",
+    "shield_bash",
+    "$player$'s Shield Bash was blocked.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    PVPW_CONSTANTS.AVOID_TYPES.BLOCK
+  )
 end
