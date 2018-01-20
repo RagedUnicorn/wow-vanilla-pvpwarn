@@ -53,7 +53,8 @@ me.testType = {
 }
 
 --[[
-  get testtype by its numeric value
+  Get testtype by its numeric value
+
   @param {number} testType
   @return {string | nil}
     returns the testType name as string or nil if none can be found
@@ -68,6 +69,13 @@ function me.GetTestType(testType)
   return nil
 end
 
+--[[
+  Prepare a passed combat message by replacing player and number with dummy values
+
+  @param {string} msg
+  @return {string}
+    Prepared combat message
+]]--
 function me.PrepareCombatMessage(msg)
   local combatMessage = msg
 
@@ -80,7 +88,8 @@ function me.PrepareCombatMessage(msg)
 end
 
 --[[
-  create new testReport
+  Create new testReport
+
   @param {string} className
   @param {string} prefix
     prefix for the testset
@@ -96,7 +105,8 @@ function me.StartNewTestSet(className, prefix)
 end
 
 --[[
-  tests if a sound testcase can be found for each registered spell in PVPW_SpellMap
+  Tests if a sound testcase can be found for each registered spell in PVPW_SpellMap
+
   @param {table} module
   @param {string} className
 ]]--
@@ -128,7 +138,8 @@ function me.TestShouldHaveASoundTestForEachSpell(module, className)
 end
 
 --[[
-  tests if a sound down testcase can be found if a spell is marked with having a fade sound
+  Tests if a sound down testcase can be found if a spell is marked with having a fade sound
+
   @param {table} module
   @param {string} className
 ]]--
@@ -163,7 +174,8 @@ function me.TestShouldHaveASoundDownTestForSpellsThatFade(module, className)
 end
 
 --[[
-  tests if there is a parse testcase for each registered spell in PVPW_SpellMap
+  Tests if there is a parse testcase for each registered spell in PVPW_SpellMap
+
   @param {table} module
   @param {string} className
 ]]--
@@ -195,7 +207,8 @@ function me.TestShouldHaveAParseTestForEachSpell(module, className)
 end
 
 --[[
-  tests if there is a parse down testcase for each spell that is marked with having a fade sound
+  Tests if there is a parse down testcase for each spell that is marked with having a fade sound
+
   @param {table} module
   @param {string} className
 ]]--
@@ -230,7 +243,8 @@ function me.TestShouldHaveAParseDownTestForSpellsThatFade(module, className)
 end
 
 --[[
-  tests if there is a parse crit testcase for each spell that is marked with having the possibility to crit
+  Tests if there is a parse crit testcase for each spell that is marked with having the possibility to crit
+
   @param {table} module
   @param {string} className
 ]]--
@@ -265,7 +279,8 @@ function me.TestShouldHaveAParseCritTestForSpellsThatCanCrit(module, className)
 end
 
 --[[
-  tests if there is an avoid sound testcase for each spell that is found in spellAvoidMap
+  Tests if there is an avoid sound testcase for each spell that is found in spellAvoidMap
+
   @param {table} module
   @param {string} className
 ]]--
@@ -301,8 +316,9 @@ function me.TestShouldHaveAnEnemyAvoidSoundTestForEachSpell(module, className)
 end
 
 --[[
-  tests if there is an parse testcase for each spell in spellAvoidMap and its
+  Tests if there is a parse testcase for each spell in spellAvoidMap and its
   marked possible avoidance. E.g. dodge, parry etc.
+
   @param {table} module
   @param {string} className
 ]]--
@@ -390,7 +406,8 @@ function me.TestShouldHaveAnEnemyAvoidParseTestForEachSpell(module, className)
 end
 
 --[[
-  tests if there is a self avoid sound testcase for each spell that is found in spellAvoidMap
+  Tests if there is a self avoid sound testcase for each spell that is found in spellAvoidMap
+
   @param {table} module
   @param {string} className
 ]]--
@@ -426,8 +443,9 @@ function me.TestShouldHaveASelfAvoidSoundTestForEachSpell(module, className)
 end
 
 --[[
-  tests if there is an parse testcase for each spell in spellAvoidMap and its
+  Tests if there is an parse testcase for each spell in spellAvoidMap and its
   marked possible avoidance. E.g. dodge, parry etc.
+
   @param {table} module
   @param {string} className
 ]]--
