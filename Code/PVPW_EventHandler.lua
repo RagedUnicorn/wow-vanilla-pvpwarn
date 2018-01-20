@@ -37,7 +37,7 @@ function me.HandleEvent(msg, event)
   end
 
   -- ignore event if player is dead
-  if not mod.player.IsPlayerAlive() then
+  if PVPWarnOptions.ignoreEventsWhileDead and not mod.player.IsPlayerAlive() then
     mod.logger.LogDebug(me.tag, "Ignoring event because player is dead")
     return
   end
