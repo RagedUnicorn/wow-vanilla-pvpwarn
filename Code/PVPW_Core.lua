@@ -34,6 +34,7 @@ me.tag = "Core"
 PVPWarnOptions = {
   ["disableAddon"] = false,
   ["disableAddonInBattlegrounds"] = false,
+  ["showEventsForTargetOnly"] = false,
   ["ignoreEventsWhileDead"] = false,
   --[[
     ["type"] = {
@@ -139,6 +140,9 @@ function me.OnEvent()
   elseif event == PVPW_CONSTANTS.PLAYER_UNGHOST then
     me.logger.LogEvent(me.tag, PVPW_CONSTANTS.PLAYER_UNGHOST)
     me.player.UpdatePlayerHealthStatus()
+  elseif event == PVPW_CONSTANTS.PLAYER_TARGET_CHANGED then
+    me.logger.LogEvent(me.tag, PVPW_CONSTANTS.PLAYER_TARGET_CHANGED)
+    me.player.UpdatePlayerTarget()
   elseif event == PVPW_CONSTANTS.CHAT_MSG_SPELL_SELF_DAMAGE then
     me.logger.LogEvent(me.tag, PVPW_CONSTANTS.CHAT_MSG_SPELL_SELF_DAMAGE)
     me.eventHandler.HandleEvent(arg1, event)
@@ -203,6 +207,8 @@ function me.RegisterEvents()
   this:RegisterEvent("PLAYER_ALIVE");
   -- fires when a player resurrects after being in spirit form
   this:RegisterEvent("PLAYER_UNGHOST");
+  -- fires when the player changes targets
+  this:RegisterEvent("PLAYER_TARGET_CHANGED")
 end
 
 --[[

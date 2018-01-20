@@ -30,7 +30,8 @@ me.tag = "GeneralMenu"
 local options = {
   {"DisableAddon", pvpw.L["disable_addon"], pvpw.L["disable_addon_tooltip"]},
   {"DisableAddonInBattlegrounds", pvpw.L["disable_addon_in_battlegrounds"], pvpw.L["disable_addon_in_battlegrounds_tooltip"]},
-  {"IgnoreEventsWhileDead", pvpw.L["ignore_events_while_dead"], pvpw.L["ignore_events_while_dead_tooltip"]}
+  {"IgnoreEventsWhileDead", pvpw.L["ignore_events_while_dead"], pvpw.L["ignore_events_while_dead_tooltip"]},
+  {"ShowEventsForTargetOnly", pvpw.L["show_events_for_target_only"], pvpw.L["show_events_for_target_only_tooltip"]}
 }
 
 function PVPW_InitGeneralMenu()
@@ -128,5 +129,24 @@ function PVPW_IgnoreEventsWhileDead_OnClick()
     PVPWarnOptions.ignoreEventsWhileDead = true
   else
     PVPWarnOptions.ignoreEventsWhileDead = false
+  end
+end
+
+function PVPW_ShowEventsForTargetOnly_OnShow()
+  -- load status from config-object
+  if PVPWarnOptions.showEventsForTargetOnly then
+    this:SetChecked(true)
+  else
+    this:SetChecked(false)
+  end
+end
+
+function PVPW_ShowEventsForTargetOnly_OnClick()
+  local enabled = this:GetChecked()
+
+  if enabled == 1 then
+    PVPWarnOptions.showEventsForTargetOnly = true
+  else
+    PVPWarnOptions.showEventsForTargetOnly = false
   end
 end

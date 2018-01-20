@@ -36,6 +36,8 @@ if (GetLocale() == "deDE") then
   pvpw.L["disable_addon_in_battlegrounds_tooltip"] = "Deaktiviere Addon in allen Schlachtfeldern wie Warsong Schlucht, Arathibbecken und Alteractal"
   pvpw.L["ignore_events_while_dead"] = "Ignoriere Warnungen solange Spieler tot ist"
   pvpw.L["ignore_events_while_dead_tooltip"] = "Ignore Warnungen solange der Spiele tot oder in Geistesform ist"
+  pvpw.L["show_events_for_target_only"] = "Zeige Warnungen nur für aktuelles Ziel"
+  pvpw.L["show_events_for_target_only_tooltip"] = "Zeige Warnungen nur an wenn sie vom aktuellen Ziel des Spielers ausgehen"
 
   -- tooltips used throughout configuration menus for spells
   pvpw.L["spell_status_tooltip_title"] = "Zauberstatus"

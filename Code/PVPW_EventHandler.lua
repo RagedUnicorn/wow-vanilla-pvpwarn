@@ -42,6 +42,16 @@ function me.HandleEvent(msg, event)
     return
   end
 
+  --[[
+    Ignore event if only events for current target should be shown and the player
+    has no valid target at the time
+  ]]--
+  if PVPWarnOptions.showEventsForTargetOnly and not mod.player.PlayerHasEnemyTarget() then
+    mod.logger.LogDebug(me.tag, "Ignore event because showEventsForTargetOnly is active "
+      .. "and player has no valid target")
+    return
+  end
+
   -- if player is in a battleground and addon is disabled for battlegrounds ignore event
   if PVPWarnOptions.disableAddonInBattlegrounds and mod.zone.IsPlayerInBattleground() then
     mod.logger.LogDebug(me.tag, "Ignoring event because player is in battleground" ..
@@ -55,6 +65,11 @@ function me.HandleEvent(msg, event)
     local class, spell, fade
 
     if status == 1 then
+      -- check if event should be ignored
+      if not me.ShouldProcessEvent(spellData) then
+        return
+      end
+
       if spellData.type == PVPW_CONSTANTS.CHAT_MSG_SPELL_DAMAGESHIELDS_ON_SELF or
         spellData.type == PVPW_CONSTANTS.CHAT_MSG_SPELL_SELF_DAMAGE then
         class, spell = mod.spellAvoidMap.SearchByName(spellData.spell)
@@ -85,12 +100,56 @@ function me.HandleEvent(msg, event)
         end
       end
 
-
       mod.warnQueue.AddToQueue(tostring(math.floor(math.random() * 100000)),
           spell.name, spellData.soundType, class, spell.soundFileName, fade)
     else
       mod.logger.LogInfo(me.tag, string.format("Unknown spell %s", spellData.spell))
       return
     end
+  end
+end
+
+--[[
+  Figure whether an event should be processed or not. Note that the event can still
+  be dropped at a latter point because the player deactived the spell in his options
+
+  @param {table} spellData
+  @return {boolean}
+    true - event should be processed
+    false - event should be ignored
+]]--
+function me.ShouldProcessEvent(spellData)
+  if PVPWarnOptions.showEventsForTargetOnly then
+
+    if spellData.type == PVPW_CONSTANTS.CHAT_MSG_SPELL_PERIODIC_HOSTILEPLAYER_BUFFS
+      or spellData.type == PVPW_CONSTANTS.CHAT_MSG_SPELL_HOSTILEPLAYER_DAMAGE
+      or spellData.type == PVPW_CONSTANTS.CHAT_MSG_SPELL_PERIODIC_HOSTILEPLAYER_DAMAGE
+      or spellData.type == PVPW_CONSTANTS.CHAT_MSG_SPELL_AURA_GONE_OTHER
+      or spellData.type == PVPW_CONSTANTS.CHAT_MSG_SPELL_HOSTILEPLAYER_DAMAGE
+      or spellData.type == PVPW_CONSTANTS.CHAT_MSG_SPELL_DAMAGESHIELDS_ON_OTHERS then
+       if mod.player.IsCurrentTarget(spellData.source) then
+         return true
+       end
+
+       return false
+    elseif spellData.type == PVPW_CONSTANTS.CHAT_MSG_SPELL_SELF_DAMAGE then
+      if mod.player.IsCurrentTarget(spellData.target) then
+        return true
+      end
+
+      return false
+    elseif spellData.type == PVPW_CONSTANTS.CHAT_MSG_SPELL_PERIODIC_HOSTILEPLAYER_BUFFS then
+      if mod.player.IsCurrentTarget(spellData.source) or mod.player.IsCurrentTarget(spellData.source1) then
+        return true
+      end
+
+      return false
+    elseif spellData.type == PVPW_CONSTANTS.CHAT_MSG_SPELL_PERIODIC_SELF_DAMAGE then
+      -- always return true because this event does not have a source
+      return true
+    end
+  else
+    -- if option is deactivated show event in any case
+    return true
   end
 end

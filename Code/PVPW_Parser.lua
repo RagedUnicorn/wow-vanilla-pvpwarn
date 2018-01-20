@@ -120,7 +120,7 @@ local SPELL_HOSTILE_PLAYER_BUFF5 = "^(%a+)%s(gains)%s(%d+)%s([%a]+)%s(from)%s(%a
 
 --[[
   CHAT_MSG_SPELL_PERIODIC_SELF_DAMAGE
-  [source] [keyword] [spell]
+  [target] [keyword] [spell]
 
   examples:
     You are afflicted by Fear.
@@ -434,33 +434,33 @@ end
     0 if not able to parse msg
 ]]--
 function me.ParseSpellHostilePlayerBuff(msg)
-  local _, _, player1, spell, keyword, player2, amount = string.find(msg, SPELL_HOSTILE_PLAYER_BUFF1)
+  local _, _, source1, spell, keyword, source2, amount = string.find(msg, SPELL_HOSTILE_PLAYER_BUFF1)
 
-  if player1 and spell and keyword and player2 and amount then
+  if source1 and spell and keyword and source2 and amount then
     mod.logger.LogDebug(me.tag, "CHAT_MSG_SPELL_HOSTILEPLAYER_BUFF detected")
-    mod.logger.LogDebug(me.tag, string.format("player: %s spell: %s amount: %s", player1, spell, amount))
+    mod.logger.LogDebug(me.tag, string.format("player: %s spell: %s amount: %s", source1, spell, amount))
 
     return 1, {
       ["type"] = "CHAT_MSG_SPELL_HOSTILEPLAYER_BUFF",
       ["soundType"] = PVPW_CONSTANTS.SOUND_TYPES.SPELL,
-      ["player1"] = player1,
+      ["source1"] = source1,
       ["spell"] = spell,
       ["keyword"] = keyword,
-      ["player2"] = player2,
+      ["source2"] = source2,
       ["amount"] = amount
     }
   end
 
-  local _, _, player, keyword, spell = string.find(msg, SPELL_HOSTILE_PLAYER_BUFF2)
+  local _, _, source, keyword, spell = string.find(msg, SPELL_HOSTILE_PLAYER_BUFF2)
 
-  if player and keyword and spell then
+  if source and keyword and spell then
     mod.logger.LogDebug(me.tag, "CHAT_MSG_SPELL_HOSTILEPLAYER_BUFF detected")
-    mod.logger.LogDebug(me.tag, string.format("player: %s spell: %s", player, spell))
+    mod.logger.LogDebug(me.tag, string.format("source: %s spell: %s", source, spell))
 
     return 1, {
       ["type"] = "CHAT_MSG_SPELL_HOSTILEPLAYER_BUFF",
       ["soundType"] = PVPW_CONSTANTS.SOUND_TYPES.SPELL,
-      ["player"] = player,
+      ["source"] = source,
       ["keyword"] = keyword,
       ["spell"] = spell
     }
@@ -532,16 +532,16 @@ end
     0 if not able to parse msg
 ]]--
 function me.ParseSpellPeriodicSelfDamage(msg)
-  local _, _, source, keyword, spell = string.find(msg, SPELL_PERIODIC_SELF_DAMAGE)
+  local _, _, target, keyword, spell = string.find(msg, SPELL_PERIODIC_SELF_DAMAGE)
 
-  if source and keyword and spell then
+  if target and keyword and spell then
     mod.logger.LogDebug(me.tag, "CHAT_MSG_SPELL_PERIODIC_SELF_DAMAGE detected")
-    mod.logger.LogDebug(me.tag, string.format("source: %s spell: %s", source, spell))
+    mod.logger.LogDebug(me.tag, string.format("target: %s spell: %s", target, spell))
 
     return 1, {
       ["type"] = "CHAT_MSG_SPELL_PERIODIC_SELF_DAMAGE",
       ["soundType"] = PVPW_CONSTANTS.SOUND_TYPES.SPELL,
-      ["source"] = source,
+      ["target"] = target,
       ["keyword"] = keyword,
       ["spell"] = spell
     }

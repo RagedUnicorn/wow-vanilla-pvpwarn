@@ -55,6 +55,12 @@ The addon can be configured to be either completely disabled or disable in all B
 
 Events can be ignored while the player is dead and wishes to not see any warning during this state.
 
+### Show events only for the current target
+
+This option allows to ignore surrounding events and only report events for your current target.
+
+Note: Events with type `CHAT_MSG_SPELL_PERIODIC_SELF_DAMAGE` will always shown because they have no source. Events like that includes events such as Blind, Fear, Polymorph and have the form of Your are afflicted by [some spell].
+
 ## FAQ
 
 #### The addon is not showing up in WoW. What can I do?

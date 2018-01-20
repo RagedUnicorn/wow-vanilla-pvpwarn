@@ -249,6 +249,23 @@
                   </OnShow>
                 </Scripts>
               </CheckButton>
+              <CheckButton name="PVPW_OptShowEventsForTargetOnly" inherits="PVPW_CheckButtonTemplate">
+                <Anchors>
+                  <Anchor point="TOPLEFT" relativeTo="PVPW_RightContentMenu" relativePoint="TOPLEFT">
+                    <Offset>
+                      <AbsDimension x="10" y="-100"/>
+                    </Offset>
+                  </Anchor>
+                </Anchors>
+                <Scripts>
+                  <OnClick>
+                    PVPW_ShowEventsForTargetOnly_OnClick()
+                  </OnClick>
+                  <OnShow>
+                    PVPW_ShowEventsForTargetOnly_OnShow()
+                  </OnShow>
+                </Scripts>
+              </CheckButton>
             </Frames>
             <Scripts>
               <OnShow>

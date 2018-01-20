@@ -33,6 +33,10 @@ me.tag = "Player"
   PLAYER_ALIVE and PLAYER_UNGHOST are fired
 ]]--
 local isPlayerAlive = false
+--[[
+  Track current playertarget
+]]--
+local playerTarget = nil
 
 --[[
   Check if a player is really dead and did not use feigndeath
@@ -80,4 +84,56 @@ end
 ]]--
 function me.IsPlayerInBattleground()
   return isPlayerInBattleground
+end
+
+--[[
+  Check if the target from an event matches the players current target
+
+  @param {string} target
+  @return {boolean}
+    true if the event matches the players current target
+    false if the event does not match the players current target
+]]--
+function me.IsCurrentTarget(target)
+  if target == playerTarget then
+    return true
+  else
+    return false
+  end
+end
+
+--[[
+  Update the players current target if he has a valid target. A valid target
+  is an enemy player
+]]--
+function me.UpdatePlayerTarget()
+  -- ignore event if option is not activated
+  if not PVPWarnOptions.showEventsForTargetOnly then
+    mod.logger.LogDebug(me.tag, "Ignore event target changed")
+    return
+  end
+
+  if me.PlayerHasEnemyTarget() then
+    playerTarget = GetUnitName("target")
+    mod.logger.LogDebug(me.tag, "Set new target to: " .. playerTarget)
+  else
+    playerTarget = nil
+    mod.logger.LogDebug(me.tag, "No valid target - reseting target")
+  end
+end
+
+--[[
+  Check whether the player has a player target and if this player is an enemy
+
+  @return {boolean}
+    true player has an enemy player as target
+    false player has no target, a friendly player, an enemy player not marked for
+    pvp or an npc as target
+]]--
+function me.PlayerHasEnemyTarget()
+  if UnitIsPlayer("target") and UnitIsEnemy("player", "target") then
+    return true
+  end
+
+  return false
 end

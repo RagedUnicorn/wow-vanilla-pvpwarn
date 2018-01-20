@@ -35,6 +35,8 @@ pvpw.L["disable_addon_in_battlegrounds"] = "Disable Addon in Battlegrounds"
 pvpw.L["disable_addon_in_battlegrounds_tooltip"] = "Disable Addon in all Battlegrounds such as Warsong Gulch, Arathi Basin and Alterac Valley"
 pvpw.L["ignore_events_while_dead"] = "Ignore events while player is dead"
 pvpw.L["ignore_events_while_dead_tooltip"] = "Ignore events while the player is dead or in ghostform"
+pvpw.L["show_events_for_target_only"] = "Show Events for current target only"
+pvpw.L["show_events_for_target_only_tooltip"] = "Do not show events for targets other than the players current target"
 
 -- tooltips used throughout configuration menus for spells
 pvpw.L["spell_status_tooltip_title"] = "Spell Status"
