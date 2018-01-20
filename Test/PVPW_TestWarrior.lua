@@ -961,7 +961,7 @@ function me.TestParseEnemyAvoidBlockHamstring()
     "TestParseEnemyAvoidBlockHamstring",
     "hamstring",
     "Your Hamstring was blocked by $player$.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    mod.testHelper.eventTypeSpellSelfDamage,
     PVPW_CONSTANTS.AVOID_TYPES.BLOCK
   )
 end
@@ -1016,7 +1016,7 @@ function me.TestParseEnemyAvoidBlockMortalStrike()
     "TestParseEnemyAvoidBlockMortalStrike",
     "mortal_strike",
     "Your Mortal Strike was blocked by $player$.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    mod.testHelper.eventTypeSpellSelfDamage,
     PVPW_CONSTANTS.AVOID_TYPES.BLOCK
   )
 end
@@ -1093,7 +1093,7 @@ function me.TestParseEnemyAvoidBlockBloodthirst()
     "TestParseEnemyAvoidBlockBloodthirst",
     "bloodthirst",
     "Your Bloodthirst was blocked by $player$.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    mod.testHelper.eventTypeSpellSelfDamage,
     PVPW_CONSTANTS.AVOID_TYPES.BLOCK
   )
 end
@@ -1192,7 +1192,7 @@ function me.TestParseEnemyAvoidBlockPummel()
     "TestParseEnemyAvoidBlockPummel",
     "pummel",
     "Your Pummel was blocked by $player$.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    mod.testHelper.eventTypeSpellSelfDamage,
     PVPW_CONSTANTS.AVOID_TYPES.BLOCK
   )
 end
@@ -1346,7 +1346,7 @@ function me.TestParseEnemyAvoidBlockShieldBash()
     "TestParseEnemyAvoidBlockShieldBash",
     "shield_bash",
     "Your Shield Bash was blocked by $player$.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    mod.testHelper.eventTypeSpellSelfDamage,
     PVPW_CONSTANTS.AVOID_TYPES.BLOCK
   )
 end
