@@ -51,7 +51,7 @@ For the opposite warning if an enemy player resisted an important spell of yours
 
 The addon can be configured to be either completely disabled or disable in all Battlegrounds. This includes `Warsong Gulch`, `Arathi Basin` and `Alterac Valley`. This can be useful to prevent the warnQueue to get to annoying in places where a lot of such events are triggered
 
-### Ignore events while is dead
+### Ignore events while player is dead
 
 Events can be ignored while the player is dead and wishes to not see any warning during this state.
 
@@ -75,7 +75,7 @@ This is also more likely to happen in a crowed place with lots of players. You c
 
 #### No Sound is played when a player used [certain spell]. What should I do?
 
-This can have different reasons. Make sure to check that the spell you would like to be alerted is configured and active in the addon. If you cannot find the spell list chances are the spell cannot be tracked or is not yet included in the addon. While certain spells are untraceable other might simply be missing. Create a Github issue with a enhancement request for the spell to be added to the addon.
+This can have different reasons. Make sure to check that the spell you would like to be alerted is configured and active in the addon. If you cannot find the spell in the list chances are the spell cannot be tracked or is not yet included in the addon. While certain spells are untraceable others might simply be missing. Create a Github issue with an enhancement request for the spell to be added to the addon.
 
 #### I get a red error (Lua Error) on my screen. What is this?
 
