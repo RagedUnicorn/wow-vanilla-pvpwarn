@@ -70,14 +70,8 @@ function me.HandleEvent(msg, event)
         return
       end
 
-      if spellData.type == PVPW_CONSTANTS.CHAT_MSG_SPELL_DAMAGESHIELDS_ON_SELF or
-        spellData.type == PVPW_CONSTANTS.CHAT_MSG_SPELL_SELF_DAMAGE then
-        class, spell = mod.spellAvoidMap.SearchByName(spellData.spell)
-      elseif spellData.type == PVPW_CONSTANTS.CHAT_MSG_SPELL_DAMAGESHIELDS_ON_OTHERS then
-        class, spell = mod.spellAvoidMap.SearchByName(spellData.spell)
-      else
-        class, spell = mod.spellMap.SearchByName(spellData.spell)
-      end
+      -- retrieve spelldata
+      class, spell = me.GetSpellFromSpellMap(spellData)
     else
       return
     end
@@ -107,6 +101,27 @@ function me.HandleEvent(msg, event)
       return
     end
   end
+end
+
+--[[
+  Based on the spellData type retrieve the spell either from the normale spellMap
+  or the SpellAvoidMap
+
+  @param {table} spellData
+  @return {string, table}
+]]--
+function me.GetSpellFromSpellMap(spellData)
+  local class, spell
+
+  if spellData.type == PVPW_CONSTANTS.CHAT_MSG_SPELL_DAMAGESHIELDS_ON_SELF
+    or spellData.type == PVPW_CONSTANTS.CHAT_MSG_SPELL_SELF_DAMAGE
+    or spellData.type == PVPW_CONSTANTS.CHAT_MSG_SPELL_DAMAGESHIELDS_ON_OTHERS then
+    class, spell = mod.spellAvoidMap.SearchByName(spellData.spell)
+  else
+    class, spell = mod.spellMap.SearchByName(spellData.spell)
+  end
+
+  return class, spell
 end
 
 --[[
