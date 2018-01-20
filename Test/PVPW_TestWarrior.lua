@@ -590,6 +590,7 @@ function me.TestSoundSelfAvoidOverpower()
     className,
     "TestSoundSelfAvoidOverpower",
     "overpower"
+  )
 end
 
 function me.TestSoundSelfAvoidBloodthirst()
