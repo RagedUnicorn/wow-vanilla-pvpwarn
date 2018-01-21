@@ -135,12 +135,19 @@ function me.RunAll(playManual)
   mod.testReporter.AddToTestQueueWithDelay(me.TestSoundFreeAction)
   mod.testReporter.AddToTestQueueWithDelay(me.TestSoundDownFreeAction)
   mod.testReporter.AddToTestQueueWithDelay(me.TestSoundThoriumGrenade)
+  mod.testReporter.AddToTestQueueWithDelay(me.TestSoundDownThoriumGrenade)
   mod.testReporter.AddToTestQueueWithDelay(me.TestSoundIronGrenade)
+  mod.testReporter.AddToTestQueueWithDelay(me.TestSoundDownIronGrenade)
   mod.testReporter.AddToTestQueueWithDelay(me.TestSoundShadowProtection)
+  mod.testReporter.AddToTestQueueWithDelay(me.TestSoundDownShadowProtection)
   mod.testReporter.AddToTestQueueWithDelay(me.TestSoundFrostProtection)
+  mod.testReporter.AddToTestQueueWithDelay(me.TestSoundDownFrostProtection)
   mod.testReporter.AddToTestQueueWithDelay(me.TestSoundFireProtection)
+  mod.testReporter.AddToTestQueueWithDelay(me.TestSoundDownFireProtection)
   mod.testReporter.AddToTestQueueWithDelay(me.TestSoundNatureProtection)
+  mod.testReporter.AddToTestQueueWithDelay(me.TestSoundDownNatureProtection)
   mod.testReporter.AddToTestQueueWithDelay(me.TestSoundArcaneProtection)
+  mod.testReporter.AddToTestQueueWithDelay(me.TestSoundDownArcaneProtection)
   mod.testReporter.AddToTestQueueWithDelay(me.TestSoundEnemyAvoidThoriumGrenade)
   mod.testReporter.AddToTestQueueWithDelay(me.TestSoundEnemyAvoidIronGrenade)
   mod.testReporter.AddToTestQueueWithDelay(me.TestSoundSelfAvoidThoriumGrenade)
@@ -255,10 +262,26 @@ function me.TestSoundThoriumGrenade()
   )
 end
 
+function me.TestSoundDownThoriumGrenade()
+  mod.testHelper.TestSoundDown(
+    className,
+    "TestSoundDownThoriumGrenade",
+    "thorium_grenade"
+  )
+end
+
 function me.TestSoundIronGrenade()
   mod.testHelper.TestSound(
     className,
     "TestSoundIronGrenade",
+    "iron_grenade"
+  )
+end
+
+function me.TestSoundDownIronGrenade()
+  mod.testHelper.TestSoundDown(
+    className,
+    "TestSoundDownIronGrenade",
     "iron_grenade"
   )
 end
@@ -271,10 +294,26 @@ function me.TestSoundShadowProtection()
   )
 end
 
+function me.TestSoundDownShadowProtection()
+  mod.testHelper.TestSoundDown(
+    className,
+    "TestSoundDownShadowProtection",
+    "shadow_protection"
+  )
+end
+
 function me.TestSoundFrostProtection()
   mod.testHelper.TestSound(
     className,
     "TestSoundFrostProtection",
+    "frost_protection"
+  )
+end
+
+function me.TestSoundDownFrostProtection()
+  mod.testHelper.TestSoundDown(
+    className,
+    "TestSoundDownFrostProtection",
     "frost_protection"
   )
 end
@@ -287,6 +326,14 @@ function me.TestSoundFireProtection()
   )
 end
 
+function me.TestSoundDownFireProtection()
+  mod.testHelper.TestSoundDown(
+    className,
+    "TestSoundDownFireProtection",
+    "fire_protection"
+  )
+end
+
 function me.TestSoundNatureProtection()
   mod.testHelper.TestSound(
     className,
@@ -295,10 +342,26 @@ function me.TestSoundNatureProtection()
   )
 end
 
+function me.TestSoundDownNatureProtection()
+  mod.testHelper.TestSoundDown(
+    className,
+    "TestSoundDownNatureProtection",
+    "nature_protection"
+  )
+end
+
 function me.TestSoundArcaneProtection()
   mod.testHelper.TestSound(
     className,
     "TestSoundArcaneProtection",
+    "arcane_protection"
+  )
+end
+
+function me.TestSoundDownArcaneProtection()
+  mod.testHelper.TestSoundDown(
+    className,
+    "TestSoundDownArcaneProtection",
     "arcane_protection"
   )
 end
@@ -425,6 +488,16 @@ function me.TestParseThoriumGrenade()
   )
 end
 
+function me.TestParseDownThoriumGrenade()
+  mod.testHelper.TestParseDown(
+    className,
+    "TestParseDownThoriumGrenade",
+    "thorium_grenade",
+    "Thorium Grenade fades from you.",
+    mod.testHelper.eventTypeSpellAuraGoneOther
+  )
+end
+
 function me.TestParseIronGrenade()
   mod.testHelper.TestParse(
     className,
@@ -432,6 +505,16 @@ function me.TestParseIronGrenade()
     "iron_grenade",
     "You are afflicted by Iron Grenade.",
     mod.testHelper.eventTypeSpellPeriodicSelfDamage
+  )
+end
+
+function me.TestParseDownIronGrenade()
+  mod.testHelper.TestParseDown(
+    className,
+    "TestParseDownIronGrenade",
+    "iron_grenade",
+    "Iron Grenade fades from you.",
+    mod.testHelper.eventTypeSpellAuraGoneOther
   )
 end
 
