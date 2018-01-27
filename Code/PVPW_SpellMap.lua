@@ -1514,7 +1514,7 @@ local spellMap = {
       ["active"] = true
     },
     ["restoration"] = {
-      ["name"] = "Restoration",
+      ["name"] = "Restorative Potion",
       ["soundFileName"] = "restoration",
       ["itemID"] = 9030,
       ["spellID"] = 11359,
@@ -1532,7 +1532,7 @@ local spellMap = {
       ["active"] = true
     },
     ["invulnerability"] = {
-      ["name"] = "Invulnerability",
+      ["name"] = "Limited Invulnerability Potion",
       ["soundFileName"] = "invulnerability",
       ["itemID"] = 3387,
       ["spellID"] = 3169,
