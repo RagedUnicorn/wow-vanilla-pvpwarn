@@ -86,19 +86,46 @@ function me.ExtractPositionFromName(name)
 end
 
 --[[
-  Normalize spellName by replacing spaces with underscores and removing special characters
-
-  @param {string} spellName
-  @return {string}
-    normalized spellName
+  Depending on what locale the client has a different implementation is used
+  to normalize a spellname (this is determined once during addon load). This is done because this function is time critical
+  and can be called a lot during fights with a lot of players.
 ]]--
-function me.NormalizeSpellname(spellName)
-  local name = string.gsub(strlower(spellName), "%s+", "_")
+if (GetLocale() == "deDE") then
+  --[[
+    Normalize spellName by replacing spaces with underscores and removing special characters
 
-  name = string.gsub(name, "_%-_", "_")
-  name = string.gsub(name, "'+:", "")
+    @param {string} spellName
+    @return {string}
+      normalized spellName
+  ]]--
+  function me.NormalizeSpellname(spellName)
+    local name = string.gsub(strlower(spellName), "%s+", "_")
 
-  return name
+    name = string.gsub(name, "_%-_", "_")
+    name = string.gsub(name, "'+:", "")
+    name = string.gsub(name, "ö", "oe")
+    name = string.gsub(name, "ü", "ue")
+    name = string.gsub(name, "ä", "ae")
+
+    return name
+  end
+else
+  --[[
+    Normalize spellName by replacing spaces with underscores and removing special characters
+    including german umlaute
+
+    @param {string} spellName
+    @return {string}
+      normalized spellName
+  ]]--
+  function me.NormalizeSpellname(spellName)
+    local name = string.gsub(strlower(spellName), "%s+", "_")
+
+    name = string.gsub(name, "_%-_", "_")
+    name = string.gsub(name, "'+:", "")
+
+    return name
+  end
 end
 
 --[[
