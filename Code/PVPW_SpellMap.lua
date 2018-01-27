@@ -1504,7 +1504,7 @@ local spellMap = {
     }
   },
   ["misc"] = {
-    ["thistle_tea"] = {
+    ["restore_energy"] = {
       ["name"] = "Thistle Tea",
       ["soundFileName"] = "thistle_tea",
       ["itemID"] = 7676,
