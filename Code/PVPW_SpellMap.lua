@@ -527,7 +527,7 @@ if (GetLocale() == "deDE") then
       },
       ["verbesserter_erschuetternder_schuss"] = {
         ["name"] = "Verbesserter erschütternder Schuss",
-        ["soundFileName"] = "verbesserter_erschuetternder_schuss",
+        ["soundFileName"] = "erschuetternder_schuss",
         ["spellID"] = 19410,
         ["spellIcon"] = "spell_frost_stun",
         ["hasFade"] = false,
