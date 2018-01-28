@@ -99,13 +99,14 @@ if (GetLocale() == "deDE") then
       normalized spellName
   ]]--
   function me.NormalizeSpellname(spellName)
-    local name = string.gsub(strlower(spellName), "%s+", "_")
+    local name = string.gsub(string.lower(spellName), "%s+", "_")
 
     name = string.gsub(name, "_%-_", "_")
     name = string.gsub(name, "'+:", "")
     name = string.gsub(name, "ö", "oe")
     name = string.gsub(name, "ü", "ue")
     name = string.gsub(name, "ä", "ae")
+    name = string.gsub(name, "ß", "ss")
 
     return name
   end
@@ -119,7 +120,7 @@ else
       normalized spellName
   ]]--
   function me.NormalizeSpellname(spellName)
-    local name = string.gsub(strlower(spellName), "%s+", "_")
+    local name = string.gsub(string.lower(spellName), "%s+", "_")
 
     name = string.gsub(name, "_%-_", "_")
     name = string.gsub(name, "'+:", "")
