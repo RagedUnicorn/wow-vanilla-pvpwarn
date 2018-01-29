@@ -1406,7 +1406,7 @@ if (GetLocale() == "deDE") then
         ["active"] = true
       },
       ["ruhelose_staerke"] = {
-        ["name"] = "Restless Strength",
+        ["name"] = "Ruhelose Stärke",
         ["soundFileName"] = "ruhelose_staerke",
         ["itemID"] = 19949,
         ["spellID"] = 24661,
