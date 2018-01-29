@@ -1138,7 +1138,7 @@ if (GetLocale() == "deDE") then
         ["active"] = true
       },
       ["totem_der_erdbindung"] = {
-        ["name"] = "Earthbind Totem",
+        ["name"] = "Totem der Erdbindung",
         ["soundFileName"] = "totem_der_erdbindung",
         ["spellID"] = 2484,
         ["spellIcon"] = "spell_nature_strengthofearthtotem02",
