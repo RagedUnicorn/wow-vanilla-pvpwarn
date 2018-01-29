@@ -181,7 +181,7 @@ if (GetLocale() == "deDE") then
       -- cannot detect charge itself, only the stun
       ["betaeubung_abfangen"] = {
         ["name"] = "Betäubung abfangen",
-        ["soundFileName"] = "betaeubung_abfangen",
+        ["soundFileName"] = "abfangen",
         ["spellID"] = 7922,
         ["spellIcon"] = "ability_warrior_charge",
         ["hasFade"] = false,
