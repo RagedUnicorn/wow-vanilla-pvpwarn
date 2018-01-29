@@ -27,13 +27,21 @@ me.tag = "Sound"
 --[[
   Private
 ]]--
-local BASE_PATH = "Interface\\AddOns\\PVPWarn\\Assets\\Sounds\\"
+local BASE_PATH
+local FILE_NAME_DOWN
 local FILE_TYPE = ".mp3"
-local FILE_NAME_DOWN = "_down"
 local FILE_FOLDER_ENEMY_AVOIDED = "enemy_avoid"
 local FILE_NAME_ENEMY_AVOIDED = "enemy_avoided_"
 local FILE_FOLDER_SELF_AVOIDED = "self_avoid"
 local FILE_NAME_SELF_AVOIDED = "you_avoided_"
+
+if (GetLocale() == "deDE") then
+  BASE_PATH = "Interface\\AddOns\\PVPWarn\\Assets\\Sounds\\de\\"
+  FILE_NAME_DOWN = "_unten"
+else
+  BASE_PATH = "Interface\\AddOns\\PVPWarn\\Assets\\Sounds\\"
+  FILE_NAME_DOWN = "_down"
+end
 
 --[[
   Play a sound from the assets-folder
