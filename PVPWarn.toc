@@ -53,6 +53,7 @@ Code\PVPW_Debug.lua
 Test\PVPW_TestReporter.lua
 Test\PVPW_TestHelper.lua
 Test\PVPW_TestWarrior.lua
+Test\PVPW_TestWarriorDe.lua
 Test\PVPW_TestWarlock.lua
 Test\PVPW_TestPriest.lua
 Test\PVPW_TestRogue.lua
