@@ -23,6 +23,17 @@ local me = pvpw
 
 me.tag = "Core"
 
+local _G = getfenv(0)
+
+--[[
+  Testing
+
+  Hook GetLocale to return a fixed value. Deactivate in production!
+]]--
+function _G.GetLocale()
+  return "deDE"
+end
+
 --[[
   Store logdata for tests
 ]]--
