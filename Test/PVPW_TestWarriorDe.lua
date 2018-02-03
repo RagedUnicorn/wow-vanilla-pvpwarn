@@ -43,7 +43,24 @@ function _G.__PVPW__TEST_WARRIOR_DE__Test()
   -- silence logging to errorlevel
   mod.logger.logLevel = 1
 
+  mod.testHelper.TestShouldHaveASoundTestForEachSpell(me, className)
+  mod.testHelper.TestShouldHaveASoundDownTestForSpellsThatFade(me, className)
+
   me.RunAll()
+end
+
+function _G.__PVPW__TEST_WARRIOR_DE__Test_Sound()
+  mod.testReporter.StartTestRun("global_warrior_de_sound")
+  mod.testReporter.StartTestClass(className)
+
+  mod.testHelper.TestShouldHaveASoundTestForEachSpell(me, className)
+end
+
+function _G.__PVPW__TEST_WARRIOR_DE__Test_Sound_Down()
+  mod.testReporter.StartTestRun("global_warrior_de_sound_down")
+  mod.testReporter.StartTestClass(className)
+
+  mod.testHelper.TestShouldHaveASoundDownTestForSpellsThatFade(me, className)
 end
 
 --[[
@@ -72,7 +89,7 @@ function me.RunAll(playManual)
   mod.testReporter.AddToTestQueueWithDelay(me.TestSoundBlutrausch)
   mod.testReporter.AddToTestQueueWithDelay(me.TestSoundDownBlutrausch)
   mod.testReporter.AddToTestQueueWithDelay(me.TestSoundZuschlagen)
-  mod.testReporter.AddToTestQueueWithDelay(me.TestSoundBetaeubungabfangen)
+  mod.testReporter.AddToTestQueueWithDelay(me.TestSoundBetaeubungAbfangen)
   mod.testReporter.AddToTestQueueWithDelay(me.TestSoundDrohruf)
   mod.testReporter.AddToTestQueueWithDelay(me.TestSoundSchildhieb)
   mod.testReporter.AddToTestQueueWithDelay(me.TestSoundDownSchildhieb)
@@ -236,10 +253,10 @@ function me.TestSoundZuschlagen()
   )
 end
 
-function me.TestSoundBetaeubungabfangen()
+function me.TestSoundBetaeubungAbfangen()
   mod.testHelper.TestSound(
     className,
-    "TestSoundBetaeubungabfangen",
+    "TestSoundBetaeubungAbfangen",
     "betaeubung_abfangen"
   )
 end

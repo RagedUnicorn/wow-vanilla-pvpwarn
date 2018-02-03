@@ -68,7 +68,7 @@ local spellMap
 
 if (GetLocale() == "deDE") then
   spellMap = {
-    ["krieger"] = {
+    ["warrior"] = {
       ["berserkerwut"] = {
         ["name"] = "Berserkerwut",
         ["soundFileName"] = "berserkerwut",
