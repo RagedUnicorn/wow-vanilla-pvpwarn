@@ -71,6 +71,7 @@ Test\PVPW_TestDruidDe.lua
 Test\PVPW_TestShaman.lua
 Test\PVPW_TestShamanDe.lua
 Test\PVPW_TestRacials.lua
+Test\PVPW_TestRacialsDe.lua
 Test\PVPW_TestItems.lua
 Test\PVPW_TestItemsDe.lua
 Test\PVPW_TestMisc.lua
