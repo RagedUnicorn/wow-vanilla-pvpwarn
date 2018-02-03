@@ -36,8 +36,8 @@ local className = PVPW_CLASSLIST[1]
 --[[
   global function to start all tests
 ]]--
-function _G.__PVPW__TEST_WARRIOR__Test()
-  mod.testReporter.StartTestRun("global_warrior_all")
+function _G.__PVPW__TEST_WARRIOR_DE__Test()
+  mod.testReporter.StartTestRun("global_warrior_de_all")
   mod.testReporter.StartTestClass(className)
 
   -- silence logging to errorlevel
