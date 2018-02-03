@@ -61,6 +61,7 @@ Test\PVPW_TestRogue.lua
 Test\PVPW_TestMage.lua
 Test\PVPW_TestHunter.lua
 Test\PVPW_TestPaladin.lua
+Test\PVPW_TestPaladinDe.lua
 Test\PVPW_TestDruid.lua
 Test\PVPW_TestShaman.lua
 Test\PVPW_TestRacials.lua
