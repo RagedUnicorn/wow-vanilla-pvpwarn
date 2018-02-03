@@ -43,7 +43,24 @@ function _G.__PVPW__TEST_MISC_DE__Test()
   -- silence logging to errorlevel
   mod.logger.logLevel = 1
 
+  mod.testHelper.TestShouldHaveASoundTestForEachSpell(me, className)
+  mod.testHelper.TestShouldHaveASoundDownTestForSpellsThatFade(me, className)
+
   me.RunAll()
+end
+
+function _G.__PVPW__TEST_MISC_DE__Test_Sound()
+  mod.testReporter.StartTestRun("global_misc_de_sound")
+  mod.testReporter.StartTestClass(className)
+
+  mod.testHelper.TestShouldHaveASoundTestForEachSpell(me, className)
+end
+
+function _G.__PVPW__TEST_MISC_DE__Test_Sound_Down()
+  mod.testReporter.StartTestRun("global_misc_de_sound_down")
+  mod.testReporter.StartTestClass(className)
+
+  mod.testHelper.TestShouldHaveASoundDownTestForSpellsThatFade(me, className)
 end
 
 --[[
@@ -53,9 +70,9 @@ end
 ]]--
 function me.RunAll(playManual)
   -- test sound
-  mod.testReporter.AddToTestQueueWithDelay(me.TestSoundDisteltee)
-  mod.testReporter.AddToTestQueueWithDelay(me.TestSoundWiderherstellungstrank)
-  mod.testReporter.AddToTestQueueWithDelay(me.TestSoundDownWiderherstellungstrank)
+  mod.testReporter.AddToTestQueueWithDelay(me.TestSoundEnergieWiederherstellen)
+  mod.testReporter.AddToTestQueueWithDelay(me.TestSoundRegeneration)
+  mod.testReporter.AddToTestQueueWithDelay(me.TestSoundDownRegeneration)
   mod.testReporter.AddToTestQueueWithDelay(me.TestSoundErsteHilfe)
   mod.testReporter.AddToTestQueueWithDelay(me.TestSoundUnverwundbarkeit)
   mod.testReporter.AddToTestQueueWithDelay(me.TestSoundDownUnverwundbarkeit)
@@ -65,16 +82,16 @@ function me.RunAll(playManual)
   mod.testReporter.AddToTestQueueWithDelay(me.TestSoundDownThoriumgranate)
   mod.testReporter.AddToTestQueueWithDelay(me.TestSoundEisengranate)
   mod.testReporter.AddToTestQueueWithDelay(me.TestSoundDownEisengranate)
-  mod.testReporter.AddToTestQueueWithDelay(me.TestSoundSchattenschutztrank)
-  mod.testReporter.AddToTestQueueWithDelay(me.TestSoundDownSchattenschutztrank)
-  mod.testReporter.AddToTestQueueWithDelay(me.TestSoundFrostschutztrank)
-  mod.testReporter.AddToTestQueueWithDelay(me.TestSoundDownFrostschutztrank)
-  mod.testReporter.AddToTestQueueWithDelay(me.TestSoundFeuerschutztrank)
-  mod.testReporter.AddToTestQueueWithDelay(me.TestSoundDownFeuerschutztrank)
-  mod.testReporter.AddToTestQueueWithDelay(me.TestSoundNaturschutztrank)
-  mod.testReporter.AddToTestQueueWithDelay(me.TestSoundDownNaturschutztrank)
-  mod.testReporter.AddToTestQueueWithDelay(me.TestSoundArkanschutztrank)
-  mod.testReporter.AddToTestQueueWithDelay(me.TestSoundDownArkanschutztrank)
+  mod.testReporter.AddToTestQueueWithDelay(me.TestSoundSchattenschutz)
+  mod.testReporter.AddToTestQueueWithDelay(me.TestSoundDownSchattenschutz)
+  mod.testReporter.AddToTestQueueWithDelay(me.TestSoundFrostschutz)
+  mod.testReporter.AddToTestQueueWithDelay(me.TestSoundDownFrostschutz)
+  mod.testReporter.AddToTestQueueWithDelay(me.TestSoundFeuerschutz)
+  mod.testReporter.AddToTestQueueWithDelay(me.TestSoundDownFeuerschutz)
+  mod.testReporter.AddToTestQueueWithDelay(me.TestSoundNaturschutz)
+  mod.testReporter.AddToTestQueueWithDelay(me.TestSoundDownNaturschutz)
+  mod.testReporter.AddToTestQueueWithDelay(me.TestSoundArkanschutz)
+  mod.testReporter.AddToTestQueueWithDelay(me.TestSoundDownArkanschutz)
 
   if not playManual then
     mod.testReporter.PlayTestQueueWithDelay()
@@ -83,27 +100,27 @@ function me.RunAll(playManual)
   mod.testReporter.PlayTestQueue()
 end
 
-function me.TestSoundDisteltee()
+function me.TestSoundEnergieWiederherstellen()
   mod.testHelper.TestSound(
     className,
-    "TestSoundDisteltee",
+    "TestSoundEnergieWiederherstellen",
     "energie_wiederherstellen"
   )
 end
 
-function me.TestSoundWiderherstellungstrank()
+function me.TestSoundRegeneration()
   mod.testHelper.TestSound(
     className,
-    "TestSoundWiderherstellungstrank",
-    "widerherstellung"
+    "TestSoundRegeneration",
+    "regeneration"
   )
 end
 
-function me.TestSoundDownWiderherstellungstrank()
+function me.TestSoundDownRegeneration()
   mod.testHelper.TestSoundDown(
     className,
-    "TestSoundDownWiderherstellungstrank",
-    "widerherstellung"
+    "TestSoundDownRegeneration",
+    "regeneration"
   )
 end
 
@@ -179,82 +196,82 @@ function me.TestSoundDownEisengranate()
   )
 end
 
-function me.TestSoundSchattenschutztrank()
+function me.TestSoundSchattenschutz()
   mod.testHelper.TestSound(
     className,
-    "TestSoundSchattenschutztrank",
+    "TestSoundSchattenschutz",
     "schattenschutz"
   )
 end
 
-function me.TestSoundDownSchattenschutztrank()
+function me.TestSoundDownSchattenschutz()
   mod.testHelper.TestSoundDown(
     className,
-    "TestSoundDownSchattenschutztrank",
+    "TestSoundDownSchattenschutz",
     "schattenschutz"
   )
 end
 
-function me.TestSoundFrostschutztrank()
+function me.TestSoundFrostschutz()
   mod.testHelper.TestSound(
     className,
-    "TestSoundFrostschutztrank",
+    "TestSoundFrostschutz",
     "frostschutz"
   )
 end
 
-function me.TestSoundDownFrostschutztrank()
+function me.TestSoundDownFrostschutz()
   mod.testHelper.TestSoundDown(
     className,
-    "TestSoundDownFrostschutztrank",
+    "TestSoundDownFrostschutz",
     "frostschutz"
   )
 end
 
-function me.TestSoundFeuerschutztrank()
+function me.TestSoundFeuerschutz()
   mod.testHelper.TestSound(
     className,
-    "TestSoundFeuerschutztrank",
+    "TestSoundFeuerschutz",
     "feuerschutz"
   )
 end
 
-function me.TestSoundDownFeuerschutztrank()
+function me.TestSoundDownFeuerschutz()
   mod.testHelper.TestSoundDown(
     className,
-    "TestSoundDownFeuerschutztrank",
+    "TestSoundDownFeuerschutz",
     "feuerschutz"
   )
 end
 
-function me.TestSoundNaturschutztrank()
+function me.TestSoundNaturschutz()
   mod.testHelper.TestSound(
     className,
-    "TestSoundNaturschutztrank",
+    "TestSoundNaturschutz",
     "naturschutz"
   )
 end
 
-function me.TestSoundDownNaturschutztrank()
+function me.TestSoundDownNaturschutz()
   mod.testHelper.TestSoundDown(
     className,
-    "TestSoundDownNaturschutztrank",
+    "TestSoundDownNaturschutz",
     "naturschutz"
   )
 end
 
-function me.TestSoundArkanschutztrank()
+function me.TestSoundArkanschutz()
   mod.testHelper.TestSound(
     className,
-    "TestSoundArkanschutztrank",
+    "TestSoundArkanschutz",
     "arkanschutz"
   )
 end
 
-function me.TestSoundDownArkanschutztrank()
+function me.TestSoundDownArkanschutz()
   mod.testHelper.TestSoundDown(
     className,
-    "TestSoundDownArkanschutztrank",
+    "TestSoundDownArkanschutz",
     "arkanschutz"
   )
 end

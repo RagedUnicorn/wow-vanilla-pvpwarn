@@ -1515,9 +1515,9 @@ if (GetLocale() == "deDE") then
         ["hasFade"] = false,
         ["active"] = true
       },
-      ["widerherstellung"] = {
-        ["name"] = "Widerherstellungstrank",
-        ["soundFileName"] = "widerherstellung",
+      ["regeneration"] = {
+        ["name"] = "Regenerationstrank",
+        ["soundFileName"] = "regeneration",
         ["itemID"] = 9030,
         ["spellID"] = 11359,
         ["spellIcon"] = "inv_potion_01",
