@@ -57,6 +57,7 @@ Test\PVPW_TestWarriorDe.lua
 Test\PVPW_TestWarlock.lua
 Test\PVPW_TestWarlockDe.lua
 Test\PVPW_TestPriest.lua
+Test\PVPW_TestPriestDe.lua
 Test\PVPW_TestRogue.lua
 Test\PVPW_TestRogueDe.lua
 Test\PVPW_TestMage.lua
