@@ -1378,9 +1378,9 @@ if (GetLocale() == "deDE") then
         ["hasFade"] = true,
         ["active"] = true
       },
-      ["immunitaet_gegen_unbeweglichkleit"] = {
+      ["immunitaet_gegen_unbeweglichkeit"] = {
         ["name"] = "Immunität gegen Unbeweglichkeit",
-        ["soundFileName"] = "immunitaet_gegen_unbeweglichkleit",
+        ["soundFileName"] = "immunitaet_gegen_unbeweglichkeit",
         ["itemID"] = 4328,
         ["spellID"] = 9774,
         ["spellIcon"] = "inv_belt_25",
