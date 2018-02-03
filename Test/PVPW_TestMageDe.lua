@@ -43,7 +43,24 @@ function _G.__PVPW__TEST_MAGE_DE__Test()
   -- silence logging to errorlevel
   mod.logger.logLevel = 1
 
+  mod.testHelper.TestShouldHaveASoundTestForEachSpell(me, className)
+  mod.testHelper.TestShouldHaveASoundDownTestForSpellsThatFade(me, className)
+
   me.RunAll()
+end
+
+function _G.__PVPW__TEST_MAGE_DE__Test_Sound()
+  mod.testReporter.StartTestRun("global_mage_de_sound")
+  mod.testReporter.StartTestClass(className)
+
+  mod.testHelper.TestShouldHaveASoundTestForEachSpell(me, className)
+end
+
+function _G.__PVPW__TEST_MAGE_DE__Test_Sound_Down()
+  mod.testReporter.StartTestRun("global_mage_de_sound_down")
+  mod.testReporter.StartTestClass(className)
+
+  mod.testHelper.TestShouldHaveASoundDownTestForSpellsThatFade(me, className)
 end
 
 --[[
@@ -69,7 +86,7 @@ function me.RunAll(playManual)
   mod.testReporter.AddToTestQueueWithDelay(me.TestSoundDownManaschild)
   mod.testReporter.AddToTestQueueWithDelay(me.TestSoundEisbarriere)
   mod.testReporter.AddToTestQueueWithDelay(me.TestSoundDownEisbarriere)
-  mod.testReporter.AddToTestQueueWithDelay(me.TestSoundFrostnova)
+  mod.testReporter.AddToTestQueueWithDelay(me.TestSoundFrostNova)
   mod.testReporter.AddToTestQueueWithDelay(me.TestSoundArkaneMacht)
   mod.testReporter.AddToTestQueueWithDelay(me.TestSoundDownArkaneMacht)
   mod.testReporter.AddToTestQueueWithDelay(me.TestSoundHervorrufung)
@@ -130,7 +147,7 @@ function me.TestSoundVerwandlungKroete()
   mod.testHelper.TestSound(
     className,
     "TestSoundVerwandlungKroete",
-    "verwandling_schildkroete"
+    "verwandlung_kroete"
   )
 end
 
@@ -214,10 +231,10 @@ function me.TestSoundDownEisbarriere()
   )
 end
 
-function me.TestSoundFrostnova()
+function me.TestSoundFrostNova()
   mod.testHelper.TestSound(
     className,
-    "TestSoundFrostnova",
+    "TestSoundFrostNova",
     "frost_nova"
   )
 end

@@ -411,7 +411,7 @@ if (GetLocale() == "deDE") then
         ["hasFade"] = false,
         ["active"] = true
       },
-      ["verwandling_schildkroete"] = {
+      ["verwandlung_kroete"] = {
         ["name"] = "Verwandlung: Kröte",
         ["soundFileName"] = "verwandlung",
         ["spellID"] = 28271,
