@@ -43,7 +43,24 @@ function _G.__PVPW__TEST_WARLOCK_DE__Test()
   -- silence logging to errorlevel
   mod.logger.logLevel = 1
 
+  mod.testHelper.TestShouldHaveASoundTestForEachSpell(me, className)
+  mod.testHelper.TestShouldHaveASoundDownTestForSpellsThatFade(me, className)
+
   me.RunAll()
+end
+
+function _G.__PVPW__TEST_WARLOCK_DE__Test_Sound()
+  mod.testReporter.StartTestRun("global_warlock_de_sound")
+  mod.testReporter.StartTestClass(className)
+
+  mod.testHelper.TestShouldHaveASoundTestForEachSpell(me, className)
+end
+
+function _G.__PVPW__TEST_WARLOCK_DE__Test_Sound_Down()
+  mod.testReporter.StartTestRun("global_warlock_de_sound_down")
+  mod.testReporter.StartTestClass(className)
+
+  mod.testHelper.TestShouldHaveASoundDownTestForSpellsThatFade(me, className)
 end
 
 --[[
@@ -64,8 +81,8 @@ function me.RunAll(playManual)
   mod.testReporter.AddToTestQueueWithDelay(me.TestSoundDownZauberstein)
   mod.testReporter.AddToTestQueueWithDelay(me.TestSoundErheblicherZauberstein)
   mod.testReporter.AddToTestQueueWithDelay(me.TestSoundDownErheblicherZauberstein)
-  mod.testReporter.AddToTestQueueWithDelay(me.TestSoundMajorGrosserZauberstein)
-  mod.testReporter.AddToTestQueueWithDelay(me.TestSoundDownMajorGrosserZauberstein)
+  mod.testReporter.AddToTestQueueWithDelay(me.TestSoundGrosserZauberstein)
+  mod.testReporter.AddToTestQueueWithDelay(me.TestSoundDownGrosserZauberstein)
   mod.testReporter.AddToTestQueueWithDelay(me.TestSoundTodesmantel)
   mod.testReporter.AddToTestQueueWithDelay(me.TestSoundFluchVerstaerken)
   mod.testReporter.AddToTestQueueWithDelay(me.TestSoundDownFluchVerstaerken)
@@ -177,18 +194,18 @@ function me.TestSoundDownErheblicherZauberstein()
   )
 end
 
-function me.TestSoundMajorGrosserZauberstein()
+function me.TestSoundGrosserZauberstein()
   mod.testHelper.TestSound(
     className,
-    "TestSoundMajorGrosserZauberstein",
+    "TestSoundGrosserZauberstein",
     "grosser_zauberstein"
   )
 end
 
-function me.TestSoundDownMajorGrosserZauberstein()
+function me.TestSoundDownGrosserZauberstein()
   mod.testHelper.TestSoundDown(
     className,
-    "TestSoundDownMajorGrosserZauberstein",
+    "TestSoundDownGrosserZauberstein",
     "grosser_zauberstein"
   )
 end
