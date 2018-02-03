@@ -42,7 +42,24 @@ function _G.__PVPW__TEST_PRIEST_DE__Test()
   -- silence logging to errorlevel
   mod.logger.logLevel = 1
 
+  mod.testHelper.TestShouldHaveASoundTestForEachSpell(me, className)
+  mod.testHelper.TestShouldHaveASoundDownTestForSpellsThatFade(me, className)
+
   me.RunAll()
+end
+
+function _G.__PVPW__TEST_PRIEST_DE__Test_Sound()
+  mod.testReporter.StartTestRun("global_priest_de_all")
+  mod.testReporter.StartTestClass(className)
+
+  mod.testHelper.TestShouldHaveASoundTestForEachSpell(me, className)
+end
+
+function _G.__PVPW__TEST_PRIEST_DE__Test_Sound_Down()
+  mod.testReporter.StartTestRun("global_priest_de_all")
+  mod.testReporter.StartTestClass(className)
+
+  mod.testHelper.TestShouldHaveASoundDownTestForSpellsThatFade(me, className)
 end
 
 --[[
@@ -209,6 +226,6 @@ function me.TestSoundVerhexungDerSchwaeche()
   mod.testHelper.TestSound(
     className,
     "TestSoundVerhexungDerSchwaeche",
-    "verhexung_der_schaeche"
+    "verhexung_der_schwaeche"
   )
 end

@@ -302,9 +302,9 @@ if (GetLocale() == "deDE") then
           "CHAT_MSG_SPELL_AURA_GONE_OTHER"
         }
       },
-      ["verhexung_der_schaeche"] = {
+      ["verhexung_der_schwaeche"] = {
         ["name"] = "Verhexung der Schwäche",
-        ["soundFileName"] = "verhexung_der_schaeche",
+        ["soundFileName"] = "verhexung_der_schwaeche",
         ["spellID"] = 19285, -- rank 6
         ["spellIcon"] = "spell_shadow_fingerofdeath",
         ["hasFade"] = false,
