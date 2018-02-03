@@ -59,7 +59,6 @@ function _G.__PVPW__TEST_ROGUE_DE__Test_Sound()
   mod.testHelper.TestShouldHaveASoundTestForEachSpell(me, className)
 end
 
-
 function _G.__PVPW__TEST_ROGUE_DE__Test_Sound_Down()
   mod.testReporter.StartTestRun("global_rogue_de_sound_down")
   mod.testReporter.StartTestClass(className)
