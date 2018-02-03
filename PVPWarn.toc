@@ -63,6 +63,7 @@ Test\PVPW_TestRogueDe.lua
 Test\PVPW_TestMage.lua
 Test\PVPW_TestMageDe.lua
 Test\PVPW_TestHunter.lua
+Test\PVPW_TestHunterDe.lua
 Test\PVPW_TestPaladin.lua
 Test\PVPW_TestPaladinDe.lua
 Test\PVPW_TestDruid.lua
