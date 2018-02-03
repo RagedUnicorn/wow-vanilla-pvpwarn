@@ -74,4 +74,5 @@ Test\PVPW_TestRacials.lua
 Test\PVPW_TestItems.lua
 Test\PVPW_TestItemsDe.lua
 Test\PVPW_TestMisc.lua
+Test\PVPW_TestMiscDe.lua
 Test\PVPW_TestAll.lua
