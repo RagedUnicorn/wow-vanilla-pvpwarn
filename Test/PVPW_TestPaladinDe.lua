@@ -36,7 +36,7 @@ local className = PVPW_CLASSLIST[2]
 --[[
   global function to start all tests
 ]]--
-function _G.__PVPW__TEST_PALADIN__Test()
+function _G.__PVPW__TEST_PALADIN_DE__Test()
   mod.testReporter.StartTestRun("global_paladin_de_all")
   mod.testReporter.StartTestClass(className)
 
