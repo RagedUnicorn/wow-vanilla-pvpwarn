@@ -63,6 +63,7 @@ Test\PVPW_TestHunter.lua
 Test\PVPW_TestPaladin.lua
 Test\PVPW_TestPaladinDe.lua
 Test\PVPW_TestDruid.lua
+Test\PVPW_TestDruidDe.lua
 Test\PVPW_TestShaman.lua
 Test\PVPW_TestRacials.lua
 Test\PVPW_TestItems.lua
