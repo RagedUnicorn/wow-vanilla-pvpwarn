@@ -45,6 +45,8 @@ function _G.__PVPW__TEST_HUNTER_DE__Test()
 
   mod.testHelper.TestShouldHaveASoundTestForEachSpell(me, className)
   mod.testHelper.TestShouldHaveASoundDownTestForSpellsThatFade(me, className)
+  mod.testHelper.TestShouldHaveAParseTestForEachSpell(me, className)
+  mod.testHelper.TestShouldHaveAParseDownTestForSpellsThatFade(me, className)
 
   me.RunAll()
 end
@@ -61,6 +63,20 @@ function _G.__PVPW__TEST_HUNTER_DE__Test_Sound_Down()
   mod.testReporter.StartTestClass(className)
 
   mod.testHelper.TestShouldHaveASoundDownTestForSpellsThatFade(me, className)
+end
+
+function _G.__PVPW__TEST_HUNTER_DE__Test_Parse()
+  mod.testReporter.StartTestRun("global_hunter_de_parse")
+  mod.testReporter.StartTestClass(className)
+
+  mod.testHelper.TestShouldHaveAParseTestForEachSpell(me, className)
+end
+
+function _G.__PVPW__TEST_HUNTER_DE__Test_Parse_Down()
+  mod.testReporter.StartTestRun("global_hunter_de_parse_down")
+  mod.testReporter.StartTestClass(className)
+
+  mod.testHelper.TestShouldHaveAParseDownTestForSpellsThatFade(me, className)
 end
 
 --[[
@@ -95,6 +111,28 @@ function me.RunAll(playManual)
   if not playManual then
     mod.testReporter.PlayTestQueueWithDelay()
   end
+
+  mod.testReporter.AddToTestQueue(me.TestParseErschuetternderSchuss)
+  mod.testReporter.AddToTestQueue(me.TestParseVerbesserterErschuetternderSchuss)
+  mod.testReporter.AddToTestQueue(me.TestParseAspektDesAffen)
+  mod.testReporter.AddToTestQueue(me.TestParseAspektDesFalken)
+  mod.testReporter.AddToTestQueue(me.TestParseSchnellfeuer)
+  mod.testReporter.AddToTestQueue(me.TestParseDownSchnellfeuer)
+  mod.testReporter.AddToTestQueue(me.TestParseAbschreckung)
+  mod.testReporter.AddToTestQueue(me.TestParseDownAbschreckung)
+  mod.testReporter.AddToTestQueue(me.TestParseSprengfalle)
+  mod.testReporter.AddToTestQueue(me.TestParseEiskaeltefalle)
+  mod.testReporter.AddToTestQueue(me.TestParseFeuerbrandfalle)
+  mod.testReporter.AddToTestQueue(me.TestParseFrostfalle)
+  mod.testReporter.AddToTestQueue(me.TestParseStichDesFluegeldrachen)
+  mod.testReporter.AddToTestQueue(me.TestParseVipernbiss)
+  mod.testReporter.AddToTestQueue(me.TestParseStreuschuss)
+  mod.testReporter.AddToTestQueue(me.TestParseLeuchtfeuer)
+  mod.testReporter.AddToTestQueue(me.TestParseWildtierAengstigen)
+  mod.testReporter.AddToTestQueue(me.TestParseEinschuechterung)
+  mod.testReporter.AddToTestQueue(me.TestParseDownEinschuechterung)
+  mod.testReporter.AddToTestQueue(me.TestParseZornDesWildtiers)
+  mod.testReporter.AddToTestQueue(me.TestParseDownZornDesWildtiers)
 
   mod.testReporter.PlayTestQueue()
 end
@@ -264,5 +302,215 @@ function me.TestSoundDownZornDesWildtiers()
     className,
     "TestSoundDownZornDesWildtiers",
     "zorn_des_wildtiers"
+  )
+end
+
+function me.TestParseErschuetternderSchuss()
+  mod.testHelper.TestParse(
+    className,
+    "TestParseErschuetternderSchuss",
+    "erschuetternder_schuss",
+    "Ihr seid von Erschütternder Schuss betroffen.",
+    mod.testHelper.eventTypeSpellPeriodicSelfDamage
+  )
+end
+
+function me.TestParseVerbesserterErschuetternderSchuss()
+  mod.testHelper.TestParse(
+    className,
+    "TestParseVerbesserterErschuetternderSchuss",
+    "verbesserter_erschuetternder_schuss",
+    "Ihr seid von Verbesserter erschütternder Schuss betroffen.",
+    mod.testHelper.eventTypeSpellPeriodicSelfDamage
+  )
+end
+
+function me.TestParseAspektDesAffen()
+  mod.testHelper.TestParse(
+    className,
+    "TestParseAspektDesAffen",
+    "aspekt_des_affen",
+    "$player$ bekommt Aspekt des Affen.",
+    mod.testHelper.eventTypeSpellPeriodicHostilePlayerBuffs
+  )
+end
+
+function me.TestParseAspektDesFalken()
+  mod.testHelper.TestParse(
+    className,
+    "TestParseAspektDesFalken",
+    "aspekt_des_falken",
+    "$player$ bekommt Aspekt des Falken.",
+    mod.testHelper.eventTypeSpellPeriodicHostilePlayerBuffs
+  )
+end
+
+function me.TestParseSchnellfeuer()
+  mod.testHelper.TestParse(
+    className,
+    "TestParseSchnellfeuer",
+    "schnellfeuer",
+    "$player$ bekommt Schnellfeuer.",
+    mod.testHelper.eventTypeSpellPeriodicHostilePlayerBuffs
+  )
+end
+
+function me.TestParseDownSchnellfeuer()
+  mod.testHelper.TestParseDown(
+    className,
+    "TestParseDownSchnellfeuer",
+    "schnellfeuer",
+    "Schnellfeuer schwindet von $player$.",
+    mod.testHelper.eventTypeSpellAuraGoneOther
+  )
+end
+
+function me.TestParseAbschreckung()
+  mod.testHelper.TestParse(
+    className,
+    "TestParseAbschreckung",
+    "abschreckung",
+    "$player$ bekommt Abschreckung.",
+    mod.testHelper.eventTypeSpellPeriodicHostilePlayerBuffs
+  )
+end
+
+function me.TestParseDownAbschreckung()
+  mod.testHelper.TestParseDown(
+    className,
+    "TestParseDownAbschreckung",
+    "abschreckung",
+    "Abschreckung schwindet von $player$.",
+    mod.testHelper.eventTypeSpellAuraGoneOther
+  )
+end
+
+function me.TestParseSprengfalle()
+  mod.testHelper.TestParse(
+    className,
+    "TestParseSprengfalle",
+    "sprengfalle",
+    "$player$ wirkt Sprengfalle.",
+    mod.testHelper.eventTypeSpellHostilePlayerBuff
+  )
+end
+
+function me.TestParseEiskaeltefalle()
+  mod.testHelper.TestParse(
+    className,
+    "TestParseEiskaeltefalle",
+    "eiskaeltefalle",
+    "$player$ wirkt Eiskältefalle.",
+    mod.testHelper.eventTypeSpellHostilePlayerBuff
+  )
+end
+
+function me.TestParseFeuerbrandfalle()
+  mod.testHelper.TestParse(
+    className,
+    "TestParseFeuerbrandfalle",
+    "feuerbrandfalle",
+    "$player$ wirkt Feuerbrandfalle.",
+    mod.testHelper.eventTypeSpellHostilePlayerBuff
+  )
+end
+
+function me.TestParseFrostfalle()
+  mod.testHelper.TestParse(
+    className,
+    "TestParseFrostfalle",
+    "frostfalle",
+    "$player$ wirkt Frostfalle.",
+    mod.testHelper.eventTypeSpellHostilePlayerBuff
+  )
+end
+
+function me.TestParseStichDesFluegeldrachen()
+  mod.testHelper.TestParse(
+    className,
+    "TestParseStichDesFluegeldrachen",
+    "stich_des_fluegeldrachen",
+    "Ihr seid von Stich des Flügeldrachen betroffen.",
+    mod.testHelper.eventTypeSpellPeriodicSelfDamage
+  )
+end
+
+function me.TestParseVipernbiss()
+  mod.testHelper.TestParse(
+    className,
+    "TestParseVipernbiss",
+    "vipernbiss",
+    "Ihr seid von Vipernbiss betroffen.",
+    mod.testHelper.eventTypeSpellPeriodicSelfDamage
+  )
+end
+
+function me.TestParseStreuschuss()
+  mod.testHelper.TestParse(
+    className,
+    "TestParseStreuschuss",
+    "streuschuss",
+    "Ihr seid von Streuschuss betroffen.",
+    mod.testHelper.eventTypeSpellPeriodicSelfDamage
+  )
+end
+
+function me.TestParseLeuchtfeuer()
+  mod.testHelper.TestParse(
+    className,
+    "TestParseLeuchtfeuer",
+    "leuchtfeuer",
+    "Ihr seid von Leuchtfeuer betroffen.",
+    mod.testHelper.eventTypeSpellPeriodicSelfDamage
+  )
+end
+
+function me.TestParseWildtierAengstigen()
+  mod.testHelper.TestParse(
+    className,
+    "TestParseWildtierAengstigen",
+    "wildtier_aengstigen",
+    "$player$ beginnt Wildtier ängstigen zu wirken.",
+    mod.testHelper.eventTypeSpellHostilePlayerDamage
+  )
+end
+
+function me.TestParseEinschuechterung()
+  mod.testHelper.TestParse(
+    className,
+    "TestParseEinschuechterung",
+    "einschuechterung",
+    "$player$ bekommt Einschüchterung.",
+    mod.testHelper.eventTypeSpellPeriodicHostilePlayerBuffs
+  )
+end
+
+function me.TestParseDownEinschuechterung()
+  mod.testHelper.TestParseDown(
+    className,
+    "TestParseDownEinschuechterung",
+    "einschuechterung",
+    "Einschüchterung schwindet von $player$.",
+    mod.testHelper.eventTypeSpellAuraGoneOther
+  )
+end
+
+function me.TestParseZornDesWildtiers()
+  mod.testHelper.TestParse(
+    className,
+    "TestParseZornDesWildtiers",
+    "zorn_des_wildtiers",
+    "$player$ bekommt Zorn des Wildtiers.",
+    mod.testHelper.eventTypeSpellPeriodicHostilePlayerBuffs
+  )
+end
+
+function me.TestParseDownZornDesWildtiers()
+  mod.testHelper.TestParseDown(
+    className,
+    "TestParseDownZornDesWildtiers",
+    "zorn_des_wildtiers",
+    "Zorn des Wildtiers schwindet von $player$.",
+    mod.testHelper.eventTypeSpellAuraGoneOther
   )
 end

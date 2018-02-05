@@ -668,6 +668,16 @@ function me.TestParseFlare()
   )
 end
 
+function me.TestParseScareBeast()
+  mod.testHelper.TestParse(
+    className,
+    "TestParseScareBeast",
+    "scare_beast",
+    "$player$ begins to cast Scare Beast.",
+    mod.testHelper.eventTypeSpellHostilePlayerDamage
+  )
+end
+
 function me.TestParseIntimidation()
   mod.testHelper.TestParse(
     className,
@@ -705,16 +715,6 @@ function me.TestParseDownBestialWrath()
     "bestial_wrath",
     "Bestial Wrath fades from $player$.",
     mod.testHelper.eventTypeSpellAuraGoneOther
-  )
-end
-
-function me.TestParseScareBeast()
-  mod.testHelper.TestParse(
-    className,
-    "TestParseScareBeast",
-    "scare_beast",
-    "$player$ begins to cast Scare Beast.",
-    mod.testHelper.eventTypeSpellHostilePlayerDamage
   )
 end
 
