@@ -45,6 +45,8 @@ function _G.__PVPW__TEST_DRUID_DE__Test()
 
   mod.testHelper.TestShouldHaveASoundTestForEachSpell(me, className)
   mod.testHelper.TestShouldHaveASoundDownTestForSpellsThatFade(me, className)
+  mod.testHelper.TestShouldHaveAParseTestForEachSpell(me, className)
+  mod.testHelper.TestShouldHaveAParseDownTestForSpellsThatFade(me, className)
 
   me.RunAll()
 end
