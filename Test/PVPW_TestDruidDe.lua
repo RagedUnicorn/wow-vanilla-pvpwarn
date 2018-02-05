@@ -63,6 +63,20 @@ function _G.__PVPW__TEST_DRUID_DE__Test_Sound_Down()
   mod.testHelper.TestShouldHaveASoundDownTestForSpellsThatFade(me, className)
 end
 
+function _G.__PVPW__TEST_DRUID_DE__Test_Parse()
+  mod.testReporter.StartTestRun("global_druid_de_parse")
+  mod.testReporter.StartTestClass(className)
+
+  mod.testHelper.TestShouldHaveAParseTestForEachSpell(me, className)
+end
+
+function _G.__PVPW__TEST_DRUID_DE__Test_Parse_Down()
+  mod.testReporter.StartTestRun("global_druid_de_parse_down")
+  mod.testReporter.StartTestClass(className)
+
+  mod.testHelper.TestShouldHaveAParseDownTestForSpellsThatFade(me, className)
+end
+
 --[[
   @param {boolean} playManual
     true if testqueue is started manually
@@ -86,10 +100,25 @@ function me.RunAll(playManual)
   mod.testReporter.AddToTestQueueWithDelay(me.TestSoundDownSchnelligkeitDerNatur)
   mod.testReporter.AddToTestQueueWithDelay(me.TestSoundFeenfeuer)
 
-
   if not playManual then
     mod.testReporter.PlayTestQueueWithDelay()
   end
+
+  mod.testReporter.AddToTestQueue(me.TestParseBaumrinde)
+  mod.testReporter.AddToTestQueue(me.TestParseDownBaumrinde)
+  mod.testReporter.AddToTestQueue(me.TestParseGriffDerNatur)
+  mod.testReporter.AddToTestQueue(me.TestParseDownGriffDerNatur)
+  mod.testReporter.AddToTestQueue(me.TestParseHieb)
+  mod.testReporter.AddToTestQueue(me.TestParseWildeAttacke)
+  mod.testReporter.AddToTestQueue(me.TestParseRasendeRegeneration)
+  mod.testReporter.AddToTestQueue(me.TestParseDownRasendeRegeneration)
+  mod.testReporter.AddToTestQueue(me.TestParseVergiftungAufheben)
+  mod.testReporter.AddToTestQueue(me.TestParseDownVergiftungAufheben)
+  mod.testReporter.AddToTestQueue(me.TestParseAnregen)
+  mod.testReporter.AddToTestQueue(me.TestParseDownAnregen)
+  mod.testReporter.AddToTestQueue(me.TestParseSchnelligkeitDerNatur)
+  mod.testReporter.AddToTestQueue(me.TestParseDownSchnelligkeitDerNatur)
+  mod.testReporter.AddToTestQueue(me.TestParseFeenfeuer)
 
   mod.testReporter.PlayTestQueue()
 end
@@ -211,5 +240,155 @@ function me.TestSoundFeenfeuer()
     className,
     "TestSoundFeenfeuer",
     "feenfeuer"
+  )
+end
+
+function me.TestParseBaumrinde()
+  mod.testHelper.TestParse(
+    className,
+    "TestParseBaumrinde",
+    "baumrinde",
+    "$player$ bekommt Baumrinde.",
+    mod.testHelper.eventTypeSpellPeriodicHostilePlayerBuffs
+  )
+end
+
+function me.TestParseDownBaumrinde()
+  mod.testHelper.TestParseDown(
+    className,
+    "TestParseDownBaumrinde",
+    "baumrinde",
+    "Baumrinde schwindet von $player$.",
+    mod.testHelper.eventTypeSpellAuraGoneOther
+  )
+end
+
+function me.TestParseGriffDerNatur()
+  mod.testHelper.TestParse(
+    className,
+    "TestParseGriffDerNatur",
+    "griff_der_natur",
+    "$player$ bekommt Griff der Natur.",
+    mod.testHelper.eventTypeSpellPeriodicHostilePlayerBuffs
+  )
+end
+
+function me.TestParseDownGriffDerNatur()
+  mod.testHelper.TestParseDown(
+    className,
+    "TestParseDownGriffDerNatur",
+    "griff_der_natur",
+    "Griff der Natur schwindet von $player$.",
+    mod.testHelper.eventTypeSpellAuraGoneOther
+  )
+end
+
+function me.TestParseHieb()
+  mod.testHelper.TestParse(
+    className,
+    "TestParseHieb",
+    "hieb",
+    "Ihr seid von Hieb betroffen.",
+    mod.testHelper.eventTypeSpellPeriodicSelfDamage
+  )
+end
+
+function me.TestParseWildeAttacke()
+  mod.testHelper.TestParse(
+    className,
+    "TestParseWildeAttacke",
+    "wilde_attacke",
+    "Ihr seid von Wilde Attacke betroffen.",
+    mod.testHelper.eventTypeSpellPeriodicSelfDamage
+  )
+end
+
+function me.TestParseRasendeRegeneration()
+  mod.testHelper.TestParse(
+    className,
+    "TestParseRasendeRegeneration",
+    "rasende_regeneration",
+    "$player$ bekommt Rasende Regeneration.",
+    mod.testHelper.eventTypeSpellPeriodicHostilePlayerBuffs
+  )
+end
+
+function me.TestParseDownRasendeRegeneration()
+  mod.testHelper.TestParseDown(
+    className,
+    "TestParseDownRasendeRegeneration",
+    "rasende_regeneration",
+    "Rasende Regeneration schwindet von $player$.",
+    mod.testHelper.eventTypeSpellAuraGoneOther
+  )
+end
+
+function me.TestParseVergiftungAufheben()
+  mod.testHelper.TestParse(
+    className,
+    "TestParseVergiftungAufheben",
+    "vergiftung_aufheben",
+    "$player$ bekommt Vergiftung aufheben.",
+    mod.testHelper.eventTypeSpellPeriodicHostilePlayerBuffs
+  )
+end
+
+function me.TestParseDownVergiftungAufheben()
+  mod.testHelper.TestParseDown(
+    className,
+    "TestParseDownVergiftungAufheben",
+    "vergiftung_aufheben",
+    "Vergiftgung Aufheben schwindet von $player$.",
+    mod.testHelper.eventTypeSpellAuraGoneOther
+  )
+end
+
+function me.TestParseAnregen()
+  mod.testHelper.TestParse(
+    className,
+    "TestParseAnregen",
+    "anregen",
+    "$player$ bekommt Anregen.",
+    mod.testHelper.eventTypeSpellPeriodicHostilePlayerBuffs
+  )
+end
+
+function me.TestParseDownAnregen()
+  mod.testHelper.TestParseDown(
+    className,
+    "TestParseDownAnregen",
+    "anregen",
+    "Anregen schwindet von $player$.",
+    mod.testHelper.eventTypeSpellAuraGoneOther
+  )
+end
+
+function me.TestParseSchnelligkeitDerNatur()
+  mod.testHelper.TestParse(
+    className,
+    "TestParseSchnelligkeitDerNatur",
+    "schnelligkeit_der_natur",
+    "$player$ bekommt Schnelligkeit der Natur.",
+    mod.testHelper.eventTypeSpellPeriodicHostilePlayerBuffs
+  )
+end
+
+function me.TestParseDownSchnelligkeitDerNatur()
+  mod.testHelper.TestParseDown(
+    className,
+    "TestParseDownSchnelligkeitDerNatur",
+    "schnelligkeit_der_natur",
+    "Schnelligkeit der Natur schwindet von $player$.",
+    mod.testHelper.eventTypeSpellAuraGoneOther
+  )
+end
+
+function me.TestParseFeenfeuer()
+  mod.testHelper.TestParse(
+    className,
+    "TestParseFeenfeuer",
+    "feenfeuer",
+    "Ihr seid von Feenfeuer betroffen.",
+    mod.testHelper.eventTypeSpellPeriodicSelfDamage
   )
 end
