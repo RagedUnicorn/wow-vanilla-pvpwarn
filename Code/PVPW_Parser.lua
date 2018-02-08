@@ -69,10 +69,11 @@ if (GetLocale() == "deDE") then
     ü : \195\188
     ä : \195\164
     ö : \195\182
+    ß : \195\159
 
     example pattern:
 
-    [%a%s\195\132\195\150\195\156\195\188\195\164\195\182]
+    [%a%s\195\159\195\132\195\150\195\156\195\188\195\164\195\182]
   ]]--
 
   --[[
@@ -89,7 +90,7 @@ if (GetLocale() == "deDE") then
       $player$ bekommt Schildwall.
       $player$ bekommt Elunes Anmut.
   ]]--
-  SPELL_PERIODIC_HOSTILE_PLAYER_BUFFS1 = "^(%a+)%s(bekommt)%s([%a%s\195\132\195\150\195\156\195\188\195\164\195\182]+)%.$"
+  SPELL_PERIODIC_HOSTILE_PLAYER_BUFFS1 = "^(%a+)%s(bekommt)%s([\195\159\195\132\195\150\195\156\195\188\195\164\195\182%a%s-:]+)%.$"
 
   --[[
     CHAT_MSG_SPELL_PERIODIC_HOSTILEPLAYER_BUFFS
@@ -109,7 +110,7 @@ if (GetLocale() == "deDE") then
       $player$ bekommt 'Ruhelose Stärke' (20).
       $player$ bekommt 'Verbrennung' (2).
   ]]--
-  SPELL_PERIODIC_HOSTILE_PLAYER_BUFFS2 = "^(%a+)%s(bekommt)%s([%a%s\195\132\195\150\195\156\195\188\195\164\195\182]+)%s([%d+%(%)]+)%.$"
+  SPELL_PERIODIC_HOSTILE_PLAYER_BUFFS2 = "^(%a+)%s(bekommt)%s([\195\159\195\132\195\150\195\156\195\188\195\164\195\182%a%s-:]+)%s([%d+%(%)]+)%.$"
 
   --[[
     CHAT_MSG_SPELL_HOSTILEPLAYER_BUFF
@@ -118,7 +119,7 @@ if (GetLocale() == "deDE") then
     examples:
       $player$s Schwacher Gesundheitsstein heilt $player$ um $amount$.
   ]]--
-  SPELL_HOSTILE_PLAYER_BUFF1 = "^(%a+)s%s([%a%s\195\132\195\150\195\156\195\188\195\164\195\182]+)%s(heilt)%s(%a+)%sum%s(%d+)%.$"
+  SPELL_HOSTILE_PLAYER_BUFF1 = "^(%a+)s%s([\195\159\195\132\195\150\195\156\195\188\195\164\195\182%a%s-:]+)%s(heilt)%s(%a+)%sum%s(%d+)%.$"
 
   --[[
     CHAT_MSG_SPELL_HOSTILEPLAYER_BUFF
@@ -128,7 +129,7 @@ if (GetLocale() == "deDE") then
       $player$ wirkt Sprengfalle.
       $player$ wirkt Frostfalle.
   ]]--
-  SPELL_HOSTILE_PLAYER_BUFF2 = "^(%a+)%s(wirkt)%s([%a%s\195\132\195\150\195\156\195\188\195\164\195\182]+)%.$"
+  SPELL_HOSTILE_PLAYER_BUFF2 = "^(%a+)%s(wirkt)%s([\195\159\195\132\195\150\195\156\195\188\195\164\195\182%a%s-:]+)%.$"
 
   --[[
     CHAT_MSG_SPELL_HOSTILEPLAYER_BUFF
@@ -137,7 +138,7 @@ if (GetLocale() == "deDE") then
     examples:
       $player$ beginnt Entfesselungskünstler auszuführen.
   ]]--
-  SPELL_HOSTILE_PLAYER_BUFF3 = "^(%a+)%s(beginnt)%s([%a%s\195\132\195\150\195\156\195\188\195\164\195\182]+)%s(auszuführen)%.$"
+  SPELL_HOSTILE_PLAYER_BUFF3 = "^(%a+)%s(beginnt)%s([\195\159\195\132\195\150\195\156\195\188\195\164\195\182%a%s-:]+)%s(auszuführen)%.$"
 
   --[[
     CHAT_MSG_SPELL_HOSTILEPLAYER_BUFF
@@ -147,7 +148,7 @@ if (GetLocale() == "deDE") then
       Kritische Heilung: $player$s Handauflegung heilt $player$ um $amount$ Punkte.
 
   ]]--
-  SPELL_HOSTILE_PLAYER_BUFF4 = "^(Kritische Heilung):%s(%a+)s%s([%a%s\195\132\195\150\195\156\195\188\195\164\195\182]+)%s(heilt)%s(%a+)%sum%s(%d+)%sPunkte%.$"
+  SPELL_HOSTILE_PLAYER_BUFF4 = "^(Kritische Heilung):%s(%a+)s%s([\195\159\195\132\195\150\195\156\195\188\195\164\195\182%a%s-:]+)%s(heilt)%s(%a+)%sum%s(%d+)%sPunkte%.$"
 
   --[[
     CHAT_MSG_SPELL_HOSTILEPLAYER_BUFF
@@ -158,7 +159,7 @@ if (GetLocale() == "deDE") then
       $player$ bekommt $amount$ Wut durch $player$s Blutrausch.
 
   ]]--
-  SPELL_HOSTILE_PLAYER_BUFF5 = "^(%a+)%s(bekommt)%s(%d+)%s([%a]+)%s(durch)%s(%a+)s%s([%a%s\195\132\195\150\195\156\195\188\195\164\195\182]+)%.$"
+  SPELL_HOSTILE_PLAYER_BUFF5 = "^(%a+)%s(bekommt)%s(%d+)%s([%a]+)%s(durch)%s(%a+)s%s([\195\159\195\132\195\150\195\156\195\188\195\164\195\182%a%s-:]+)%.$"
 
   --[[
     CHAT_MSG_SPELL_PERIODIC_SELF_DAMAGE
@@ -172,7 +173,7 @@ if (GetLocale() == "deDE") then
       Ihr seid von Gegenzauber - zum Schweigen gebracht betroffen.
 
   ]]--
-  SPELL_PERIODIC_SELF_DAMAGE = "^(Ihr)%sseid%svon%s([%a%s:-\195\132\195\150\195\156\195\188\195\164\195\182]+)%s(betroffen)%.$"
+  SPELL_PERIODIC_SELF_DAMAGE = "^(Ihr)%sseid%svon%s([\195\159\195\132\195\150\195\156\195\188\195\164\195\182%a%s-:]+)%s(betroffen)%.$"
 
   --[[
     CHAT_MSG_SPELL_HOSTILEPLAYER_DAMAGE
@@ -182,7 +183,7 @@ if (GetLocale() == "deDE") then
       $player$ trifft Euch (mit Zuschlagen). Schaden: $amount$.
 
   ]]--
-  SPELL_HOSTILEPLAYER_DAMAGE1 = "^(%a+)%s(trifft)%s(euch)%s%(mit%s([%a%s\195\132\195\150\195\156\195\188\195\164\195\182]+)%)%.%s(Schaden):%s(%d+)%.$"
+  SPELL_HOSTILEPLAYER_DAMAGE1 = "^(%a+)%s(trifft)%s(euch)%s%(mit%s([\195\159\195\132\195\150\195\156\195\188\195\164\195\182%a%s-:]+)%)%.%s(Schaden):%s(%d+)%.$"
 
   --[[
     CHAT_MSG_SPELL_HOSTILEPLAYER_DAMAGE
@@ -191,7 +192,7 @@ if (GetLocale() == "deDE") then
     examples:
       $player$ trifft Euch kritisch (mit Zuschlagen). Schaden: $amount$
   ]]--
-  SPELL_HOSTILEPLAYER_DAMAGE2 = "^(%a+)%s(trifft)%s(Euch)%s(kritisch)%s%(mit%s([%a%s\195\132\195\150\195\156\195\188\195\164\195\182]+)%)%.%s(Schaden):%s(%d+)%.$"
+  SPELL_HOSTILEPLAYER_DAMAGE2 = "^(%a+)%s(trifft)%s(Euch)%s(kritisch)%s%(mit%s([\195\159\195\132\195\150\195\156\195\188\195\164\195\182%a%s-:]+)%)%.%s(Schaden):%s(%d+)%.$"
 
   --[[
     CHAT_MSG_SPELL_HOSTILEPLAYER_DAMAGE
@@ -200,7 +201,7 @@ if (GetLocale() == "deDE") then
     examples:
       $player$ beginnt Hammer des Zorns zu wirken.
   ]]--
-  SPELL_HOSTILEPLAYER_DAMAGE3 = "^(%a+)%s(beginnt)%s([%a%s\195\132\195\150\195\156\195\188\195\164\195\182]+)%szu%s(wirken)%.$"
+  SPELL_HOSTILEPLAYER_DAMAGE3 = "^(%a+)%s(beginnt)%s([\195\159\195\132\195\150\195\156\195\188\195\164\195\182%a%s-:]+)%szu%s(wirken)%.$"
 
   --[[
     CHAT_MSG_SPELL_PERIODIC_HOSTILEPLAYER_DAMAGE
@@ -209,7 +210,7 @@ if (GetLocale() == "deDE") then
     examples:
       $player$ ist von Vorahnung betroffen.
   ]]--
-  SPELL_PERIODIC_HOSTILE_PLAYER_DAMAGE = "^(%a+)%sist%svon%s([%a%s-:\195\132\195\150\195\156\195\188\195\164\195\182]+)%s(betroffen)%.$"
+  SPELL_PERIODIC_HOSTILE_PLAYER_DAMAGE = "^(%a+)%sist%svon%s([\195\159\195\132\195\150\195\156\195\188\195\164\195\182%a%s-:]+)%s(betroffen)%.$"
 
   --[[
     CHAT_MSG_SPELL_AURA_GONE_OTHER
@@ -218,7 +219,7 @@ if (GetLocale() == "deDE") then
     examples:
       Feuerreflektor schwindet von $player$.
   ]]--
-  SPELL_AURA_GONE_OTHER = "^([%a%s\195\132\195\150\195\156\195\188\195\164\195\182]+)%s(schwindet)%svon%s(%a+)%.$"
+  SPELL_AURA_GONE_OTHER = "^([\195\159\195\132\195\150\195\156\195\188\195\164\195\182%a%s-:]+)%s(schwindet)%svon%s(%a+)%.$"
 
   --[[
     CHAT_MSG_SPELL_DAMAGESHIELDS_ON_SELF
@@ -229,7 +230,7 @@ if (GetLocale() == "deDE") then
       Ihr habt es mit Feenfeuer versucht, aber $player$ hat widerstanden.
 
   ]]--
-  SPELL_DAMAGESHIELDS_ON_SELF1 = "^(Ihr)%shabt%ses%smit%s([%a%s-:\195\132\195\150\195\156\195\188\195\164\195\182]+)%s(versucht),%saber%s(%a+)%shat%s(widerstanden)%.$"
+  SPELL_DAMAGESHIELDS_ON_SELF1 = "^(Ihr)%shabt%ses%smit%s([\195\159\195\132\195\150\195\156\195\188\195\164\195\182%a%s-:]+)%s(versucht),%saber%s(%a+)%shat%s(widerstanden)%.$"
 
   --[[
     CHAT_MSG_SPELL_DAMAGESHIELDS_ON_SELF
@@ -240,7 +241,7 @@ if (GetLocale() == "deDE") then
       Gegenzauber warn ein Fehlschlag. $player$ ist immun.
 
   ]]--
-  SPELL_DAMAGESHIELDS_ON_SELF2 = "^([%a%s-:\195\132\195\150\195\156\195\188\195\164\195\182]+)%swar%sein%s(Fehlschlag)%.%s(%a+)%sist%s(immun)%.$"
+  SPELL_DAMAGESHIELDS_ON_SELF2 = "^([\195\159\195\132\195\150\195\156\195\188\195\164\195\182%a%s-:]+)%swar%sein%s(Fehlschlag)%.%s(%a+)%sist%s(immun)%.$"
 
   --[[
     CHAT_MSG_SPELL_DAMAGESHIELDS_ON_SELF
@@ -251,7 +252,7 @@ if (GetLocale() == "deDE") then
       Hieb hat $player$ verfehlt.
 
   ]]--
-  SPELL_DAMAGESHIELDS_ON_SELF3 = "^([%a%s-:\195\132\195\150\195\156\195\188\195\164\195\182]+)%shat%s(%a+)%s(verfehlt)%.$"
+  SPELL_DAMAGESHIELDS_ON_SELF3 = "^([\195\159\195\132\195\150\195\156\195\188\195\164\195\182%a%s-:]+)%shat%s(%a+)%s(verfehlt)%.$"
 
   --[[
     CHAT_MSG_SPELL_DAMAGESHIELDS_ON_SELF
@@ -261,7 +262,7 @@ if (GetLocale() == "deDE") then
       $player$ ist Zurechtstutzen ausgewichen.
       $player$ ist Entwaffnen ausgewichen.
   ]]--
-  SPELL_DAMAGESHIELDS_ON_SELF4 = "^(%a+)%sist%s([%a%s-:\195\132\195\150\195\156\195\188\195\164\195\182]+)%s(ausgewichen)%.$"
+  SPELL_DAMAGESHIELDS_ON_SELF4 = "^(%a+)%sist%s([\195\159\195\132\195\150\195\156\195\188\195\164\195\182%a%s-:]+)%s(ausgewichen)%.$"
 
   --[[
     CHAT_MSG_SPELL_DAMAGESHIELDS_ON_SELF
@@ -272,7 +273,7 @@ if (GetLocale() == "deDE") then
       Entwaffnen wurde von $player$ pariert.
 
   ]]--
-  SPELL_DAMAGESHIELDS_ON_SELF5 = "^([%a%s-:\195\132\195\150\195\156\195\188\195\164\195\182]+)%swurde%svon%s(%a+)%s(pariert)%.$"
+  SPELL_DAMAGESHIELDS_ON_SELF5 = "^([\195\159\195\132\195\150\195\156\195\188\195\164\195\182%a%s-:]+)%swurde%svon%s(%a+)%s(pariert)%.$"
 
   --[[
     CHAT_MSG_SPELL_SELF_DAMAGE
@@ -283,7 +284,7 @@ if (GetLocale() == "deDE") then
       Finsterer Stoß wurde von $player$ geblockt.
       Ausweiden wurde von $player$ geblockt.
   ]]--
-  SPELL_SELF_DAMAGE = "^([%a%s-:\195\132\195\150\195\156\195\188\195\164\195\182]+)%swurde%svon%s(%a+)%s(geblockt)%.$"
+  SPELL_SELF_DAMAGE = "^([\195\159\195\132\195\150\195\156\195\188\195\164\195\182%a%s-:]+)%swurde%svon%s(%a+)%s(geblockt)%.$"
 
   --[[
     CHAT_MSG_SPELL_DAMAGESHIELDS_ON_OTHERS
@@ -292,7 +293,7 @@ if (GetLocale() == "deDE") then
     examples:
       $player$ versucht es mit Gegenzauber - zum Schweigen gebracht... widerstanden.
   ]]--
-  SPELL_DAMAGESHIELDS_ON_OTHERS1 = "^(%a+)%s(versucht)%ses%smit%s([%a%s-:\195\132\195\150\195\156\195\188\195\164\195\182]+)%.%.%.%s(widerstanden)%.$"
+  SPELL_DAMAGESHIELDS_ON_OTHERS1 = "^(%a+)%s(versucht)%ses%smit%s([\195\159\195\132\195\150\195\156\195\188\195\164\195\182%a%s-:]+)%.%.%.%s(widerstanden)%.$"
 
   --[[
     CHAT_MSG_SPELL_DAMAGESHIELDS_ON_OTHERS
@@ -302,7 +303,7 @@ if (GetLocale() == "deDE") then
       $player$s Tritt wurde geblockt.
       $player$s Zurechtstutzen wurde geblockt.
   ]]--
-  SPELL_DAMAGESHIELDS_ON_OTHERS2 = "^(%a+)s%s([%a%s-:\195\132\195\150\195\156\195\188\195\164\195\182]+)%swurde%s(geblockt)%.$"
+  SPELL_DAMAGESHIELDS_ON_OTHERS2 = "^(%a+)s%s([\195\159\195\132\195\150\195\156\195\188\195\164\195\182%a%s-:]+)%swurde%s(geblockt)%.$"
 
   --[[
     CHAT_MSG_SPELL_DAMAGESHIELDS_ON_OTHERS
@@ -311,7 +312,7 @@ if (GetLocale() == "deDE") then
     examples:
       $player$ greift an (mit Blenden) und verfehlt euch.
   ]]--
-  SPELL_DAMAGESHIELDS_ON_OTHERS3 = "^(%a+)%s(greift)%san%s%(mit%s([%a%s-:\195\132\195\150\195\156\195\188\195\164\195\182]+)%)%sund%s(verfehlt)%s(euch)%.$"
+  SPELL_DAMAGESHIELDS_ON_OTHERS3 = "^(%a+)%s(greift)%san%s%(mit%s([\195\159\195\132\195\150\195\156\195\188\195\164\195\182%a%s-:]+)%)%sund%s(verfehlt)%s(euch)%.$"
 
   --[[
     CHAT_MSG_SPELL_DAMAGESHIELDS_ON_OTHERS
@@ -320,7 +321,7 @@ if (GetLocale() == "deDE") then
     examples:
       $player$ versucht es mit Blenden... ein Fehlschlag. Ihr seid immun.
   ]]--
-  SPELL_DAMAGESHIELDS_ON_OTHERS4 = "^(%a+)%s(versucht)%ses%smit%s([%a%s-:\195\132\195\150\195\156\195\188\195\164\195\182]+)%.%.%.%sein%s(Fehlschlag)%.%sIhr%sseid%s(immun)%.$"
+  SPELL_DAMAGESHIELDS_ON_OTHERS4 = "^(%a+)%s(versucht)%ses%smit%s([\195\159\195\132\195\150\195\156\195\188\195\164\195\182%a%s-:]+)%.%.%.%sein%s(Fehlschlag)%.%sIhr%sseid%s(immun)%.$"
 
   --[[
     CHAT_MSG_SPELL_DAMAGESHIELDS_ON_OTHERS
@@ -329,7 +330,7 @@ if (GetLocale() == "deDE") then
     examples:
       Tritt von $player$ wurde pariert.
   ]]--
-  SPELL_DAMAGESHIELDS_ON_OTHERS5 = "^([%a%s-:\195\132\195\150\195\156\195\188\195\164\195\182]+)%svon%s(%a+)%wurde%s(pariert)%.$"
+  SPELL_DAMAGESHIELDS_ON_OTHERS5 = "^([\195\159\195\132\195\150\195\156\195\188\195\164\195\182%a%s-:]+)%svon%s(%a+)%wurde%s(pariert)%.$"
 
   --[[
     CHAT_MSG_SPELL_DAMAGESHIELDS_ON_OTHERS
@@ -338,7 +339,7 @@ if (GetLocale() == "deDE") then
     examples:
       $player$s Tritt wurde ausgewichen.
   ]]--
-  SPELL_DAMAGESHIELDS_ON_OTHERS6 = "^(%a+)s%s([%a%s-:\195\132\195\150\195\156\195\188\195\164\195\182]+)%swurde%s(ausgewichen)%.$"
+  SPELL_DAMAGESHIELDS_ON_OTHERS6 = "^(%a+)s%s([\195\159\195\132\195\150\195\156\195\188\195\164\195\182%a%s-:]+)%swurde%s(ausgewichen)%.$"
 else
   --[[
     CHAT_MSG_SPELL_PERIODIC_HOSTILEPLAYER_BUFFS
