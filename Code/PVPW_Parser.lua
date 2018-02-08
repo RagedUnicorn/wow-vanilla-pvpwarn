@@ -355,7 +355,7 @@ else
       $player$ gains Shield Wall.
       $player$ gains Elune's Grace.
   ]]--
-  SPELL_PERIODIC_HOSTILE_PLAYER_BUFFS1 = "^(%a+)%s(gains)%s([%a%s']+)%.$"
+  SPELL_PERIODIC_HOSTILE_PLAYER_BUFFS1 = "^(%a+)%s(gains)%s([%a%s'-:]+)%.$"
 
   --[[
     CHAT_MSG_SPELL_PERIODIC_HOSTILEPLAYER_BUFFS
@@ -365,7 +365,7 @@ else
     examples:
       $player$ gains $amount$ Energy from $player$'s Restore Energy.
   ]]--
-  SPELL_PERIODIC_HOSTILE_PLAYER_BUFFS2 = "^(%a+)%s(gains)%s(%d+)%s%a+%sfrom%s(%a+)'s%s([%a%s]+)%.$"
+  SPELL_PERIODIC_HOSTILE_PLAYER_BUFFS2 = "^(%a+)%s(gains)%s(%d+)%s%a+%sfrom%s(%a+)'s%s([%a%s'-:]+)%.$"
 
   --[[
     CHAT_MSG_SPELL_PERIODIC_HOSTILEPLAYER_BUFFS
@@ -385,7 +385,7 @@ else
       $player$ gains Restless Strength (20).
       $player$ gains Combustion (0).
   ]]--
-  SPELL_PERIODIC_HOSTILE_PLAYER_BUFFS3 = "^(%a+)%s(gains)%s([%a%s']+)%s([%d+%(%)]+)%.$"
+  SPELL_PERIODIC_HOSTILE_PLAYER_BUFFS3 = "^(%a+)%s(gains)%s([%a%s'-:]+)%s([%d+%(%)]+)%.$"
 
   --[[
     CHAT_MSG_SPELL_HOSTILEPLAYER_BUFF
@@ -394,7 +394,7 @@ else
     examples:
       $player$'s Minor Healthstone heals $player$ for $amount$.
   ]]--
-  SPELL_HOSTILE_PLAYER_BUFF1 = "^(%a+)'s%s([%a%s]+)%s(heals)%s(%a+)%sfor%s(%d+)%.$"
+  SPELL_HOSTILE_PLAYER_BUFF1 = "^(%a+)'s%s([%a%s'-:]+)%s(heals)%s(%a+)%sfor%s(%d+)%.$"
 
   --[[
     CHAT_MSG_SPELL_HOSTILEPLAYER_BUFF
@@ -404,7 +404,7 @@ else
       $player$ casts Explosive Trap.
       $player$ casts Freezing Trap.
   ]]--
-  SPELL_HOSTILE_PLAYER_BUFF2 = "^(%a+)%s(casts)%s([%a%s]+)%.$"
+  SPELL_HOSTILE_PLAYER_BUFF2 = "^(%a+)%s(casts)%s([%a%s'-:]+)%.$"
 
   --[[
     CHAT_MSG_SPELL_HOSTILEPLAYER_BUFF
@@ -413,7 +413,7 @@ else
     examples:
       $player$ begins to perform Escape Artist.
   ]]--
-  SPELL_HOSTILE_PLAYER_BUFF3 = "^(%a+)%s(begins to perform)%s([%a%s]+)%.$"
+  SPELL_HOSTILE_PLAYER_BUFF3 = "^(%a+)%s(begins to perform)%s([%a%s'-:]+)%.$"
 
   --[[
     CHAT_MSG_SPELL_HOSTILEPLAYER_BUFF
@@ -423,7 +423,7 @@ else
       $player$'s Lay on Hands critically heals $player$ for $amount$.
 
   ]]--
-  SPELL_HOSTILE_PLAYER_BUFF4 = "^(%a+)'s%s([%a%s]+)%s(critically heals)%s(%a+)%sfor%s(%d+)%.$"
+  SPELL_HOSTILE_PLAYER_BUFF4 = "^(%a+)'s%s([%a%s'-:]+)%s(critically heals)%s(%a+)%sfor%s(%d+)%.$"
 
   --[[
     CHAT_MSG_SPELL_HOSTILEPLAYER_BUFF
@@ -433,7 +433,7 @@ else
       $player$ gains $amount$ Energy from $player$'s Restore Energy.
       $player$ gains $amount$ Rage from $player$'s Bloodrage.
   ]]--
-  SPELL_HOSTILE_PLAYER_BUFF5 = "^(%a+)%s(gains)%s(%d+)%s([%a]+)%s(from)%s(%a+)'s%s([%a%s]+)%.$"
+  SPELL_HOSTILE_PLAYER_BUFF5 = "^(%a+)%s(gains)%s(%d+)%s([%a]+)%s(from)%s(%a+)'s%s([%a%s'-:]+)%.$"
 
   --[[
     CHAT_MSG_SPELL_PERIODIC_SELF_DAMAGE
@@ -455,7 +455,7 @@ else
     examples:
       $player$'s Pummel hits you for $amount$.
   ]]--
-  SPELL_HOSTILEPLAYER_DAMAGE1 = "^(%a+)'s%s([%a%s]+)%s(hits)%s(you)%sfor%s(%d+)%.$"
+  SPELL_HOSTILEPLAYER_DAMAGE1 = "^(%a+)'s%s([%a%s'-:]+)%s(hits)%s(you)%sfor%s(%d+)%.$"
 
   --[[
     CHAT_MSG_SPELL_HOSTILEPLAYER_DAMAGE
@@ -464,7 +464,7 @@ else
     examples:
       $player$'s Pummel crits you for $amount$.
   ]]--
-  SPELL_HOSTILEPLAYER_DAMAGE2 = "^(%a+)'s%s([%a%s]+)%s(crits)%s(you)%sfor%s(%d+)%.$"
+  SPELL_HOSTILEPLAYER_DAMAGE2 = "^(%a+)'s%s([%a%s'-:]+)%s(crits)%s(you)%sfor%s(%d+)%.$"
 
   --[[
     CHAT_MSG_SPELL_HOSTILEPLAYER_DAMAGE
@@ -473,7 +473,7 @@ else
     examples:
       $player$ begins to cast Hammer of Wrath.
   ]]--
-  SPELL_HOSTILEPLAYER_DAMAGE3 = "^(%a+)%s(begins to cast)%s([%a%s]+)%.$"
+  SPELL_HOSTILEPLAYER_DAMAGE3 = "^(%a+)%s(begins to cast)%s([%a%s'-:]+)%.$"
 
   --[[
     CHAT_MSG_SPELL_PERIODIC_HOSTILEPLAYER_DAMAGE
@@ -491,7 +491,7 @@ else
     examples:
       Fire Reflector fades from $player$.
   ]]--
-  SPELL_AURA_GONE_OTHER = "^([%a%s']+)%s(fades)%sfrom%s(%a+)%.$"
+  SPELL_AURA_GONE_OTHER = "^([%a%s'-:]+)%s(fades)%sfrom%s(%a+)%.$"
 
   --[[
     CHAT_MSG_SPELL_DAMAGESHIELDS_ON_SELF
