@@ -45,6 +45,8 @@ function _G.__PVPW__TEST_ITEMS_DE__Test()
 
   mod.testHelper.TestShouldHaveASoundTestForEachSpell(me, className)
   mod.testHelper.TestShouldHaveASoundDownTestForSpellsThatFade(me, className)
+  mod.testHelper.TestShouldHaveAParseTestForEachSpell(me, className)
+  mod.testHelper.TestShouldHaveAParseDownTestForSpellsThatFade(me, className)
 
   me.RunAll()
 end
@@ -61,6 +63,20 @@ function _G.__PVPW__TEST_ITEMS_DE__Test_Sound_Down()
   mod.testReporter.StartTestClass(className)
 
   mod.testHelper.TestShouldHaveASoundDownTestForSpellsThatFade(me, className)
+end
+
+function _G.__PVPW__TEST_ITEMS_DE__Test_Parse()
+  mod.testReporter.StartTestRun("global_items_de_parse")
+  mod.testReporter.StartTestClass(className)
+
+  mod.testHelper.TestShouldHaveAParseTestForEachSpell(me, className)
+end
+
+function _G.__PVPW__TEST_ITEMS_DE__Test_Parse_Down()
+  mod.testReporter.StartTestRun("global_items_de_parse_down")
+  mod.testReporter.StartTestClass(className)
+
+  mod.testHelper.TestShouldHaveAParseDownTestForSpellsThatFade(me, className)
 end
 
 --[[
@@ -117,6 +133,50 @@ function me.RunAll(playManual)
   if not playManual then
     mod.testReporter.PlayTestQueueWithDelay()
   end
+
+  mod.testReporter.AddToTestQueue(me.TestParseKoerperlicherSchutz)
+  mod.testReporter.AddToTestQueue(me.TestParseDownKoerperlicherSchutz)
+  mod.testReporter.AddToTestQueue(me.TestParseSproedeRuestung)
+  mod.testReporter.AddToTestQueue(me.TestParseDownSproedeRuestung)
+  mod.testReporter.AddToTestQueue(me.TestParsePanzerDesWuehlers)
+  mod.testReporter.AddToTestQueue(me.TestParseDownPanzerDesWuehlers)
+  mod.testReporter.AddToTestQueue(me.TestParseEphemereMacht)
+  mod.testReporter.AddToTestQueue(me.TestParseDownEphemereMacht)
+  mod.testReporter.AddToTestQueue(me.TestParseEssenzSaphirons)
+  mod.testReporter.AddToTestQueue(me.TestParseDownEssenzSaphirons)
+  mod.testReporter.AddToTestQueue(me.TestParseFeuerreflektor)
+  mod.testReporter.AddToTestQueue(me.TestParseDownFeuerreflektor)
+  mod.testReporter.AddToTestQueue(me.TestParseFliehen)
+  mod.testReporter.AddToTestQueue(me.TestParseDownFliehen)
+  mod.testReporter.AddToTestQueue(me.TestParseFrostreflektor)
+  mod.testReporter.AddToTestQueue(me.TestParseDownFrostreflektor)
+  mod.testReporter.AddToTestQueue(me.TestParseGeschenkDesLebens)
+  mod.testReporter.AddToTestQueue(me.TestParseDownGeschenkDesLebens)
+  mod.testReporter.AddToTestQueue(me.TestParseImmunitaetGegenUnbeweglichkeit)
+  mod.testReporter.AddToTestQueue(me.TestParseDownImmunitaetGegenUnbeweglichkeit)
+  mod.testReporter.AddToTestQueue(me.TestParseGedankensprung)
+  mod.testReporter.AddToTestQueue(me.TestParseDownGedankensprung)
+  mod.testReporter.AddToTestQueue(me.TestParseTollkuehnesStuermen)
+  mod.testReporter.AddToTestQueue(me.TestParseDownTollkuehnesStuermen)
+  mod.testReporter.AddToTestQueue(me.TestParseRuheloseStaerke)
+  mod.testReporter.AddToTestQueue(me.TestParseDownRuheloseStaerke)
+  mod.testReporter.AddToTestQueue(me.TestParseGnomenRaketenstiefel)
+  mod.testReporter.AddToTestQueue(me.TestParseDownGnomenRaketenstiefel)
+  mod.testReporter.AddToTestQueue(me.TestParseGoblinRaketenstiefel)
+  mod.testReporter.AddToTestQueue(me.TestParseDownGoblinRaketenstiefel)
+  mod.testReporter.AddToTestQueue(me.TestParseSchattenreflektor)
+  mod.testReporter.AddToTestQueue(me.TestParseDownSchattenreflektor)
+  mod.testReporter.AddToTestQueue(me.TestParseWappenDesSchlaechters)
+  mod.testReporter.AddToTestQueue(me.TestParseDownWappenDesSchlaechters)
+  mod.testReporter.AddToTestQueue(me.TestParseInstabileMacht)
+  mod.testReporter.AddToTestQueue(me.TestParseDownInstabileMacht)
+  mod.testReporter.AddToTestQueue(me.TestParseGifttotem)
+  mod.testReporter.AddToTestQueue(me.TestParseDownGifttotem)
+  mod.testReporter.AddToTestQueue(me.TestParseGezeitenGluecksbringer)
+  mod.testReporter.AddToTestQueue(me.TestParseErdstoss)
+  mod.testReporter.AddToTestQueue(me.TestParseDownErdstoss)
+  mod.testReporter.AddToTestQueue(me.TestParseNetOMatik)
+  mod.testReporter.AddToTestQueue(me.TestParseGnomenGedankenkontrollkappe)
 
   mod.testReporter.PlayTestQueue()
 end
@@ -462,5 +522,435 @@ function me.TestSoundGnomenGedankenkontrollkappe()
     className,
     "TestSoundGnomenGedankenkontrollkappe",
     "gnomen_gedankenkontrollkappe"
+  )
+end
+
+function me.TestParseKoerperlicherSchutz()
+  mod.testHelper.TestParse(
+    className,
+    "TestParseKoerperlicherSchutz",
+    "koerperlicher_schutz",
+    "$player$ bekommt Körperlicher Schutz.",
+    mod.testHelper.eventTypeSpellPeriodicHostilePlayerBuffs
+  )
+end
+
+function me.TestParseDownKoerperlicherSchutz()
+  mod.testHelper.TestParseDown(
+    className,
+    "TestParseDownKoerperlicherSchutz",
+    "koerperlicher_schutz",
+    "Körperlicher Schutz schwindet von $player$.",
+    mod.testHelper.eventTypeSpellAuraGoneOther
+  )
+end
+
+function me.TestParseSproedeRuestung()
+  mod.testHelper.TestParse(
+    className,
+    "TestParseSproedeRuestung",
+    "sproede_ruestung",
+    "$player$ bekommt Spröde Rüstung.",
+    mod.testHelper.eventTypeSpellPeriodicHostilePlayerBuffs
+  )
+end
+
+function me.TestParseDownSproedeRuestung()
+  mod.testHelper.TestParseDown(
+    className,
+    "TestParseDownSproedeRuestung",
+    "sproede_ruestung",
+    "Spröde Rüstung schwindet von $player$.",
+    mod.testHelper.eventTypeSpellAuraGoneOther
+  )
+end
+
+function me.TestParsePanzerDesWuehlers()
+  mod.testHelper.TestParse(
+    className,
+    "TestParsePanzerDesWuehlers",
+    "panzer_des_wuehlers",
+    "$player$ bekommt Panzer des Wühlers.",
+    mod.testHelper.eventTypeSpellPeriodicHostilePlayerBuffs
+  )
+end
+
+function me.TestParseDownPanzerDesWuehlers()
+  mod.testHelper.TestParseDown(
+    className,
+    "TestParseDownPanzerDesWuehlers",
+    "panzer_des_wuehlers",
+    "Panzer des Wühlers schwindet von $player$.",
+    mod.testHelper.eventTypeSpellAuraGoneOther
+  )
+end
+
+function me.TestParseEphemereMacht()
+  mod.testHelper.TestParse(
+    className,
+    "TestParseEphemereMacht",
+    "ephemere_macht",
+    "$player$ bekommt Ephemere Macht.",
+    mod.testHelper.eventTypeSpellPeriodicHostilePlayerBuffs
+  )
+end
+
+function me.TestParseDownEphemereMacht()
+  mod.testHelper.TestParseDown(
+    className,
+    "TestParseDownEphemereMacht",
+    "ephemere_macht",
+    "Ephemere Macht schwindet von $player$.",
+    mod.testHelper.eventTypeSpellAuraGoneOther
+  )
+end
+
+function me.TestParseEssenzSaphirons()
+  mod.testHelper.TestParse(
+    className,
+    "TestParseEssenzSaphirons",
+    "essenz_saphirons",
+    "$player$ bekommt Essenz Saphirons.",
+    mod.testHelper.eventTypeSpellPeriodicHostilePlayerBuffs
+  )
+end
+
+function me.TestParseDownEssenzSaphirons()
+  mod.testHelper.TestParseDown(
+    className,
+    "TestParseDownEssenzSaphirons",
+    "essenz_saphirons",
+    "Essenz Saphirons schwindet von $player$.",
+    mod.testHelper.eventTypeSpellAuraGoneOther
+  )
+end
+
+function me.TestParseFeuerreflektor()
+  mod.testHelper.TestParse(
+    className,
+    "TestParseFeuerreflektor",
+    "feuerreflektor",
+    "$player$ bekommt Feuerreflektor.",
+    mod.testHelper.eventTypeSpellPeriodicHostilePlayerBuffs
+  )
+end
+
+function me.TestParseDownFeuerreflektor()
+  mod.testHelper.TestParseDown(
+    className,
+    "TestParseDownFeuerreflektor",
+    "feuerreflektor",
+    "Feuerreflektor schwindet von $player$.",
+    mod.testHelper.eventTypeSpellAuraGoneOther
+  )
+end
+
+function me.TestParseFliehen()
+  mod.testHelper.TestParse(
+    className,
+    "TestParseFliehen",
+    "fliehen",
+    "$player$ bekommt Fliehen.",
+    mod.testHelper.eventTypeSpellPeriodicHostilePlayerBuffs
+  )
+end
+
+function me.TestParseDownFliehen()
+  mod.testHelper.TestParseDown(
+    className,
+    "TestParseDownFliehen",
+    "fliehen",
+    "Fliehen schwindet von $player$.",
+    mod.testHelper.eventTypeSpellAuraGoneOther
+  )
+end
+
+function me.TestParseFrostreflektor()
+  mod.testHelper.TestParse(
+    className,
+    "TestParseFrostreflektor",
+    "frostreflektor",
+    "$player$ bekommt Frostreflektor.",
+    mod.testHelper.eventTypeSpellPeriodicHostilePlayerBuffs
+  )
+end
+
+function me.TestParseDownFrostreflektor()
+  mod.testHelper.TestParseDown(
+    className,
+    "TestParseDownFrostreflektor",
+    "frostreflektor",
+    "Frostreflektor schwindet von $player$.",
+    mod.testHelper.eventTypeSpellAuraGoneOther
+  )
+end
+
+function me.TestParseGeschenkDesLebens()
+  mod.testHelper.TestParse(
+    className,
+    "TestParseGeschenkDesLebens",
+    "geschenk_des_lebens",
+    "$player$ bekommt Geschenk des Lebens.",
+    mod.testHelper.eventTypeSpellPeriodicHostilePlayerBuffs
+  )
+end
+
+function me.TestParseDownGeschenkDesLebens()
+  mod.testHelper.TestParseDown(
+    className,
+    "TestParseDownGeschenkDesLebens",
+    "geschenk_des_lebens",
+    "Geschenk des Lebens schwindet von $player$.",
+    mod.testHelper.eventTypeSpellAuraGoneOther
+  )
+end
+
+function me.TestParseImmunitaetGegenUnbeweglichkeit()
+  mod.testHelper.TestParse(
+    className,
+    "TestParseImmunitaetGegenUnbeweglichkeit",
+    "immunitaet_gegen_unbeweglichkeit",
+    "$player$ bekommt Immunität gegen Unbeweglichkeit.",
+    mod.testHelper.eventTypeSpellPeriodicHostilePlayerBuffs
+  )
+end
+
+function me.TestParseDownImmunitaetGegenUnbeweglichkeit()
+  mod.testHelper.TestParseDown(
+    className,
+    "TestParseDownImmunitaetGegenUnbeweglichkeit",
+    "immunitaet_gegen_unbeweglichkeit",
+    "Immunität gegen Unbeweglichkeit schwindet von $player$.",
+    mod.testHelper.eventTypeSpellAuraGoneOther
+  )
+end
+
+function me.TestParseGedankensprung()
+  mod.testHelper.TestParse(
+    className,
+    "TestParseGedankensprung",
+    "gedankensprung",
+    "$player$ bekommt Gedankensprung.",
+    mod.testHelper.eventTypeSpellPeriodicHostilePlayerBuffs
+  )
+end
+
+function me.TestParseDownGedankensprung()
+  mod.testHelper.TestParseDown(
+    className,
+    "TestParseDownGedankensprung",
+    "gedankensprung",
+    "Gedankensprung schwindet von $player$.",
+    mod.testHelper.eventTypeSpellAuraGoneOther
+  )
+end
+
+function me.TestParseTollkuehnesStuermen()
+  mod.testHelper.TestParse(
+    className,
+    "TestParseTollkuehnesStuermen",
+    "tollkuehnes_stuermen",
+    "$player$ bekommt Tollkühnes Stürmen.",
+    mod.testHelper.eventTypeSpellPeriodicHostilePlayerBuffs
+  )
+end
+
+function me.TestParseDownTollkuehnesStuermen()
+  mod.testHelper.TestParseDown(
+    className,
+    "TestParseDownTollkuehnesStuermen",
+    "tollkuehnes_stuermen",
+    "Tollkühnes Stürmen schwindet von $player$.",
+    mod.testHelper.eventTypeSpellAuraGoneOther
+  )
+end
+
+function me.TestParseRuheloseStaerke()
+  mod.testHelper.TestParse(
+    className,
+    "TestParseRuheloseStaerke",
+    "ruhelose_staerke",
+    "$player$ bekommt Ruhelose Stärke.",
+    mod.testHelper.eventTypeSpellPeriodicHostilePlayerBuffs
+  )
+end
+
+function me.TestParseDownRuheloseStaerke()
+  mod.testHelper.TestParseDown(
+    className,
+    "TestParseDownRuheloseStaerke",
+    "ruhelose_staerke",
+    "Ruhelose Stärke schwindet von $player$.",
+    mod.testHelper.eventTypeSpellAuraGoneOther
+  )
+end
+
+function me.TestParseGnomenRaketenstiefel()
+  mod.testHelper.TestParse(
+    className,
+    "TestParseGnomenRaketenstiefel",
+    "gnomen_raketenstiefel",
+    "$player$ bekommt Gnomen-Raketenstiefel.",
+    mod.testHelper.eventTypeSpellPeriodicHostilePlayerBuffs
+  )
+end
+
+function me.TestParseDownGnomenRaketenstiefel()
+  mod.testHelper.TestParseDown(
+    className,
+    "TestParseDownGnomenRaketenstiefel",
+    "gnomen_raketenstiefel",
+    "Gnomen-Raketenstiefel schwindet von $player$.",
+    mod.testHelper.eventTypeSpellAuraGoneOther
+  )
+end
+
+function me.TestParseGoblinRaketenstiefel()
+  mod.testHelper.TestParse(
+    className,
+    "TestParseGoblinRaketenstiefel",
+    "goblin_raketenstiefel",
+    "$player$ bekommt Goblin-Raketenstiefel.",
+    mod.testHelper.eventTypeSpellPeriodicHostilePlayerBuffs
+  )
+end
+
+function me.TestParseDownGoblinRaketenstiefel()
+  mod.testHelper.TestParseDown(
+    className,
+    "TestParseDownGoblinRaketenstiefel",
+    "goblin_raketenstiefel",
+    "Goblin-Raketenstiefel schwindet von $player$.",
+    mod.testHelper.eventTypeSpellAuraGoneOther
+  )
+end
+
+function me.TestParseSchattenreflektor()
+  mod.testHelper.TestParse(
+    className,
+    "TestParseSchattenreflektor",
+    "schattenreflektor",
+    "$player$ bekommt Schattenreflektor.",
+    mod.testHelper.eventTypeSpellPeriodicHostilePlayerBuffs
+  )
+end
+
+function me.TestParseDownSchattenreflektor()
+  mod.testHelper.TestParseDown(
+    className,
+    "TestParseDownSchattenreflektor",
+    "schattenreflektor",
+    "Schattenreflektor schwindet von $player$.",
+    mod.testHelper.eventTypeSpellAuraGoneOther
+  )
+end
+
+function me.TestParseWappenDesSchlaechters()
+  mod.testHelper.TestParse(
+    className,
+    "TestParseWappenDesSchlaechters",
+    "wappen_des_schlaechters",
+    "$player$ bekommt Wappen des Schlächters.",
+    mod.testHelper.eventTypeSpellPeriodicHostilePlayerBuffs
+  )
+end
+
+function me.TestParseDownWappenDesSchlaechters()
+  mod.testHelper.TestParseDown(
+    className,
+    "TestParseDownWappenDesSchlaechters",
+    "wappen_des_schlaechters",
+    "Wappen des Schlächters schwindet von $player$.",
+    mod.testHelper.eventTypeSpellAuraGoneOther
+  )
+end
+
+function me.TestParseInstabileMacht()
+  mod.testHelper.TestParse(
+    className,
+    "TestParseInstabileMacht",
+    "instabile_macht",
+    "$player$ bekommt Instabile Macht.",
+    mod.testHelper.eventTypeSpellPeriodicHostilePlayerBuffs
+  )
+end
+
+function me.TestParseDownInstabileMacht()
+  mod.testHelper.TestParseDown(
+    className,
+    "TestParseDownInstabileMacht",
+    "instabile_macht",
+    "Instabile Macht schwindet von $player$.",
+    mod.testHelper.eventTypeSpellAuraGoneOther
+  )
+end
+
+function me.TestParseGifttotem()
+  mod.testHelper.TestParse(
+    className,
+    "TestParseGifttotem",
+    "gifttotem",
+    "$player$ bekommt Gifttotem.",
+    mod.testHelper.eventTypeSpellPeriodicHostilePlayerBuffs
+  )
+end
+
+function me.TestParseDownGifttotem()
+  mod.testHelper.TestParseDown(
+    className,
+    "TestParseDownGifttotem",
+    "gifttotem",
+    "Gifttotem schwindet von $player$.",
+    mod.testHelper.eventTypeSpellAuraGoneOther
+  )
+end
+
+function me.TestParseGezeitenGluecksbringer()
+  mod.testHelper.TestParse(
+    className,
+    "TestParseGezeitenGluecksbringer",
+    "gezeiten_gluecksbringer",
+    "Ihr seid von Gezeiten-Glücksbringer betroffen.",
+    mod.testHelper.eventTypeSpellPeriodicSelfDamage
+  )
+end
+
+function me.TestParseErdstoss()
+  mod.testHelper.TestParse(
+    className,
+    "TestParseErdstoss",
+    "erdstoss",
+    "$player$ bekommt Erdstoß.",
+    mod.testHelper.eventTypeSpellPeriodicHostilePlayerBuffs
+  )
+end
+
+function me.TestParseDownErdstoss()
+  mod.testHelper.TestParseDown(
+    className,
+    "TestParseDownErdstoss",
+    "erdstoss",
+    "Erdstoß schwindet von $player$.",
+    mod.testHelper.eventTypeSpellAuraGoneOther
+  )
+end
+
+function me.TestParseNetOMatik()
+  mod.testHelper.TestParse(
+    className,
+    "TestParseNetOMatic",
+    "net_o_matik",
+    "Ihr seid von Net-o-Matik betroffen.",
+    mod.testHelper.eventTypeSpellPeriodicSelfDamage
+  )
+end
+
+function me.TestParseGnomenGedankenkontrollkappe()
+  mod.testHelper.TestParse(
+    className,
+    "TestParseGnomenGedankenkontrollkappe",
+    "gnomen_gedankenkontrollkappe",
+    "Ihr seid von Gnomen-Gedankenkontrollkappe betroffen.",
+    mod.testHelper.eventTypeSpellPeriodicSelfDamage
   )
 end

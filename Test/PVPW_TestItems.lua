@@ -784,7 +784,7 @@ function me.TestParseDownFrostReflector()
   mod.testHelper.TestParseDown(
     className,
     "TestParseDownFrostReflector",
-    "flee",
+    "frost_reflector",
     "Frost Reflector fades from $player$.",
     mod.testHelper.eventTypeSpellAuraGoneOther
   )
@@ -1025,7 +1025,7 @@ function me.TestParseEarthstrike()
     className,
     "TestParseEarthstrike",
     "earthstrike",
-    "$player$ gains Earhstrike.",
+    "$player$ gains Earthstrike.",
     mod.testHelper.eventTypeSpellPeriodicHostilePlayerBuffs
   )
 end
