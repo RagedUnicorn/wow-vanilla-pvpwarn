@@ -45,6 +45,8 @@ function _G.__PVPW__TEST_WARLOCK_DE__Test()
 
   mod.testHelper.TestShouldHaveASoundTestForEachSpell(me, className)
   mod.testHelper.TestShouldHaveASoundDownTestForSpellsThatFade(me, className)
+  mod.testHelper.TestShouldHaveAParseTestForEachSpell(me, className)
+  mod.testHelper.TestShouldHaveAParseDownTestForSpellsThatFade(me, className)
 
   me.RunAll()
 end
@@ -61,6 +63,20 @@ function _G.__PVPW__TEST_WARLOCK_DE__Test_Sound_Down()
   mod.testReporter.StartTestClass(className)
 
   mod.testHelper.TestShouldHaveASoundDownTestForSpellsThatFade(me, className)
+end
+
+function _G.__PVPW__TEST_WARLOCK_DE__Test_Parse()
+  mod.testReporter.StartTestRun("global_warlock_de_parse")
+  mod.testReporter.StartTestClass(className)
+
+  mod.testHelper.TestShouldHaveAParseTestForEachSpell(me, className)
+end
+
+function _G.__PVPW__TEST_WARLOCK_DE__Test_Parse_Down()
+  mod.testReporter.StartTestRun("global_warlock_de_parse_down")
+  mod.testReporter.StartTestClass(className)
+
+  mod.testHelper.TestShouldHaveAParseDownTestForSpellsThatFade(me, className)
 end
 
 --[[
@@ -102,6 +118,35 @@ function me.RunAll(playManual)
   if not playManual then
     mod.testReporter.PlayTestQueueWithDelay()
   end
+
+  mod.testReporter.AddToTestQueue(me.TestParseFurcht)
+  mod.testReporter.AddToTestQueue(me.TestParseTeufelsbeherschung)
+  mod.testReporter.AddToTestQueue(me.TestParseDownTeufelsbeherschung)
+  mod.testReporter.AddToTestQueue(me.TestParseSchattenbrand)
+  mod.testReporter.AddToTestQueue(me.TestParseSchattenzauberschutz)
+  mod.testReporter.AddToTestQueue(me.TestParseDownSchattenzauberschutz)
+  mod.testReporter.AddToTestQueue(me.TestParseSchreckensgeheul)
+  mod.testReporter.AddToTestQueue(me.TestParseZauberstein)
+  mod.testReporter.AddToTestQueue(me.TestParseDownZauberstein)
+  mod.testReporter.AddToTestQueue(me.TestParseErheblicherZauberstein)
+  mod.testReporter.AddToTestQueue(me.TestParseDownErheblicherZauberstein)
+  mod.testReporter.AddToTestQueue(me.TestParseGrosserZauberstein)
+  mod.testReporter.AddToTestQueue(me.TestParseDownGrosserZauberstein)
+  mod.testReporter.AddToTestQueue(me.TestParseTodesmantel)
+  mod.testReporter.AddToTestQueue(me.TestParseFluchVerstaerken)
+  mod.testReporter.AddToTestQueue(me.TestParseDownFluchVerstaerken)
+  mod.testReporter.AddToTestQueue(me.TestParseSchwacherGesundheitsstein)
+  mod.testReporter.AddToTestQueue(me.TestParseGeringerGesundheitsstein)
+  mod.testReporter.AddToTestQueue(me.TestParseGrosserGesundheitsstein)
+  mod.testReporter.AddToTestQueue(me.TestParseErheblicherGesundheitsstein)
+  mod.testReporter.AddToTestQueue(me.TestParseFluchDerErschoepfung)
+  mod.testReporter.AddToTestQueue(me.TestParseFluchDerSprachen)
+  mod.testReporter.AddToTestQueue(me.TestParseSeelensteinAuferstehung)
+  mod.testReporter.AddToTestQueue(me.TestParseDownSeelensteinAuferstehung)
+  mod.testReporter.AddToTestQueue(me.TestParseZaubersperre)
+  mod.testReporter.AddToTestQueue(me.TestParseSeelenverbindung)
+  mod.testReporter.AddToTestQueue(me.TestParseDownSeelenverbindung)
+  mod.testReporter.AddToTestQueue(me.TestParseVerfuehrung)
 
   mod.testReporter.PlayTestQueue()
 end
@@ -327,5 +372,285 @@ function me.TestSoundVerfuehrung()
     className,
     "TestSoundVerfuehrung",
     "verfuehrung"
+  )
+end
+
+function me.TestParseFurcht()
+  mod.testHelper.TestParse(
+    className,
+    "TestParseFurcht",
+    "furcht",
+    "Ihr seid von Furcht betroffen.",
+    mod.testHelper.eventTypeSpellPeriodicSelfDamage
+  )
+end
+
+function me.TestParseTeufelsbeherschung()
+  mod.testHelper.TestParse(
+    className,
+    "TestParseTeufelsbeherschung",
+    "teufelsbeherschung",
+    "$player$ bekommt Teufelsbeherschung.",
+    mod.testHelper.eventTypeSpellPeriodicHostilePlayerBuffs
+  )
+end
+
+function me.TestParseDownTeufelsbeherschung()
+  mod.testHelper.TestParseDown(
+    className,
+    "TestParseDownTeufelsbeherschung",
+    "teufelsbeherschung",
+    "Teufelsbeherschung schwindet von $player$.",
+    mod.testHelper.eventTypeSpellAuraGoneOther
+  )
+end
+
+function me.TestParseSchattenbrand()
+  mod.testHelper.TestParse(
+    className,
+    "TestParseSchattenbrand",
+    "schattenbrand",
+    "Ihr seid von Schattenbrand betroffen.",
+    mod.testHelper.eventTypeSpellPeriodicSelfDamage
+  )
+end
+
+function me.TestParseSchattenzauberschutz()
+  mod.testHelper.TestParse(
+    className,
+    "TestParseSchattenzauberschutz",
+    "schattenzauberschutz",
+    "$player$ bekommt Schattenzauberschutz.",
+    mod.testHelper.eventTypeSpellPeriodicHostilePlayerBuffs
+  )
+end
+
+function me.TestParseDownSchattenzauberschutz()
+  mod.testHelper.TestParseDown(
+    className,
+    "TestParseDownSchattenzauberschutz",
+    "schattenzauberschutz",
+    "Schattenzauberschutz schwindet von $player$.",
+    mod.testHelper.eventTypeSpellAuraGoneOther
+  )
+end
+
+function me.TestParseSchreckensgeheul()
+  mod.testHelper.TestParse(
+    className,
+    "TestParseSchreckensgeheul",
+    "schreckensgeheul",
+    "Ihr seid von Schreckensgeheul betroffen.",
+    mod.testHelper.eventTypeSpellPeriodicSelfDamage
+  )
+end
+
+function me.TestParseZauberstein()
+  mod.testHelper.TestParse(
+    className,
+    "TestParseZauberstein",
+    "zauberstein",
+    "$player$ bekommt Zauberstein.",
+    mod.testHelper.eventTypeSpellPeriodicHostilePlayerBuffs
+  )
+end
+
+function me.TestParseDownZauberstein()
+  mod.testHelper.TestParseDown(
+    className,
+    "TestParseDownZauberstein",
+    "zauberstein",
+    "Zauberstein schwindet von $player$.",
+    mod.testHelper.eventTypeSpellAuraGoneOther
+  )
+end
+
+function me.TestParseErheblicherZauberstein()
+  mod.testHelper.TestParse(
+    className,
+    "TestParseErheblicherZauberstein",
+    "erheblicher_zauberstein",
+    "$player$ bekommt Erheblicher Zauberstein.",
+    mod.testHelper.eventTypeSpellPeriodicHostilePlayerBuffs
+  )
+end
+
+function me.TestParseDownErheblicherZauberstein()
+  mod.testHelper.TestParseDown(
+    className,
+    "TestParseDownErheblicherZauberstein",
+    "erheblicher_zauberstein",
+    "Erheblicher Zauberstein schwindet von $player$.",
+    mod.testHelper.eventTypeSpellAuraGoneOther
+  )
+end
+
+function me.TestParseGrosserZauberstein()
+  mod.testHelper.TestParse(
+    className,
+    "TestParseGrosserZauberstein",
+    "grosser_zauberstein",
+    "$player$ bekommt Großer Zauberstein.",
+    mod.testHelper.eventTypeSpellPeriodicHostilePlayerBuffs
+  )
+end
+
+function me.TestParseDownGrosserZauberstein()
+  mod.testHelper.TestParseDown(
+    className,
+    "TestParseDownGrosserZauberstein",
+    "grosser_zauberstein",
+    "Großer Zauberstein schwindet von $player$.",
+    mod.testHelper.eventTypeSpellAuraGoneOther
+  )
+end
+
+function me.TestParseTodesmantel()
+  mod.testHelper.TestParse(
+    className,
+    "TestParseTodesmantel",
+    "todesmantel",
+    "Ihr seid von Todesmantel betroffen.",
+    mod.testHelper.eventTypeSpellPeriodicSelfDamage
+  )
+end
+
+function me.TestParseFluchVerstaerken()
+  mod.testHelper.TestParse(
+    className,
+    "TestParseFluchVerstaerken",
+    "fluch_verstaerken",
+    "$player$ bekommt Fluch verstärken.",
+    mod.testHelper.eventTypeSpellPeriodicHostilePlayerBuffs
+  )
+end
+
+function me.TestParseDownFluchVerstaerken()
+  mod.testHelper.TestParseDown(
+    className,
+    "TestParseDownFluchVerstaerken",
+    "fluch_verstaerken",
+    "Fluch verstärken schwindet von $player$.",
+    mod.testHelper.eventTypeSpellAuraGoneOther
+  )
+end
+
+function me.TestParseSchwacherGesundheitsstein()
+  mod.testHelper.TestParse(
+    className,
+    "TestParseSchwacherGesundheitsstein",
+    "schwacher_gesundheitsstein",
+    "$player$s Schwacher Gesundheitsstein heilt $player$ um $amount$.",
+    mod.testHelper.eventTypeSpellHostilePlayerBuff
+  )
+end
+
+function me.TestParseGeringerGesundheitsstein()
+  mod.testHelper.TestParse(
+    className,
+    "TestParseGeringerGesundheitsstein",
+    "geringer_gesundheitsstein",
+    "$player$s Geringer Gesundheitsstein heilt $player$ um $amount$.",
+    mod.testHelper.eventTypeSpellHostilePlayerBuff
+  )
+end
+
+function me.TestParseGrosserGesundheitsstein()
+  mod.testHelper.TestParse(
+    className,
+    "TestParseGrosserGesundheitsstein",
+    "grosser_gesundheitsstein",
+    "$player$s Großer Gesundheitsstein heilt $player$ um $amount$.",
+    mod.testHelper.eventTypeSpellHostilePlayerBuff
+  )
+end
+
+function me.TestParseErheblicherGesundheitsstein()
+  mod.testHelper.TestParse(
+    className,
+    "TestParseErheblicherGesundheitsstein",
+    "major_healthstone",
+    "$player$s Erheblicher Gesundheitsstein heilt $player$ um $amount$.",
+    mod.testHelper.eventTypeSpellHostilePlayerBuff
+  )
+end
+
+function me.TestParseFluchDerErschoepfung()
+  mod.testHelper.TestParse(
+    className,
+    "TestParseFluchDerErschoepfung",
+    "fluch_der_erschoepfung",
+    "Ihr seid von Fluch der Erschöpfung betroffen.",
+    mod.testHelper.eventTypeSpellPeriodicSelfDamage
+  )
+end
+
+function me.TestParseFluchDerSprachen()
+  mod.testHelper.TestParse(
+    className,
+    "TestParseFluchDerSprachen",
+    "fluch_der_sprachen",
+    "Ihr seid von Fluch der Sprachen betroffen.",
+    mod.testHelper.eventTypeSpellPeriodicSelfDamage
+  )
+end
+
+function me.TestParseSeelensteinAuferstehung()
+  mod.testHelper.TestParse(
+    className,
+    "TestParseSeelensteinAuferstehung",
+    "seelenstein_auferstehung",
+    "$player$ bekommt Seelenstein-Auferstehung.",
+    mod.testHelper.eventTypeSpellPeriodicHostilePlayerBuffs
+  )
+end
+
+function me.TestParseDownSeelensteinAuferstehung()
+  mod.testHelper.TestParseDown(
+    className,
+    "TestParseDownSeelensteinAuferstehung",
+    "seelenstein_auferstehung",
+    "Seelenstein-Auferstehung schwindet von $player$.",
+    mod.testHelper.eventTypeSpellAuraGoneOther
+  )
+end
+
+function me.TestParseZaubersperre()
+  mod.testHelper.TestParse(
+    className,
+    "TestParseZaubersperre",
+    "zaubersperre",
+    "Ihr seid von Zaubersperre betroffen.",
+    mod.testHelper.eventTypeSpellPeriodicSelfDamage
+  )
+end
+
+function me.TestParseSeelenverbindung()
+  mod.testHelper.TestParse(
+    className,
+    "TestParseSeelenverbindung",
+    "seelenverbindung",
+    "$player$ bekommt Seelenverbindung.",
+    mod.testHelper.eventTypeSpellPeriodicHostilePlayerBuffs
+  )
+end
+
+function me.TestParseDownSeelenverbindung()
+  mod.testHelper.TestParseDown(
+    className,
+    "TestParseDownSeelenverbindung",
+    "seelenverbindung",
+    "Seelenverbindung schwindet von $player$.",
+    mod.testHelper.eventTypeSpellAuraGoneOther
+  )
+end
+
+function me.TestParseVerfuehrung()
+  mod.testHelper.TestParse(
+    className,
+    "TestParseVerfuehrung",
+    "verfuehrung",
+    "Ihr seid von Verführung betroffen.",
+    mod.testHelper.eventTypeSpellPeriodicSelfDamage
   )
 end
