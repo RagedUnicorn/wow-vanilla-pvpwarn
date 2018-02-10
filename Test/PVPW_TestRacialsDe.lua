@@ -47,6 +47,7 @@ function _G.__PVPW__TEST_RACIALS_DE__Test()
   mod.testHelper.TestShouldHaveASoundDownTestForSpellsThatFade(me, className)
   mod.testHelper.TestShouldHaveAParseTestForEachSpell(me, className)
   mod.testHelper.TestShouldHaveAParseDownTestForSpellsThatFade(me, className)
+  mod.testHelper.TestShouldHaveAParseCritTestForSpellsThatCanCrit(me, className)
 
   me.RunAll()
 end
@@ -77,6 +78,13 @@ function _G.__PVPW__TEST_RACIALS_DE__Test_Parse_Down()
   mod.testReporter.StartTestClass(className)
 
   mod.testHelper.TestShouldHaveAParseDownTestForSpellsThatFade(me, className)
+end
+
+function _G.__PVPW__TEST_RACIALS_DE__Test_Parse_Crit()
+  mod.testReporter.StartTestRun("global_racials_de_parse_crit")
+  mod.testReporter.StartTestClass(className)
+
+  mod.testHelper.TestShouldHaveAParseCritTestForSpellsThatCanCrit(me, className)
 end
 
 --[[

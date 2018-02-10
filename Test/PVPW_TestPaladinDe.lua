@@ -79,6 +79,13 @@ function _G.__PVPW__TEST_PALADIN_DE__Test_Parse_Down()
   mod.testHelper.TestShouldHaveAParseDownTestForSpellsThatFade(me, className)
 end
 
+function _G.__PVPW__TEST_PALADIN_DE__Test_Parse_Crit()
+  mod.testReporter.StartTestRun("global_paladin_de_parse_crit")
+  mod.testReporter.StartTestClass(className)
+
+  mod.testHelper.TestShouldHaveAParseCritTestForSpellsThatCanCrit(me, className)
+end
+
 --[[
   @param {boolean} playManual
     true if testqueue is started manually
