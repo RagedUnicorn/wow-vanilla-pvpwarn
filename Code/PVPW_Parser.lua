@@ -137,8 +137,9 @@ if (GetLocale() == "deDE") then
 
     examples:
       $player$ beginnt Entfesselungskünstler auszuführen.
+      $player$ beginnt Kriegsdonner auszuführen.
   ]]--
-  SPELL_HOSTILE_PLAYER_BUFF3 = "^(%a+)%s(beginnt)%s([\195\159\195\132\195\150\195\156\195\188\195\164\195\182%a%s-:]+)%s(auszuführen)%.$"
+  SPELL_HOSTILE_PLAYER_BUFF3 = "^(%a+)%s(beginnt)%s([\195\159\195\132\195\150\195\156\195\188\195\164\195\182%a%s-:]+)%s(auszuf\195\188hren)%.$"
 
   --[[
     CHAT_MSG_SPELL_HOSTILEPLAYER_BUFF
@@ -766,7 +767,7 @@ if (GetLocale() == "deDE") then
       }
     end
 
-    local _, _, source, keyword1, spell keyword2 = string.find(msg, SPELL_HOSTILE_PLAYER_BUFF3)
+    local _, _, source, keyword1, spell, keyword2 = string.find(msg, SPELL_HOSTILE_PLAYER_BUFF3)
 
     if source and keyword1 and spell and keyword2 then
       mod.logger.LogDebug(me.tag, "CHAT_MSG_SPELL_HOSTILEPLAYER_BUFF detected")
@@ -786,7 +787,7 @@ if (GetLocale() == "deDE") then
 
     if keyword1 and source and spell and keyword2 and target and amount then
       mod.logger.LogDebug(me.tag, "CHAT_MSG_SPELL_HOSTILEPLAYER_BUFF detected")
-      mod.logger.LogDebug(me.tag, string.format("source1: %s spell: %s source2: %s", source1, spell, source2))
+      mod.logger.LogDebug(me.tag, string.format("source: %s spell: %s target: %s", source, spell, target))
 
       return 1, {
         ["type"] = "CHAT_MSG_SPELL_HOSTILEPLAYER_BUFF",
