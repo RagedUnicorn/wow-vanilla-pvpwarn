@@ -182,6 +182,7 @@ if (GetLocale() == "deDE") then
 
     examples:
       $player$ trifft Euch (mit Zuschlagen). Schaden: $amount$.
+      $player$ trifft Euch (mit Tritt). Schaden: $amount$.
 
   ]]--
   SPELL_HOSTILEPLAYER_DAMAGE1 = "^(%a+)%s(trifft)%s(euch)%s%(mit%s([\195\159\195\132\195\150\195\156\195\188\195\164\195\182%a%s-:]+)%)%.%s(Schaden):%s(%d+)%.$"
@@ -191,7 +192,8 @@ if (GetLocale() == "deDE") then
     [source] [keyword] [target] [keyword] [spell] [keyword] [amount]
 
     examples:
-      $player$ trifft Euch kritisch (mit Zuschlagen). Schaden: $amount$
+      $player$ trifft Euch kritisch (mit Zuschlagen). Schaden: $amount$.
+      $player$ trifft Euch kritisch (mit Tritt). Schaden: $amount$.
   ]]--
   SPELL_HOSTILEPLAYER_DAMAGE2 = "^(%a+)%s(trifft)%s(Euch)%s(kritisch)%s%(mit%s([\195\159\195\132\195\150\195\156\195\188\195\164\195\182%a%s-:]+)%)%.%s(Schaden):%s(%d+)%.$"
 
@@ -455,6 +457,7 @@ else
 
     examples:
       $player$'s Pummel hits you for $amount$.
+      $player$'s Kick hits you for $amount$.
   ]]--
   SPELL_HOSTILEPLAYER_DAMAGE1 = "^(%a+)'s%s([%a%s'-:]+)%s(hits)%s(you)%sfor%s(%d+)%.$"
 
@@ -464,6 +467,7 @@ else
 
     examples:
       $player$'s Pummel crits you for $amount$.
+      $player$'s Kick crits you for $amount$.
   ]]--
   SPELL_HOSTILEPLAYER_DAMAGE2 = "^(%a+)'s%s([%a%s'-:]+)%s(crits)%s(you)%sfor%s(%d+)%.$"
 
