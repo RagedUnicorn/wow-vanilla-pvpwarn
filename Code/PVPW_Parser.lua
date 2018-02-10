@@ -185,7 +185,7 @@ if (GetLocale() == "deDE") then
       $player$ trifft Euch (mit Tritt). Schaden: $amount$.
 
   ]]--
-  SPELL_HOSTILEPLAYER_DAMAGE1 = "^(%a+)%s(trifft)%s(euch)%s%(mit%s([\195\159\195\132\195\150\195\156\195\188\195\164\195\182%a%s-:]+)%)%.%s(Schaden):%s(%d+)%.$"
+  SPELL_HOSTILEPLAYER_DAMAGE1 = "^(%a+)%s(trifft)%s(Euch)%s%(mit%s([\195\159\195\132\195\150\195\156\195\188\195\164\195\182%a%s-:]+)%)%.%s(Schaden):%s(%d+)%.$"
 
   --[[
     CHAT_MSG_SPELL_HOSTILEPLAYER_DAMAGE
@@ -871,7 +871,7 @@ if (GetLocale() == "deDE") then
   function me.ParseSpellHostilePlayerDamage(msg)
     local _, _, source, keyword1, target, spell, keyword2, amount = string.find(msg, SPELL_HOSTILEPLAYER_DAMAGE1)
 
-    if source and keyword1 and target and spell and keyword2 and damage then
+    if source and keyword1 and target and spell and keyword2 and amount then
       mod.logger.LogDebug(me.tag, "CHAT_MSG_SPELL_HOSTILEPLAYER_DAMAGE detected")
       mod.logger.LogDebug(me.tag, string.format("source: %s spell: %s", source, spell))
 

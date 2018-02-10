@@ -45,6 +45,8 @@ function _G.__PVPW__TEST_WARRIOR_DE__Test()
 
   mod.testHelper.TestShouldHaveASoundTestForEachSpell(me, className)
   mod.testHelper.TestShouldHaveASoundDownTestForSpellsThatFade(me, className)
+  mod.testHelper.TestShouldHaveAParseTestForEachSpell(me, className)
+  mod.testHelper.TestShouldHaveAParseDownTestForSpellsThatFade(me, className)
 
   me.RunAll()
 end
@@ -63,6 +65,20 @@ function _G.__PVPW__TEST_WARRIOR_DE__Test_Sound_Down()
   mod.testHelper.TestShouldHaveASoundDownTestForSpellsThatFade(me, className)
 end
 
+function _G.__PVPW__TEST_WARRIOR_DE__Test_Parse()
+  mod.testReporter.StartTestRun("global_warrior_de_parse")
+  mod.testReporter.StartTestClass(className)
+
+  mod.testHelper.TestShouldHaveAParseTestForEachSpell(me, className)
+end
+
+function _G.__PVPW__TEST_WARRIOR_DE__Test_Parse_Down()
+  mod.testReporter.StartTestRun("global_warrior_de_parse_down")
+  mod.testReporter.StartTestClass(className)
+
+  mod.testHelper.TestShouldHaveAParseDownTestForSpellsThatFade(me, className)
+end
+
 --[[
   @param {boolean} playManual
     true if testqueue is started manually
@@ -70,7 +86,7 @@ end
 ]]--
 function me.RunAll(playManual)
   -- test sound
-  mod.testReporter.AddToTestQueueWithDelay(me.TestSoundBerserkerwut)
+  --[[mod.testReporter.AddToTestQueueWithDelay(me.TestSoundBerserkerwut)
   mod.testReporter.AddToTestQueueWithDelay(me.TestSoundDownBerserkerwut)
   mod.testReporter.AddToTestQueueWithDelay(me.TestSoundTollkuehnheit)
   mod.testReporter.AddToTestQueueWithDelay(me.TestSoundDownTollkuehnheit)
@@ -92,11 +108,36 @@ function me.RunAll(playManual)
   mod.testReporter.AddToTestQueueWithDelay(me.TestSoundBetaeubungAbfangen)
   mod.testReporter.AddToTestQueueWithDelay(me.TestSoundDrohruf)
   mod.testReporter.AddToTestQueueWithDelay(me.TestSoundSchildhieb)
-  mod.testReporter.AddToTestQueueWithDelay(me.TestSoundDownSchildhieb)
+  mod.testReporter.AddToTestQueueWithDelay(me.TestSoundDownSchildhieb)]]--
 
   if not playManual then
     mod.testReporter.PlayTestQueueWithDelay()
   end
+
+  mod.testReporter.AddToTestQueue(me.TestParseBerserkerwut)
+  mod.testReporter.AddToTestQueue(me.TestParseDownBerserkerwut)
+  mod.testReporter.AddToTestQueue(me.TestParseTollkuehnheit)
+  mod.testReporter.AddToTestQueue(me.TestParseDownTollkuehnheit)
+  mod.testReporter.AddToTestQueue(me.TestParseTodeswunsch)
+  mod.testReporter.AddToTestQueue(me.TestParseDownTodeswunsch)
+  mod.testReporter.AddToTestQueue(me.TestParseSchildwall)
+  mod.testReporter.AddToTestQueue(me.TestParseDownSchildwall)
+  mod.testReporter.AddToTestQueue(me.TestParseKampfhaltung)
+  mod.testReporter.AddToTestQueue(me.TestParseBerserkerhaltung)
+  mod.testReporter.AddToTestQueue(me.TestParseVerteidigungshaltung)
+  mod.testReporter.AddToTestQueue(me.TestParseSturmangriffsbetaeubung)
+  mod.testReporter.AddToTestQueue(me.TestParseLetztesGefecht)
+  mod.testReporter.AddToTestQueue(me.TestParseDownLetztesGefecht)
+  mod.testReporter.AddToTestQueue(me.TestParseEntwaffnen)
+  mod.testReporter.AddToTestQueue(me.TestParseErschuetternderSchlag)
+  mod.testReporter.AddToTestQueue(me.TestParseBlutrausch)
+  mod.testReporter.AddToTestQueue(me.TestParseDownBlutrausch)
+  mod.testReporter.AddToTestQueue(me.TestParseZuschlagen)
+  mod.testReporter.AddToTestQueue(me.TestParseCritZuschlagen)
+  mod.testReporter.AddToTestQueue(me.TestParseBetaeubungAbfangen)
+  mod.testReporter.AddToTestQueue(me.TestParseDrohruf)
+  mod.testReporter.AddToTestQueue(me.TestParseSchildhieb)
+  mod.testReporter.AddToTestQueue(me.TestParseDownSchildhieb)
 
   mod.testReporter.PlayTestQueue()
 end
@@ -282,5 +323,245 @@ function me.TestSoundDownSchildhieb()
     className,
     "TestSoundDownSchildhieb",
     "schildhieb"
+  )
+end
+
+function me.TestParseBerserkerwut()
+  mod.testHelper.TestParse(
+    className,
+    "TestParseBerserkerwut",
+    "berserkerwut",
+    "$player$ bekommt Berserkerwut.",
+    mod.testHelper.eventTypeSpellPeriodicHostilePlayerBuffs
+  )
+end
+
+function me.TestParseDownBerserkerwut()
+  mod.testHelper.TestParseDown(
+    className,
+    "TestParseDownBerserkerwut",
+    "berserkerwut",
+    "Berserkerwut schwindet von $player$.",
+    mod.testHelper.eventTypeSpellAuraGoneOther
+  )
+end
+
+function me.TestParseTollkuehnheit()
+  mod.testHelper.TestParse(
+    className,
+    "TestParseTollkuehnheit",
+    "tollkuehnheit",
+    "$player$ bekommt Tollkühnheit.",
+    mod.testHelper.eventTypeSpellPeriodicHostilePlayerBuffs
+  )
+end
+
+function me.TestParseDownTollkuehnheit()
+  mod.testHelper.TestParseDown(
+    className,
+    "TestParseDownTollkuehnheit",
+    "tollkuehnheit",
+    "Tollkühnheit schwindet von $player$.",
+    mod.testHelper.eventTypeSpellAuraGoneOther
+  )
+end
+
+function me.TestParseTodeswunsch()
+  mod.testHelper.TestParse(
+    className,
+    "TestParseTodeswunsch",
+    "todeswunsch",
+    "$player$ bekommt Todeswunsch.",
+    mod.testHelper.eventTypeSpellPeriodicHostilePlayerBuffs
+  )
+end
+
+function me.TestParseDownTodeswunsch()
+  mod.testHelper.TestParseDown(
+    className,
+    "TestParseDownTodeswunsch",
+    "todeswunsch",
+    "Todeswunsch schwindet von $player$.",
+    mod.testHelper.eventTypeSpellAuraGoneOther
+  )
+end
+
+function me.TestParseSchildwall()
+  mod.testHelper.TestParse(
+    className,
+    "TestParseSchildwall",
+    "schildwall",
+    "$player$ bekommt Schildwall.",
+    mod.testHelper.eventTypeSpellPeriodicHostilePlayerBuffs
+  )
+end
+
+function me.TestParseDownSchildwall()
+  mod.testHelper.TestParseDown(
+    className,
+    "TestParseDownSchildwall",
+    "schildwall",
+    "Schildwall schwindet von $player$.",
+    mod.testHelper.eventTypeSpellAuraGoneOther
+  )
+end
+
+function me.TestParseKampfhaltung()
+  mod.testHelper.TestParse(
+    className,
+    "TestParseKampfhaltung",
+    "kampfhaltung",
+    "$player$ bekommt Kampfhaltung.",
+    mod.testHelper.eventTypeSpellPeriodicHostilePlayerBuffs
+  )
+end
+
+function me.TestParseBerserkerhaltung()
+  mod.testHelper.TestParse(
+    className,
+    "TestParseBerserkerhaltung",
+    "berserkerhaltung",
+    "$player$ bekommt Berserkerhaltung.",
+    mod.testHelper.eventTypeSpellPeriodicHostilePlayerBuffs
+  )
+end
+
+function me.TestParseVerteidigungshaltung()
+  mod.testHelper.TestParse(
+    className,
+    "TestParseVerteidigungshaltung",
+    "verteidigungshaltung",
+    "$player$ bekommt Verteidigungshaltung.",
+    mod.testHelper.eventTypeSpellPeriodicHostilePlayerBuffs
+  )
+end
+
+function me.TestParseSturmangriffsbetaeubung()
+  mod.testHelper.TestParse(
+    className,
+    "TestParseSturmangriffsbetaeubung",
+    "sturmangriffsbetaeubung",
+    "Ihr seid von Sturmangriffsbetäubung betroffen.",
+    mod.testHelper.eventTypeSpellPeriodicSelfDamage
+  )
+end
+
+function me.TestParseLetztesGefecht()
+  mod.testHelper.TestParse(
+    className,
+    "TestParseLetztesGefecht",
+    "letztes_gefecht",
+    "$player$ bekommt Letztes Gefecht.",
+    mod.testHelper.eventTypeSpellPeriodicHostilePlayerBuffs
+  )
+end
+
+function me.TestParseDownLetztesGefecht()
+  mod.testHelper.TestParseDown(
+    className,
+    "TestParseDownLetztesGefecht",
+    "letztes_gefecht",
+    "Letztes Gefecht schwindet von $player$.",
+    mod.testHelper.eventTypeSpellAuraGoneOther
+  )
+end
+
+function me.TestParseEntwaffnen()
+  mod.testHelper.TestParse(
+    className,
+    "TestParseEntwaffnen",
+    "entwaffnen",
+    "Ihr seid von Entwaffnen betroffen.",
+    mod.testHelper.eventTypeSpellPeriodicSelfDamage
+  )
+end
+
+function me.TestParseErschuetternderSchlag()
+  mod.testHelper.TestParse(
+    className,
+    "TestParseErschuetternderSchlag",
+    "erschuetternder_schlag",
+    "Ihr seid von Erschütternder Schlag betroffen.",
+    mod.testHelper.eventTypeSpellPeriodicSelfDamage
+  )
+end
+
+function me.TestParseBlutrausch()
+  mod.testHelper.TestParse(
+    className,
+    "TestParseBlutrausch",
+    "blutrausch",
+    "$player$ bekommt Blutrausch.",
+    mod.testHelper.eventTypeSpellPeriodicHostilePlayerBuffs
+  )
+end
+
+function me.TestParseDownBlutrausch()
+  mod.testHelper.TestParseDown(
+    className,
+    "TestParseDownBlutrausch",
+    "blutrausch",
+    "Blutrausch schwindet von $player$.",
+    mod.testHelper.eventTypeSpellAuraGoneOther
+  )
+end
+
+function me.TestParseZuschlagen()
+  mod.testHelper.TestParse(
+    className,
+    "TestParseZuschlagen",
+    "zuschlagen",
+    "$player$ trifft Euch (mit Zuschlagen). Schaden: $amount$.",
+    mod.testHelper.eventTypeSpellHostilePlayerDamage
+  )
+end
+
+function me.TestParseCritZuschlagen()
+  mod.testHelper.TestParse(
+    className,
+    "TestParseCritZuschlagen",
+    "zuschlagen",
+    "$player$ trifft Euch kritisch (mit Zuschlagen). Schaden: $amount$.",
+    mod.testHelper.eventTypeSpellHostilePlayerDamage
+  )
+end
+
+function me.TestParseBetaeubungAbfangen()
+  mod.testHelper.TestParse(
+    className,
+    "TestParseBetaeubungAbfangen",
+    "betaeubung_abfangen",
+    "Ihr seid von Betäubung abfangen betroffen.",
+    mod.testHelper.eventTypeSpellPeriodicSelfDamage
+  )
+end
+
+function me.TestParseDrohruf()
+  mod.testHelper.TestParse(
+    className,
+    "TestParseDrohruf",
+    "drohruf",
+    "Ihr seid von Drohruf betroffen.",
+    mod.testHelper.eventTypeSpellPeriodicSelfDamage
+  )
+end
+
+function me.TestParseSchildhieb()
+  mod.testHelper.TestParse(
+    className,
+    "TestParseSchildhieb",
+    "schildhieb",
+    "$player$ bekommt Schildhieb.",
+    mod.testHelper.eventTypeSpellPeriodicHostilePlayerBuffs
+  )
+end
+
+function me.TestParseDownSchildhieb()
+  mod.testHelper.TestParseDown(
+    className,
+    "TestParseDownSchildhieb",
+    "schildhieb",
+    "Schildhieb schwindet von $player$.",
+    mod.testHelper.eventTypeSpellAuraGoneOther
   )
 end

@@ -649,26 +649,6 @@ function me.TestSoundSelfAvoidShieldBash()
   )
 end
 
-function me.TestParseDeathWish()
-  mod.testHelper.TestParse(
-    className,
-    "death_wish",
-    "rapid_fire",
-    "$player$ gains Death Wish.",
-    mod.testHelper.eventTypeSpellPeriodicHostilePlayerBuffs
-  )
-end
-
-function me.TestParseDownDeathWish()
-  mod.testHelper.TestParseDown(
-    className,
-    "TestParseDownDeathWish",
-    "death_wish",
-    "Death Wish fades from $player$.",
-    mod.testHelper.eventTypeSpellAuraGoneOther
-  )
-end
-
 function me.TestParseBerserkerRage()
   mod.testHelper.TestParse(
     className,
@@ -683,7 +663,7 @@ function me.TestParseDownBerserkerRage()
   mod.testHelper.TestParseDown(
     className,
     "TestParseDownBerserkerRage",
-    "barkskin",
+    "berserker_rage",
     "Berserker Rage fades from $player$.",
     mod.testHelper.eventTypeSpellAuraGoneOther
   )
@@ -705,6 +685,26 @@ function me.TestParseDownRecklessness()
     "TestParseDownRecklessness",
     "recklessness",
     "Recklessness fades from $player$.",
+    mod.testHelper.eventTypeSpellAuraGoneOther
+  )
+end
+
+function me.TestParseDeathWish()
+  mod.testHelper.TestParse(
+    className,
+    "TestParseDeathWish",
+    "death_wish",
+    "$player$ gains Death Wish.",
+    mod.testHelper.eventTypeSpellPeriodicHostilePlayerBuffs
+  )
+end
+
+function me.TestParseDownDeathWish()
+  mod.testHelper.TestParseDown(
+    className,
+    "TestParseDownDeathWish",
+    "death_wish",
+    "Death Wish fades from $player$.",
     mod.testHelper.eventTypeSpellAuraGoneOther
   )
 end
@@ -759,6 +759,16 @@ function me.TestParseDefensiveStance()
   )
 end
 
+function me.TestParseInterceptStun()
+  mod.testHelper.TestParse(
+    className,
+    "TestParseInterceptStun",
+    "intercept_stun",
+    "You are afflicted by Intercept Stun.",
+    mod.testHelper.eventTypeSpellPeriodicSelfDamage
+  )
+end
+
 function me.TestParseLastStand()
   mod.testHelper.TestParse(
     className,
@@ -776,36 +786,6 @@ function me.TestParseDownLastStand()
     "last_stand",
     "Last Stand fades from $player$.",
     mod.testHelper.eventTypeSpellAuraGoneOther
-  )
-end
-
-function me.TestParseBloodrage()
-  mod.testHelper.TestParse(
-    className,
-    "TestParseBloodrage",
-    "bloodrage",
-    "$player$ gains Bloodrage.",
-    mod.testHelper.eventTypeSpellPeriodicHostilePlayerBuffs
-  )
-end
-
-function me.TestParseDownBloodrage()
-  mod.testHelper.TestParseDown(
-    className,
-    "TestParseDownBloodrage",
-    "bloodrage",
-    "Bloodrage fades from $player$.",
-    mod.testHelper.eventTypeSpellAuraGoneOther
-  )
-end
-
-function me.TestParseInterceptStun()
-  mod.testHelper.TestParse(
-    className,
-    "TestParseInterceptStun",
-    "intercept_stun",
-    "You are afflicted by Intercept Stun.",
-    mod.testHelper.eventTypeSpellPeriodicSelfDamage
   )
 end
 
@@ -829,23 +809,23 @@ function me.TestParseConcussionBlow()
   )
 end
 
-function me.TestParseChargeStun()
+function me.TestParseBloodrage()
   mod.testHelper.TestParse(
     className,
-    "TestParseChargeStun",
-    "charge_stun",
-    "You are afflicted by Charge Stun.",
-    mod.testHelper.eventTypeSpellPeriodicSelfDamage
+    "TestParseBloodrage",
+    "bloodrage",
+    "$player$ gains Bloodrage.",
+    mod.testHelper.eventTypeSpellPeriodicHostilePlayerBuffs
   )
 end
 
-function me.TestParseIntimidatingShout()
-  mod.testHelper.TestParse(
+function me.TestParseDownBloodrage()
+  mod.testHelper.TestParseDown(
     className,
-    "TestParseIntimidatingShout",
-    "intimidating_shout",
-    "You are afflicted by Intimidating Shout.",
-    mod.testHelper.eventTypeSpellPeriodicSelfDamage
+    "TestParseDownBloodrage",
+    "bloodrage",
+    "Bloodrage fades from $player$.",
+    mod.testHelper.eventTypeSpellAuraGoneOther
   )
 end
 
@@ -866,6 +846,26 @@ function me.TestParseCritPummel()
     "pummel",
     "$player$'s Pummel crits you for $amount$.",
     mod.testHelper.eventTypeSpellHostilePlayerDamage
+  )
+end
+
+function me.TestParseChargeStun()
+  mod.testHelper.TestParse(
+    className,
+    "TestParseChargeStun",
+    "charge_stun",
+    "You are afflicted by Charge Stun.",
+    mod.testHelper.eventTypeSpellPeriodicSelfDamage
+  )
+end
+
+function me.TestParseIntimidatingShout()
+  mod.testHelper.TestParse(
+    className,
+    "TestParseIntimidatingShout",
+    "intimidating_shout",
+    "You are afflicted by Intimidating Shout.",
+    mod.testHelper.eventTypeSpellPeriodicSelfDamage
   )
 end
 
