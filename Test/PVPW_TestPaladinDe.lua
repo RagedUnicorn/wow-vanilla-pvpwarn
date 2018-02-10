@@ -45,6 +45,8 @@ function _G.__PVPW__TEST_PALADIN_DE__Test()
 
   mod.testHelper.TestShouldHaveASoundTestForEachSpell(me, className)
   mod.testHelper.TestShouldHaveASoundDownTestForSpellsThatFade(me, className)
+  mod.testHelper.TestShouldHaveAParseDownTestForSpellsThatFade(me, className)
+  mod.testHelper.TestShouldHaveAParseCritTestForSpellsThatCanCrit(me, className)
 
   me.RunAll()
 end
@@ -61,6 +63,20 @@ function _G.__PVPW__TEST_PALADIN_DE__Test_Sound_Down()
   mod.testReporter.StartTestClass(className)
 
   mod.testHelper.TestShouldHaveASoundDownTestForSpellsThatFade(me, className)
+end
+
+function _G.__PVPW__TEST_PALADIN_DE__Test_Parse()
+  mod.testReporter.StartTestRun("global_paladin_de_parse")
+  mod.testReporter.StartTestClass(className)
+
+  mod.testHelper.TestShouldHaveAParseTestForEachSpell(me, className)
+end
+
+function _G.__PVPW__TEST_PALADIN_DE__Test_Parse_Down()
+  mod.testReporter.StartTestRun("global_paladin_de_parse_down")
+  mod.testReporter.StartTestClass(className)
+
+  mod.testHelper.TestShouldHaveAParseDownTestForSpellsThatFade(me, className)
 end
 
 --[[
@@ -103,6 +119,37 @@ function me.RunAll(playManual)
   if not playManual then
     mod.testReporter.PlayTestQueueWithDelay()
   end
+
+  mod.testReporter.AddToTestQueue(me.TestParseAuraDerHingabe)
+  mod.testReporter.AddToTestQueue(me.TestParseDownAuraDerHingabe)
+  mod.testReporter.AddToTestQueue(me.TestParseAuraDerVergeltung)
+  mod.testReporter.AddToTestQueue(me.TestParseDownAuraDerVergeltung)
+  mod.testReporter.AddToTestQueue(me.TestParseAuraDerKonzentration)
+  mod.testReporter.AddToTestQueue(me.TestParseDownAuraDerKonzentration)
+  mod.testReporter.AddToTestQueue(me.TestParseAuraDesSchattenwiderstands)
+  mod.testReporter.AddToTestQueue(me.TestParseDownAuraDesSchattenwiderstands)
+  mod.testReporter.AddToTestQueue(me.TestParseAuraDesFrostwiderstands)
+  mod.testReporter.AddToTestQueue(me.TestParseDownAuraDesFrostwiderstands)
+  mod.testReporter.AddToTestQueue(me.TestParseAuraDesFeuerwiderstands)
+  mod.testReporter.AddToTestQueue(me.TestParseDownAuraDesFeuerwiderstands)
+  mod.testReporter.AddToTestQueue(me.TestParseHammerDesZorns)
+  mod.testReporter.AddToTestQueue(me.TestParseSegenDesSchutzes)
+  mod.testReporter.AddToTestQueue(me.TestParseDownSegenDesSchutzes)
+  mod.testReporter.AddToTestQueue(me.TestParseSegenDerFreiheit)
+  mod.testReporter.AddToTestQueue(me.TestParseDownSegenDerFreiheit)
+  mod.testReporter.AddToTestQueue(me.TestParseSegenDerOpferung)
+  mod.testReporter.AddToTestQueue(me.TestParseDownSegenDerOpferung)
+  mod.testReporter.AddToTestQueue(me.TestParseHammerDerGerechtigkeit)
+  mod.testReporter.AddToTestQueue(me.TestParseBusse)
+  mod.testReporter.AddToTestQueue(me.TestParseHandauflegung)
+  mod.testReporter.AddToTestQueue(me.TestParseCritHandauflegung)
+  mod.testReporter.AddToTestQueue(me.TestParseDownHandauflegung)
+  mod.testReporter.AddToTestQueue(me.TestParseGottesschild)
+  mod.testReporter.AddToTestQueue(me.TestParseDownGottesschild)
+  mod.testReporter.AddToTestQueue(me.TestParseGoettlicheGunst)
+  mod.testReporter.AddToTestQueue(me.TestParseDownGoettlicheGunst)
+  mod.testReporter.AddToTestQueue(me.TestParseVorahnung)
+  mod.testReporter.AddToTestQueue(me.TestParseDownVorahnung)
 
   mod.testReporter.PlayTestQueue()
 end
@@ -336,5 +383,305 @@ function me.TestSoundDownVorahnung()
     className,
     "TestSoundDownVorahnung",
     "vorahnung"
+  )
+end
+
+function me.TestParseAuraDerHingabe()
+  mod.testHelper.TestParse(
+    className,
+    "TestParseAuraDerHingabe",
+    "aura_der_hingabe",
+    "$player$ bekommt Aura der Hingabe.",
+    mod.testHelper.eventTypeSpellPeriodicHostilePlayerBuffs
+  )
+end
+
+function me.TestParseDownAuraDerHingabe()
+  mod.testHelper.TestParseDown(
+    className,
+    "TestParseDownAuraDerHingabe",
+    "aura_der_hingabe",
+    "Aura der Hingabe schwindet von $player$.",
+    mod.testHelper.eventTypeSpellAuraGoneOther
+  )
+end
+
+function me.TestParseAuraDerVergeltung()
+  mod.testHelper.TestParse(
+    className,
+    "TestParseAuraDerVergeltung",
+    "aura_der_vergeltung",
+    "$player$ bekommt Aura der Vergeltung.",
+    mod.testHelper.eventTypeSpellPeriodicHostilePlayerBuffs
+  )
+end
+
+function me.TestParseDownAuraDerVergeltung()
+  mod.testHelper.TestParseDown(
+    className,
+    "TestParseDownAuraDerVergeltung",
+    "aura_der_vergeltung",
+    "Aura der Vergeltung schwindet von $player$.",
+    mod.testHelper.eventTypeSpellAuraGoneOther
+  )
+end
+
+function me.TestParseAuraDerKonzentration()
+  mod.testHelper.TestParse(
+    className,
+    "TestParseAuraDerKonzentration",
+    "aura_der_konzentration",
+    "$player$ bekommt Aura der Konzentration.",
+    mod.testHelper.eventTypeSpellPeriodicHostilePlayerBuffs
+  )
+end
+
+function me.TestParseDownAuraDerKonzentration()
+  mod.testHelper.TestParseDown(
+    className,
+    "TestParseDownAuraDerKonzentration",
+    "aura_der_konzentration",
+    "Aura der Konzentration schwindet von $player$.",
+    mod.testHelper.eventTypeSpellAuraGoneOther
+  )
+end
+
+function me.TestParseAuraDesSchattenwiderstands()
+  mod.testHelper.TestParse(
+    className,
+    "TestParseAuraDesSchattenwiderstands",
+    "aura_des_schattenwiderstands",
+    "$player$ bekommt Aura des Schattenwiderstands.",
+    mod.testHelper.eventTypeSpellPeriodicHostilePlayerBuffs
+  )
+end
+
+function me.TestParseDownAuraDesSchattenwiderstands()
+  mod.testHelper.TestParseDown(
+    className,
+    "TestParseDownAuraDesSchattenwiderstands",
+    "aura_des_schattenwiderstands",
+    "Aura des Schattenwiderstands schwindet von $player$.",
+    mod.testHelper.eventTypeSpellAuraGoneOther
+  )
+end
+
+function me.TestParseAuraDesFrostwiderstands()
+  mod.testHelper.TestParse(
+    className,
+    "TestParseAuraDesFrostwiderstands",
+    "aura_des_frostwiderstands",
+    "$player$ bekommt Aura des Frostwiderstands.",
+    mod.testHelper.eventTypeSpellPeriodicHostilePlayerBuffs
+  )
+end
+
+function me.TestParseDownAuraDesFrostwiderstands()
+  mod.testHelper.TestParseDown(
+    className,
+    "TestParseDownAuraDesFrostwiderstands",
+    "aura_des_frostwiderstands",
+    "Aura des Frostwiderstands schwindet von $player$.",
+    mod.testHelper.eventTypeSpellAuraGoneOther
+  )
+end
+
+function me.TestParseAuraDesFeuerwiderstands()
+  mod.testHelper.TestParse(
+    className,
+    "TestParseAuraDesFeuerwiderstands",
+    "aura_des_feuerwiderstands",
+    "$player$ bekommt Aura des Feuerwiderstands.",
+    mod.testHelper.eventTypeSpellPeriodicHostilePlayerBuffs
+  )
+end
+
+function me.TestParseDownAuraDesFeuerwiderstands()
+  mod.testHelper.TestParseDown(
+    className,
+    "TestParseDownAuraDesFeuerwiderstands",
+    "aura_des_feuerwiderstands",
+    "Aura des Feuerwiderstands schwindet von $player$.",
+    mod.testHelper.eventTypeSpellAuraGoneOther
+  )
+end
+
+function me.TestParseHammerDesZorns()
+  mod.testHelper.TestParse(
+    className,
+    "TestParseHammerDesZorns",
+    "hammer_des_zorns",
+    "$player$ beginnt Hammer des Zorns zu wirken.",
+    mod.testHelper.eventTypeSpellHostilePlayerDamage
+  )
+end
+
+function me.TestParseSegenDesSchutzes()
+  mod.testHelper.TestParse(
+    className,
+    "TestParseSegenDesSchutzes",
+    "segen_des_schutzes",
+    "$player$ bekommt Segen des Schutzes.",
+    mod.testHelper.eventTypeSpellPeriodicHostilePlayerBuffs
+  )
+end
+
+function me.TestParseDownSegenDesSchutzes()
+  mod.testHelper.TestParseDown(
+    className,
+    "TestParseDownSegenDesSchutzes",
+    "segen_des_schutzes",
+    "Segen des Schutzes schwindet von $player$.",
+    mod.testHelper.eventTypeSpellAuraGoneOther
+  )
+end
+
+function me.TestParseSegenDerFreiheit()
+  mod.testHelper.TestParse(
+    className,
+    "TestParseSegenDerFreiheit",
+    "segen_der_freiheit",
+    "$player$ bekommt Segen der Freiheit.",
+    mod.testHelper.eventTypeSpellPeriodicHostilePlayerBuffs
+  )
+end
+
+function me.TestParseDownSegenDerFreiheit()
+  mod.testHelper.TestParseDown(
+    className,
+    "TestParseDownSegenDerFreiheit",
+    "segen_der_freiheit",
+    "Segen der Freiheit schwindet von $player$.",
+    mod.testHelper.eventTypeSpellAuraGoneOther
+  )
+end
+
+function me.TestParseSegenDerOpferung()
+  mod.testHelper.TestParse(
+    className,
+    "TestParseSegenDerOpferung",
+    "segen_der_opferung",
+    "$player$ bekommt Segen der Opferung.",
+    mod.testHelper.eventTypeSpellPeriodicHostilePlayerBuffs
+  )
+end
+
+function me.TestParseDownSegenDerOpferung()
+  mod.testHelper.TestParseDown(
+    className,
+    "TestParseDownSegenDerOpferung",
+    "segen_der_opferung",
+    "Segen der Opferung schwindet von $player$.",
+    mod.testHelper.eventTypeSpellAuraGoneOther
+  )
+end
+
+function me.TestParseHammerDerGerechtigkeit()
+  mod.testHelper.TestParse(
+    className,
+    "TestParseHammerDerGerechtigkeit",
+    "hammer_der_gerechtigkeit",
+    "Ihr seid von Hammer der Gerechtigkeit betroffen.",
+    mod.testHelper.eventTypeSpellPeriodicSelfDamage
+  )
+end
+
+function me.TestParseBusse()
+  mod.testHelper.TestParse(
+    className,
+    "TestParseBusse",
+    "busse",
+    "Ihr seid von Busse betroffen.",
+    mod.testHelper.eventTypeSpellPeriodicSelfDamage
+  )
+end
+
+function me.TestParseHandauflegung()
+  mod.testHelper.TestParse(
+    className,
+    "TestParseHandauflegung",
+    "handauflegung",
+    "$player$s Handauflegung heilt $player$ um $amount$.",
+    mod.testHelper.eventTypeSpellHostilePlayerBuff
+  )
+end
+
+function me.TestParseCritHandauflegung()
+  mod.testHelper.TestParse(
+    className,
+    "TestParseCritHandauflegung",
+    "handauflegung",
+    "Kritische Heilung: $player$s Handauflegung heilt $player$ um $amount$ Punkte.",
+    mod.testHelper.eventTypeSpellHostilePlayerBuff
+  )
+end
+
+function me.TestParseDownHandauflegung()
+  mod.testHelper.TestParseDown(
+    className,
+    "TestParseDownHandauflegung",
+    "handauflegung",
+    "Handauflegung schwindet von $player$.",
+    mod.testHelper.eventTypeSpellAuraGoneOther
+  )
+end
+
+function me.TestParseGottesschild()
+  mod.testHelper.TestParse(
+    className,
+    "TestParseGottesschild",
+    "gottesschild",
+    "$player$ bekommt Gottesschild.",
+    mod.testHelper.eventTypeSpellPeriodicHostilePlayerBuffs
+  )
+end
+
+function me.TestParseDownGottesschild()
+  mod.testHelper.TestParseDown(
+    className,
+    "TestParseDownGottesschild",
+    "gottesschild",
+    "Gottesschild schwindet von $player$.",
+    mod.testHelper.eventTypeSpellAuraGoneOther
+  )
+end
+
+function me.TestParseGoettlicheGunst()
+  mod.testHelper.TestParse(
+    className,
+    "TestParseGoettlicheGunst",
+    "goettliche_gunst",
+    "$player$ bekommt Göttliche Gunst.",
+    mod.testHelper.eventTypeSpellPeriodicHostilePlayerBuffs
+  )
+end
+
+function me.TestParseDownGoettlicheGunst()
+  mod.testHelper.TestParseDown(
+    className,
+    "TestParseDownGoettlicheGunst",
+    "goettliche_gunst",
+    "Göttliche Gunst schwindet von $player$.",
+    mod.testHelper.eventTypeSpellAuraGoneOther
+  )
+end
+
+function me.TestParseVorahnung()
+  mod.testHelper.TestParse(
+    className,
+    "TestParseVorahnung",
+    "vorahnung",
+    "$player$ ist von Vorahnung betroffen.",
+    mod.testHelper.eventTypeSpellPeriodicSpellHostilePlayerDamage
+  )
+end
+
+function me.TestParseDownVorahnung()
+  mod.testHelper.TestParseDown(
+    className,
+    "TestParseDownVorahnung",
+    "vorahnung",
+    "Vorahnung schwindet von $player$.",
+    mod.testHelper.eventTypeSpellAuraGoneOther
   )
 end
