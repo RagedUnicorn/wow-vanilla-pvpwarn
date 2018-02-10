@@ -44,6 +44,8 @@ function _G.__PVPW__TEST_PRIEST_DE__Test()
 
   mod.testHelper.TestShouldHaveASoundTestForEachSpell(me, className)
   mod.testHelper.TestShouldHaveASoundDownTestForSpellsThatFade(me, className)
+  mod.testHelper.TestShouldHaveAParseTestForEachSpell(me, className)
+  mod.testHelper.TestShouldHaveAParseDownTestForSpellsThatFade(me, className)
 
   me.RunAll()
 end
@@ -60,6 +62,20 @@ function _G.__PVPW__TEST_PRIEST_DE__Test_Sound_Down()
   mod.testReporter.StartTestClass(className)
 
   mod.testHelper.TestShouldHaveASoundDownTestForSpellsThatFade(me, className)
+end
+
+function _G.__PVPW__TEST_PRIEST_DE__Test_Parse()
+  mod.testReporter.StartTestRun("global_priest_de_all")
+  mod.testReporter.StartTestClass(className)
+
+  mod.testHelper.TestShouldHaveAParseTestForEachSpell(me, className)
+end
+
+function _G.__PVPW__TEST_PRIEST_DE__Test_Parse_Down()
+  mod.testReporter.StartTestRun("global_priest_de_all")
+  mod.testReporter.StartTestClass(className)
+
+  mod.testHelper.TestShouldHaveAParseDownTestForSpellsThatFade(me, className)
 end
 
 --[[
@@ -90,6 +106,25 @@ function me.RunAll(playManual)
   if not playManual then
     mod.testReporter.PlayTestQueueWithDelay()
   end
+
+  mod.testReporter.AddToTestQueue(me.TestParsePsychischerSchrei)
+  mod.testReporter.AddToTestQueue(me.TestParseStille)
+  mod.testReporter.AddToTestQueue(me.TestParseSeeleDerMacht)
+  mod.testReporter.AddToTestQueue(me.TestParseDownSeeleDerMacht)
+  mod.testReporter.AddToTestQueue(me.TestParseInneresFeuer)
+  mod.testReporter.AddToTestQueue(me.TestParseDownInneresFeuer)
+  mod.testReporter.AddToTestQueue(me.TestParsVampirumarmung)
+  mod.testReporter.AddToTestQueue(me.TestParseVerzweifeltesGebet)
+  mod.testReporter.AddToTestQueue(me.TestParseCritVerzweifeltesGebet)
+  mod.testReporter.AddToTestQueue(me.TestParseVerschlingendeSeuche)
+  mod.testReporter.AddToTestQueue(me.TestParseBeruehrungDerSchwaeche)
+  mod.testReporter.AddToTestQueue(me.TestParseDownBeruehrungDerSchwaeche)
+  mod.testReporter.AddToTestQueue(me.TestParseFurchtzauberschutz)
+  mod.testReporter.AddToTestQueue(me.TestParseDownFurchtzauberschutz)
+  mod.testReporter.AddToTestQueue(me.TestParseElunesAnmut)
+  mod.testReporter.AddToTestQueue(me.TestParseDownElunesAnmut)
+  mod.testReporter.AddToTestQueue(me.TestParseSternensplitter)
+  mod.testReporter.AddToTestQueue(me.TestParseHexOfWeakness)
 
   mod.testReporter.PlayTestQueue()
 end
@@ -227,5 +262,185 @@ function me.TestSoundVerhexungDerSchwaeche()
     className,
     "TestSoundVerhexungDerSchwaeche",
     "verhexung_der_schwaeche"
+  )
+end
+
+function me.TestParsePsychischerSchrei()
+  mod.testHelper.TestParse(
+    className,
+    "TestParsePsychischerSchrei",
+    "psychischer_schrei",
+    "Ihr seid von Psychischer Schrei betroffen.",
+    mod.testHelper.eventTypeSpellPeriodicSelfDamage
+  )
+end
+
+function me.TestParseStille()
+  mod.testHelper.TestParse(
+    className,
+    "TestParseStille",
+    "stille",
+    "Ihr seid von Stille betroffen.",
+    mod.testHelper.eventTypeSpellPeriodicSelfDamage
+  )
+end
+
+function me.TestParseSeeleDerMacht()
+  mod.testHelper.TestParse(
+    className,
+    "TestParseSeeleDerMacht",
+    "seele_der_macht",
+    "$player$ bekommt Seele der Macht.",
+    mod.testHelper.eventTypeSpellPeriodicHostilePlayerBuffs
+  )
+end
+
+function me.TestParseDownSeeleDerMacht()
+  mod.testHelper.TestParseDown(
+    className,
+    "TestParseDownSeeleDerMacht",
+    "seele_der_macht",
+    "Seele der Macht schwindet von $player$.",
+    mod.testHelper.eventTypeSpellAuraGoneOther
+  )
+end
+
+function me.TestParseInneresFeuer()
+  mod.testHelper.TestParse(
+    className,
+    "TestParseInneresFeuer",
+    "inneres_feuer",
+    "$player$ bekommt Inneres Feuer.",
+    mod.testHelper.eventTypeSpellPeriodicHostilePlayerBuffs
+  )
+end
+
+function me.TestParseDownInneresFeuer()
+  mod.testHelper.TestParseDown(
+    className,
+    "TestParseDownInneresFeuer",
+    "inneres_feuer",
+    "Inneres Feuer schwindet von $player$.",
+    mod.testHelper.eventTypeSpellAuraGoneOther
+  )
+end
+
+function me.TestParseVampirumarmung()
+  mod.testHelper.TestParse(
+    className,
+    "TestParsVampirumarmung",
+    "vampirumarmung",
+    "Ihr seid von Vampirumarmung betroffen.",
+    mod.testHelper.eventTypeSpellPeriodicSelfDamage
+  )
+end
+
+function me.TestParseVerzweifeltesGebet()
+  mod.testHelper.TestParse(
+    className,
+    "TestParseVerzweifeltesGebet",
+    "verzweifeltes_gebet",
+    "$player$s Verzweifeltes Gebet heilt $player$ um $amount$.",
+    mod.testHelper.eventTypeSpellHostilePlayerBuff
+  )
+end
+
+function me.TestParseCritVerzweifeltesGebet()
+  mod.testHelper.TestParse(
+    className,
+    "TestParseCritVerzweifeltesGebet",
+    "verzweifeltes_gebet",
+    "Kritische Heilung: $player$s Verzweifeltes Gebet heilt $player$ um $amount$ Punkte.",
+    mod.testHelper.eventTypeSpellHostilePlayerBuff
+  )
+end
+
+function me.TestParseVerschlingendeSeuche()
+  mod.testHelper.TestParse(
+    className,
+    "TestParseVerschlingendeSeuche",
+    "verschlingende_seuche",
+    "Ihr seid von Verschlingende Seuche betroffen.",
+    mod.testHelper.eventTypeSpellPeriodicSelfDamage
+  )
+end
+
+function me.TestParseBeruehrungDerSchwaeche()
+  mod.testHelper.TestParse(
+    className,
+    "TestParseBeruehrungDerSchwaeche",
+    "beruehrung_der_schwaeche",
+    "$player$ bekommt Berührung der Schwäche.",
+    mod.testHelper.eventTypeSpellPeriodicHostilePlayerBuffs
+  )
+end
+
+function me.TestParseDownBeruehrungDerSchwaeche()
+  mod.testHelper.TestParseDown(
+    className,
+    "TestParseDownBeruehrungDerSchwaeche",
+    "beruehrung_der_schwaeche",
+    "Berührung der Schwäche schwindet von $player$.",
+    mod.testHelper.eventTypeSpellAuraGoneOther
+  )
+end
+
+function me.TestParseFurchtzauberschutz()
+  mod.testHelper.TestParse(
+    className,
+    "TestParseFurchtzauberschutz",
+    "furchtzauberschutz",
+    "$player$ bekommt Furchtzauberschutz.",
+    mod.testHelper.eventTypeSpellPeriodicHostilePlayerBuffs
+  )
+end
+
+function me.TestParseDownFurchtzauberschutz()
+  mod.testHelper.TestParseDown(
+    className,
+    "TestParseDownFurchtzauberschutz",
+    "furchtzauberschutz",
+    "Furchtzauberschutz schwindet von $player$.",
+    mod.testHelper.eventTypeSpellAuraGoneOther
+  )
+end
+
+function me.TestParseElunesAnmut()
+  mod.testHelper.TestParse(
+    className,
+    "TestParseElunesAnmut",
+    "elunes_anmut",
+    "$player$ bekommt Elunes Anmut.",
+    mod.testHelper.eventTypeSpellPeriodicHostilePlayerBuffs
+  )
+end
+
+function me.TestParseDownElunesAnmut()
+  mod.testHelper.TestParseDown(
+    className,
+    "TestParseDownElunesAnmut",
+    "elunes_anmut",
+    "Elunes Anmut schwindet von $player$.",
+    mod.testHelper.eventTypeSpellAuraGoneOther
+  )
+end
+
+function me.TestParseSternensplitter()
+  mod.testHelper.TestParse(
+    className,
+    "TestParseSternensplitter",
+    "sternensplitter",
+    "Ihr seid von Sternensplitter betroffen.",
+    mod.testHelper.eventTypeSpellPeriodicSelfDamage
+  )
+end
+
+function me.TestParseVerhexungDerSchwaeche()
+  mod.testHelper.TestParse(
+    className,
+    "TestParseVerhexungDerSchwaeche",
+    "verhexung_der_schwaeche",
+    "Ihr seid von Verhexung der Schwäche betroffen.",
+    mod.testHelper.eventTypeSpellPeriodicSelfDamage
   )
 end
