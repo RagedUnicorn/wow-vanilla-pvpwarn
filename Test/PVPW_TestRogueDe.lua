@@ -45,6 +45,8 @@ function _G.__PVPW__TEST_ROGUE_DE__Test()
 
   mod.testHelper.TestShouldHaveASoundTestForEachSpell(me, className)
   mod.testHelper.TestShouldHaveASoundDownTestForSpellsThatFade(me, className)
+  mod.testHelper.TestShouldHaveAParseTestForEachSpell(me, className)
+  mod.testHelper.TestShouldHaveAParseDownTestForSpellsThatFade(me, className)
 
   me.RunAll()
 end
@@ -66,6 +68,20 @@ function _G.__PVPW__TEST_ROGUE_DE__Test_Sound_Down()
   mod.testHelper.TestShouldHaveASoundDownTestForSpellsThatFade(me, className)
 end
 
+function _G.__PVPW__TEST_ROGUE_DE__Test_Parse()
+  mod.testReporter.StartTestRun("global_rogue_de_parse")
+  mod.testReporter.StartTestClass(className)
+
+  mod.testHelper.TestShouldHaveAParseTestForEachSpell(me, className)
+end
+
+function _G.__PVPW__TEST_ROGUE_DE__Test_Parse_Down()
+  mod.testReporter.StartTestRun("global_rogue_de_parse_down")
+  mod.testReporter.StartTestClass(className)
+
+  mod.testHelper.TestShouldHaveAParseDownTestForSpellsThatFade(me, className)
+end
+
 --[[
   @param {boolean} playManual
     true if testqueue is started manually
@@ -73,7 +89,7 @@ end
 ]]--
 function me.RunAll(playManual)
   -- test sound
-  mod.testReporter.AddToTestQueueWithDelay(me.TestSoundBlenden)
+  --[[mod.testReporter.AddToTestQueueWithDelay(me.TestSoundBlenden)
   mod.testReporter.AddToTestQueueWithDelay(me.TestSoundTritt)
   mod.testReporter.AddToTestQueueWithDelay(me.TestSoundSprinten)
   mod.testReporter.AddToTestQueueWithDelay(me.TestSoundDownSprinten)
@@ -84,11 +100,25 @@ function me.RunAll(playManual)
   mod.testReporter.AddToTestQueueWithDelay(me.TestSoundAdrenalinrausch)
   mod.testReporter.AddToTestQueueWithDelay(me.TestSoundDownAdrenalinrausch)
   mod.testReporter.AddToTestQueueWithDelay(me.TestSoundKlingenwirbel)
-  mod.testReporter.AddToTestQueueWithDelay(me.TestSoundDownKlingenwirbel)
+  mod.testReporter.AddToTestQueueWithDelay(me.TestSoundDownKlingenwirbel)]]--
 
   if not playManual then
     mod.testReporter.PlayTestQueueWithDelay()
   end
+
+  mod.testReporter.AddToTestQueue(me.TestParseBlenden)
+  mod.testReporter.AddToTestQueue(me.TestParseTritt)
+  mod.testReporter.AddToTestQueue(me.TestParseCritTritt)
+  mod.testReporter.AddToTestQueue(me.TestParseSprinten)
+  mod.testReporter.AddToTestQueue(me.TestParseDownSprinten)
+  mod.testReporter.AddToTestQueue(me.TestParseEntrinnen)
+  mod.testReporter.AddToTestQueue(me.TestParseDownEntrinnen)
+  mod.testReporter.AddToTestQueue(me.TestParseNierenhieb)
+  mod.testReporter.AddToTestQueue(me.TestParseFieserTrick)
+  mod.testReporter.AddToTestQueue(me.TestParseAdrenalinrausch)
+  mod.testReporter.AddToTestQueue(me.TestParseDownAdrenalinrausch)
+  mod.testReporter.AddToTestQueue(me.TestParseKlingenwirbel)
+  mod.testReporter.AddToTestQueue(me.TestParseDownKlingenwirbel)
 
   mod.testReporter.PlayTestQueue()
 end
@@ -186,5 +216,135 @@ function me.TestSoundDownKlingenwirbel()
     className,
     "TestSoundDownKlingenwirbel",
     "klingenwirbel"
+  )
+end
+
+function me.TestParseBlenden()
+  mod.testHelper.TestParse(
+    className,
+    "TestParseBlenden",
+    "blenden",
+    "Ihr seid von Blenden betroffen.",
+    mod.testHelper.eventTypeSpellPeriodicSelfDamage
+  )
+end
+
+function me.TestParseTritt()
+  mod.testHelper.TestParse(
+    className,
+    "TestParseTritt",
+    "tritt",
+    "$player$ trifft Euch (mit Tritt). Schaden: $amount$",
+    mod.testHelper.eventTypeSpellHostilePlayerDamage
+  )
+end
+
+function me.TestParseCritTritt()
+  mod.testHelper.TestParse(
+    className,
+    "TestParseCritTritt",
+    "tritt",
+    "$player$ trifft Euch kritisch (mit Tritt). Schaden: $amount$.",
+    mod.testHelper.eventTypeSpellHostilePlayerDamage
+  )
+end
+
+function me.TestParseSprinten()
+  mod.testHelper.TestParse(
+    className,
+    "TestParseSprinten",
+    "sprinten",
+    "$player$ bekommt Sprinten.",
+    mod.testHelper.eventTypeSpellPeriodicHostilePlayerBuffs
+  )
+end
+
+function me.TestParseDownSprinten()
+  mod.testHelper.TestParseDown(
+    className,
+    "TestParseDownSprinten",
+    "sprinten",
+    "Sprinten schwindet von $player$.",
+    mod.testHelper.eventTypeSpellAuraGoneOther
+  )
+end
+
+function me.TestParseEntrinnen()
+  mod.testHelper.TestParse(
+    className,
+    "TestParseEntrinnen",
+    "entrinnen",
+    "$player$ bekommt Entrinnen.",
+    mod.testHelper.eventTypeSpellPeriodicHostilePlayerBuffs
+  )
+end
+
+function me.TestParseDownEntrinnen()
+  mod.testHelper.TestParseDown(
+    className,
+    "TestParseDownEntrinnen",
+    "entrinnen",
+    "Entrinnen schwindet von $player$.",
+    mod.testHelper.eventTypeSpellAuraGoneOther
+  )
+end
+
+function me.TestParseNierenhieb()
+  mod.testHelper.TestParse(
+    className,
+    "TestParseNierenhieb",
+    "nierenhieb",
+    "Ihr seid von Nierenhieb betroffen.",
+    mod.testHelper.eventTypeSpellPeriodicSelfDamage
+  )
+end
+
+function me.TestParseFieserTrick()
+  mod.testHelper.TestParse(
+    className,
+    "TestParseFieserTrick",
+    "fieser_trick",
+    "Ihr seid von Fieser Trick betroffen.",
+    mod.testHelper.eventTypeSpellPeriodicSelfDamage
+  )
+end
+
+function me.TestParseAdrenalinrausch()
+  mod.testHelper.TestParse(
+    className,
+    "TestParseAdrenalinrausch",
+    "adrenalinrausch",
+    "$player$ bekommt Adrenalinrausch.",
+    mod.testHelper.eventTypeSpellPeriodicHostilePlayerBuffs
+  )
+end
+
+function me.TestParseDownAdrenalinrausch()
+  mod.testHelper.TestParseDown(
+    className,
+    "TestParseDownAdrenalinrausch",
+    "adrenalinrausch",
+    "Adrenalinrausch schwindet von $player$.",
+    mod.testHelper.eventTypeSpellAuraGoneOther
+  )
+end
+
+function me.TestParseKlingenwirbel()
+  mod.testHelper.TestParse(
+    className,
+    "TestParseKlingenwirbel",
+    "klingenwirbel",
+    "$player$ bekommt Klingenwirbel.",
+    mod.testHelper.eventTypeSpellPeriodicHostilePlayerBuffs
+  )
+end
+
+function me.TestParseDownKlingenwirbel()
+  mod.testHelper.TestParseDown(
+    className,
+    "TestParseDownKlingenwirbel",
+    "klingenwirbel",
+    "Klingenwirbel schwindet von $player$.",
+    mod.testHelper.eventTypeSpellAuraGoneOther
   )
 end
