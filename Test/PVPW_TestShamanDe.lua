@@ -45,6 +45,8 @@ function _G.__PVPW__TEST_SHAMAN_DE__Test()
 
   mod.testHelper.TestShouldHaveASoundTestForEachSpell(me, className)
   mod.testHelper.TestShouldHaveASoundDownTestForSpellsThatFade(me, className)
+  mod.testHelper.TestShouldHaveAParseTestForEachSpell(me, className)
+  mod.testHelper.TestShouldHaveAParseDownTestForSpellsThatFade(me, className)
 
   me.RunAll()
 end
@@ -61,6 +63,20 @@ function _G.__PVPW__TEST_SHAMAN_DE__Test_Sound_Down()
   mod.testReporter.StartTestClass(className)
 
   mod.testHelper.TestShouldHaveASoundDownTestForSpellsThatFade(me, className)
+end
+
+function _G.__PVPW__TEST_SHAMAN_DE__Test_Parse()
+  mod.testReporter.StartTestRun("global_shaman_de_parse")
+  mod.testReporter.StartTestClass(className)
+
+  mod.testHelper.TestShouldHaveAParseTestForEachSpell(me, className)
+end
+
+function _G.__PVPW__TEST_SHAMAN_DE__Test_Parse_Down()
+  mod.testReporter.StartTestRun("global_shaman_de_parse_down")
+  mod.testReporter.StartTestClass(className)
+
+  mod.testHelper.TestShouldHaveAParseDownTestForSpellsThatFade(me, className)
 end
 
 --[[
@@ -100,6 +116,33 @@ function me.RunAll(playManual)
   if not playManual then
     mod.testReporter.PlayTestQueueWithDelay()
   end
+
+  mod.testReporter.AddToTestQueue(me.TestParseElementarbeherrschung)
+  mod.testReporter.AddToTestQueue(me.TestParseDownElementarbeherrschung)
+  mod.testReporter.AddToTestQueue(me.TestParseSchnelligkeitDerNatur)
+  mod.testReporter.AddToTestQueue(me.TestParseDownSchnelligkeitDerNatur)
+  mod.testReporter.AddToTestQueue(me.TestParseTotemDesErdstosses)
+  mod.testReporter.AddToTestQueue(me.TestParseTotemDerGiftreinigung)
+  mod.testReporter.AddToTestQueue(me.TestParseTotemDerErdung)
+  mod.testReporter.AddToTestQueue(me.TestParseTotemDesFeuerwiderstands)
+  mod.testReporter.AddToTestQueue(me.TestParseTotemDerFlammenzunge)
+  mod.testReporter.AddToTestQueue(me.TestParseTotemDerLuftgleichenAnmut)
+  mod.testReporter.AddToTestQueue(me.TestParseTotemDesNaturwiderstands)
+  mod.testReporter.AddToTestQueue(me.TestParseTotemDerSteinhaut)
+  mod.testReporter.AddToTestQueue(me.TestParseTotemDerErdstaerke)
+  mod.testReporter.AddToTestQueue(me.TestParseTotemDesWindzorns)
+  mod.testReporter.AddToTestQueue(me.TestParseTotemDerWindmauer)
+  mod.testReporter.AddToTestQueue(me.TestParseTotemDerErdbindung)
+  mod.testReporter.AddToTestQueue(me.TestParseTotemDerFeuernova)
+  mod.testReporter.AddToTestQueue(me.TestParseTotemDerGluehendenMagma)
+  mod.testReporter.AddToTestQueue(me.TestParseTotemDerVerbrennung)
+  mod.testReporter.AddToTestQueue(me.TestParseTotemDerSteinklaue)
+  mod.testReporter.AddToTestQueue(me.TestParseTotemDesFrostwiderstands)
+  mod.testReporter.AddToTestQueue(me.TestParseTotemDesHeilendenFlusses)
+  mod.testReporter.AddToTestQueue(me.TestParseTotemDerKrankheitsreinigung)
+  mod.testReporter.AddToTestQueue(me.TestParseTotemDerManaquelle)
+  mod.testReporter.AddToTestQueue(me.TestParseTotemDerManaflut)
+  mod.testReporter.AddToTestQueue(me.TestParseTotemDerBeruhigendenWinde)
 
   mod.testReporter.PlayTestQueue()
 end
@@ -309,5 +352,265 @@ function me.TestSoundTotemDerBeruhigendenWinde()
     className,
     "TestSoundTotemDerBeruhigendenWinde",
     "totem_der_beruhigenden_winde"
+  )
+end
+
+function me.TestParseElementarbeherrschung()
+  mod.testHelper.TestParse(
+    className,
+    "TestParseElementarbeherrschung",
+    "elementarbeherrschung",
+    "$player$ bekommt Elementarbeherrschung.",
+    mod.testHelper.eventTypeSpellPeriodicHostilePlayerBuffs
+  )
+end
+
+function me.TestParseDownElementarbeherrschung()
+  mod.testHelper.TestParseDown(
+    className,
+    "TestParseDownElementarbeherrschung",
+    "elementarbeherrschung",
+    "Elementarbeherrschung schwindet von $player$.",
+    mod.testHelper.eventTypeSpellAuraGoneOther
+  )
+end
+
+function me.TestParseSchnelligkeitDerNatur()
+  mod.testHelper.TestParse(
+    className,
+    "TestParseSchnelligkeitDerNatur",
+    "schnelligkeit_der_natur",
+    "$player$ bekommt Schnelligkeit der Natur.",
+    mod.testHelper.eventTypeSpellPeriodicHostilePlayerBuffs
+  )
+end
+
+function me.TestParseDownSchnelligkeitDerNatur()
+  mod.testHelper.TestParseDown(
+    className,
+    "TestParseDownSchnelligkeitDerNatur",
+    "schnelligkeit_der_natur",
+    "Schnelligkeit der Natur schwindet von $player$.",
+    mod.testHelper.eventTypeSpellAuraGoneOther
+  )
+end
+
+function me.TestParseTotemDesErdstosses()
+  mod.testHelper.TestParse(
+    className,
+    "TestParseTotemDesErdstosses",
+    "totem_des_erdstosses",
+    "$player$ wirkt Totem des Erdstoßes.",
+    mod.testHelper.eventTypeSpellHostilePlayerBuff
+  )
+end
+
+function me.TestParseTotemDerGiftreinigung()
+  mod.testHelper.TestParse(
+    className,
+    "TestParseTotemDerGiftreinigung",
+    "totem_der_giftreinigung",
+    "$player$ wirkt Totem der Giftreinigung.",
+    mod.testHelper.eventTypeSpellHostilePlayerBuff
+  )
+end
+
+function me.TestParseTotemDerErdung()
+  mod.testHelper.TestParse(
+    className,
+    "TestParseTotemDerErdung",
+    "totem_der_erdung",
+    "$player$ wirkt Totem der Erdung.",
+    mod.testHelper.eventTypeSpellHostilePlayerBuff
+  )
+end
+
+function me.TestParseTotemDesFeuerwiderstands()
+  mod.testHelper.TestParse(
+    className,
+    "TestParseTotemDesFeuerwiderstands",
+    "totem_des_feuerwiderstands",
+    "$player$ wirkt Totem des Feuerwiderstands.",
+    mod.testHelper.eventTypeSpellHostilePlayerBuff
+  )
+end
+
+function me.TestParseTotemDerFlammenzunge()
+  mod.testHelper.TestParse(
+    className,
+    "TestParseTotemDerFlammenzunge",
+    "totem_der_flammenzunge",
+    "$player$ wirkt Totem der Flammenzunge.",
+    mod.testHelper.eventTypeSpellHostilePlayerBuff
+  )
+end
+
+function me.TestParseTotemDerLuftgleichenAnmut()
+  mod.testHelper.TestParse(
+    className,
+    "TestParseTotemDerLuftgleichenAnmut",
+    "totem_der_luftgleichen_anmut",
+    "$player$ wirkt Totem der luftgleichen Anmut.",
+    mod.testHelper.eventTypeSpellHostilePlayerBuff
+  )
+end
+
+function me.TestParseTotemDesNaturwiderstands()
+  mod.testHelper.TestParse(
+    className,
+    "TestParseTotemDesNaturwiderstands",
+    "totem_des_naturwiderstands",
+    "$player$ wirkt Totem des Naturwiderstands.",
+    mod.testHelper.eventTypeSpellHostilePlayerBuff
+  )
+end
+
+function me.TestParseTotemDerSteinhaut()
+  mod.testHelper.TestParse(
+    className,
+    "TestParseTotemDerSteinhaut",
+    "totem_der_steinhaut",
+    "$player$ wirkt Totem der Steinhaut.",
+    mod.testHelper.eventTypeSpellHostilePlayerBuff
+  )
+end
+
+function me.TestParseTotemDerErdstaerke()
+  mod.testHelper.TestParse(
+    className,
+    "TestParseTotemDerErdstaerke",
+    "totem_der_erdstaerke",
+    "$player$ wirkt Totem der Erdstärke.",
+    mod.testHelper.eventTypeSpellHostilePlayerBuff
+  )
+end
+
+function me.TestParseTotemDesWindzorns()
+  mod.testHelper.TestParse(
+    className,
+    "TestParseTotemDesWindzorns",
+    "totem_des_windzorns",
+    "$player$ wirkt Totem des Windzorns.",
+    mod.testHelper.eventTypeSpellHostilePlayerBuff
+  )
+end
+
+function me.TestParseTotemDerWindmauer()
+  mod.testHelper.TestParse(
+    className,
+    "TestParseTotemDerWindmauer",
+    "totem_der_windmauer",
+    "$player$ wirkt Totem der Windmauer.",
+    mod.testHelper.eventTypeSpellHostilePlayerBuff
+  )
+end
+
+function me.TestParseTotemDerErdbindung()
+  mod.testHelper.TestParse(
+    className,
+    "TestParseTotemDerErdbindung",
+    "totem_der_erdbindung",
+    "$player$ wirkt Totem der Erdbindung.",
+    mod.testHelper.eventTypeSpellHostilePlayerBuff
+  )
+end
+
+function me.TestParseTotemDerFeuernova()
+  mod.testHelper.TestParse(
+    className,
+    "TestParseTotemDerFeuernova",
+    "totem_der_feuernova",
+    "$player$ wirkt Totem der Feuernova.",
+    mod.testHelper.eventTypeSpellHostilePlayerBuff
+  )
+end
+
+function me.TestParseTotemDerGluehendenMagma()
+  mod.testHelper.TestParse(
+    className,
+    "TestParseTotemDerGluehendenMagma",
+    "totem_der_gluehenden_magma",
+    "$player$ wirkt Totem der glühenden Magma.",
+    mod.testHelper.eventTypeSpellHostilePlayerBuff
+  )
+end
+
+function me.TestParseTotemDerVerbrennung()
+  mod.testHelper.TestParse(
+    className,
+    "TestParseTotemDerVerbrennung",
+    "totem_der_verbrennung",
+    "$player$ wirkt Totem der Verbrennung.",
+    mod.testHelper.eventTypeSpellHostilePlayerBuff
+  )
+end
+
+function me.TestParseTotemDerSteinklaue()
+  mod.testHelper.TestParse(
+    className,
+    "TestParseTotemDerSteinklaue",
+    "totem_der_steinklaue",
+    "$player$ wirkt Totem der Steinklaue.",
+    mod.testHelper.eventTypeSpellHostilePlayerBuff
+  )
+end
+
+function me.TestParseTotemDesFrostwiderstands()
+  mod.testHelper.TestParse(
+    className,
+    "TestParseTotemDesFrostwiderstands",
+    "totem_des_frostwiderstands",
+    "$player$ wirkt Totem des Frostwiderstands.",
+    mod.testHelper.eventTypeSpellHostilePlayerBuff
+  )
+end
+
+function me.TestParseTotemDesHeilendenFlusses()
+  mod.testHelper.TestParse(
+    className,
+    "TestParseTotemDesHeilendenFlusses",
+    "totem_des_heilenden_flusses",
+    "$player$ wirkt Totem des heilenden Flusses.",
+    mod.testHelper.eventTypeSpellHostilePlayerBuff
+  )
+end
+
+function me.TestParseTotemDerKrankheitsreinigung()
+  mod.testHelper.TestParse(
+    className,
+    "TestParseTotemDerKrankheitsreinigung",
+    "totem_der_krankheitsreinigung",
+    "$player$ wirkt Totem der Krankheitsreinigung.",
+    mod.testHelper.eventTypeSpellHostilePlayerBuff
+  )
+end
+
+function me.TestParseTotemDerManaquelle()
+  mod.testHelper.TestParse(
+    className,
+    "TestParseTotemDerManaquelle",
+    "totem_der_manaquelle",
+    "$player$ wirkt Totem der Manaquelle.",
+    mod.testHelper.eventTypeSpellHostilePlayerBuff
+  )
+end
+
+function me.TestParseTotemDerManaflut()
+  mod.testHelper.TestParse(
+    className,
+    "TestParseTotemDerManaflut",
+    "totem_der_manaflut",
+    "$player$ wirkt Totem der Manaflut.",
+    mod.testHelper.eventTypeSpellHostilePlayerBuff
+  )
+end
+
+function me.TestParseTotemDerBeruhigendenWinde()
+  mod.testHelper.TestParse(
+    className,
+    "TestParseTotemDerBeruhigendenWinde",
+    "totem_der_beruhigenden_winde",
+    "$player$ wirkt Totem der beruhigenden Winde.",
+    mod.testHelper.eventTypeSpellHostilePlayerBuff
   )
 end
