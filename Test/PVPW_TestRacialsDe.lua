@@ -86,7 +86,7 @@ end
 ]]--
 function me.RunAll(playManual)
   -- test sound
-  --[[mod.testReporter.AddToTestQueueWithDelay(me.TestSoundWachsamkeit)
+  mod.testReporter.AddToTestQueueWithDelay(me.TestSoundWachsamkeit)
   mod.testReporter.AddToTestQueueWithDelay(me.TestSoundDownWachsamkeit)
   mod.testReporter.AddToTestQueueWithDelay(me.TestSoundWilleDerVerlassenen)
   mod.testReporter.AddToTestQueueWithDelay(me.TestSoundDownWilleDerVerlassenen)
@@ -97,7 +97,7 @@ function me.RunAll(playManual)
   mod.testReporter.AddToTestQueueWithDelay(me.TestSoundBerserker)
   mod.testReporter.AddToTestQueueWithDelay(me.TestSoundDownBerserker)
   mod.testReporter.AddToTestQueueWithDelay(me.TestSoundSchattenhaftigkeit)
-  mod.testReporter.AddToTestQueueWithDelay(me.TestSoundDownSchattenhaftigkeit)]]--
+  mod.testReporter.AddToTestQueueWithDelay(me.TestSoundDownSchattenhaftigkeit)
 
   if not playManual then
     mod.testReporter.PlayTestQueueWithDelay()
