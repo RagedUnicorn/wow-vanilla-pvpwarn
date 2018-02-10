@@ -89,7 +89,7 @@ end
 ]]--
 function me.RunAll(playManual)
   -- test sound
-  --[[mod.testReporter.AddToTestQueueWithDelay(me.TestSoundBlenden)
+  mod.testReporter.AddToTestQueueWithDelay(me.TestSoundBlenden)
   mod.testReporter.AddToTestQueueWithDelay(me.TestSoundTritt)
   mod.testReporter.AddToTestQueueWithDelay(me.TestSoundSprinten)
   mod.testReporter.AddToTestQueueWithDelay(me.TestSoundDownSprinten)
@@ -100,7 +100,7 @@ function me.RunAll(playManual)
   mod.testReporter.AddToTestQueueWithDelay(me.TestSoundAdrenalinrausch)
   mod.testReporter.AddToTestQueueWithDelay(me.TestSoundDownAdrenalinrausch)
   mod.testReporter.AddToTestQueueWithDelay(me.TestSoundKlingenwirbel)
-  mod.testReporter.AddToTestQueueWithDelay(me.TestSoundDownKlingenwirbel)]]--
+  mod.testReporter.AddToTestQueueWithDelay(me.TestSoundDownKlingenwirbel)
 
   if not playManual then
     mod.testReporter.PlayTestQueueWithDelay()
