@@ -45,9 +45,13 @@ function _G.__PVPW__TEST_MISC_DE__Test()
 
   mod.testHelper.TestShouldHaveASoundTestForEachSpell(me, className)
   mod.testHelper.TestShouldHaveASoundDownTestForSpellsThatFade(me, className)
+  mod.testHelper.TestShouldHaveAnEnemyAvoidSoundTestForEachSpell(me, className)
+  mod.testHelper.TestShouldHaveASelfAvoidSoundTestForEachSpell(me, className)
   mod.testHelper.TestShouldHaveAParseTestForEachSpell(me, className)
   mod.testHelper.TestShouldHaveAParseDownTestForSpellsThatFade(me, className)
   mod.testHelper.TestShouldHaveAParseCritTestForSpellsThatCanCrit(me, className)
+  mod.testHelper.TestShouldHaveAnEnemyAvoidParseTestForEachSpell(me, className)
+  mod.testHelper.TestShouldHaveASelfAvoidParseTestForEachSpell(me, className)
 
   me.RunAll()
 end
@@ -87,6 +91,20 @@ function _G.__PVPW__TEST_MISC_DE__Test_Parse_Crit()
   mod.testHelper.TestShouldHaveAParseCritTestForSpellsThatCanCrit(me, className)
 end
 
+function _G.__PVPW__TEST_MISC_DE__Test_Parse_Enemy_Avoid()
+  mod.testReporter.StartTestRun("global_misc_de_parse_avoid")
+  mod.testReporter.StartTestClass(className)
+
+  mod.testHelper.TestShouldHaveAnEnemyAvoidParseTestForEachSpell(me, className)
+end
+
+function _G.__PVPW__TEST_MISC_DE__Test_Parse_Self_Avoid()
+  mod.testReporter.StartTestRun("global_misc_de_parse_self_avoid")
+  mod.testReporter.StartTestClass(className)
+
+  mod.testHelper.TestShouldHaveASelfAvoidParseTestForEachSpell(me, className)
+end
+
 --[[
   @param {boolean} playManual
     true if testqueue is started manually
@@ -116,14 +134,18 @@ function me.RunAll(playManual)
   mod.testReporter.AddToTestQueueWithDelay(me.TestSoundDownNaturschutz)
   mod.testReporter.AddToTestQueueWithDelay(me.TestSoundArkanschutz)
   mod.testReporter.AddToTestQueueWithDelay(me.TestSoundDownArkanschutz)
+  mod.testReporter.AddToTestQueueWithDelay(me.TestSoundEnemyAvoidThoriumgranate)
+  mod.testReporter.AddToTestQueueWithDelay(me.TestSoundEnemyAvoidEisengranate)
+  mod.testReporter.AddToTestQueueWithDelay(me.TestSoundSelfAvoidThoriumgranate)
+  mod.testReporter.AddToTestQueueWithDelay(me.TestSoundSelfAvoidEisengranate)
 
   if not playManual then
     mod.testReporter.PlayTestQueueWithDelay()
   end
 
   mod.testReporter.AddToTestQueue(me.TestParseDisteltee)
-  mod.testReporter.AddToTestQueue(me.TestParseReneration)
-  mod.testReporter.AddToTestQueue(me.TestParseDownReneration)
+  mod.testReporter.AddToTestQueue(me.TestParseRegeneration)
+  mod.testReporter.AddToTestQueue(me.TestParseDownRegeneration)
   mod.testReporter.AddToTestQueue(me.TestParseErsteHilfe)
   mod.testReporter.AddToTestQueue(me.TestParseUnverwundbarkeit)
   mod.testReporter.AddToTestQueue(me.TestParseDownUnverwundbarkeit)
@@ -135,7 +157,7 @@ function me.RunAll(playManual)
   mod.testReporter.AddToTestQueue(me.TestParseDownEisengranate)
   mod.testReporter.AddToTestQueue(me.TestParseSchattenschutz)
   mod.testReporter.AddToTestQueue(me.TestParseDownSchattenschutz)
-  mod.testReporter.AddToTestQueue(me.TestParseFrostProtection)
+  mod.testReporter.AddToTestQueue(me.TestParseFrostschutz)
   mod.testReporter.AddToTestQueue(me.TestParseDownFrostschutz)
   mod.testReporter.AddToTestQueue(me.TestParseFeuerschutz)
   mod.testReporter.AddToTestQueue(me.TestParseDownFeuerschutz)
@@ -320,6 +342,39 @@ function me.TestSoundDownArkanschutz()
     className,
     "TestSoundDownArkanschutz",
     "arkanschutz"
+  )
+end
+
+
+function me.TestSoundEnemyAvoidThoriumgranate()
+  mod.testHelper.TestSoundEnemyAvoid(
+    className,
+    "TestSoundEnemyAvoidThoriumgranate",
+    "thoriumgranate"
+  )
+end
+
+function me.TestSoundEnemyAvoidEisengranate()
+  mod.testHelper.TestSoundEnemyAvoid(
+    className,
+    "TestSoundEnemyAvoidEisengranate",
+    "eisengranate"
+  )
+end
+
+function me.TestSoundSelfAvoidThoriumgranate()
+  mod.testHelper.TestSoundSelfAvoid(
+    className,
+    "TestSoundSelfAvoidThoriumgranate",
+    "thoriumgranate"
+  )
+end
+
+function me.TestSoundSelfAvoidEisengranate()
+  mod.testHelper.TestSoundSelfAvoid(
+    className,
+    "TestSoundSelfAvoidEisengranate",
+    "eisengranate"
   )
 end
 
