@@ -45,9 +45,13 @@ function _G.__PVPW__TEST_WARLOCK_DE__Test()
 
   mod.testHelper.TestShouldHaveASoundTestForEachSpell(me, className)
   mod.testHelper.TestShouldHaveASoundDownTestForSpellsThatFade(me, className)
+  mod.testHelper.TestShouldHaveAnEnemyAvoidSoundTestForEachSpell(me, className)
+  mod.testHelper.TestShouldHaveASelfAvoidSoundTestForEachSpell(me, className)
   mod.testHelper.TestShouldHaveAParseTestForEachSpell(me, className)
   mod.testHelper.TestShouldHaveAParseDownTestForSpellsThatFade(me, className)
   mod.testHelper.TestShouldHaveAParseCritTestForSpellsThatCanCrit(me, className)
+  mod.testHelper.TestShouldHaveAnEnemyAvoidParseTestForEachSpell(me, className)
+  mod.testHelper.TestShouldHaveASelfAvoidParseTestForEachSpell(me, className)
 
   me.RunAll()
 end
@@ -87,6 +91,20 @@ function _G.__PVPW__TEST_WARLOCK_DE__Test_Parse_Crit()
   mod.testHelper.TestShouldHaveAParseCritTestForSpellsThatCanCrit(me, className)
 end
 
+function _G.__PVPW__TEST_WARLOCK_DE__Test_Parse_Enemy_Avoid()
+  mod.testReporter.StartTestRun("global_warlock_de_parse_avoid")
+  mod.testReporter.StartTestClass(className)
+
+  mod.testHelper.TestShouldHaveAnEnemyAvoidParseTestForEachSpell(me, className)
+end
+
+function _G.__PVPW__TEST_WARLOCK_DE__Test_Parse_Self_Avoid()
+  mod.testReporter.StartTestRun("global_warlock_de_parse_self_avoid")
+  mod.testReporter.StartTestClass(className)
+
+  mod.testHelper.TestShouldHaveASelfAvoidParseTestForEachSpell(me, className)
+end
+
 --[[
   @param {boolean} playManual
     true if testqueue is started manually
@@ -122,6 +140,18 @@ function me.RunAll(playManual)
   mod.testReporter.AddToTestQueueWithDelay(me.TestSoundSeelenverbindung)
   mod.testReporter.AddToTestQueueWithDelay(me.TestSoundDownSeelenverbindung)
   mod.testReporter.AddToTestQueueWithDelay(me.TestSoundVerfuehrung)
+  mod.testReporter.AddToTestQueueWithDelay(me.TestSoundEnemyAvoidFluchDerSprachen)
+  mod.testReporter.AddToTestQueueWithDelay(me.TestSoundEnemyAvoidTodesmantel)
+  mod.testReporter.AddToTestQueueWithDelay(me.TestSoundEnemyAvoidFurcht)
+  mod.testReporter.AddToTestQueueWithDelay(me.TestSoundEnemyAvoidSchreckensgeheul)
+  mod.testReporter.AddToTestQueueWithDelay(me.TestSoundEnemyAvoidSchattenbrand)
+  mod.testReporter.AddToTestQueueWithDelay(me.TestSoundSelfAvoidFluchDerSprachen)
+  mod.testReporter.AddToTestQueueWithDelay(me.TestSoundSelfAvoidTodesmantel)
+  mod.testReporter.AddToTestQueueWithDelay(me.TestSoundSelfAvoidFurcht)
+  mod.testReporter.AddToTestQueueWithDelay(me.TestSoundSelfAvoidSchreckensgeheul)
+  mod.testReporter.AddToTestQueueWithDelay(me.TestSoundSelfAvoidSchattenbrand)
+  mod.testReporter.AddToTestQueueWithDelay(me.TestSoundSelfAvoidZaubersperre)
+  mod.testReporter.AddToTestQueueWithDelay(me.TestSoundSelfAvoidVerfuehrung)
 
   if not playManual then
     mod.testReporter.PlayTestQueueWithDelay()
@@ -379,6 +409,102 @@ function me.TestSoundVerfuehrung()
   mod.testHelper.TestSound(
     className,
     "TestSoundVerfuehrung",
+    "verfuehrung"
+  )
+end
+
+function me.TestSoundEnemyAvoidFluchDerSprachen()
+  mod.testHelper.TestSoundEnemyAvoid(
+    className,
+    "TestSoundEnemyAvoidFluchDerSprachen",
+    "fluch_der_sprachen"
+  )
+end
+
+function me.TestSoundEnemyAvoidTodesmantel()
+  mod.testHelper.TestSoundEnemyAvoid(
+    className,
+    "TestSoundEnemyAvoidTodesmantel",
+    "todesmantel"
+  )
+end
+
+function me.TestSoundEnemyAvoidFurcht()
+  mod.testHelper.TestSoundEnemyAvoid(
+    className,
+    "TestSoundEnemyAvoidFurcht",
+    "furcht"
+  )
+end
+
+function me.TestSoundEnemyAvoidSchreckensgeheul()
+  mod.testHelper.TestSoundEnemyAvoid(
+    className,
+    "TestSoundEnemyAvoidSchreckensgeheul",
+    "schreckensgeheul"
+  )
+end
+
+function me.TestSoundEnemyAvoidSchattenbrand()
+  mod.testHelper.TestSoundEnemyAvoid(
+    className,
+    "TestSoundEnemyAvoidSchattenbrand",
+    "schattenbrand"
+  )
+end
+
+function me.TestSoundSelfAvoidFluchDerSprachen()
+  mod.testHelper.TestSoundSelfAvoid(
+    className,
+    "TestSoundSelfAvoidFluchDerSprachen",
+    "fluch_der_sprachen"
+  )
+end
+
+function me.TestSoundSelfAvoidTodesmantel()
+  mod.testHelper.TestSoundSelfAvoid(
+    className,
+    "TestSoundSelfAvoidTodesmantel",
+    "todesmantel"
+  )
+end
+
+function me.TestSoundSelfAvoidFurcht()
+  mod.testHelper.TestSoundSelfAvoid(
+    className,
+    "TestSoundSelfAvoidFurcht",
+    "furcht"
+  )
+end
+
+function me.TestSoundSelfAvoidSchreckensgeheul()
+  mod.testHelper.TestSoundSelfAvoid(
+    className,
+    "TestSoundSelfAvoidSchreckensgeheul",
+    "schreckensgeheul"
+  )
+end
+
+function me.TestSoundSelfAvoidSchattenbrand()
+  mod.testHelper.TestSoundSelfAvoid(
+    className,
+    "TestSoundSelfAvoidSchattenbrand",
+    "schattenbrand"
+  )
+end
+
+function me.TestSoundSelfAvoidZaubersperre()
+  mod.testHelper.TestSoundSelfAvoid(
+    className,
+    "TestSoundSelfAvoidZaubersperre",
+    "zaubersperre"
+  )
+end
+
+function me.TestSoundSelfAvoidVerfuehrung()
+  mod.testHelper.TestSoundSelfAvoid(
+    className,
+    "TestSoundSelfAvoidVerfuehrung",
     "verfuehrung"
   )
 end
