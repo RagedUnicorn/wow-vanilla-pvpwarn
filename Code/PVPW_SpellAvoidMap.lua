@@ -1042,12 +1042,12 @@ if (GetLocale() == "deDE") then
       }
     },
     ["misc"] = {
-      ["thorium_grenade"] = {
-        ["name"] = "Thorium Grenade",
+      ["thoriumgranate"] = {
+        ["name"] = "Thoriumgranate",
         ["itemID"] = 15993,
         ["spellID"] = 19769,
         ["spellIcon"] = "inv_misc_bomb_08",
-        ["soundFileName"] = "grenade",
+        ["soundFileName"] = "granate",
         ["dodge"] = false,
         ["parry"] = false,
         ["immune"] = true,
@@ -1057,12 +1057,12 @@ if (GetLocale() == "deDE") then
         ["self_avoid"] = true,
         ["enemy_avoid"] = true
       },
-      ["iron_grenade"] = {
-        ["name"] = "Iron Grenade",
+      ["eisengranate"] = {
+        ["name"] = "Eisengranate",
         ["itemID"] = 4390,
         ["spellID"] = 4068,
         ["spellIcon"] = "inv_misc_bomb_08",
-        ["soundFileName"] = "grenade",
+        ["soundFileName"] = "granate",
         ["dodge"] = false,
         ["parry"] = false,
         ["immune"] = true,
@@ -2053,12 +2053,12 @@ else
       }
     },
     ["misc"] = {
-      ["thoriumgranate"] = {
-        ["name"] = "Thoriumgranate",
+      ["thorium_grenade"] = {
+        ["name"] = "Thorium Grenade",
         ["itemID"] = 15993,
         ["spellID"] = 19769,
         ["spellIcon"] = "inv_misc_bomb_08",
-        ["soundFileName"] = "granate",
+        ["soundFileName"] = "grenade",
         ["dodge"] = false,
         ["parry"] = false,
         ["immune"] = true,
@@ -2068,12 +2068,12 @@ else
         ["self_avoid"] = true,
         ["enemy_avoid"] = true
       },
-      ["eisengranate"] = {
-        ["name"] = "Eisengranate",
+      ["iron_grenade"] = {
+        ["name"] = "Iron Grenade",
         ["itemID"] = 4390,
         ["spellID"] = 4068,
         ["spellIcon"] = "inv_misc_bomb_08",
-        ["soundFileName"] = "granate",
+        ["soundFileName"] = "grenade",
         ["dodge"] = false,
         ["parry"] = false,
         ["immune"] = true,
