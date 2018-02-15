@@ -45,9 +45,13 @@ function _G.__PVPW__TEST_SHAMAN_DE__Test()
 
   mod.testHelper.TestShouldHaveASoundTestForEachSpell(me, className)
   mod.testHelper.TestShouldHaveASoundDownTestForSpellsThatFade(me, className)
+  mod.testHelper.TestShouldHaveAnEnemyAvoidSoundTestForEachSpell(me, className)
+  mod.testHelper.TestShouldHaveASelfAvoidSoundTestForEachSpell(me, className)
   mod.testHelper.TestShouldHaveAParseTestForEachSpell(me, className)
   mod.testHelper.TestShouldHaveAParseDownTestForSpellsThatFade(me, className)
   mod.testHelper.TestShouldHaveAParseCritTestForSpellsThatCanCrit(me, className)
+  mod.testHelper.TestShouldHaveAnEnemyAvoidParseTestForEachSpell(me, className)
+  mod.testHelper.TestShouldHaveASelfAvoidParseTestForEachSpell(me, className)
 
   me.RunAll()
 end
@@ -87,6 +91,20 @@ function _G.__PVPW__TEST_SHAMAN_DE__Test_Parse_Crit()
   mod.testHelper.TestShouldHaveAParseCritTestForSpellsThatCanCrit(me, className)
 end
 
+function _G.__PVPW__TEST_SHAMAN_DE__Test_Parse_Enemy_Avoid()
+  mod.testReporter.StartTestRun("global_shaman_de_parse_avoid")
+  mod.testReporter.StartTestClass(className)
+
+  mod.testHelper.TestShouldHaveAnEnemyAvoidParseTestForEachSpell(me, className)
+end
+
+function _G.__PVPW__TEST_SHAMAN_DE__Test_Parse_Self_Avoid()
+  mod.testReporter.StartTestRun("global_shaman_de_parse_self_avoid")
+  mod.testReporter.StartTestClass(className)
+
+  mod.testHelper.TestShouldHaveASelfAvoidParseTestForEachSpell(me, className)
+end
+
 --[[
   @param {boolean} playManual
     true if testqueue is started manually
@@ -120,6 +138,12 @@ function me.RunAll(playManual)
   mod.testReporter.AddToTestQueueWithDelay(me.TestSoundTotemDerManaquelle)
   mod.testReporter.AddToTestQueueWithDelay(me.TestSoundTotemDerManaflut)
   mod.testReporter.AddToTestQueueWithDelay(me.TestSoundTotemDerBeruhigendenWinde)
+  mod.testReporter.AddToTestQueueWithDelay(me.TestSoundEnemyAvoidErdschock)
+  mod.testReporter.AddToTestQueueWithDelay(me.TestSoundEnemyAvoidFlammenschock)
+  mod.testReporter.AddToTestQueueWithDelay(me.TestSoundEnemyAvoidFrostschock)
+  mod.testReporter.AddToTestQueueWithDelay(me.TestSoundSelfAvoidErdschock)
+  mod.testReporter.AddToTestQueueWithDelay(me.TestSoundSelfAvoidFlammenschock)
+  mod.testReporter.AddToTestQueueWithDelay(me.TestSoundSelfAvoidFrostschock)
 
   if not playManual then
     mod.testReporter.PlayTestQueueWithDelay()
@@ -360,6 +384,54 @@ function me.TestSoundTotemDerBeruhigendenWinde()
     className,
     "TestSoundTotemDerBeruhigendenWinde",
     "totem_der_beruhigenden_winde"
+  )
+end
+
+function me.TestSoundEnemyAvoidErdschock()
+  mod.testHelper.TestSoundEnemyAvoid(
+    className,
+    "TestSoundEnemyAvoidErdschock",
+    "erdschock"
+  )
+end
+
+function me.TestSoundEnemyAvoidFlammenschock()
+  mod.testHelper.TestSoundEnemyAvoid(
+    className,
+    "TestSoundEnemyAvoidFlammenschock",
+    "flammenschock"
+  )
+end
+
+function me.TestSoundEnemyAvoidFrostschock()
+  mod.testHelper.TestSoundEnemyAvoid(
+    className,
+    "TestSoundEnemyAvoidFrostschock",
+    "frostschock"
+  )
+end
+
+function me.TestSoundSelfAvoidErdschock()
+  mod.testHelper.TestSoundSelfAvoid(
+    className,
+    "TestSoundSelfAvoidErdschock",
+    "erdschock"
+  )
+end
+
+function me.TestSoundSelfAvoidFlammenschock()
+  mod.testHelper.TestSoundSelfAvoid(
+    className,
+    "TestSoundSelfAvoidFlammenschock",
+    "flammenschock"
+  )
+end
+
+function me.TestSoundSelfAvoidFrostschock()
+  mod.testHelper.TestSoundSelfAvoid(
+    className,
+    "TestSoundSelfAvoidFrostschock",
+    "frostschock"
   )
 end
 
