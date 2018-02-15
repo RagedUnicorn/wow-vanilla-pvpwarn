@@ -1025,12 +1025,12 @@ if (GetLocale() == "deDE") then
         ["self_avoid"] = true,
         ["enemy_avoid"] = true
       },
-      ["net_o_matic"] = {
-        ["name"] = "Net-o-Matic",
+      ["net_o_matik"] = {
+        ["name"] = "Net-o-Matik",
         ["itemID"] = 10720,
         ["spellID"] = 13120,
         ["spellIcon"] = "inv_misc_net_01",
-        ["soundFileName"] = "net_o_matic",
+        ["soundFileName"] = "net_o_matik",
         ["dodge"] = false,
         ["parry"] = false,
         ["immune"] = true,
@@ -2036,12 +2036,12 @@ else
         ["self_avoid"] = true,
         ["enemy_avoid"] = true
       },
-      ["net_o_matik"] = {
-        ["name"] = "Net-o-Matik",
+      ["net_o_matic"] = {
+        ["name"] = "Net-o-Matic",
         ["itemID"] = 10720,
         ["spellID"] = 13120,
         ["spellIcon"] = "inv_misc_net_01",
-        ["soundFileName"] = "net_o_matik",
+        ["soundFileName"] = "net_o_matic",
         ["dodge"] = false,
         ["parry"] = false,
         ["immune"] = true,
