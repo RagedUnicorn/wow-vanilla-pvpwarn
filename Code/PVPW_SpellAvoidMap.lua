@@ -254,7 +254,7 @@ if (GetLocale() == "deDE") then
         ["name"] = "Betäubung abfangen",
         ["spellID"] = 7922,
         ["spellIcon"] = "ability_warrior_charge",
-        ["soundFileName"] = "betaeubung_abfangen",
+        ["soundFileName"] = "abfangen",
         ["dodge"] = false,
         ["parry"] = false,
         ["immune"] = true,
@@ -324,7 +324,7 @@ if (GetLocale() == "deDE") then
         ["name"] = "Sturmangriffsbetäubung",
         ["spellID"] = 20615,
         ["spellIcon"] = "ability_rogue_sprint",
-        ["soundFileName"] = "sturmangriffsbetaeubung",
+        ["soundFileName"] = "sturmangriff",
         ["dodge"] = false,
         ["parry"] = false,
         ["immune"] = true,
@@ -877,11 +877,11 @@ if (GetLocale() == "deDE") then
       }
     },
     ["druid"] = {
-      ["wurcherwurzeln"] = {
+      ["wucherwurzeln"] = {
         ["name"] = "Wucherwurzeln",
         ["spellID"] = 19970, -- rank 6
         ["spellIcon"] = "spell_nature_stranglevines",
-        ["soundFileName"] = "wurcherwurzeln",
+        ["soundFileName"] = "wucherwurzeln",
         ["dodge"] = false,
         ["parry"] = false,
         ["immune"] = true,
@@ -919,11 +919,11 @@ if (GetLocale() == "deDE") then
         ["self_avoid"] = true,
         ["enemy_avoid"] = true
       },
-      ["feral_charge_effect"] = {
-        ["name"] = "Feral Charge Effect",
+      ["wilde_attacke"] = {
+        ["name"] = "Wilde Attacke",
         ["spellID"] = 19675,
         ["spellIcon"] = "ability_hunter_pet_bear",
-        ["soundFileName"] = "feral_charge",
+        ["soundFileName"] = "wilde_attacke",
         ["dodge"] = false,
         ["parry"] = false,
         ["immune"] = true,
@@ -935,11 +935,11 @@ if (GetLocale() == "deDE") then
       }
     },
     ["shaman"] = {
-      ["earth_shock"] = {
-        ["name"] = "Earth Shock",
+      ["erdschock"] = {
+        ["name"] = "Erdschock",
         ["spellID"] = 10414, -- rank 7
         ["spellIcon"] = "spell_nature_earthshock",
-        ["soundFileName"] = "earth_shock",
+        ["soundFileName"] = "erdschock",
         ["dodge"] = false,
         ["parry"] = false,
         ["immune"] = true,
@@ -949,11 +949,11 @@ if (GetLocale() == "deDE") then
         ["self_avoid"] = true,
         ["enemy_avoid"] = true
       },
-      ["flame_shock"] = {
-        ["name"] = "Flame Shock",
+      ["flammenschock"] = {
+        ["name"] = "Flammenschock",
         ["spellID"] = 29228, -- rank 6
         ["spellIcon"] = "spell_fire_flameshock",
-        ["soundFileName"] = "flame_shock",
+        ["soundFileName"] = "flammenschock",
         ["dodge"] = false,
         ["parry"] = false,
         ["immune"] = true,
@@ -963,11 +963,11 @@ if (GetLocale() == "deDE") then
         ["self_avoid"] = true,
         ["enemy_avoid"] = true
       },
-      ["frost_shock"] = {
-        ["name"] = "Frost Shock",
+      ["frostschock"] = {
+        ["name"] = "Frostschock",
         ["spellID"] = 10473, -- rank 4
         ["spellIcon"] = "spell_frost_frostshock",
-        ["soundFileName"] = "frost_shock",
+        ["soundFileName"] = "frostschock",
         ["dodge"] = false,
         ["parry"] = false,
         ["immune"] = true,
@@ -979,11 +979,11 @@ if (GetLocale() == "deDE") then
       }
     },
     ["racials"] = {
-      ["war_stomp"] = {
-        ["name"] = "War Stomp",
+      ["kriegsdonner"] = {
+        ["name"] = "Kriegsdonner",
         ["spellID"] = 20549,
         ["spellIcon"] = "ability_warstomp",
-        ["soundFileName"] = "war_stomp",
+        ["soundFileName"] = "kriegsdonner",
         ["dodge"] = false,
         ["parry"] = false,
         ["immune"] = true,
@@ -995,12 +995,12 @@ if (GetLocale() == "deDE") then
       }
     },
     ["items"] = {
-      ["tidal_charm"] = {
-        ["name"] = "Tidal Charm",
+      ["gezeiten_gluecksbringer"] = {
+        ["name"] = "Gezeiten-Glücksbringer",
         ["itemID"] = 1404,
         ["spellID"] = 835,
         ["spellIcon"] = "inv_misc_rune_01",
-        ["soundFileName"] = "tidal_charm",
+        ["soundFileName"] = "gezeiten_gluecksbringer",
         ["dodge"] = false,
         ["parry"] = false,
         ["immune"] = true,
@@ -1015,7 +1015,7 @@ if (GetLocale() == "deDE") then
         ["itemID"] = 10588,
         ["spellID"] = 22641,
         ["spellIcon"] = "spell_nature_astralrecal",
-        ["soundFileName"] = "raketenhelm",
+        ["soundFileName"] = "rocket_helmet",
         ["dodge"] = false,
         ["parry"] = false,
         ["immune"] = true,
@@ -1025,12 +1025,12 @@ if (GetLocale() == "deDE") then
         ["self_avoid"] = true,
         ["enemy_avoid"] = true
       },
-      ["net_o_matik"] = {
-        ["name"] = "Net-o-Matik",
+      ["net_o_matic"] = {
+        ["name"] = "Net-o-Matic",
         ["itemID"] = 10720,
         ["spellID"] = 13120,
         ["spellIcon"] = "inv_misc_net_01",
-        ["soundFileName"] = "net_o_matik",
+        ["soundFileName"] = "net_o_matic",
         ["dodge"] = false,
         ["parry"] = false,
         ["immune"] = true,
@@ -1042,12 +1042,12 @@ if (GetLocale() == "deDE") then
       }
     },
     ["misc"] = {
-      ["thoriumgranate"] = {
-        ["name"] = "Thoriumgranate",
+      ["thorium_grenade"] = {
+        ["name"] = "Thorium Grenade",
         ["itemID"] = 15993,
         ["spellID"] = 19769,
         ["spellIcon"] = "inv_misc_bomb_08",
-        ["soundFileName"] = "granate",
+        ["soundFileName"] = "grenade",
         ["dodge"] = false,
         ["parry"] = false,
         ["immune"] = true,
@@ -1057,12 +1057,12 @@ if (GetLocale() == "deDE") then
         ["self_avoid"] = true,
         ["enemy_avoid"] = true
       },
-      ["eisengranate"] = {
-        ["name"] = "Eisengranate",
+      ["iron_grenade"] = {
+        ["name"] = "Iron Grenade",
         ["itemID"] = 4390,
         ["spellID"] = 4068,
         ["spellIcon"] = "inv_misc_bomb_08",
-        ["soundFileName"] = "granate",
+        ["soundFileName"] = "grenade",
         ["dodge"] = false,
         ["parry"] = false,
         ["immune"] = true,
@@ -1930,11 +1930,11 @@ else
         ["self_avoid"] = true,
         ["enemy_avoid"] = true
       },
-      ["wilde_attacke"] = {
-        ["name"] = "Wilde Attacke",
+      ["feral_charge_effect"] = {
+        ["name"] = "Feral Charge Effect",
         ["spellID"] = 19675,
         ["spellIcon"] = "ability_hunter_pet_bear",
-        ["soundFileName"] = "wilde_attacke",
+        ["soundFileName"] = "feral_charge",
         ["dodge"] = false,
         ["parry"] = false,
         ["immune"] = true,
@@ -1946,11 +1946,11 @@ else
       }
     },
     ["shaman"] = {
-      ["erdschock"] = {
-        ["name"] = "Erdschock",
+      ["earth_shock"] = {
+        ["name"] = "Earth Shock",
         ["spellID"] = 10414, -- rank 7
         ["spellIcon"] = "spell_nature_earthshock",
-        ["soundFileName"] = "erdschock",
+        ["soundFileName"] = "earth_shock",
         ["dodge"] = false,
         ["parry"] = false,
         ["immune"] = true,
@@ -1960,11 +1960,11 @@ else
         ["self_avoid"] = true,
         ["enemy_avoid"] = true
       },
-      ["flammenschock"] = {
-        ["name"] = "Flammenschock",
+      ["flame_shock"] = {
+        ["name"] = "Flame Shock",
         ["spellID"] = 29228, -- rank 6
         ["spellIcon"] = "spell_fire_flameshock",
-        ["soundFileName"] = "flammenschock",
+        ["soundFileName"] = "flame_shock",
         ["dodge"] = false,
         ["parry"] = false,
         ["immune"] = true,
@@ -1974,11 +1974,11 @@ else
         ["self_avoid"] = true,
         ["enemy_avoid"] = true
       },
-      ["frostschock"] = {
-        ["name"] = "Frostschock",
+      ["frost_shock"] = {
+        ["name"] = "Frost Shock",
         ["spellID"] = 10473, -- rank 4
         ["spellIcon"] = "spell_frost_frostshock",
-        ["soundFileName"] = "frostschock",
+        ["soundFileName"] = "frost_shock",
         ["dodge"] = false,
         ["parry"] = false,
         ["immune"] = true,
@@ -1990,11 +1990,11 @@ else
       }
     },
     ["racials"] = {
-      ["kriegsdonner"] = {
-        ["name"] = "Kriegsdonner",
+      ["war_stomp"] = {
+        ["name"] = "War Stomp",
         ["spellID"] = 20549,
         ["spellIcon"] = "ability_warstomp",
-        ["soundFileName"] = "kriegsdonner",
+        ["soundFileName"] = "war_stomp",
         ["dodge"] = false,
         ["parry"] = false,
         ["immune"] = true,
@@ -2006,12 +2006,12 @@ else
       }
     },
     ["items"] = {
-      ["gezeiten_gluecksbringer"] = {
-        ["name"] = "Gezeiten-Glücksbringer",
+      ["tidal_charm"] = {
+        ["name"] = "Tidal Charm",
         ["itemID"] = 1404,
         ["spellID"] = 835,
         ["spellIcon"] = "inv_misc_rune_01",
-        ["soundFileName"] = "gezeiten_gluecksbringer",
+        ["soundFileName"] = "tidal_charm",
         ["dodge"] = false,
         ["parry"] = false,
         ["immune"] = true,
@@ -2021,12 +2021,12 @@ else
         ["self_avoid"] = true,
         ["enemy_avoid"] = true
       },
-      ["reckless_charge"] = {
-        ["name"] = "Reckless Charge",
+      ["tollkuehnes_stuermen"] = {
+        ["name"] = "Tollkühnes Stürmen",
         ["itemID"] = 10588,
         ["spellID"] = 22641,
         ["spellIcon"] = "spell_nature_astralrecal",
-        ["soundFileName"] = "rocket_helmet",
+        ["soundFileName"] = "raketenhelm",
         ["dodge"] = false,
         ["parry"] = false,
         ["immune"] = true,
@@ -2036,12 +2036,12 @@ else
         ["self_avoid"] = true,
         ["enemy_avoid"] = true
       },
-      ["net_o_matic"] = {
-        ["name"] = "Net-o-Matic",
+      ["net_o_matik"] = {
+        ["name"] = "Net-o-Matik",
         ["itemID"] = 10720,
         ["spellID"] = 13120,
         ["spellIcon"] = "inv_misc_net_01",
-        ["soundFileName"] = "net_o_matic",
+        ["soundFileName"] = "net_o_matik",
         ["dodge"] = false,
         ["parry"] = false,
         ["immune"] = true,
@@ -2053,12 +2053,12 @@ else
       }
     },
     ["misc"] = {
-      ["thorium_grenade"] = {
-        ["name"] = "Thorium Grenade",
+      ["thoriumgranate"] = {
+        ["name"] = "Thoriumgranate",
         ["itemID"] = 15993,
         ["spellID"] = 19769,
         ["spellIcon"] = "inv_misc_bomb_08",
-        ["soundFileName"] = "grenade",
+        ["soundFileName"] = "granate",
         ["dodge"] = false,
         ["parry"] = false,
         ["immune"] = true,
@@ -2068,12 +2068,12 @@ else
         ["self_avoid"] = true,
         ["enemy_avoid"] = true
       },
-      ["iron_grenade"] = {
-        ["name"] = "Iron Grenade",
+      ["eisengranate"] = {
+        ["name"] = "Eisengranate",
         ["itemID"] = 4390,
         ["spellID"] = 4068,
         ["spellIcon"] = "inv_misc_bomb_08",
-        ["soundFileName"] = "grenade",
+        ["soundFileName"] = "granate",
         ["dodge"] = false,
         ["parry"] = false,
         ["immune"] = true,
