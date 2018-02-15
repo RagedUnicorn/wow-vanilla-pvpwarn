@@ -29,18 +29,26 @@ me.tag = "Sound"
 ]]--
 local BASE_PATH
 local FILE_NAME_DOWN
+local FILE_NAME_SELF_AVOIDED
+local FILE_NAME_ENEMY_AVOIDED
+local FILE_FOLDER_ENEMY_AVOIDED
+local FILE_FOLDER_SELF_AVOIDED
 local FILE_TYPE = ".mp3"
-local FILE_FOLDER_ENEMY_AVOIDED = "enemy_avoid"
-local FILE_NAME_ENEMY_AVOIDED = "enemy_avoided_"
-local FILE_FOLDER_SELF_AVOIDED = "self_avoid"
-local FILE_NAME_SELF_AVOIDED = "you_avoided_"
 
 if (GetLocale() == "deDE") then
   BASE_PATH = "Interface\\AddOns\\PVPWarn\\Assets\\Sounds\\de\\"
   FILE_NAME_DOWN = "_unten"
+  FILE_FOLDER_ENEMY_AVOIDED = "enemy_avoid"
+  FILE_NAME_ENEMY_AVOIDED = "gegner_vermeidet_"
+  FILE_FOLDER_SELF_AVOIDED = "self_avoid"
+  FILE_NAME_SELF_AVOIDED = "ihr_vermeidet_"
 else
   BASE_PATH = "Interface\\AddOns\\PVPWarn\\Assets\\Sounds\\"
   FILE_NAME_DOWN = "_down"
+  FILE_FOLDER_ENEMY_AVOIDED = "enemy_avoid"
+  FILE_NAME_ENEMY_AVOIDED = "enemy_avoided_"
+  FILE_FOLDER_SELF_AVOIDED = "self_avoid"
+  FILE_NAME_SELF_AVOIDED = "you_avoided_"
 end
 
 --[[
