@@ -44,9 +44,13 @@ function _G.__PVPW__TEST_PRIEST_DE__Test()
 
   mod.testHelper.TestShouldHaveASoundTestForEachSpell(me, className)
   mod.testHelper.TestShouldHaveASoundDownTestForSpellsThatFade(me, className)
+  mod.testHelper.TestShouldHaveAnEnemyAvoidSoundTestForEachSpell(me, className)
+  mod.testHelper.TestShouldHaveASelfAvoidSoundTestForEachSpell(me, className)
   mod.testHelper.TestShouldHaveAParseTestForEachSpell(me, className)
   mod.testHelper.TestShouldHaveAParseDownTestForSpellsThatFade(me, className)
   mod.testHelper.TestShouldHaveAParseCritTestForSpellsThatCanCrit(me, className)
+  mod.testHelper.TestShouldHaveAnEnemyAvoidParseTestForEachSpell(me, className)
+  mod.testHelper.TestShouldHaveASelfAvoidParseTestForEachSpell(me, className)
 
   me.RunAll()
 end
@@ -86,6 +90,20 @@ function _G.__PVPW__TEST_PRIEST_DE__Test_Parse_Crit()
   mod.testHelper.TestShouldHaveAParseCritTestForSpellsThatCanCrit(me, className)
 end
 
+function _G.__PVPW__TEST_PRIEST_DE__Test_Parse_Enemy_Avoid()
+  mod.testReporter.StartTestRun("global_priest_de_parse_avoid")
+  mod.testReporter.StartTestClass(className)
+
+  mod.testHelper.TestShouldHaveAnEnemyAvoidParseTestForEachSpell(me, className)
+end
+
+function _G.__PVPW__TEST_PRIEST_DE__Test_Parse_Self_Avoid()
+  mod.testReporter.StartTestRun("global_priest_de_parse_self_avoid")
+  mod.testReporter.StartTestClass(className)
+
+  mod.testHelper.TestShouldHaveASelfAvoidParseTestForEachSpell(me, className)
+end
+
 --[[
   @param {boolean} playManual
     true if testqueue is started manually
@@ -110,6 +128,22 @@ function me.RunAll(playManual)
   mod.testReporter.AddToTestQueueWithDelay(me.TestSoundDownElunesAnmut)
   mod.testReporter.AddToTestQueueWithDelay(me.TestSoundSternensplitter)
   mod.testReporter.AddToTestQueueWithDelay(me.TestSoundVerhexungDerSchwaeche)
+  mod.testReporter.AddToTestQueueWithDelay(me.TestSoundEnemyAvoidVerschlingendeSeuche)
+  mod.testReporter.AddToTestQueueWithDelay(me.TestSoundEnemyAvoidBlackout)
+  mod.testReporter.AddToTestQueueWithDelay(me.TestSoundEnemyAvoidManabrand)
+  mod.testReporter.AddToTestQueueWithDelay(me.TestSoundEnemyAvoidGedankenkontrolle)
+  mod.testReporter.AddToTestQueueWithDelay(me.TestSoundEnemyAvoidPsychischerSchrei)
+  mod.testReporter.AddToTestQueueWithDelay(me.TestSoundEnemyAvoidSchattenwortSchmerz)
+  mod.testReporter.AddToTestQueueWithDelay(me.TestSoundEnemyAvoidStille)
+  mod.testReporter.AddToTestQueueWithDelay(me.TestSoundEnemyAvoidVampirumarmung)
+  mod.testReporter.AddToTestQueueWithDelay(me.TestSoundSelfAvoidVerschlingendeSeuche)
+  mod.testReporter.AddToTestQueueWithDelay(me.TestSoundSelfAvoidBlackout)
+  mod.testReporter.AddToTestQueueWithDelay(me.TestSoundSelfAvoidManabrand)
+  mod.testReporter.AddToTestQueueWithDelay(me.TestSoundSelfAvoidGedankenkontrolle)
+  mod.testReporter.AddToTestQueueWithDelay(me.TestSoundSelfAvoidPsychischerSchrei)
+  mod.testReporter.AddToTestQueueWithDelay(me.TestSoundSelfAvoidSchattenwortSchmerz)
+  mod.testReporter.AddToTestQueueWithDelay(me.TestSoundSelfAvoidStille)
+  mod.testReporter.AddToTestQueueWithDelay(me.TestSoundSelfAvoidVampirumarmung)
 
   if not playManual then
     mod.testReporter.PlayTestQueueWithDelay()
@@ -121,7 +155,7 @@ function me.RunAll(playManual)
   mod.testReporter.AddToTestQueue(me.TestParseDownSeeleDerMacht)
   mod.testReporter.AddToTestQueue(me.TestParseInneresFeuer)
   mod.testReporter.AddToTestQueue(me.TestParseDownInneresFeuer)
-  mod.testReporter.AddToTestQueue(me.TestParsVampirumarmung)
+  mod.testReporter.AddToTestQueue(me.TestParseVampirumarmung)
   mod.testReporter.AddToTestQueue(me.TestParseVerzweifeltesGebet)
   mod.testReporter.AddToTestQueue(me.TestParseCritVerzweifeltesGebet)
   mod.testReporter.AddToTestQueue(me.TestParseVerschlingendeSeuche)
@@ -132,7 +166,7 @@ function me.RunAll(playManual)
   mod.testReporter.AddToTestQueue(me.TestParseElunesAnmut)
   mod.testReporter.AddToTestQueue(me.TestParseDownElunesAnmut)
   mod.testReporter.AddToTestQueue(me.TestParseSternensplitter)
-  mod.testReporter.AddToTestQueue(me.TestParseHexOfWeakness)
+  mod.testReporter.AddToTestQueue(me.TestParseVerhexungDerSchwaeche)
 
   mod.testReporter.PlayTestQueue()
 end
@@ -270,6 +304,135 @@ function me.TestSoundVerhexungDerSchwaeche()
     className,
     "TestSoundVerhexungDerSchwaeche",
     "verhexung_der_schwaeche"
+  )
+end
+
+
+function me.TestSoundEnemyAvoidVerschlingendeSeuche()
+  mod.testHelper.TestSoundEnemyAvoid(
+    className,
+    "TestSoundEnemyAvoidVerschlingendeSeuche",
+    "verschlingende_seuche"
+  )
+end
+
+function me.TestSoundEnemyAvoidBlackout()
+  mod.testHelper.TestSoundEnemyAvoid(
+    className,
+    "TestSoundEnemyAvoidBlackout",
+    "blackout"
+  )
+end
+
+function me.TestSoundEnemyAvoidManabrand()
+  mod.testHelper.TestSoundEnemyAvoid(
+    className,
+    "TestSoundEnemyAvoidManabrand",
+    "manabrand"
+  )
+end
+
+function me.TestSoundEnemyAvoidGedankenkontrolle()
+  mod.testHelper.TestSoundEnemyAvoid(
+    className,
+    "TestSoundEnemyAvoidGedankenkontrolle",
+    "gedankenkontrolle"
+  )
+end
+
+function me.TestSoundEnemyAvoidPsychischerSchrei()
+  mod.testHelper.TestSoundEnemyAvoid(
+    className,
+    "TestSoundEnemyAvoidPsychischerSchrei",
+    "psychischer_schrei"
+  )
+end
+
+function me.TestSoundEnemyAvoidSchattenwortSchmerz()
+  mod.testHelper.TestSoundEnemyAvoid(
+    className,
+    "TestSoundEnemyAvoidSchattenwortSchmerz",
+    "schattenwort_schmerz"
+  )
+end
+
+function me.TestSoundEnemyAvoidStille()
+  mod.testHelper.TestSoundEnemyAvoid(
+    className,
+    "TestSoundEnemyAvoidStille",
+    "stille"
+  )
+end
+
+function me.TestSoundEnemyAvoidVampirumarmung()
+  mod.testHelper.TestSoundEnemyAvoid(
+    className,
+    "TestSoundEnemyAvoidVampirumarmung",
+    "vampirumarmung"
+  )
+end
+
+function me.TestSoundSelfAvoidVerschlingendeSeuche()
+  mod.testHelper.TestSoundSelfAvoid(
+    className,
+    "TestSoundSelfAvoidVerschlingendeSeuche",
+    "verschlingende_seuche"
+  )
+end
+
+function me.TestSoundSelfAvoidBlackout()
+  mod.testHelper.TestSoundSelfAvoid(
+    className,
+    "TestSoundSelfAvoidBlackout",
+    "blackout"
+  )
+end
+
+function me.TestSoundSelfAvoidManabrand()
+  mod.testHelper.TestSoundSelfAvoid(
+    className,
+    "TestSoundSelfAvoidManabrand",
+    "manabrand"
+  )
+end
+
+function me.TestSoundSelfAvoidGedankenkontrolle()
+  mod.testHelper.TestSoundSelfAvoid(
+    className,
+    "TestSoundSelfAvoidGedankenkontrolle",
+    "gedankenkontrolle"
+  )
+end
+
+function me.TestSoundSelfAvoidPsychischerSchrei()
+  mod.testHelper.TestSoundSelfAvoid(
+    className,
+    "TestSoundSelfAvoidPsychischerSchrei",
+    "psychischer_schrei"
+  )
+end
+
+function me.TestSoundSelfAvoidSchattenwortSchmerz()
+  mod.testHelper.TestSoundSelfAvoid(
+    className,
+    "TestSoundSelfAvoidSchattenwortSchmerz",
+    "schattenwort_schmerz"
+  )
+end
+
+function me.TestSoundSelfAvoidStille()
+  mod.testHelper.TestSoundSelfAvoid(
+    className,
+    "TestSoundSelfAvoidStille",
+    "stille"
+  )
+end
+
+function me.TestSoundSelfAvoidVampirumarmung()
+  mod.testHelper.TestSoundSelfAvoid(
+    className,
+    "TestSoundSelfAvoidVampirumarmung",
+    "vampirumarmung"
   )
 end
 
