@@ -45,9 +45,13 @@ function _G.__PVPW__TEST_DRUID_DE__Test()
 
   mod.testHelper.TestShouldHaveASoundTestForEachSpell(me, className)
   mod.testHelper.TestShouldHaveASoundDownTestForSpellsThatFade(me, className)
+  mod.testHelper.TestShouldHaveAnEnemyAvoidSoundTestForEachSpell(me, className)
+  mod.testHelper.TestShouldHaveASelfAvoidSoundTestForEachSpell(me, className)
   mod.testHelper.TestShouldHaveAParseTestForEachSpell(me, className)
   mod.testHelper.TestShouldHaveAParseDownTestForSpellsThatFade(me, className)
   mod.testHelper.TestShouldHaveAParseCritTestForSpellsThatCanCrit(me, className)
+  mod.testHelper.TestShouldHaveAnEnemyAvoidParseTestForEachSpell(me, className)
+  mod.testHelper.TestShouldHaveASelfAvoidParseTestForEachSpell(me, className)
 
   me.RunAll()
 end
@@ -64,6 +68,20 @@ function _G.__PVPW__TEST_DRUID_DE__Test_Sound_Down()
   mod.testReporter.StartTestClass(className)
 
   mod.testHelper.TestShouldHaveASoundDownTestForSpellsThatFade(me, className)
+end
+
+function _G.__PVPW__TEST_DRUID_DE__Test_Sound_Enemy_Avoid()
+  mod.testReporter.StartTestRun("global_druid_de_sound_avoid")
+  mod.testReporter.StartTestClass(className)
+
+  mod.testHelper.TestShouldHaveAnEnemyAvoidSoundTestForEachSpell(me, className)
+end
+
+function _G.__PVPW__TEST_DRUID_DE__Test_Sound_Self_Avoid()
+  mod.testReporter.StartTestRun("global_druid_de_sound_self_avoid")
+  mod.testReporter.StartTestClass(className)
+
+  mod.testHelper.TestShouldHaveASelfAvoidSoundTestForEachSpell(me, className)
 end
 
 function _G.__PVPW__TEST_DRUID_DE__Test_Parse()
@@ -85,6 +103,20 @@ function _G.__PVPW__TEST_DRUID_DE__Test_Parse_Crit()
   mod.testReporter.StartTestClass(className)
 
   mod.testHelper.TestShouldHaveAParseCritTestForSpellsThatCanCrit(me, className)
+end
+
+function _G.__PVPW__TEST_DRUID_DE__Test_Parse_Enemy_Avoid()
+  mod.testReporter.StartTestRun("global_druid_de_parse_avoid")
+  mod.testReporter.StartTestClass(className)
+
+  mod.testHelper.TestShouldHaveAnEnemyAvoidParseTestForEachSpell(me, className)
+end
+
+function _G.__PVPW__TEST_DRUID_DE__Test_Parse_Self_Avoid()
+  mod.testReporter.StartTestRun("global_druid_de_parse_self_avoid")
+  mod.testReporter.StartTestClass(className)
+
+  mod.testHelper.TestShouldHaveASelfAvoidParseTestForEachSpell(me, className)
 end
 
 --[[
@@ -109,6 +141,14 @@ function me.RunAll(playManual)
   mod.testReporter.AddToTestQueueWithDelay(me.TestSoundSchnelligkeitDerNatur)
   mod.testReporter.AddToTestQueueWithDelay(me.TestSoundDownSchnelligkeitDerNatur)
   mod.testReporter.AddToTestQueueWithDelay(me.TestSoundFeenfeuer)
+  mod.testReporter.AddToTestQueueWithDelay(me.TestSoundEnemyAvoidWucherwurzeln)
+  mod.testReporter.AddToTestQueueWithDelay(me.TestSoundEnemyAvoidFeenfeuer)
+  mod.testReporter.AddToTestQueueWithDelay(me.TestSoundEnemyAvoidHieb)
+  mod.testReporter.AddToTestQueueWithDelay(me.TestSoundEnemyAvoidWildeAttacke)
+  mod.testReporter.AddToTestQueueWithDelay(me.TestSoundSelfAvoidWucherwurzeln)
+  mod.testReporter.AddToTestQueueWithDelay(me.TestSoundSelfAvoidFeenfeuer)
+  mod.testReporter.AddToTestQueueWithDelay(me.TestSoundSelfAvoidHieb)
+  mod.testReporter.AddToTestQueueWithDelay(me.TestSoundSelfAvoidWildeAttacke)
 
   if not playManual then
     mod.testReporter.PlayTestQueueWithDelay()
@@ -250,6 +290,70 @@ function me.TestSoundFeenfeuer()
     className,
     "TestSoundFeenfeuer",
     "feenfeuer"
+  )
+end
+
+function me.TestSoundEnemyAvoidWucherwurzeln()
+  mod.testHelper.TestSoundEnemyAvoid(
+    className,
+    "TestSoundEnemyAvoidWucherwurzeln",
+    "wucherwurzeln"
+  )
+end
+
+function me.TestSoundEnemyAvoidFeenfeuer()
+  mod.testHelper.TestSoundEnemyAvoid(
+    className,
+    "TestSoundEnemyAvoidFeenfeuer",
+    "feenfeuer"
+  )
+end
+
+function me.TestSoundEnemyAvoidHieb()
+  mod.testHelper.TestSoundEnemyAvoid(
+    className,
+    "TestSoundEnemyAvoidHieb",
+    "hieb"
+  )
+end
+
+function me.TestSoundEnemyAvoidWildeAttacke()
+  mod.testHelper.TestSoundEnemyAvoid(
+    className,
+    "TestSoundEnemyAvoidWildeAttacke",
+    "wilde_attacke"
+  )
+end
+
+function me.TestSoundSelfAvoidWucherwurzeln()
+  mod.testHelper.TestSoundSelfAvoid(
+    className,
+    "TestSoundSelfAvoidWucherwurzeln",
+    "wucherwurzeln"
+  )
+end
+
+function me.TestSoundSelfAvoidFeenfeuer()
+  mod.testHelper.TestSoundSelfAvoid(
+    className,
+    "TestSoundSelfAvoidFeenfeuer",
+    "feenfeuer"
+  )
+end
+
+function me.TestSoundSelfAvoidHieb()
+  mod.testHelper.TestSoundSelfAvoid(
+    className,
+    "TestSoundSelfAvoidHieb",
+    "hieb"
+  )
+end
+
+function me.TestSoundSelfAvoidWildeAttacke()
+  mod.testHelper.TestSoundSelfAvoid(
+    className,
+    "TestSoundSelfAvoidWildeAttacke",
+    "wilde_attacke"
   )
 end
 
