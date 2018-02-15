@@ -45,9 +45,13 @@ function _G.__PVPW__TEST_MAGE_DE__Test()
 
   mod.testHelper.TestShouldHaveASoundTestForEachSpell(me, className)
   mod.testHelper.TestShouldHaveASoundDownTestForSpellsThatFade(me, className)
+  mod.testHelper.TestShouldHaveAnEnemyAvoidSoundTestForEachSpell(me, className)
+  mod.testHelper.TestShouldHaveASelfAvoidSoundTestForEachSpell(me, className)
   mod.testHelper.TestShouldHaveAParseTestForEachSpell(me, className)
   mod.testHelper.TestShouldHaveAParseDownTestForSpellsThatFade(me, className)
   mod.testHelper.TestShouldHaveAParseCritTestForSpellsThatCanCrit(me, className)
+  mod.testHelper.TestShouldHaveAnEnemyAvoidParseTestForEachSpell(me, className)
+  mod.testHelper.TestShouldHaveASelfAvoidParseTestForEachSpell(me, className)
 
   me.RunAll()
 end
@@ -87,6 +91,20 @@ function _G.__PVPW__TEST_MAGE_DE__Test_Parse_Crit()
   mod.testHelper.TestShouldHaveAParseCritTestForSpellsThatCanCrit(me, className)
 end
 
+function _G.__PVPW__TEST_MAGE_DE__Test_Parse_Enemy_Avoid()
+  mod.testReporter.StartTestRun("global_mage_de_parse_avoid")
+  mod.testReporter.StartTestClass(className)
+
+  mod.testHelper.TestShouldHaveAnEnemyAvoidParseTestForEachSpell(me, className)
+end
+
+function _G.__PVPW__TEST_MAGE_DE__Test_Parse_Self_Avoid()
+  mod.testReporter.StartTestRun("global_mage_de_parse_self_avoid")
+  mod.testReporter.StartTestClass(className)
+
+  mod.testHelper.TestShouldHaveASelfAvoidParseTestForEachSpell(me, className)
+end
+
 --[[
   @param {boolean} playManual
     true if testqueue is started manually
@@ -119,6 +137,22 @@ function me.RunAll(playManual)
   mod.testReporter.AddToTestQueueWithDelay(me.TestSoundVerbrennung)
   mod.testReporter.AddToTestQueueWithDelay(me.TestSoundDownVerbrennung)
   mod.testReporter.AddToTestQueueWithDelay(me.TestSoundDruckwelle)
+  mod.testReporter.AddToTestQueueWithDelay(me.TestSoundEnemyAvoidGegenzauberZumSchweigenGebracht)
+  mod.testReporter.AddToTestQueueWithDelay(me.TestSoundEnemyAvoidGegenzauber)
+  mod.testReporter.AddToTestQueueWithDelay(me.TestSoundEnemyAvoidVerwandlung)
+  mod.testReporter.AddToTestQueueWithDelay(me.TestSoundEnemyAvoidVerwandlungKuh)
+  mod.testReporter.AddToTestQueueWithDelay(me.TestSoundEnemyAvoidVerwandlungSchwein)
+  mod.testReporter.AddToTestQueueWithDelay(me.TestSoundEnemyAvoidVerwandlungKroete)
+  mod.testReporter.AddToTestQueueWithDelay(me.TestSoundEnemyAvoidKaeltekegel)
+  mod.testReporter.AddToTestQueueWithDelay(me.TestSoundEnemyAvoidFrostnova)
+  mod.testReporter.AddToTestQueueWithDelay(me.TestSoundSelfAvoidGegenzauberZumSchweigenGebracht)
+  mod.testReporter.AddToTestQueueWithDelay(me.TestSoundSelfAvoidGegenzauber)
+  mod.testReporter.AddToTestQueueWithDelay(me.TestSoundSelfAvoidVerwandlung)
+  mod.testReporter.AddToTestQueueWithDelay(me.TestSoundSelfAvoidVerwandlungKuh)
+  mod.testReporter.AddToTestQueueWithDelay(me.TestSoundSelfAvoidVerwandlungSchwein)
+  mod.testReporter.AddToTestQueueWithDelay(me.TestSoundSelfAvoidVerwandlungKroete)
+  mod.testReporter.AddToTestQueueWithDelay(me.TestSoundSelfAvoidKaeltekegel)
+  mod.testReporter.AddToTestQueueWithDelay(me.TestSoundSelfAvoidFrostnova)
 
   if not playManual then
     mod.testReporter.PlayTestQueueWithDelay()
@@ -350,6 +384,134 @@ function me.TestSoundDruckwelle()
     className,
     "TestSoundDruckwelle",
     "druckwelle"
+  )
+end
+
+function me.TestSoundEnemyAvoidGegenzauberZumSchweigenGebracht()
+  mod.testHelper.TestSoundEnemyAvoid(
+    className,
+    "TestSoundEnemyAvoidGegenzauberZumSchweigenGebracht",
+    "gegenzauber_zum_schweigen_gebracht"
+  )
+end
+
+function me.TestSoundEnemyAvoidGegenzauber()
+  mod.testHelper.TestSoundEnemyAvoid(
+    className,
+    "TestSoundEnemyAvoidGegenzauber",
+    "gegenzauber"
+  )
+end
+
+function me.TestSoundEnemyAvoidVerwandlung()
+  mod.testHelper.TestSoundEnemyAvoid(
+    className,
+    "TestSoundEnemyAvoidVerwandlung",
+    "verwandlung"
+  )
+end
+
+function me.TestSoundEnemyAvoidVerwandlungKuh()
+  mod.testHelper.TestSoundEnemyAvoid(
+    className,
+    "TestSoundEnemyAvoidVerwandlungKuh",
+    "verwandlung_kuh"
+  )
+end
+
+function me.TestSoundEnemyAvoidVerwandlungSchwein()
+  mod.testHelper.TestSoundEnemyAvoid(
+    className,
+    "TestSoundEnemyAvoidVerwandlungSchwein",
+    "verwandlung_schwein"
+  )
+end
+
+function me.TestSoundEnemyAvoidVerwandlungKroete()
+  mod.testHelper.TestSoundEnemyAvoid(
+    className,
+    "TestSoundEnemyAvoidVerwandlungKroete",
+    "verwandlung_kroete"
+  )
+end
+
+function me.TestSoundEnemyAvoidKaeltekegel()
+  mod.testHelper.TestSoundEnemyAvoid(
+    className,
+    "TestSoundEnemyAvoidKaeltekegel",
+    "kaeltekegel"
+  )
+end
+
+function me.TestSoundEnemyAvoidFrostnova()
+  mod.testHelper.TestSoundEnemyAvoid(
+    className,
+    "TestSoundEnemyAvoidFrostnova",
+    "frostnova"
+  )
+end
+
+function me.TestSoundSelfAvoidGegenzauberZumSchweigenGebracht()
+  mod.testHelper.TestSoundSelfAvoid(
+    className,
+    "TestSoundSelfAvoidGegenzauberZumSchweigenGebracht",
+    "gegenzauber_zum_schweigen_gebracht"
+  )
+end
+
+function me.TestSoundSelfAvoidGegenzauber()
+  mod.testHelper.TestSoundSelfAvoid(
+    className,
+    "TestSoundSelfAvoidGegenzauber",
+    "gegenzauber"
+  )
+end
+
+function me.TestSoundSelfAvoidVerwandlung()
+  mod.testHelper.TestSoundSelfAvoid(
+    className,
+    "TestSoundSelfAvoidVerwandlung",
+    "verwandlung"
+  )
+end
+
+function me.TestSoundSelfAvoidVerwandlungKuh()
+  mod.testHelper.TestSoundSelfAvoid(
+    className,
+    "TestSoundSelfAvoidVerwandlungKuh",
+    "verwandlung_kuh"
+  )
+end
+
+function me.TestSoundSelfAvoidVerwandlungSchwein()
+  mod.testHelper.TestSoundSelfAvoid(
+    className,
+    "TestSoundSelfAvoidVerwandlungSchwein",
+    "verwandlung_schwein"
+  )
+end
+
+function me.TestSoundSelfAvoidVerwandlungKroete()
+  mod.testHelper.TestSoundSelfAvoid(
+    className,
+    "TestSoundSelfAvoidVerwandlungKroete",
+    "verwandlung_kroete"
+  )
+end
+
+function me.TestSoundSelfAvoidKaeltekegel()
+  mod.testHelper.TestSoundSelfAvoid(
+    className,
+    "TestSoundSelfAvoidKaeltekegel",
+    "kaeltekegel"
+  )
+end
+
+function me.TestSoundSelfAvoidFrostnova()
+  mod.testHelper.TestSoundSelfAvoid(
+    className,
+    "TestSoundSelfAvoidFrostnova",
+    "frostnova"
   )
 end
 
