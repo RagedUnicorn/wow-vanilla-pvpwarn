@@ -1015,7 +1015,7 @@ if (GetLocale() == "deDE") then
         ["itemID"] = 10588,
         ["spellID"] = 22641,
         ["spellIcon"] = "spell_nature_astralrecal",
-        ["soundFileName"] = "rocket_helmet",
+        ["soundFileName"] = "raketenhelm",
         ["dodge"] = false,
         ["parry"] = false,
         ["immune"] = true,
@@ -2021,12 +2021,12 @@ else
         ["self_avoid"] = true,
         ["enemy_avoid"] = true
       },
-      ["tollkuehnes_stuermen"] = {
-        ["name"] = "Tollkühnes Stürmen",
+      ["reckless_charge"] = {
+        ["name"] = "Reckless Charge",
         ["itemID"] = 10588,
         ["spellID"] = 22641,
         ["spellIcon"] = "spell_nature_astralrecal",
-        ["soundFileName"] = "raketenhelm",
+        ["soundFileName"] = "rocket_helmet",
         ["dodge"] = false,
         ["parry"] = false,
         ["immune"] = true,
