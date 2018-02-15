@@ -45,8 +45,13 @@ function _G.__PVPW__TEST_PALADIN_DE__Test()
 
   mod.testHelper.TestShouldHaveASoundTestForEachSpell(me, className)
   mod.testHelper.TestShouldHaveASoundDownTestForSpellsThatFade(me, className)
+  mod.testHelper.TestShouldHaveAnEnemyAvoidSoundTestForEachSpell(me, className)
+  mod.testHelper.TestShouldHaveASelfAvoidSoundTestForEachSpell(me, className)
+  mod.testHelper.TestShouldHaveAParseTestForEachSpell(me, className)
   mod.testHelper.TestShouldHaveAParseDownTestForSpellsThatFade(me, className)
   mod.testHelper.TestShouldHaveAParseCritTestForSpellsThatCanCrit(me, className)
+  mod.testHelper.TestShouldHaveAnEnemyAvoidParseTestForEachSpell(me, className)
+  mod.testHelper.TestShouldHaveASelfAvoidParseTestForEachSpell(me, className)
 
   me.RunAll()
 end
@@ -86,6 +91,20 @@ function _G.__PVPW__TEST_PALADIN_DE__Test_Parse_Crit()
   mod.testHelper.TestShouldHaveAParseCritTestForSpellsThatCanCrit(me, className)
 end
 
+function _G.__PVPW__TEST_PALADIN_DE__Test_Parse_Enemy_Avoid()
+  mod.testReporter.StartTestRun("global_paladin_de_parse_avoid")
+  mod.testReporter.StartTestClass(className)
+
+  mod.testHelper.TestShouldHaveAnEnemyAvoidParseTestForEachSpell(me, className)
+end
+
+function _G.__PVPW__TEST_PALADIN_DE__Test_Parse_Self_Avoid()
+  mod.testReporter.StartTestRun("global_paladin_de_parse_self_avoid")
+  mod.testReporter.StartTestClass(className)
+
+  mod.testHelper.TestShouldHaveASelfAvoidParseTestForEachSpell(me, className)
+end
+
 --[[
   @param {boolean} playManual
     true if testqueue is started manually
@@ -122,6 +141,10 @@ function me.RunAll(playManual)
   mod.testReporter.AddToTestQueueWithDelay(me.TestSoundDownGoettlicheGunst)
   mod.testReporter.AddToTestQueueWithDelay(me.TestSoundVorahnung)
   mod.testReporter.AddToTestQueueWithDelay(me.TestSoundDownVorahnung)
+  mod.testReporter.AddToTestQueueWithDelay(me.TestSoundEnemyAvoidHammerDesZorns)
+  mod.testReporter.AddToTestQueueWithDelay(me.TestSoundEnemyAvoidHammerDerGerechtigkeit)
+  mod.testReporter.AddToTestQueueWithDelay(me.TestSoundSelfAvoidHammerDesZorns)
+  mod.testReporter.AddToTestQueueWithDelay(me.TestSoundSelfAvoidHammerDerGerechtigkeit)
 
   if not playManual then
     mod.testReporter.PlayTestQueueWithDelay()
@@ -390,6 +413,39 @@ function me.TestSoundDownVorahnung()
     className,
     "TestSoundDownVorahnung",
     "vorahnung"
+  )
+end
+
+
+function me.TestSoundEnemyAvoidHammerDesZorns()
+  mod.testHelper.TestSoundEnemyAvoid(
+    className,
+    "TestSoundEnemyAvoidHammerDesZorns",
+    "hammer_des_zorns"
+  )
+end
+
+function me.TestSoundEnemyAvoidHammerDerGerechtigkeit()
+  mod.testHelper.TestSoundEnemyAvoid(
+    className,
+    "TestSoundEnemyAvoidHammerDerGerechtigkeit",
+    "hammer_der_gerechtigkeit"
+  )
+end
+
+function me.TestSoundSelfAvoidHammerDesZorns()
+  mod.testHelper.TestSoundSelfAvoid(
+    className,
+    "TestSoundSelfAvoidHammerDesZorns",
+    "hammer_des_zorns"
+  )
+end
+
+function me.TestSoundSelfAvoidHammerDerGerechtigkeit()
+  mod.testHelper.TestSoundSelfAvoid(
+    className,
+    "TestSoundSelfAvoidHammerDerGerechtigkeit",
+    "hammer_der_gerechtigkeit"
   )
 end
 
