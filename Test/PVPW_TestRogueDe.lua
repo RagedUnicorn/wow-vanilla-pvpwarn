@@ -45,9 +45,13 @@ function _G.__PVPW__TEST_ROGUE_DE__Test()
 
   mod.testHelper.TestShouldHaveASoundTestForEachSpell(me, className)
   mod.testHelper.TestShouldHaveASoundDownTestForSpellsThatFade(me, className)
+  mod.testHelper.TestShouldHaveAnEnemyAvoidSoundTestForEachSpell(me, className)
+  mod.testHelper.TestShouldHaveASelfAvoidSoundTestForEachSpell(me, className)
   mod.testHelper.TestShouldHaveAParseTestForEachSpell(me, className)
   mod.testHelper.TestShouldHaveAParseDownTestForSpellsThatFade(me, className)
   mod.testHelper.TestShouldHaveAParseCritTestForSpellsThatCanCrit(me, className)
+  mod.testHelper.TestShouldHaveAnEnemyAvoidParseTestForEachSpell(me, className)
+  mod.testHelper.TestShouldHaveASelfAvoidParseTestForEachSpell(me, className)
 
   me.RunAll()
 end
@@ -90,6 +94,20 @@ function _G.__PVPW__TEST_ROGUE_DE__Test_Parse_Crit()
   mod.testHelper.TestShouldHaveAParseCritTestForSpellsThatCanCrit(me, className)
 end
 
+function _G.__PVPW__TEST_ROGUE_DE__Test_Parse_Enemy_Avoid()
+  mod.testReporter.StartTestRun("global_rogue_de_parse_avoid")
+  mod.testReporter.StartTestClass(className)
+
+  mod.testHelper.TestShouldHaveAnEnemyAvoidParseTestForEachSpell(me, className)
+end
+
+function _G.__PVPW__TEST_ROGUE_DE__Test_Parse_Self_Avoid()
+  mod.testReporter.StartTestRun("global_rogue_de_parse_self_avoid")
+  mod.testReporter.StartTestClass(className)
+
+  mod.testHelper.TestShouldHaveASelfAvoidParseTestForEachSpell(me, className)
+end
+
 --[[
   @param {boolean} playManual
     true if testqueue is started manually
@@ -109,6 +127,32 @@ function me.RunAll(playManual)
   mod.testReporter.AddToTestQueueWithDelay(me.TestSoundDownAdrenalinrausch)
   mod.testReporter.AddToTestQueueWithDelay(me.TestSoundKlingenwirbel)
   mod.testReporter.AddToTestQueueWithDelay(me.TestSoundDownKlingenwirbel)
+  mod.testReporter.AddToTestQueueWithDelay(me.TestSoundEnemyAvoidTritt)
+  mod.testReporter.AddToTestQueueWithDelay(me.TestSoundEnemyAvoidFieserTrick)
+  mod.testReporter.AddToTestQueueWithDelay(me.TestSoundEnemyAvoidSolarplexus)
+  mod.testReporter.AddToTestQueueWithDelay(me.TestSoundEnemyAvoidRiposte)
+  mod.testReporter.AddToTestQueueWithDelay(me.TestSoundEnemyAvoidNierenhieb)
+  mod.testReporter.AddToTestQueueWithDelay(me.TestSoundEnemyAvoidBlenden)
+  mod.testReporter.AddToTestQueueWithDelay(me.TestSoundEnemyAvoidGeisterhafterStoss)
+  mod.testReporter.AddToTestQueueWithDelay(me.TestSoundEnemyAvoidKopfnuss)
+  mod.testReporter.AddToTestQueueWithDelay(me.TestSoundEnemyAvoidKonzentration)
+  mod.testReporter.AddToTestQueueWithDelay(me.TestSoundEnemyAvoidAblenken)
+  mod.testReporter.AddToTestQueueWithDelay(me.TestSoundEnemyAvoidRuestungSchwaechen)
+  mod.testReporter.AddToTestQueueWithDelay(me.TestSoundEnemyAvoidErdrosseln)
+  mod.testReporter.AddToTestQueueWithDelay(me.TestSoundEnemyAvoidBlutung)
+  mod.testReporter.AddToTestQueueWithDelay(me.TestSoundSelfAvoidTritt)
+  mod.testReporter.AddToTestQueueWithDelay(me.TestSoundSelfAvoidFieserTrick)
+  mod.testReporter.AddToTestQueueWithDelay(me.TestSoundSelfAvoidSolarplexus)
+  mod.testReporter.AddToTestQueueWithDelay(me.TestSoundSelfAvoidRiposte)
+  mod.testReporter.AddToTestQueueWithDelay(me.TestSoundSelfAvoidNierenhieb)
+  mod.testReporter.AddToTestQueueWithDelay(me.TestSoundSelfAvoidBlenden)
+  mod.testReporter.AddToTestQueueWithDelay(me.TestSoundSelfAvoidGeisterhafterStoss)
+  mod.testReporter.AddToTestQueueWithDelay(me.TestSoundSelfAvoidKopfnuss)
+  mod.testReporter.AddToTestQueueWithDelay(me.TestSoundSelfAvoidKonzentration)
+  mod.testReporter.AddToTestQueueWithDelay(me.TestSoundSelfAvoidAblenken)
+  mod.testReporter.AddToTestQueueWithDelay(me.TestSoundSelfAvoidRuestungSchwaechen)
+  mod.testReporter.AddToTestQueueWithDelay(me.TestSoundSelfAvoidErdrosseln)
+  mod.testReporter.AddToTestQueueWithDelay(me.TestSoundSelfAvoidBlutung)
 
   if not playManual then
     mod.testReporter.PlayTestQueueWithDelay()
@@ -224,6 +268,214 @@ function me.TestSoundDownKlingenwirbel()
     className,
     "TestSoundDownKlingenwirbel",
     "klingenwirbel"
+  )
+end
+
+function me.TestSoundEnemyAvoidTritt()
+  mod.testHelper.TestSoundEnemyAvoid(
+    className,
+    "TestSoundEnemyAvoidTritt",
+    "tritt"
+  )
+end
+
+function me.TestSoundEnemyAvoidFieserTrick()
+  mod.testHelper.TestSoundEnemyAvoid(
+    className,
+    "TestSoundEnemyAvoidFieserTrick",
+    "fieser_trick"
+  )
+end
+
+function me.TestSoundEnemyAvoidSolarplexus()
+  mod.testHelper.TestSoundEnemyAvoid(
+    className,
+    "TestSoundEnemyAvoidSolarplexus",
+    "solarplexus"
+  )
+end
+
+function me.TestSoundEnemyAvoidRiposte()
+  mod.testHelper.TestSoundEnemyAvoid(
+    className,
+    "TestSoundEnemyAvoidRiposte",
+    "riposte"
+  )
+end
+
+function me.TestSoundEnemyAvoidNierenhieb()
+  mod.testHelper.TestSoundEnemyAvoid(
+    className,
+    "TestSoundEnemyAvoidNierenhieb",
+    "nierenhieb"
+  )
+end
+
+function me.TestSoundEnemyAvoidBlenden()
+  mod.testHelper.TestSoundEnemyAvoid(
+    className,
+    "TestSoundEnemyAvoidBlenden",
+    "blenden"
+  )
+end
+
+function me.TestSoundEnemyAvoidGeisterhafterStoss()
+  mod.testHelper.TestSoundEnemyAvoid(
+    className,
+    "TestSoundEnemyAvoidGeisterhafterStoss",
+    "geisterhafter_stoss"
+  )
+end
+
+function me.TestSoundEnemyAvoidKopfnuss()
+  mod.testHelper.TestSoundEnemyAvoid(
+    className,
+    "TestSoundEnemyAvoidKopfnuss",
+    "kopfnuss"
+  )
+end
+
+function me.TestSoundEnemyAvoidKonzentration()
+  mod.testHelper.TestSoundEnemyAvoid(
+    className,
+    "TestSoundEnemyAvoidKonzentration",
+    "konzentration"
+  )
+end
+
+function me.TestSoundEnemyAvoidAblenken()
+  mod.testHelper.TestSoundEnemyAvoid(
+    className,
+    "TestSoundEnemyAvoidAblenken",
+    "ablenken"
+  )
+end
+
+function me.TestSoundEnemyAvoidRuestungSchwaechen()
+  mod.testHelper.TestSoundEnemyAvoid(
+    className,
+    "TestSoundEnemyAvoidRuestungSchwaechen",
+    "ruestung_schwaechen"
+  )
+end
+
+function me.TestSoundEnemyAvoidErdrosseln()
+  mod.testHelper.TestSoundEnemyAvoid(
+    className,
+    "TestSoundEnemyAvoidErdrosseln",
+    "erdrosseln"
+  )
+end
+
+function me.TestSoundEnemyAvoidBlutung()
+  mod.testHelper.TestSoundEnemyAvoid(
+    className,
+    "TestSoundEnemyAvoidBlutung",
+    "blutung"
+  )
+end
+
+function me.TestSoundSelfAvoidTritt()
+  mod.testHelper.TestSoundSelfAvoid(
+    className,
+    "TestSoundSelfAvoidTritt",
+    "tritt"
+  )
+end
+
+function me.TestSoundSelfAvoidFieserTrick()
+  mod.testHelper.TestSoundSelfAvoid(
+    className,
+    "TestSoundSelfAvoidFieserTrick",
+    "fieser_trick"
+  )
+end
+
+function me.TestSoundSelfAvoidSolarplexus()
+  mod.testHelper.TestSoundSelfAvoid(
+    className,
+    "TestSoundSelfAvoidSolarplexus",
+    "solarplexus"
+  )
+end
+
+function me.TestSoundSelfAvoidRiposte()
+  mod.testHelper.TestSoundSelfAvoid(
+    className,
+    "TestSoundSelfAvoidRiposte",
+    "riposte"
+  )
+end
+
+function me.TestSoundSelfAvoidNierenhieb()
+  mod.testHelper.TestSoundSelfAvoid(
+    className,
+    "TestSoundSelfAvoidNierenhieb",
+    "nierenhieb"
+  )
+end
+
+function me.TestSoundSelfAvoidBlenden()
+  mod.testHelper.TestSoundSelfAvoid(
+    className,
+    "TestSoundSelfAvoidBlenden",
+    "blenden"
+  )
+end
+
+function me.TestSoundSelfAvoidGeisterhafterStoss()
+  mod.testHelper.TestSoundSelfAvoid(
+    className,
+    "TestSoundSelfAvoidGeisterhafterStoss",
+    "geisterhafter_stoss"
+  )
+end
+
+function me.TestSoundSelfAvoidKopfnuss()
+  mod.testHelper.TestSoundSelfAvoid(
+    className,
+    "TestSoundSelfAvoidKopfnuss",
+    "kopfnuss"
+  )
+end
+
+function me.TestSoundSelfAvoidKonzentration()
+  mod.testHelper.TestSoundSelfAvoid(
+    className,
+    "TestSoundSelfAvoidKonzentration",
+    "konzentration"
+  )
+end
+
+function me.TestSoundSelfAvoidAblenken()
+  mod.testHelper.TestSoundSelfAvoid(
+    className,
+    "TestSoundSelfAvoidAblenken",
+    "ablenken"
+  )
+end
+
+function me.TestSoundSelfAvoidRuestungSchwaechen()
+  mod.testHelper.TestSoundSelfAvoid(
+    className,
+    "TestSoundSelfAvoidRuestungSchwaechen",
+    "ruestung_schwaechen"
+  )
+end
+
+function me.TestSoundSelfAvoidErdrosseln()
+  mod.testHelper.TestSoundSelfAvoid(
+    className,
+    "TestSoundSelfAvoidErdrosseln",
+    "erdrosseln"
+  )
+end
+
+function me.TestSoundSelfAvoidBlutung()
+  mod.testHelper.TestSoundSelfAvoid(
+    className,
+    "TestSoundSelfAvoidBlutung",
+    "blutung"
   )
 end
 
