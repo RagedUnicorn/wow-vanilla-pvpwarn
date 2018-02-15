@@ -544,11 +544,11 @@ end
 function me.TestParseEnemyAvoidResistEntanglingRoots()
   mod.testHelper.TestParseEnemyAvoid(
     className,
-    "TestParseEnemyAvoidImmuneEntanglingRoots",
+    "TestParseEnemyAvoidResistEntanglingRoots",
     "entangling_roots",
-    "Your Entangling Roots failed. $player$ is immune.",
+    "Your Entangling Roots was resisted by $player$.",
     mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
-    PVPW_CONSTANTS.AVOID_TYPES.IMMUNE
+    PVPW_CONSTANTS.AVOID_TYPES.RESIST
   )
 end
 

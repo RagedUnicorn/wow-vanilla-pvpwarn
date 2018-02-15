@@ -333,7 +333,7 @@ if (GetLocale() == "deDE") then
     examples:
       Tritt von $player$ wurde pariert.
   ]]--
-  SPELL_DAMAGESHIELDS_ON_OTHERS5 = "^([\195\159\195\132\195\150\195\156\195\188\195\164\195\182%a%s-:]+)%svon%s(%a+)%wurde%s(pariert)%.$"
+  SPELL_DAMAGESHIELDS_ON_OTHERS5 = "^([\195\159\195\132\195\150\195\156\195\188\195\164\195\182%a%s-:]+)%svon%s(%a+)%swurde%s(pariert)%.$"
 
   --[[
     CHAT_MSG_SPELL_DAMAGESHIELDS_ON_OTHERS

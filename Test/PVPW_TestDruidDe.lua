@@ -151,7 +151,7 @@ function me.RunAll(playManual)
   mod.testReporter.AddToTestQueueWithDelay(me.TestSoundSelfAvoidWildeAttacke)
 
   if not playManual then
-    mod.testReporter.PlayTestQueueWithDelay()
+    -- mod.testReporter.PlayTestQueueWithDelay()
   end
 
   mod.testReporter.AddToTestQueue(me.TestParseBaumrinde)
@@ -169,6 +169,28 @@ function me.RunAll(playManual)
   mod.testReporter.AddToTestQueue(me.TestParseSchnelligkeitDerNatur)
   mod.testReporter.AddToTestQueue(me.TestParseDownSchnelligkeitDerNatur)
   mod.testReporter.AddToTestQueue(me.TestParseFeenfeuer)
+  mod.testReporter.AddToTestQueue(me.TestParseEnemyAvoidImmuneWucherwurzeln)
+  mod.testReporter.AddToTestQueue(me.TestParseEnemyAvoidResistWucherwurzeln)
+  mod.testReporter.AddToTestQueue(me.TestParseEnemyAvoidImmuneFeenfeuer)
+  mod.testReporter.AddToTestQueue(me.TestParseEnemyAvoidResistFeenfeuer)
+  mod.testReporter.AddToTestQueue(me.TestParseEnemyAvoidDodgeHieb)
+  mod.testReporter.AddToTestQueue(me.TestParseEnemyAvoidParryHieb)
+  mod.testReporter.AddToTestQueue(me.TestParseEnemyAvoidImmuneHieb)
+  mod.testReporter.AddToTestQueue(me.TestParseEnemyAvoidMissHieb)
+  mod.testReporter.AddToTestQueue(me.TestParseEnemyAvoidResistHieb)
+  mod.testReporter.AddToTestQueue(me.TestParseEnemyAvoidImmuneWildeAttacke)
+  mod.testReporter.AddToTestQueue(me.TestParseEnemyAvoidResistWildeAttacke)
+  mod.testReporter.AddToTestQueue(me.TestParseSelfAvoidImmuneWucherwurzeln)
+  mod.testReporter.AddToTestQueue(me.TestParseSelfAvoidResistWucherwurzeln)
+  mod.testReporter.AddToTestQueue(me.TestParseSelfAvoidImmuneFeenfeuer)
+  mod.testReporter.AddToTestQueue(me.TestParseSelfAvoidResistFeenfeuer)
+  mod.testReporter.AddToTestQueue(me.TestParseSelfAvoidDodgeHieb)
+  mod.testReporter.AddToTestQueue(me.TestParseSelfAvoidParryHieb)
+  mod.testReporter.AddToTestQueue(me.TestParseSelfAvoidImmuneHieb)
+  mod.testReporter.AddToTestQueue(me.TestParseSelfAvoidMissHieb)
+  mod.testReporter.AddToTestQueue(me.TestParseSelfAvoidResistHieb)
+  mod.testReporter.AddToTestQueue(me.TestParseSelfAvoidImmuneWildeAttacke)
+  mod.testReporter.AddToTestQueue(me.TestParseSelfAvoidResistWildeAttacke)
 
   mod.testReporter.PlayTestQueue()
 end
@@ -504,5 +526,247 @@ function me.TestParseFeenfeuer()
     "feenfeuer",
     "Ihr seid von Feenfeuer betroffen.",
     mod.testHelper.eventTypeSpellPeriodicSelfDamage
+  )
+end
+
+function me.TestParseEnemyAvoidImmuneWucherwurzeln()
+  mod.testHelper.TestParseEnemyAvoid(
+    className,
+    "TestParseEnemyAvoidImmuneWucherwurzeln",
+    "wucherwurzeln",
+    "Wucherwurzeln war ein Fehlschlag. $player$ ist immun.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    PVPW_CONSTANTS.AVOID_TYPES.IMMUNE
+  )
+end
+
+function me.TestParseEnemyAvoidResistWucherwurzeln()
+  mod.testHelper.TestParseEnemyAvoid(
+    className,
+    "TestParseEnemyAvoidResistWucherwurzeln",
+    "wucherwurzeln",
+    "Ihr habt es mit Wucherwurzeln versucht, aber $player$ hat widerstanden.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    PVPW_CONSTANTS.AVOID_TYPES.RESIST
+  )
+end
+
+function me.TestParseEnemyAvoidImmuneFeenfeuer()
+  mod.testHelper.TestParseEnemyAvoid(
+    className,
+    "TestParseEnemyAvoidImmuneFeenfeuer",
+    "feenfeuer",
+    "Feenfeuer war ein Fehlschlag. $player$ ist immun.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    PVPW_CONSTANTS.AVOID_TYPES.IMMUNE
+  )
+end
+
+function me.TestParseEnemyAvoidResistFeenfeuer()
+  mod.testHelper.TestParseEnemyAvoid(
+    className,
+    "TestParseEnemyAvoidResistFeenfeuer",
+    "feenfeuer",
+    "Ihr habt es mit Feenfeuer versucht, aber $player$ hat widerstanden.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    PVPW_CONSTANTS.AVOID_TYPES.RESIST
+  )
+end
+
+function me.TestParseEnemyAvoidDodgeHieb()
+  mod.testHelper.TestParseEnemyAvoid(
+    className,
+    "TestParseEnemyAvoidDodgeHieb",
+    "hieb",
+    "$player$ ist Hieb ausgewichen.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    PVPW_CONSTANTS.AVOID_TYPES.DODGE
+  )
+end
+
+function me.TestParseEnemyAvoidParryHieb()
+  mod.testHelper.TestParseEnemyAvoid(
+    className,
+    "TestParseEnemyAvoidParryHieb",
+    "hieb",
+    "Hieb wurde von $player$ pariert.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    PVPW_CONSTANTS.AVOID_TYPES.PARRY
+  )
+end
+
+function me.TestParseEnemyAvoidImmuneHieb()
+  mod.testHelper.TestParseEnemyAvoid(
+    className,
+    "TestParseEnemyAvoidImmuneHieb",
+    "hieb",
+    "Hieb war ein Fehlschlag. $player$ ist immun.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    PVPW_CONSTANTS.AVOID_TYPES.IMMUNE
+  )
+end
+
+function me.TestParseEnemyAvoidMissHieb()
+  mod.testHelper.TestParseEnemyAvoid(
+    className,
+    "TestParseEnemyAvoidMissHieb",
+    "hieb",
+    "Hieb hat $player$ verfehlt.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    PVPW_CONSTANTS.AVOID_TYPES.MISS
+  )
+end
+
+function me.TestParseEnemyAvoidResistHieb()
+  mod.testHelper.TestParseEnemyAvoid(
+    className,
+    "TestParseEnemyAvoidResistHieb",
+    "bash",
+    "Ihr habt es mit Hieb versucht, aber $player$ hat widerstanden.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    PVPW_CONSTANTS.AVOID_TYPES.RESIST
+  )
+end
+
+function me.TestParseEnemyAvoidImmuneWildeAttacke()
+  mod.testHelper.TestParseEnemyAvoid(
+    className,
+    "TestParseEnemyAvoidImmuneWildeAttacke",
+    "wilde_attacke",
+    "Wilde Attacke war ein Fehlschlag. $player$ ist immun.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    PVPW_CONSTANTS.AVOID_TYPES.IMMUNE
+  )
+end
+
+function me.TestParseEnemyAvoidResistWildeAttacke()
+  mod.testHelper.TestParseEnemyAvoid(
+    className,
+    "TestParseEnemyAvoidResistWildeAttacke",
+    "wilde_attacke",
+    "Ihr habt es mit Wilde Attacke versucht, aber $player$ hat widerstanden.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    PVPW_CONSTANTS.AVOID_TYPES.RESIST
+  )
+end
+
+function me.TestParseSelfAvoidImmuneWucherwurzeln()
+  mod.testHelper.TestParseSelfAvoid(
+    className,
+    "TestParseSelfAvoidImmuneWucherwurzeln",
+    "wucherwurzeln",
+    "$player$ versucht es mit Wucherwurzeln... ein Fehlschlag. Ihr seid immun.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    PVPW_CONSTANTS.AVOID_TYPES.IMMUNE
+  )
+end
+
+function me.TestParseSelfAvoidResistWucherwurzeln()
+  mod.testHelper.TestParseSelfAvoid(
+    className,
+    "TestParseSelfAvoidResistWucherwurzeln",
+    "wucherwurzeln",
+    "$player$ versucht es mit Wucherwurzeln... widerstanden.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    PVPW_CONSTANTS.AVOID_TYPES.RESIST
+  )
+end
+
+function me.TestParseSelfAvoidImmuneFeenfeuer()
+  mod.testHelper.TestParseSelfAvoid(
+    className,
+    "TestParseSelfAvoidImmuneFeenfeuer",
+    "feenfeuer",
+    "$player$ versucht es mit Feenfeuer... ein Fehlschlag. Ihr seid immun.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    PVPW_CONSTANTS.AVOID_TYPES.IMMUNE
+  )
+end
+
+function me.TestParseSelfAvoidResistFeenfeuer()
+  mod.testHelper.TestParseSelfAvoid(
+    className,
+    "TestParseSelfAvoidResistFeenfeuer",
+    "feenfeuer",
+    "$player$ versucht es mit Feenfeuer... widerstanden.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    PVPW_CONSTANTS.AVOID_TYPES.RESIST
+  )
+end
+
+function me.TestParseSelfAvoidDodgeHieb()
+  mod.testHelper.TestParseSelfAvoid(
+    className,
+    "TestParseSelfAvoidDodgeHieb",
+    "bash",
+    "$player$s Hieb wurde ausgewichen.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    PVPW_CONSTANTS.AVOID_TYPES.DODGE
+  )
+end
+
+function me.TestParseSelfAvoidParryHieb()
+  mod.testHelper.TestParseSelfAvoid(
+    className,
+    "TestParseSelfAvoidParryHieb",
+    "bash",
+    "Hieb von $player$ wurde pariert.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    PVPW_CONSTANTS.AVOID_TYPES.PARRY
+  )
+end
+
+function me.TestParseSelfAvoidImmuneHieb()
+  mod.testHelper.TestParseSelfAvoid(
+    className,
+    "TestParseSelfAvoidImmuneHieb",
+    "bash",
+    "$player$ versucht es mit Hieb... ein Fehlschlag. Ihr seid immun.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    PVPW_CONSTANTS.AVOID_TYPES.IMMUNE
+  )
+end
+
+function me.TestParseSelfAvoidMissHieb()
+  mod.testHelper.TestParseSelfAvoid(
+    className,
+    "TestParseSelfAvoidMissHieb",
+    "bash",
+    "$player$ greift an (mit Hieb) und verfehlt euch.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    PVPW_CONSTANTS.AVOID_TYPES.MISS
+  )
+end
+
+function me.TestParseSelfAvoidResistHieb()
+  mod.testHelper.TestParseSelfAvoid(
+    className,
+    "TestParseSelfAvoidResistHieb",
+    "bash",
+    "$player$ versucht es mit Hieb... widerstanden.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    PVPW_CONSTANTS.AVOID_TYPES.RESIST
+  )
+end
+
+function me.TestParseSelfAvoidImmuneWildeAttacke()
+  mod.testHelper.TestParseSelfAvoid(
+    className,
+    "TestParseSelfAvoidImmuneWildeAttacke",
+    "wilde_attacke",
+    "$player$ versucht es mit Wilde Attacke... ein Fehlschlag. Ihr seid immun.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    PVPW_CONSTANTS.AVOID_TYPES.IMMUNE
+  )
+end
+
+function me.TestParseSelfAvoidResistWildeAttacke()
+  mod.testHelper.TestParseSelfAvoid(
+    className,
+    "TestParseSelfAvoidResistWildeAttacke",
+    "wilde_attacke",
+    "$player$ versucht es mit Wilde Attacke... widerstanden.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    PVPW_CONSTANTS.AVOID_TYPES.RESIST
   )
 end
