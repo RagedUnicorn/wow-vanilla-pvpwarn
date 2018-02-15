@@ -45,9 +45,13 @@ function _G.__PVPW__TEST_RACIALS_DE__Test()
 
   mod.testHelper.TestShouldHaveASoundTestForEachSpell(me, className)
   mod.testHelper.TestShouldHaveASoundDownTestForSpellsThatFade(me, className)
+  mod.testHelper.TestShouldHaveAnEnemyAvoidSoundTestForEachSpell(me, className)
+  mod.testHelper.TestShouldHaveASelfAvoidSoundTestForEachSpell(me, className)
   mod.testHelper.TestShouldHaveAParseTestForEachSpell(me, className)
   mod.testHelper.TestShouldHaveAParseDownTestForSpellsThatFade(me, className)
   mod.testHelper.TestShouldHaveAParseCritTestForSpellsThatCanCrit(me, className)
+  mod.testHelper.TestShouldHaveAnEnemyAvoidParseTestForEachSpell(me, className)
+  mod.testHelper.TestShouldHaveASelfAvoidParseTestForEachSpell(me, className)
 
   me.RunAll()
 end
@@ -87,6 +91,20 @@ function _G.__PVPW__TEST_RACIALS_DE__Test_Parse_Crit()
   mod.testHelper.TestShouldHaveAParseCritTestForSpellsThatCanCrit(me, className)
 end
 
+function _G.__PVPW__TEST_RACIALS_DE__Test_Parse_Enemy_Avoid()
+  mod.testReporter.StartTestRun("global_racials_de_racials_avoid")
+  mod.testReporter.StartTestClass(className)
+
+  mod.testHelper.TestShouldHaveAnEnemyAvoidParseTestForEachSpell(me, className)
+end
+
+function _G.__PVPW__TEST_RACIALS_DE__Test_Parse_Self_Avoid()
+  mod.testReporter.StartTestRun("global_racials_de_parse_self_avoid")
+  mod.testReporter.StartTestClass(className)
+
+  mod.testHelper.TestShouldHaveASelfAvoidParseTestForEachSpell(me, className)
+end
+
 --[[
   @param {boolean} playManual
     true if testqueue is started manually
@@ -106,6 +124,8 @@ function me.RunAll(playManual)
   mod.testReporter.AddToTestQueueWithDelay(me.TestSoundDownBerserker)
   mod.testReporter.AddToTestQueueWithDelay(me.TestSoundSchattenhaftigkeit)
   mod.testReporter.AddToTestQueueWithDelay(me.TestSoundDownSchattenhaftigkeit)
+  mod.testReporter.AddToTestQueueWithDelay(me.TestSoundEnemyAvoidKriegsdonner)
+  mod.testReporter.AddToTestQueueWithDelay(me.TestSoundSelfAvoidKriegsdonner)
 
   if not playManual then
     mod.testReporter.PlayTestQueueWithDelay()
@@ -220,6 +240,22 @@ function me.TestSoundDownSchattenhaftigkeit()
     className,
     "TestSoundDownSchattenhaftigkeit",
     "schattenhaftigkeit"
+  )
+end
+
+function me.TestSoundEnemyAvoidKriegsdonner()
+  mod.testHelper.TestSoundEnemyAvoid(
+    className,
+    "TestSoundEnemyAvoidKriegsdonner",
+    "kriegsdonner"
+  )
+end
+
+function me.TestSoundSelfAvoidKriegsdonner()
+  mod.testHelper.TestSoundSelfAvoid(
+    className,
+    "TestSoundSelfAvoidKriegsdonner",
+    "kriegsdonner"
   )
 end
 
