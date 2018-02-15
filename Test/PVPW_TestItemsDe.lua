@@ -45,9 +45,13 @@ function _G.__PVPW__TEST_ITEMS_DE__Test()
 
   mod.testHelper.TestShouldHaveASoundTestForEachSpell(me, className)
   mod.testHelper.TestShouldHaveASoundDownTestForSpellsThatFade(me, className)
+  mod.testHelper.TestShouldHaveAnEnemyAvoidSoundTestForEachSpell(me, className)
+  mod.testHelper.TestShouldHaveASelfAvoidSoundTestForEachSpell(me, className)
   mod.testHelper.TestShouldHaveAParseTestForEachSpell(me, className)
   mod.testHelper.TestShouldHaveAParseDownTestForSpellsThatFade(me, className)
   mod.testHelper.TestShouldHaveAParseCritTestForSpellsThatCanCrit(me, className)
+  mod.testHelper.TestShouldHaveAnEnemyAvoidParseTestForEachSpell(me, className)
+  mod.testHelper.TestShouldHaveASelfAvoidParseTestForEachSpell(me, className)
 
   me.RunAll()
 end
@@ -87,6 +91,20 @@ function _G.__PVPW__TEST_ITEMS_DE__Test_Parse_Crit()
   mod.testHelper.TestShouldHaveAParseCritTestForSpellsThatCanCrit(me, className)
 end
 
+function _G.__PVPW__TEST_ITEMS_DE__Test_Parse_Enemy_Avoid()
+  mod.testReporter.StartTestRun("global_items_de_parse_avoid")
+  mod.testReporter.StartTestClass(className)
+
+  mod.testHelper.TestShouldHaveAnEnemyAvoidParseTestForEachSpell(me, className)
+end
+
+function _G.__PVPW__TEST_ITEMS_DE__Test_Parse_Self_Avoid()
+  mod.testReporter.StartTestRun("global_items_de_parse_self_avoid")
+  mod.testReporter.StartTestClass(className)
+
+  mod.testHelper.TestShouldHaveASelfAvoidParseTestForEachSpell(me, className)
+end
+
 --[[
   @param {boolean} playManual
     true if testqueue is started manually
@@ -94,7 +112,7 @@ end
 ]]--
 function me.RunAll(playManual)
   -- test sound
-  mod.testReporter.AddToTestQueueWithDelay(me.TestSoundKoerperlicherSchutz)
+  --[[mod.testReporter.AddToTestQueueWithDelay(me.TestSoundKoerperlicherSchutz)
   mod.testReporter.AddToTestQueueWithDelay(me.TestSoundDownKoerperlicherSchutz)
   mod.testReporter.AddToTestQueueWithDelay(me.TestSoundSproedeRuestung)
   mod.testReporter.AddToTestQueueWithDelay(me.TestSoundDownSproedeRuestung)
@@ -136,7 +154,13 @@ function me.RunAll(playManual)
   mod.testReporter.AddToTestQueueWithDelay(me.TestSoundErdstoss)
   mod.testReporter.AddToTestQueueWithDelay(me.TestSoundDownErdstoss)
   mod.testReporter.AddToTestQueueWithDelay(me.TestSoundNetOMatik)
-  mod.testReporter.AddToTestQueueWithDelay(me.TestSoundGnomenGedankenkontrollkappe)
+  mod.testReporter.AddToTestQueueWithDelay(me.TestSoundGnomenGedankenkontrollkappe)]]--
+  mod.testReporter.AddToTestQueueWithDelay(me.TestSoundEnemyAvoidGezeitenGluecksbringer)
+  mod.testReporter.AddToTestQueueWithDelay(me.TestSoundEnemyAvoidTollkuehnesStuermen)
+  mod.testReporter.AddToTestQueueWithDelay(me.TestSoundEnemyAvoidNetOMatik)
+  mod.testReporter.AddToTestQueueWithDelay(me.TestSoundSelfAvoidGezeitenGluecksbringer)
+  mod.testReporter.AddToTestQueueWithDelay(me.TestSoundSelfAvoidTollkuehnesStuermen)
+  mod.testReporter.AddToTestQueueWithDelay(me.TestSoundSelfAvoidNetOMatik)
 
   if not playManual then
     mod.testReporter.PlayTestQueueWithDelay()
@@ -530,6 +554,54 @@ function me.TestSoundGnomenGedankenkontrollkappe()
     className,
     "TestSoundGnomenGedankenkontrollkappe",
     "gnomen_gedankenkontrollkappe"
+  )
+end
+
+function me.TestSoundEnemyAvoidGezeitenGluecksbringer()
+  mod.testHelper.TestSound(
+    className,
+    "TestSoundEnemyAvoidGezeitenGluecksbringer",
+    "gezeiten_gluecksbringer"
+  )
+end
+
+function me.TestSoundEnemyAvoidTollkuehnesStuermen()
+  mod.testHelper.TestSoundEnemyAvoid(
+    className,
+    "TestSoundEnemyAvoidTollkuehnesStuermen",
+    "tollkuehnes_stuermen"
+  )
+end
+
+function me.TestSoundEnemyAvoidNetOMatik()
+  mod.testHelper.TestSoundEnemyAvoid(
+    className,
+    "TestSoundEnemyAvoidNetOMatik",
+    "net_o_matik"
+  )
+end
+
+function me.TestSoundSelfAvoidGezeitenGluecksbringer()
+  mod.testHelper.TestSoundSelfAvoid(
+    className,
+    "TestSoundSelfAvoidGezeitenGluecksbringer",
+    "gezeiten_gluecksbringer"
+  )
+end
+
+function me.TestSoundSelfAvoidTollkuehnesStuermen()
+  mod.testHelper.TestSoundSelfAvoid(
+    className,
+    "TestSoundSelfAvoidTollkuehnesStuermen",
+    "tollkuehnes_stuermen"
+  )
+end
+
+function me.TestSoundSelfAvoidNetOMatik()
+  mod.testHelper.TestSoundSelfAvoid(
+    className,
+    "TestSoundSelfAvoidNetOMatik",
+    "net_o_matik"
   )
 end
 
