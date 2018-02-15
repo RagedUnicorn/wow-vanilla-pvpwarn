@@ -45,9 +45,13 @@ function _G.__PVPW__TEST_WARRIOR_DE__Test()
 
   mod.testHelper.TestShouldHaveASoundTestForEachSpell(me, className)
   mod.testHelper.TestShouldHaveASoundDownTestForSpellsThatFade(me, className)
+  mod.testHelper.TestShouldHaveAnEnemyAvoidSoundTestForEachSpell(me, className)
+  mod.testHelper.TestShouldHaveASelfAvoidSoundTestForEachSpell(me, className)
   mod.testHelper.TestShouldHaveAParseTestForEachSpell(me, className)
   mod.testHelper.TestShouldHaveAParseDownTestForSpellsThatFade(me, className)
   mod.testHelper.TestShouldHaveAParseCritTestForSpellsThatCanCrit(me, className)
+  mod.testHelper.TestShouldHaveAnEnemyAvoidParseTestForEachSpell(me, className)
+  mod.testHelper.TestShouldHaveASelfAvoidParseTestForEachSpell(me, className)
 
   me.RunAll()
 end
@@ -87,6 +91,20 @@ function _G.__PVPW__TEST_WARRIOR_DE__Test_Parse_Crit()
   mod.testHelper.TestShouldHaveAParseCritTestForSpellsThatCanCrit(me, className)
 end
 
+function _G.__PVPW__TEST_WARRIOR_DE__Test_Parse_Enemy_Avoid()
+  mod.testReporter.StartTestRun("global_warrior_de_parse_avoid")
+  mod.testReporter.StartTestClass(className)
+
+  mod.testHelper.TestShouldHaveAnEnemyAvoidParseTestForEachSpell(me, className)
+end
+
+function _G.__PVPW__TEST_WARRIOR_DE__Test_Parse_Self_Avoid()
+  mod.testReporter.StartTestRun("global_warrior_de_parse_self_avoid")
+  mod.testReporter.StartTestClass(className)
+
+  mod.testHelper.TestShouldHaveASelfAvoidParseTestForEachSpell(me, className)
+end
+
 --[[
   @param {boolean} playManual
     true if testqueue is started manually
@@ -117,6 +135,28 @@ function me.RunAll(playManual)
   mod.testReporter.AddToTestQueueWithDelay(me.TestSoundDrohruf)
   mod.testReporter.AddToTestQueueWithDelay(me.TestSoundSchildhieb)
   mod.testReporter.AddToTestQueueWithDelay(me.TestSoundDownSchildhieb)]]--
+  mod.testReporter.AddToTestQueueWithDelay(me.TestSoundEnemyAvoidBetaeubungAbfangen)
+  --[[mod.testReporter.AddToTestQueueWithDelay(me.TestSoundEnemyAvoidKniesehne)
+  mod.testReporter.AddToTestQueueWithDelay(me.TestSoundEnemyAvoidToedlicherStoss)
+  mod.testReporter.AddToTestQueueWithDelay(me.TestSoundEnemyAvoidUeberwaeltigen)
+  mod.testReporter.AddToTestQueueWithDelay(me.TestSoundEnemyAvoidBlutdurst)
+  mod.testReporter.AddToTestQueueWithDelay(me.TestSoundEnemyAvoidSturmangriffsbetaeubung)
+  mod.testReporter.AddToTestQueueWithDelay(me.TestSoundEnemyAvoidDrohruf)
+  mod.testReporter.AddToTestQueueWithDelay(me.TestSoundEnemyAvoidZuschlagen)
+  mod.testReporter.AddToTestQueueWithDelay(me.TestSoundEnemyAvoidErschuetternderSchlag)
+  mod.testReporter.AddToTestQueueWithDelay(me.TestSoundEnemyAvoidEntwaffnen)
+  mod.testReporter.AddToTestQueueWithDelay(me.TestSoundEnemyAvoidSchildhieb)
+  mod.testReporter.AddToTestQueueWithDelay(me.TestSoundSelfAvoidBetaeubungAbfangen)
+  mod.testReporter.AddToTestQueueWithDelay(me.TestSoundSelfAvoidKniesehne)
+  mod.testReporter.AddToTestQueueWithDelay(me.TestSoundSelfAvoidToedlicherStoss)
+  mod.testReporter.AddToTestQueueWithDelay(me.TestSoundSelfAvoidUeberwaeltigen)
+  mod.testReporter.AddToTestQueueWithDelay(me.TestSoundSelfAvoidBlutdurst)
+  mod.testReporter.AddToTestQueueWithDelay(me.TestSoundSelfAvoidSturmangriffsbetaeubung)
+  mod.testReporter.AddToTestQueueWithDelay(me.TestSoundSelfAvoidDrohruf)
+  mod.testReporter.AddToTestQueueWithDelay(me.TestSoundSelfAvoidZuschlagen)
+  mod.testReporter.AddToTestQueueWithDelay(me.TestSoundSelfAvoidErschuetternderSchlag)
+  mod.testReporter.AddToTestQueueWithDelay(me.TestSoundSelfAvoidEntwaffnen)
+  mod.testReporter.AddToTestQueueWithDelay(me.TestSoundSelfAvoidSchildhieb)]]--
 
   if not playManual then
     mod.testReporter.PlayTestQueueWithDelay()
@@ -330,6 +370,182 @@ function me.TestSoundDownSchildhieb()
   mod.testHelper.TestSoundDown(
     className,
     "TestSoundDownSchildhieb",
+    "schildhieb"
+  )
+end
+
+function me.TestSoundEnemyAvoidBetaeubungAbfangen()
+  mod.testHelper.TestSoundEnemyAvoid(
+    className,
+    "TestSoundEnemyAvoidBetaeubungAbfangen",
+    "betaeubung_abfangen"
+  )
+end
+
+function me.TestSoundEnemyAvoidKniesehne()
+  mod.testHelper.TestSoundEnemyAvoid(
+    className,
+    "TestSoundEnemyAvoidKniesehne",
+    "kniesehne"
+  )
+end
+
+function me.TestSoundEnemyAvoidToedlicherStoss()
+  mod.testHelper.TestSoundEnemyAvoid(
+    className,
+    "TestSoundEnemyAvoidToedlicherStoss",
+    "toedlicher_stoss"
+  )
+end
+
+function me.TestSoundEnemyAvoidUeberwaeltigen()
+  mod.testHelper.TestSoundEnemyAvoid(
+    className,
+    "TestSoundEnemyAvoidUeberwaeltigen",
+    "ueberwaeltigen"
+  )
+end
+
+function me.TestSoundEnemyAvoidBlutdurst()
+  mod.testHelper.TestSoundEnemyAvoid(
+    className,
+    "TestSoundEnemyAvoidBlutdurst",
+    "blutdurst"
+  )
+end
+
+function me.TestSoundEnemyAvoidSturmangriffsbetaeubung()
+  mod.testHelper.TestSoundEnemyAvoid(
+    className,
+    "TestSoundEnemyAvoidSturmangriffsbetaeubung",
+    "sturmangriffsbetaeubung"
+  )
+end
+
+function me.TestSoundEnemyAvoidDrohruf()
+  mod.testHelper.TestSoundEnemyAvoid(
+    className,
+    "TestSoundEnemyAvoidDrohruf",
+    "drohruf"
+  )
+end
+
+function me.TestSoundEnemyAvoidZuschlagen()
+  mod.testHelper.TestSoundEnemyAvoid(
+    className,
+    "TestSoundEnemyAvoidZuschlagen",
+    "zuschlagen"
+  )
+end
+
+function me.TestSoundEnemyAvoidErschuetternderSchlag()
+  mod.testHelper.TestSoundEnemyAvoid(
+    className,
+    "TestSoundEnemyAvoidErschuetternderSchlag",
+    "erschuetternder_schlag"
+  )
+end
+
+function me.TestSoundEnemyAvoidEntwaffnen()
+  mod.testHelper.TestSoundEnemyAvoid(
+    className,
+    "TestSoundEnemyAvoidEntwaffnen",
+    "entwaffnen"
+  )
+end
+
+function me.TestSoundEnemyAvoidSchildhieb()
+  mod.testHelper.TestSoundEnemyAvoid(
+    className,
+    "TestSoundEnemyAvoidSchildhieb",
+    "schildhieb"
+  )
+end
+
+function me.TestSoundSelfAvoidBetaeubungAbfangen()
+  mod.testHelper.TestSoundSelfAvoid(
+    className,
+    "TestSoundSelfAvoidBetaeubungAbfangen",
+    "betaeubung_abfangen"
+  )
+end
+
+function me.TestSoundSelfAvoidKniesehne()
+  mod.testHelper.TestSoundSelfAvoid(
+    className,
+    "TestSoundSelfAvoidKniesehne",
+    "kniesehne"
+  )
+end
+
+function me.TestSoundSelfAvoidToedlicherStoss()
+  mod.testHelper.TestSoundSelfAvoid(
+    className,
+    "TestSoundSelfAvoidToedlicherStoss",
+    "toedlicher_stoss"
+  )
+end
+
+function me.TestSoundSelfAvoidUeberwaeltigen()
+  mod.testHelper.TestSoundSelfAvoid(
+    className,
+    "TestSoundSelfAvoidUeberwaeltigen",
+    "ueberwaeltigen"
+  )
+end
+
+function me.TestSoundSelfAvoidBlutdurst()
+  mod.testHelper.TestSoundSelfAvoid(
+    className,
+    "TestSoundSelfAvoidBlutdurst",
+    "blutdurst"
+  )
+end
+
+function me.TestSoundSelfAvoidSturmangriffsbetaeubung()
+  mod.testHelper.TestSoundSelfAvoid(
+    className,
+    "TestSoundSelfAvoidSturmangriffsbetaeubung",
+    "sturmangriffsbetaeubung"
+  )
+end
+
+function me.TestSoundSelfAvoidDrohruf()
+  mod.testHelper.TestSoundSelfAvoid(
+    className,
+    "TestSoundSelfAvoidDrohruf",
+    "drohruf"
+  )
+end
+
+function me.TestSoundSelfAvoidZuschlagen()
+  mod.testHelper.TestSoundSelfAvoid(
+    className,
+    "TestSoundSelfAvoidZuschlagen",
+    "zuschlagen"
+  )
+end
+
+function me.TestSoundSelfAvoidErschuetternderSchlag()
+  mod.testHelper.TestSoundSelfAvoid(
+    className,
+    "TestSoundSelfAvoidErschuetternderSchlag",
+    "erschuetternder_schlag"
+  )
+end
+
+function me.TestSoundSelfAvoidEntwaffnen()
+  mod.testHelper.TestSoundSelfAvoid(
+    className,
+    "TestSoundSelfAvoidEntwaffnen",
+    "entwaffnen"
+  )
+end
+
+function me.TestSoundSelfAvoidSchildhieb()
+  mod.testHelper.TestSoundSelfAvoid(
+    className,
+    "TestSoundSelfAvoidSchildhieb",
     "schildhieb"
   )
 end
