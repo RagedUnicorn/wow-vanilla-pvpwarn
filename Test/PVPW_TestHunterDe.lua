@@ -45,9 +45,13 @@ function _G.__PVPW__TEST_HUNTER_DE__Test()
 
   mod.testHelper.TestShouldHaveASoundTestForEachSpell(me, className)
   mod.testHelper.TestShouldHaveASoundDownTestForSpellsThatFade(me, className)
+  mod.testHelper.TestShouldHaveAnEnemyAvoidSoundTestForEachSpell(me, className)
+  mod.testHelper.TestShouldHaveASelfAvoidSoundTestForEachSpell(me, className)
   mod.testHelper.TestShouldHaveAParseTestForEachSpell(me, className)
   mod.testHelper.TestShouldHaveAParseDownTestForSpellsThatFade(me, className)
   mod.testHelper.TestShouldHaveAParseCritTestForSpellsThatCanCrit(me, className)
+  mod.testHelper.TestShouldHaveAnEnemyAvoidParseTestForEachSpell(me, className)
+  mod.testHelper.TestShouldHaveASelfAvoidParseTestForEachSpell(me, className)
 
   me.RunAll()
 end
@@ -87,6 +91,20 @@ function _G.__PVPW__TEST_HUNTER_DE__Test_Parse_Crit()
   mod.testHelper.TestShouldHaveAParseCritTestForSpellsThatCanCrit(me, className)
 end
 
+function _G.__PVPW__TEST_HUNTER_DE__Test_Parse_Enemy_Avoid()
+  mod.testReporter.StartTestRun("global_hunter_de_parse_avoid")
+  mod.testReporter.StartTestClass(className)
+
+  mod.testHelper.TestShouldHaveAnEnemyAvoidParseTestForEachSpell(me, className)
+end
+
+function _G.__PVPW__TEST_HUNTER_DE__Test_Parse_Self_Avoid()
+  mod.testReporter.StartTestRun("global_hunter_de_parse_self_avoid")
+  mod.testReporter.StartTestClass(className)
+
+  mod.testHelper.TestShouldHaveASelfAvoidParseTestForEachSpell(me, className)
+end
+
 --[[
   @param {boolean} playManual
     true if testqueue is started manually
@@ -115,6 +133,20 @@ function me.RunAll(playManual)
   mod.testReporter.AddToTestQueueWithDelay(me.TestSoundDownEinschuechterung)
   mod.testReporter.AddToTestQueueWithDelay(me.TestSoundZornDesWildtiers)
   mod.testReporter.AddToTestQueueWithDelay(me.TestSoundDownZornDesWildtiers)
+  mod.testReporter.AddToTestQueueWithDelay(me.TestSoundEnemyAvoidGezielterSchuss)
+  mod.testReporter.AddToTestQueueWithDelay(me.TestSoundEnemyAvoidErschuetternderSchuss)
+  mod.testReporter.AddToTestQueueWithDelay(me.TestSoundEnemyAvoidStreuschuss)
+  mod.testReporter.AddToTestQueueWithDelay(me.TestSoundEnemyAvoidSchlangenbiss)
+  mod.testReporter.AddToTestQueueWithDelay(me.TestSoundEnemyAvoidVipernbiss)
+  mod.testReporter.AddToTestQueueWithDelay(me.TestSoundEnemyAvoidEiskaeltefalle)
+  mod.testReporter.AddToTestQueueWithDelay(me.TestSoundEnemyAvoidZurechtstutzen)
+  mod.testReporter.AddToTestQueueWithDelay(me.TestSoundSelfAvoidGezielterSchuss)
+  mod.testReporter.AddToTestQueueWithDelay(me.TestSoundSelfAvoidErschuetternderSchuss)
+  mod.testReporter.AddToTestQueueWithDelay(me.TestSoundSelfAvoidStreuschuss)
+  mod.testReporter.AddToTestQueueWithDelay(me.TestSoundSelfAvoidSchlangenbiss)
+  mod.testReporter.AddToTestQueueWithDelay(me.TestSoundSelfAvoidVipernbiss)
+  mod.testReporter.AddToTestQueueWithDelay(me.TestSoundSelfAvoidEiskaeltefalle)
+  mod.testReporter.AddToTestQueueWithDelay(me.TestSoundSelfAvoidZurechtstutzen)
 
   if not playManual then
     mod.testReporter.PlayTestQueueWithDelay()
@@ -310,6 +342,118 @@ function me.TestSoundDownZornDesWildtiers()
     className,
     "TestSoundDownZornDesWildtiers",
     "zorn_des_wildtiers"
+  )
+end
+
+function me.TestSoundEnemyAvoidGezielterSchuss()
+  mod.testHelper.TestSoundEnemyAvoid(
+    className,
+    "TestSoundEnemyAvoidGezielterSchuss",
+    "gezielter_schuss"
+  )
+end
+
+function me.TestSoundEnemyAvoidErschuetternderSchuss()
+  mod.testHelper.TestSoundEnemyAvoid(
+    className,
+    "TestSoundEnemyAvoidErschuetternderSchuss",
+    "erschuetternder_schuss"
+  )
+end
+
+function me.TestSoundEnemyAvoidStreuschuss()
+  mod.testHelper.TestSoundEnemyAvoid(
+    className,
+    "TestSoundEnemyAvoidStreuschuss",
+    "streuschuss"
+  )
+end
+
+function me.TestSoundEnemyAvoidSchlangenbiss()
+  mod.testHelper.TestSoundEnemyAvoid(
+    className,
+    "TestSoundEnemyAvoidSchlangenbiss",
+    "schlangenbiss"
+  )
+end
+
+function me.TestSoundEnemyAvoidVipernbiss()
+  mod.testHelper.TestSoundEnemyAvoid(
+    className,
+    "TestSoundEnemyAvoidVipernbiss",
+    "vipernbiss"
+  )
+end
+
+function me.TestSoundEnemyAvoidEiskaeltefalle()
+  mod.testHelper.TestSoundEnemyAvoid(
+    className,
+    "TestSoundEnemyAvoidEiskaeltefalle",
+    "eiskaeltefalle"
+  )
+end
+
+function me.TestSoundEnemyAvoidZurechtstutzen()
+  mod.testHelper.TestSoundEnemyAvoid(
+    className,
+    "TestSoundEnemyAvoidZurechtstutzen",
+    "zurechtstutzen"
+  )
+end
+
+function me.TestSoundSelfAvoidGezielterSchuss()
+  mod.testHelper.TestSoundSelfAvoid(
+    className,
+    "TestSoundSelfAvoidGezielterSchuss",
+    "gezielter_schuss"
+  )
+end
+
+function me.TestSoundSelfAvoidErschuetternderSchuss()
+  mod.testHelper.TestSoundSelfAvoid(
+    className,
+    "TestSoundSelfAvoidErschuetternderSchuss",
+    "erschuetternder_schuss"
+  )
+end
+
+function me.TestSoundSelfAvoidStreuschuss()
+  mod.testHelper.TestSoundSelfAvoid(
+    className,
+    "TestSoundSelfAvoidStreuschuss",
+    "streuschuss"
+  )
+end
+
+function me.TestSoundSelfAvoidSchlangenbiss()
+  mod.testHelper.TestSoundSelfAvoid(
+    className,
+    "TestSoundSelfAvoidSchlangenbiss",
+    "schlangenbiss"
+  )
+end
+
+function me.TestSoundSelfAvoidVipernbiss()
+  mod.testHelper.TestSoundSelfAvoid(
+    className,
+    "TestSoundSelfAvoidVipernbiss",
+    "vipernbiss"
+  )
+end
+
+function me.TestSoundSelfAvoidEiskaeltefalle()
+  mod.testHelper.TestSoundSelfAvoid(
+    className,
+    "TestSoundSelfAvoidEiskaeltefalle",
+    "eiskaeltefalle"
+  )
+end
+
+function me.TestSoundSelfAvoidZurechtstutzen()
+  mod.testHelper.TestSoundSelfAvoid(
+    className,
+    "TestSoundSelfAvoidZurechtstutzen",
+    "zurechtstutzen"
   )
 end
 
