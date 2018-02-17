@@ -135,7 +135,6 @@ function me.RunAll(playManual)
   mod.testReporter.AddToTestQueueWithDelay(me.TestSoundGedankensprung)
   mod.testReporter.AddToTestQueueWithDelay(me.TestSoundDownGedankensprung)
   mod.testReporter.AddToTestQueueWithDelay(me.TestSoundTollkuehnesStuermen)
-  mod.testReporter.AddToTestQueueWithDelay(me.TestSoundDownTollkuehnesStuermen)
   mod.testReporter.AddToTestQueueWithDelay(me.TestSoundRuheloseStaerke)
   mod.testReporter.AddToTestQueueWithDelay(me.TestSoundDownRuheloseStaerke)
   mod.testReporter.AddToTestQueueWithDelay(me.TestSoundGnomenRaketenstiefel)
@@ -403,14 +402,6 @@ function me.TestSoundTollkuehnesStuermen()
   mod.testHelper.TestSound(
     className,
     "TestSoundTollkuehnesStuermen",
-    "tollkuehnes_stuermen"
-  )
-end
-
-function me.TestSoundDownTollkuehnesStuermen()
-  mod.testHelper.TestSoundDown(
-    className,
-    "TestSoundDownTollkuehnesStuermen",
     "tollkuehnes_stuermen"
   )
 end

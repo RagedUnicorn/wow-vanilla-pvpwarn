@@ -1402,7 +1402,7 @@ if (GetLocale() == "deDE") then
         ["itemID"] = 10588,
         ["spellID"] = 22641,
         ["spellIcon"] = "inv_helmet_49",
-        ["hasFade"] = true,
+        ["hasFade"] = false,
         ["active"] = true
       },
       ["ruhelose_staerke"] = {
@@ -2952,7 +2952,7 @@ else
         ["itemID"] = 10588,
         ["spellID"] = 22641,
         ["spellIcon"] = "inv_helmet_49",
-        ["hasFade"] = true,
+        ["hasFade"] = false,
         ["active"] = true
       },
       ["restless_strength"] = {

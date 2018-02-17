@@ -149,7 +149,6 @@ function me.RunAll(playManual)
   mod.testReporter.AddToTestQueueWithDelay(me.TestSoundMindQuickening)
   mod.testReporter.AddToTestQueueWithDelay(me.TestSoundDownMindQuickening)
   mod.testReporter.AddToTestQueueWithDelay(me.TestSoundRecklessCharge)
-  mod.testReporter.AddToTestQueueWithDelay(me.TestSoundDownRecklessCharge)
   mod.testReporter.AddToTestQueueWithDelay(me.TestSoundRestlessStrength)
   mod.testReporter.AddToTestQueueWithDelay(me.TestSoundDownRestlessStrength)
   mod.testReporter.AddToTestQueueWithDelay(me.TestSoundGnomishRocketBoots)
@@ -418,14 +417,6 @@ function me.TestSoundRecklessCharge()
   mod.testHelper.TestSound(
     className,
     "TestSoundRecklessCharge",
-    "reckless_charge"
-  )
-end
-
-function me.TestSoundDownRecklessCharge()
-  mod.testHelper.TestSoundDown(
-    className,
-    "TestSoundDownRecklessCharge",
     "reckless_charge"
   )
 end
