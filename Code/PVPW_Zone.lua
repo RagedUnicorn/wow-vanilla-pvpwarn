@@ -29,7 +29,7 @@ local isPlayerInBattleground = false
 local battlegrounds = {
   pvpw.L["warsong_gulch"],
   pvpw.L["arathi_basin"],
-  pvpw.L["alterac_valley"] 
+  pvpw.L["alterac_valley"]
 }
 
 --[[
@@ -38,6 +38,14 @@ local battlegrounds = {
 ]]--
 function me.UpdatePlayerZoneStatus()
   local	currentZone = GetZoneText()
+
+  --[[
+    CurrentZone can be an empty string directly after 'PLAYER_ENTERING_WORLD' firing
+  ]]--
+  if currentZone == "" then
+    isPlayerInBattleground = false
+    return
+  end
 
   mod.logger.LogDebug(me.tag, "Players current zone: " .. currentZone)
 
