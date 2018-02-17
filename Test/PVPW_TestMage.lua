@@ -845,7 +845,7 @@ function me.TestParseEnemyAvoidResistPolymorph()
   mod.testHelper.TestParseEnemyAvoid(
     className,
     "TestParseEnemyAvoidResistPolymorph",
-    "polymorph_cow",
+    "polymorph",
     "Your Polymorph was resisted by $player$.",
     mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
     PVPW_CONSTANTS.AVOID_TYPES.RESIST
