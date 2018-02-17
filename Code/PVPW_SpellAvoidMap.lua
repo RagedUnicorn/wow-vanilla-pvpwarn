@@ -921,7 +921,7 @@ if (GetLocale() == "deDE") then
       },
       ["wilde_attacke"] = {
         ["name"] = "Wilde Attacke",
-        ["spellID"] = 19675,
+        ["spellID"] = 16979,
         ["spellIcon"] = "ability_hunter_pet_bear",
         ["soundFileName"] = "wilde_attacke",
         ["dodge"] = false,
@@ -1932,7 +1932,7 @@ else
       },
       ["feral_charge_effect"] = {
         ["name"] = "Feral Charge Effect",
-        ["spellID"] = 19675,
+        ["spellID"] = 16979,
         ["spellIcon"] = "ability_hunter_pet_bear",
         ["soundFileName"] = "feral_charge",
         ["dodge"] = false,

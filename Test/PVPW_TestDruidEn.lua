@@ -240,7 +240,7 @@ function me.TestSoundFeralCharge()
   mod.testHelper.TestSound(
     className,
     "TestSoundFeralCharge",
-    "feral_charge"
+    "feral_charge_effect"
   )
 end
 
@@ -434,7 +434,7 @@ function me.TestParseFeralCharge()
   mod.testHelper.TestParse(
     className,
     "TestParseFeralCharge",
-    "feral_charge",
+    "feral_charge_effect",
     "You are afflicted by Feral Charge Effect.",
     mod.testHelper.eventTypeSpellPeriodicSelfDamage
   )
@@ -633,7 +633,7 @@ function me.TestParseEnemyAvoidImmuneFeralChargeEffect()
   mod.testHelper.TestParseEnemyAvoid(
     className,
     "TestParseEnemyAvoidImmuneFeralChargeEffect",
-    "feral_charge",
+    "feral_charge_effect",
     "Your Feral Charge Effect failed. $player$ is immune.",
     mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
     PVPW_CONSTANTS.AVOID_TYPES.IMMUNE
@@ -644,7 +644,7 @@ function me.TestParseEnemyAvoidResistFeralChargeEffect()
   mod.testHelper.TestParseEnemyAvoid(
     className,
     "TestParseEnemyAvoidResistFeralChargeEffect",
-    "feral_charge",
+    "feral_charge_effect",
     "Your Feral Charge Effect was resisted by $player$.",
     mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
     PVPW_CONSTANTS.AVOID_TYPES.RESIST
@@ -754,7 +754,7 @@ function me.TestParseSelfAvoidImmuneFeralChargeEffect()
   mod.testHelper.TestParseSelfAvoid(
     className,
     "TestParseSelfAvoidImmuneFeralChargeEffect",
-    "feral_charge",
+    "feral_charge_effect",
     "$player$'s Feral Charge Effect failed. You are immune.",
     mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
     PVPW_CONSTANTS.AVOID_TYPES.IMMUNE
@@ -765,7 +765,7 @@ function me.TestParseSelfAvoidResistFeralChargeEffect()
   mod.testHelper.TestParseSelfAvoid(
     className,
     "TestParseSelfAvoidResistFeralChargeEffect",
-    "feral_charge",
+    "feral_charge_effect",
     "$player$'s Feral Charge Effect was resisted.",
     mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
     PVPW_CONSTANTS.AVOID_TYPES.RESIST

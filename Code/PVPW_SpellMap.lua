@@ -2533,7 +2533,7 @@ else
         ["hasFade"] = false,
         ["active"] = true
       },
-      ["feral_charge"] = {
+      ["feral_charge_effect"] = {
         ["name"] = "Feral Charge",
         ["soundFileName"] = "feral_charge",
         ["spellID"] = 16979,
