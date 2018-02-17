@@ -11,6 +11,11 @@ pvpw.L["enable"] = "|cFFFFFF00enable|r - enable "
 pvpw.L["opt"] = "|cFFFFFF00opt|r - display Optionsmenu"
 pvpw.L["reload"] = "|cFFFFFF00reload|r - reload UI"
 
+-- battlegrounds
+pvpw.L["warsong_gulch"] = "Warsong Gulch"
+pvpw.L["arathi_basin"] = "Arathi Basin"
+pvpw.L["alterac_valley"] = "Alterac Valley"
+
 -- navigationmenu
 pvpw.L["navigation_general"] = "General"
 pvpw.L["navigation_warrior"] = "Warrior"

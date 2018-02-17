@@ -12,6 +12,11 @@ if (GetLocale() == "deDE") then
   pvpw.L["opt"] = "|cFFFFFF00opt|r - zeige Optionsmenu an"
   pvpw.L["reload"] = "|cFFFFFF00reload|r - UI neu laden"
 
+  -- battlegrounds
+  pvpw.L["warsong_gulch"] = "Warsongschlucht"
+  pvpw.L["arathi_basin"] = "Arathibecken"
+  pvpw.L["alterac_valley"] = "Alteractal"
+
   -- navigationmenu
   pvpw.L["navigation_general"] = "Allgemein"
   pvpw.L["navigation_warrior"] = "Krieger"

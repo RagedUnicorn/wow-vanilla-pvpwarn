@@ -27,9 +27,9 @@ me.tag = "Zone"
 local isPlayerInBattleground = false
 
 local battlegrounds = {
-  "Warsong Gulch",
-  "Arathi Basin",
-  "Alterac Valley"
+  pvpw.L["warsong_gulch"],
+  pvpw.L["arathi_basin"],
+  pvpw.L["alterac_valley"] 
 }
 
 --[[
