@@ -241,7 +241,7 @@ if (GetLocale() == "deDE") then
 
     examples:
       Feenfeuer war ein Fehlschlag. $player$ ist immun.
-      Gegenzauber warn ein Fehlschlag. $player$ ist immun.
+      Gegenzauber war ein Fehlschlag. $player$ ist immun.
 
   ]]--
   SPELL_DAMAGESHIELDS_ON_SELF2 = "^([\195\159\195\132\195\150\195\156\195\188\195\164\195\182%a%s-:]+)%swar%sein%s(Fehlschlag)%.%s(%a+)%sist%s(immun)%.$"
