@@ -165,6 +165,14 @@ function me.RunAll(playManual)
   mod.testReporter.AddToTestQueue(me.TestParseDownNaturschutz)
   mod.testReporter.AddToTestQueue(me.TestParseArkanschutz)
   mod.testReporter.AddToTestQueue(me.TestParseDownArkanschutz)
+  mod.testReporter.AddToTestQueue(me.TestParseEnemyAvoidResistThoriumgranate)
+  mod.testReporter.AddToTestQueue(me.TestParseEnemyAvoidImmuneThoriumgranate)
+  mod.testReporter.AddToTestQueue(me.TestParseEnemyAvoidResistEisengranate)
+  mod.testReporter.AddToTestQueue(me.TestParseEnemyAvoidImmuneEisengranate)
+  mod.testReporter.AddToTestQueue(me.TestParseSelfAvoidResistThoriumgranate)
+  mod.testReporter.AddToTestQueue(me.TestParseSelfAvoidImmuneThoriumgranate)
+  mod.testReporter.AddToTestQueue(me.TestParseSelfAvoidResistEisengranate)
+  mod.testReporter.AddToTestQueue(me.TestParseSelfAvoidImmuneEisengranate)
 
   mod.testReporter.PlayTestQueue()
 end
@@ -595,5 +603,93 @@ function me.TestParseDownArkanschutz()
     "arkanschutz",
     "Arkanschutz schwindet von $player$.",
     mod.testHelper.eventTypeSpellAuraGoneOther
+  )
+end
+
+function me.TestParseEnemyAvoidResistThoriumgranate()
+  mod.testHelper.TestParseEnemyAvoid(
+    className,
+    "TestParseEnemyAvoidResistThoriumgranate",
+    "thoriumgranate",
+    "Ihr habt es mit Thoriumgranate versucht, aber $player$ hat widerstanden.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    PVPW_CONSTANTS.AVOID_TYPES.RESIST
+  )
+end
+
+function me.TestParseEnemyAvoidImmuneThoriumgranate()
+  mod.testHelper.TestParseEnemyAvoid(
+    className,
+    "TestParseEnemyAvoidImmuneThoriumgranate",
+    "thoriumgranate",
+    "Thoriumgranate war ein Fehlschlag. $player$ ist immun.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    PVPW_CONSTANTS.AVOID_TYPES.IMMUNE
+  )
+end
+
+function me.TestParseEnemyAvoidResistEisengranate()
+  mod.testHelper.TestParseEnemyAvoid(
+    className,
+    "TestParseEnemyAvoidResistEisengranate",
+    "eisengranate",
+    "Ihr habt es mit Eisengranate versucht, aber $player$ hat widerstanden.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    PVPW_CONSTANTS.AVOID_TYPES.RESIST
+  )
+end
+
+function me.TestParseEnemyAvoidImmuneEisengranate()
+  mod.testHelper.TestParseEnemyAvoid(
+    className,
+    "TestParseEnemyAvoidImmuneEisengranate",
+    "eisengranate",
+    "Eisengranate war ein Fehlschlag. $player$ ist immun.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    PVPW_CONSTANTS.AVOID_TYPES.IMMUNE
+  )
+end
+
+function me.TestParseSelfAvoidResistThoriumgranate()
+  mod.testHelper.TestParseSelfAvoid(
+    className,
+    "TestParseSelfAvoidResistThoriumgranate",
+    "thoriumgranate",
+    "$player$ versucht es mit Thoriumgranate... widerstanden.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    PVPW_CONSTANTS.AVOID_TYPES.RESIST
+  )
+end
+
+function me.TestParseSelfAvoidImmuneThoriumgranate()
+  mod.testHelper.TestParseSelfAvoid(
+    className,
+    "TestParseSelfAvoidImmuneThoriumgranate",
+    "thoriumgranate",
+    "$player$ versucht es mit Thoriumgranate... ein Fehlschlag. Ihr seid immun.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    PVPW_CONSTANTS.AVOID_TYPES.IMMUNE
+  )
+end
+
+function me.TestParseSelfAvoidResistEisengranate()
+  mod.testHelper.TestParseSelfAvoid(
+    className,
+    "TestParseSelfAvoidResistEisengranate",
+    "eisengranate",
+    "$player$ versucht es mit Eisengranate... widerstanden.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    PVPW_CONSTANTS.AVOID_TYPES.RESIST
+  )
+end
+
+function me.TestParseSelfAvoidImmuneEisengranate()
+  mod.testHelper.TestParseSelfAvoid(
+    className,
+    "TestParseSelfAvoidImmuneEisengranate",
+    "eisengranate",
+    "$player$ versucht es mit Eisengranate... ein Fehlschlag. Ihr seid immun.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    PVPW_CONSTANTS.AVOID_TYPES.IMMUNE
   )
 end
