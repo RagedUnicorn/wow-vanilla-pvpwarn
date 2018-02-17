@@ -44,12 +44,12 @@ me.tag = "SpellMap"
         {boolean} optional field, default false if field is missing
       ["active"] = false,
         -- {boolean} Whether the spell is active or inactive
-      ["ignoreEvents"] = [
+      ["ignoreEvents"] = {
         "CHAT_MSG_SPELL_AURA_GONE_OTHER",
         "CHAT_MSG_SPELL_HOSTILEPLAYER_DAMAGE",
         "CHAT_MSG_SPELL_HOSTILEPLAYER_BUFF",
         "CHAT_MSG_SPELL_PERIODIC_HOSTILEPLAYER_BUFFS"
-      ]
+      }
         {table} marks events that are ignored for this spell
 
         Ignoring events:
