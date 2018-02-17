@@ -121,9 +121,7 @@ function me.RunAll(playManual)
   mod.testReporter.AddToTestQueueWithDelay(me.TestSoundFreieAktion)
   mod.testReporter.AddToTestQueueWithDelay(me.TestSoundDownFreieAktion)
   mod.testReporter.AddToTestQueueWithDelay(me.TestSoundThoriumgranate)
-  mod.testReporter.AddToTestQueueWithDelay(me.TestSoundDownThoriumgranate)
   mod.testReporter.AddToTestQueueWithDelay(me.TestSoundEisengranate)
-  mod.testReporter.AddToTestQueueWithDelay(me.TestSoundDownEisengranate)
   mod.testReporter.AddToTestQueueWithDelay(me.TestSoundSchattenschutz)
   mod.testReporter.AddToTestQueueWithDelay(me.TestSoundDownSchattenschutz)
   mod.testReporter.AddToTestQueueWithDelay(me.TestSoundFrostschutz)
@@ -249,26 +247,10 @@ function me.TestSoundThoriumgranate()
   )
 end
 
-function me.TestSoundDownThoriumgranate()
-  mod.testHelper.TestSoundDown(
-    className,
-    "TestSoundDownThoriumgranate",
-    "thoriumgranate"
-  )
-end
-
 function me.TestSoundEisengranate()
   mod.testHelper.TestSound(
     className,
     "TestSoundEisengranate",
-    "eisengranate"
-  )
-end
-
-function me.TestSoundDownEisengranate()
-  mod.testHelper.TestSoundDown(
-    className,
-    "TestSoundDownEisengranate",
     "eisengranate"
   )
 end

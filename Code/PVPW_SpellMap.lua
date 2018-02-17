@@ -1557,7 +1557,7 @@ if (GetLocale() == "deDE") then
         ["itemID"] = 15993,
         ["spellID"] = 19769,
         ["spellIcon"] = "inv_misc_bomb_08",
-        ["hasFade"] = true,
+        ["hasFade"] = false,
         ["active"] = true
       },
       ["eisengranate"] = {
@@ -1566,7 +1566,7 @@ if (GetLocale() == "deDE") then
         ["itemID"] = 4390,
         ["spellID"] = 4068,
         ["spellIcon"] = "inv_misc_bomb_08",
-        ["hasFade"] = true,
+        ["hasFade"] = false,
         ["active"] = true
       },
       ["schattenschutz"] = {
@@ -3107,7 +3107,7 @@ else
         ["itemID"] = 15993,
         ["spellID"] = 19769,
         ["spellIcon"] = "inv_misc_bomb_08",
-        ["hasFade"] = true,
+        ["hasFade"] = false,
         ["active"] = true
       },
       ["iron_grenade"] = {
@@ -3116,7 +3116,7 @@ else
         ["itemID"] = 4390,
         ["spellID"] = 4068,
         ["spellIcon"] = "inv_misc_bomb_08",
-        ["hasFade"] = true,
+        ["hasFade"] = false,
         ["active"] = true
       },
       ["shadow_protection"] = {

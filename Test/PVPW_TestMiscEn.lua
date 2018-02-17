@@ -135,9 +135,7 @@ function me.RunAll(playManual)
   mod.testReporter.AddToTestQueueWithDelay(me.TestSoundFreeAction)
   mod.testReporter.AddToTestQueueWithDelay(me.TestSoundDownFreeAction)
   mod.testReporter.AddToTestQueueWithDelay(me.TestSoundThoriumGrenade)
-  mod.testReporter.AddToTestQueueWithDelay(me.TestSoundDownThoriumGrenade)
   mod.testReporter.AddToTestQueueWithDelay(me.TestSoundIronGrenade)
-  mod.testReporter.AddToTestQueueWithDelay(me.TestSoundDownIronGrenade)
   mod.testReporter.AddToTestQueueWithDelay(me.TestSoundShadowProtection)
   mod.testReporter.AddToTestQueueWithDelay(me.TestSoundDownShadowProtection)
   mod.testReporter.AddToTestQueueWithDelay(me.TestSoundFrostProtection)
@@ -262,26 +260,10 @@ function me.TestSoundThoriumGrenade()
   )
 end
 
-function me.TestSoundDownThoriumGrenade()
-  mod.testHelper.TestSoundDown(
-    className,
-    "TestSoundDownThoriumGrenade",
-    "thorium_grenade"
-  )
-end
-
 function me.TestSoundIronGrenade()
   mod.testHelper.TestSound(
     className,
     "TestSoundIronGrenade",
-    "iron_grenade"
-  )
-end
-
-function me.TestSoundDownIronGrenade()
-  mod.testHelper.TestSoundDown(
-    className,
-    "TestSoundDownIronGrenade",
     "iron_grenade"
   )
 end
