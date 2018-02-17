@@ -43,7 +43,7 @@ if (GetLocale() == "deDE") then
   FILE_FOLDER_SELF_AVOIDED = "self_avoid"
   FILE_NAME_SELF_AVOIDED = "ihr_vermeidet_"
 else
-  BASE_PATH = "Interface\\AddOns\\PVPWarn\\Assets\\Sounds\\"
+  BASE_PATH = "Interface\\AddOns\\PVPWarn\\Assets\\Sounds\\en\\"
   FILE_NAME_DOWN = "_down"
   FILE_FOLDER_ENEMY_AVOIDED = "enemy_avoid"
   FILE_NAME_ENEMY_AVOIDED = "enemy_avoided_"
