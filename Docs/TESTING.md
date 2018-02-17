@@ -43,17 +43,36 @@ Playing through all tests takes quite some time. Because of this every category 
 
 | Function                                        | Description                                                                                       |
 | ----------------------------------------------- | ------------------------------------------------------------------------------------------------- |
-| __PVPW__TEST_[CATEGORY]__Test                   | Run all tests of the specific category                                                            |
-| __PVPW__TEST_[CATEGORY]__Test_Sound             | Check if there is a testcase to play sound for all entries in SpellMap                            |
-| __PVPW__TEST_[CATEGORY]__Test_Sound_Down        | Check if there is a testcase to play sound down for all entries in SpellMap                       |
-| __PVPW__TEST_[CATEGORY]__Test_Sound_Enemy_Avoid | Check if there is a testcase to play enemy avoid sound for all entries in SpellAvoidMap           |
-| __PVPW__TEST_[CATEGORY]__Test_Sound_Self_Avoid  | Check if there is a testcase to play self avoid sound for all entries in SpellAvoidMap            |
-| __PVPW__TEST_[CATEGORY]__Test_Parse             | Check if there is a testcase to parse combat message for all entries in spellMap                  |
-| __PVPW__TEST_[CATEGORY]__Test_Parse_Down        | Check if there is a testcase to parse down combat message for all entries in spellMap             |
-| __PVPW__TEST_[CATEGORY]__Test_Parse_Crit        | Check if there is a testcase to parse crit combat message for all entries in spellMap             |
-| __PVPW__TEST_[CATEGORY]__Test_Parse_Enemy_Avoid | Check if there is a testcase to parse enemy avoid combat message for all entries in spellAvoidMap |
-| __PVPW__TEST_[CATEGORY]__Test_Parse_Self_Avoid  | Check if there is a testcase to parse self avoid combat message for all entries in spellAvoidMap  |
+| __PVPW__TEST\_[CATEGORY]\_[LOCALE]__Test                   | Run all tests of the specific category                                                            |
+| __PVPW__TEST\_[CATEGORY]\_[LOCALE]__Test_Sound             | Check if there is a testcase to play sound for all entries in SpellMap                            |
+| __PVPW__TEST\_[CATEGORY]\_[LOCALE]__Test_Sound_Down        | Check if there is a testcase to play sound down for all entries in SpellMap                       |
+| __PVPW__TEST\_[CATEGORY]\_[LOCALE]__Test_Sound_Enemy_Avoid | Check if there is a testcase to play enemy avoid sound for all entries in SpellAvoidMap           |
+| __PVPW__TEST\_[CATEGORY]\_[LOCALE]__Test_Sound_Self_Avoid  | Check if there is a testcase to play self avoid sound for all entries in SpellAvoidMap            |
+| __PVPW__TEST\_[CATEGORY]\_[LOCALE]__Test_Parse             | Check if there is a testcase to parse combat message for all entries in spellMap                  |
+| __PVPW__TEST\_[CATEGORY]\_[LOCALE]__Test_Parse_Down        | Check if there is a testcase to parse down combat message for all entries in spellMap             |
+| __PVPW__TEST\_[CATEGORY]\_[LOCALE]__Test_Parse_Crit        | Check if there is a testcase to parse crit combat message for all entries in spellMap             |
+| __PVPW__TEST\_[CATEGORY]\_[LOCALE]__Test_Parse_Enemy_Avoid | Check if there is a testcase to parse enemy avoid combat message for all entries in spellAvoidMap |
+| __PVPW__TEST\_[CATEGORY]\_[LOCALE]__Test_Parse_Self_Avoid  | Check if there is a testcase to parse self avoid combat message for all entries in spellAvoidMap  |
 
+## Testing different Locale
+
+The addon supports currently german and english locale. To run the tests either a german and english client are required or one can manipulate `GetLocale` function to run the tests.
+
+The addon checks on upstart what locale the client is and loads different functions and data based on the locale. As an example both spellMap and spellAvoidMap load only the data required for the current locale. To trick the addon into thinking the client has a different locale than it actualy has we can manipulate the GetLocale function.
+
+See `Code\PVPW_Core.lua` for a reference
+
+```lua
+local _G = getfenv(0)
+
+function _G.GetLocale()
+  return "deDE"
+end
+```
+
+By overriding the GetLocale function we can return whatever locale we want. It is important to do this very early before the actual addon initializing otherwise the wrong functions and data might already have loaded. After that `/run __PVPW__TEST_ALL()` can be used to run the tests. The addon will use only the chosen locale tests.
+
+***Note:*** This only works for running the tests because all the combat messages that are parsed are hardcoded. As soon as a real event is received and it doesn't match it will not work.
 
 ## Playing Sound Tests
 
@@ -86,7 +105,7 @@ PVPWarnLog = {}
 
 Additionally the TestReporter has to be configured to log to a logFile
 
-```
+```lua
 local writeLogFile = true
 ```
 
@@ -94,6 +113,7 @@ After running a test and logging out the report should be inside the addon confi
 
 `[World of Warcraft installation-folder]/WTF/Account/[username]/[servername]/[charactername]/SavedVariables/PVPWarn.lua`
 
+***Note:*** The file will be big if all tests were ran make sure to search for Keywords such as `fail` and `missing`.
 
 **Notes:**
 
