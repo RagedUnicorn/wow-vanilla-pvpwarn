@@ -21,7 +21,7 @@
         </FontString>
       </Layer>
       <Layer level="ARTWORK">
-        <Texture name="$parentTexture" file="Interface\AddOns\GearMenu\Assets\UI-Listbox-Highlight.tga" hidden="true">
+        <Texture name="$parentTexture" file="Interface\AddOns\PVPWarn\Assets\Images\UI-Listbox-Highlight.tga" hidden="true">
           <Size x="120" y="14"/>
         </Texture>
       </Layer>
@@ -34,7 +34,7 @@
         PVPW_Navigation_Button_OnClick()
       </OnClick>
     </Scripts>
-    <HighlightTexture file="Interface\AddOns\GearMenu\Assets\UI-Listbox-Highlight.tga" alphaMode="ADD"/>
+    <HighlightTexture file="Interface\AddOns\PVPWarn\Assets\Images\UI-Listbox-Highlight.tga" alphaMode="ADD"/>
   </Button>
 
   <Button name="PVPW_TabNavigationButtonTemplate" inherits="TabButtonTemplate" virtual="true">
