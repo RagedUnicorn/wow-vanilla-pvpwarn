@@ -12,6 +12,15 @@ TODO should add a YouTube video with some examples
 
 ## Configuration
 
+### Configure Combatlog Distance
+
+Casts and auras are read from the combatlog. The default range for the combatlog to pick up such casts and auras is 40 yards. Using the following command can increase this up to 100 yards. This can have a negative effect on the performance if a lot of addons are doing this but can also be very helpful picking up events from players that are far away.
+
+`/console SET CombatLogRangeHostilePlayers "100"`
+
+To revert, run the same command with a value of 40.
+
+
 ### Configure Spells
 
 Configurable spells are grouped into different categories. Other than the different class categories there are also categories for misc, racials and items.
