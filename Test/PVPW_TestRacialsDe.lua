@@ -328,7 +328,7 @@ function me.TestParseEntfesselungskuenstler()
     className,
     "TestParseEntfesselungskuenstler",
     "entfesselungskuenstler",
-    "$player$ beginnt Entfesselungskünstler auszuf\195\188hren.",
+    "$player$ beginnt Entfesselungskünstler auszuführen.",
     mod.testHelper.eventTypeSpellHostilePlayerBuff
   )
 end
@@ -338,7 +338,7 @@ function me.TestParseKriegsdonner()
     className,
     "TestParseKriegsdonner",
     "kriegsdonner",
-    "$player$ beginnt Kriegsdonner auszuf\195\188hren.",
+    "$player$ beginnt Kriegsdonner auszuführen.",
     mod.testHelper.eventTypeSpellHostilePlayerBuff
   )
 end
