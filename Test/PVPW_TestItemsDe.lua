@@ -112,7 +112,7 @@ end
 ]]--
 function me.RunAll(playManual)
   -- test sound
-  --[[mod.testReporter.AddToTestQueueWithDelay(me.TestSoundKoerperlicherSchutz)
+  mod.testReporter.AddToTestQueueWithDelay(me.TestSoundKoerperlicherSchutz)
   mod.testReporter.AddToTestQueueWithDelay(me.TestSoundDownKoerperlicherSchutz)
   mod.testReporter.AddToTestQueueWithDelay(me.TestSoundSproedeRuestung)
   mod.testReporter.AddToTestQueueWithDelay(me.TestSoundDownSproedeRuestung)
@@ -154,7 +154,7 @@ function me.RunAll(playManual)
   mod.testReporter.AddToTestQueueWithDelay(me.TestSoundErdstoss)
   mod.testReporter.AddToTestQueueWithDelay(me.TestSoundDownErdstoss)
   mod.testReporter.AddToTestQueueWithDelay(me.TestSoundNetOMatik)
-  mod.testReporter.AddToTestQueueWithDelay(me.TestSoundGnomenGedankenkontrollkappe)]]--
+  mod.testReporter.AddToTestQueueWithDelay(me.TestSoundGnomenGedankenkontrollkappe)
   mod.testReporter.AddToTestQueueWithDelay(me.TestSoundEnemyAvoidGezeitenGluecksbringer)
   mod.testReporter.AddToTestQueueWithDelay(me.TestSoundEnemyAvoidTollkuehnesStuermen)
   mod.testReporter.AddToTestQueueWithDelay(me.TestSoundEnemyAvoidNetOMatik)
@@ -209,6 +209,16 @@ function me.RunAll(playManual)
   mod.testReporter.AddToTestQueue(me.TestParseDownErdstoss)
   mod.testReporter.AddToTestQueue(me.TestParseNetOMatik)
   mod.testReporter.AddToTestQueue(me.TestParseGnomenGedankenkontrollkappe)
+  mod.testReporter.AddToTestQueue(me.TestParseEnemyAvoidImmuneGezeitenGluecksbringer)
+  mod.testReporter.AddToTestQueue(me.TestParseEnemyAvoidResistGezeitenGluecksbringer)
+  mod.testReporter.AddToTestQueue(me.TestParseEnemyAvoidImmuneTollkuehnesStuermen)
+  mod.testReporter.AddToTestQueue(me.TestParseEnemyAvoidImmuneNetOMatik)
+  mod.testReporter.AddToTestQueue(me.TestParseEnemyAvoidResistNetOMatik)
+  mod.testReporter.AddToTestQueue(me.TestParseSelfAvoidImmuneGezeitenGluecksbringer)
+  mod.testReporter.AddToTestQueue(me.TestParseSelfAvoidResistGezeitenGluecksbringer)
+  mod.testReporter.AddToTestQueue(me.TestParseSelfAvoidImmuneTollkuehnesStuermen)
+  mod.testReporter.AddToTestQueue(me.TestParseSelfAvoidImmuneNetOMatik)
+  mod.testReporter.AddToTestQueue(me.TestParseSelfAvoidResistNetOMatik)
 
   mod.testReporter.PlayTestQueue()
 end
@@ -1032,5 +1042,115 @@ function me.TestParseGnomenGedankenkontrollkappe()
     "gnomen_gedankenkontrollkappe",
     "Ihr seid von Gnomen-Gedankenkontrollkappe betroffen.",
     mod.testHelper.eventTypeSpellPeriodicSelfDamage
+  )
+end
+
+function me.TestParseEnemyAvoidImmuneGezeitenGluecksbringer()
+  mod.testHelper.TestParseEnemyAvoid(
+    className,
+    "TestParseEnemyAvoidImmuneGezeitenGluecksbringer",
+    "gezeiten_gluecksbringer",
+    "Gezeiten-Glücksbringer war ein Fehlschlag. $player$ ist immun.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    PVPW_CONSTANTS.AVOID_TYPES.IMMUNE
+  )
+end
+
+function me.TestParseEnemyAvoidResistGezeitenGluecksbringer()
+  mod.testHelper.TestParseEnemyAvoid(
+    className,
+    "TestParseEnemyAvoidResistGezeitenGluecksbringer",
+    "gezeiten_gluecksbringer",
+    "Ihr habt es mit Gezeiten-Glücksbringer versucht, aber $player$ hat widerstanden.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    PVPW_CONSTANTS.AVOID_TYPES.RESIST
+  )
+end
+
+function me.TestParseEnemyAvoidImmuneTollkuehnesStuermen()
+  mod.testHelper.TestParseEnemyAvoid(
+    className,
+    "TestParseEnemyAvoidImmuneTollkuehnesStuermen",
+    "tollkuehnes_stuermen",
+    "Tollkühnes Stürmen war ein Fehlschlag. $player$ ist immun.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    PVPW_CONSTANTS.AVOID_TYPES.IMMUNE
+  )
+end
+
+function me.TestParseEnemyAvoidImmuneNetOMatik()
+  mod.testHelper.TestParseEnemyAvoid(
+    className,
+    "TestParseEnemyAvoidImmuneNetOMatik",
+    "net_o_matik",
+    "Net-o-Matik war ein Fehlschlag. $player$ ist immun.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    PVPW_CONSTANTS.AVOID_TYPES.IMMUNE
+  )
+end
+
+function me.TestParseEnemyAvoidResistNetOMatik()
+  mod.testHelper.TestParseEnemyAvoid(
+    className,
+    "TestParseEnemyAvoidResistNetOMatik",
+    "net_o_matik",
+    "Ihr habt es mit Net-o-Matik versucht, aber $player$ hat widerstanden.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    PVPW_CONSTANTS.AVOID_TYPES.RESIST
+  )
+end
+
+function me.TestParseSelfAvoidImmuneGezeitenGluecksbringer()
+  mod.testHelper.TestParseSelfAvoid(
+    className,
+    "TestParseSelfAvoidImmuneGezeitenGluecksbringer",
+    "gezeiten_gluecksbringer",
+    "$player$ versucht es mit Gezeiten-Glücksbringer... ein Fehlschlag. Ihr seid immun.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    PVPW_CONSTANTS.AVOID_TYPES.IMMUNE
+  )
+end
+
+function me.TestParseSelfAvoidResistGezeitenGluecksbringer()
+  mod.testHelper.TestParseSelfAvoid(
+    className,
+    "TestParseSelfAvoidResistGezeitenGluecksbringer",
+    "gezeiten_gluecksbringer",
+    "$player$ versucht es mit Gezeiten-Glücksbringer... widerstanden.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    PVPW_CONSTANTS.AVOID_TYPES.RESIST
+  )
+end
+
+function me.TestParseSelfAvoidImmuneTollkuehnesStuermen()
+  mod.testHelper.TestParseSelfAvoid(
+    className,
+    "TestParseSelfAvoidImmuneTollkuehnesStuermen",
+    "tollkuehnes_stuermen",
+    "$player$ versucht es mit Tollkühnes Stürmen... ein Fehlschlag. Ihr seid immun.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    PVPW_CONSTANTS.AVOID_TYPES.IMMUNE
+  )
+end
+
+function me.TestParseSelfAvoidImmuneNetOMatik()
+  mod.testHelper.TestParseSelfAvoid(
+    className,
+    "TestParseSelfAvoidImmuneNetOMatik",
+    "net_o_matik",
+    "$player$ versucht es mit Net-o-Matik... ein Fehlschlag. Ihr seid immun.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    PVPW_CONSTANTS.AVOID_TYPES.IMMUNE
+  )
+end
+
+function me.TestParseSelfAvoidResistNetOMatik()
+  mod.testHelper.TestParseSelfAvoid(
+    className,
+    "TestParseSelfAvoidResistNetOMatik",
+    "net_o_matik",
+    "$player$ versucht es mit Net-o-Matik... widerstanden.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    PVPW_CONSTANTS.AVOID_TYPES.RESIST
   )
 end
