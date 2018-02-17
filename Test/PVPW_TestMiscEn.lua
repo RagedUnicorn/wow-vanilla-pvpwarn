@@ -126,7 +126,7 @@ end
 ]]--
 function me.RunAll(playManual)
   -- test sound
-  mod.testReporter.AddToTestQueueWithDelay(me.TestSoundThistleTea)
+  mod.testReporter.AddToTestQueueWithDelay(me.TestSoundRestoreEnergy)
   mod.testReporter.AddToTestQueueWithDelay(me.TestSoundRestoration)
   mod.testReporter.AddToTestQueueWithDelay(me.TestSoundDownRestoration)
   mod.testReporter.AddToTestQueueWithDelay(me.TestSoundFirstAid)
@@ -158,7 +158,7 @@ function me.RunAll(playManual)
   end
 
   -- test combat log messages
-  mod.testReporter.AddToTestQueue(me.TestParseThistleTea)
+  mod.testReporter.AddToTestQueue(me.TestParseRestoreEnergy)
   mod.testReporter.AddToTestQueue(me.TestParseRestoration)
   mod.testReporter.AddToTestQueue(me.TestParseDownRestoration)
   mod.testReporter.AddToTestQueue(me.TestParseFirstAid)
@@ -190,11 +190,11 @@ function me.RunAll(playManual)
   mod.testReporter.PlayTestQueue()
 end
 
-function me.TestSoundThistleTea()
+function me.TestSoundRestoreEnergy()
   mod.testHelper.TestSound(
     className,
-    "TestSoundThistleTea",
-    "thistle_tea"
+    "TestSoundRestoreEnergy",
+    "restore_energy"
   )
 end
 
@@ -398,11 +398,11 @@ function me.TestSoundSelfAvoidIronGrenade()
   )
 end
 
-function me.TestParseThistleTea()
+function me.TestParseRestoreEnergy()
   mod.testHelper.TestParse(
     className,
-    "TestParseThistleTea",
-    "thistle_tea",
+    "TestParseRestoreEnergy",
+    "restore_energy",
     "$player$ gains $amount$ Energy from $player$'s Restore Energy.",
     mod.testHelper.eventTypeSpellPeriodicHostilePlayerBuffs
   )
