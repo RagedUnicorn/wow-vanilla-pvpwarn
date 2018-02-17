@@ -175,6 +175,18 @@ function me.RunAll(playManual)
   mod.testReporter.AddToTestQueue(me.TestParseTotemDerManaquelle)
   mod.testReporter.AddToTestQueue(me.TestParseTotemDerManaflut)
   mod.testReporter.AddToTestQueue(me.TestParseTotemDerBeruhigendenWinde)
+  mod.testReporter.AddToTestQueue(me.TestParseEnemyAvoidImmuneErdschock)
+  mod.testReporter.AddToTestQueue(me.TestParseEnemyAvoidResistErdschock)
+  mod.testReporter.AddToTestQueue(me.TestParseEnemyAvoidImmuneFlammenschock)
+  mod.testReporter.AddToTestQueue(me.TestParseEnemyAvoidResistFlammenschock)
+  mod.testReporter.AddToTestQueue(me.TestParseEnemyAvoidImmuneFrostschock)
+  mod.testReporter.AddToTestQueue(me.TestParseEnemyAvoidResistFrostschock)
+  mod.testReporter.AddToTestQueue(me.TestParseSelfAvoidImmuneErdschock)
+  mod.testReporter.AddToTestQueue(me.TestParseSelfAvoidResistErdschock)
+  mod.testReporter.AddToTestQueue(me.TestParseSelfAvoidImmuneFlammenschock)
+  mod.testReporter.AddToTestQueue(me.TestParseSelfAvoidResistFlammenschock)
+  mod.testReporter.AddToTestQueue(me.TestParseSelfAvoidImmuneFrostschock)
+  mod.testReporter.AddToTestQueue(me.TestParseSelfAvoidResistFrostschock)
 
   mod.testReporter.PlayTestQueue()
 end
@@ -692,5 +704,137 @@ function me.TestParseTotemDerBeruhigendenWinde()
     "totem_der_beruhigenden_winde",
     "$player$ wirkt Totem der beruhigenden Winde.",
     mod.testHelper.eventTypeSpellHostilePlayerBuff
+  )
+end
+
+function me.TestParseEnemyAvoidImmuneErdschock()
+  mod.testHelper.TestParseEnemyAvoid(
+    className,
+    "TestParseEnemyAvoidImmuneErdschock",
+    "erdschock",
+    "Zurechtstutzen war ein Fehlschlag. $player$ ist immun.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    PVPW_CONSTANTS.AVOID_TYPES.IMMUNE
+  )
+end
+
+function me.TestParseEnemyAvoidResistErdschock()
+  mod.testHelper.TestParseEnemyAvoid(
+    className,
+    "TestParseEnemyAvoidResistErdschock",
+    "erdschock",
+    "Ihr habt es mit Erschütternder Schuss versucht, aber $player$ hat widerstanden.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    PVPW_CONSTANTS.AVOID_TYPES.RESIST
+  )
+end
+
+function me.TestParseEnemyAvoidImmuneFlammenschock()
+  mod.testHelper.TestParseEnemyAvoid(
+    className,
+    "TestParseEnemyAvoidImmuneFlammenschock",
+    "flammenschock",
+    "Zurechtstutzen war ein Fehlschlag. $player$ ist immun.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    PVPW_CONSTANTS.AVOID_TYPES.IMMUNE
+  )
+end
+
+function me.TestParseEnemyAvoidResistFlammenschock()
+  mod.testHelper.TestParseEnemyAvoid(
+    className,
+    "TestParseEnemyAvoidResistFlammenschock",
+    "flammenschock",
+    "Ihr habt es mit Erschütternder Schuss versucht, aber $player$ hat widerstanden.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    PVPW_CONSTANTS.AVOID_TYPES.RESIST
+  )
+end
+
+function me.TestParseEnemyAvoidImmuneFrostschock()
+  mod.testHelper.TestParseEnemyAvoid(
+    className,
+    "TestParseEnemyAvoidImmuneFrostschock",
+    "frostschock",
+    "Zurechtstutzen war ein Fehlschlag. $player$ ist immun.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    PVPW_CONSTANTS.AVOID_TYPES.IMMUNE
+  )
+end
+
+function me.TestParseEnemyAvoidResistFrostschock()
+  mod.testHelper.TestParseEnemyAvoid(
+    className,
+    "TestParseEnemyAvoidResistFrostschock",
+    "frostschock",
+    "Ihr habt es mit Erschütternder Schuss versucht, aber $player$ hat widerstanden.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    PVPW_CONSTANTS.AVOID_TYPES.RESIST
+  )
+end
+
+function me.TestParseSelfAvoidImmuneErdschock()
+  mod.testHelper.TestParseSelfAvoid(
+    className,
+    "TestParseSelfAvoidImmuneErdschock",
+    "erdschock",
+    "$player$ versucht es mit Erdschock... ein Fehlschlag. Ihr seid immun.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    PVPW_CONSTANTS.AVOID_TYPES.IMMUNE
+  )
+end
+
+function me.TestParseSelfAvoidResistErdschock()
+  mod.testHelper.TestParseSelfAvoid(
+    className,
+    "TestParseSelfAvoidResistErdschock",
+    "erdschock",
+    "$player$ versucht es mit Erdschock... widerstanden.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    PVPW_CONSTANTS.AVOID_TYPES.RESIST
+  )
+end
+
+function me.TestParseSelfAvoidImmuneFlammenschock()
+  mod.testHelper.TestParseSelfAvoid(
+    className,
+    "TestParseSelfAvoidImmuneFlammenschock",
+    "flammenschock",
+    "$player$ versucht es mit Flammenschock... ein Fehlschlag. Ihr seid immun.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    PVPW_CONSTANTS.AVOID_TYPES.IMMUNE
+  )
+end
+
+function me.TestParseSelfAvoidResistFlammenschock()
+  mod.testHelper.TestParseSelfAvoid(
+    className,
+    "TestParseSelfAvoidResistFlammenschock",
+    "flammenschock",
+    "$player$ versucht es mit Flammenschock... widerstanden.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    PVPW_CONSTANTS.AVOID_TYPES.RESIST
+  )
+end
+
+function me.TestParseSelfAvoidImmuneFrostschock()
+  mod.testHelper.TestParseSelfAvoid(
+    className,
+    "TestParseSelfAvoidImmuneFrostschock",
+    "frostschock",
+    "$player$ versucht es mit Frostschock... ein Fehlschlag. Ihr seid immun.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    PVPW_CONSTANTS.AVOID_TYPES.IMMUNE
+  )
+end
+
+function me.TestParseSelfAvoidResistFrostschock()
+  mod.testHelper.TestParseSelfAvoid(
+    className,
+    "TestParseSelfAvoidResistFrostschock",
+    "frostschock",
+    "$player$ versucht es mit Frostschock... widerstanden.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    PVPW_CONSTANTS.AVOID_TYPES.RESIST
   )
 end
