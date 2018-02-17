@@ -58,9 +58,17 @@ function _G.__PVPW__TEST_ALL()
 
   for i = 1, table.getn(testClasses) do
     local moduleName
+    local testClassWithLocale
+
+    if GetLocale() == "deDE" then
+      testClassWithLocale = testClasses[i] .. "De"
+    else
+      -- default locale english
+      testClassWithLocale = testClasses[i] .. "En"
+    end
 
     mod.testReporter.StartTestClass(testClasses[i])
-    moduleName = "test" .. string.gsub(testClasses[i], "^%l", string.upper)
+    moduleName = "test" .. string.gsub(testClassWithLocale, "^%l", string.upper)
 
     assert(type(mod[moduleName].RunAll) == "function",
       string.format("Each test class should have a `RunAll`" ..
