@@ -401,7 +401,7 @@ function me.TestParseRegeneration()
     className,
     "TestParseRegeneration",
     "regeneration",
-    "$player$ bekommt Regeneration.",
+    "$player$ bekommt 'Regeneration'.",
     mod.testHelper.eventTypeSpellPeriodicHostilePlayerBuffs
   )
 end
@@ -421,7 +421,7 @@ function me.TestParseErsteHilfe()
     className,
     "TestParseErsteHilfe",
     "erste_hilfe",
-    "$player$ bekommt Erste Hilfe.",
+    "$player$ bekommt 'Erste Hilfe'.",
     mod.testHelper.eventTypeSpellPeriodicHostilePlayerBuffs
   )
 end
@@ -431,7 +431,7 @@ function me.TestParseUnverwundbarkeit()
     className,
     "TestParseUnverwundbarkeit",
     "unverwundbarkeit",
-    "$player$ bekommt Unverwundbarkeit.",
+    "$player$ bekommt 'Unverwundbarkeit'.",
     mod.testHelper.eventTypeSpellPeriodicHostilePlayerBuffs
   )
 end
@@ -451,7 +451,7 @@ function me.TestParseFreieAktion()
     className,
     "TestParseFreieAktion",
     "freie_aktion",
-    "$player$ bekommt Freie Aktion.",
+    "$player$ bekommt 'Freie Aktion'.",
     mod.testHelper.eventTypeSpellPeriodicHostilePlayerBuffs
   )
 end
@@ -511,7 +511,7 @@ function me.TestParseSchattenschutz()
     className,
     "TestParseSchattenschutz",
     "schattenschutz",
-    "$player$ bekommt Schattenschutz.",
+    "$player$ bekommt 'Schattenschutz'.",
     mod.testHelper.eventTypeSpellPeriodicHostilePlayerBuffs
   )
 end
@@ -531,7 +531,7 @@ function me.TestParseFrostschutz()
     className,
     "TestParseFrostschutz",
     "frostschutz",
-    "$player$ bekommt Frostschutz.",
+    "$player$ bekommt 'Frostschutz'.",
     mod.testHelper.eventTypeSpellPeriodicHostilePlayerBuffs
   )
 end
@@ -551,7 +551,7 @@ function me.TestParseFeuerschutz()
     className,
     "TestParseFeuerschutz",
     "feuerschutz",
-    "$player$ bekommt Feuerschutz.",
+    "$player$ bekommt 'Feuerschutz'.",
     mod.testHelper.eventTypeSpellPeriodicHostilePlayerBuffs
   )
 end
@@ -571,7 +571,7 @@ function me.TestParseNaturschutz()
     className,
     "TestParseNaturschutz",
     "naturschutz",
-    "$player$ bekommt Naturschutz.",
+    "$player$ bekommt 'Naturschutz'.",
     mod.testHelper.eventTypeSpellPeriodicHostilePlayerBuffs
   )
 end
@@ -591,7 +591,7 @@ function me.TestParseArkanschutz()
     className,
     "TestParseArkanschutz",
     "arkanschutz",
-    "$player$ bekommt Arkanschutz.",
+    "$player$ bekommt 'Arkanschutz'.",
     mod.testHelper.eventTypeSpellPeriodicHostilePlayerBuffs
   )
 end

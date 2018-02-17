@@ -268,7 +268,7 @@ function me.TestParseWachsamkeit()
     className,
     "TestParseWachsamkeit",
     "wachsamkeit",
-    "$player$ bekommt Wachsamkeit.",
+    "$player$ bekommt 'Wachsamkeit'.",
     mod.testHelper.eventTypeSpellPeriodicHostilePlayerBuffs
   )
 end
@@ -288,7 +288,7 @@ function me.TestParseWilleDerVerlassenen()
     className,
     "TestParseWilleDerVerlassenen",
     "wille_der_verlassenen",
-    "$player$ bekommt Wille der Verlassenen.",
+    "$player$ bekommt 'Wille der Verlassenen'.",
     mod.testHelper.eventTypeSpellPeriodicHostilePlayerBuffs
   )
 end
@@ -308,7 +308,7 @@ function me.TestParseSteingestalt()
     className,
     "TestParseSteingestalt",
     "steingestalt",
-    "$player$ bekommt Steingestalt.",
+    "$player$ bekommt 'Steingestalt'.",
     mod.testHelper.eventTypeSpellPeriodicHostilePlayerBuffs
   )
 end
@@ -348,7 +348,7 @@ function me.TestParseBerserker()
     className,
     "TestParseBerserker",
     "berserker",
-    "$player$ bekommt Berserker.",
+    "$player$ bekommt 'Berserker'.",
     mod.testHelper.eventTypeSpellPeriodicHostilePlayerBuffs
   )
 end

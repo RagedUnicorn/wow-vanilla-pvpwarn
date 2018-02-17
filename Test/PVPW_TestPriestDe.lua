@@ -493,7 +493,7 @@ function me.TestParseSeeleDerMacht()
     className,
     "TestParseSeeleDerMacht",
     "seele_der_macht",
-    "$player$ bekommt Seele der Macht.",
+    "$player$ bekommt 'Seele der Macht'.",
     mod.testHelper.eventTypeSpellPeriodicHostilePlayerBuffs
   )
 end
@@ -513,7 +513,7 @@ function me.TestParseInneresFeuer()
     className,
     "TestParseInneresFeuer",
     "inneres_feuer",
-    "$player$ bekommt Inneres Feuer.",
+    "$player$ bekommt 'Inneres Feuer'.",
     mod.testHelper.eventTypeSpellPeriodicHostilePlayerBuffs
   )
 end
@@ -573,7 +573,7 @@ function me.TestParseBeruehrungDerSchwaeche()
     className,
     "TestParseBeruehrungDerSchwaeche",
     "beruehrung_der_schwaeche",
-    "$player$ bekommt Berührung der Schwäche.",
+    "$player$ bekommt 'Berührung der Schwäche'.",
     mod.testHelper.eventTypeSpellPeriodicHostilePlayerBuffs
   )
 end
@@ -593,7 +593,7 @@ function me.TestParseFurchtzauberschutz()
     className,
     "TestParseFurchtzauberschutz",
     "furchtzauberschutz",
-    "$player$ bekommt Furchtzauberschutz.",
+    "$player$ bekommt 'Furchtzauberschutz'.",
     mod.testHelper.eventTypeSpellPeriodicHostilePlayerBuffs
   )
 end
@@ -613,7 +613,7 @@ function me.TestParseElunesAnmut()
     className,
     "TestParseElunesAnmut",
     "elunes_anmut",
-    "$player$ bekommt Elunes Anmut.",
+    "$player$ bekommt 'Elunes Anmut'.",
     mod.testHelper.eventTypeSpellPeriodicHostilePlayerBuffs
   )
 end

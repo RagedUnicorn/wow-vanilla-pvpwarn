@@ -639,7 +639,7 @@ function me.TestParseBerserkerwut()
     className,
     "TestParseBerserkerwut",
     "berserkerwut",
-    "$player$ bekommt Berserkerwut.",
+    "$player$ bekommt 'Berserkerwut'.",
     mod.testHelper.eventTypeSpellPeriodicHostilePlayerBuffs
   )
 end
@@ -659,7 +659,7 @@ function me.TestParseTollkuehnheit()
     className,
     "TestParseTollkuehnheit",
     "tollkuehnheit",
-    "$player$ bekommt Tollkühnheit.",
+    "$player$ bekommt 'Tollkühnheit'.",
     mod.testHelper.eventTypeSpellPeriodicHostilePlayerBuffs
   )
 end
@@ -679,7 +679,7 @@ function me.TestParseTodeswunsch()
     className,
     "TestParseTodeswunsch",
     "todeswunsch",
-    "$player$ bekommt Todeswunsch.",
+    "$player$ bekommt 'Todeswunsch'.",
     mod.testHelper.eventTypeSpellPeriodicHostilePlayerBuffs
   )
 end
@@ -699,7 +699,7 @@ function me.TestParseSchildwall()
     className,
     "TestParseSchildwall",
     "schildwall",
-    "$player$ bekommt Schildwall.",
+    "$player$ bekommt 'Schildwall'.",
     mod.testHelper.eventTypeSpellPeriodicHostilePlayerBuffs
   )
 end
@@ -719,7 +719,7 @@ function me.TestParseKampfhaltung()
     className,
     "TestParseKampfhaltung",
     "kampfhaltung",
-    "$player$ bekommt Kampfhaltung.",
+    "$player$ bekommt 'Kampfhaltung'.",
     mod.testHelper.eventTypeSpellPeriodicHostilePlayerBuffs
   )
 end
@@ -729,7 +729,7 @@ function me.TestParseBerserkerhaltung()
     className,
     "TestParseBerserkerhaltung",
     "berserkerhaltung",
-    "$player$ bekommt Berserkerhaltung.",
+    "$player$ bekommt 'Berserkerhaltung'.",
     mod.testHelper.eventTypeSpellPeriodicHostilePlayerBuffs
   )
 end
@@ -739,7 +739,7 @@ function me.TestParseVerteidigungshaltung()
     className,
     "TestParseVerteidigungshaltung",
     "verteidigungshaltung",
-    "$player$ bekommt Verteidigungshaltung.",
+    "$player$ bekommt 'Verteidigungshaltung'.",
     mod.testHelper.eventTypeSpellPeriodicHostilePlayerBuffs
   )
 end
@@ -759,7 +759,7 @@ function me.TestParseLetztesGefecht()
     className,
     "TestParseLetztesGefecht",
     "letztes_gefecht",
-    "$player$ bekommt Letztes Gefecht.",
+    "$player$ bekommt 'Letztes Gefecht'.",
     mod.testHelper.eventTypeSpellPeriodicHostilePlayerBuffs
   )
 end
@@ -799,7 +799,7 @@ function me.TestParseBlutrausch()
     className,
     "TestParseBlutrausch",
     "blutrausch",
-    "$player$ bekommt Blutrausch.",
+    "$player$ bekommt 'Blutrausch'.",
     mod.testHelper.eventTypeSpellPeriodicHostilePlayerBuffs
   )
 end
@@ -859,7 +859,7 @@ function me.TestParseSchildhieb()
     className,
     "TestParseSchildhieb",
     "schildhieb",
-    "$player$ bekommt Schildhieb.",
+    "$player$ bekommt 'Schildhieb'.",
     mod.testHelper.eventTypeSpellPeriodicHostilePlayerBuffs
   )
 end

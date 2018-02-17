@@ -548,7 +548,7 @@ function me.TestParseEisblock()
     className,
     "TestParseEisblock",
     "eisblock",
-    "$player$ bekommt Eisblock.",
+    "$player$ bekommt 'Eisblock'.",
     mod.testHelper.eventTypeSpellPeriodicHostilePlayerBuffs
   )
 end
@@ -608,7 +608,7 @@ function me.TestParseBlinzeln()
     className,
     "TestParseBlinzeln",
     "blinzeln",
-    "$player$ bekommt Blinzeln.",
+    "$player$ bekommt 'Blinzeln'.",
     mod.testHelper.eventTypeSpellPeriodicHostilePlayerBuffs
   )
 end
@@ -618,7 +618,7 @@ function me.TestParseFeuerzauberschutz()
     className,
     "TestParseFeuerzauberschutz",
     "feuerzauberschutz",
-    "$player$ bekommt Feuerzauberschutz.",
+    "$player$ bekommt 'Feuerzauberschutz'.",
     mod.testHelper.eventTypeSpellPeriodicHostilePlayerBuffs
   )
 end
@@ -638,7 +638,7 @@ function me.TestParseFrostzauberschutz()
     className,
     "TestParseFrostzauberschutz",
     "frostzauberschutz",
-    "$player$ bekommt Frostzauberschutz.",
+    "$player$ bekommt 'Frostzauberschutz'.",
     mod.testHelper.eventTypeSpellPeriodicHostilePlayerBuffs
   )
 end
@@ -668,7 +668,7 @@ function me.TestParseManaschild()
     className,
     "TestParseManaschild",
     "manaschild",
-    "$player$ bekommt Manaschild.",
+    "$player$ bekommt 'Manaschild'.",
     mod.testHelper.eventTypeSpellPeriodicHostilePlayerBuffs
   )
 end
@@ -688,7 +688,7 @@ function me.TestParseEisbarriere()
     className,
     "TestParseEisbarriere",
     "eisbarriere",
-    "$player$ bekommt Eisbarriere.",
+    "$player$ bekommt 'Eisbarriere'.",
     mod.testHelper.eventTypeSpellPeriodicHostilePlayerBuffs
   )
 end
@@ -718,7 +718,7 @@ function me.TestParseArkaneMacht()
     className,
     "TestParseArkaneMacht",
     "arkane_macht",
-    "$player$ bekommt Arkane Macht.",
+    "$player$ bekommt 'Arkane Macht'.",
     mod.testHelper.eventTypeSpellPeriodicHostilePlayerBuffs
   )
 end
@@ -738,7 +738,7 @@ function me.TestParseHervorrufung()
     className,
     "TestParseHervorrufung",
     "hervorrufung",
-    "$player$ bekommt Hervorrufung.",
+    "$player$ bekommt 'Hervorrufung'.",
     mod.testHelper.eventTypeSpellPeriodicHostilePlayerBuffs
   )
 end
@@ -748,7 +748,7 @@ function me.TestParseGeistesgegenwart()
     className,
     "TestParseGeistesgegenwart",
     "geistesgegenwart",
-    "$player$ bekommt Geistesgegenwart.",
+    "$player$ bekommt 'Geistesgegenwart'.",
     mod.testHelper.eventTypeSpellPeriodicHostilePlayerBuffs
   )
 end
@@ -768,7 +768,7 @@ function me.TestParseVerbrennung()
     className,
     "TestParseVerbrennung",
     "verbrennung",
-    "$player$ bekommt Verbrennung.",
+    "$player$ bekommt 'Verbrennung'.",
     mod.testHelper.eventTypeSpellPeriodicHostilePlayerBuffs
   )
 end

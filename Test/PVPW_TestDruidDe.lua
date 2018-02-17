@@ -384,7 +384,7 @@ function me.TestParseBaumrinde()
     className,
     "TestParseBaumrinde",
     "baumrinde",
-    "$player$ bekommt Baumrinde.",
+    "$player$ bekommt 'Baumrinde'.",
     mod.testHelper.eventTypeSpellPeriodicHostilePlayerBuffs
   )
 end
@@ -404,7 +404,7 @@ function me.TestParseGriffDerNatur()
     className,
     "TestParseGriffDerNatur",
     "griff_der_natur",
-    "$player$ bekommt Griff der Natur.",
+    "$player$ bekommt 'Griff der Natur'.",
     mod.testHelper.eventTypeSpellPeriodicHostilePlayerBuffs
   )
 end
@@ -444,7 +444,7 @@ function me.TestParseRasendeRegeneration()
     className,
     "TestParseRasendeRegeneration",
     "rasende_regeneration",
-    "$player$ bekommt Rasende Regeneration.",
+    "$player$ bekommt 'Rasende Regeneration'.",
     mod.testHelper.eventTypeSpellPeriodicHostilePlayerBuffs
   )
 end
@@ -464,7 +464,7 @@ function me.TestParseVergiftungAufheben()
     className,
     "TestParseVergiftungAufheben",
     "vergiftung_aufheben",
-    "$player$ bekommt Vergiftung aufheben.",
+    "$player$ bekommt 'Vergiftung aufheben'.",
     mod.testHelper.eventTypeSpellPeriodicHostilePlayerBuffs
   )
 end
@@ -484,7 +484,7 @@ function me.TestParseAnregen()
     className,
     "TestParseAnregen",
     "anregen",
-    "$player$ bekommt Anregen.",
+    "$player$ bekommt 'Anregen'.",
     mod.testHelper.eventTypeSpellPeriodicHostilePlayerBuffs
   )
 end
@@ -504,7 +504,7 @@ function me.TestParseSchnelligkeitDerNatur()
     className,
     "TestParseSchnelligkeitDerNatur",
     "schnelligkeit_der_natur",
-    "$player$ bekommt Schnelligkeit der Natur.",
+    "$player$ bekommt 'Schnelligkeit der Natur'.",
     mod.testHelper.eventTypeSpellPeriodicHostilePlayerBuffs
   )
 end

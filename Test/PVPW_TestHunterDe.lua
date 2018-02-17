@@ -518,7 +518,7 @@ function me.TestParseAspektDesAffen()
     className,
     "TestParseAspektDesAffen",
     "aspekt_des_affen",
-    "$player$ bekommt Aspekt des Affen.",
+    "$player$ bekommt 'Aspekt des Affen'.",
     mod.testHelper.eventTypeSpellPeriodicHostilePlayerBuffs
   )
 end
@@ -528,7 +528,7 @@ function me.TestParseAspektDesFalken()
     className,
     "TestParseAspektDesFalken",
     "aspekt_des_falken",
-    "$player$ bekommt Aspekt des Falken.",
+    "$player$ bekommt 'Aspekt des Falken'.",
     mod.testHelper.eventTypeSpellPeriodicHostilePlayerBuffs
   )
 end
@@ -538,7 +538,7 @@ function me.TestParseSchnellfeuer()
     className,
     "TestParseSchnellfeuer",
     "schnellfeuer",
-    "$player$ bekommt Schnellfeuer.",
+    "$player$ bekommt 'Schnellfeuer'.",
     mod.testHelper.eventTypeSpellPeriodicHostilePlayerBuffs
   )
 end
@@ -558,7 +558,7 @@ function me.TestParseAbschreckung()
     className,
     "TestParseAbschreckung",
     "abschreckung",
-    "$player$ bekommt Abschreckung.",
+    "$player$ bekommt 'Abschreckung'.",
     mod.testHelper.eventTypeSpellPeriodicHostilePlayerBuffs
   )
 end
@@ -668,7 +668,7 @@ function me.TestParseEinschuechterung()
     className,
     "TestParseEinschuechterung",
     "einschuechterung",
-    "$player$ bekommt Einschüchterung.",
+    "$player$ bekommt 'Einschüchterung'.",
     mod.testHelper.eventTypeSpellPeriodicHostilePlayerBuffs
   )
 end
@@ -688,7 +688,7 @@ function me.TestParseZornDesWildtiers()
     className,
     "TestParseZornDesWildtiers",
     "zorn_des_wildtiers",
-    "$player$ bekommt Zorn des Wildtiers.",
+    "$player$ bekommt 'Zorn des Wildtiers'.",
     mod.testHelper.eventTypeSpellPeriodicHostilePlayerBuffs
   )
 end

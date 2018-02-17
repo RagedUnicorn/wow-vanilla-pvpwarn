@@ -548,7 +548,7 @@ function me.TestParseTeufelsbeherschung()
     className,
     "TestParseTeufelsbeherschung",
     "teufelsbeherschung",
-    "$player$ bekommt Teufelsbeherschung.",
+    "$player$ bekommt 'Teufelsbeherschung'.",
     mod.testHelper.eventTypeSpellPeriodicHostilePlayerBuffs
   )
 end
@@ -578,7 +578,7 @@ function me.TestParseSchattenzauberschutz()
     className,
     "TestParseSchattenzauberschutz",
     "schattenzauberschutz",
-    "$player$ bekommt Schattenzauberschutz.",
+    "$player$ bekommt 'Schattenzauberschutz'.",
     mod.testHelper.eventTypeSpellPeriodicHostilePlayerBuffs
   )
 end
@@ -608,7 +608,7 @@ function me.TestParseZauberstein()
     className,
     "TestParseZauberstein",
     "zauberstein",
-    "$player$ bekommt Zauberstein.",
+    "$player$ bekommt 'Zauberstein'.",
     mod.testHelper.eventTypeSpellPeriodicHostilePlayerBuffs
   )
 end
@@ -628,7 +628,7 @@ function me.TestParseErheblicherZauberstein()
     className,
     "TestParseErheblicherZauberstein",
     "erheblicher_zauberstein",
-    "$player$ bekommt Erheblicher Zauberstein.",
+    "$player$ bekommt 'Erheblicher Zauberstein'.",
     mod.testHelper.eventTypeSpellPeriodicHostilePlayerBuffs
   )
 end
@@ -648,7 +648,7 @@ function me.TestParseGrosserZauberstein()
     className,
     "TestParseGrosserZauberstein",
     "grosser_zauberstein",
-    "$player$ bekommt Großer Zauberstein.",
+    "$player$ bekommt 'Großer Zauberstein'.",
     mod.testHelper.eventTypeSpellPeriodicHostilePlayerBuffs
   )
 end
@@ -678,7 +678,7 @@ function me.TestParseFluchVerstaerken()
     className,
     "TestParseFluchVerstaerken",
     "fluch_verstaerken",
-    "$player$ bekommt Fluch verstärken.",
+    "$player$ bekommt 'Fluch verstärken'.",
     mod.testHelper.eventTypeSpellPeriodicHostilePlayerBuffs
   )
 end
@@ -758,7 +758,7 @@ function me.TestParseSeelensteinAuferstehung()
     className,
     "TestParseSeelensteinAuferstehung",
     "seelenstein_auferstehung",
-    "$player$ bekommt Seelenstein-Auferstehung.",
+    "$player$ bekommt 'Seelenstein-Auferstehung'.",
     mod.testHelper.eventTypeSpellPeriodicHostilePlayerBuffs
   )
 end
@@ -788,7 +788,7 @@ function me.TestParseSeelenverbindung()
     className,
     "TestParseSeelenverbindung",
     "seelenverbindung",
-    "$player$ bekommt Seelenverbindung.",
+    "$player$ bekommt 'Seelenverbindung'.",
     mod.testHelper.eventTypeSpellPeriodicHostilePlayerBuffs
   )
 end

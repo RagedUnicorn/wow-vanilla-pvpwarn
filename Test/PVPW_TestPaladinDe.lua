@@ -460,7 +460,7 @@ function me.TestParseAuraDerHingabe()
     className,
     "TestParseAuraDerHingabe",
     "aura_der_hingabe",
-    "$player$ bekommt Aura der Hingabe.",
+    "$player$ bekommt 'Aura der Hingabe'.",
     mod.testHelper.eventTypeSpellPeriodicHostilePlayerBuffs
   )
 end
@@ -480,7 +480,7 @@ function me.TestParseAuraDerVergeltung()
     className,
     "TestParseAuraDerVergeltung",
     "aura_der_vergeltung",
-    "$player$ bekommt Aura der Vergeltung.",
+    "$player$ bekommt 'Aura der Vergeltung'.",
     mod.testHelper.eventTypeSpellPeriodicHostilePlayerBuffs
   )
 end
@@ -500,7 +500,7 @@ function me.TestParseAuraDerKonzentration()
     className,
     "TestParseAuraDerKonzentration",
     "aura_der_konzentration",
-    "$player$ bekommt Aura der Konzentration.",
+    "$player$ bekommt 'Aura der Konzentration'.",
     mod.testHelper.eventTypeSpellPeriodicHostilePlayerBuffs
   )
 end
@@ -520,7 +520,7 @@ function me.TestParseAuraDesSchattenwiderstands()
     className,
     "TestParseAuraDesSchattenwiderstands",
     "aura_des_schattenwiderstands",
-    "$player$ bekommt Aura des Schattenwiderstands.",
+    "$player$ bekommt 'Aura des Schattenwiderstands'.",
     mod.testHelper.eventTypeSpellPeriodicHostilePlayerBuffs
   )
 end
@@ -540,7 +540,7 @@ function me.TestParseAuraDesFrostwiderstands()
     className,
     "TestParseAuraDesFrostwiderstands",
     "aura_des_frostwiderstands",
-    "$player$ bekommt Aura des Frostwiderstands.",
+    "$player$ bekommt 'Aura des Frostwiderstands'.",
     mod.testHelper.eventTypeSpellPeriodicHostilePlayerBuffs
   )
 end
@@ -560,7 +560,7 @@ function me.TestParseAuraDesFeuerwiderstands()
     className,
     "TestParseAuraDesFeuerwiderstands",
     "aura_des_feuerwiderstands",
-    "$player$ bekommt Aura des Feuerwiderstands.",
+    "$player$ bekommt 'Aura des Feuerwiderstands'.",
     mod.testHelper.eventTypeSpellPeriodicHostilePlayerBuffs
   )
 end
@@ -590,7 +590,7 @@ function me.TestParseSegenDesSchutzes()
     className,
     "TestParseSegenDesSchutzes",
     "segen_des_schutzes",
-    "$player$ bekommt Segen des Schutzes.",
+    "$player$ bekommt 'Segen des Schutzes'.",
     mod.testHelper.eventTypeSpellPeriodicHostilePlayerBuffs
   )
 end
@@ -610,7 +610,7 @@ function me.TestParseSegenDerFreiheit()
     className,
     "TestParseSegenDerFreiheit",
     "segen_der_freiheit",
-    "$player$ bekommt Segen der Freiheit.",
+    "$player$ bekommt 'Segen der Freiheit'.",
     mod.testHelper.eventTypeSpellPeriodicHostilePlayerBuffs
   )
 end
@@ -630,7 +630,7 @@ function me.TestParseSegenDerOpferung()
     className,
     "TestParseSegenDerOpferung",
     "segen_der_opferung",
-    "$player$ bekommt Segen der Opferung.",
+    "$player$ bekommt 'Segen der Opferung'.",
     mod.testHelper.eventTypeSpellPeriodicHostilePlayerBuffs
   )
 end
@@ -700,7 +700,7 @@ function me.TestParseGottesschild()
     className,
     "TestParseGottesschild",
     "gottesschild",
-    "$player$ bekommt Gottesschild.",
+    "$player$ bekommt 'Gottesschild'.",
     mod.testHelper.eventTypeSpellPeriodicHostilePlayerBuffs
   )
 end
@@ -720,7 +720,7 @@ function me.TestParseGoettlicheGunst()
     className,
     "TestParseGoettlicheGunst",
     "goettliche_gunst",
-    "$player$ bekommt Göttliche Gunst.",
+    "$player$ bekommt 'Göttliche Gunst'.",
     mod.testHelper.eventTypeSpellPeriodicHostilePlayerBuffs
   )
 end

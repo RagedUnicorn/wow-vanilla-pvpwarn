@@ -600,7 +600,7 @@ function me.TestParseSprinten()
     className,
     "TestParseSprinten",
     "sprinten",
-    "$player$ bekommt Sprinten.",
+    "$player$ bekommt 'Sprinten'.",
     mod.testHelper.eventTypeSpellPeriodicHostilePlayerBuffs
   )
 end
@@ -620,7 +620,7 @@ function me.TestParseEntrinnen()
     className,
     "TestParseEntrinnen",
     "entrinnen",
-    "$player$ bekommt Entrinnen.",
+    "$player$ bekommt 'Entrinnen'.",
     mod.testHelper.eventTypeSpellPeriodicHostilePlayerBuffs
   )
 end
@@ -660,7 +660,7 @@ function me.TestParseAdrenalinrausch()
     className,
     "TestParseAdrenalinrausch",
     "adrenalinrausch",
-    "$player$ bekommt Adrenalinrausch.",
+    "$player$ bekommt 'Adrenalinrausch'.",
     mod.testHelper.eventTypeSpellPeriodicHostilePlayerBuffs
   )
 end
@@ -680,7 +680,7 @@ function me.TestParseKlingenwirbel()
     className,
     "TestParseKlingenwirbel",
     "klingenwirbel",
-    "$player$ bekommt Klingenwirbel.",
+    "$player$ bekommt 'Klingenwirbel'.",
     mod.testHelper.eventTypeSpellPeriodicHostilePlayerBuffs
   )
 end

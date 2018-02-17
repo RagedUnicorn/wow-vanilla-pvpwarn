@@ -81,16 +81,16 @@ if (GetLocale() == "deDE") then
     [source] [keyword] [spell]
 
     examples:
-      $player$ bekommt Berserkerwut.
-      $player$ bekommt Todeswunsch.
-      $player$ bekommt Tollkühnheit.
-      $player$ bekommt Verteidigungshaltung.
-      $player$ bekommt Kampfhaltung.
-      $player$ bekommt Berserkerhaltung.
-      $player$ bekommt Schildwall.
-      $player$ bekommt Elunes Anmut.
+      $player$ bekommt 'Berserkerwut'.
+      $player$ bekommt 'Todeswunsch'.
+      $player$ bekommt 'Tollkühnheit'.
+      $player$ bekommt 'Verteidigungshaltung'.
+      $player$ bekommt 'Kampfhaltung'.
+      $player$ bekommt 'Berserkerhaltung'.
+      $player$ bekommt 'Schildwall'.
+      $player$ bekommt 'Elunes Anmut'.
   ]]--
-  SPELL_PERIODIC_HOSTILE_PLAYER_BUFFS1 = "^(%a+)%s(bekommt)%s([\195\159\195\132\195\150\195\156\195\188\195\164\195\182%a%s-:]+)%.$"
+  SPELL_PERIODIC_HOSTILE_PLAYER_BUFFS1 = "^(%a+)%s(bekommt)%s'([\195\159\195\132\195\150\195\156\195\188\195\164\195\182%a%s-:]+)'%.$"
 
   --[[
     CHAT_MSG_SPELL_PERIODIC_HOSTILEPLAYER_BUFFS

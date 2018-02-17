@@ -620,7 +620,7 @@ function me.TestParseKoerperlicherSchutz()
     className,
     "TestParseKoerperlicherSchutz",
     "koerperlicher_schutz",
-    "$player$ bekommt Körperlicher Schutz.",
+    "$player$ bekommt 'Körperlicher Schutz'.",
     mod.testHelper.eventTypeSpellPeriodicHostilePlayerBuffs
   )
 end
@@ -640,7 +640,7 @@ function me.TestParseSproedeRuestung()
     className,
     "TestParseSproedeRuestung",
     "sproede_ruestung",
-    "$player$ bekommt Spröde Rüstung.",
+    "$player$ bekommt 'Spröde Rüstung'.",
     mod.testHelper.eventTypeSpellPeriodicHostilePlayerBuffs
   )
 end
@@ -660,7 +660,7 @@ function me.TestParsePanzerDesWuehlers()
     className,
     "TestParsePanzerDesWuehlers",
     "panzer_des_wuehlers",
-    "$player$ bekommt Panzer des Wühlers.",
+    "$player$ bekommt 'Panzer des Wühlers'.",
     mod.testHelper.eventTypeSpellPeriodicHostilePlayerBuffs
   )
 end
@@ -680,7 +680,7 @@ function me.TestParseEphemereMacht()
     className,
     "TestParseEphemereMacht",
     "ephemere_macht",
-    "$player$ bekommt Ephemere Macht.",
+    "$player$ bekommt 'Ephemere Macht'.",
     mod.testHelper.eventTypeSpellPeriodicHostilePlayerBuffs
   )
 end
@@ -700,7 +700,7 @@ function me.TestParseEssenzSaphirons()
     className,
     "TestParseEssenzSaphirons",
     "essenz_saphirons",
-    "$player$ bekommt Essenz Saphirons.",
+    "$player$ bekommt 'Essenz Saphirons'.",
     mod.testHelper.eventTypeSpellPeriodicHostilePlayerBuffs
   )
 end
@@ -720,7 +720,7 @@ function me.TestParseFeuerreflektor()
     className,
     "TestParseFeuerreflektor",
     "feuerreflektor",
-    "$player$ bekommt Feuerreflektor.",
+    "$player$ bekommt 'Feuerreflektor'.",
     mod.testHelper.eventTypeSpellPeriodicHostilePlayerBuffs
   )
 end
@@ -740,7 +740,7 @@ function me.TestParseFliehen()
     className,
     "TestParseFliehen",
     "fliehen",
-    "$player$ bekommt Fliehen.",
+    "$player$ bekommt 'Fliehen'.",
     mod.testHelper.eventTypeSpellPeriodicHostilePlayerBuffs
   )
 end
@@ -760,7 +760,7 @@ function me.TestParseFrostreflektor()
     className,
     "TestParseFrostreflektor",
     "frostreflektor",
-    "$player$ bekommt Frostreflektor.",
+    "$player$ bekommt 'Frostreflektor'.",
     mod.testHelper.eventTypeSpellPeriodicHostilePlayerBuffs
   )
 end
@@ -780,7 +780,7 @@ function me.TestParseGeschenkDesLebens()
     className,
     "TestParseGeschenkDesLebens",
     "geschenk_des_lebens",
-    "$player$ bekommt Geschenk des Lebens.",
+    "$player$ bekommt 'Geschenk des Lebens'.",
     mod.testHelper.eventTypeSpellPeriodicHostilePlayerBuffs
   )
 end
@@ -800,7 +800,7 @@ function me.TestParseImmunitaetGegenUnbeweglichkeit()
     className,
     "TestParseImmunitaetGegenUnbeweglichkeit",
     "immunitaet_gegen_unbeweglichkeit",
-    "$player$ bekommt Immunität gegen Unbeweglichkeit.",
+    "$player$ bekommt 'Immunität gegen Unbeweglichkeit'.",
     mod.testHelper.eventTypeSpellPeriodicHostilePlayerBuffs
   )
 end
@@ -820,7 +820,7 @@ function me.TestParseGedankensprung()
     className,
     "TestParseGedankensprung",
     "gedankensprung",
-    "$player$ bekommt Gedankensprung.",
+    "$player$ bekommt 'Gedankensprung'.",
     mod.testHelper.eventTypeSpellPeriodicHostilePlayerBuffs
   )
 end
@@ -840,7 +840,7 @@ function me.TestParseTollkuehnesStuermen()
     className,
     "TestParseTollkuehnesStuermen",
     "tollkuehnes_stuermen",
-    "$player$ bekommt Tollkühnes Stürmen.",
+    "$player$ bekommt 'Tollkühnes Stürmen'.",
     mod.testHelper.eventTypeSpellPeriodicHostilePlayerBuffs
   )
 end
@@ -860,7 +860,7 @@ function me.TestParseRuheloseStaerke()
     className,
     "TestParseRuheloseStaerke",
     "ruhelose_staerke",
-    "$player$ bekommt Ruhelose Stärke.",
+    "$player$ bekommt 'Ruhelose Stärke'.",
     mod.testHelper.eventTypeSpellPeriodicHostilePlayerBuffs
   )
 end
@@ -880,7 +880,7 @@ function me.TestParseGnomenRaketenstiefel()
     className,
     "TestParseGnomenRaketenstiefel",
     "gnomen_raketenstiefel",
-    "$player$ bekommt Gnomen-Raketenstiefel.",
+    "$player$ bekommt 'Gnomen-Raketenstiefel'.",
     mod.testHelper.eventTypeSpellPeriodicHostilePlayerBuffs
   )
 end
@@ -900,7 +900,7 @@ function me.TestParseGoblinRaketenstiefel()
     className,
     "TestParseGoblinRaketenstiefel",
     "goblin_raketenstiefel",
-    "$player$ bekommt Goblin-Raketenstiefel.",
+    "$player$ bekommt 'Goblin-Raketenstiefel'.",
     mod.testHelper.eventTypeSpellPeriodicHostilePlayerBuffs
   )
 end
@@ -920,7 +920,7 @@ function me.TestParseSchattenreflektor()
     className,
     "TestParseSchattenreflektor",
     "schattenreflektor",
-    "$player$ bekommt Schattenreflektor.",
+    "$player$ bekommt 'Schattenreflektor'.",
     mod.testHelper.eventTypeSpellPeriodicHostilePlayerBuffs
   )
 end
@@ -940,7 +940,7 @@ function me.TestParseWappenDesSchlaechters()
     className,
     "TestParseWappenDesSchlaechters",
     "wappen_des_schlaechters",
-    "$player$ bekommt Wappen des Schlächters.",
+    "$player$ bekommt 'Wappen des Schlächters'.",
     mod.testHelper.eventTypeSpellPeriodicHostilePlayerBuffs
   )
 end
@@ -960,7 +960,7 @@ function me.TestParseInstabileMacht()
     className,
     "TestParseInstabileMacht",
     "instabile_macht",
-    "$player$ bekommt Instabile Macht.",
+    "$player$ bekommt 'Instabile Macht'.",
     mod.testHelper.eventTypeSpellPeriodicHostilePlayerBuffs
   )
 end
@@ -980,7 +980,7 @@ function me.TestParseGifttotem()
     className,
     "TestParseGifttotem",
     "gifttotem",
-    "$player$ bekommt Gifttotem.",
+    "$player$ bekommt 'Gifttotem'.",
     mod.testHelper.eventTypeSpellPeriodicHostilePlayerBuffs
   )
 end
@@ -1010,7 +1010,7 @@ function me.TestParseErdstoss()
     className,
     "TestParseErdstoss",
     "erdstoss",
-    "$player$ bekommt Erdstoß.",
+    "$player$ bekommt 'Erdstoß'.",
     mod.testHelper.eventTypeSpellPeriodicHostilePlayerBuffs
   )
 end

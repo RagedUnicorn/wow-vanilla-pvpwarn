@@ -452,7 +452,7 @@ function me.TestParseElementarbeherrschung()
     className,
     "TestParseElementarbeherrschung",
     "elementarbeherrschung",
-    "$player$ bekommt Elementarbeherrschung.",
+    "$player$ bekommt 'Elementarbeherrschung'.",
     mod.testHelper.eventTypeSpellPeriodicHostilePlayerBuffs
   )
 end
@@ -472,7 +472,7 @@ function me.TestParseSchnelligkeitDerNatur()
     className,
     "TestParseSchnelligkeitDerNatur",
     "schnelligkeit_der_natur",
-    "$player$ bekommt Schnelligkeit der Natur.",
+    "$player$ bekommt 'Schnelligkeit der Natur'.",
     mod.testHelper.eventTypeSpellPeriodicHostilePlayerBuffs
   )
 end
