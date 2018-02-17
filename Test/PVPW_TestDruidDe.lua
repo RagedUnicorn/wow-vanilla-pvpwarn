@@ -151,7 +151,7 @@ function me.RunAll(playManual)
   mod.testReporter.AddToTestQueueWithDelay(me.TestSoundSelfAvoidWildeAttacke)
 
   if not playManual then
-    -- mod.testReporter.PlayTestQueueWithDelay()
+    mod.testReporter.PlayTestQueueWithDelay()
   end
 
   mod.testReporter.AddToTestQueue(me.TestParseBaumrinde)
