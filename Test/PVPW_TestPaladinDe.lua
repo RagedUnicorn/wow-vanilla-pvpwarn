@@ -180,6 +180,12 @@ function me.RunAll(playManual)
   mod.testReporter.AddToTestQueue(me.TestParseDownGoettlicheGunst)
   mod.testReporter.AddToTestQueue(me.TestParseVorahnung)
   mod.testReporter.AddToTestQueue(me.TestParseDownVorahnung)
+  mod.testReporter.AddToTestQueue(me.TestParseEnemyAvoidImmuneHammerDesZorns)
+  mod.testReporter.AddToTestQueue(me.TestParseEnemyAvoidMissHammerDesZorns)
+  mod.testReporter.AddToTestQueue(me.TestParseEnemyAvoidImmuneHammerDerGerechtigkeit)
+  mod.testReporter.AddToTestQueue(me.TestParseSelfAvoidImmuneHammerDesZorns)
+  mod.testReporter.AddToTestQueue(me.TestParseSelfAvoidMissHammerDesZorns)
+  mod.testReporter.AddToTestQueue(me.TestParseSelfAvoidImmuneHammerDerGerechtigkeit)
 
   mod.testReporter.PlayTestQueue()
 end
@@ -746,5 +752,71 @@ function me.TestParseDownVorahnung()
     "vorahnung",
     "Vorahnung schwindet von $player$.",
     mod.testHelper.eventTypeSpellAuraGoneOther
+  )
+end
+
+function me.TestParseEnemyAvoidImmuneHammerDesZorns()
+  mod.testHelper.TestParseEnemyAvoid(
+    className,
+    "TestParseEnemyAvoidImmuneHammerDesZorns",
+    "hammer_des_zorns",
+    "Hammer des Zorns war ein Fehlschlag. $player$ ist immun.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    PVPW_CONSTANTS.AVOID_TYPES.IMMUNE
+  )
+end
+
+function me.TestParseEnemyAvoidMissHammerDesZorns()
+  mod.testHelper.TestParseEnemyAvoid(
+    className,
+    "TestParseEnemyAvoidMissHammerDesZorns",
+    "hammer_des_zorns",
+    "Hammer des Zorns hat $player$ verfehlt.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    PVPW_CONSTANTS.AVOID_TYPES.MISS
+  )
+end
+
+function me.TestParseEnemyAvoidImmuneHammerDerGerechtigkeit()
+  mod.testHelper.TestParseEnemyAvoid(
+    className,
+    "TestParseEnemyAvoidImmuneHammerDerGerechtigkeit",
+    "hammer_der_gerechtigkeit",
+    "Hammer der Gerechtigkeit war ein Fehlschlag. $player$ ist immun.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    PVPW_CONSTANTS.AVOID_TYPES.IMMUNE
+  )
+end
+
+function me.TestParseSelfAvoidImmuneHammerDesZorns()
+  mod.testHelper.TestParseSelfAvoid(
+    className,
+    "TestParseSelfAvoidImmuneHammerDesZorns",
+    "hammer_des_zorns",
+    "$player$ versucht es mit Hammer des Zorns... ein Fehlschlag. Ihr seid immun.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    PVPW_CONSTANTS.AVOID_TYPES.IMMUNE
+  )
+end
+
+function me.TestParseSelfAvoidMissHammerDesZorns()
+  mod.testHelper.TestParseSelfAvoid(
+    className,
+    "TestParseSelfAvoidMissHammerDesZorns",
+    "hammer_des_zorns",
+    "$player$ greift an (mit Hammer des Zorns) und verfehlt euch.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    PVPW_CONSTANTS.AVOID_TYPES.MISS
+  )
+end
+
+function me.TestParseSelfAvoidImmuneHammerDerGerechtigkeit()
+  mod.testHelper.TestParseSelfAvoid(
+    className,
+    "TestParseSelfAvoidImmuneHammerDerGerechtigkeit",
+    "hammer_der_gerechtigkeit",
+    "$player$ versucht es mit Hammer der Gerechtigkeit... ein Fehlschlag. Ihr seid immun.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    PVPW_CONSTANTS.AVOID_TYPES.IMMUNE
   )
 end
