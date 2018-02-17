@@ -698,7 +698,7 @@ function me.TestParseSelfAvoidDodgeHieb()
   mod.testHelper.TestParseSelfAvoid(
     className,
     "TestParseSelfAvoidDodgeHieb",
-    "bash",
+    "hieb",
     "$player$s Hieb wurde ausgewichen.",
     mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
     PVPW_CONSTANTS.AVOID_TYPES.DODGE
@@ -709,7 +709,7 @@ function me.TestParseSelfAvoidParryHieb()
   mod.testHelper.TestParseSelfAvoid(
     className,
     "TestParseSelfAvoidParryHieb",
-    "bash",
+    "hieb",
     "Hieb von $player$ wurde pariert.",
     mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
     PVPW_CONSTANTS.AVOID_TYPES.PARRY
@@ -720,7 +720,7 @@ function me.TestParseSelfAvoidImmuneHieb()
   mod.testHelper.TestParseSelfAvoid(
     className,
     "TestParseSelfAvoidImmuneHieb",
-    "bash",
+    "hieb",
     "$player$ versucht es mit Hieb... ein Fehlschlag. Ihr seid immun.",
     mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
     PVPW_CONSTANTS.AVOID_TYPES.IMMUNE
@@ -731,7 +731,7 @@ function me.TestParseSelfAvoidMissHieb()
   mod.testHelper.TestParseSelfAvoid(
     className,
     "TestParseSelfAvoidMissHieb",
-    "bash",
+    "hieb",
     "$player$ greift an (mit Hieb) und verfehlt euch.",
     mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
     PVPW_CONSTANTS.AVOID_TYPES.MISS
@@ -742,7 +742,7 @@ function me.TestParseSelfAvoidResistHieb()
   mod.testHelper.TestParseSelfAvoid(
     className,
     "TestParseSelfAvoidResistHieb",
-    "bash",
+    "hieb",
     "$player$ versucht es mit Hieb... widerstanden.",
     mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
     PVPW_CONSTANTS.AVOID_TYPES.RESIST
