@@ -185,6 +185,30 @@ function me.RunAll(playManual)
   mod.testReporter.AddToTestQueue(me.TestParseSeelenverbindung)
   mod.testReporter.AddToTestQueue(me.TestParseDownSeelenverbindung)
   mod.testReporter.AddToTestQueue(me.TestParseVerfuehrung)
+  mod.testReporter.AddToTestQueue(me.TestParseEnemyAvoidImmuneFluchDerSprachen)
+  mod.testReporter.AddToTestQueue(me.TestParseEnemyAvoidResistFluchDerSprachen)
+  mod.testReporter.AddToTestQueue(me.TestParseEnemyAvoidImmuneTodesmantel)
+  mod.testReporter.AddToTestQueue(me.TestParseEnemyAvoidResistTodesmantel)
+  mod.testReporter.AddToTestQueue(me.TestParseEnemyAvoidImmuneFurcht)
+  mod.testReporter.AddToTestQueue(me.TestParseEnemyAvoidResistFurcht)
+  mod.testReporter.AddToTestQueue(me.TestParseEnemyAvoidImmuneSchreckensgeheul)
+  mod.testReporter.AddToTestQueue(me.TestParseEnemyAvoidResistSchreckensgeheul)
+  mod.testReporter.AddToTestQueue(me.TestParseEnemyAvoidImmuneSchattenbrand)
+  mod.testReporter.AddToTestQueue(me.TestParseEnemyAvoidResistSchattenbrand)
+  mod.testReporter.AddToTestQueue(me.TestParseSelfAvoidImmuneFluchDerSprachen)
+  mod.testReporter.AddToTestQueue(me.TestParseSelfAvoidResistFluchDerSprachen)
+  mod.testReporter.AddToTestQueue(me.TestParseSelfAvoidImmuneTodesmantel)
+  mod.testReporter.AddToTestQueue(me.TestParseSelfAvoidResistTodesmantel)
+  mod.testReporter.AddToTestQueue(me.TestParseSelfAvoidImmuneFurcht)
+  mod.testReporter.AddToTestQueue(me.TestParseSelfAvoidResistFurcht)
+  mod.testReporter.AddToTestQueue(me.TestParseSelfAvoidImmuneSchreckensgeheul)
+  mod.testReporter.AddToTestQueue(me.TestParseSelfAvoidResistSchreckensgeheul)
+  mod.testReporter.AddToTestQueue(me.TestParseSelfAvoidImmuneSchattenbrand)
+  mod.testReporter.AddToTestQueue(me.TestParseSelfAvoidResistSchattenbrand)
+  mod.testReporter.AddToTestQueue(me.TestParseSelfAvoidImmuneZaubersperre)
+  mod.testReporter.AddToTestQueue(me.TestParseSelfAvoidResistZaubersperre)
+  mod.testReporter.AddToTestQueue(me.TestParseSelfAvoidImmuneVerfuehrung)
+  mod.testReporter.AddToTestQueue(me.TestParseSelfAvoidResistVerfuehrung)
 
   mod.testReporter.PlayTestQueue()
 end
@@ -786,5 +810,269 @@ function me.TestParseVerfuehrung()
     "verfuehrung",
     "Ihr seid von Verführung betroffen.",
     mod.testHelper.eventTypeSpellPeriodicSelfDamage
+  )
+end
+
+function me.TestParseEnemyAvoidImmuneFluchDerSprachen()
+  mod.testHelper.TestParseEnemyAvoid(
+    className,
+    "TestParseEnemyAvoidImmuneFluchDerSprachen",
+    "fluch_der_sprachen",
+    "Fluch der Sprachen war ein Fehlschlag. $player$ ist immun.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    PVPW_CONSTANTS.AVOID_TYPES.IMMUNE
+  )
+end
+
+function me.TestParseEnemyAvoidResistFluchDerSprachen()
+  mod.testHelper.TestParseEnemyAvoid(
+    className,
+    "TestParseEnemyAvoidResistFluchDerSprachen",
+    "fluch_der_sprachen",
+    "Ihr habt es mit Fluch der Sprachen versucht, aber $player$ hat widerstanden.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    PVPW_CONSTANTS.AVOID_TYPES.RESIST
+  )
+end
+
+function me.TestParseEnemyAvoidImmuneTodesmantel()
+  mod.testHelper.TestParseEnemyAvoid(
+    className,
+    "TestParseEnemyAvoidImmuneTodesmantel",
+    "todesmantel",
+    "Todesmantel war ein Fehlschlag. $player$ ist immun.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    PVPW_CONSTANTS.AVOID_TYPES.IMMUNE
+  )
+end
+
+function me.TestParseEnemyAvoidResistTodesmantel()
+  mod.testHelper.TestParseEnemyAvoid(
+    className,
+    "TestParseEnemyAvoidResistTodesmantel",
+    "todesmantel",
+    "Ihr habt es mit Todesmantel versucht, aber $player$ hat widerstanden.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    PVPW_CONSTANTS.AVOID_TYPES.RESIST
+  )
+end
+
+function me.TestParseEnemyAvoidImmuneFurcht()
+  mod.testHelper.TestParseEnemyAvoid(
+    className,
+    "TestParseEnemyAvoidImmuneFurcht",
+    "furcht",
+    "Furcht war ein Fehlschlag. $player$ ist immun.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    PVPW_CONSTANTS.AVOID_TYPES.IMMUNE
+  )
+end
+
+function me.TestParseEnemyAvoidResistFurcht()
+  mod.testHelper.TestParseEnemyAvoid(
+    className,
+    "TestParseEnemyAvoidResistFurcht",
+    "furcht",
+    "Ihr habt es mit Furcht versucht, aber $player$ hat widerstanden.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    PVPW_CONSTANTS.AVOID_TYPES.RESIST
+  )
+end
+
+function me.TestParseEnemyAvoidImmuneSchreckensgeheul()
+  mod.testHelper.TestParseEnemyAvoid(
+    className,
+    "TestParseEnemyAvoidImmuneSchreckensgeheul",
+    "schreckensgeheul",
+    "Schreckensgeheul war ein Fehlschlag. $player$ ist immun.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    PVPW_CONSTANTS.AVOID_TYPES.IMMUNE
+  )
+end
+
+function me.TestParseEnemyAvoidResistSchreckensgeheul()
+  mod.testHelper.TestParseEnemyAvoid(
+    className,
+    "TestParseEnemyAvoidResistSchreckensgeheul",
+    "schreckensgeheul",
+    "Ihr habt es mit Schreckensgeheul versucht, aber $player$ hat widerstanden.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    PVPW_CONSTANTS.AVOID_TYPES.RESIST
+  )
+end
+
+function me.TestParseEnemyAvoidImmuneSchattenbrand()
+  mod.testHelper.TestParseEnemyAvoid(
+    className,
+    "TestParseEnemyAvoidImmuneSchattenbrand",
+    "schattenbrand",
+    "Schattenbrand war ein Fehlschlag. $player$ ist immun.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    PVPW_CONSTANTS.AVOID_TYPES.IMMUNE
+  )
+end
+
+function me.TestParseEnemyAvoidResistSchattenbrand()
+  mod.testHelper.TestParseEnemyAvoid(
+    className,
+    "TestParseEnemyAvoidResistSchattenbrand",
+    "schattenbrand",
+    "Ihr habt es mit Schattenbrand versucht, aber $player$ hat widerstanden.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    PVPW_CONSTANTS.AVOID_TYPES.RESIST
+  )
+end
+
+function me.TestParseSelfAvoidImmuneFluchDerSprachen()
+  mod.testHelper.TestParseSelfAvoid(
+    className,
+    "TestParseSelfAvoidImmuneFluchDerSprachen",
+    "fluch_der_sprachen",
+    "$player$ versucht es mit Fluch der Sprachen... ein Fehlschlag. Ihr seid immun.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    PVPW_CONSTANTS.AVOID_TYPES.IMMUNE
+  )
+end
+
+function me.TestParseSelfAvoidResistFluchDerSprachen()
+  mod.testHelper.TestParseSelfAvoid(
+    className,
+    "TestParseSelfAvoidResistFluchDerSprachen",
+    "fluch_der_sprachen",
+    "$player$ versucht es mit Fluch der Sprachen... widerstanden.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    PVPW_CONSTANTS.AVOID_TYPES.RESIST
+  )
+end
+
+function me.TestParseSelfAvoidImmuneTodesmantel()
+  mod.testHelper.TestParseSelfAvoid(
+    className,
+    "TestParseSelfAvoidImmuneTodesmantel",
+    "todesmantel",
+    "$player$ versucht es mit Todesmantel... ein Fehlschlag. Ihr seid immun.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    PVPW_CONSTANTS.AVOID_TYPES.IMMUNE
+  )
+end
+
+function me.TestParseSelfAvoidResistTodesmantel()
+  mod.testHelper.TestParseSelfAvoid(
+    className,
+    "TestParseSelfAvoidResistTodesmantel",
+    "todesmantel",
+    "$player$ versucht es mit Todesmantel... widerstanden.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    PVPW_CONSTANTS.AVOID_TYPES.RESIST
+  )
+end
+
+function me.TestParseSelfAvoidImmuneFurcht()
+  mod.testHelper.TestParseSelfAvoid(
+    className,
+    "TestParseSelfAvoidImmuneFurcht",
+    "furcht",
+    "$player$ versucht es mit Furcht... ein Fehlschlag. Ihr seid immun.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    PVPW_CONSTANTS.AVOID_TYPES.IMMUNE
+  )
+end
+
+function me.TestParseSelfAvoidResistFurcht()
+  mod.testHelper.TestParseSelfAvoid(
+    className,
+    "TestParseSelfAvoidResistFurcht",
+    "furcht",
+    "$player$ versucht es mit Furcht... widerstanden.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    PVPW_CONSTANTS.AVOID_TYPES.RESIST
+  )
+end
+
+function me.TestParseSelfAvoidImmuneSchreckensgeheul()
+  mod.testHelper.TestParseSelfAvoid(
+    className,
+    "TestParseSelfAvoidImmuneSchreckensgeheul",
+    "schreckensgeheul",
+    "$player$ versucht es mit Schreckensgeheul... ein Fehlschlag. Ihr seid immun.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    PVPW_CONSTANTS.AVOID_TYPES.IMMUNE
+  )
+end
+
+function me.TestParseSelfAvoidResistSchreckensgeheul()
+  mod.testHelper.TestParseSelfAvoid(
+    className,
+    "TestParseSelfAvoidResistSchreckensgeheul",
+    "schreckensgeheul",
+    "$player$ versucht es mit Schreckensgeheul... widerstanden.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    PVPW_CONSTANTS.AVOID_TYPES.RESIST
+  )
+end
+
+function me.TestParseSelfAvoidImmuneSchattenbrand()
+  mod.testHelper.TestParseSelfAvoid(
+    className,
+    "TestParseSelfAvoidImmuneSchattenbrand",
+    "schattenbrand",
+    "$player$ versucht es mit Schattenbrand... ein Fehlschlag. Ihr seid immun.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    PVPW_CONSTANTS.AVOID_TYPES.IMMUNE
+  )
+end
+
+function me.TestParseSelfAvoidResistSchattenbrand()
+  mod.testHelper.TestParseSelfAvoid(
+    className,
+    "TestParseSelfAvoidResistSchattenbrand",
+    "schattenbrand",
+    "$player$ versucht es mit Schattenbrand... widerstanden.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    PVPW_CONSTANTS.AVOID_TYPES.RESIST
+  )
+end
+
+function me.TestParseSelfAvoidImmuneZaubersperre()
+  mod.testHelper.TestParseSelfAvoid(
+    className,
+    "TestParseSelfAvoidImmuneZaubersperre",
+    "spell_lock",
+    "$player$ versucht es mit Zaubersperre... ein Fehlschlag. Ihr seid immun.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    PVPW_CONSTANTS.AVOID_TYPES.IMMUNE
+  )
+end
+
+function me.TestParseSelfAvoidResistZaubersperre()
+  mod.testHelper.TestParseSelfAvoid(
+    className,
+    "TestParseSelfAvoidResistZaubersperre",
+    "zaubersperre",
+    "$player$ versucht es mit Zaubersperre... widerstanden.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    PVPW_CONSTANTS.AVOID_TYPES.RESIST
+  )
+end
+
+function me.TestParseSelfAvoidImmuneVerfuehrung()
+  mod.testHelper.TestParseSelfAvoid(
+    className,
+    "TestParseSelfAvoidImmuneVerfuehrung",
+    "verfuehrung",
+    "$player$ versucht es mit Verführung... ein Fehlschlag. Ihr seid immun.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    PVPW_CONSTANTS.AVOID_TYPES.IMMUNE
+  )
+end
+
+function me.TestParseSelfAvoidResistVerfuehrung()
+  mod.testHelper.TestParseSelfAvoid(
+    className,
+    "TestParseSelfAvoidResistVerfuehrung",
+    "verfuehrung",
+    "$player$ versucht es mit Verführung... widerstanden.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    PVPW_CONSTANTS.AVOID_TYPES.RESIST
   )
 end
