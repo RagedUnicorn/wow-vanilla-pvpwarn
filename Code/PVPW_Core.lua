@@ -215,13 +215,13 @@ function me.RegisterEvents()
   -- fires when you start and stop casting a damaging spell.
   this:RegisterEvent("CHAT_MSG_SPELL_SELF_DAMAGE")
   -- fires when a hostile player is affected by a instant or ongoing damaging effect.
-  this:RegisterEvent("CHAT_MSG_SPELL_PERIODIC_HOSTILEPLAYER_DAMAGE");
+  this:RegisterEvent("CHAT_MSG_SPELL_PERIODIC_HOSTILEPLAYER_DAMAGE")
   -- fires when the player dies
-  this:RegisterEvent("PLAYER_DEAD");
+  this:RegisterEvent("PLAYER_DEAD")
   -- fires when the player's spirit is released after death or when the player accepts a resurrection without releasing
-  this:RegisterEvent("PLAYER_ALIVE");
+  this:RegisterEvent("PLAYER_ALIVE")
   -- fires when a player resurrects after being in spirit form
-  this:RegisterEvent("PLAYER_UNGHOST");
+  this:RegisterEvent("PLAYER_UNGHOST")
   -- fires when the player changes targets
   this:RegisterEvent("PLAYER_TARGET_CHANGED")
 end
