@@ -143,6 +143,10 @@ function me.RunAll(playManual)
   mod.testReporter.AddToTestQueue(me.TestParseDownBerserker)
   mod.testReporter.AddToTestQueue(me.TestParseSchattenhaftigkeit)
   mod.testReporter.AddToTestQueue(me.TestParseDownSchattenhaftigkeit)
+  mod.testReporter.AddToTestQueue(me.TestParseEnemyAvoidImmuneKriegsdonner)
+  mod.testReporter.AddToTestQueue(me.TestParseEnemyAvoidResistKriegsdonner)
+  mod.testReporter.AddToTestQueue(me.TestParseSelfAvoidImmuneKriegsdonner)
+  mod.testReporter.AddToTestQueue(me.TestParseSelfAvoidResistKriegsdonner)
 
   mod.testReporter.PlayTestQueue()
 end
@@ -381,5 +385,49 @@ function me.TestParseDownSchattenhaftigkeit()
     "schattenhaftigkeit",
     "Schattenhaftigkeit schwindet von $player$.",
     mod.testHelper.eventTypeSpellAuraGoneOther
+  )
+end
+
+function me.TestParseEnemyAvoidImmuneKriegsdonner()
+  mod.testHelper.TestParseEnemyAvoid(
+    className,
+    "TestParseEnemyAvoidImmuneKriegsdonner",
+    "kriegsdonner",
+    "Kriegsdonner war ein Fehlschlag. $player$ ist immun.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    PVPW_CONSTANTS.AVOID_TYPES.IMMUNE
+  )
+end
+
+function me.TestParseEnemyAvoidResistKriegsdonner()
+  mod.testHelper.TestParseEnemyAvoid(
+    className,
+    "TestParseEnemyAvoidResistKriegsdonner",
+    "kriegsdonner",
+    "Ihr habt es mit Kriegsdonner versucht, aber $player$ hat widerstanden.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    PVPW_CONSTANTS.AVOID_TYPES.RESIST
+  )
+end
+
+function me.TestParseSelfAvoidImmuneKriegsdonner()
+  mod.testHelper.TestParseSelfAvoid(
+    className,
+    "TestParseSelfAvoidImmuneKriegsdonner",
+    "kriegsdonner",
+    "$player$ versucht es mit Kriegsdonner... ein Fehlschlag. Ihr seid immun.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    PVPW_CONSTANTS.AVOID_TYPES.IMMUNE
+  )
+end
+
+function me.TestParseSelfAvoidResistKriegsdonner()
+  mod.testHelper.TestParseSelfAvoid(
+    className,
+    "TestParseSelfAvoidResistKriegsdonner",
+    "kriegsdonner",
+    "$player$ versucht es mit Kriegsdonner... widerstanden.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    PVPW_CONSTANTS.AVOID_TYPES.RESIST
   )
 end
