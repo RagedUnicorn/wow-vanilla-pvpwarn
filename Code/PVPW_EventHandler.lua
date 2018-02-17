@@ -77,8 +77,14 @@ function me.HandleEvent(msg, event)
     end
 
     if class and spell then
-      if spellData.faded and spell.hasFade then
-        fade = true
+      if spellData.faded then
+        if spell.hasFade then
+          fade = true
+        else
+          mod.logger.LogDebug(me.tag, "Detected a fading spell but the spell " ..
+            " in the spellMap does not support fading - ignoring event")
+          return
+        end
       end
 
       --[[
