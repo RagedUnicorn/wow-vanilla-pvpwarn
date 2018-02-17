@@ -37,7 +37,7 @@ end
 --[[
   Store logdata for tests
 ]]--
--- PVPWarnLog = {}
+PVPWarnLog = {}
 
 --[[
   Saved addon variable
