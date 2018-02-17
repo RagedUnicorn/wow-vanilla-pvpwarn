@@ -112,7 +112,7 @@ end
 ]]--
 function me.RunAll(playManual)
   -- test sound
-  --[[mod.testReporter.AddToTestQueueWithDelay(me.TestSoundBerserkerwut)
+  mod.testReporter.AddToTestQueueWithDelay(me.TestSoundBerserkerwut)
   mod.testReporter.AddToTestQueueWithDelay(me.TestSoundDownBerserkerwut)
   mod.testReporter.AddToTestQueueWithDelay(me.TestSoundTollkuehnheit)
   mod.testReporter.AddToTestQueueWithDelay(me.TestSoundDownTollkuehnheit)
@@ -134,9 +134,9 @@ function me.RunAll(playManual)
   mod.testReporter.AddToTestQueueWithDelay(me.TestSoundBetaeubungAbfangen)
   mod.testReporter.AddToTestQueueWithDelay(me.TestSoundDrohruf)
   mod.testReporter.AddToTestQueueWithDelay(me.TestSoundSchildhieb)
-  mod.testReporter.AddToTestQueueWithDelay(me.TestSoundDownSchildhieb)]]--
+  mod.testReporter.AddToTestQueueWithDelay(me.TestSoundDownSchildhieb)
   mod.testReporter.AddToTestQueueWithDelay(me.TestSoundEnemyAvoidBetaeubungAbfangen)
-  --[[mod.testReporter.AddToTestQueueWithDelay(me.TestSoundEnemyAvoidKniesehne)
+  mod.testReporter.AddToTestQueueWithDelay(me.TestSoundEnemyAvoidKniesehne)
   mod.testReporter.AddToTestQueueWithDelay(me.TestSoundEnemyAvoidToedlicherStoss)
   mod.testReporter.AddToTestQueueWithDelay(me.TestSoundEnemyAvoidUeberwaeltigen)
   mod.testReporter.AddToTestQueueWithDelay(me.TestSoundEnemyAvoidBlutdurst)
@@ -156,7 +156,7 @@ function me.RunAll(playManual)
   mod.testReporter.AddToTestQueueWithDelay(me.TestSoundSelfAvoidZuschlagen)
   mod.testReporter.AddToTestQueueWithDelay(me.TestSoundSelfAvoidErschuetternderSchlag)
   mod.testReporter.AddToTestQueueWithDelay(me.TestSoundSelfAvoidEntwaffnen)
-  mod.testReporter.AddToTestQueueWithDelay(me.TestSoundSelfAvoidSchildhieb)]]--
+  mod.testReporter.AddToTestQueueWithDelay(me.TestSoundSelfAvoidSchildhieb)
 
   if not playManual then
     mod.testReporter.PlayTestQueueWithDelay()
@@ -186,6 +186,90 @@ function me.RunAll(playManual)
   mod.testReporter.AddToTestQueue(me.TestParseDrohruf)
   mod.testReporter.AddToTestQueue(me.TestParseSchildhieb)
   mod.testReporter.AddToTestQueue(me.TestParseDownSchildhieb)
+  mod.testReporter.AddToTestQueue(me.TestParseEnemyAvoidImmuneChargeStun)
+  mod.testReporter.AddToTestQueue(me.TestParseEnemyAvoidResistChargeStun)
+  mod.testReporter.AddToTestQueue(me.TestParseEnemyAvoidDodgeKniesehne)
+  mod.testReporter.AddToTestQueue(me.TestParseEnemyAvoidParryKniesehne)
+  mod.testReporter.AddToTestQueue(me.TestParseEnemyAvoidImmuneKniesehne)
+  mod.testReporter.AddToTestQueue(me.TestParseEnemyAvoidMissKniesehne)
+  mod.testReporter.AddToTestQueue(me.TestParseEnemyAvoidBlockKniesehne)
+  mod.testReporter.AddToTestQueue(me.TestParseEnemyAvoidDodgeToedlicherStoss)
+  mod.testReporter.AddToTestQueue(me.TestParseEnemyAvoidParryToedlicherStoss)
+  mod.testReporter.AddToTestQueue(me.TestParseEnemyAvoidImmuneToedlicherStoss)
+  mod.testReporter.AddToTestQueue(me.TestParseEnemyAvoidMissToedlicherStoss)
+  mod.testReporter.AddToTestQueue(me.TestParseEnemyAvoidBlockToedlicherStoss)
+  mod.testReporter.AddToTestQueue(me.TestParseEnemyAvoidImmuneUeberwaeltigen)
+  mod.testReporter.AddToTestQueue(me.TestParseEnemyAvoidMissUeberwaeltigen)
+  mod.testReporter.AddToTestQueue(me.TestParseEnemyAvoidDodgeBlutdurst)
+  mod.testReporter.AddToTestQueue(me.TestParseEnemyAvoidParryBlutdurst)
+  mod.testReporter.AddToTestQueue(me.TestParseEnemyAvoidImmuneBlutdurst)
+  mod.testReporter.AddToTestQueue(me.TestParseEnemyAvoidMissBlutdurst)
+  mod.testReporter.AddToTestQueue(me.TestParseEnemyAvoidBlockBlutdurst)
+  mod.testReporter.AddToTestQueue(me.TestParseEnemyAvoidImmuneSturmangriffsbetaeubung)
+  mod.testReporter.AddToTestQueue(me.TestParseEnemyAvoidResistSturmangriffsbetaeubung)
+  mod.testReporter.AddToTestQueue(me.TestParseEnemyAvoidImmuneDrohruf)
+  mod.testReporter.AddToTestQueue(me.TestParseEnemyAvoidResistDrohruf)
+  mod.testReporter.AddToTestQueue(me.TestParseEnemyAvoidDodgeZuschlagen)
+  mod.testReporter.AddToTestQueue(me.TestParseEnemyAvoidParryZuschlagen)
+  mod.testReporter.AddToTestQueue(me.TestParseEnemyAvoidImmuneZuschlagen)
+  mod.testReporter.AddToTestQueue(me.TestParseEnemyAvoidMissZuschlagen)
+  mod.testReporter.AddToTestQueue(me.TestParseEnemyAvoidBlockZuschlagen)
+  mod.testReporter.AddToTestQueue(me.TestParseEnemyAvoidDodgeErschuetternderSchlag)
+  mod.testReporter.AddToTestQueue(me.TestParseEnemyAvoidParryErschuetternderSchlag)
+  mod.testReporter.AddToTestQueue(me.TestParseEnemyAvoidImmuneErschuetternderSchlag)
+  mod.testReporter.AddToTestQueue(me.TestParseEnemyAvoidMissErschuetternderSchlag)
+  mod.testReporter.AddToTestQueue(me.TestParseEnemyAvoidResistErschuetternderSchlag)
+  mod.testReporter.AddToTestQueue(me.TestParseEnemyAvoidDodgeEntwaffnen)
+  mod.testReporter.AddToTestQueue(me.TestParseEnemyAvoidParryEntwaffnen)
+  mod.testReporter.AddToTestQueue(me.TestParseEnemyAvoidImmuneEntwaffnen)
+  mod.testReporter.AddToTestQueue(me.TestParseEnemyAvoidMissEntwaffnen)
+  mod.testReporter.AddToTestQueue(me.TestParseEnemyAvoidDodgeSchildhieb)
+  mod.testReporter.AddToTestQueue(me.TestParseEnemyAvoidParrySchildhieb)
+  mod.testReporter.AddToTestQueue(me.TestParseEnemyAvoidImmuneSchildhieb)
+  mod.testReporter.AddToTestQueue(me.TestParseEnemyAvoidMissSchildhieb)
+  mod.testReporter.AddToTestQueue(me.TestParseEnemyAvoidBlockSchildhieb)
+  mod.testReporter.AddToTestQueue(me.TestParseSelfAvoidImmuneChargeStun)
+  mod.testReporter.AddToTestQueue(me.TestParseSelfAvoidResistChargeStun)
+  mod.testReporter.AddToTestQueue(me.TestParseSelfAvoidDodgeKniesehne)
+  mod.testReporter.AddToTestQueue(me.TestParseSelfAvoidParryKniesehne)
+  mod.testReporter.AddToTestQueue(me.TestParseSelfAvoidImmuneKniesehne)
+  mod.testReporter.AddToTestQueue(me.TestParseSelfAvoidMissKniesehne)
+  mod.testReporter.AddToTestQueue(me.TestParseSelfAvoidBlockKniesehne)
+  mod.testReporter.AddToTestQueue(me.TestParseSelfAvoidDodgeToedlicherStoss)
+  mod.testReporter.AddToTestQueue(me.TestParseSelfAvoidParryToedlicherStoss)
+  mod.testReporter.AddToTestQueue(me.TestParseSelfAvoidImmuneToedlicherStoss)
+  mod.testReporter.AddToTestQueue(me.TestParseSelfAvoidMissToedlicherStoss)
+  mod.testReporter.AddToTestQueue(me.TestParseSelfAvoidBlockToedlicherStoss)
+  mod.testReporter.AddToTestQueue(me.TestParseSelfAvoidImmuneUeberwaeltigen)
+  mod.testReporter.AddToTestQueue(me.TestParseSelfAvoidMissUeberwaeltigen)
+  mod.testReporter.AddToTestQueue(me.TestParseSelfAvoidDodgeBlutdurst)
+  mod.testReporter.AddToTestQueue(me.TestParseSelfAvoidParryBlutdurst)
+  mod.testReporter.AddToTestQueue(me.TestParseSelfAvoidImmuneBlutdurst)
+  mod.testReporter.AddToTestQueue(me.TestParseSelfAvoidMissBlutdurst)
+  mod.testReporter.AddToTestQueue(me.TestParseSelfAvoidBlockBlutdurst)
+  mod.testReporter.AddToTestQueue(me.TestParseSelfAvoidImmuneSturmangriffsbetaeubung)
+  mod.testReporter.AddToTestQueue(me.TestParseSelfAvoidResistSturmangriffsbetaeubung)
+  mod.testReporter.AddToTestQueue(me.TestParseSelfAvoidImmuneDrohruf)
+  mod.testReporter.AddToTestQueue(me.TestParseSelfAvoidResistDrohruf)
+  mod.testReporter.AddToTestQueue(me.TestParseSelfAvoidDodgeZuschlagen)
+  mod.testReporter.AddToTestQueue(me.TestParseSelfAvoidParryZuschlagen)
+  mod.testReporter.AddToTestQueue(me.TestParseSelfAvoidImmuneZuschlagen)
+  mod.testReporter.AddToTestQueue(me.TestParseSelfAvoidMissZuschlagen)
+  mod.testReporter.AddToTestQueue(me.TestParseSelfAvoidBlockZuschlagen)
+  mod.testReporter.AddToTestQueue(me.TestParseSelfAvoidDodgeErschuetternderSchlag)
+  mod.testReporter.AddToTestQueue(me.TestParseSelfAvoidParryErschuetternderSchlag)
+  mod.testReporter.AddToTestQueue(me.TestParseSelfAvoidImmuneErschuetternderSchlag)
+  mod.testReporter.AddToTestQueue(me.TestParseSelfAvoidMissErschuetternderSchlag)
+  mod.testReporter.AddToTestQueue(me.TestParseSelfAvoidResistErschuetternderSchlag)
+  mod.testReporter.AddToTestQueue(me.TestParseSelfAvoidDodgeEntwaffnen)
+  mod.testReporter.AddToTestQueue(me.TestParseSelfAvoidParryEntwaffnen)
+  mod.testReporter.AddToTestQueue(me.TestParseSelfAvoidImmuneEntwaffnen)
+  mod.testReporter.AddToTestQueue(me.TestParseSelfAvoidMissEntwaffnen)
+  mod.testReporter.AddToTestQueue(me.TestParseSelfAvoidDodgeSchildhieb)
+  mod.testReporter.AddToTestQueue(me.TestParseSelfAvoidParrySchildhieb)
+  mod.testReporter.AddToTestQueue(me.TestParseSelfAvoidImmuneSchildhieb)
+  mod.testReporter.AddToTestQueue(me.TestParseSelfAvoidMissSchildhieb)
+  mod.testReporter.AddToTestQueue(me.TestParseSelfAvoidBlockSchildhieb)
 
   mod.testReporter.PlayTestQueue()
 end
@@ -787,5 +871,929 @@ function me.TestParseDownSchildhieb()
     "schildhieb",
     "Schildhieb schwindet von $player$.",
     mod.testHelper.eventTypeSpellAuraGoneOther
+  )
+end
+
+function me.TestParseEnemyAvoidImmuneChargeStun()
+  mod.testHelper.TestParseEnemyAvoid(
+    className,
+    "TestParseEnemyAvoidImmuneChargeStun",
+    "betaeubung_abfangen",
+    "Betäubung abfangen war ein Fehlschlag. $player$ ist immun.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    PVPW_CONSTANTS.AVOID_TYPES.IMMUNE
+  )
+end
+
+function me.TestParseEnemyAvoidResistChargeStun()
+  mod.testHelper.TestParseEnemyAvoid(
+    className,
+    "TestParseEnemyAvoidResistChargeStun",
+    "betaeubung_abfangen",
+    "Ihr habt es mit Betäubung abfangen versucht, aber $player$ hat widerstanden.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    PVPW_CONSTANTS.AVOID_TYPES.RESIST
+  )
+end
+
+function me.TestParseEnemyAvoidDodgeKniesehne()
+  mod.testHelper.TestParseEnemyAvoid(
+    className,
+    "TestParseEnemyAvoidDodgeKniesehne",
+    "kniesehne",
+    "$player$ ist Kniesehne ausgewichen.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    PVPW_CONSTANTS.AVOID_TYPES.DODGE
+  )
+end
+
+function me.TestParseEnemyAvoidParryKniesehne()
+  mod.testHelper.TestParseEnemyAvoid(
+    className,
+    "TestParseEnemyAvoidParryKniesehne",
+    "kniesehne",
+    "Kniesehne wurde von $player$ pariert.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    PVPW_CONSTANTS.AVOID_TYPES.PARRY
+  )
+end
+
+function me.TestParseEnemyAvoidImmuneKniesehne()
+  mod.testHelper.TestParseEnemyAvoid(
+    className,
+    "TestParseEnemyAvoidImmuneKniesehne",
+    "kniesehne",
+    "Kniesehne war ein Fehlschlag. $player$ ist immun.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    PVPW_CONSTANTS.AVOID_TYPES.IMMUNE
+  )
+end
+
+function me.TestParseEnemyAvoidMissKniesehne()
+  mod.testHelper.TestParseEnemyAvoid(
+    className,
+    "TestParseEnemyAvoidMissKniesehne",
+    "kniesehne",
+    "Kniesehne hat $player$ verfehlt.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    PVPW_CONSTANTS.AVOID_TYPES.MISS
+  )
+end
+
+function me.TestParseEnemyAvoidBlockKniesehne()
+  mod.testHelper.TestParseEnemyAvoid(
+    className,
+    "TestParseEnemyAvoidBlockKniesehne",
+    "kniesehne",
+    "Kniesehne wurde von $player$ geblockt.",
+    mod.testHelper.eventTypeSpellSelfDamage,
+    PVPW_CONSTANTS.AVOID_TYPES.BLOCK
+  )
+end
+
+function me.TestParseEnemyAvoidDodgeToedlicherStoss()
+  mod.testHelper.TestParseEnemyAvoid(
+    className,
+    "TestParseEnemyAvoidDodgeToedlicherStoss",
+    "toedlicher_stoss",
+    "$player$ ist Tödlicher Stoß ausgewichen.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    PVPW_CONSTANTS.AVOID_TYPES.DODGE
+  )
+end
+
+function me.TestParseEnemyAvoidParryToedlicherStoss()
+  mod.testHelper.TestParseEnemyAvoid(
+    className,
+    "TestParseEnemyAvoidParryToedlicherStoss",
+    "toedlicher_stoss",
+    "Tödlicher Stoß wurde von $player$ pariert.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    PVPW_CONSTANTS.AVOID_TYPES.PARRY
+  )
+end
+
+function me.TestParseEnemyAvoidImmuneToedlicherStoss()
+  mod.testHelper.TestParseEnemyAvoid(
+    className,
+    "TestParseEnemyAvoidImmuneToedlicherStoss",
+    "toedlicher_stoss",
+    "Tödlicher Stoß war ein Fehlschlag. $player$ ist immun.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    PVPW_CONSTANTS.AVOID_TYPES.IMMUNE
+  )
+end
+
+function me.TestParseEnemyAvoidMissToedlicherStoss()
+  mod.testHelper.TestParseEnemyAvoid(
+    className,
+    "TestParseEnemyAvoidMissToedlicherStoss",
+    "toedlicher_stoss",
+    "Tödlicher Stoß hat $player$ verfehlt.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    PVPW_CONSTANTS.AVOID_TYPES.MISS
+  )
+end
+
+function me.TestParseEnemyAvoidBlockToedlicherStoss()
+  mod.testHelper.TestParseEnemyAvoid(
+    className,
+    "TestParseEnemyAvoidBlockToedlicherStoss",
+    "toedlicher_stoss",
+    "Tödlicher Stoß wurde von $player$ geblockt.",
+    mod.testHelper.eventTypeSpellSelfDamage,
+    PVPW_CONSTANTS.AVOID_TYPES.BLOCK
+  )
+end
+
+function me.TestParseEnemyAvoidImmuneUeberwaeltigen()
+  mod.testHelper.TestParseEnemyAvoid(
+    className,
+    "TestParseEnemyAvoidImmuneUeberwaeltigen",
+    "ueberwaeltigen",
+    "Überwältigen war ein Fehlschlag. $player$ ist immun.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    PVPW_CONSTANTS.AVOID_TYPES.IMMUNE
+  )
+end
+
+function me.TestParseEnemyAvoidMissUeberwaeltigen()
+  mod.testHelper.TestParseEnemyAvoid(
+    className,
+    "TestParseEnemyAvoidMissUeberwaeltigen",
+    "ueberwaeltigen",
+    "Überwältigen hat $player$ verfehlt.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    PVPW_CONSTANTS.AVOID_TYPES.MISS
+  )
+end
+
+function me.TestParseEnemyAvoidDodgeBlutdurst()
+  mod.testHelper.TestParseEnemyAvoid(
+    className,
+    "TestParseEnemyAvoidDodgeBlutdurst",
+    "blutdurst",
+    "$player$ ist Blutdurst ausgewichen.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    PVPW_CONSTANTS.AVOID_TYPES.DODGE
+  )
+end
+
+function me.TestParseEnemyAvoidParryBlutdurst()
+  mod.testHelper.TestParseEnemyAvoid(
+    className,
+    "TestParseEnemyAvoidParryBlutdurst",
+    "blutdurst",
+    "Blutdurst wurde von $player$ pariert.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    PVPW_CONSTANTS.AVOID_TYPES.PARRY
+  )
+end
+
+function me.TestParseEnemyAvoidImmuneBlutdurst()
+  mod.testHelper.TestParseEnemyAvoid(
+    className,
+    "TestParseEnemyAvoidImmuneBlutdurst",
+    "blutdurst",
+    "Blutdurst war ein Fehlschlag. $player$ ist immun.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    PVPW_CONSTANTS.AVOID_TYPES.IMMUNE
+  )
+end
+
+function me.TestParseEnemyAvoidMissBlutdurst()
+  mod.testHelper.TestParseEnemyAvoid(
+    className,
+    "TestParseEnemyAvoidMissBlutdurst",
+    "blutdurst",
+    "Blutdurst hat $player$ verfehlt.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    PVPW_CONSTANTS.AVOID_TYPES.MISS
+  )
+end
+
+function me.TestParseEnemyAvoidBlockBlutdurst()
+  mod.testHelper.TestParseEnemyAvoid(
+    className,
+    "TestParseEnemyAvoidBlockBlutdurst",
+    "blutdurst",
+    "Blutdurst wurde von $player$ geblockt.",
+    mod.testHelper.eventTypeSpellSelfDamage,
+    PVPW_CONSTANTS.AVOID_TYPES.BLOCK
+  )
+end
+
+function me.TestParseEnemyAvoidImmuneSturmangriffsbetaeubung()
+  mod.testHelper.TestParseEnemyAvoid(
+    className,
+    "TestParseEnemyAvoidImmuneSturmangriffsbetaeubung",
+    "sturmangriffsbetaeubung",
+    "Sturmangriffsbetäubung war ein Fehlschlag. $player$ ist immun.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    PVPW_CONSTANTS.AVOID_TYPES.IMMUNE
+  )
+end
+
+function me.TestParseEnemyAvoidResistSturmangriffsbetaeubung()
+  mod.testHelper.TestParseEnemyAvoid(
+    className,
+    "TestParseEnemyAvoidResistSturmangriffsbetaeubung",
+    "sturmangriffsbetaeubung",
+    "Ihr habt es mit Sturmangriffsbetäubung versucht, aber $player$ hat widerstanden.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    PVPW_CONSTANTS.AVOID_TYPES.RESIST
+  )
+end
+
+function me.TestParseEnemyAvoidImmuneDrohruf()
+  mod.testHelper.TestParseEnemyAvoid(
+    className,
+    "TestParseEnemyAvoidImmuneDrohruf",
+    "drohruf",
+    "Drohruf war ein Fehlschlag. $player$ ist immun.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    PVPW_CONSTANTS.AVOID_TYPES.IMMUNE
+  )
+end
+
+function me.TestParseEnemyAvoidResistDrohruf()
+  mod.testHelper.TestParseEnemyAvoid(
+    className,
+    "TestParseEnemyAvoidResistDrohruf",
+    "drohruf",
+    "Ihr habt es mit Drohruf versucht, aber $player$ hat widerstanden.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    PVPW_CONSTANTS.AVOID_TYPES.RESIST
+  )
+end
+
+function me.TestParseEnemyAvoidDodgeZuschlagen()
+  mod.testHelper.TestParseEnemyAvoid(
+    className,
+    "TestParseEnemyAvoidDodgeZuschlagen",
+    "zuschlagen",
+    "$player$ ist Zuschlagen ausgewichen.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    PVPW_CONSTANTS.AVOID_TYPES.DODGE
+  )
+end
+
+function me.TestParseEnemyAvoidParryZuschlagen()
+  mod.testHelper.TestParseEnemyAvoid(
+    className,
+    "TestParseEnemyAvoidParryZuschlagen",
+    "zuschlagen",
+    "Zuschlagen wurde von $player$ pariert.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    PVPW_CONSTANTS.AVOID_TYPES.PARRY
+  )
+end
+
+function me.TestParseEnemyAvoidImmuneZuschlagen()
+  mod.testHelper.TestParseEnemyAvoid(
+    className,
+    "TestParseEnemyAvoidImmuneZuschlagen",
+    "zuschlagen",
+    "Zuschlagen war ein Fehlschlag. $player$ ist immun.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    PVPW_CONSTANTS.AVOID_TYPES.IMMUNE
+  )
+end
+
+function me.TestParseEnemyAvoidMissZuschlagen()
+  mod.testHelper.TestParseEnemyAvoid(
+    className,
+    "TestParseEnemyAvoidMissZuschlagen",
+    "zuschlagen",
+    "Zuschlagen hat $player$ verfehlt.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    PVPW_CONSTANTS.AVOID_TYPES.MISS
+  )
+end
+
+function me.TestParseEnemyAvoidBlockZuschlagen()
+  mod.testHelper.TestParseEnemyAvoid(
+    className,
+    "TestParseEnemyAvoidBlockZuschlagen",
+    "zuschlagen",
+    "Zuschlagen wurde von $player$ geblockt.",
+    mod.testHelper.eventTypeSpellSelfDamage,
+    PVPW_CONSTANTS.AVOID_TYPES.BLOCK
+  )
+end
+
+function me.TestParseEnemyAvoidDodgeErschuetternderSchlag()
+  mod.testHelper.TestParseEnemyAvoid(
+    className,
+    "TestParseEnemyAvoidDodgeErschuetternderSchlag",
+    "erschuetternder_schlag",
+    "$player$ ist Erschütternder Schlag ausgewichen.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    PVPW_CONSTANTS.AVOID_TYPES.DODGE
+  )
+end
+
+function me.TestParseEnemyAvoidParryErschuetternderSchlag()
+  mod.testHelper.TestParseEnemyAvoid(
+    className,
+    "TestParseEnemyAvoidParryErschuetternderSchlag",
+    "erschuetternder_schlag",
+    "Erschütternder Schlag wurde von $player$ pariert.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    PVPW_CONSTANTS.AVOID_TYPES.PARRY
+  )
+end
+
+function me.TestParseEnemyAvoidImmuneErschuetternderSchlag()
+  mod.testHelper.TestParseEnemyAvoid(
+    className,
+    "TestParseEnemyAvoidImmuneErschuetternderSchlag",
+    "erschuetternder_schlag",
+    "Erschütternder Schlag war ein Fehlschlag. $player$ ist immun.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    PVPW_CONSTANTS.AVOID_TYPES.IMMUNE
+  )
+end
+
+function me.TestParseEnemyAvoidMissErschuetternderSchlag()
+  mod.testHelper.TestParseEnemyAvoid(
+    className,
+    "TestParseEnemyAvoidMissErschuetternderSchlag",
+    "erschuetternder_schlag",
+    "Erschütternder Schlag hat $player$ verfehlt.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    PVPW_CONSTANTS.AVOID_TYPES.MISS
+  )
+end
+
+function me.TestParseEnemyAvoidResistErschuetternderSchlag()
+  mod.testHelper.TestParseEnemyAvoid(
+    className,
+    "TestParseEnemyAvoidResistErschuetternderSchlag",
+    "erschuetternder_schlag",
+    "Ihr habt es mit Erschütternder Schlag versucht, aber $player$ hat widerstanden.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    PVPW_CONSTANTS.AVOID_TYPES.RESIST
+  )
+end
+
+function me.TestParseEnemyAvoidDodgeEntwaffnen()
+  mod.testHelper.TestParseEnemyAvoid(
+    className,
+    "TestParseEnemyAvoidDodgeEntwaffnen",
+    "entwaffnen",
+    "$player$ ist Entwaffnen ausgewichen.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    PVPW_CONSTANTS.AVOID_TYPES.DODGE
+  )
+end
+
+function me.TestParseEnemyAvoidParryEntwaffnen()
+  mod.testHelper.TestParseEnemyAvoid(
+    className,
+    "TestParseEnemyAvoidParryEntwaffnen",
+    "entwaffnen",
+    "Entwaffnen wurde von $player$ pariert.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    PVPW_CONSTANTS.AVOID_TYPES.PARRY
+  )
+end
+
+function me.TestParseEnemyAvoidImmuneEntwaffnen()
+  mod.testHelper.TestParseEnemyAvoid(
+    className,
+    "TestParseEnemyAvoidImmuneEntwaffnen",
+    "entwaffnen",
+    "Entwaffnen war ein Fehlschlag. $player$ ist immun.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    PVPW_CONSTANTS.AVOID_TYPES.IMMUNE
+  )
+end
+
+function me.TestParseEnemyAvoidMissEntwaffnen()
+  mod.testHelper.TestParseEnemyAvoid(
+    className,
+    "TestParseEnemyAvoidMissEntwaffnen",
+    "entwaffnen",
+    "Entwaffnen hat $player$ verfehlt.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    PVPW_CONSTANTS.AVOID_TYPES.MISS
+  )
+end
+
+function me.TestParseEnemyAvoidDodgeSchildhieb()
+  mod.testHelper.TestParseEnemyAvoid(
+    className,
+    "TestParseEnemyAvoidDodgeSchildhieb",
+    "schildhieb",
+    "$player$ ist Schildhieb ausgewichen.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    PVPW_CONSTANTS.AVOID_TYPES.DODGE
+  )
+end
+
+function me.TestParseEnemyAvoidParrySchildhieb()
+  mod.testHelper.TestParseEnemyAvoid(
+    className,
+    "TestParseEnemyAvoidParrySchildhieb",
+    "schildhieb",
+    "Schildhieb wurde von $player$ pariert.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    PVPW_CONSTANTS.AVOID_TYPES.PARRY
+  )
+end
+
+function me.TestParseEnemyAvoidImmuneSchildhieb()
+  mod.testHelper.TestParseEnemyAvoid(
+    className,
+    "TestParseEnemyAvoidImmuneSchildhieb",
+    "schildhieb",
+    "Schildhieb war ein Fehlschlag. $player$ ist immun.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    PVPW_CONSTANTS.AVOID_TYPES.IMMUNE
+  )
+end
+
+function me.TestParseEnemyAvoidMissSchildhieb()
+  mod.testHelper.TestParseEnemyAvoid(
+    className,
+    "TestParseEnemyAvoidMissSchildhieb",
+    "schildhieb",
+    "Schildhieb hat $player$ verfehlt.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    PVPW_CONSTANTS.AVOID_TYPES.MISS
+  )
+end
+
+function me.TestParseEnemyAvoidBlockSchildhieb()
+  mod.testHelper.TestParseEnemyAvoid(
+    className,
+    "TestParseEnemyAvoidBlockSchildhieb",
+    "schildhieb",
+    "Schildhieb wurde von $player$ geblockt.",
+    mod.testHelper.eventTypeSpellSelfDamage,
+    PVPW_CONSTANTS.AVOID_TYPES.BLOCK
+  )
+end
+
+function me.TestParseSelfAvoidImmuneChargeStun()
+  mod.testHelper.TestParseSelfAvoid(
+    className,
+    "TestParseSelfAvoidImmuneChargeStun",
+    "betaeubung_abfangen",
+    "$player$ versucht es mit Betäubung abfangen... ein Fehlschlag. Ihr seid immun.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    PVPW_CONSTANTS.AVOID_TYPES.IMMUNE
+  )
+end
+
+function me.TestParseSelfAvoidResistChargeStun()
+  mod.testHelper.TestParseSelfAvoid(
+    className,
+    "TestParseSelfAvoidResistChargeStun",
+    "betaeubung_abfangen",
+    "$player$ versucht es mit Betäubung abfangen... widerstanden.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    PVPW_CONSTANTS.AVOID_TYPES.RESIST
+  )
+end
+
+function me.TestParseSelfAvoidDodgeKniesehne()
+  mod.testHelper.TestParseSelfAvoid(
+    className,
+    "TestParseSelfAvoidDodgeKniesehne",
+    "kniesehne",
+    "$player$s Kniesehne wurde ausgewichen.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    PVPW_CONSTANTS.AVOID_TYPES.DODGE
+  )
+end
+
+function me.TestParseSelfAvoidParryKniesehne()
+  mod.testHelper.TestParseSelfAvoid(
+    className,
+    "TestParseSelfAvoidParryKniesehne",
+    "kniesehne",
+    "Kniesehne von $player$ wurde pariert.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    PVPW_CONSTANTS.AVOID_TYPES.PARRY
+  )
+end
+
+function me.TestParseSelfAvoidImmuneKniesehne()
+  mod.testHelper.TestParseSelfAvoid(
+    className,
+    "TestParseSelfAvoidImmuneKniesehne",
+    "kniesehne",
+    "$player$ versucht es mit Kniesehne... ein Fehlschlag. Ihr seid immun.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    PVPW_CONSTANTS.AVOID_TYPES.IMMUNE
+  )
+end
+
+function me.TestParseSelfAvoidMissKniesehne()
+  mod.testHelper.TestParseSelfAvoid(
+    className,
+    "TestParseSelfAvoidMissKniesehne",
+    "kniesehne",
+    "$player$ greift an (mit Kniesehne) und verfehlt euch.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    PVPW_CONSTANTS.AVOID_TYPES.MISS
+  )
+end
+
+function me.TestParseSelfAvoidBlockKniesehne()
+  mod.testHelper.TestParseSelfAvoid(
+    className,
+    "TestParseSelfAvoidBlockKniesehne",
+    "kniesehne",
+    "$player$s Kniesehne wurde geblockt.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    PVPW_CONSTANTS.AVOID_TYPES.BLOCK
+  )
+end
+
+function me.TestParseSelfAvoidDodgeToedlicherStoss()
+  mod.testHelper.TestParseSelfAvoid(
+    className,
+    "TestParseSelfAvoidDodgeToedlicherStoss",
+    "toedlicher_stoss",
+    "$player$s Tödlicher Stoß wurde ausgewichen.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    PVPW_CONSTANTS.AVOID_TYPES.DODGE
+  )
+end
+
+function me.TestParseSelfAvoidParryToedlicherStoss()
+  mod.testHelper.TestParseSelfAvoid(
+    className,
+    "TestParseSelfAvoidParryToedlicherStoss",
+    "toedlicher_stoss",
+    "Tödlicher Stoß von $player$ wurde pariert.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    PVPW_CONSTANTS.AVOID_TYPES.PARRY
+  )
+end
+
+function me.TestParseSelfAvoidImmuneToedlicherStoss()
+  mod.testHelper.TestParseSelfAvoid(
+    className,
+    "TestParseSelfAvoidImmuneToedlicherStoss",
+    "toedlicher_stoss",
+    "$player$ versucht es mit Tödlicher Stoß... ein Fehlschlag. Ihr seid immun.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    PVPW_CONSTANTS.AVOID_TYPES.IMMUNE
+  )
+end
+
+function me.TestParseSelfAvoidMissToedlicherStoss()
+  mod.testHelper.TestParseSelfAvoid(
+    className,
+    "TestParseSelfAvoidMissToedlicherStoss",
+    "toedlicher_stoss",
+    "$player$ greift an (mit Tödlicher Stoß) und verfehlt euch.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    PVPW_CONSTANTS.AVOID_TYPES.MISS
+  )
+end
+
+function me.TestParseSelfAvoidBlockToedlicherStoss()
+  mod.testHelper.TestParseSelfAvoid(
+    className,
+    "TestParseSelfAvoidBlockToedlicherStoss",
+    "toedlicher_stoss",
+    "$player$s Tödlicher Stoß wurde geblockt.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    PVPW_CONSTANTS.AVOID_TYPES.BLOCK
+  )
+end
+
+function me.TestParseSelfAvoidImmuneUeberwaeltigen()
+  mod.testHelper.TestParseSelfAvoid(
+    className,
+    "TestParseSelfAvoidImmuneUeberwaeltigen",
+    "ueberwaeltigen",
+    "$player$ versucht es mit Überwältigen... ein Fehlschlag. Ihr seid immun.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    PVPW_CONSTANTS.AVOID_TYPES.IMMUNE
+  )
+end
+
+function me.TestParseSelfAvoidMissUeberwaeltigen()
+  mod.testHelper.TestParseSelfAvoid(
+    className,
+    "TestParseSelfAvoidMissUeberwaeltigen",
+    "ueberwaeltigen",
+    "$player$ greift an (mit Überwältigen) und verfehlt euch.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    PVPW_CONSTANTS.AVOID_TYPES.MISS
+  )
+end
+
+function me.TestParseSelfAvoidDodgeBlutdurst()
+  mod.testHelper.TestParseSelfAvoid(
+    className,
+    "TestParseSelfAvoidDodgeBlutdurst",
+    "blutdurst",
+    "$player$s Blutdurst wurde ausgewichen.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    PVPW_CONSTANTS.AVOID_TYPES.DODGE
+  )
+end
+
+function me.TestParseSelfAvoidParryBlutdurst()
+  mod.testHelper.TestParseSelfAvoid(
+    className,
+    "TestParseSelfAvoidParryBlutdurst",
+    "blutdurst",
+    "Blutdurst von $player$ wurde pariert.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    PVPW_CONSTANTS.AVOID_TYPES.PARRY
+  )
+end
+
+function me.TestParseSelfAvoidImmuneBlutdurst()
+  mod.testHelper.TestParseSelfAvoid(
+    className,
+    "TestParseSelfAvoidImmuneBlutdurst",
+    "blutdurst",
+    "$player$ versucht es mit Blutdurst... ein Fehlschlag. Ihr seid immun.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    PVPW_CONSTANTS.AVOID_TYPES.IMMUNE
+  )
+end
+
+function me.TestParseSelfAvoidMissBlutdurst()
+  mod.testHelper.TestParseSelfAvoid(
+    className,
+    "TestParseSelfAvoidMissBlutdurst",
+    "blutdurst",
+    "$player$ greift an (mit Blutdurst) und verfehlt euch.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    PVPW_CONSTANTS.AVOID_TYPES.MISS
+  )
+end
+
+function me.TestParseSelfAvoidBlockBlutdurst()
+  mod.testHelper.TestParseSelfAvoid(
+    className,
+    "TestParseSelfAvoidBlockBlutdurst",
+    "blutdurst",
+    "$player$s Blutdurst wurde geblockt.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    PVPW_CONSTANTS.AVOID_TYPES.BLOCK
+  )
+end
+
+function me.TestParseSelfAvoidImmuneSturmangriffsbetaeubung()
+  mod.testHelper.TestParseSelfAvoid(
+    className,
+    "TestParseSelfAvoidImmuneSturmangriffsbetaeubung",
+    "sturmangriffsbetaeubung",
+    "$player$ versucht es mit Sturmangriffsbetäubung... ein Fehlschlag. Ihr seid immun.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    PVPW_CONSTANTS.AVOID_TYPES.IMMUNE
+  )
+end
+
+function me.TestParseSelfAvoidResistSturmangriffsbetaeubung()
+  mod.testHelper.TestParseSelfAvoid(
+    className,
+    "TestParseSelfAvoidResistSturmangriffsbetaeubung",
+    "sturmangriffsbetaeubung",
+    "$player$ versucht es mit Sturmangriffsbetäubung... widerstanden.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    PVPW_CONSTANTS.AVOID_TYPES.RESIST
+  )
+end
+
+function me.TestParseSelfAvoidImmuneDrohruf()
+  mod.testHelper.TestParseSelfAvoid(
+    className,
+    "TestParseSelfAvoidImmuneDrohruf",
+    "drohruf",
+    "$player$ versucht es mit Drohruf... ein Fehlschlag. Ihr seid immun.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    PVPW_CONSTANTS.AVOID_TYPES.IMMUNE
+  )
+end
+
+function me.TestParseSelfAvoidResistDrohruf()
+  mod.testHelper.TestParseSelfAvoid(
+    className,
+    "TestParseSelfAvoidResistDrohruf",
+    "drohruf",
+    "$player$ versucht es mit Drohruf... widerstanden.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    PVPW_CONSTANTS.AVOID_TYPES.RESIST
+  )
+end
+
+function me.TestParseSelfAvoidDodgeZuschlagen()
+  mod.testHelper.TestParseSelfAvoid(
+    className,
+    "TestParseSelfAvoidDodgeZuschlagen",
+    "zuschlagen",
+    "$player$s Zuschlagen wurde ausgewichen.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    PVPW_CONSTANTS.AVOID_TYPES.DODGE
+  )
+end
+
+function me.TestParseSelfAvoidParryZuschlagen()
+  mod.testHelper.TestParseSelfAvoid(
+    className,
+    "TestParseSelfAvoidParryZuschlagen",
+    "zuschlagen",
+    "Zuschlagen von $player$ wurde pariert.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    PVPW_CONSTANTS.AVOID_TYPES.PARRY
+  )
+end
+
+function me.TestParseSelfAvoidImmuneZuschlagen()
+  mod.testHelper.TestParseSelfAvoid(
+    className,
+    "TestParseSelfAvoidImmuneZuschlagen",
+    "zuschlagen",
+    "$player$ versucht es mit Zuschlagen... ein Fehlschlag. Ihr seid immun.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    PVPW_CONSTANTS.AVOID_TYPES.IMMUNE
+  )
+end
+
+function me.TestParseSelfAvoidMissZuschlagen()
+  mod.testHelper.TestParseSelfAvoid(
+    className,
+    "TestParseSelfAvoidMissZuschlagen",
+    "zuschlagen",
+    "$player$ greift an (mit Zuschlagen) und verfehlt euch.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    PVPW_CONSTANTS.AVOID_TYPES.MISS
+  )
+end
+
+function me.TestParseSelfAvoidBlockZuschlagen()
+  mod.testHelper.TestParseSelfAvoid(
+    className,
+    "TestParseSelfAvoidBlockZuschlagen",
+    "zuschlagen",
+    "$player$s Zuschlagen wurde geblockt.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    PVPW_CONSTANTS.AVOID_TYPES.BLOCK
+  )
+end
+
+function me.TestParseSelfAvoidDodgeErschuetternderSchlag()
+  mod.testHelper.TestParseSelfAvoid(
+    className,
+    "TestParseSelfAvoidDodgeErschuetternderSchlag",
+    "erschuetternder_schlag",
+    "$player$s Erschütternder Schlag wurde ausgewichen.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    PVPW_CONSTANTS.AVOID_TYPES.DODGE
+  )
+end
+
+function me.TestParseSelfAvoidParryErschuetternderSchlag()
+  mod.testHelper.TestParseSelfAvoid(
+    className,
+    "TestParseSelfAvoidParryErschuetternderSchlag",
+    "erschuetternder_schlag",
+    "Erschütternder Schlag von $player$ wurde pariert.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    PVPW_CONSTANTS.AVOID_TYPES.PARRY
+  )
+end
+
+function me.TestParseSelfAvoidImmuneErschuetternderSchlag()
+  mod.testHelper.TestParseSelfAvoid(
+    className,
+    "TestParseSelfAvoidImmuneErschuetternderSchlag",
+    "erschuetternder_schlag",
+    "$player$ versucht es mit Erschütternder Schlag... ein Fehlschlag. Ihr seid immun.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    PVPW_CONSTANTS.AVOID_TYPES.IMMUNE
+  )
+end
+
+function me.TestParseSelfAvoidMissErschuetternderSchlag()
+  mod.testHelper.TestParseSelfAvoid(
+    className,
+    "TestParseSelfAvoidMissErschuetternderSchlag",
+    "erschuetternder_schlag",
+    "$player$ greift an (mit Erschütternder Schlag) und verfehlt euch.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    PVPW_CONSTANTS.AVOID_TYPES.MISS
+  )
+end
+
+function me.TestParseSelfAvoidResistErschuetternderSchlag()
+  mod.testHelper.TestParseSelfAvoid(
+    className,
+    "TestParseSelfAvoidResistErschuetternderSchlag",
+    "erschuetternder_schlag",
+    "$player$ versucht es mit Erschütternder Schlag... widerstanden.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    PVPW_CONSTANTS.AVOID_TYPES.RESIST
+  )
+end
+
+function me.TestParseSelfAvoidDodgeEntwaffnen()
+  mod.testHelper.TestParseSelfAvoid(
+    className,
+    "TestParseSelfAvoidDodgeEntwaffnen",
+    "entwaffnen",
+    "$player$s Entwaffnen wurde ausgewichen.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    PVPW_CONSTANTS.AVOID_TYPES.DODGE
+  )
+end
+
+function me.TestParseSelfAvoidParryEntwaffnen()
+  mod.testHelper.TestParseSelfAvoid(
+    className,
+    "TestParseSelfAvoidParryEntwaffnen",
+    "entwaffnen",
+    "Entwaffnen von $player$ wurde pariert.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    PVPW_CONSTANTS.AVOID_TYPES.PARRY
+  )
+end
+
+function me.TestParseSelfAvoidImmuneEntwaffnen()
+  mod.testHelper.TestParseSelfAvoid(
+    className,
+    "TestParseSelfAvoidImmuneEntwaffnen",
+    "entwaffnen",
+    "$player$ versucht es mit Entwaffnen... ein Fehlschlag. Ihr seid immun.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    PVPW_CONSTANTS.AVOID_TYPES.IMMUNE
+  )
+end
+
+function me.TestParseSelfAvoidMissEntwaffnen()
+  mod.testHelper.TestParseSelfAvoid(
+    className,
+    "TestParseSelfAvoidMissEntwaffnen",
+    "entwaffnen",
+    "$player$ greift an (mit Entwaffnen) und verfehlt euch.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    PVPW_CONSTANTS.AVOID_TYPES.MISS
+  )
+end
+
+function me.TestParseSelfAvoidDodgeSchildhieb()
+  mod.testHelper.TestParseSelfAvoid(
+    className,
+    "TestParseSelfAvoidDodgeSchildhieb",
+    "schildhieb",
+    "$player$s Schildhieb wurde ausgewichen.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    PVPW_CONSTANTS.AVOID_TYPES.DODGE
+  )
+end
+
+function me.TestParseSelfAvoidParrySchildhieb()
+  mod.testHelper.TestParseSelfAvoid(
+    className,
+    "TestParseSelfAvoidParrySchildhieb",
+    "schildhieb",
+    "Schildhieb von $player$ wurde pariert.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    PVPW_CONSTANTS.AVOID_TYPES.PARRY
+  )
+end
+
+function me.TestParseSelfAvoidImmuneSchildhieb()
+  mod.testHelper.TestParseSelfAvoid(
+    className,
+    "TestParseSelfAvoidImmuneSchildhieb",
+    "schildhieb",
+    "$player$ versucht es mit Schildhieb... ein Fehlschlag. Ihr seid immun.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    PVPW_CONSTANTS.AVOID_TYPES.IMMUNE
+  )
+end
+
+function me.TestParseSelfAvoidMissSchildhieb()
+  mod.testHelper.TestParseSelfAvoid(
+    className,
+    "TestParseSelfAvoidMissSchildhieb",
+    "schildhieb",
+    "$player$ greift an (mit Schildhieb) und verfehlt euch.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    PVPW_CONSTANTS.AVOID_TYPES.MISS
+  )
+end
+
+function me.TestParseSelfAvoidBlockSchildhieb()
+  mod.testHelper.TestParseSelfAvoid(
+    className,
+    "TestParseSelfAvoidBlockSchildhieb",
+    "schildhieb",
+    "$player$s Schildhieb wurde geblockt.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    PVPW_CONSTANTS.AVOID_TYPES.BLOCK
   )
 end
