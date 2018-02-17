@@ -798,7 +798,7 @@ function me.TestParseEnemyAvoidResistGegenzauberZumSchweigenGebracht()
     className,
     "TestParseEnemyAvoidResistGegenzauberZumSchweigenGebracht",
     "gegenzauber_zum_schweigen_gebracht",
-    "Ihr habt es mit Gegenzauber versucht, aber $player$ hat widerstanden.",
+    "Ihr habt es mit Gegenzauber - zum Schweigen gebracht versucht, aber $player$ hat widerstanden.",
     mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
     PVPW_CONSTANTS.AVOID_TYPES.RESIST
   )
@@ -952,7 +952,7 @@ function me.TestParseSelfAvoidResistGegenzauberZumSchweigenGebracht()
     className,
     "TestParseSelfAvoidResistGegenzauberZumSchweigenGebracht",
     "gegenzauber_zum_schweigen_gebracht",
-    "$player$ versucht es mit Gegenzauber... widerstanden.",
+    "$player$ versucht es mit Gegenzauber - zum Schweigen gebracht... widerstanden.",
     mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
     PVPW_CONSTANTS.AVOID_TYPES.RESIST
   )

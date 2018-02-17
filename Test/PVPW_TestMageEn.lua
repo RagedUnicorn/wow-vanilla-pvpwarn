@@ -967,7 +967,7 @@ function me.TestParseSelfAvoidResistCounterspellSilenced()
     className,
     "TestParseSelfAvoidResistCounterspellSilenced",
     "counterspell_silenced",
-    "$player$'s Counterspell was resisted.",
+    "$player$'s Counterspell - Silenced was resisted.",
     mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
     PVPW_CONSTANTS.AVOID_TYPES.RESIST
   )
