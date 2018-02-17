@@ -25,9 +25,9 @@
 ]]--
 local mod = pvpw
 local me = {}
-mod.testShaman = me
+mod.testShamanEn = me
 
-me.tag = "TestShaman"
+me.tag = "TestShamanEn"
 
 -- global
 local _G = getfenv(0)
@@ -36,8 +36,8 @@ local className = PVPW_CLASSLIST[5]
 --[[
   global function to start all tests
 ]]--
-function _G.__PVPW__TEST_SHAMAN__Test()
-  mod.testReporter.StartTestRun("global_shaman_all")
+function _G.__PVPW__TEST_SHAMAN_EN__Test()
+  mod.testReporter.StartTestRun("global_shaman_en_all")
   mod.testReporter.StartTestClass(className)
 
   -- silence logging to errorlevel
@@ -56,64 +56,64 @@ function _G.__PVPW__TEST_SHAMAN__Test()
   me.RunAll()
 end
 
-function _G.__PVPW__TEST_SHAMAN__Test_Sound()
-  mod.testReporter.StartTestRun("global_shaman_sound")
+function _G.__PVPW__TEST_SHAMAN_EN__Test_Sound()
+  mod.testReporter.StartTestRun("global_shaman_en_sound")
   mod.testReporter.StartTestClass(className)
 
   mod.testHelper.TestShouldHaveASoundTestForEachSpell(me, className)
 end
 
-function _G.__PVPW__TEST_SHAMAN__Test_Sound_Down()
-  mod.testReporter.StartTestRun("global_shaman_sound_down")
+function _G.__PVPW__TEST_SHAMAN_EN__Test_Sound_Down()
+  mod.testReporter.StartTestRun("global_shaman_en_sound_down")
   mod.testReporter.StartTestClass(className)
 
   mod.testHelper.TestShouldHaveASoundDownTestForSpellsThatFade(me, className)
 end
 
-function _G.__PVPW__TEST_SHAMAN__Test_Sound_Enemy_Avoid()
-  mod.testReporter.StartTestRun("global_shaman_sound_avoid")
+function _G.__PVPW__TEST_SHAMAN_EN__Test_Sound_Enemy_Avoid()
+  mod.testReporter.StartTestRun("global_shaman_en_sound_avoid")
   mod.testReporter.StartTestClass(className)
 
   mod.testHelper.TestShouldHaveAnEnemyAvoidSoundTestForEachSpell(me, className)
 end
 
-function _G.__PVPW__TEST_SHAMAN__Test_Sound_Self_Avoid()
-  mod.testReporter.StartTestRun("global_shaman_sound_self_avoid")
+function _G.__PVPW__TEST_SHAMAN_EN__Test_Sound_Self_Avoid()
+  mod.testReporter.StartTestRun("global_shaman_en_sound_self_avoid")
   mod.testReporter.StartTestClass(className)
 
   mod.testHelper.TestShouldHaveASelfAvoidSoundTestForEachSpell(me, className)
 end
 
-function _G.__PVPW__TEST_SHAMAN__Test_Parse()
-  mod.testReporter.StartTestRun("global_shaman_parse")
+function _G.__PVPW__TEST_SHAMAN_EN__Test_Parse()
+  mod.testReporter.StartTestRun("global_shaman_en_parse")
   mod.testReporter.StartTestClass(className)
 
   mod.testHelper.TestShouldHaveAParseTestForEachSpell(me, className)
 end
 
-function _G.__PVPW__TEST_SHAMAN__Test_Parse_Down()
-  mod.testReporter.StartTestRun("global_shaman_parse_down")
+function _G.__PVPW__TEST_SHAMAN_EN__Test_Parse_Down()
+  mod.testReporter.StartTestRun("global_shaman_en_parse_down")
   mod.testReporter.StartTestClass(className)
 
   mod.testHelper.TestShouldHaveAParseDownTestForSpellsThatFade(me, className)
 end
 
-function _G.__PVPW__TEST_SHAMAN__Test_Parse_Crit()
-  mod.testReporter.StartTestRun("global_shaman_parse_crit")
+function _G.__PVPW__TEST_SHAMAN_EN__Test_Parse_Crit()
+  mod.testReporter.StartTestRun("global_shaman_en_parse_crit")
   mod.testReporter.StartTestClass(className)
 
   mod.testHelper.TestShouldHaveAParseCritTestForSpellsThatCanCrit(me, className)
 end
 
-function _G.__PVPW__TEST_SHAMAN__Test_Parse_Enemy_Avoid()
-  mod.testReporter.StartTestRun("global_shaman_parse_avoid")
+function _G.__PVPW__TEST_SHAMAN_EN__Test_Parse_Enemy_Avoid()
+  mod.testReporter.StartTestRun("global_shaman_en_parse_avoid")
   mod.testReporter.StartTestClass(className)
 
   mod.testHelper.TestShouldHaveAnEnemyAvoidParseTestForEachSpell(me, className)
 end
 
-function _G.__PVPW__TEST_SHAMAN__Test_Parse_Self_Avoid()
-  mod.testReporter.StartTestRun("global_shaman_parse_self_avoid")
+function _G.__PVPW__TEST_SHAMAN_EN__Test_Parse_Self_Avoid()
+  mod.testReporter.StartTestRun("global_shaman_en_parse_self_avoid")
   mod.testReporter.StartTestClass(className)
 
   mod.testHelper.TestShouldHaveASelfAvoidParseTestForEachSpell(me, className)
