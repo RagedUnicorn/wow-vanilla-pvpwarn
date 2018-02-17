@@ -371,7 +371,7 @@ function me.TestSoundImmunitaetGegenUnbeweglichkeit()
   mod.testHelper.TestSound(
     className,
     "TestSoundImmunitaetGegenUnbeweglichkeit",
-    "immunitaet_gegen_unbeweglichkleit"
+    "immunitaet_gegen_unbeweglichkeit"
   )
 end
 
@@ -379,7 +379,7 @@ function me.TestSoundDownImmunitaetGegenUnbeweglichkeit()
   mod.testHelper.TestSoundDown(
     className,
     "TestSoundDownImmunitaetGegenUnbeweglichkeit",
-    "immunitaet_gegen_unbeweglichkleit"
+    "immunitaet_gegen_unbeweglichkeit"
   )
 end
 

@@ -143,7 +143,7 @@ function me.RunAll(playManual)
     mod.testReporter.PlayTestQueueWithDelay()
   end
 
-  mod.testReporter.AddToTestQueue(me.TestParseDisteltee)
+  mod.testReporter.AddToTestQueue(me.TestParseEnergieWiederherstellen)
   mod.testReporter.AddToTestQueue(me.TestParseRegeneration)
   mod.testReporter.AddToTestQueue(me.TestParseDownRegeneration)
   mod.testReporter.AddToTestQueue(me.TestParseErsteHilfe)
@@ -386,10 +386,10 @@ function me.TestSoundSelfAvoidEisengranate()
   )
 end
 
-function me.TestParseDisteltee()
+function me.TestParseEnergieWiederherstellen()
   mod.testHelper.TestParse(
     className,
-    "TestParseDisteltee",
+    "TestParseEnergieWiederherstellen",
     "energie_wiederherstellen",
     "$player$ bekommt $amount$ Energie durch $player$s Energie wiederherstellen.",
     mod.testHelper.eventTypeSpellHostilePlayerBuff

@@ -467,9 +467,9 @@ if (GetLocale() == "deDE") then
         ["hasFade"] = true,
         ["active"] = true
       },
-      ["frost_nova"] = {
+      ["frostnova"] = {
         ["name"] = "Frostnova",
-        ["soundFileName"] = "frost_nova",
+        ["soundFileName"] = "frostnova",
         ["spellID"] = 10230, -- rank 4
         ["spellIcon"] = "spell_frost_frostnova",
         ["hasFade"] = false,

@@ -343,11 +343,11 @@ function me.TestSoundDownEisbarriere()
   )
 end
 
-function me.TestSoundFrostNova()
+function me.TestSoundFrostnova()
   mod.testHelper.TestSound(
     className,
-    "TestSoundFrostNova",
-    "frost_nova"
+    "TestSoundFrostnova",
+    "frostnova"
   )
 end
 
@@ -707,7 +707,7 @@ function me.TestParseFrostnova()
   mod.testHelper.TestParse(
     className,
     "TestParseFrostnova",
-    "frost_nova",
+    "frostnova",
     "Ihr seid von Frostnova betroffen.",
     mod.testHelper.eventTypeSpellPeriodicSelfDamage
   )

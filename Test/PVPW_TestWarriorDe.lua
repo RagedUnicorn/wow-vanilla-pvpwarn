@@ -874,10 +874,10 @@ function me.TestParseDownSchildhieb()
   )
 end
 
-function me.TestParseEnemyAvoidImmuneChargeStun()
+function me.TestParseEnemyAvoidImmuneBetaeubungAbfangen()
   mod.testHelper.TestParseEnemyAvoid(
     className,
-    "TestParseEnemyAvoidImmuneChargeStun",
+    "TestParseEnemyAvoidImmuneBetaeubungAbfangen",
     "betaeubung_abfangen",
     "Betäubung abfangen war ein Fehlschlag. $player$ ist immun.",
     mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
@@ -885,10 +885,10 @@ function me.TestParseEnemyAvoidImmuneChargeStun()
   )
 end
 
-function me.TestParseEnemyAvoidResistChargeStun()
+function me.TestParseEnemyAvoidResistBetaeubungAbfangen()
   mod.testHelper.TestParseEnemyAvoid(
     className,
-    "TestParseEnemyAvoidResistChargeStun",
+    "TestParseEnemyAvoidResistBetaeubungAbfangen",
     "betaeubung_abfangen",
     "Ihr habt es mit Betäubung abfangen versucht, aber $player$ hat widerstanden.",
     mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
@@ -1336,10 +1336,10 @@ function me.TestParseEnemyAvoidBlockSchildhieb()
   )
 end
 
-function me.TestParseSelfAvoidImmuneChargeStun()
+function me.TestParseSelfAvoidImmuneBetaeubungAbfangen()
   mod.testHelper.TestParseSelfAvoid(
     className,
-    "TestParseSelfAvoidImmuneChargeStun",
+    "TestParseSelfAvoidImmuneBetaeubungAbfangen",
     "betaeubung_abfangen",
     "$player$ versucht es mit Betäubung abfangen... ein Fehlschlag. Ihr seid immun.",
     mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
@@ -1347,10 +1347,10 @@ function me.TestParseSelfAvoidImmuneChargeStun()
   )
 end
 
-function me.TestParseSelfAvoidResistChargeStun()
+function me.TestParseSelfAvoidResistBetaeubungAbfangen()
   mod.testHelper.TestParseSelfAvoid(
     className,
-    "TestParseSelfAvoidResistChargeStun",
+    "TestParseSelfAvoidResistBetaeubungAbfangen",
     "betaeubung_abfangen",
     "$player$ versucht es mit Betäubung abfangen... widerstanden.",
     mod.testHelper.eventTypeSpellDamageShieldsOnOthers,

@@ -580,7 +580,7 @@ function me.TestParseTritt()
     className,
     "TestParseTritt",
     "tritt",
-    "$player$ trifft Euch (mit Tritt). Schaden: $amount$",
+    "$player$ trifft Euch (mit Tritt). Schaden: $amount$.",
     mod.testHelper.eventTypeSpellHostilePlayerDamage
   )
 end
