@@ -49,7 +49,7 @@ For the opposite warning if an enemy player resisted an important spell of yours
 
 ### Disable Addon
 
-The addon can be configured to be either completely disabled or disable in all Battlegrounds. This includes `Warsong Gulch`, `Arathi Basin` and `Alterac Valley`. This can be useful to prevent the warnQueue to get to annoying in places where a lot of such events are triggered
+The addon can be configured to be either completely disabled or only disabled in all Battlegrounds. This includes `Warsong Gulch`, `Arathi Basin` and `Alterac Valley`. This can be useful to prevent the warnQueue to get to annoying in places where a lot of such events are triggered. Also consider reducing the spells that are enabled if this is the case.
 
 ### Ignore events while player is dead
 
@@ -59,13 +59,13 @@ Events can be ignored while the player is dead and wishes to not see any warning
 
 This option allows to ignore surrounding events and only report events for your current target.
 
-Note: Events with type `CHAT_MSG_SPELL_PERIODIC_SELF_DAMAGE` will always shown because they have no source. Events like that includes events such as Blind, Fear, Polymorph and have the form of Your are afflicted by [some spell].
+Note: Events with type `CHAT_MSG_SPELL_PERIODIC_SELF_DAMAGE` will always shown because they have no source. Events like that includes events such as Blind, Fear, Polymorph and have the form of You are afflicted by [some spell].
 
 ## FAQ
 
 #### The addon is not showing up in WoW. What can I do?
 
-Make to recheck the installation part of this Readme and check that the addon is placed inside `[WoW-installation-directory]\Interface\AddOns` and is correctly named as `PVPWarn`.
+Make sure to recheck the installation part of this Readme and check that the addon is placed inside `[WoW-installation-directory]\Interface\AddOns` and is correctly named as `PVPWarn`.
 
 #### I'm getting the following warning: Skipping warn message because max age was reached. Why is that?
 
@@ -120,7 +120,7 @@ Additionally we differentiate between self avoid and enemy avoid. While enemy av
 
 #### Enemy avoid
 
-E.g you're casting Frost Nova as a Mage and the enemy player resists your Frost Nova.
+E.g. you're casting Frost Nova as a Mage and the enemy player resists your Frost Nova.
 
 > "Your Frost Nova was resisted by SomeEnemyPlayer."
 
