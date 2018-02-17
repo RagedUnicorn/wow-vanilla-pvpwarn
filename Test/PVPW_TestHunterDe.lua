@@ -173,6 +173,42 @@ function me.RunAll(playManual)
   mod.testReporter.AddToTestQueue(me.TestParseDownEinschuechterung)
   mod.testReporter.AddToTestQueue(me.TestParseZornDesWildtiers)
   mod.testReporter.AddToTestQueue(me.TestParseDownZornDesWildtiers)
+  mod.testReporter.AddToTestQueue(me.TestParseEnemyAvoidImmuneGezielterSchuss)
+  mod.testReporter.AddToTestQueue(me.TestParseEnemyAvoidMissGezielterSchuss)
+  mod.testReporter.AddToTestQueue(me.TestParseEnemyAvoidImmuneErschuetternderSchuss)
+  mod.testReporter.AddToTestQueue(me.TestParseEnemyAvoidMissErschuetternderSchuss)
+  mod.testReporter.AddToTestQueue(me.TestParseEnemyAvoidResistErschuetternderSchuss)
+  mod.testReporter.AddToTestQueue(me.TestParseEnemyAvoidImmuneStreuschuss)
+  mod.testReporter.AddToTestQueue(me.TestParseEnemyAvoidMissStreuschuss)
+  mod.testReporter.AddToTestQueue(me.TestParseEnemyAvoidImmuneSchlangenbiss)
+  mod.testReporter.AddToTestQueue(me.TestParseEnemyAvoidMissSchlangenbiss)
+  mod.testReporter.AddToTestQueue(me.TestParseEnemyAvoidImmuneVipernbiss)
+  mod.testReporter.AddToTestQueue(me.TestParseEnemyAvoidMissVipernbiss)
+  mod.testReporter.AddToTestQueue(me.TestParseEnemyAvoidImmuneEiskaeltefalle)
+  mod.testReporter.AddToTestQueue(me.TestParseEnemyAvoidDodgeZurechtstutzen)
+  mod.testReporter.AddToTestQueue(me.TestParseEnemyAvoidParryZurechtstutzen)
+  mod.testReporter.AddToTestQueue(me.TestParseEnemyAvoidImmuneZurechtstutzen)
+  mod.testReporter.AddToTestQueue(me.TestParseEnemyAvoidMissZurechtstutzen)
+  mod.testReporter.AddToTestQueue(me.TestParseEnemyAvoidBlockZurechtstutzen)
+  mod.testReporter.AddToTestQueue(me.TestParseEnemyAvoidResistZurechtstutzen)
+  mod.testReporter.AddToTestQueue(me.TestParseSelfAvoidImmuneGezielterSchuss)
+  mod.testReporter.AddToTestQueue(me.TestParseSelfAvoidMissGezielterSchuss)
+  mod.testReporter.AddToTestQueue(me.TestParseSelfAvoidImmuneErschuetternderSchuss)
+  mod.testReporter.AddToTestQueue(me.TestParseSelfAvoidMissErschuetternderSchuss)
+  mod.testReporter.AddToTestQueue(me.TestParseSelfAvoidResistErschuetternderSchuss)
+  mod.testReporter.AddToTestQueue(me.TestParseSelfAvoidImmuneStreuschuss)
+  mod.testReporter.AddToTestQueue(me.TestParseSelfAvoidMissStreuschuss)
+  mod.testReporter.AddToTestQueue(me.TestParseSelfAvoidImmuneSchlangenbiss)
+  mod.testReporter.AddToTestQueue(me.TestParseSelfAvoidMissSchlangenbiss)
+  mod.testReporter.AddToTestQueue(me.TestParseSelfAvoidImmuneVipernbiss)
+  mod.testReporter.AddToTestQueue(me.TestParseSelfAvoidMissVipernbiss)
+  mod.testReporter.AddToTestQueue(me.TestParseSelfAvoidImmuneEiskaeltefalle)
+  mod.testReporter.AddToTestQueue(me.TestParseSelfAvoidDodgeZurechtstutzen)
+  mod.testReporter.AddToTestQueue(me.TestParseSelfAvoidParryZurechtstutzen)
+  mod.testReporter.AddToTestQueue(me.TestParseSelfAvoidImmuneZurechtstutzen)
+  mod.testReporter.AddToTestQueue(me.TestParseSelfAvoidMissZurechtstutzen)
+  mod.testReporter.AddToTestQueue(me.TestParseSelfAvoidBlockZurechtstutzen)
+  mod.testReporter.AddToTestQueue(me.TestParseSelfAvoidResistZurechtstutzen)
 
   mod.testReporter.PlayTestQueue()
 end
@@ -664,5 +700,401 @@ function me.TestParseDownZornDesWildtiers()
     "zorn_des_wildtiers",
     "Zorn des Wildtiers schwindet von $player$.",
     mod.testHelper.eventTypeSpellAuraGoneOther
+  )
+end
+
+function me.TestParseEnemyAvoidImmuneGezielterSchuss()
+  mod.testHelper.TestParseEnemyAvoid(
+    className,
+    "TestParseEnemyAvoidImmuneGezielterSchuss",
+    "gezielter_schuss",
+    "Gezielter Schuss war ein Fehlschlag. $player$ ist immun.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    PVPW_CONSTANTS.AVOID_TYPES.IMMUNE
+  )
+end
+
+function me.TestParseEnemyAvoidMissGezielterSchuss()
+  mod.testHelper.TestParseEnemyAvoid(
+    className,
+    "TestParseEnemyAvoidMissGezielterSchuss",
+    "gezielter_schuss",
+    "Gezielter Schuss hat $player$ verfehlt.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    PVPW_CONSTANTS.AVOID_TYPES.MISS
+  )
+end
+
+function me.TestParseEnemyAvoidImmuneErschuetternderSchuss()
+  mod.testHelper.TestParseEnemyAvoid(
+    className,
+    "TestParseEnemyAvoidImmuneErschuetternderSchuss",
+    "erschuetternder_schuss",
+    "Erschütternder Schuss war ein Fehlschlag. $player$ ist immun.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    PVPW_CONSTANTS.AVOID_TYPES.IMMUNE
+  )
+end
+
+function me.TestParseEnemyAvoidMissErschuetternderSchuss()
+  mod.testHelper.TestParseEnemyAvoid(
+    className,
+    "TestParseEnemyAvoidMissErschuetternderSchuss",
+    "erschuetternder_schuss",
+    "Erschütternder Schuss hat $player$ verfehlt.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    PVPW_CONSTANTS.AVOID_TYPES.MISS
+  )
+end
+
+function me.TestParseEnemyAvoidResistErschuetternderSchuss()
+  mod.testHelper.TestParseEnemyAvoid(
+    className,
+    "TestParseEnemyAvoidResistErschuetternderSchuss",
+    "erschuetternder_schuss",
+    "Ihr habt es mit Erschütternder Schuss versucht, aber $player$ hat widerstanden.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    PVPW_CONSTANTS.AVOID_TYPES.RESIST
+  )
+end
+
+function me.TestParseEnemyAvoidImmuneStreuschuss()
+  mod.testHelper.TestParseEnemyAvoid(
+    className,
+    "TestParseEnemyAvoidImmuneStreuschuss",
+    "streuschuss",
+    "Streuschuss war ein Fehlschlag. $player$ ist immun.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    PVPW_CONSTANTS.AVOID_TYPES.IMMUNE
+  )
+end
+
+function me.TestParseEnemyAvoidMissStreuschuss()
+  mod.testHelper.TestParseEnemyAvoid(
+    className,
+    "TestParseEnemyAvoidMissStreuschuss",
+    "streuschuss",
+    "Streuschuss hat $player$ verfehlt.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    PVPW_CONSTANTS.AVOID_TYPES.MISS
+  )
+end
+
+function me.TestParseEnemyAvoidImmuneSchlangenbiss()
+  mod.testHelper.TestParseEnemyAvoid(
+    className,
+    "TestParseEnemyAvoidImmuneSchlangenbiss",
+    "schlangenbiss",
+    "Schlangenbiss war ein Fehlschlag. $player$ ist immun.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    PVPW_CONSTANTS.AVOID_TYPES.IMMUNE
+  )
+end
+
+function me.TestParseEnemyAvoidMissSchlangenbiss()
+  mod.testHelper.TestParseEnemyAvoid(
+    className,
+    "TestParseEnemyAvoidMissSchlangenbiss",
+    "schlangenbiss",
+    "Schlangenbiss hat $player$ verfehlt.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    PVPW_CONSTANTS.AVOID_TYPES.MISS
+  )
+end
+
+function me.TestParseEnemyAvoidImmuneVipernbiss()
+  mod.testHelper.TestParseEnemyAvoid(
+    className,
+    "TestParseEnemyAvoidImmuneVipernbiss",
+    "vipernbiss",
+    "Vipernbiss war ein Fehlschlag. $player$ ist immun.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    PVPW_CONSTANTS.AVOID_TYPES.IMMUNE
+  )
+end
+
+function me.TestParseEnemyAvoidMissVipernbiss()
+  mod.testHelper.TestParseEnemyAvoid(
+    className,
+    "TestParseEnemyAvoidMissVipernbiss",
+    "vipernbiss",
+    "Vipernbiss hat $player$ verfehlt.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    PVPW_CONSTANTS.AVOID_TYPES.MISS
+  )
+end
+
+function me.TestParseEnemyAvoidImmuneEiskaeltefalle()
+  mod.testHelper.TestParseEnemyAvoid(
+    className,
+    "TestParseEnemyAvoidImmuneEiskaeltefalle",
+    "eiskaeltefalle",
+    "Eiskältefalle war ein Fehlschlag. $player$ ist immun.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    PVPW_CONSTANTS.AVOID_TYPES.IMMUNE
+  )
+end
+
+function me.TestParseEnemyAvoidDodgeZurechtstutzen()
+  mod.testHelper.TestParseEnemyAvoid(
+    className,
+    "TestParseEnemyAvoidDodgeZurechtstutzen",
+    "zurechtstutzen",
+    "$player$ ist Zurechtstutzen ausgewichen.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    PVPW_CONSTANTS.AVOID_TYPES.DODGE
+  )
+end
+
+function me.TestParseEnemyAvoidParryZurechtstutzen()
+  mod.testHelper.TestParseEnemyAvoid(
+    className,
+    "TestParseEnemyAvoidParryZurechtstutzen",
+    "zurechtstutzen",
+    "Zurechtstutzen wurde von $player$ pariert.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    PVPW_CONSTANTS.AVOID_TYPES.PARRY
+  )
+end
+
+function me.TestParseEnemyAvoidImmuneZurechtstutzen()
+  mod.testHelper.TestParseEnemyAvoid(
+    className,
+    "TestParseEnemyAvoidImmuneZurechtstutzen",
+    "zurechtstutzen",
+    "Zurechtstutzen war ein Fehlschlag. $player$ ist immun.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    PVPW_CONSTANTS.AVOID_TYPES.IMMUNE
+  )
+end
+
+function me.TestParseEnemyAvoidMissZurechtstutzen()
+  mod.testHelper.TestParseEnemyAvoid(
+    className,
+    "TestParseEnemyAvoidMissZurechtstutzen",
+    "zurechtstutzen",
+    "Zurechtstutzen hat $player$ verfehlt.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    PVPW_CONSTANTS.AVOID_TYPES.MISS
+  )
+end
+
+function me.TestParseEnemyAvoidBlockZurechtstutzen()
+  mod.testHelper.TestParseEnemyAvoid(
+    className,
+    "TestParseEnemyAvoidBlockZurechtstutzen",
+    "zurechtstutzen",
+    "Zurechtstutzen wurde von $player$ geblockt.",
+    mod.testHelper.eventTypeSpellSelfDamage,
+    PVPW_CONSTANTS.AVOID_TYPES.BLOCK
+  )
+end
+
+function me.TestParseEnemyAvoidResistZurechtstutzen()
+  mod.testHelper.TestParseEnemyAvoid(
+    className,
+    "TestParseEnemyAvoidResistZurechtstutzen",
+    "zurechtstutzen",
+    "Ihr habt es mit Zurechtstutzen versucht, aber $player$ hat widerstanden.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    PVPW_CONSTANTS.AVOID_TYPES.RESIST
+  )
+end
+
+function me.TestParseSelfAvoidImmuneGezielterSchuss()
+  mod.testHelper.TestParseSelfAvoid(
+    className,
+    "TestParseSelfAvoidImmuneGezielterSchuss",
+    "gezielter_schuss",
+    "$player$ versucht es mit Gezielter Schuss... ein Fehlschlag. Ihr seid immun.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    PVPW_CONSTANTS.AVOID_TYPES.IMMUNE
+  )
+end
+
+function me.TestParseSelfAvoidMissGezielterSchuss()
+  mod.testHelper.TestParseSelfAvoid(
+    className,
+    "TestParseSelfAvoidMissGezielterSchuss",
+    "gezielter_schuss",
+    "$player$ greift an (mit Gezielter Schuss) und verfehlt euch.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    PVPW_CONSTANTS.AVOID_TYPES.MISS
+  )
+end
+
+function me.TestParseSelfAvoidImmuneErschuetternderSchuss()
+  mod.testHelper.TestParseSelfAvoid(
+    className,
+    "TestParseSelfAvoidImmuneErschuetternderSchuss",
+    "erschuetternder_schuss",
+    "$player$ versucht es mit Erschütternder Schuss... ein Fehlschlag. Ihr seid immun.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    PVPW_CONSTANTS.AVOID_TYPES.IMMUNE
+  )
+end
+
+function me.TestParseSelfAvoidMissErschuetternderSchuss()
+  mod.testHelper.TestParseSelfAvoid(
+    className,
+    "TestParseSelfAvoidMissErschuetternderSchuss",
+    "erschuetternder_schuss",
+    "$player$ greift an (mit Erschütternder Schuss) und verfehlt euch.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    PVPW_CONSTANTS.AVOID_TYPES.MISS
+  )
+end
+
+function me.TestParseSelfAvoidResistErschuetternderSchuss()
+  mod.testHelper.TestParseSelfAvoid(
+    className,
+    "TestParseSelfAvoidResistErschuetternderSchuss",
+    "erschuetternder_schuss",
+    "$player$ versucht es mit Erschütternder Schuss... widerstanden.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    PVPW_CONSTANTS.AVOID_TYPES.RESIST
+  )
+end
+
+function me.TestParseSelfAvoidImmuneStreuschuss()
+  mod.testHelper.TestParseSelfAvoid(
+    className,
+    "TestParseSelfAvoidImmuneStreuschuss",
+    "streuschuss",
+    "$player$ versucht es mit Streuschuss... ein Fehlschlag. Ihr seid immun.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    PVPW_CONSTANTS.AVOID_TYPES.IMMUNE
+  )
+end
+
+function me.TestParseSelfAvoidMissStreuschuss()
+  mod.testHelper.TestParseSelfAvoid(
+    className,
+    "TestParseSelfAvoidMissStreuschuss",
+    "streuschuss",
+    "$player$ greift an (mit Streuschuss) und verfehlt euch.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    PVPW_CONSTANTS.AVOID_TYPES.MISS
+  )
+end
+
+function me.TestParseSelfAvoidImmuneSchlangenbiss()
+  mod.testHelper.TestParseSelfAvoid(
+    className,
+    "TestParseSelfAvoidImmuneSchlangenbiss",
+    "schlangenbiss",
+    "$player$ versucht es mit Schlangenbiss... ein Fehlschlag. Ihr seid immun.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    PVPW_CONSTANTS.AVOID_TYPES.IMMUNE
+  )
+end
+
+function me.TestParseSelfAvoidMissSchlangenbiss()
+  mod.testHelper.TestParseSelfAvoid(
+    className,
+    "TestParseSelfAvoidMissSchlangenbiss",
+    "schlangenbiss",
+    "$player$ greift an (mit Schlangenbiss) und verfehlt euch.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    PVPW_CONSTANTS.AVOID_TYPES.MISS
+  )
+end
+
+function me.TestParseSelfAvoidImmuneVipernbiss()
+  mod.testHelper.TestParseSelfAvoid(
+    className,
+    "TestParseSelfAvoidImmuneVipernbiss",
+    "vipernbiss",
+    "$player$ versucht es mit Vipernbiss... ein Fehlschlag. Ihr seid immun.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    PVPW_CONSTANTS.AVOID_TYPES.IMMUNE
+  )
+end
+
+function me.TestParseSelfAvoidMissVipernbiss()
+  mod.testHelper.TestParseSelfAvoid(
+    className,
+    "TestParseSelfAvoidMissVipernbiss",
+    "vipernbiss",
+    "$player$ greift an (mit Vipernbiss) und verfehlt euch.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    PVPW_CONSTANTS.AVOID_TYPES.MISS
+  )
+end
+
+function me.TestParseSelfAvoidImmuneEiskaeltefalle()
+  mod.testHelper.TestParseSelfAvoid(
+    className,
+    "TestParseSelfAvoidImmuneEiskaeltefalle",
+    "eiskaeltefalle",
+    "$player$ versucht es mit Eiskältefalle... ein Fehlschlag. Ihr seid immun.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    PVPW_CONSTANTS.AVOID_TYPES.IMMUNE
+  )
+end
+
+function me.TestParseSelfAvoidDodgeZurechtstutzen()
+  mod.testHelper.TestParseSelfAvoid(
+    className,
+    "TestParseSelfAvoidDodgeZurechtstutzen",
+    "zurechtstutzen",
+    "$player$s Zurechtstutzen wurde ausgewichen.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    PVPW_CONSTANTS.AVOID_TYPES.DODGE
+  )
+end
+
+function me.TestParseSelfAvoidParryZurechtstutzen()
+  mod.testHelper.TestParseSelfAvoid(
+    className,
+    "TestParseSelfAvoidParryZurechtstutzen",
+    "zurechtstutzen",
+    "Zurechtstutzen von $player$ wurde pariert.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    PVPW_CONSTANTS.AVOID_TYPES.PARRY
+  )
+end
+
+function me.TestParseSelfAvoidImmuneZurechtstutzen()
+  mod.testHelper.TestParseSelfAvoid(
+    className,
+    "TestParseSelfAvoidImmuneZurechtstutzen",
+    "zurechtstutzen",
+    "$player$ versucht es mit Zurechtstutzen... ein Fehlschlag. Ihr seid immun.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    PVPW_CONSTANTS.AVOID_TYPES.IMMUNE
+  )
+end
+
+function me.TestParseSelfAvoidMissZurechtstutzen()
+  mod.testHelper.TestParseSelfAvoid(
+    className,
+    "TestParseSelfAvoidMissZurechtstutzen",
+    "zurechtstutzen",
+    "$player$ greift an (mit Zurechtstutzen) und verfehlt euch.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    PVPW_CONSTANTS.AVOID_TYPES.MISS
+  )
+end
+
+function me.TestParseSelfAvoidBlockZurechtstutzen()
+  mod.testHelper.TestParseSelfAvoid(
+    className,
+    "TestParseSelfAvoidBlockZurechtstutzen",
+    "zurechtstutzen",
+    "$player$s Zurechtstutzen wurde geblockt.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    PVPW_CONSTANTS.AVOID_TYPES.BLOCK
+  )
+end
+
+function me.TestParseSelfAvoidResistZurechtstutzen()
+  mod.testHelper.TestParseSelfAvoid(
+    className,
+    "TestParseSelfAvoidResistZurechtstutzen",
+    "zurechtstutzen",
+    "$player$ versucht es mit Zurechtstutzen... widerstanden.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    PVPW_CONSTANTS.AVOID_TYPES.RESIST
   )
 end
