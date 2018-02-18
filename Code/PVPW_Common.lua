@@ -123,7 +123,7 @@ else
     local name = string.gsub(string.lower(spellName), "%s+", "_")
 
     name = string.gsub(name, "_%-_", "_")
-    name = string.gsub(name, "'+:", "")
+    name = string.gsub(name, "[':]+", "")
 
     return name
   end
