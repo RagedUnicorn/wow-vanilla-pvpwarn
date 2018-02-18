@@ -149,6 +149,8 @@ function me.RunAll(playManual)
   mod.testReporter.AddToTestQueueWithDelay(me.TestSoundIntimidatingShout)
   mod.testReporter.AddToTestQueueWithDelay(me.TestSoundShieldBlock)
   mod.testReporter.AddToTestQueueWithDelay(me.TestSoundDownShieldBlock)
+  mod.testReporter.AddToTestQueueWithDelay(me.TestSoundShieldBash)
+  mod.testReporter.AddToTestQueueWithDelay(me.TestSoundShieldBashSilenced)
   mod.testReporter.AddToTestQueueWithDelay(me.TestSoundEnemyAvoidChargeStun)
   mod.testReporter.AddToTestQueueWithDelay(me.TestSoundEnemyAvoidHamstring)
   mod.testReporter.AddToTestQueueWithDelay(me.TestSoundEnemyAvoidMortalStrike)
@@ -201,6 +203,8 @@ function me.RunAll(playManual)
   mod.testReporter.AddToTestQueue(me.TestParseCritPummel)
   mod.testReporter.AddToTestQueue(me.TestParseShieldBlock)
   mod.testReporter.AddToTestQueue(me.TestParseDownShieldBlock)
+  mod.testReporter.AddToTestQueue(me.TestParseShieldBash)
+  mod.testReporter.AddToTestQueue(me.TestParseShieldBashSilenced)
   mod.testReporter.AddToTestQueue(me.TestParseEnemyAvoidImmuneChargeStun)
   mod.testReporter.AddToTestQueue(me.TestParseEnemyAvoidResistChargeStun)
   mod.testReporter.AddToTestQueue(me.TestParseEnemyAvoidDodgeHamstring)
@@ -472,6 +476,24 @@ function me.TestSoundDownShieldBlock()
     "shield_block"
   )
 end
+
+function me.TestSoundShieldBash()
+  mod.testHelper.TestSound(
+    className,
+    "TestSoundShieldBash",
+    "shield_bash"
+  )
+end
+
+function me.TestSoundShieldBashSilenced()
+  mod.testHelper.TestSound(
+    className,
+    "TestSoundShieldBashSilenced",
+    "shield_bash_silenced"
+  )
+end
+
+
 
 function me.TestSoundEnemyAvoidChargeStun()
   mod.testHelper.TestSoundEnemyAvoid(
@@ -886,6 +908,26 @@ function me.TestParseDownShieldBlock()
     "shield_block",
     "Shield Block fades from $player$.",
     mod.testHelper.eventTypeSpellAuraGoneOther
+  )
+end
+
+function me.TestParseShieldBash()
+  mod.testHelper.TestParse(
+    className,
+    "TestParseShieldBash",
+    "shield_bash",
+    "$player$'s Shield Bash hits you for $amount$.",
+    mod.testHelper.eventTypeSpellHostilePlayerDamage
+  )
+end
+
+function me.TestParseShieldBashSilenced()
+  mod.testHelper.TestParse(
+    className,
+    "TestParseShieldBashSilenced",
+    "shield_bash_silenced",
+    "You are afflicted by Shield Bash - Silenced.",
+    mod.testHelper.eventTypeSpellPeriodicSelfDamage
   )
 end
 

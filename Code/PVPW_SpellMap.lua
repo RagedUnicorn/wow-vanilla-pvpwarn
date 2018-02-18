@@ -195,12 +195,29 @@ if (GetLocale() == "deDE") then
         ["hasFade"] = false,
         ["active"] = true
       },
-      ["schildhieb"] = {
-        ["name"] = "Schildhieb",
-        ["soundFileName"] = "schildhieb",
+      ["schildblock"] = {
+        ["name"] = "Schildblock",
+        ["soundFileName"] = "schildblock",
         ["spellID"] = 2565,
         ["spellIcon"] = "ability_defend",
         ["hasFade"] = true,
+        ["active"] = true
+      },
+      ["schildhieb"] = {
+        ["name"] = "Schildhieb",
+        ["soundFileName"] = "schildhieb",
+        ["spellID"] = 1672,
+        ["spellIcon"] = "ability_warrior_shieldbash",
+        ["hasFade"] = false,
+        ["active"] = true
+      },
+      -- skilled shield bash has a silence effect
+      ["schildhieb_zum_schweigen_gebracht"] = {
+        ["name"] = "Schildhieb - zum Schweigen gebracht",
+        ["soundFileName"] = "schildhieb_schweigen",
+        ["spellID"] = 18498,
+        ["spellIcon"] = "ability_warrior_shieldbash",
+        ["hasFade"] = false,
         ["active"] = true
       }
     },
@@ -1751,6 +1768,23 @@ else
         ["spellID"] = 2565,
         ["spellIcon"] = "ability_defend",
         ["hasFade"] = true,
+        ["active"] = true
+      },
+      ["shield_bash"] = {
+        ["name"] = "Shield Bash",
+        ["soundFileName"] = "shield_bash",
+        ["spellID"] = 1672,
+        ["spellIcon"] = "ability_warrior_shieldbash",
+        ["hasFade"] = false,
+        ["active"] = true
+      },
+      -- skilled shield bash has a silence effect
+      ["shield_bash_silenced"] = {
+        ["name"] = "Shield Bash - Silenced",
+        ["soundFileName"] = "shield_bash_silenced",
+        ["spellID"] = 18498,
+        ["spellIcon"] = "ability_warrior_shieldbash",
+        ["hasFade"] = false,
         ["active"] = true
       }
     },

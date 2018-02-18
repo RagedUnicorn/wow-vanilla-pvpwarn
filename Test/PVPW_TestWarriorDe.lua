@@ -133,8 +133,10 @@ function me.RunAll(playManual)
   mod.testReporter.AddToTestQueueWithDelay(me.TestSoundZuschlagen)
   mod.testReporter.AddToTestQueueWithDelay(me.TestSoundBetaeubungAbfangen)
   mod.testReporter.AddToTestQueueWithDelay(me.TestSoundDrohruf)
+  mod.testReporter.AddToTestQueueWithDelay(me.TestSoundSchildblock)
+  mod.testReporter.AddToTestQueueWithDelay(me.TestSoundDownSchildblock)
   mod.testReporter.AddToTestQueueWithDelay(me.TestSoundSchildhieb)
-  mod.testReporter.AddToTestQueueWithDelay(me.TestSoundDownSchildhieb)
+  mod.testReporter.AddToTestQueueWithDelay(me.TestSoundSchildhiebZumSchweigenGebracht)
   mod.testReporter.AddToTestQueueWithDelay(me.TestSoundEnemyAvoidBetaeubungAbfangen)
   mod.testReporter.AddToTestQueueWithDelay(me.TestSoundEnemyAvoidKniesehne)
   mod.testReporter.AddToTestQueueWithDelay(me.TestSoundEnemyAvoidToedlicherStoss)
@@ -184,8 +186,10 @@ function me.RunAll(playManual)
   mod.testReporter.AddToTestQueue(me.TestParseCritZuschlagen)
   mod.testReporter.AddToTestQueue(me.TestParseBetaeubungAbfangen)
   mod.testReporter.AddToTestQueue(me.TestParseDrohruf)
+  mod.testReporter.AddToTestQueue(me.TestParseSchildblock)
+  mod.testReporter.AddToTestQueue(me.TestParseDownSchildblock)
   mod.testReporter.AddToTestQueue(me.TestParseSchildhieb)
-  mod.testReporter.AddToTestQueue(me.TestParseDownSchildhieb)
+  mod.testReporter.AddToTestQueue(me.TestParseSchildhiebZumSchweigenGebacht)
   mod.testReporter.AddToTestQueue(me.TestParseEnemyAvoidImmuneChargeStun)
   mod.testReporter.AddToTestQueue(me.TestParseEnemyAvoidResistChargeStun)
   mod.testReporter.AddToTestQueue(me.TestParseEnemyAvoidDodgeKniesehne)
@@ -442,6 +446,22 @@ function me.TestSoundDrohruf()
   )
 end
 
+function me.TestSoundSchildblock()
+  mod.testHelper.TestSound(
+    className,
+    "TestSoundSchildblock",
+    "schildblock"
+  )
+end
+
+function me.TestSoundDownSchildblock()
+  mod.testHelper.TestSoundDown(
+    className,
+    "TestSoundDownSchildblock",
+    "schildblock"
+  )
+end
+
 function me.TestSoundSchildhieb()
   mod.testHelper.TestSound(
     className,
@@ -450,11 +470,11 @@ function me.TestSoundSchildhieb()
   )
 end
 
-function me.TestSoundDownSchildhieb()
-  mod.testHelper.TestSoundDown(
+function me.TestSoundSchildhiebZumSchweigenGebracht()
+  mod.testHelper.TestSound(
     className,
-    "TestSoundDownSchildhieb",
-    "schildhieb"
+    "TestSoundSchildhiebZumSchweigenGebracht",
+    "schildhieb_zum_schweigen_gebracht"
   )
 end
 
@@ -854,23 +874,43 @@ function me.TestParseDrohruf()
   )
 end
 
+function me.TestParseSchildblock()
+  mod.testHelper.TestParse(
+    className,
+    "TestParseSchildblock",
+    "schildblock",
+    "$player$ bekommt 'Schildblock'.",
+    mod.testHelper.eventTypeSpellPeriodicHostilePlayerBuffs
+  )
+end
+
+function me.TestParseDownSchildblock()
+  mod.testHelper.TestParseDown(
+    className,
+    "TestParseDownSchildblock",
+    "schildblock",
+    "Schildblock schwindet von $player$.",
+    mod.testHelper.eventTypeSpellAuraGoneOther
+  )
+end
+
 function me.TestParseSchildhieb()
   mod.testHelper.TestParse(
     className,
     "TestParseSchildhieb",
     "schildhieb",
-    "$player$ bekommt 'Schildhieb'.",
-    mod.testHelper.eventTypeSpellPeriodicHostilePlayerBuffs
+    "$player$ trifft Euch (mit Schildhieb). Schaden: $amount$.",
+    mod.testHelper.eventTypeSpellHostilePlayerDamage
   )
 end
 
-function me.TestParseDownSchildhieb()
-  mod.testHelper.TestParseDown(
+function me.TestParseSchildhiebZumSchweigenGebacht()
+  mod.testHelper.TestParse(
     className,
-    "TestParseDownSchildhieb",
-    "schildhieb",
-    "Schildhieb schwindet von $player$.",
-    mod.testHelper.eventTypeSpellAuraGoneOther
+    "TestParseSchildhiebZumSchweigenGebacht",
+    "schildhieb_zum_schweigen_gebracht",
+    "Ihr seid von Schildhieb - zum Schweigen gebracht betroffen.",
+    mod.testHelper.eventTypeSpellPeriodicSelfDamage
   )
 end
 
