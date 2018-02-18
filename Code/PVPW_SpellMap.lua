@@ -73,7 +73,7 @@ if (GetLocale() == "deDE") then
         ["name"] = "Berserkerwut",
         ["soundFileName"] = "berserkerwut",
         ["spellID"] = 18499,
-        ["spellIcon"] = "inv_Shield_23",
+        ["spellIcon"] = "spell_nature_ancestralguardian",
         ["hasFade"] = true,
         ["active"] = true
       },
@@ -1623,7 +1623,7 @@ else
         ["name"] = "Berserker Rage",
         ["soundFileName"] = "berserker_rage",
         ["spellID"] = 18499,
-        ["spellIcon"] = "inv_Shield_23",
+        ["spellIcon"] = "spell_nature_ancestralguardian",
         ["hasFade"] = true,
         ["active"] = true
       },
