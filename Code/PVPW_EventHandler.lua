@@ -81,7 +81,7 @@ function me.HandleEvent(msg, event)
         if spell.hasFade then
           fade = true
         else
-          mod.logger.LogDebug(me.tag, "Detected a fading spell but the spell " ..
+          mod.logger.LogDebug(me.tag, "Detected a fading spell but the spell" ..
             " in the spellMap does not support fading - ignoring event")
           return
         end
@@ -99,9 +99,9 @@ function me.HandleEvent(msg, event)
           end
         end
       end
-
+      mod.logger.LogError(me.tag, "Eventhandler spellName: " .. spell.name)
       mod.warnQueue.AddToQueue(tostring(math.floor(math.random() * 100000)),
-          spell.name, spellData.soundType, class, spell.soundFileName, fade)
+          spell.normalizedSpellName, spellData.soundType, class, spell.soundFileName, fade)
     else
       mod.logger.LogInfo(me.tag, string.format("Unknown spell %s", spellData.spell))
       return

@@ -2104,7 +2104,11 @@ function me.SearchByName(name)
     for key, value in pairs(spellAvoidMap[class]) do
       if key == spellName then
         mod.logger.LogDebug(me.tag, string.format("Found spell - %s - in spellAvoidMap", spellName))
-        return class, mod.common.Clone(spellAvoidMap[class][key])
+
+        local spell = mod.common.Clone(spellAvoidMap[class][key])
+        spell.normalizedSpellName = key -- add normalizedSpellName that would get lost otherwise
+
+        return class, spell
       end
     end
   end

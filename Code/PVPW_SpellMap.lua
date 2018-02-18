@@ -3219,7 +3219,11 @@ function me.SearchByName(name)
     for key, value in pairs(spellMap[class]) do
       if key == spellName then
         mod.logger.LogDebug(me.tag, string.format("Found spell - %s - in spellMap", spellName))
-        return class, mod.common.Clone(spellMap[class][key])
+
+        local spell = mod.common.Clone(spellMap[class][key])
+        spell.normalizedSpellName = key -- add normalizedSpellName that would get lost otherwise
+
+        return class, spell
       end
     end
   end
