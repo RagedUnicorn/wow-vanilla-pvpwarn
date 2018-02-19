@@ -48,7 +48,8 @@ me.tag = "SpellMap"
         "CHAT_MSG_SPELL_AURA_GONE_OTHER",
         "CHAT_MSG_SPELL_HOSTILEPLAYER_DAMAGE",
         "CHAT_MSG_SPELL_HOSTILEPLAYER_BUFF",
-        "CHAT_MSG_SPELL_PERIODIC_HOSTILEPLAYER_BUFFS"
+        "CHAT_MSG_SPELL_PERIODIC_HOSTILEPLAYER_BUFFS".
+        "CHAT_MSG_SPELL_PERIODIC_HOSTILEPLAYER_DAMAGE"
       }
         {table} marks events that are ignored for this spell
 
@@ -132,7 +133,11 @@ if (GetLocale() == "deDE") then
         ["spellID"] = 20615,
         ["spellIcon"] = "ability_rogue_sprint",
         ["hasFade"] = false,
-        ["active"] = true
+        ["active"] = true,
+        ["ignoreEvents"] = {
+          "CHAT_MSG_SPELL_AURA_GONE_OTHER",
+          "CHAT_MSG_SPELL_PERIODIC_HOSTILEPLAYER_DAMAGE"
+        }
       },
       ["letztes_gefecht"] = {
         ["name"] = "Letztes Gefecht",
@@ -148,7 +153,11 @@ if (GetLocale() == "deDE") then
         ["spellID"] = 676,
         ["spellIcon"] = "ability_warrior_disarm",
         ["hasFade"] = false,
-        ["active"] = true
+        ["active"] = true,
+        ["ignoreEvents"] = {
+          "CHAT_MSG_SPELL_AURA_GONE_OTHER",
+          "CHAT_MSG_SPELL_PERIODIC_HOSTILEPLAYER_DAMAGE"
+        }
       },
       ["erschuetternder_schlag"] = {
         ["name"] = "Erschütternder Schlag",
@@ -156,7 +165,11 @@ if (GetLocale() == "deDE") then
         ["spellID"] = 12809,
         ["spellIcon"] = "ability_thunderbolt",
         ["hasFade"] = false,
-        ["active"] = true
+        ["active"] = true,
+        ["ignoreEvents"] = {
+          "CHAT_MSG_SPELL_AURA_GONE_OTHER",
+          "CHAT_MSG_SPELL_PERIODIC_HOSTILEPLAYER_DAMAGE"
+        }
       },
       ["blutrausch"] = {
         ["name"] = "Blutrausch",
@@ -185,7 +198,11 @@ if (GetLocale() == "deDE") then
         ["spellID"] = 7922,
         ["spellIcon"] = "ability_warrior_charge",
         ["hasFade"] = false,
-        ["active"] = true
+        ["active"] = true,
+        ["ignoreEvents"] = {
+          "CHAT_MSG_SPELL_AURA_GONE_OTHER",
+          "CHAT_MSG_SPELL_PERIODIC_HOSTILEPLAYER_DAMAGE"
+        }
       },
       ["drohruf"] = {
         ["name"] = "Drohruf",
@@ -193,7 +210,11 @@ if (GetLocale() == "deDE") then
         ["spellID"] = 29544,
         ["spellIcon"] = "ability_golemthunderclap",
         ["hasFade"] = false,
-        ["active"] = true
+        ["active"] = true,
+        ["ignoreEvents"] = {
+          "CHAT_MSG_SPELL_AURA_GONE_OTHER",
+          "CHAT_MSG_SPELL_PERIODIC_HOSTILEPLAYER_DAMAGE"
+        }
       },
       ["schildblock"] = {
         ["name"] = "Schildblock",
@@ -228,7 +249,11 @@ if (GetLocale() == "deDE") then
         ["spellID"] = 10890,
         ["spellIcon"] = "spell_shadow_psychicscream",
         ["hasFade"] = false,
-        ["active"] = true
+        ["active"] = true,
+        ["ignoreEvents"] = {
+          "CHAT_MSG_SPELL_AURA_GONE_OTHER",
+          "CHAT_MSG_SPELL_PERIODIC_HOSTILEPLAYER_DAMAGE"
+        }
       },
       ["stille"] = {
         ["name"] = "Stille",
@@ -236,7 +261,11 @@ if (GetLocale() == "deDE") then
         ["spellID"] = 15487,
         ["spellIcon"] = "spell_shadow_impphaseshift",
         ["hasFade"] = false,
-        ["active"] = true
+        ["active"] = true,
+        ["ignoreEvents"] = {
+          "CHAT_MSG_SPELL_AURA_GONE_OTHER",
+          "CHAT_MSG_SPELL_PERIODIC_HOSTILEPLAYER_DAMAGE"
+        }
       },
       ["seele_der_macht"] = {
         ["name"] = "Seele der Macht",
@@ -260,7 +289,11 @@ if (GetLocale() == "deDE") then
         ["spellID"] = 15286,
         ["spellIcon"] = "spell_shadow_unsummonbuilding",
         ["hasFade"] = false,
-        ["active"] = true
+        ["active"] = true,
+        ["ignoreEvents"] = {
+          "CHAT_MSG_SPELL_AURA_GONE_OTHER",
+          "CHAT_MSG_SPELL_PERIODIC_HOSTILEPLAYER_DAMAGE"
+        }
       },
       ["verzweifeltes_gebet"] = {
         ["name"] = "Verzweifeltes Gebet",
@@ -290,7 +323,10 @@ if (GetLocale() == "deDE") then
         ["spellID"] = 19266, -- rank 6
         ["spellIcon"] = "spell_shadow_deadofnight",
         ["hasFade"] = true,
-        ["active"] = true
+        ["active"] = true,
+        ["ignoreEvents"] = {
+          "CHAT_MSG_SPELL_PERIODIC_HOSTILEPLAYER_DAMAGE"
+        }
       },
       ["furchtzauberschutz"] = {
         ["name"] = "Furchtzauberschutz",
@@ -316,7 +352,8 @@ if (GetLocale() == "deDE") then
         ["hasFade"] = false,
         ["active"] = true,
         ["ignoreEvents"] = {
-          "CHAT_MSG_SPELL_AURA_GONE_OTHER"
+          "CHAT_MSG_SPELL_AURA_GONE_OTHER",
+          "CHAT_MSG_SPELL_PERIODIC_HOSTILEPLAYER_DAMAGE"
         }
       },
       ["verhexung_der_schwaeche"] = {
@@ -325,7 +362,11 @@ if (GetLocale() == "deDE") then
         ["spellID"] = 19285, -- rank 6
         ["spellIcon"] = "spell_shadow_fingerofdeath",
         ["hasFade"] = false,
-        ["active"] = true
+        ["active"] = true,
+        ["ignoreEvents"] = {
+          "CHAT_MSG_SPELL_AURA_GONE_OTHER",
+          "CHAT_MSG_SPELL_PERIODIC_HOSTILEPLAYER_DAMAGE"
+        }
       }
     },
     ["rogue"] = {
@@ -335,7 +376,11 @@ if (GetLocale() == "deDE") then
         ["spellID"] = 2094,
         ["spellIcon"] = "spell_shadow_mindsteal",
         ["hasFade"] = false,
-        ["active"] = true
+        ["active"] = true,
+        ["ignoreEvents"] = {
+          "CHAT_MSG_SPELL_AURA_GONE_OTHER",
+          "CHAT_MSG_SPELL_PERIODIC_HOSTILEPLAYER_DAMAGE"
+        }
       },
       ["tritt"] = {
         ["name"] = "Tritt",
@@ -368,7 +413,11 @@ if (GetLocale() == "deDE") then
         ["spellID"] = 8643,
         ["spellIcon"] = "ability_rogue_kidneyshot",
         ["hasFade"] = false,
-        ["active"] = true
+        ["active"] = true,
+        ["ignoreEvents"] = {
+          "CHAT_MSG_SPELL_AURA_GONE_OTHER",
+          "CHAT_MSG_SPELL_PERIODIC_HOSTILEPLAYER_DAMAGE"
+        }
       },
       ["fieser_trick"] = {
         ["name"] = "Fieser Trick",
@@ -376,7 +425,11 @@ if (GetLocale() == "deDE") then
         ["spellID"] = 1833,
         ["spellIcon"] = "ability_cheapshot",
         ["hasFade"] = false,
-        ["active"] = true
+        ["active"] = true,
+        ["ignoreEvents"] = {
+          "CHAT_MSG_SPELL_AURA_GONE_OTHER",
+          "CHAT_MSG_SPELL_PERIODIC_HOSTILEPLAYER_DAMAGE"
+        }
       },
       ["adrenalinrausch"] = {
         ["name"] = "Adrenalinrausch",
@@ -410,7 +463,11 @@ if (GetLocale() == "deDE") then
         ["spellID"] = 12826,
         ["spellIcon"] = "spell_nature_polymorph",
         ["hasFade"] = false,
-        ["active"] = true
+        ["active"] = true,
+        ["ignoreEvents"] = {
+          "CHAT_MSG_SPELL_AURA_GONE_OTHER",
+          "CHAT_MSG_SPELL_PERIODIC_HOSTILEPLAYER_DAMAGE"
+        }
       },
       ["verwandlung_kuh"] = {
         ["name"] = "Verwandlung: Kuh",
@@ -418,7 +475,11 @@ if (GetLocale() == "deDE") then
         ["spellID"] = 28270,
         ["spellIcon"] = "spell_nature_polymorph_cow",
         ["hasFade"] = false,
-        ["active"] = true
+        ["active"] = true,
+        ["ignoreEvents"] = {
+          "CHAT_MSG_SPELL_AURA_GONE_OTHER",
+          "CHAT_MSG_SPELL_PERIODIC_HOSTILEPLAYER_DAMAGE"
+        }
       },
       ["verwandlung_schwein"] = {
         ["name"] = "Verwandlung: Schwein",
@@ -426,7 +487,11 @@ if (GetLocale() == "deDE") then
         ["spellID"] = 28272,
         ["spellIcon"] = "spell_magic_polymorphpig",
         ["hasFade"] = false,
-        ["active"] = true
+        ["active"] = true,
+        ["ignoreEvents"] = {
+          "CHAT_MSG_SPELL_AURA_GONE_OTHER",
+          "CHAT_MSG_SPELL_PERIODIC_HOSTILEPLAYER_DAMAGE"
+        }
       },
       ["verwandlung_kroete"] = {
         ["name"] = "Verwandlung: Kröte",
@@ -434,7 +499,11 @@ if (GetLocale() == "deDE") then
         ["spellID"] = 28271,
         ["spellIcon"] = "ability_hunter_pet_turtle",
         ["hasFade"] = false,
-        ["active"] = true
+        ["active"] = true,
+        ["ignoreEvents"] = {
+          "CHAT_MSG_SPELL_AURA_GONE_OTHER",
+          "CHAT_MSG_SPELL_PERIODIC_HOSTILEPLAYER_DAMAGE"
+        }
       },
       ["blinzeln"] = {
         ["name"] = "Blinzeln",
@@ -466,7 +535,11 @@ if (GetLocale() == "deDE") then
         ["spellID"] = 2139,
         ["spellIcon"] = "spell_frost_iceshock",
         ["hasFade"] = false,
-        ["active"] = true
+        ["active"] = true,
+        ["ignoreEvents"] = {
+          "CHAT_MSG_SPELL_AURA_GONE_OTHER",
+          "CHAT_MSG_SPELL_PERIODIC_HOSTILEPLAYER_DAMAGE"
+        }
       },
       ["manaschild"] = {
         ["name"] = "Manaschild",
@@ -490,7 +563,11 @@ if (GetLocale() == "deDE") then
         ["spellID"] = 10230, -- rank 4
         ["spellIcon"] = "spell_frost_frostnova",
         ["hasFade"] = false,
-        ["active"] = true
+        ["active"] = true,
+        ["ignoreEvents"] = {
+          "CHAT_MSG_SPELL_AURA_GONE_OTHER",
+          "CHAT_MSG_SPELL_PERIODIC_HOSTILEPLAYER_DAMAGE"
+        }
       },
       ["arkane_macht"] = {
         ["name"] = "Arkane Macht",
@@ -530,7 +607,11 @@ if (GetLocale() == "deDE") then
         ["spellID"] = 13021, -- rank 5
         ["spellIcon"] = "spell_holy_excorcism_02",
         ["hasFade"] = false,
-        ["active"] = true
+        ["active"] = true,
+        ["ignoreEvents"] = {
+          "CHAT_MSG_SPELL_AURA_GONE_OTHER",
+          "CHAT_MSG_SPELL_PERIODIC_HOSTILEPLAYER_DAMAGE"
+        }
       }
     },
     ["hunter"] = {
@@ -541,6 +622,10 @@ if (GetLocale() == "deDE") then
         ["spellIcon"] = "spell_frost_stun",
         ["hasFade"] = false,
         ["active"] = true,
+        ["ignoreEvents"] = {
+          "CHAT_MSG_SPELL_AURA_GONE_OTHER",
+          "CHAT_MSG_SPELL_PERIODIC_HOSTILEPLAYER_DAMAGE"
+        }
       },
       ["verbesserter_erschuetternder_schuss"] = {
         ["name"] = "Verbesserter erschütternder Schuss",
@@ -549,6 +634,10 @@ if (GetLocale() == "deDE") then
         ["spellIcon"] = "spell_frost_stun",
         ["hasFade"] = false,
         ["active"] = true,
+        ["ignoreEvents"] = {
+          "CHAT_MSG_SPELL_AURA_GONE_OTHER",
+          "CHAT_MSG_SPELL_PERIODIC_HOSTILEPLAYER_DAMAGE"
+        }
       },
       ["aspekt_des_affen"] = {
         ["name"] = "Aspekt des Affen",
@@ -620,7 +709,14 @@ if (GetLocale() == "deDE") then
         ["spellID"] = 24135,
         ["spellIcon"] = "inv_spear_02",
         ["hasFade"] = false,
-        ["active"] = true
+        ["active"] = true,
+        ["ignoreEvents"] = {
+          "CHAT_MSG_SPELL_AURA_GONE_OTHER",
+          "CHAT_MSG_SPELL_PERIODIC_HOSTILEPLAYER_DAMAGE",
+           -- TODO this might be a private server bug. Should a target really get a buff
+           -- that he can dismiss by right clicking? Shouldn't he get a debuff?!
+          "CHAT_MSG_SPELL_PERIODIC_HOSTILEPLAYER_BUFFS"
+        }
       },
       ["vipernbiss"] = {
         ["name"] = "Vipernbiss",
@@ -628,7 +724,11 @@ if (GetLocale() == "deDE") then
         ["spellID"] = 14280, -- rank 3
         ["spellIcon"] = "ability_hunter_aimedshot",
         ["hasFade"] = false,
-        ["active"] = true
+        ["active"] = true,
+        ["ignoreEvents"] = {
+          "CHAT_MSG_SPELL_AURA_GONE_OTHER",
+          "CHAT_MSG_SPELL_PERIODIC_HOSTILEPLAYER_DAMAGE"
+        }
       },
       ["streuschuss"] = {
         ["name"] = "Streuschuss",
@@ -636,7 +736,11 @@ if (GetLocale() == "deDE") then
         ["spellID"] = 19503,
         ["spellIcon"] = "ability_golemstormbolt",
         ["hasFade"] = false,
-        ["active"] = true
+        ["active"] = true,
+        ["ignoreEvents"] = {
+          "CHAT_MSG_SPELL_AURA_GONE_OTHER",
+          "CHAT_MSG_SPELL_PERIODIC_HOSTILEPLAYER_DAMAGE"
+        }
       },
       ["leuchtfeuer"] = {
         ["name"] = "Leuchtfeuer",
@@ -644,7 +748,11 @@ if (GetLocale() == "deDE") then
         ["spellID"] = 1543,
         ["spellIcon"] = "spell_fire_flare",
         ["hasFade"] = false,
-        ["active"] = true
+        ["active"] = true,
+        ["ignoreEvents"] = {
+          "CHAT_MSG_SPELL_AURA_GONE_OTHER",
+          "CHAT_MSG_SPELL_PERIODIC_HOSTILEPLAYER_DAMAGE"
+        }
       },
       ["wildtier_aengstigen"] = {
         ["name"] = "Wildtier ängstigen",
@@ -652,7 +760,11 @@ if (GetLocale() == "deDE") then
         ["spellID"] = 14327,
         ["spellIcon"] = "ability_druid_cower",
         ["hasFade"] = false,
-        ["active"] = true
+        ["active"] = true,
+        ["ignoreEvents"] = {
+          "CHAT_MSG_SPELL_AURA_GONE_OTHER",
+          "CHAT_MSG_SPELL_PERIODIC_HOSTILEPLAYER_DAMAGE"
+        }
       },
       ["einschuechterung"] = {
         ["name"] = "Einschüchterung",
@@ -687,7 +799,11 @@ if (GetLocale() == "deDE") then
         ["spellID"] = 6215, -- rank 3
         ["spellIcon"] = "spell_shadow_possession",
         ["hasFade"] = false,
-        ["active"] = true
+        ["active"] = true,
+        ["ignoreEvents"] = {
+          "CHAT_MSG_SPELL_AURA_GONE_OTHER",
+          "CHAT_MSG_SPELL_PERIODIC_HOSTILEPLAYER_DAMAGE"
+        }
       },
       ["teufelsbeherschung"] = {
         ["name"] = "Teufelsbeherschung",
@@ -703,7 +819,11 @@ if (GetLocale() == "deDE") then
         ["spellID"] = 18871, -- rank 6
         ["spellIcon"] = "spell_shadow_scourgebuild",
         ["hasFade"] = false,
-        ["active"] = true
+        ["active"] = true,
+        ["ignoreEvents"] = {
+          "CHAT_MSG_SPELL_AURA_GONE_OTHER",
+          "CHAT_MSG_SPELL_PERIODIC_HOSTILEPLAYER_DAMAGE"
+        }
       },
       ["schattenzauberschutz"] = {
         ["name"] = "Schattenzauberschutz",
@@ -719,7 +839,11 @@ if (GetLocale() == "deDE") then
         ["spellID"] = 17928, -- rank 2
         ["spellIcon"] = "spell_shadow_deathscream",
         ["hasFade"] = false,
-        ["active"] = true
+        ["active"] = true,
+        ["ignoreEvents"] = {
+          "CHAT_MSG_SPELL_AURA_GONE_OTHER",
+          "CHAT_MSG_SPELL_PERIODIC_HOSTILEPLAYER_DAMAGE"
+        }
       },
       ["zauberstein"] = {
         ["name"] = "Zauberstein",
@@ -751,7 +875,11 @@ if (GetLocale() == "deDE") then
         ["spellID"] = 17926,
         ["spellIcon"] = "spell_shadow_deathcoil",
         ["hasFade"] = false,
-        ["active"] = true
+        ["active"] = true,
+        ["ignoreEvents"] = {
+          "CHAT_MSG_SPELL_AURA_GONE_OTHER",
+          "CHAT_MSG_SPELL_PERIODIC_HOSTILEPLAYER_DAMAGE"
+        }
       },
       ["fluch_verstaerken"] = {
         ["name"] = "Fluch verstärken",
@@ -799,7 +927,11 @@ if (GetLocale() == "deDE") then
         ["spellID"] = 18223,
         ["spellIcon"] = "spell_shadow_grimward",
         ["hasFade"] = false,
-        ["active"] = true
+        ["active"] = true,
+        ["ignoreEvents"] = {
+          "CHAT_MSG_SPELL_AURA_GONE_OTHER",
+          "CHAT_MSG_SPELL_PERIODIC_HOSTILEPLAYER_DAMAGE"
+        }
       },
       ["fluch_der_sprachen"] = {
         ["name"] = "Fluch der Sprachen",
@@ -807,7 +939,11 @@ if (GetLocale() == "deDE") then
         ["spellID"] = 11719, -- rank 2
         ["spellIcon"] = "spell_shadow_curseoftounges",
         ["hasFade"] = false,
-        ["active"] = true
+        ["active"] = true,
+        ["ignoreEvents"] = {
+          "CHAT_MSG_SPELL_AURA_GONE_OTHER",
+          "CHAT_MSG_SPELL_PERIODIC_HOSTILEPLAYER_DAMAGE"
+        }
       },
       -- soulstone buff effect (name does not depend on the rank)
       ["seelenstein_auferstehung"] = {
@@ -824,7 +960,11 @@ if (GetLocale() == "deDE") then
         ["spellID"] = 19647,
         ["spellIcon"] = "spell_shadow_mindrot",
         ["hasFade"] = false,
-        ["active"] = true
+        ["active"] = true,
+        ["ignoreEvents"] = {
+          "CHAT_MSG_SPELL_AURA_GONE_OTHER",
+          "CHAT_MSG_SPELL_PERIODIC_HOSTILEPLAYER_DAMAGE"
+        }
       },
       -- triggers twice because both the owner and the pet receive the buff
       ["seelenverbindung"] = {
@@ -841,7 +981,11 @@ if (GetLocale() == "deDE") then
         ["spellID"] = 6358,
         ["spellIcon"] = "spell_shadow_mindsteal",
         ["hasFade"] = false,
-        ["active"] = true
+        ["active"] = true,
+        ["ignoreEvents"] = {
+          "CHAT_MSG_SPELL_AURA_GONE_OTHER",
+          "CHAT_MSG_SPELL_PERIODIC_HOSTILEPLAYER_DAMAGE"
+        }
       }
     },
     ["paladin"] = {
@@ -931,7 +1075,11 @@ if (GetLocale() == "deDE") then
         ["spellID"] = 10308,
         ["spellIcon"] = "spell_holy_sealofmight",
         ["hasFade"] = false,
-        ["active"] = true
+        ["active"] = true,
+        ["ignoreEvents"] = {
+          "CHAT_MSG_SPELL_AURA_GONE_OTHER",
+          "CHAT_MSG_SPELL_PERIODIC_HOSTILEPLAYER_DAMAGE"
+        }
       },
       ["busse"] = {
         ["name"] = "Buße",
@@ -939,7 +1087,11 @@ if (GetLocale() == "deDE") then
         ["spellID"] = 20066,
         ["spellIcon"] = "spell_holy_prayerofhealing",
         ["hasFade"] = false,
-        ["active"] = true
+        ["active"] = true,
+        ["ignoreEvents"] = {
+          "CHAT_MSG_SPELL_AURA_GONE_OTHER",
+          "CHAT_MSG_SPELL_PERIODIC_HOSTILEPLAYER_DAMAGE"
+        }
       },
       ["handauflegung"] = {
         ["name"] = "Handauflegung",
@@ -998,7 +1150,11 @@ if (GetLocale() == "deDE") then
         ["spellID"] = 8983, -- rank 3
         ["spellIcon"] = "ability_druid_bash",
         ["hasFade"] = false,
-        ["active"] = true
+        ["active"] = true,
+        ["ignoreEvents"] = {
+          "CHAT_MSG_SPELL_AURA_GONE_OTHER",
+          "CHAT_MSG_SPELL_PERIODIC_HOSTILEPLAYER_DAMAGE"
+        }
       },
       ["wilde_attacke"] = {
         ["name"] = "Wilde Attacke",
@@ -1006,7 +1162,11 @@ if (GetLocale() == "deDE") then
         ["spellID"] = 16979,
         ["spellIcon"] = "ability_hunter_pet_bear",
         ["hasFade"] = false,
-        ["active"] = true
+        ["active"] = true,
+        ["ignoreEvents"] = {
+          "CHAT_MSG_SPELL_AURA_GONE_OTHER",
+          "CHAT_MSG_SPELL_PERIODIC_HOSTILEPLAYER_DAMAGE"
+        }
       },
       ["rasende_regeneration"] = {
         ["name"] = "Rasende Regeneration",
@@ -1046,7 +1206,11 @@ if (GetLocale() == "deDE") then
         ["spellID"] = 9907,
         ["spellIcon"] = "spell_nature_faeriefire",
         ["hasFade"] = false,
-        ["active"] = true
+        ["active"] = true,
+        ["ignoreEvents"] = {
+          "CHAT_MSG_SPELL_AURA_GONE_OTHER",
+          "CHAT_MSG_SPELL_PERIODIC_HOSTILEPLAYER_DAMAGE"
+        }
       }
     },
     ["shaman"] = {
@@ -1281,7 +1445,11 @@ if (GetLocale() == "deDE") then
         ["spellID"] = 20549,
         ["spellIcon"] = "ability_warstomp",
         ["hasFade"] = false,
-        ["active"] = true
+        ["active"] = true,
+        ["ignoreEvents"] = {
+          "CHAT_MSG_SPELL_AURA_GONE_OTHER",
+          "CHAT_MSG_SPELL_PERIODIC_HOSTILEPLAYER_DAMAGE"
+        }
       },
       ["berserker"] = {
         ["name"] = "Berserker",
@@ -1420,7 +1588,11 @@ if (GetLocale() == "deDE") then
         ["spellID"] = 22641,
         ["spellIcon"] = "inv_helmet_49",
         ["hasFade"] = false,
-        ["active"] = true
+        ["active"] = true,
+        ["ignoreEvents"] = {
+          "CHAT_MSG_SPELL_AURA_GONE_OTHER",
+          "CHAT_MSG_SPELL_PERIODIC_HOSTILEPLAYER_DAMAGE"
+        }
       },
       ["ruhelose_staerke"] = {
         ["name"] = "Ruhelose Stärke",
@@ -1492,7 +1664,11 @@ if (GetLocale() == "deDE") then
         ["spellID"] = 835,
         ["spellIcon"] = "inv_misc_rune_01",
         ["hasFade"] = false,
-        ["active"] = true
+        ["active"] = true,
+        ["ignoreEvents"] = {
+          "CHAT_MSG_SPELL_AURA_GONE_OTHER",
+          "CHAT_MSG_SPELL_PERIODIC_HOSTILEPLAYER_DAMAGE"
+        }
       },
       ["erdstoss"] = {
         ["name"] = "Erdstoß",
@@ -1510,7 +1686,11 @@ if (GetLocale() == "deDE") then
         ["spellID"] = 13120,
         ["spellIcon"] = "ability_ensnare",
         ["hasFade"] = false,
-        ["active"] = true
+        ["active"] = true,
+        ["ignoreEvents"] = {
+          "CHAT_MSG_SPELL_AURA_GONE_OTHER",
+          "CHAT_MSG_SPELL_PERIODIC_HOSTILEPLAYER_DAMAGE"
+        }
       },
       ["gnomen_gedankenkontrollkappe"] = {
         ["name"] = "Gnomen-Gedankenkontrollkappe",
@@ -1519,7 +1699,12 @@ if (GetLocale() == "deDE") then
         ["spellID"] = 13180,
         ["spellIcon"] = "inv_helmet_49",
         ["hasFade"] = false,
-        ["active"] = true
+        ["active"] = true,
+        -- optional to ignore those events because the target will be friendly and automatically ignored
+        ["ignoreEvents"] = {
+          "CHAT_MSG_SPELL_AURA_GONE_OTHER",
+          "CHAT_MSG_SPELL_PERIODIC_HOSTILEPLAYER_DAMAGE"
+        }
       }
     },
     ["misc"] = {
@@ -1575,7 +1760,11 @@ if (GetLocale() == "deDE") then
         ["spellID"] = 19769,
         ["spellIcon"] = "inv_misc_bomb_08",
         ["hasFade"] = false,
-        ["active"] = true
+        ["active"] = true,
+        ["ignoreEvents"] = {
+          "CHAT_MSG_SPELL_AURA_GONE_OTHER",
+          "CHAT_MSG_SPELL_PERIODIC_HOSTILEPLAYER_DAMAGE"
+        }
       },
       ["eisengranate"] = {
         ["name"] = "Eisengranate",
@@ -1584,7 +1773,11 @@ if (GetLocale() == "deDE") then
         ["spellID"] = 4068,
         ["spellIcon"] = "inv_misc_bomb_08",
         ["hasFade"] = false,
-        ["active"] = true
+        ["active"] = true,
+        ["ignoreEvents"] = {
+          "CHAT_MSG_SPELL_AURA_GONE_OTHER",
+          "CHAT_MSG_SPELL_PERIODIC_HOSTILEPLAYER_DAMAGE"
+        }
       },
       ["schattenschutz"] = {
         ["name"] = "Schattenschutztrank",
@@ -1699,7 +1892,11 @@ else
         ["spellID"] = 20615,
         ["spellIcon"] = "ability_rogue_sprint",
         ["hasFade"] = false,
-        ["active"] = true
+        ["active"] = true,
+        ["ignoreEvents"] = {
+          "CHAT_MSG_SPELL_AURA_GONE_OTHER",
+          "CHAT_MSG_SPELL_PERIODIC_HOSTILEPLAYER_DAMAGE"
+        }
       },
       ["last_stand"] = {
         ["name"] = "Last Stand",
@@ -1715,7 +1912,11 @@ else
         ["spellID"] = 676,
         ["spellIcon"] = "ability_warrior_disarm",
         ["hasFade"] = false,
-        ["active"] = true
+        ["active"] = true,
+        ["ignoreEvents"] = {
+          "CHAT_MSG_SPELL_AURA_GONE_OTHER",
+          "CHAT_MSG_SPELL_PERIODIC_HOSTILEPLAYER_DAMAGE"
+        }
       },
       ["concussion_blow"] = {
         ["name"] = "Concussion Blow",
@@ -1723,7 +1924,11 @@ else
         ["spellID"] = 12809,
         ["spellIcon"] = "ability_thunderbolt",
         ["hasFade"] = false,
-        ["active"] = true
+        ["active"] = true,
+        ["ignoreEvents"] = {
+          "CHAT_MSG_SPELL_AURA_GONE_OTHER",
+          "CHAT_MSG_SPELL_PERIODIC_HOSTILEPLAYER_DAMAGE"
+        }
       },
       ["bloodrage"] = {
         ["name"] = "Bloodrage",
@@ -1752,15 +1957,27 @@ else
         ["spellID"] = 7922,
         ["spellIcon"] = "ability_warrior_charge",
         ["hasFade"] = false,
-        ["active"] = true
+        ["active"] = true,
+        ["ignoreEvents"] = {
+          "CHAT_MSG_SPELL_AURA_GONE_OTHER",
+          "CHAT_MSG_SPELL_PERIODIC_HOSTILEPLAYER_DAMAGE"
+        }
       },
+      --[[
+        If the player is the main target of the spell the warning will be triggered twice.
+        As a bystander it will be announced only once
+      ]]--
       ["intimidating_shout"] = {
         ["name"] = "Intimidating Shout",
         ["soundFileName"] = "intimidating_shout",
         ["spellID"] = 29544,
         ["spellIcon"] = "ability_golemthunderclap",
         ["hasFade"] = false,
-        ["active"] = true
+        ["active"] = true,
+        ["ignoreEvents"] = {
+          "CHAT_MSG_SPELL_AURA_GONE_OTHER",
+          "CHAT_MSG_SPELL_PERIODIC_HOSTILEPLAYER_DAMAGE"
+        }
       },
       ["shield_block"] = {
         ["name"] = "Shield Block",
@@ -1795,7 +2012,11 @@ else
         ["spellID"] = 10890,
         ["spellIcon"] = "spell_shadow_psychicscream",
         ["hasFade"] = false,
-        ["active"] = true
+        ["active"] = true,
+        ["ignoreEvents"] = {
+          "CHAT_MSG_SPELL_AURA_GONE_OTHER",
+          "CHAT_MSG_SPELL_PERIODIC_HOSTILEPLAYER_DAMAGE"
+        }
       },
       ["silence"] = {
         ["name"] = "Silence",
@@ -1803,7 +2024,11 @@ else
         ["spellID"] = 15487,
         ["spellIcon"] = "spell_shadow_impphaseshift",
         ["hasFade"] = false,
-        ["active"] = true
+        ["active"] = true,
+        ["ignoreEvents"] = {
+          "CHAT_MSG_SPELL_AURA_GONE_OTHER",
+          "CHAT_MSG_SPELL_PERIODIC_HOSTILEPLAYER_DAMAGE"
+        }
       },
       ["power_infusion"] = {
         ["name"] = "Power Infusion",
@@ -1827,7 +2052,11 @@ else
         ["spellID"] = 15286,
         ["spellIcon"] = "spell_shadow_unsummonbuilding",
         ["hasFade"] = false,
-        ["active"] = true
+        ["active"] = true,
+        ["ignoreEvents"] = {
+          "CHAT_MSG_SPELL_AURA_GONE_OTHER",
+          "CHAT_MSG_SPELL_PERIODIC_HOSTILEPLAYER_DAMAGE"
+        }
       },
       ["desperate_prayer"] = {
         ["name"] = "Desperate Prayer",
@@ -1857,7 +2086,10 @@ else
         ["spellID"] = 19266, -- rank 6
         ["spellIcon"] = "spell_shadow_deadofnight",
         ["hasFade"] = true,
-        ["active"] = true
+        ["active"] = true,
+        ["ignoreEvents"] = {
+          "CHAT_MSG_SPELL_PERIODIC_HOSTILEPLAYER_DAMAGE"
+        }
       },
       ["fear_ward"] = {
         ["name"] = "Fear Ward",
@@ -1883,7 +2115,8 @@ else
         ["hasFade"] = false,
         ["active"] = true,
         ["ignoreEvents"] = {
-          "CHAT_MSG_SPELL_AURA_GONE_OTHER"
+          "CHAT_MSG_SPELL_AURA_GONE_OTHER",
+          "CHAT_MSG_SPELL_PERIODIC_HOSTILEPLAYER_DAMAGE"
         }
       },
       ["hex_of_weakness"] = {
@@ -1892,7 +2125,11 @@ else
         ["spellID"] = 19285, -- rank 6
         ["spellIcon"] = "spell_shadow_fingerofdeath",
         ["hasFade"] = false,
-        ["active"] = true
+        ["active"] = true,
+        ["ignoreEvents"] = {
+          "CHAT_MSG_SPELL_AURA_GONE_OTHER",
+          "CHAT_MSG_SPELL_PERIODIC_HOSTILEPLAYER_DAMAGE"
+        }
       }
     },
     ["rogue"] = {
@@ -1902,7 +2139,11 @@ else
         ["spellID"] = 2094,
         ["spellIcon"] = "spell_shadow_mindsteal",
         ["hasFade"] = false,
-        ["active"] = true
+        ["active"] = true,
+        ["ignoreEvents"] = {
+          "CHAT_MSG_SPELL_AURA_GONE_OTHER",
+          "CHAT_MSG_SPELL_PERIODIC_HOSTILEPLAYER_DAMAGE"
+        }
       },
       ["kick"] = {
         ["name"] = "Kick",
@@ -1935,7 +2176,11 @@ else
         ["spellID"] = 8643,
         ["spellIcon"] = "ability_rogue_kidneyshot",
         ["hasFade"] = false,
-        ["active"] = true
+        ["active"] = true,
+        ["ignoreEvents"] = {
+          "CHAT_MSG_SPELL_AURA_GONE_OTHER",
+          "CHAT_MSG_SPELL_PERIODIC_HOSTILEPLAYER_DAMAGE"
+        }
       },
       ["cheap_shot"] = {
         ["name"] = "Cheap Shot",
@@ -1943,7 +2188,11 @@ else
         ["spellID"] = 1833,
         ["spellIcon"] = "ability_cheapshot",
         ["hasFade"] = false,
-        ["active"] = true
+        ["active"] = true,
+        ["ignoreEvents"] = {
+          "CHAT_MSG_SPELL_AURA_GONE_OTHER",
+          "CHAT_MSG_SPELL_PERIODIC_HOSTILEPLAYER_DAMAGE"
+        }
       },
       ["adrenaline_rush"] = {
         ["name"] = "Adrenaline Rush",
@@ -1977,7 +2226,11 @@ else
         ["spellID"] = 12826,
         ["spellIcon"] = "spell_nature_polymorph",
         ["hasFade"] = false,
-        ["active"] = true
+        ["active"] = true,
+        ["ignoreEvents"] = {
+          "CHAT_MSG_SPELL_AURA_GONE_OTHER",
+          "CHAT_MSG_SPELL_PERIODIC_HOSTILEPLAYER_DAMAGE"
+        }
       },
       ["polymorph_cow"] = {
         ["name"] = "Polymorph: Cow",
@@ -1985,7 +2238,11 @@ else
         ["spellID"] = 28270,
         ["spellIcon"] = "spell_nature_polymorph_cow",
         ["hasFade"] = false,
-        ["active"] = true
+        ["active"] = true,
+        ["ignoreEvents"] = {
+          "CHAT_MSG_SPELL_AURA_GONE_OTHER",
+          "CHAT_MSG_SPELL_PERIODIC_HOSTILEPLAYER_DAMAGE"
+        }
       },
       ["polymorph_pig"] = {
         ["name"] = "Polymorph: Pig",
@@ -1993,7 +2250,11 @@ else
         ["spellID"] = 28272,
         ["spellIcon"] = "spell_magic_polymorphpig",
         ["hasFade"] = false,
-        ["active"] = true
+        ["active"] = true,
+        ["ignoreEvents"] = {
+          "CHAT_MSG_SPELL_AURA_GONE_OTHER",
+          "CHAT_MSG_SPELL_PERIODIC_HOSTILEPLAYER_DAMAGE"
+        }
       },
       ["polymorph_turtle"] = {
         ["name"] = "Polymorph: Turtle",
@@ -2001,7 +2262,11 @@ else
         ["spellID"] = 28271,
         ["spellIcon"] = "ability_hunter_pet_turtle",
         ["hasFade"] = false,
-        ["active"] = true
+        ["active"] = true,
+        ["ignoreEvents"] = {
+          "CHAT_MSG_SPELL_AURA_GONE_OTHER",
+          "CHAT_MSG_SPELL_PERIODIC_HOSTILEPLAYER_DAMAGE"
+        }
       },
       ["blink"] = {
         ["name"] = "Blink",
@@ -2033,7 +2298,11 @@ else
         ["spellID"] = 2139,
         ["spellIcon"] = "spell_frost_iceshock",
         ["hasFade"] = false,
-        ["active"] = true
+        ["active"] = true,
+        ["ignoreEvents"] = {
+          "CHAT_MSG_SPELL_AURA_GONE_OTHER",
+          "CHAT_MSG_SPELL_PERIODIC_HOSTILEPLAYER_DAMAGE"
+        }
       },
       ["mana_shield"] = {
         ["name"] = "Mana Shield",
@@ -2057,7 +2326,11 @@ else
         ["spellID"] = 10230, -- rank 4
         ["spellIcon"] = "spell_frost_frostnova",
         ["hasFade"] = false,
-        ["active"] = true
+        ["active"] = true,
+        ["ignoreEvents"] = {
+          "CHAT_MSG_SPELL_AURA_GONE_OTHER",
+          "CHAT_MSG_SPELL_PERIODIC_HOSTILEPLAYER_DAMAGE"
+        }
       },
       ["arcane_power"] = {
         ["name"] = "Arcane Power",
@@ -2097,7 +2370,11 @@ else
         ["spellID"] = 13021, -- rank 5
         ["spellIcon"] = "spell_holy_excorcism_02",
         ["hasFade"] = false,
-        ["active"] = true
+        ["active"] = true,
+        ["ignoreEvents"] = {
+          "CHAT_MSG_SPELL_AURA_GONE_OTHER",
+          "CHAT_MSG_SPELL_PERIODIC_HOSTILEPLAYER_DAMAGE"
+        }
       }
     },
     ["hunter"] = {
@@ -2108,6 +2385,10 @@ else
         ["spellIcon"] = "spell_frost_stun",
         ["hasFade"] = false,
         ["active"] = true,
+        ["ignoreEvents"] = {
+          "CHAT_MSG_SPELL_AURA_GONE_OTHER",
+          "CHAT_MSG_SPELL_PERIODIC_HOSTILEPLAYER_DAMAGE"
+        }
       },
       ["improved_concussive_shot"] = {
         ["name"] = "Improved Concussive Shot",
@@ -2116,6 +2397,10 @@ else
         ["spellIcon"] = "spell_frost_stun",
         ["hasFade"] = false,
         ["active"] = true,
+        ["ignoreEvents"] = {
+          "CHAT_MSG_SPELL_AURA_GONE_OTHER",
+          "CHAT_MSG_SPELL_PERIODIC_HOSTILEPLAYER_DAMAGE"
+        }
       },
       ["aspect_of_the_monkey"] = {
         ["name"] = "Aspect of the Monkey",
@@ -2187,7 +2472,14 @@ else
         ["spellID"] = 24135,
         ["spellIcon"] = "inv_spear_02",
         ["hasFade"] = false,
-        ["active"] = true
+        ["active"] = true,
+        ["ignoreEvents"] = {
+          "CHAT_MSG_SPELL_AURA_GONE_OTHER",
+          "CHAT_MSG_SPELL_PERIODIC_HOSTILEPLAYER_DAMAGE",
+           -- TODO this might be a private server bug. Should a target really get a buff
+           -- that he can dismiss by right clicking? Shouldn't he get a debuff?!
+          "CHAT_MSG_SPELL_PERIODIC_HOSTILEPLAYER_BUFFS"
+        }
       },
       ["viper_sting"] = {
         ["name"] = "Viper Sting",
@@ -2195,7 +2487,11 @@ else
         ["spellID"] = 14280, -- rank 3
         ["spellIcon"] = "ability_hunter_aimedshot",
         ["hasFade"] = false,
-        ["active"] = true
+        ["active"] = true,
+        ["ignoreEvents"] = {
+          "CHAT_MSG_SPELL_AURA_GONE_OTHER",
+          "CHAT_MSG_SPELL_PERIODIC_HOSTILEPLAYER_DAMAGE"
+        }
       },
       ["scatter_shot"] = {
         ["name"] = "Scatter Shot",
@@ -2203,7 +2499,11 @@ else
         ["spellID"] = 19503,
         ["spellIcon"] = "ability_golemstormbolt",
         ["hasFade"] = false,
-        ["active"] = true
+        ["active"] = true,
+        ["ignoreEvents"] = {
+          "CHAT_MSG_SPELL_AURA_GONE_OTHER",
+          "CHAT_MSG_SPELL_PERIODIC_HOSTILEPLAYER_DAMAGE"
+        }
       },
       ["flare"] = {
         ["name"] = "Flare",
@@ -2211,7 +2511,11 @@ else
         ["spellID"] = 1543,
         ["spellIcon"] = "spell_fire_flare",
         ["hasFade"] = false,
-        ["active"] = true
+        ["active"] = true,
+        ["ignoreEvents"] = {
+          "CHAT_MSG_SPELL_AURA_GONE_OTHER",
+          "CHAT_MSG_SPELL_PERIODIC_HOSTILEPLAYER_DAMAGE"
+        }
       },
       ["scare_beast"] = {
         ["name"] = "Scare Beast",
@@ -2219,7 +2523,11 @@ else
         ["spellID"] = 14327,
         ["spellIcon"] = "ability_druid_cower",
         ["hasFade"] = false,
-        ["active"] = true
+        ["active"] = true,
+        ["ignoreEvents"] = {
+          "CHAT_MSG_SPELL_AURA_GONE_OTHER",
+          "CHAT_MSG_SPELL_PERIODIC_HOSTILEPLAYER_DAMAGE"
+        }
       },
       ["intimidation"] = {
         ["name"] = "Intimidation",
@@ -2254,7 +2562,11 @@ else
         ["spellID"] = 6215, -- rank 3
         ["spellIcon"] = "spell_shadow_possession",
         ["hasFade"] = false,
-        ["active"] = true
+        ["active"] = true,
+        ["ignoreEvents"] = {
+          "CHAT_MSG_SPELL_AURA_GONE_OTHER",
+          "CHAT_MSG_SPELL_PERIODIC_HOSTILEPLAYER_DAMAGE"
+        }
       },
       ["fel_domination"] = {
         ["name"] = "Fel Domination",
@@ -2270,7 +2582,11 @@ else
         ["spellID"] = 18871, -- rank 6
         ["spellIcon"] = "spell_shadow_scourgebuild",
         ["hasFade"] = false,
-        ["active"] = true
+        ["active"] = true,
+        ["ignoreEvents"] = {
+          "CHAT_MSG_SPELL_AURA_GONE_OTHER",
+          "CHAT_MSG_SPELL_PERIODIC_HOSTILEPLAYER_DAMAGE"
+        }
       },
       ["shadow_ward"] = {
         ["name"] = "Shadow Ward",
@@ -2286,7 +2602,11 @@ else
         ["spellID"] = 17928, -- rank 2
         ["spellIcon"] = "spell_shadow_deathscream",
         ["hasFade"] = false,
-        ["active"] = true
+        ["active"] = true,
+        ["ignoreEvents"] = {
+          "CHAT_MSG_SPELL_AURA_GONE_OTHER",
+          "CHAT_MSG_SPELL_PERIODIC_HOSTILEPLAYER_DAMAGE"
+        }
       },
       ["spellstone"] = {
         ["name"] = "Spellstone",
@@ -2318,7 +2638,11 @@ else
         ["spellID"] = 17926,
         ["spellIcon"] = "spell_shadow_deathcoil",
         ["hasFade"] = false,
-        ["active"] = true
+        ["active"] = true,
+        ["ignoreEvents"] = {
+          "CHAT_MSG_SPELL_AURA_GONE_OTHER",
+          "CHAT_MSG_SPELL_PERIODIC_HOSTILEPLAYER_DAMAGE"
+        }
       },
       ["amplify_curse"] = {
         ["name"] = "Amplify Curse",
@@ -2366,7 +2690,11 @@ else
         ["spellID"] = 18223,
         ["spellIcon"] = "spell_shadow_grimward",
         ["hasFade"] = false,
-        ["active"] = true
+        ["active"] = true,
+        ["ignoreEvents"] = {
+          "CHAT_MSG_SPELL_AURA_GONE_OTHER",
+          "CHAT_MSG_SPELL_PERIODIC_HOSTILEPLAYER_DAMAGE"
+        }
       },
       ["curse_of_tongues"] = {
         ["name"] = "Curse of Tongues",
@@ -2374,7 +2702,11 @@ else
         ["spellID"] = 11719, -- rank 2
         ["spellIcon"] = "spell_shadow_curseoftounges",
         ["hasFade"] = false,
-        ["active"] = true
+        ["active"] = true,
+        ["ignoreEvents"] = {
+          "CHAT_MSG_SPELL_AURA_GONE_OTHER",
+          "CHAT_MSG_SPELL_PERIODIC_HOSTILEPLAYER_DAMAGE"
+        }
       },
       -- soulstone buff effect (name does not depend on the rank)
       ["soulstone_resurrection"] = {
@@ -2391,7 +2723,11 @@ else
         ["spellID"] = 19647,
         ["spellIcon"] = "spell_shadow_mindrot",
         ["hasFade"] = false,
-        ["active"] = true
+        ["active"] = true,
+        ["ignoreEvents"] = {
+          "CHAT_MSG_SPELL_AURA_GONE_OTHER",
+          "CHAT_MSG_SPELL_PERIODIC_HOSTILEPLAYER_DAMAGE"
+        }
       },
       -- triggers twice because both the owner and the pet receive the buff
       ["soul_link"] = {
@@ -2408,7 +2744,11 @@ else
         ["spellID"] = 6358,
         ["spellIcon"] = "spell_shadow_mindsteal",
         ["hasFade"] = false,
-        ["active"] = true
+        ["active"] = true,
+        ["ignoreEvents"] = {
+          "CHAT_MSG_SPELL_AURA_GONE_OTHER",
+          "CHAT_MSG_SPELL_PERIODIC_HOSTILEPLAYER_DAMAGE"
+        }
       }
     },
     ["paladin"] = {
@@ -2498,7 +2838,11 @@ else
         ["spellID"] = 10308,
         ["spellIcon"] = "spell_holy_sealofmight",
         ["hasFade"] = false,
-        ["active"] = true
+        ["active"] = true,
+        ["ignoreEvents"] = {
+          "CHAT_MSG_SPELL_AURA_GONE_OTHER",
+          "CHAT_MSG_SPELL_PERIODIC_HOSTILEPLAYER_DAMAGE"
+        }
       },
       ["repentance"] = {
         ["name"] = "Repentance",
@@ -2506,7 +2850,11 @@ else
         ["spellID"] = 20066,
         ["spellIcon"] = "spell_holy_prayerofhealing",
         ["hasFade"] = false,
-        ["active"] = true
+        ["active"] = true,
+        ["ignoreEvents"] = {
+          "CHAT_MSG_SPELL_AURA_GONE_OTHER",
+          "CHAT_MSG_SPELL_PERIODIC_HOSTILEPLAYER_DAMAGE"
+        }
       },
       ["lay_on_hands"] = {
         ["name"] = "Lay on Hands",
@@ -2565,7 +2913,11 @@ else
         ["spellID"] = 8983, -- rank 3
         ["spellIcon"] = "ability_druid_bash",
         ["hasFade"] = false,
-        ["active"] = true
+        ["active"] = true,
+        ["ignoreEvents"] = {
+          "CHAT_MSG_SPELL_AURA_GONE_OTHER",
+          "CHAT_MSG_SPELL_PERIODIC_HOSTILEPLAYER_DAMAGE"
+        }
       },
       ["feral_charge_effect"] = {
         ["name"] = "Feral Charge",
@@ -2573,7 +2925,11 @@ else
         ["spellID"] = 16979,
         ["spellIcon"] = "ability_hunter_pet_bear",
         ["hasFade"] = false,
-        ["active"] = true
+        ["active"] = true,
+        ["ignoreEvents"] = {
+          "CHAT_MSG_SPELL_AURA_GONE_OTHER",
+          "CHAT_MSG_SPELL_PERIODIC_HOSTILEPLAYER_DAMAGE"
+        }
       },
       ["frenzied_regeneration"] = {
         ["name"] = "Frenzied Regeneration",
@@ -2613,7 +2969,11 @@ else
         ["spellID"] = 9907,
         ["spellIcon"] = "spell_nature_faeriefire",
         ["hasFade"] = false,
-        ["active"] = true
+        ["active"] = true,
+        ["ignoreEvents"] = {
+          "CHAT_MSG_SPELL_AURA_GONE_OTHER",
+          "CHAT_MSG_SPELL_PERIODIC_HOSTILEPLAYER_DAMAGE"
+        }
       }
     },
     ["shaman"] = {
@@ -2848,7 +3208,11 @@ else
         ["spellID"] = 20549,
         ["spellIcon"] = "ability_warstomp",
         ["hasFade"] = false,
-        ["active"] = true
+        ["active"] = true,
+        ["ignoreEvents"] = {
+          "CHAT_MSG_SPELL_AURA_GONE_OTHER",
+          "CHAT_MSG_SPELL_PERIODIC_HOSTILEPLAYER_DAMAGE"
+        }
       },
       ["berserking"] = {
         ["name"] = "Berserking",
@@ -2987,7 +3351,11 @@ else
         ["spellID"] = 22641,
         ["spellIcon"] = "inv_helmet_49",
         ["hasFade"] = false,
-        ["active"] = true
+        ["active"] = true,
+        ["ignoreEvents"] = {
+          "CHAT_MSG_SPELL_AURA_GONE_OTHER",
+          "CHAT_MSG_SPELL_PERIODIC_HOSTILEPLAYER_DAMAGE"
+        }
       },
       ["restless_strength"] = {
         ["name"] = "Restless Strength",
@@ -3059,7 +3427,11 @@ else
         ["spellID"] = 835,
         ["spellIcon"] = "inv_misc_rune_01",
         ["hasFade"] = false,
-        ["active"] = true
+        ["active"] = true,
+        ["ignoreEvents"] = {
+          "CHAT_MSG_SPELL_AURA_GONE_OTHER",
+          "CHAT_MSG_SPELL_PERIODIC_HOSTILEPLAYER_DAMAGE"
+        }
       },
       ["earthstrike"] = {
         ["name"] = "Earthstrike",
@@ -3077,7 +3449,11 @@ else
         ["spellID"] = 13120,
         ["spellIcon"] = "ability_ensnare",
         ["hasFade"] = false,
-        ["active"] = true
+        ["active"] = true,
+        ["ignoreEvents"] = {
+          "CHAT_MSG_SPELL_AURA_GONE_OTHER",
+          "CHAT_MSG_SPELL_PERIODIC_HOSTILEPLAYER_DAMAGE"
+        }
       },
       ["gnomish_mind_control_cap"] = {
         ["name"] = "Gnomish Mind Control Cap",
@@ -3086,7 +3462,12 @@ else
         ["spellID"] = 13180,
         ["spellIcon"] = "inv_helmet_49",
         ["hasFade"] = false,
-        ["active"] = true
+        ["active"] = true,
+        -- optional to ignore those events because the target will be friendly and automatically ignored
+        ["ignoreEvents"] = {
+          "CHAT_MSG_SPELL_AURA_GONE_OTHER",
+          "CHAT_MSG_SPELL_PERIODIC_HOSTILEPLAYER_DAMAGE"
+        }
       }
     },
     ["misc"] = {
@@ -3142,7 +3523,11 @@ else
         ["spellID"] = 19769,
         ["spellIcon"] = "inv_misc_bomb_08",
         ["hasFade"] = false,
-        ["active"] = true
+        ["active"] = true,
+        ["ignoreEvents"] = {
+          "CHAT_MSG_SPELL_AURA_GONE_OTHER",
+          "CHAT_MSG_SPELL_PERIODIC_HOSTILEPLAYER_DAMAGE"
+        }
       },
       ["iron_grenade"] = {
         ["name"] = "Iron Grenade",
@@ -3151,7 +3536,11 @@ else
         ["spellID"] = 4068,
         ["spellIcon"] = "inv_misc_bomb_08",
         ["hasFade"] = false,
-        ["active"] = true
+        ["active"] = true,
+        ["ignoreEvents"] = {
+          "CHAT_MSG_SPELL_AURA_GONE_OTHER",
+          "CHAT_MSG_SPELL_PERIODIC_HOSTILEPLAYER_DAMAGE"
+        }
       },
       ["shadow_protection"] = {
         ["name"] = "Shadow Protection Potion",
