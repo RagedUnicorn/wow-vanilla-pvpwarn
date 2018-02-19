@@ -99,7 +99,7 @@ function me.HandleEvent(msg, event)
           end
         end
       end
-      mod.logger.LogError(me.tag, "Eventhandler spellName: " .. spell.name)
+
       mod.warnQueue.AddToQueue(tostring(math.floor(math.random() * 100000)),
           spell.normalizedSpellName, spellData.soundType, class, spell.soundFileName, fade)
     else
