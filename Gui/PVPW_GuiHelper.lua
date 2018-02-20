@@ -291,35 +291,34 @@ function me.ToggleSound(spellFrame, isSpellActive, isSoundActive)
   ]]--
   for _, child in ipairs({spellFrame:GetChildren()}) do
     if string.find(child:GetName(), "PlaySound$") then
-      if isSpellActive and isSoundActive then
+      -- set state of play sound button
+      if isSpellActive then
         child:Enable()
       else
         child:Disable()
       end
     elseif string.find(child:GetName(), "SoundWarning$") then
+      -- enable/disable checkbuttons
       if isSpellActive then
         child:Enable()
       else
         child:Disable()
       end
 
+      -- set checkbutton state
       if isSoundActive then
         child:SetChecked(true)
-        for _, region in ipairs({child:GetRegions()}) do
-          if string.find(region:GetName() or "", "Text$") and region:IsObjectType("FontString") then
-            if isSpellActive then
-              region:SetVertexColor(
-                HIGHLIGHT_FONT_COLOR.r, HIGHLIGHT_FONT_COLOR.g, HIGHLIGHT_FONT_COLOR.b)
-            else
-              region:SetVertexColor(
-                GRAY_FONT_COLOR.r, GRAY_FONT_COLOR.g, GRAY_FONT_COLOR.b)
-            end
-          end
-        end
       else
         child:SetChecked(false)
-        for _, region in ipairs({child:GetRegions()}) do
-          if string.find(region:GetName() or "", "Text$") and region:IsObjectType("FontString") then
+      end
+
+      -- set font colors
+      for _, region in ipairs({child:GetRegions()}) do
+        if string.find(region:GetName() or "", "Text$") and region:IsObjectType("FontString") then
+          if isSpellActive then
+            region:SetVertexColor(
+              NORMAL_FONT_COLOR.r, NORMAL_FONT_COLOR.g, NORMAL_FONT_COLOR.b)
+          else
             region:SetVertexColor(
               GRAY_FONT_COLOR.r, GRAY_FONT_COLOR.g, GRAY_FONT_COLOR.b)
           end
@@ -346,35 +345,34 @@ function me.ToggleVisual(spellFrame, isSpellActive, isVisualActive, visualWarnin
   ]]--
   for _, child in ipairs({spellFrame:GetChildren()}) do
     if string.find(child:GetName(), "ShowVisual$") then
-      if isSpellActive and isVisualActive then
+      -- set state of play visual button
+      if isSpellActive then
         child:Enable()
       else
         child:Disable()
       end
     elseif string.find(child:GetName(), "VisualWarning$") then
+      -- enable/disable checkbuttons
       if isSpellActive then
         child:Enable()
       else
         child:Disable()
       end
 
+      -- set checkbutton state
       if isVisualActive then
         child:SetChecked(true)
-        for _, region in ipairs({child:GetRegions()}) do
-          if string.find(region:GetName() or "", "Text$") and region:IsObjectType("FontString") then
-            if isSpellActive then
-              region:SetVertexColor(
-                HIGHLIGHT_FONT_COLOR.r, HIGHLIGHT_FONT_COLOR.g, HIGHLIGHT_FONT_COLOR.b)
-            else
-              region:SetVertexColor(
-                GRAY_FONT_COLOR.r, GRAY_FONT_COLOR.g, GRAY_FONT_COLOR.b)
-            end
-          end
-        end
       else
         child:SetChecked(false)
-        for _, region in ipairs({child:GetRegions()}) do
-          if string.find(region:GetName() or "", "Text$") and region:IsObjectType("FontString") then
+      end
+
+      -- set font colors
+      for _, region in ipairs({child:GetRegions()}) do
+        if string.find(region:GetName() or "", "Text$") and region:IsObjectType("FontString") then
+          if isSpellActive then
+            region:SetVertexColor(
+              NORMAL_FONT_COLOR.r, NORMAL_FONT_COLOR.g, NORMAL_FONT_COLOR.b)
+          else
             region:SetVertexColor(
               GRAY_FONT_COLOR.r, GRAY_FONT_COLOR.g, GRAY_FONT_COLOR.b)
           end
@@ -398,19 +396,6 @@ function me.ToggleVisual(spellFrame, isSpellActive, isVisualActive, visualWarnin
       end
     end
   end
-
-  -- search for fontstrings
-  for _, region in ipairs({spellFrame:GetRegions()}) do
-    if string.find(region:GetName() or "", "SpellName$") and region:IsObjectType("FontString") then
-      if isSpellActive then
-        region:SetVertexColor(
-          HIGHLIGHT_FONT_COLOR.r, HIGHLIGHT_FONT_COLOR.g, HIGHLIGHT_FONT_COLOR.b)
-      else
-        region:SetVertexColor(
-          GRAY_FONT_COLOR.r, GRAY_FONT_COLOR.g, GRAY_FONT_COLOR.b)
-      end
-    end
-  end
 end
 
 --[[
@@ -426,35 +411,34 @@ function me.ToggleSoundFade(spellFrame, isSpellActive, isSoundFadeActive)
   ]]--
   for _, child in ipairs({spellFrame:GetChildren()}) do
     if string.find(child:GetName(), "PlaySoundFade$") then
-      if isSpellActive and isSoundFadeActive then
+      -- set state of play fade sound button
+      if isSpellActive then
         child:Enable()
       else
         child:Disable()
       end
     elseif string.find(child:GetName(), "SoundFadeWarning$") then
+      -- enable/disable checkbuttons
       if isSpellActive then
         child:Enable()
       else
         child:Disable()
       end
 
+      -- set checkbutton state
       if isSoundFadeActive then
         child:SetChecked(true)
-        for _, region in ipairs({child:GetRegions()}) do
-          if string.find(region:GetName() or "", "Text$") and region:IsObjectType("FontString") then
-            if isSpellActive then
-              region:SetVertexColor(
-                HIGHLIGHT_FONT_COLOR.r, HIGHLIGHT_FONT_COLOR.g, HIGHLIGHT_FONT_COLOR.b)
-            else
-              region:SetVertexColor(
-                GRAY_FONT_COLOR.r, GRAY_FONT_COLOR.g, GRAY_FONT_COLOR.b)
-            end
-          end
-        end
       else
         child:SetChecked(false)
-        for _, region in ipairs({child:GetRegions()}) do
-          if string.find(region:GetName() or "", "Text$") and region:IsObjectType("FontString") then
+      end
+
+      -- set font colors
+      for _, region in ipairs({child:GetRegions()}) do
+        if string.find(region:GetName() or "", "Text$") and region:IsObjectType("FontString") then
+          if isSpellActive then
+            region:SetVertexColor(
+              NORMAL_FONT_COLOR.r, NORMAL_FONT_COLOR.g, NORMAL_FONT_COLOR.b)
+          else
             region:SetVertexColor(
               GRAY_FONT_COLOR.r, GRAY_FONT_COLOR.g, GRAY_FONT_COLOR.b)
           end
