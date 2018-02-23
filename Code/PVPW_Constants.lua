@@ -133,6 +133,14 @@ PVPW_CONSTANTS = {
   ELEMENT_PVPW_TOOLTIP = "PVPW_Tooltip",
 
   --[[
+    profiles
+  ]]--
+  ELEMENT_PVPW_PROFILES_MENU_LABEL = "PVPW_ProfilesMenuLabel",
+  ELEMENT_PVPW_PROFILE_LIST_CELL = "PVPW_ProfileListCell",
+  ELEMENT_PVPW_CHOOSE_PROFILE_NAME_POPUP_EDITBOX = "StaticPopup3EditBox",
+  ELEMENT_PVPW_CHOOSE_PROFILE_NAME_POPUP_BUTTON_1 = "StaticPopup3Button1",
+
+  --[[
     self resist menu for spells of the current class that can be avoided
   ]]--
   ELEMENT_PVPW_SELF_RESIST_FRAME = "PVPW_ContentEnemyAvoid",

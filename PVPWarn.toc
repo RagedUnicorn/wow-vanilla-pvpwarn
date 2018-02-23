@@ -27,6 +27,7 @@ Code\PVPW_WarnQueue.lua
 Code\PVPW_Tooltip.lua
 Code\PVPW_Player.lua
 Code\PVPW_Zone.lua
+Code\PVPW_Profile.lua
 Code\PVPW_Cmd.lua
 
 # gui
@@ -38,6 +39,7 @@ Gui\PVPW_Options.xml
 Gui\PVPW_GeneralMenu.lua
 Gui\PVPW_ConfigurationMenu.lua
 Gui\PVPW_ResistMenu.lua
+Gui\PVPW_ProfilesMenu.lua
 
 # configuration tabs for items/racials/classes/misc
 Gui\PVPW_GuiHelper.lua

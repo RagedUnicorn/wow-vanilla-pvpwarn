@@ -19,6 +19,7 @@ if (GetLocale() == "deDE") then
 
   -- navigationmenu
   pvpw.L["navigation_general"] = "Allgemein"
+  pvpw.L["navigation_profiles"] = "Profile"
   pvpw.L["navigation_warrior"] = "Krieger"
   pvpw.L["navigation_paladin"] = "Paladin"
   pvpw.L["navigation_rogue"] = "Schurke"

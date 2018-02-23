@@ -18,6 +18,7 @@ pvpw.L["alterac_valley"] = "Alterac Valley"
 
 -- navigationmenu
 pvpw.L["navigation_general"] = "General"
+pvpw.L["navigation_profiles"] = "Profiles"
 pvpw.L["navigation_warrior"] = "Warrior"
 pvpw.L["navigation_paladin"] = "Paladin"
 pvpw.L["navigation_rogue"] = "Rogue"
@@ -42,6 +43,24 @@ pvpw.L["ignore_events_while_dead"] = "Ignore events while player is dead"
 pvpw.L["ignore_events_while_dead_tooltip"] = "Ignore events while the player is dead or in ghostform"
 pvpw.L["show_events_for_target_only"] = "Show Events for current target only"
 pvpw.L["show_events_for_target_only_tooltip"] = "Do not show events for targets other than the players current target"
+
+-- profilesmenu
+pvpw.L["profiles_menu_label"] = "Profiles:"
+pvpw.L["save_current_profile_button"] = "Save Current Profile"
+pvpw.L["delete_selected_profile_button"] = "Delete Profile"
+pvpw.L["set_active_profile_button"] = "Load Profile"
+pvpw.L["profile_active_status"] = "Active"
+pvpw.L["profile_inactive_status"] = "Inactive"
+pvpw.L["choose_profile_name_dialog_text"] = "Choose a name for the new profile"
+pvpw.L["choose_profile_name_accept_button"] = "Accept"
+pvpw.L["choose_profile_name_cancel_button"] = "Cancel"
+pvpw.L["confirm_override_profile_dialog_text"] = "This will override your current profile. Do you want to continue?"
+pvpw.L["confirm_override_profile_yes_button"] = "Yes"
+pvpw.L["confirm_override_profile_no_button"] = "No"
+pvpw.L["user_message_select_profile_before_delete"] = "Select a profile to delete"
+pvpw.L["user_message_select_profile_before_load"] = "Select a profile to load"
+pvpw.L["user_message_select_profile_already_exists"] = "Profile already exist - choose another name"
+pvpw.L["user_message_add_new_profile_max_reached"] = "A maximum of %s profiles is allowed you reached the maximum"
 
 -- tooltips used throughout configuration menus for spells
 pvpw.L["spell_status_tooltip_title"] = "Spell Status"

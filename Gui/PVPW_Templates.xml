@@ -209,4 +209,47 @@
       </Button>
     </Frames>
   </Frame>
+
+  <!-- Cell template for profile scrolllist -->
+  <Button name="PVPW_ProfileListCellTemplate" virtual="true">
+    <Size>
+      <AbsDimension x="375" y="24"/>
+    </Size>
+    <Layers>
+      <Layer level="ARTWORK">
+        <FontString name="$parent_ProfileName" font="GameFontHighlight" justifyH="LEFT">
+          <Size>
+            <AbsDimension x="150" y="22"/>
+          </Size>
+          <Anchors>
+            <Anchor point="TOPLEFT">
+              <Offset>
+                <AbsDimension x="4" y="-1"/>
+              </Offset>
+            </Anchor>
+          </Anchors>
+        </FontString>
+      </Layer>
+      <Layer level="BACKGROUND">
+        <Texture name="$parentHighlight" file="Interface\QuestFrame\UI-QuestLogTitleHighlight" hidden="true" alphaMode="ADD">
+          <Size>
+            <AbsDimension x="375" y="24"/>
+          </Size>
+          <Anchors>
+            <Anchor point="TOPLEFT"/>
+          </Anchors>
+        </Texture>
+      </Layer>
+    </Layers>
+    <Scripts>
+      <OnEnter>
+        getglobal(this:GetName() .. "Highlight"):Show()
+      </OnEnter>
+      <OnLeave>
+        if not this.selectedItem then
+          getglobal(this:GetName() .. "Highlight"):Hide()
+        end
+      </OnLeave>
+    </Scripts>
+  </Button>
 </Ui>

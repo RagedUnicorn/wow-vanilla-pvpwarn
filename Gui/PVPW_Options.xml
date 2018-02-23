@@ -162,6 +162,11 @@
               <Anchor point="TOP" relativeTo="PVPW_Navigation_Button_14" relativePoint="BOTTOM"/>
             </Anchors>
           </Button>
+          <Button name="PVPW_Navigation_Button_16" inherits="PVPW_NavigationButtonTemplate">
+            <Anchors>
+              <Anchor point="TOP" relativeTo="PVPW_Navigation_Button_15" relativePoint="BOTTOM"/>
+            </Anchors>
+          </Button>
         </Frames>
         <Scripts>
           <OnShow>
@@ -272,6 +277,222 @@
                 PVPW_InitGeneralMenu()
               </OnShow>
             </Scripts>
+          </Frame>
+          <Frame name="PVPW_ContentProfiles" hidden="true">
+            <Size x="440" y="320"/>
+            <Anchors>
+              <Anchor point="TOPLEFT"/>
+            </Anchors>
+            <Frames>
+              <Frame name="PVPW_ProfileList">
+                <Size x="375" y="130"/>
+                <Anchors>
+                  <Anchor point="TOPLEFT">
+                    <Offset>
+                      <AbsDimension x="10" y="-20"/>
+                    </Offset>
+                  </Anchor>
+                </Anchors>
+                <Backdrop edgeFile="Interface\Tooltips\UI-Tooltip-Border">
+                  <EdgeSize>
+                    <AbsValue val="16"/>
+                  </EdgeSize>
+                </Backdrop>
+                <Layers>
+                  <Layer level="OVERLAY">
+                    <FontString name="PVPW_ProfilesMenuLabel" inherits="GameFontNormal">
+                      <Anchors>
+                        <Anchor point="TOPLEFT">
+                          <Offset>
+                            <AbsDimension x="0" y="15"/>
+                          </Offset>
+                        </Anchor>
+                      </Anchors>
+                      <Color r="1" g="1" b="1"/>
+                    </FontString>
+                  </Layer>
+                  <Layer level="BACKGROUND">
+                    <Texture file="Interface\ChatFrame\ChatFrameBackground">
+                      <Size x="370" y="124"/>
+                      <Anchors>
+                        <Anchor point="TOPLEFT">
+                          <Offset>
+                            <AbsDimension x="2" y="-3"/>
+                          </Offset>
+                        </Anchor>
+                      </Anchors>
+                      <Gradient orientation="VERTICAL">
+                        <MinColor r=".075" g=".075" b=".075" a="1"/>
+                        <MaxColor r=".165" g=".165" b=".165" a="1"/>
+                      </Gradient>
+                    </Texture>
+                  </Layer>
+                </Layers>
+                <Frames>
+                  <!-- list cells -->
+                  <Button name="PVPW_ProfileListCell1" inherits="PVPW_ProfileListCellTemplate" id="1">
+                    <Anchors>
+                      <Anchor point="TOPLEFT">
+                        <Offset>
+                          <AbsDimension x="6" y="-6"/>
+                        </Offset>
+                      </Anchor>
+                    </Anchors>
+                    <Scripts>
+                      <OnClick>
+                        pvpw.profilesMenu.ProfileListCellOnClick()
+                      </OnClick>
+                    </Scripts>
+                  </Button>
+                  <Button name="PVPW_ProfileListCell2" inherits="PVPW_ProfileListCellTemplate" id="2">
+                    <Anchors>
+                      <Anchor point="TOPLEFT" relativeTo="PVPW_ProfileListCell1" relativePoint="BOTTOMLEFT"/>
+                    </Anchors>
+                    <Scripts>
+                      <OnClick>
+                        pvpw.profilesMenu.ProfileListCellOnClick()
+                      </OnClick>
+                    </Scripts>
+                  </Button>
+                  <Button name="PVPW_ProfileListCell3" inherits="PVPW_ProfileListCellTemplate" id="3">
+                    <Anchors>
+                      <Anchor point="TOPLEFT" relativeTo="PVPW_ProfileListCell2" relativePoint="BOTTOMLEFT"/>
+                    </Anchors>
+                    <Scripts>
+                      <OnClick>
+                        pvpw.profilesMenu.ProfileListCellOnClick()
+                      </OnClick>
+                    </Scripts>
+                  </Button>
+                  <Button name="PVPW_ProfileListCell4" inherits="PVPW_ProfileListCellTemplate" id="4">
+                    <Anchors>
+                      <Anchor point="TOPLEFT" relativeTo="PVPW_ProfileListCell3" relativePoint="BOTTOMLEFT"/>
+                    </Anchors>
+                    <Scripts>
+                      <OnClick>
+                        pvpw.profilesMenu.ProfileListCellOnClick()
+                      </OnClick>
+                    </Scripts>
+                  </Button>
+                  <Button name="PVPW_ProfileListCell5" inherits="PVPW_ProfileListCellTemplate" id="5">
+                    <Anchors>
+                      <Anchor point="TOPLEFT" relativeTo="PVPW_ProfileListCell4" relativePoint="BOTTOMLEFT"/>
+                    </Anchors>
+                    <Scripts>
+                      <OnClick>
+                        pvpw.profilesMenu.ProfileListCellOnClick()
+                      </OnClick>
+                    </Scripts>
+                  </Button>
+                  <!-- scrollable rule list -->
+                  <ScrollFrame name="PVPW_ProfileListScrollFrame" inherits="FauxScrollFrameTemplate">
+                    <Anchors>
+                      <Anchor point="TOPLEFT">
+                        <Offset>
+                          <AbsDimension x="-28" y="-4"/>
+                        </Offset>
+                      </Anchor>
+                      <Anchor point="BOTTOMRIGHT" relativeTo="PVPW_ProfileList" relativePoint="BOTTOMRIGHT">
+                        <Offset>
+                          <AbsDimension x="-28" y="5"/>
+                        </Offset>
+                      </Anchor>
+                    </Anchors>
+                    <Layers>
+                      <Layer level="BACKGROUND">
+                        <Texture file="Interface\ChatFrame\ChatFrameBackground">
+                          <Anchors>
+                            <Anchor point="TOPLEFT" relativePoint="TOPRIGHT">
+                              <Offset>
+                                <AbsDimension x="0" y="0"/>
+                              </Offset>
+                            </Anchor>
+                            <Anchor point="BOTTOMRIGHT" relativePoint="BOTTOMRIGHT">
+                              <Offset>
+                                <AbsDimension x="22" y="0"/>
+                              </Offset>
+                            </Anchor>
+                          </Anchors>
+                          <Gradient>
+                            <MinColor r="0" g="0" b="0" a="0"/>
+                            <MaxColor r="0" g="0" b="0" a="1"/>
+                          </Gradient>
+                        </Texture>
+                      </Layer>
+                    </Layers>
+                    <Scripts>
+                      <OnVerticalScroll>
+                        FauxScrollFrame_OnVerticalScroll(24, pvpw.profilesMenu.ProfileListUpdate)
+                      </OnVerticalScroll>
+                      <OnShow>
+                        <!-- initialize profile list -->
+                        pvpw.profilesMenu.ProfileListUpdate()
+                      </OnShow>
+                    </Scripts>
+                  </ScrollFrame>
+                </Frames>
+              </Frame>
+              <Button name="PVPW_SaveCurrentProfileButton" inherits="UIPanelButtonTemplate">
+                <Size>
+                  <AbsDimension x="130" y="32"/>
+                </Size>
+                <Anchors>
+                  <Anchor point="BOTTOMLEFT" relativeTo="PVPW_ProfileList" relativePoint="BOTTOMLEFT">
+                    <Offset>
+                      <AbsDimension x="0" y="-35"/>
+                    </Offset>
+                  </Anchor>
+                </Anchors>
+                <Scripts>
+                  <OnShow>
+                    this:SetText(pvpw.L["save_current_profile_button"])
+                  </OnShow>
+                  <OnClick>
+                    pvpw.profilesMenu.SaveCurrentProfileButtonOnClick()
+                  </OnClick>
+                </Scripts>
+              </Button>
+              <Button name="PVPW_DeleteSelectedProfileButton" inherits="UIPanelButtonTemplate">
+                <Size>
+                  <AbsDimension x="110" y="32"/>
+                </Size>
+                <Anchors>
+                  <Anchor point="LEFT" relativeTo="PVPW_SaveCurrentProfileButton" relativePoint="RIGHT">
+                    <Offset>
+                      <AbsDimension x="0" y="0"/>
+                    </Offset>
+                  </Anchor>
+                </Anchors>
+                <Scripts>
+                  <OnShow>
+                    this:SetText(pvpw.L["delete_selected_profile_button"])
+                  </OnShow>
+                  <OnClick>
+                    pvpw.profilesMenu.DeleteSelectedProfileButtonOnClick()
+                  </OnClick>
+                </Scripts>
+              </Button>
+              <Button name="PVPW_SetActiveProfileButton" inherits="UIPanelButtonTemplate">
+                <Size>
+                  <AbsDimension x="130" y="32"/>
+                </Size>
+                <Anchors>
+                  <Anchor point="LEFT" relativeTo="PVPW_DeleteSelectedProfileButton" relativePoint="RIGHT">
+                    <Offset>
+                      <AbsDimension x="0" y="0"/>
+                    </Offset>
+                  </Anchor>
+                </Anchors>
+                <Scripts>
+                  <OnShow>
+                    this:SetText(pvpw.L["set_active_profile_button"])
+                  </OnShow>
+                  <OnClick>
+                    pvpw.profilesMenu.SetActiveProfileButtonOnClick()
+                  </OnClick>
+                </Scripts>
+              </Button>
+            </Frames>
           </Frame>
           <Frame name="PVPW_ClassFrame" hidden="true">
             <Size x="420" y="320"/>

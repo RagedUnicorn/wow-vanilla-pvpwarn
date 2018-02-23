@@ -35,138 +35,147 @@ local navigationEntries = {
     end
   },
   [2] = {
+    ["name"] = "Profiles",
+    ["text"] = pvpw.L["navigation_profiles"],
+    ["position"] = 2,
+    ["active"] = false,
+    ["init"] = function()
+      getglobal(PVPW_CONSTANTS.ELEMENT_PVPW_PROFILES_MENU_LABEL):SetText(pvpw.L["profiles_menu_label"])
+    end
+  },
+  [3] = {
     ["name"] = "Warrior",
     ["text"] = pvpw.L["navigation_warrior"],
-    ["position"] = 2,
+    ["position"] = 3,
     ["class_id"] = 1,
     ["active"] = false,
     ["init"] = function()
       return false
     end
   },
-  [3] = {
+  [4] = {
     ["name"] = "Paladin",
     ["text"] = pvpw.L["navigation_paladin"],
-    ["position"] = 3,
+    ["position"] = 4,
     ["class_id"] = 2,
     ["active"] = false,
     ["init"] = function()
       return false
     end
   },
-  [4] = {
+  [5] = {
     ["name"] = "Rogue",
     ["text"] = pvpw.L["navigation_rogue"],
-    ["position"] = 4,
+    ["position"] = 5,
     ["class_id"] = 3,
     ["active"] = false,
     ["init"] = function()
       return false
     end
   },
-  [5] = {
+  [6] = {
     ["name"] = "Priest",
     ["text"] = pvpw.L["navigation_priest"],
-    ["position"] = 5,
+    ["position"] = 6,
     ["class_id"] = 4,
     ["active"] = false,
     ["init"] = function()
       return false
     end
   },
-  [6] = {
+  [7] = {
     ["name"] = "Shaman",
     ["text"] = pvpw.L["navigation_shaman"],
-    ["position"] = 6,
+    ["position"] = 7,
     ["class_id"] = 5,
     ["active"] = false,
     ["init"] = function()
       return false
     end
   },
-  [7] = {
+  [8] = {
     ["name"] = "Mage",
     ["text"] = pvpw.L["navigation_mage"],
-    ["position"] = 7,
+    ["position"] = 8,
     ["class_id"] = 6,
     ["active"] = false,
     ["init"] = function()
       return false
     end
   },
-  [8] = {
+  [9] = {
     ["name"] = "Warlock",
     ["text"] = pvpw.L["navigation_warlock"],
-    ["position"] = 8,
+    ["position"] = 9,
     ["class_id"] = 7,
     ["active"] = false,
     ["init"] = function()
       return false
     end
   },
-  [9] = {
+  [10] = {
     ["name"] = "Druid",
     ["text"] = pvpw.L["navigation_druid"],
-    ["position"] = 9,
+    ["position"] = 10,
     ["class_id"] = 8,
     ["active"] = false,
     ["init"] = function()
       return false
     end
   },
-  [10] = {
+  [11] = {
     ["name"] = "Hunter",
     ["text"] = pvpw.L["navigation_hunter"],
-    ["position"] = 10,
+    ["position"] = 11,
     ["class_id"] = 9,
     ["active"] = false,
     ["init"] = function()
       return false
     end
   },
-  [11] = {
+  [12] = {
     ["name"] = "Items",
     ["text"] = pvpw.L["navigation_items"],
-    ["position"] = 11,
+    ["position"] = 12,
     ["class_id"] = 10,
     ["active"] = false,
     ["init"] = function()
       return false
     end
   },
-  [12] = {
+  [13] = {
     ["name"] = "Racials",
     ["text"] = pvpw.L["navigation_racials"],
-    ["position"] = 12,
+    ["position"] = 13,
     ["class_id"] = 11,
     ["active"] = false,
     ["init"] = function()
       return false
     end
   },
-  [13] = {
+  [14] = {
     ["name"] = "Misc",
     ["text"] = pvpw.L["navigation_misc"],
-    ["position"] = 13,
+    ["position"] = 14,
     ["class_id"] = 12,
     ["active"] = false,
     ["init"] = function()
       return false
     end
   },
-  [14] = {
+  [15] = {
     ["name"] = "EnemyAvoid",
     ["text"] = pvpw.L["navigation_enemy_avoid"],
-    ["position"] = 14,
+    ["position"] = 15,
     ["active"] = false,
     ["init"] = function()
       return false
     end
   },
-  [15] = {
+  [16] = {
     ["name"] = "About",
     ["text"] = pvpw.L["navigation_about"],
-    ["position"] = 15,
+    ["position"] = 16,
     ["active"] = false,
     ["init"] = function()
       getglobal(PVPW_CONSTANTS.ELEMENT_PVPW_ABOUT_AUTHOR_LABEL):SetText(pvpw.L["author"])

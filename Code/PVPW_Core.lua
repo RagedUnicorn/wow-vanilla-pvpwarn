@@ -29,7 +29,7 @@ local _G = getfenv(0)
   Testing
 
   Hook GetLocale to return a fixed value. Deactivate in production!
-  Note: This is used for testing only. If the locale doesn't match with the actualy
+  Note: This is used for testing only. If the locale doesn't match with the actual
   locale of the combatlog the addon is unable to parse the log.
 ]]--
 --[[
@@ -52,74 +52,17 @@ PVPWarnOptions = {
   ["showEventsForTargetOnly"] = false,
   ["ignoreEventsWhileDead"] = false,
   --[[
-    ["type"] = {
-      -- e.g. paladin, racials
-      ["spellName"] = {
-        -- e.g. lay_on_hands as found in SpellMap
-        ["spellActive"] = false,
-          -- default false
-        ["soundWarningActive"] = false,
-          -- default false
-        ["soundFadeWarningActive"] = false,
-          -- default false
-        ["visualWarningActive"] = false,
-          -- default false
-        ["visualWarningColor"] = [number] -- e.g. blue, orange see PVPW_CONSTANTS.TEXTURES
-          -- default color in PVPW_CONSTANTS.DEFAULT_COLOR
-      }
-    }
-  ]]--
-  --[[
     Enemy spells being casted/used/activated
   ]]--
-  ["spellList"] = {
-    ["paladin"] = {
-      ["lay_on_hands"] = {
-        ["spellActive"] = true,
-        ["soundWarningActive"] = true,
-        ["soundFadeWarningActive"] = true,
-        ["visualWarningActive"] = true,
-        ["visualWarningColor"] = 4
-      }
-    },
-    ["warrior"] = {
-      ["recklessness"] = {
-        ["spellActive"] = true,
-        ["soundWarningActive"] = true,
-        ["soundFadeWarningActive"] = true,
-        ["visualWarningActive"] = true,
-        ["visualWarningColor"] = 4
-      }
-    }
-  },
+  ["spellList"] = nil,
   --[[
     Spells that the player avoided
   ]]--
-  ["spellSelfAvoidList"] = {
-    ["rogue"] = {},
-    ["warrior"] = {},
-    ["mage"] = {},
-    ["warlock"] = {},
-    ["hunter"] = {},
-    ["paladin"] = {},
-    ["priest"] = {},
-    ["druid"] = {},
-    ["shaman"] = {}
-  },
+  ["spellSelfAvoidList"] = nil,
   --[[
-    Spells that the enemy player avoided
+    Spells that an enemy player avoided
   ]]--
-  ["spellEnemyAvoidList"] = {
-    ["rogue"] = {},
-    ["warrior"] = {},
-    ["mage"] = {},
-    ["warlock"] = {},
-    ["hunter"] = {},
-    ["paladin"] = {},
-    ["priest"] = {},
-    ["druid"] = {},
-    ["shaman"] = {}
-  }
+  ["spellEnemyAvoidList"] = nil
 }
 
 --[[
@@ -240,4 +183,42 @@ function me.Initialize()
   me.timer.StartTimer("WarnQueueWorker")
 
   DEFAULT_CHAT_FRAME:AddMessage(string.format(PVPW_CONSTANTS.ADDON_NAME .. pvpw.L["help"], PVPW_CONSTANTS.ADDON_VERSION))
+
+  me.SetupConfiguration()
+end
+
+function me.SetupConfiguration()
+  --[[
+      Set default values if property is nil. This might happen after an addon upgrade
+    ]]--
+  if PVPWarnOptions.disableAddon == nil then
+    PVPWarnOptions.disableAddon = false
+  end
+
+  if PVPWarnOptions.disableAddonInBattlegrounds == nil then
+    PVPWarnOptions.disableAddonInBattlegrounds = false
+  end
+
+  if PVPWarnOptions.showEventsForTargetOnly == nil then
+    PVPWarnOptions.showEventsForTargetOnly = false
+  end
+
+  if PVPWarnOptions.ignoreEventsWhileDead == nil then
+    PVPWarnOptions.ignoreEventsWhileDead = false
+  end
+
+  -- initialize spelllist for the first time with default profile
+  if PVPWarnOptions.spellList == nil then
+    PVPWarnOptions.spellList = me.profile.GetDefaultProfile().defaultProfileSpells
+  end
+
+  -- initialize self avoid spelllist for the first time with default profile
+  if PVPWarnOptions.spellSelfAvoidList == nil then
+    PVPWarnOptions.spellSelfAvoidList = me.profile.GetDefaultProfile().defaultProfileSelfAvoidSpells
+  end
+
+  -- initialize enemy avoid spelllist for the first time with default profile
+  if PVPWarnOptions.spellEnemyAvoidList == nil then
+    PVPWarnOptions.spellEnemyAvoidList = me.profile.GetDefaultProfile().defaultProfileEnemyAvoidSpells
+  end
 end
