@@ -82,6 +82,10 @@ pvpw.L["visual_active"] = "Visual"
 pvpw.L["spell_status"] = "Active"
 
 -- dropdown colors
+pvpw.L["texture_light_blue"] = "Light Blue"
+pvpw.L["texture_pink"] = "Pink"
+pvpw.L["texture_white"] = "White"
+pvpw.L["texture_brown"] = "Brown"
 pvpw.L["texture_blue"] = "Blue"
 pvpw.L["texture_green"] = "Green"
 pvpw.L["texture_orange"] = "Orange"

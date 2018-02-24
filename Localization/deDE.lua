@@ -83,6 +83,10 @@ if (GetLocale() == "deDE") then
   pvpw.L["spell_status"] = "Aktive"
 
   -- dropdown colors
+  pvpw.L["texture_light_blue"] = "Hellblau"
+  pvpw.L["texture_pink"] = "Rosa"
+  pvpw.L["texture_white"] = "Weiß"
+  pvpw.L["texture_brown"] = "Braun"
   pvpw.L["texture_blue"] = "Blau"
   pvpw.L["texture_green"] = "Grün"
   pvpw.L["texture_orange"] = "Orange"

@@ -83,6 +83,22 @@ PVPW_CONSTANTS = {
     blue = {
       textureName = "texture_blue",
       colorValue = 6
+    },
+    brown = {
+      textureName = "texture_brown",
+      colorValue = 7
+    },
+    white = {
+      textureName = "texture_white",
+      colorValue = 8
+    },
+    pink = {
+      textureName = "texture_pink",
+      colorValue = 9
+    },
+    light_blue = {
+      textureName = "texture_light_blue",
+      colorValue = 10
     }
   },
 
