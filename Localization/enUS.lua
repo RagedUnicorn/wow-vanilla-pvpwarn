@@ -46,7 +46,7 @@ pvpw.L["show_events_for_target_only_tooltip"] = "Do not show events for targets 
 
 -- profilesmenu
 pvpw.L["profiles_menu_label"] = "Profiles:"
-pvpw.L["save_current_profile_button"] = "Save Current Profile"
+pvpw.L["save_current_profile_button"] = "Save configuration"
 pvpw.L["delete_selected_profile_button"] = "Delete Profile"
 pvpw.L["set_active_profile_button"] = "Load Profile"
 pvpw.L["profile_active_status"] = "Active"

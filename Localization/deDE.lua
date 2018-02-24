@@ -45,6 +45,24 @@ if (GetLocale() == "deDE") then
   pvpw.L["show_events_for_target_only"] = "Zeige Warnungen nur für aktuelles Ziel"
   pvpw.L["show_events_for_target_only_tooltip"] = "Zeige Warnungen nur an wenn sie vom aktuellen Ziel des Spielers ausgehen"
 
+  -- profilesmenu
+  pvpw.L["profiles_menu_label"] = "Profile:"
+  pvpw.L["save_current_profile_button"] = "Konfiguration speichern"
+  pvpw.L["delete_selected_profile_button"] = "Profil löschen"
+  pvpw.L["set_active_profile_button"] = "Profil laden"
+  pvpw.L["profile_active_status"] = "Aktive"
+  pvpw.L["profile_inactive_status"] = "Inaktive"
+  pvpw.L["choose_profile_name_dialog_text"] = "Wähle einen Namen für das neue Profil"
+  pvpw.L["choose_profile_name_accept_button"] = "Akzeptieren"
+  pvpw.L["choose_profile_name_cancel_button"] = "Abbrechen"
+  pvpw.L["confirm_override_profile_dialog_text"] = "Dies überschreibt dein aktuelles Profil. Möchtest du fortfahren?"
+  pvpw.L["confirm_override_profile_yes_button"] = "Ja"
+  pvpw.L["confirm_override_profile_no_button"] = "Nein"
+  pvpw.L["user_message_select_profile_before_delete"] = "Wähle ein Profil zum Löschen aus"
+  pvpw.L["user_message_select_profile_before_load"] = "Wähle ein Profil zum laden aus"
+  pvpw.L["user_message_select_profile_already_exists"] = "Profil existiert bereits - wähle einen anderen Namen"
+  pvpw.L["user_message_add_new_profile_max_reached"] = "Ein Maximum von %s Profilen ist erlaubt, du hast das Maximum erreicht"
+
   -- tooltips used throughout configuration menus for spells
   pvpw.L["spell_status_tooltip_title"] = "Zauberstatus"
   pvpw.L["spell_status_tooltip"] = "Aktiviere oder deaktiviere verfolgen für diesen Zauber"

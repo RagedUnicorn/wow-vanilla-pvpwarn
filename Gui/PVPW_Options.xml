@@ -432,67 +432,12 @@
                   </ScrollFrame>
                 </Frames>
               </Frame>
-              <Button name="PVPW_SaveCurrentProfileButton" inherits="UIPanelButtonTemplate">
-                <Size>
-                  <AbsDimension x="130" y="32"/>
-                </Size>
-                <Anchors>
-                  <Anchor point="BOTTOMLEFT" relativeTo="PVPW_ProfileList" relativePoint="BOTTOMLEFT">
-                    <Offset>
-                      <AbsDimension x="0" y="-35"/>
-                    </Offset>
-                  </Anchor>
-                </Anchors>
-                <Scripts>
-                  <OnShow>
-                    this:SetText(pvpw.L["save_current_profile_button"])
-                  </OnShow>
-                  <OnClick>
-                    pvpw.profilesMenu.SaveCurrentProfileButtonOnClick()
-                  </OnClick>
-                </Scripts>
-              </Button>
-              <Button name="PVPW_DeleteSelectedProfileButton" inherits="UIPanelButtonTemplate">
-                <Size>
-                  <AbsDimension x="110" y="32"/>
-                </Size>
-                <Anchors>
-                  <Anchor point="LEFT" relativeTo="PVPW_SaveCurrentProfileButton" relativePoint="RIGHT">
-                    <Offset>
-                      <AbsDimension x="0" y="0"/>
-                    </Offset>
-                  </Anchor>
-                </Anchors>
-                <Scripts>
-                  <OnShow>
-                    this:SetText(pvpw.L["delete_selected_profile_button"])
-                  </OnShow>
-                  <OnClick>
-                    pvpw.profilesMenu.DeleteSelectedProfileButtonOnClick()
-                  </OnClick>
-                </Scripts>
-              </Button>
-              <Button name="PVPW_SetActiveProfileButton" inherits="UIPanelButtonTemplate">
-                <Size>
-                  <AbsDimension x="130" y="32"/>
-                </Size>
-                <Anchors>
-                  <Anchor point="LEFT" relativeTo="PVPW_DeleteSelectedProfileButton" relativePoint="RIGHT">
-                    <Offset>
-                      <AbsDimension x="0" y="0"/>
-                    </Offset>
-                  </Anchor>
-                </Anchors>
-                <Scripts>
-                  <OnShow>
-                    this:SetText(pvpw.L["set_active_profile_button"])
-                  </OnShow>
-                  <OnClick>
-                    pvpw.profilesMenu.SetActiveProfileButtonOnClick()
-                  </OnClick>
-                </Scripts>
-              </Button>
             </Frames>
+            <Scripts>
+              <OnShow>
+                PVPW_InitProfilesMenu()
+              </OnShow>
+            </Scripts>
           </Frame>
           <Frame name="PVPW_ClassFrame" hidden="true">
             <Size x="420" y="320"/>

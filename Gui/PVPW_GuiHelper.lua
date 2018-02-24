@@ -693,3 +693,16 @@ function me.ChooseVisualWarningColor(classSpellFrame, color, spellList)
   mod.opt.SetVisualWarningColor(spellList,
     classSpellFrame.type, classSpellFrame.spellName, tonumber(color))
 end
+
+--[[
+  Resize button width to the size if its text
+
+  @param {table} button
+]]--
+function me.ResizeButtonToText(button)
+  local buttonFontString = button:GetFontString()
+
+  button:SetWidth(
+    buttonFontString:GetStringWidth() + PVPW_CONSTANTS.BUTTON_DEFAULT_PADDING
+  )
+end

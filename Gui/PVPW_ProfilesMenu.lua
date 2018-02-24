@@ -92,6 +92,85 @@ StaticPopupDialogs["PVPW_CHANGE_PROFILE_WARNING"] = {
   preferredIndex = 4
 }
 
+function PVPW_InitProfilesMenu()
+  mod.logger.LogDebug(me.tag, "Loaded ProfilesMenu")
+
+  me.SetupUI()
+end
+
+function me.SetupUI()
+  -- create save configuration button
+  local saveConfigurationButton = CreateFrame(
+    "Button",
+    PVPW_CONSTANTS.ELEMENT_PVPW_PROFILES_SAVE_CURRENT_CONFIGURATION_BUTTON,
+    UIParent,
+    "UIPanelButtonTemplate"
+  )
+
+  saveConfigurationButton:SetPoint(
+    "BOTTOMLEFT",
+    PVPW_CONSTANTS.ELEMENT_PVPW_PROFILES_LIST_FRAME,
+    "BOTTOMLEFT",
+    0, -35
+  )
+
+  saveConfigurationButton:SetHeight(32)
+  saveConfigurationButton:SetText(pvpw.L["save_current_profile_button"])
+  saveConfigurationButton:SetScript('OnClick', me.SaveCurrentProfileButtonOnClick)
+  saveConfigurationButton:SetParent(PVPW_CONSTANTS.ELEMENT_PVPW_PROFILES_FRAME)
+
+  mod.guiHelper.ResizeButtonToText(saveConfigurationButton)
+
+  saveConfigurationButton:Show()
+
+  -- create delete profile button
+  local deleteProfileButton = CreateFrame(
+    "Button",
+    PVPW_CONSTANTS.ELEMENT_PVPW_PROFILES_DELETE_SELECTED_PROFILE_BUTTON,
+    UIParent,
+    "UIPanelButtonTemplate"
+  )
+
+  deleteProfileButton:SetPoint(
+    "LEFT",
+    PVPW_CONSTANTS.ELEMENT_PVPW_PROFILES_SAVE_CURRENT_CONFIGURATION_BUTTON,
+    "RIGHT",
+    0, 0
+  )
+
+  deleteProfileButton:SetHeight(32)
+  deleteProfileButton:SetText(pvpw.L["delete_selected_profile_button"])
+  deleteProfileButton:SetScript("OnClick", me.DeleteSelectedProfileButtonOnClick)
+  deleteProfileButton:SetParent(PVPW_CONSTANTS.ELEMENT_PVPW_PROFILES_FRAME)
+
+  mod.guiHelper.ResizeButtonToText(deleteProfileButton)
+
+  deleteProfileButton:Show()
+
+  -- create load profile button
+  local loadProfileButton = CreateFrame(
+    "Button",
+    PVPW_CONSTANTS.ELEMENT_PVPW_PROFILES_LOAD_SELECTED_PROFILE_BUTTON,
+    UIParent,
+    "UIPanelButtonTemplate"
+  )
+
+  loadProfileButton:SetPoint(
+    "LEFT",
+    PVPW_CONSTANTS.ELEMENT_PVPW_PROFILES_DELETE_SELECTED_PROFILE_BUTTON,
+    "RIGHT",
+    0, 0
+  )
+  loadProfileButton:SetHeight(32)
+  loadProfileButton:SetText(pvpw.L["set_active_profile_button"])
+  loadProfileButton:SetScript("OnClick", me.LoadSelectedProfileButtonOnClick)
+  loadProfileButton:SetParent(PVPW_CONSTANTS.ELEMENT_PVPW_PROFILES_FRAME)
+
+  mod.guiHelper.ResizeButtonToText(loadProfileButton)
+
+  loadProfileButton:Show()
+end
+
 --[[
   Helper function to find elements inside a static popup dialog
 
@@ -177,7 +256,7 @@ end
   Given the player has a profile selected in the list this will activate the profile.
   The users current configuration will be overriden
 ]]--
-function me.SetActiveProfileButtonOnClick()
+function me.LoadSelectedProfileButtonOnClick()
   if currentSelectedProfile == nil then
     mod.logger.PrintUserError(pvpw.L["user_message_select_profile_before_load"])
   else
