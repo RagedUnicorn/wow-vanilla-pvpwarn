@@ -33,7 +33,7 @@ local currentSelectedProfile = nil
 StaticPopupDialogs["PVPW_CHOOSE_PROFILE_NAME"] = {
   text = pvpw.L["choose_profile_name_dialog_text"],
   button1 = pvpw.L["choose_profile_name_accept_button"],
-  button2 = pvpw.L["choose_profile_name_cancel_button"] ,
+  button2 = pvpw.L["choose_profile_name_cancel_button"],
   OnShow = function (self, data)
     local editBox = me.FindDialogElementByName(
       this:GetChildren(), "StaticPopup3EditBox")
@@ -77,15 +77,19 @@ StaticPopupDialogs["PVPW_CHOOSE_PROFILE_NAME"] = {
 }
 
 --[[
-  Popup dialog for choosing a profile name
+  Popup dialog warning before loading a profile
 ]]--
 StaticPopupDialogs["PVPW_CHANGE_PROFILE_WARNING"] = {
   text = pvpw.L["confirm_override_profile_dialog_text"],
   button1 = pvpw.L["confirm_override_profile_yes_button"],
   button2 = pvpw.L["confirm_override_profile_no_button"],
-  OnAccept = function()
-    mod.profile.ActivateProfile(currentSelectedProfile)
-    me.ProfileListUpdate() -- update visual list
+  OnAccept = function(default)
+    if default then
+      mod.profile.ActivateDefaultProfile()
+    else
+      mod.profile.ActivateProfile(currentSelectedProfile)
+      me.ProfileListUpdate() -- update visual list
+    end
   end,
   timeout = 0,
   whileDead = true,
@@ -169,6 +173,29 @@ function me.SetupUI()
   mod.guiHelper.ResizeButtonToText(loadProfileButton)
 
   loadProfileButton:Show()
+
+  -- create load profile button
+  local loadDefaultProfileButton = CreateFrame(
+    "Button",
+    PVPW_CONSTANTS.ELEMENT_PVPW_PROFILES_LOAD_DEFAULT_PROFILE_BUTTON,
+    UIParent,
+    "UIPanelButtonTemplate"
+  )
+
+  loadDefaultProfileButton:SetPoint(
+    "LEFT",
+    PVPW_CONSTANTS.ELEMENT_PVPW_PROFILES_LOAD_SELECTED_PROFILE_BUTTON,
+    "RIGHT",
+    0, 0
+  )
+  loadDefaultProfileButton:SetHeight(32)
+  loadDefaultProfileButton:SetText(pvpw.L["load_default_profile_button"])
+  loadDefaultProfileButton:SetScript("OnClick", me.LoadDefaultProfileButtonOnClick)
+  loadDefaultProfileButton:SetParent(PVPW_CONSTANTS.ELEMENT_PVPW_PROFILES_FRAME)
+
+  mod.guiHelper.ResizeButtonToText(loadDefaultProfileButton)
+
+  loadDefaultProfileButton:Show()
 end
 
 --[[
@@ -193,7 +220,7 @@ end
   FauxScrollFrame callback for profileslist
 ]]--
 function me.ProfileListUpdate()
-  local profiles = mod.profile.GetProfiles()
+  local profiles = PVPWarnProfiles
   local offset = FauxScrollFrame_GetOffset(PVPW_ProfileListScrollFrame)
 
   FauxScrollFrame_Update(PVPW_ProfileListScrollFrame, profiles and table.getn(profiles) or 0, 5, 24)
@@ -261,6 +288,13 @@ function me.LoadSelectedProfileButtonOnClick()
     mod.logger.PrintUserError(pvpw.L["user_message_select_profile_before_load"])
   else
     StaticPopup_Show("PVPW_CHANGE_PROFILE_WARNING")
+  end
+end
+
+function me.LoadDefaultProfileButtonOnClick()
+  local dialog = StaticPopup_Show("PVPW_CHANGE_PROFILE_WARNING")
+  if dialog then
+    dialog.data = true
   end
 end
 

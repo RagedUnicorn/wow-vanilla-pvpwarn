@@ -65,6 +65,8 @@ PVPWarnOptions = {
   ["spellEnemyAvoidList"] = nil
 }
 
+PVPWarnProfiles = {}
+
 --[[
   Addon load
 ]]--
@@ -209,16 +211,16 @@ function me.SetupConfiguration()
 
   -- initialize spelllist for the first time with default profile
   if PVPWarnOptions.spellList == nil then
-    PVPWarnOptions.spellList = me.profile.GetDefaultProfile().defaultProfileSpells
+    PVPWarnOptions.spellList = me.profile.GetDefaultProfile()
   end
 
   -- initialize self avoid spelllist for the first time with default profile
   if PVPWarnOptions.spellSelfAvoidList == nil then
-    PVPWarnOptions.spellSelfAvoidList = me.profile.GetDefaultProfile().defaultProfileSelfAvoidSpells
+    PVPWarnOptions.spellSelfAvoidList = me.profile.GetDefaultProfileSelfAvoidSpells()
   end
 
   -- initialize enemy avoid spelllist for the first time with default profile
   if PVPWarnOptions.spellEnemyAvoidList == nil then
-    PVPWarnOptions.spellEnemyAvoidList = me.profile.GetDefaultProfile().defaultProfileEnemyAvoidSpells
+    PVPWarnOptions.spellEnemyAvoidList = me.profile.GetDefaultProfileEnemyAvoidSpells()
   end
 end

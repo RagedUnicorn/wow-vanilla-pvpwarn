@@ -50,6 +50,7 @@ if (GetLocale() == "deDE") then
   pvpw.L["save_current_profile_button"] = "Konfiguration speichern"
   pvpw.L["delete_selected_profile_button"] = "Profil löschen"
   pvpw.L["set_active_profile_button"] = "Profil laden"
+  pvpw.L["load_default_profile_button"] = "Standard laden"
   pvpw.L["profile_active_status"] = "Aktive"
   pvpw.L["profile_inactive_status"] = "Inaktive"
   pvpw.L["choose_profile_name_dialog_text"] = "Wähle einen Namen für das neue Profil"
