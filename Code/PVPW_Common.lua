@@ -156,7 +156,7 @@ function me.IsSelfSpellAvoided(soundType)
 end
 
 --[[
-  Check if the detected spell is of category SPELL or SPELL_DOWN
+  Check if the detected spell is of category SPELL
 
   @param {string} soundType
   @return {boolean}
@@ -164,8 +164,19 @@ end
     false if category does not match
 ]]--
 function me.IsNormalSpell(soundType)
-  return soundType == PVPW_CONSTANTS.SOUND_TYPES.SPELL or
-    soundType == PVPW_CONSTANTS.SOUND_TYPES.SPELL_DOWN
+  return soundType == PVPW_CONSTANTS.SOUND_TYPES.SPELL
+end
+
+--[[
+  Check if the detected spell is of category SPELL_DOWN
+
+  @param {string} soundType
+  @return {boolean}
+    true if category matched
+    false if category does not match
+]]--
+function me.IsNormalSpellDown(soundType)
+  return soundType == PVPW_CONSTANTS.SOUND_TYPES.SPELL_DOWN
 end
 
 --[[
@@ -178,7 +189,7 @@ end
   * spellEnemyAvoidList - enemy player avoided spell
 ]]--
 function me.GetSpellListType(soundType)
-  if me.IsNormalSpell(soundType) then
+  if me.IsNormalSpell(soundType) or me.IsNormalSpellDown(soundType) then
     return PVPW_CONSTANTS.SPELL_TYPE.SPELL
   elseif me.IsSelfSpellAvoided(soundType) then
     return PVPW_CONSTANTS.SPELL_TYPE.SPELL_SELF_AVOID

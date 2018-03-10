@@ -127,8 +127,12 @@ function me.WorkQueue()
       me.RemoveFromQueue(key)
     else
       local workingState = false
+      mod.logger.LogWarn(me.tag, "SoundType: " .. warning.soundType)
       local spellList = mod.common.GetSpellListType(warning.soundType)
 
+      --[[
+        determine wheter to play a sound or a visual effect based on the configuration for the player
+      ]]--
       if mod.common.IsNormalSpell(warning.soundType) then
         if mod.opt.IsSoundWarningActive(spellList, warning.soundCategory, warning.normalizedSpellName) then
           workingState = true
@@ -136,6 +140,32 @@ function me.WorkQueue()
         else
           mod.logger.LogDebug(me.tag, "Skipping playing normal sound for spell - " .. warning.normalizedSpellName
             .. " because sound is disabled for spell")
+        end
+
+        if mod.opt.IsVisualWarningActive(spellList, warning.soundCategory, warning.normalizedSpellName) then
+          workingState = true
+          mod.visual.ShowVisual(warning.warnName, warning.visualName)
+        else
+          mod.logger.LogDebug(me.tag, "Skipping playing visual for spell - " .. warning.normalizedSpellName
+            .. " because visual is disabled for this spell")
+        end
+      elseif mod.common.IsNormalSpellDown(warning.soundType) then
+        if mod.opt.IsSoundFadeWarningActive(spellList, warning.soundCategory, warning.normalizedSpellName) then
+          workingState = true
+          mod.sound.PlaySound(warning.soundCategory, warning.soundType, warning.soundFileName)
+        else
+          mod.logger.LogDebug(me.tag, "Skipping playing normal sound down for spell - " .. warning.normalizedSpellName
+            .. " because sound is disabled for spell")
+        end
+
+        if mod.opt.IsSoundFadeWarningActive(spellList, warning.soundCategory, warning.normalizedSpellName) then
+          if mod.opt.IsVisualWarningActive(spellList, warning.soundCategory, warning.normalizedSpellName) then
+            workingState = true
+            mod.visual.ShowVisual(warning.warnName, warning.visualName)
+          else
+            mod.logger.LogDebug(me.tag, "Skipping playing visual for spell - " .. warning.normalizedSpellName
+              .. " because visual is disabled for this spell")
+          end
         end
       elseif mod.common.IsEnemySpellAvoided(warning.soundType) then
         if mod.opt.IsSoundWarningActive(spellList, warning.soundCategory, warning.normalizedSpellName) then
@@ -155,14 +185,6 @@ function me.WorkQueue()
         end
       else
         mod.logger.LogError(me.tag, "Unknown soundType - " .. warning.soundType)
-      end
-
-      if mod.opt.IsVisualWarningActive(spellList, warning.soundCategory, warning.normalizedSpellName) then
-        workingState = true
-        mod.visual.ShowVisual(warning.warnName, warning.visualName)
-      else
-        mod.logger.LogDebug(me.tag, "Skipping playing visual for spell - " .. warning.normalizedSpellName
-          .. " because visual is disabled for this spell")
       end
 
       --[[
