@@ -415,7 +415,7 @@ if (GetLocale() == "deDE") then
         ["soundFadeWarningActive"] = true,
         ["visualWarningActive"] = true,
         ["visualWarningColor"] = 7
-      },
+      }
     },
     ["priest"] = {
       ["seele_der_macht"] = {
@@ -643,6 +643,13 @@ if (GetLocale() == "deDE") then
       ["thoriumgranate"] = {
         ["spellActive"] = true,
         ["soundWarningActive"] = true,
+        ["visualWarningActive"] = true,
+        ["visualWarningColor"] = 3
+      },
+      ["schattenschutz"] = {
+        ["spellActive"] = true,
+        ["soundWarningActive"] = true,
+        ["soundFadeWarningActive"] = true,
         ["visualWarningActive"] = true,
         ["visualWarningColor"] = 3
       }
@@ -949,6 +956,258 @@ if (GetLocale() == "deDE") then
         ["spellActive"] = true,
         ["soundWarningActive"] = true,
         ["soundFadeWarningActive"] = true,
+        ["visualWarningActive"] = true,
+        ["visualWarningColor"] = 3
+      }
+    }
+  }
+
+  defaultProfileMage = {
+    ["warrior"] = {
+      ["tollkuehnheit"] = {
+        ["spellActive"] = true,
+        ["soundWarningActive"] = true,
+        ["soundFadeWarningActive"] = true,
+        ["visualWarningActive"] = true,
+        ["visualWarningColor"] = 7
+      },
+      ["schildwall"] = {
+        ["spellActive"] = true,
+        ["soundWarningActive"] = true,
+        ["soundFadeWarningActive"] = true,
+        ["visualWarningActive"] = true,
+        ["visualWarningColor"] = 7
+      },
+      ["letztes_gefecht"] = {
+        ["spellActive"] = true,
+        ["soundWarningActive"] = true,
+        ["soundFadeWarningActive"] = true,
+        ["visualWarningActive"] = true,
+        ["visualWarningColor"] = 7
+      },
+      ["todeswunsch"] = {
+        ["spellActive"] = true,
+        ["soundWarningActive"] = true,
+        ["soundFadeWarningActive"] = true,
+        ["visualWarningActive"] = true,
+        ["visualWarningColor"] = 7
+      }
+    },
+    ["priest"] = {
+      ["seele_der_macht"] = {
+        ["spellActive"] = true,
+        ["soundWarningActive"] = true,
+        ["soundFadeWarningActive"] = true,
+        ["visualWarningActive"] = true,
+        ["visualWarningColor"] = 8
+      }
+    },
+    ["rogue"] = {
+      ["sprinten"] = {
+        ["spellActive"] = true,
+        ["soundWarningActive"] = true,
+        ["soundFadeWarningActive"] = true,
+        ["visualWarningActive"] = true,
+        ["visualWarningColor"] = 1
+      }
+    },
+    ["mage"] = {
+      ["eisblock"] = {
+        ["spellActive"] = true,
+        ["soundWarningActive"] = true,
+        ["soundFadeWarningActive"] = true,
+        ["visualWarningActive"] = true,
+        ["visualWarningColor"] = 10
+      },
+      ["arkane_macht"] = {
+        ["spellActive"] = true,
+        ["soundWarningActive"] = true,
+        ["soundFadeWarningActive"] = true,
+        ["visualWarningActive"] = true,
+        ["visualWarningColor"] = 10
+      },
+      ["geistesgegenwart"] = {
+        ["spellActive"] = true,
+        ["soundWarningActive"] = true,
+        ["soundFadeWarningActive"] = true,
+        ["visualWarningActive"] = true,
+        ["visualWarningColor"] = 10
+      },
+      ["verwandlung"] = {
+        ["spellActive"] = true,
+        ["soundWarningActive"] = true,
+        ["visualWarningActive"] = true,
+        ["visualWarningColor"] = 10
+      },
+      ["verwandlung_kuh"] = {
+        ["spellActive"] = true,
+        ["soundWarningActive"] = true,
+        ["visualWarningActive"] = true,
+        ["visualWarningColor"] = 10
+      },
+      ["verwandlung_schwein"] = {
+        ["spellActive"] = true,
+        ["soundWarningActive"] = true,
+        ["visualWarningActive"] = true,
+        ["visualWarningColor"] = 10
+      },
+      ["verwandlung_kroete"] = {
+        ["spellActive"] = true,
+        ["soundWarningActive"] = true,
+        ["visualWarningActive"] = true,
+        ["visualWarningColor"] = 10
+      }
+    },
+    ["hunter"] = {
+      ["eiskaeltefalle"] = {
+        ["spellActive"] = true,
+        ["soundWarningActive"] = true,
+        ["visualWarningActive"] = true,
+        ["visualWarningColor"] = 5
+      },
+      ["frostfalle"] = {
+        ["spellActive"] = true,
+        ["soundWarningActive"] = true,
+        ["visualWarningActive"] = true,
+        ["visualWarningColor"] = 5
+      }
+    },
+    ["warlock"] = {
+      ["furcht"] = {
+        ["spellActive"] = true,
+        ["soundWarningActive"] = true,
+        ["visualWarningActive"] = true,
+        ["visualWarningColor"] = 2
+      }
+    },
+    ["paladin"] = {
+      ["handauflegung"] = {
+        ["spellActive"] = true,
+        ["soundWarningActive"] = true,
+        ["soundFadeWarningActive"] = false,
+        ["visualWarningActive"] = true,
+        ["visualWarningColor"] = 9
+      }
+      ["gottesschild"] = {
+        ["spellActive"] = true,
+        ["soundWarningActive"] = true,
+        ["soundFadeWarningActive"] = true,
+        ["visualWarningActive"] = true,
+        ["visualWarningColor"] = 9
+      },
+      ["hammer_des_zorns"] = {
+        ["spellActive"] = true,
+        ["soundWarningActive"] = true,
+        ["visualWarningActive"] = true,
+        ["visualWarningColor"] = 9
+      },
+      ["segen_der_freiheit"] = {
+        ["spellActive"] = true,
+        ["soundWarningActive"] = true,
+        ["soundFadeWarningActive"] = true,
+        ["visualWarningActive"] = true,
+        ["visualWarningColor"] = 9
+      },
+      ["hammer_der_gerechtigkeit"] = {
+        ["spellActive"] = true,
+        ["soundWarningActive"] = true,
+        ["visualWarningActive"] = true,
+        ["visualWarningColor"] = 9
+      },
+      ["busse"] = {
+        ["spellActive"] = true,
+        ["soundWarningActive"] = true,
+        ["visualWarningActive"] = true,
+        ["visualWarningColor"] = 9
+      }
+    },
+    ["druid"] = {
+      ["schnelligkeit_der_natur"] = {
+        ["spellActive"] = true,
+        ["soundWarningActive"] = true,
+        ["soundFadeWarningActive"] = false,
+        ["visualWarningActive"] = true,
+        ["visualWarningColor"] = 6
+      }
+    },
+    ["shaman"] = {
+      ["schnelligkeit_der_natur"] = {
+        ["spellActive"] = true,
+        ["soundWarningActive"] = true,
+        ["soundFadeWarningActive"] = false,
+        ["visualWarningActive"] = true,
+        ["visualWarningColor"] = 6
+      },
+      ["totem_des_erdstosses"] = {
+        ["spellActive"] = true,
+        ["soundWarningActive"] = true,
+        ["visualWarningActive"] = true,
+        ["visualWarningColor"] = 6
+      }
+    },
+    ["racials"] = {
+    },
+    ["items"] = {
+      ["feuerreflektor"] = {
+        ["spellActive"] = true,
+        ["soundWarningActive"] = true,
+        ["soundFadeWarningActive"] = true,
+        ["visualWarningActive"] = true,
+        ["visualWarningColor"] = 3
+      },
+      ["frostreflektor"] = {
+        ["spellActive"] = true,
+        ["soundWarningActive"] = true,
+        ["soundFadeWarningActive"] = true,
+        ["visualWarningActive"] = true,
+        ["visualWarningColor"] = 3
+      },
+      ["immunitaet_gegen_unbeweglichkeit"] = {
+        ["spellActive"] = true,
+        ["soundWarningActive"] = true,
+        ["soundFadeWarningActive"] = true,
+        ["visualWarningActive"] = true,
+        ["visualWarningColor"] = 3
+      }
+    },
+    ["misc"] = {
+      ["erste_hilfe"] = {
+        ["spellActive"] = true,
+        ["soundWarningActive"] = true,
+        ["soundFadeWarningActive"] = false,
+        ["visualWarningActive"] = true,
+        ["visualWarningColor"] = 3
+      },
+      ["eisengranate"] = {
+        ["spellActive"] = true,
+        ["soundWarningActive"] = true,
+        ["visualWarningActive"] = true,
+        ["visualWarningColor"] = 3
+      },
+      ["thoriumgranate"] = {
+        ["spellActive"] = true,
+        ["soundWarningActive"] = true,
+        ["visualWarningActive"] = true,
+        ["visualWarningColor"] = 3
+      },
+      ["freie_aktion"] = {
+        ["spellActive"] = true,
+        ["soundWarningActive"] = true,
+        ["soundFadeWarningActive"] = true,
+        ["visualWarningActive"] = true,
+        ["visualWarningColor"] = 3
+      },
+      ["frostschutz"] = {
+        ["spellActive"] = true,
+        ["soundWarningActive"] = true,
+        ["soundFadeWarningActive"] = false,
+        ["visualWarningActive"] = true,
+        ["visualWarningColor"] = 3
+      },
+      ["feuerschutz"] = {
+        ["spellActive"] = true,
+        ["soundWarningActive"] = true,
+        ["soundFadeWarningActive"] = false,
         ["visualWarningActive"] = true,
         ["visualWarningColor"] = 3
       }
@@ -1285,7 +1544,7 @@ else
         ["soundFadeWarningActive"] = true,
         ["visualWarningActive"] = true,
         ["visualWarningColor"] = 7
-      },
+      }
     },
     ["priest"] = {
       ["power_infusion"] = {
@@ -1513,6 +1772,13 @@ else
       ["thorium_grenade"] = {
         ["spellActive"] = true,
         ["soundWarningActive"] = true,
+        ["visualWarningActive"] = true,
+        ["visualWarningColor"] = 3
+      },
+      ["shadow_protection"] = {
+        ["spellActive"] = true,
+        ["soundWarningActive"] = true,
+        ["soundFadeWarningActive"] = true,
         ["visualWarningActive"] = true,
         ["visualWarningColor"] = 3
       }
@@ -1819,6 +2085,258 @@ else
         ["spellActive"] = true,
         ["soundWarningActive"] = true,
         ["soundFadeWarningActive"] = true,
+        ["visualWarningActive"] = true,
+        ["visualWarningColor"] = 3
+      }
+    }
+  }
+
+  defaultProfileMage = {
+    ["warrior"] = {
+      ["recklessness"] = {
+        ["spellActive"] = true,
+        ["soundWarningActive"] = true,
+        ["soundFadeWarningActive"] = true,
+        ["visualWarningActive"] = true,
+        ["visualWarningColor"] = 7
+      },
+      ["shield_wall"] = {
+        ["spellActive"] = true,
+        ["soundWarningActive"] = true,
+        ["soundFadeWarningActive"] = true,
+        ["visualWarningActive"] = true,
+        ["visualWarningColor"] = 7
+      },
+      ["last_stand"] = {
+        ["spellActive"] = true,
+        ["soundWarningActive"] = true,
+        ["soundFadeWarningActive"] = true,
+        ["visualWarningActive"] = true,
+        ["visualWarningColor"] = 7
+      },
+      ["death_wish"] = {
+        ["spellActive"] = true,
+        ["soundWarningActive"] = true,
+        ["soundFadeWarningActive"] = true,
+        ["visualWarningActive"] = true,
+        ["visualWarningColor"] = 7
+      }
+    },
+    ["priest"] = {
+      ["power_infusion"] = {
+        ["spellActive"] = true,
+        ["soundWarningActive"] = true,
+        ["soundFadeWarningActive"] = true,
+        ["visualWarningActive"] = true,
+        ["visualWarningColor"] = 8
+      }
+    },
+    ["rogue"] = {
+      ["sprint"] = {
+        ["spellActive"] = true,
+        ["soundWarningActive"] = true,
+        ["soundFadeWarningActive"] = true,
+        ["visualWarningActive"] = true,
+        ["visualWarningColor"] = 1
+      }
+    },
+    ["mage"] = {
+      ["ice_block"] = {
+        ["spellActive"] = true,
+        ["soundWarningActive"] = true,
+        ["soundFadeWarningActive"] = true,
+        ["visualWarningActive"] = true,
+        ["visualWarningColor"] = 10
+      },
+      ["arcane_power"] = {
+        ["spellActive"] = true,
+        ["soundWarningActive"] = true,
+        ["soundFadeWarningActive"] = true,
+        ["visualWarningActive"] = true,
+        ["visualWarningColor"] = 10
+      },
+      ["presence_of_mind"] = {
+        ["spellActive"] = true,
+        ["soundWarningActive"] = true,
+        ["soundFadeWarningActive"] = true,
+        ["visualWarningActive"] = true,
+        ["visualWarningColor"] = 10
+      },
+      ["polymorph"] = {
+        ["spellActive"] = true,
+        ["soundWarningActive"] = true,
+        ["visualWarningActive"] = true,
+        ["visualWarningColor"] = 10
+      },
+      ["polymorph_cow"] = {
+        ["spellActive"] = true,
+        ["soundWarningActive"] = true,
+        ["visualWarningActive"] = true,
+        ["visualWarningColor"] = 10
+      },
+      ["polymorph_pig"] = {
+        ["spellActive"] = true,
+        ["soundWarningActive"] = true,
+        ["visualWarningActive"] = true,
+        ["visualWarningColor"] = 10
+      },
+      ["polymorph_turtle"] = {
+        ["spellActive"] = true,
+        ["soundWarningActive"] = true,
+        ["visualWarningActive"] = true,
+        ["visualWarningColor"] = 10
+      }
+    },
+    ["hunter"] = {
+      ["freezing_trap"] = {
+        ["spellActive"] = true,
+        ["soundWarningActive"] = true,
+        ["visualWarningActive"] = true,
+        ["visualWarningColor"] = 5
+      },
+      ["frost_trap"] = {
+        ["spellActive"] = true,
+        ["soundWarningActive"] = true,
+        ["visualWarningActive"] = true,
+        ["visualWarningColor"] = 5
+      }
+    },
+    ["warlock"] = {
+      ["fear"] = {
+        ["spellActive"] = true,
+        ["soundWarningActive"] = true,
+        ["visualWarningActive"] = true,
+        ["visualWarningColor"] = 2
+      }
+    },
+    ["paladin"] = {
+      ["lay_on_hands"] = {
+        ["spellActive"] = true,
+        ["soundWarningActive"] = true,
+        ["soundFadeWarningActive"] = false,
+        ["visualWarningActive"] = true,
+        ["visualWarningColor"] = 9
+      }
+      ["divine_shield"] = {
+        ["spellActive"] = true,
+        ["soundWarningActive"] = true,
+        ["soundFadeWarningActive"] = true,
+        ["visualWarningActive"] = true,
+        ["visualWarningColor"] = 9
+      },
+      ["hammer_of_wrath"] = {
+        ["spellActive"] = true,
+        ["soundWarningActive"] = true,
+        ["visualWarningActive"] = true,
+        ["visualWarningColor"] = 9
+      },
+      ["blessing_of_freedom"] = {
+        ["spellActive"] = true,
+        ["soundWarningActive"] = true,
+        ["soundFadeWarningActive"] = true,
+        ["visualWarningActive"] = true,
+        ["visualWarningColor"] = 9
+      },
+      ["hammer_of_justice"] = {
+        ["spellActive"] = true,
+        ["soundWarningActive"] = true,
+        ["visualWarningActive"] = true,
+        ["visualWarningColor"] = 9
+      },
+      ["repentance"] = {
+        ["spellActive"] = true,
+        ["soundWarningActive"] = true,
+        ["visualWarningActive"] = true,
+        ["visualWarningColor"] = 9
+      }
+    },
+    ["druid"] = {
+      ["natures_swiftness"] = {
+        ["spellActive"] = true,
+        ["soundWarningActive"] = true,
+        ["soundFadeWarningActive"] = false,
+        ["visualWarningActive"] = true,
+        ["visualWarningColor"] = 6
+      }
+    },
+    ["shaman"] = {
+      ["natures_swiftness"] = {
+        ["spellActive"] = true,
+        ["soundWarningActive"] = true,
+        ["soundFadeWarningActive"] = false,
+        ["visualWarningActive"] = true,
+        ["visualWarningColor"] = 6
+      },
+      ["tremor_totem"] = {
+        ["spellActive"] = true,
+        ["soundWarningActive"] = true,
+        ["visualWarningActive"] = true,
+        ["visualWarningColor"] = 6
+      }
+    },
+    ["racials"] = {
+    },
+    ["items"] = {
+      ["fire_reflector"] = {
+        ["spellActive"] = true,
+        ["soundWarningActive"] = true,
+        ["soundFadeWarningActive"] = true,
+        ["visualWarningActive"] = true,
+        ["visualWarningColor"] = 3
+      },
+      ["frost_reflector"] = {
+        ["spellActive"] = true,
+        ["soundWarningActive"] = true,
+        ["soundFadeWarningActive"] = true,
+        ["visualWarningActive"] = true,
+        ["visualWarningColor"] = 3
+      },
+      ["immune_root"] = {
+        ["spellActive"] = true,
+        ["soundWarningActive"] = true,
+        ["soundFadeWarningActive"] = true,
+        ["visualWarningActive"] = true,
+        ["visualWarningColor"] = 3
+      }
+    },
+    ["misc"] = {
+      ["first_aid"] = {
+        ["spellActive"] = true,
+        ["soundWarningActive"] = true,
+        ["soundFadeWarningActive"] = false,
+        ["visualWarningActive"] = true,
+        ["visualWarningColor"] = 3
+      },
+      ["iron_grenade"] = {
+        ["spellActive"] = true,
+        ["soundWarningActive"] = true,
+        ["visualWarningActive"] = true,
+        ["visualWarningColor"] = 3
+      },
+      ["thorium_grenade"] = {
+        ["spellActive"] = true,
+        ["soundWarningActive"] = true,
+        ["visualWarningActive"] = true,
+        ["visualWarningColor"] = 3
+      },
+      ["free_action"] = {
+        ["spellActive"] = true,
+        ["soundWarningActive"] = true,
+        ["soundFadeWarningActive"] = true,
+        ["visualWarningActive"] = true,
+        ["visualWarningColor"] = 3
+      },
+      ["frost_protection"] = {
+        ["spellActive"] = true,
+        ["soundWarningActive"] = true,
+        ["soundFadeWarningActive"] = false,
+        ["visualWarningActive"] = true,
+        ["visualWarningColor"] = 3
+      },
+      ["fire_protection"] = {
+        ["spellActive"] = true,
+        ["soundWarningActive"] = true,
+        ["soundFadeWarningActive"] = false,
         ["visualWarningActive"] = true,
         ["visualWarningColor"] = 3
       }
