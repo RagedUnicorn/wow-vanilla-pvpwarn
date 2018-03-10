@@ -446,6 +446,14 @@ if (GetLocale() == "deDE") then
         ["spellIcon"] = "ability_warrior_punishingblow",
         ["hasFade"] = true,
         ["active"] = true
+      },
+      ["kaltbluetigkeit"] = {
+        ["name"] = "Kaltblütigkeit",
+        ["soundFileName"] = "kaltbluetigkeit",
+        ["spellID"] = 14177,
+        ["spellIcon"] = "spell_ice_lament",
+        ["hasFade"] = true,
+        ["active"] = true
       }
     },
     ["mage"] = {
@@ -2207,6 +2215,14 @@ else
         ["soundFileName"] = "blade_flurry",
         ["spellID"] = 13877,
         ["spellIcon"] = "ability_warrior_punishingblow",
+        ["hasFade"] = true,
+        ["active"] = true
+      },
+      ["cold_blood"] = {
+        ["name"] = "Cold Blood",
+        ["soundFileName"] = "cold_blood",
+        ["spellID"] = 14177,
+        ["spellIcon"] = "spell_ice_lament",
         ["hasFade"] = true,
         ["active"] = true
       }

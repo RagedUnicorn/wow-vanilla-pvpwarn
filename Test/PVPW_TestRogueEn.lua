@@ -141,6 +141,8 @@ function me.RunAll(playManual)
   mod.testReporter.AddToTestQueueWithDelay(me.TestSoundDownAdrenalineRush)
   mod.testReporter.AddToTestQueueWithDelay(me.TestSoundBladeFlurry)
   mod.testReporter.AddToTestQueueWithDelay(me.TestSoundDownBladeFlurry)
+  mod.testReporter.AddToTestQueueWithDelay(me.TestSoundColdBlood)
+  mod.testReporter.AddToTestQueueWithDelay(me.TestSoundDownColdBlood)
   mod.testReporter.AddToTestQueueWithDelay(me.TestSoundEnemyAvoidKick)
   mod.testReporter.AddToTestQueueWithDelay(me.TestSoundEnemyAvoidCheapShot)
   mod.testReporter.AddToTestQueueWithDelay(me.TestSoundEnemyAvoidGouge)
@@ -186,6 +188,8 @@ function me.RunAll(playManual)
   mod.testReporter.AddToTestQueue(me.TestParseDownAdrenalineRush)
   mod.testReporter.AddToTestQueue(me.TestParseBladeFlurry)
   mod.testReporter.AddToTestQueue(me.TestParseDownBladeFlurry)
+  mod.testReporter.AddToTestQueue(me.TestParseColdBlood)
+  mod.testReporter.AddToTestQueue(me.TestParseDownColdBlood)
   mod.testReporter.AddToTestQueue(me.TestParseEnemyAvoidDodgeKick)
   mod.testReporter.AddToTestQueue(me.TestParseEnemyAvoidParryKick)
   mod.testReporter.AddToTestQueue(me.TestParseEnemyAvoidImmuneKick)
@@ -370,6 +374,22 @@ function me.TestSoundDownBladeFlurry()
     className,
     "TestSoundDownBladeFlurry",
     "blade_flurry"
+  )
+end
+
+function me.TestSoundColdBlood()
+  mod.testHelper.TestSound(
+    className,
+    "TestSoundColdBlood",
+    "cold_blood"
+  )
+end
+
+function me.TestSoundDownColdBlood()
+  mod.testHelper.TestSoundDown(
+    className,
+    "TestSoundDownColdBlood",
+    "cold_blood"
   )
 end
 
@@ -707,6 +727,26 @@ function me.TestParseDownBladeFlurry()
     "TestParseDownBladeFlurry",
     "blade_flurry",
     "Blade Flurry fades from $player$.",
+    mod.testHelper.eventTypeSpellAuraGoneOther
+  )
+end
+
+function me.TestParseColdBlood()
+  mod.testHelper.TestParse(
+    className,
+    "TestParseColdBlood",
+    "cold_blood",
+    "$player$ gains Cold Blood.",
+    mod.testHelper.eventTypeSpellPeriodicHostilePlayerBuffs
+  )
+end
+
+function me.TestParseDownColdBlood()
+  mod.testHelper.TestParseDown(
+    className,
+    "TestParseDownColdBlood",
+    "cold_blood",
+    "Cold Blood fades from $player$.",
     mod.testHelper.eventTypeSpellAuraGoneOther
   )
 end

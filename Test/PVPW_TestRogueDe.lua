@@ -127,6 +127,8 @@ function me.RunAll(playManual)
   mod.testReporter.AddToTestQueueWithDelay(me.TestSoundDownAdrenalinrausch)
   mod.testReporter.AddToTestQueueWithDelay(me.TestSoundKlingenwirbel)
   mod.testReporter.AddToTestQueueWithDelay(me.TestSoundDownKlingenwirbel)
+  mod.testReporter.AddToTestQueueWithDelay(me.TestSoundKaltbluetigkeit)
+  mod.testReporter.AddToTestQueueWithDelay(me.TestSoundDownKaltbluetigkeit)
   mod.testReporter.AddToTestQueueWithDelay(me.TestSoundEnemyAvoidTritt)
   mod.testReporter.AddToTestQueueWithDelay(me.TestSoundEnemyAvoidFieserTrick)
   mod.testReporter.AddToTestQueueWithDelay(me.TestSoundEnemyAvoidSolarplexus)
@@ -171,6 +173,8 @@ function me.RunAll(playManual)
   mod.testReporter.AddToTestQueue(me.TestParseDownAdrenalinrausch)
   mod.testReporter.AddToTestQueue(me.TestParseKlingenwirbel)
   mod.testReporter.AddToTestQueue(me.TestParseDownKlingenwirbel)
+  mod.testReporter.AddToTestQueue(me.TestParseKaltbluetigkeit)
+  mod.testReporter.AddToTestQueue(me.TestParseDownKaltbluetigkeit)
   mod.testReporter.AddToTestQueue(me.TestParseEnemyAvoidDodgeTritt)
   mod.testReporter.AddToTestQueue(me.TestParseEnemyAvoidParryTritt)
   mod.testReporter.AddToTestQueue(me.TestParseEnemyAvoidImmuneTritt)
@@ -354,6 +358,22 @@ function me.TestSoundDownKlingenwirbel()
     className,
     "TestSoundDownKlingenwirbel",
     "klingenwirbel"
+  )
+end
+
+function me.TestSoundKaltbluetigkeit()
+  mod.testHelper.TestSound(
+    className,
+    "TestSoundKaltbluetigkeit",
+    "kaltbluetigkeit"
+  )
+end
+
+function me.TestSoundDownKaltbluetigkeit()
+  mod.testHelper.TestSoundDown(
+    className,
+    "TestSoundDownKaltbluetigkeit",
+    "kaltbluetigkeit"
   )
 end
 
@@ -695,6 +715,25 @@ function me.TestParseDownKlingenwirbel()
   )
 end
 
+function me.TestParseKaltbluetigkeit()
+  mod.testHelper.TestParse(
+    className,
+    "TestParseKaltbluetigkeit",
+    "kaltbluetigkeit",
+    "$player$ bekommt 'Kaltblütigkeit'.",
+    mod.testHelper.eventTypeSpellPeriodicHostilePlayerBuffs
+  )
+end
+
+function me.TestParseDownKaltbluetigkeit()
+  mod.testHelper.TestParseDown(
+    className,
+    "TestParseDownKaltbluetigkeit",
+    "kaltbluetigkeit",
+    "Kaltblütigkeit schwindet von $player$.",
+    mod.testHelper.eventTypeSpellAuraGoneOther
+  )
+end
 
 function me.TestParseEnemyAvoidDodgeTritt()
   mod.testHelper.TestParseEnemyAvoid(
