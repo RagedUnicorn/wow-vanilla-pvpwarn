@@ -6,6 +6,18 @@
 
 PVPWarn uses both visual and acoustic effects to make the player aware of certain events. The addon aims to be configurable to the players preferences and allows customization on exactly what spells should be brought to the attention of the player and in what form.
 
+## Installation
+
+WoW-Addons are installed directly in your WoW directory:
+
+`[WoW-installation-directory]\Interface\AddOns`
+
+Make sure to get the newest version of the Addon from the releases tab:
+
+[PVPWarn-Releases](https://github.com/RagedUnicorn/wow-pvpwarn/releases)
+
+> Note: If the Addon is not showing up in your ingame Addonlist make sure that the Addon is named `PVPWarn` in your Addons folder
+
 ## Demo
 
 TODO should add a YouTube video with some examples
@@ -142,18 +154,6 @@ Turning things around and you are a Warrior that walks into a Frost Nova of an e
 > "SomeEnemyPlayer's Frost Nova failed. You are immune."
 
 This is considered a self avoid. You as a player resisted an enemy spell.
-
-## Installation
-
-WoW-Addons are installed directly in your WoW directory:
-
-`[WoW-installation-directory]\Interface\AddOns`
-
-Make sure to get the newest version of the Addon from the releases tab:
-
-[PVPWarn-Releases](https://github.com/RagedUnicorn/wow-pvpwarn/releases)
-
-> Note: If the Addon is not showing up in your ingame Addonlist make sure that the Addon is named `PVPWarn` in your Addons folder
 
 ## License
 
