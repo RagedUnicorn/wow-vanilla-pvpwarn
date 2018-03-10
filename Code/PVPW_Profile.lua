@@ -552,7 +552,7 @@ if (GetLocale() == "deDE") then
         ["soundFadeWarningActive"] = false,
         ["visualWarningActive"] = true,
         ["visualWarningColor"] = 9
-      }
+      },
       ["gottesschild"] = {
         ["spellActive"] = true,
         ["soundWarningActive"] = true,
@@ -1095,7 +1095,7 @@ if (GetLocale() == "deDE") then
         ["soundFadeWarningActive"] = false,
         ["visualWarningActive"] = true,
         ["visualWarningColor"] = 9
-      }
+      },
       ["gottesschild"] = {
         ["spellActive"] = true,
         ["soundWarningActive"] = true,
@@ -1367,7 +1367,7 @@ if (GetLocale() == "deDE") then
         ["soundFadeWarningActive"] = false,
         ["visualWarningActive"] = true,
         ["visualWarningColor"] = 9
-      }
+      },
       ["gottesschild"] = {
         ["spellActive"] = true,
         ["soundWarningActive"] = true,
@@ -1655,7 +1655,7 @@ if (GetLocale() == "deDE") then
         ["soundFadeWarningActive"] = false,
         ["visualWarningActive"] = true,
         ["visualWarningColor"] = 9
-      }
+      },
       ["gottesschild"] = {
         ["spellActive"] = true,
         ["soundWarningActive"] = true,
@@ -1668,7 +1668,7 @@ if (GetLocale() == "deDE") then
         ["soundWarningActive"] = true,
         ["visualWarningActive"] = true,
         ["visualWarningColor"] = 9
-      }
+      },
       ["hammer_der_gerechtigkeit"] = {
         ["spellActive"] = true,
         ["soundWarningActive"] = true,
@@ -1906,7 +1906,7 @@ if (GetLocale() == "deDE") then
         ["soundFadeWarningActive"] = false,
         ["visualWarningActive"] = true,
         ["visualWarningColor"] = 9
-      }
+      },
       ["gottesschild"] = {
         ["spellActive"] = true,
         ["soundWarningActive"] = true,
@@ -2405,7 +2405,7 @@ if (GetLocale() == "deDE") then
         ["soundFadeWarningActive"] = false,
         ["visualWarningActive"] = true,
         ["visualWarningColor"] = 9
-      }
+      },
       ["gottesschild"] = {
         ["spellActive"] = true,
         ["soundWarningActive"] = true,
@@ -2970,7 +2970,7 @@ else
         ["soundFadeWarningActive"] = false,
         ["visualWarningActive"] = true,
         ["visualWarningColor"] = 9
-      }
+      },
       ["divine_shield"] = {
         ["spellActive"] = true,
         ["soundWarningActive"] = true,
@@ -3513,7 +3513,7 @@ else
         ["soundFadeWarningActive"] = false,
         ["visualWarningActive"] = true,
         ["visualWarningColor"] = 9
-      }
+      },
       ["divine_shield"] = {
         ["spellActive"] = true,
         ["soundWarningActive"] = true,
@@ -3785,7 +3785,7 @@ else
         ["soundFadeWarningActive"] = false,
         ["visualWarningActive"] = true,
         ["visualWarningColor"] = 9
-      }
+      },
       ["divine_shield"] = {
         ["spellActive"] = true,
         ["soundWarningActive"] = true,
@@ -4073,7 +4073,7 @@ else
         ["soundFadeWarningActive"] = false,
         ["visualWarningActive"] = true,
         ["visualWarningColor"] = 9
-      }
+      },
       ["divine_shield"] = {
         ["spellActive"] = true,
         ["soundWarningActive"] = true,
@@ -4086,7 +4086,7 @@ else
         ["soundWarningActive"] = true,
         ["visualWarningActive"] = true,
         ["visualWarningColor"] = 9
-      }
+      },
       ["hammer_of_justice"] = {
         ["spellActive"] = true,
         ["soundWarningActive"] = true,
@@ -4324,7 +4324,7 @@ else
         ["soundFadeWarningActive"] = false,
         ["visualWarningActive"] = true,
         ["visualWarningColor"] = 9
-      }
+      },
       ["divine_shield"] = {
         ["spellActive"] = true,
         ["soundWarningActive"] = true,
@@ -4823,7 +4823,7 @@ else
         ["soundFadeWarningActive"] = false,
         ["visualWarningActive"] = true,
         ["visualWarningColor"] = 9
-      }
+      },
       ["divine_shield"] = {
         ["spellActive"] = true,
         ["soundWarningActive"] = true,
@@ -4932,12 +4932,30 @@ end
 
 function me.GetDefaultProfile()
   local playerClass = string.lower(mod.common.GetPlayerClassName())
-  mod.logger.LogError(me.tag, "playerClass: " .. playerClass)
 
   if playerClass == PVPW_CLASSLIST[1] then
     return defaultProfileWarrior
+  elseif playerClass == PVPW_CLASSLIST[2] then
+    return defaultProfilePaladin
+  elseif playerClass == PVPW_CLASSLIST[2] then
+    return defaultProfilePaladin
+  elseif playerClass == PVPW_CLASSLIST[3] then
+    return defaultProfileRogue
+  elseif playerClass == PVPW_CLASSLIST[4] then
+    return defaultProfilePriest
+  elseif playerClass == PVPW_CLASSLIST[5] then
+    return defaultProfileShaman
+  elseif playerClass == PVPW_CLASSLIST[6] then
+    return defaultProfileMage
+  elseif playerClass == PVPW_CLASSLIST[7] then
+    return defaultProfileWarlock
+  elseif playerClass == PVPW_CLASSLIST[8] then
+    return defaultProfileDruid
+  elseif playerClass == PVPW_CLASSLIST[9] then
+    return defaultProfileHunter
   else
-
+    mod.logger.LogError(me.tag, "Invalid Playerclass")
+    return nil
   end
 end
 
