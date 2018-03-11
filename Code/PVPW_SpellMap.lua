@@ -1776,7 +1776,7 @@ if (GetLocale() == "deDE") then
         ["active"] = true
       },
       ["unverwundbarkeit"] = {
-        ["name"] = "Unverwundbarkeit",
+        ["name"] = "Begrenzter Unverwundbarkeitstrank",
         ["soundFileName"] = "unverwundbarkeit",
         ["itemID"] = 3387,
         ["spellID"] = 3169,
@@ -1785,7 +1785,7 @@ if (GetLocale() == "deDE") then
         ["active"] = true
       },
       ["freie_aktion"] = {
-        ["name"] = "Freie Aktion",
+        ["name"] = "Trank der freien Aktion",
         ["soundFileName"] = "freie_aktion",
         ["itemID"] = 5634,
         ["spellID"] = 6615,
@@ -1820,7 +1820,7 @@ if (GetLocale() == "deDE") then
         }
       },
       ["schattenschutz"] = {
-        ["name"] = "Schattenschutztrank",
+        ["name"] = "Großer Schattenschutztrank",
         ["soundFileName"] = "schattenschutz",
         ["itemID"] = 13459,
         ["spellID"] = 17548,
@@ -1829,7 +1829,7 @@ if (GetLocale() == "deDE") then
         ["active"] = true
       },
       ["frostschutz"] = {
-        ["name"] = "Frostschutztrank",
+        ["name"] = "Großer Frostschutztrank",
         ["soundFileName"] = "frostschutz",
         ["itemID"] = 13456,
         ["spellID"] = 17544,
@@ -1838,7 +1838,7 @@ if (GetLocale() == "deDE") then
         ["active"] = true
       },
       ["feuerschutz"] = {
-        ["name"] = "Feuerschutztrank",
+        ["name"] = "Großer Feuerschutztrank",
         ["soundFileName"] = "feuerschutz",
         ["itemID"] = 13457,
         ["spellID"] = 17543,
@@ -1847,7 +1847,7 @@ if (GetLocale() == "deDE") then
         ["active"] = true
       },
       ["naturschutz"] = {
-        ["name"] = "Naturschutztrank",
+        ["name"] = "Großer Naturschutztrank",
         ["soundFileName"] = "naturschutz",
         ["itemID"] = 13458,
         ["spellID"] = 17546,
@@ -1856,7 +1856,7 @@ if (GetLocale() == "deDE") then
         ["active"] = true
       },
       ["arkanschutz"] = {
-        ["name"] = "Arkanschutztrank",
+        ["name"] = "Großer Arkanschutztrank",
         ["soundFileName"] = "arkanschutz",
         ["itemID"] = 13461,
         ["spellID"] = 17549,
@@ -3588,7 +3588,7 @@ else
         ["active"] = true
       },
       ["free_action"] = {
-        ["name"] = "Free Action",
+        ["name"] = "Free Action Potion",
         ["soundFileName"] = "free_action",
         ["itemID"] = 5634,
         ["spellID"] = 6615,
@@ -3623,7 +3623,7 @@ else
         }
       },
       ["shadow_protection"] = {
-        ["name"] = "Shadow Protection Potion",
+        ["name"] = "Greater Shadow Protection Potion",
         ["soundFileName"] = "shadow_protection",
         ["itemID"] = 13459,
         ["spellID"] = 17548,
@@ -3632,7 +3632,7 @@ else
         ["active"] = true
       },
       ["frost_protection"] = {
-        ["name"] = "Frost Protection Potion",
+        ["name"] = "Greater Frost Protection Potion",
         ["soundFileName"] = "frost_protection",
         ["itemID"] = 13456,
         ["spellID"] = 17544,
@@ -3641,7 +3641,7 @@ else
         ["active"] = true
       },
       ["fire_protection"] = {
-        ["name"] = "Fire Protection Potion",
+        ["name"] = "Greater Fire Protection Potion",
         ["soundFileName"] = "fire_protection",
         ["itemID"] = 13457,
         ["spellID"] = 17543,
@@ -3650,7 +3650,7 @@ else
         ["active"] = true
       },
       ["nature_protection"] = {
-        ["name"] = "Nature Protection Potion",
+        ["name"] = "Greater Nature Protection Potion",
         ["soundFileName"] = "nature_protection",
         ["itemID"] = 13458,
         ["spellID"] = 17546,
@@ -3659,7 +3659,7 @@ else
         ["active"] = true
       },
       ["arcane_protection"] = {
-        ["name"] = "Arcane Protection Potion",
+        ["name"] = "Greater Arcane Protection Potion",
         ["soundFileName"] = "arcane_protection",
         ["itemID"] = 13461,
         ["spellID"] = 17549,
