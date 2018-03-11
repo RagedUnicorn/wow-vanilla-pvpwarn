@@ -131,6 +131,7 @@ function me.RunAll(playManual)
   -- test sound
   mod.testReporter.AddToTestQueueWithDelay(me.TestSoundBlind)
   mod.testReporter.AddToTestQueueWithDelay(me.TestSoundKick)
+  mod.testReporter.AddToTestQueueWithDelay(me.TestSoundKickSilenced)
   mod.testReporter.AddToTestQueueWithDelay(me.TestSoundSprint)
   mod.testReporter.AddToTestQueueWithDelay(me.TestSoundDownSprint)
   mod.testReporter.AddToTestQueueWithDelay(me.TestSoundEvasion)
@@ -178,6 +179,7 @@ function me.RunAll(playManual)
   mod.testReporter.AddToTestQueue(me.TestParseBlind)
   mod.testReporter.AddToTestQueue(me.TestParseKick)
   mod.testReporter.AddToTestQueue(me.TestParseCritKick)
+  mod.testReporter.AddToTestQueue(me.TestParseCritKickSilenced)
   mod.testReporter.AddToTestQueue(me.TestParseSprint)
   mod.testReporter.AddToTestQueue(me.TestParseDownSprint)
   mod.testReporter.AddToTestQueue(me.TestParseEvasion)
@@ -294,6 +296,14 @@ function me.TestSoundKick()
     className,
     "TestSoundKick",
     "kick"
+  )
+end
+
+function me.TestSoundKickSilenced()
+  mod.testHelper.TestSound(
+    className,
+    "TestSoundKickSilenced",
+    "kick_silenced"
   )
 end
 
@@ -628,6 +638,16 @@ function me.TestParseCritKick()
     "kick",
     "$player$'s Kick crits you for $amount$.",
     mod.testHelper.eventTypeSpellHostilePlayerDamage
+  )
+end
+
+function me.TestParseKickSilenced()
+  mod.testHelper.TestParse(
+    className,
+    "TestParseKickSilenced",
+    "kick_silenced",
+    "You are afflicted by Kick - Silenced.",
+    mod.testHelper.eventTypeSpellPeriodicSelfDamage
   )
 end
 

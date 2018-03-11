@@ -117,6 +117,7 @@ function me.RunAll(playManual)
   -- test sound
   mod.testReporter.AddToTestQueueWithDelay(me.TestSoundBlenden)
   mod.testReporter.AddToTestQueueWithDelay(me.TestSoundTritt)
+  mod.testReporter.AddToTestQueueWithDelay(me.TestSoundTrittZumSchweigenGebracht)
   mod.testReporter.AddToTestQueueWithDelay(me.TestSoundSprinten)
   mod.testReporter.AddToTestQueueWithDelay(me.TestSoundDownSprinten)
   mod.testReporter.AddToTestQueueWithDelay(me.TestSoundEntrinnen)
@@ -163,6 +164,7 @@ function me.RunAll(playManual)
   mod.testReporter.AddToTestQueue(me.TestParseBlenden)
   mod.testReporter.AddToTestQueue(me.TestParseTritt)
   mod.testReporter.AddToTestQueue(me.TestParseCritTritt)
+  mod.testReporter.AddToTestQueue(me.TestParseTrittZumSchweigenGebracht)
   mod.testReporter.AddToTestQueue(me.TestParseSprinten)
   mod.testReporter.AddToTestQueue(me.TestParseDownSprinten)
   mod.testReporter.AddToTestQueue(me.TestParseEntrinnen)
@@ -278,6 +280,14 @@ function me.TestSoundTritt()
     className,
     "TestSoundTritt",
     "tritt"
+  )
+end
+
+function me.TestSoundTrittZumSchweigenGebracht()
+  mod.testHelper.TestSound(
+    className,
+    "TestSoundTrittZumSchweigenGebracht",
+    "tritt_zum_schweigen_gebracht"
   )
 end
 
@@ -612,6 +622,16 @@ function me.TestParseCritTritt()
     "tritt",
     "$player$ trifft Euch kritisch (mit Tritt). Schaden: $amount$.",
     mod.testHelper.eventTypeSpellHostilePlayerDamage
+  )
+end
+
+function me.TestParseKickZumSchweigenGebracht()
+  mod.testHelper.TestParse(
+    className,
+    "TestParseKickZumSchweigenGebracht",
+    "tritt_zum_schweigen_gebracht",
+    "Ihr seid von Tritt - zum Schweigen gebracht betroffen.",
+    mod.testHelper.eventTypeSpellPeriodicSelfDamage
   )
 end
 

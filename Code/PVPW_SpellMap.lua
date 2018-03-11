@@ -399,6 +399,18 @@ if (GetLocale() == "deDE") then
         ["canCrit"] = true,
         ["active"] = true
       },
+      ["tritt_zum_schweigen_gebracht"] = {
+        ["name"] = "Tritt - zum Schweigen gebracht",
+        ["soundFileName"] = "tritt",
+        ["spellID"] = 13867,
+        ["spellIcon"] = "ability_kick",
+        ["hasFade"] = false,
+        ["active"] = true,
+        ["ignoreEvents"] = {
+          "CHAT_MSG_SPELL_AURA_GONE_OTHER",
+          "CHAT_MSG_SPELL_PERIODIC_HOSTILEPLAYER_DAMAGE"
+        }
+      },
       ["sprinten"] = {
         ["name"] = "Sprinten",
         ["soundFileName"] = "sprinten",
@@ -2189,6 +2201,18 @@ else
         ["hasFade"] = false,
         ["canCrit"] = true,
         ["active"] = true
+      },
+      ["kick_silenced"] = {
+        ["name"] = "Kick - Silenced",
+        ["soundFileName"] = "kick",
+        ["spellID"] = 13867,
+        ["spellIcon"] = "ability_kick",
+        ["hasFade"] = false,
+        ["active"] = true,
+        ["ignoreEvents"] = {
+          "CHAT_MSG_SPELL_AURA_GONE_OTHER",
+          "CHAT_MSG_SPELL_PERIODIC_HOSTILEPLAYER_DAMAGE"
+        }
       },
       ["sprint"] = {
         ["name"] = "Sprint",
