@@ -1523,7 +1523,7 @@ if (GetLocale() == "deDE") then
     },
     ["items"] = {
       ["koerperlicher_schutz"] = {
-        ["name"] = "Körperlicher Schutz",
+        ["name"] = "Großmeister der Arena",
         ["soundFileName"] = "koerperlicher_schutz",
         ["itemID"] = 19024,
         ["spellID"] = 23506,
@@ -1532,7 +1532,7 @@ if (GetLocale() == "deDE") then
         ["active"] = true
       },
       ["sproede_ruestung"] = {
-        ["name"] = "Spröde Rüstung",
+        ["name"] = "Heldenabzeichen der Zandalari",
         ["soundFileName"] = "sproede_ruestung",
         ["itemID"] = 19948,
         ["spellID"] = 24590,
@@ -1577,7 +1577,7 @@ if (GetLocale() == "deDE") then
         ["active"] = true
       },
       ["fliehen"] = {
-        ["name"] = "Fliehen",
+        ["name"] = "Schädel der drohenden Verdammnis",
         ["soundFileName"] = "fliehen",
         ["itemID"] = 4984,
         ["spellID"] = 5024,
@@ -1604,7 +1604,7 @@ if (GetLocale() == "deDE") then
         ["active"] = true
       },
       ["immunitaet_gegen_unbeweglichkeit"] = {
-        ["name"] = "Immunität gegen Unbeweglichkeit",
+        ["name"] = "Spinnengürtel",
         ["soundFileName"] = "immunitaet_gegen_unbeweglichkeit",
         ["itemID"] = 4328,
         ["spellID"] = 9774,
@@ -1622,7 +1622,7 @@ if (GetLocale() == "deDE") then
         ["active"] = true
       },
       ["tollkuehnes_stuermen"] = {
-        ["name"] = "Tollkühnes Stürmen",
+        ["name"] = "Goblinraketenhelm",
         ["soundFileName"] = "raketenhelm",
         ["itemID"] = 10588,
         ["spellID"] = 22641,
@@ -1635,7 +1635,7 @@ if (GetLocale() == "deDE") then
         }
       },
       ["ruhelose_staerke"] = {
-        ["name"] = "Ruhelose Stärke",
+        ["name"] = "Heldenmedaillon der Zandalari",
         ["soundFileName"] = "ruhelose_staerke",
         ["itemID"] = 19949,
         ["spellID"] = 24661,
@@ -1680,7 +1680,7 @@ if (GetLocale() == "deDE") then
         ["active"] = true
       },
       ["instabile_macht"] = {
-        ["name"] = "Instabile Macht",
+        ["name"] = "Heldenamulett der Zandalari",
         ["soundFileName"] = "instabile_macht",
         ["itemID"] = 19950,
         ["spellID"] = 24658,
@@ -3326,7 +3326,7 @@ else
     },
     ["items"] = {
       ["aura_of_protection"] = {
-        ["name"] = "Aura of Protection",
+        ["name"] = "Arena Grand Master",
         ["soundFileName"] = "aura_of_protection",
         ["itemID"] = 19024,
         ["spellID"] = 23506,
@@ -3335,7 +3335,7 @@ else
         ["active"] = true
       },
       ["brittle_armor"] = {
-        ["name"] = "Brittle Armor",
+        ["name"] = "Zandalarian Hero Badge",
         ["soundFileName"] = "brittle_armor",
         ["itemID"] = 19948,
         ["spellID"] = 24590,
@@ -3380,7 +3380,7 @@ else
         ["active"] = true
       },
       ["flee"] = {
-        ["name"] = "Flee",
+        ["name"] = "Skull of Impending Doom",
         ["soundFileName"] = "flee",
         ["itemID"] = 4984,
         ["spellID"] = 5024,
@@ -3407,7 +3407,7 @@ else
         ["active"] = true
       },
       ["immune_root"] = {
-        ["name"] = "Immune Root",
+        ["name"] = "Spider Belt",
         ["soundFileName"] = "immune_root",
         ["itemID"] = 4328,
         ["spellID"] = 9774,
@@ -3425,7 +3425,7 @@ else
         ["active"] = true
       },
       ["reckless_charge"] = {
-        ["name"] = "Reckless Charge",
+        ["name"] = "Goblin Rocket Helmet",
         ["soundFileName"] = "rocket_helmet",
         ["itemID"] = 10588,
         ["spellID"] = 22641,
@@ -3438,7 +3438,7 @@ else
         }
       },
       ["restless_strength"] = {
-        ["name"] = "Restless Strength",
+        ["name"] = "Zandalarian Hero Medallion",
         ["soundFileName"] = "restless_strength",
         ["itemID"] = 19949,
         ["spellID"] = 24661,
@@ -3483,7 +3483,7 @@ else
         ["active"] = true
       },
       ["unstable_power"] = {
-        ["name"] = "Unstable Power",
+        ["name"] = "Zandalarian Hero Charm",
         ["soundFileName"] = "unstable_power",
         ["itemID"] = 19950,
         ["spellID"] = 24658,
