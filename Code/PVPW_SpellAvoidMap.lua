@@ -919,6 +919,20 @@ if (GetLocale() == "deDE") then
         ["self_avoid"] = true,
         ["enemy_avoid"] = true
       },
+      ["feenfeuer_tiergestalt"] = {
+        ["name"] = "Feenfeuer (Tiergestalt)",
+        ["spellID"] = 17392, -- rank 4
+        ["spellIcon"] = "spell_nature_faeriefire",
+        ["soundFileName"] = "feenfeuer",
+        ["dodge"] = false,
+        ["parry"] = false,
+        ["immune"] = true,
+        ["miss"] = false,
+        ["block"] = false,
+        ["resist"] = true,
+        ["self_avoid"] = true,
+        ["enemy_avoid"] = true
+      },
       ["hieb"] = {
         ["name"] = "Hieb",
         ["spellID"] = 8983, -- rank 3
@@ -1933,6 +1947,20 @@ else
       ["faerie_fire"] = {
         ["name"] = "Faerie Fire",
         ["spellID"] = 9907, -- rank 4
+        ["spellIcon"] = "spell_nature_faeriefire",
+        ["soundFileName"] = "faerie_fire",
+        ["dodge"] = false,
+        ["parry"] = false,
+        ["immune"] = true,
+        ["miss"] = false,
+        ["block"] = false,
+        ["resist"] = true,
+        ["self_avoid"] = true,
+        ["enemy_avoid"] = true
+      },
+      ["faerie_fire_feral"] = {
+        ["name"] = "Farie Fire (Feral)",
+        ["spellID"] = 17392, -- rank 4
         ["spellIcon"] = "spell_nature_faeriefire",
         ["soundFileName"] = "faerie_fire",
         ["dodge"] = false,

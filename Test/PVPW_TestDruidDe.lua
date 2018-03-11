@@ -141,12 +141,15 @@ function me.RunAll(playManual)
   mod.testReporter.AddToTestQueueWithDelay(me.TestSoundSchnelligkeitDerNatur)
   mod.testReporter.AddToTestQueueWithDelay(me.TestSoundDownSchnelligkeitDerNatur)
   mod.testReporter.AddToTestQueueWithDelay(me.TestSoundFeenfeuer)
+  mod.testReporter.AddToTestQueueWithDelay(me.TestSoundFeenfeuerTiergestalt)
   mod.testReporter.AddToTestQueueWithDelay(me.TestSoundEnemyAvoidWucherwurzeln)
   mod.testReporter.AddToTestQueueWithDelay(me.TestSoundEnemyAvoidFeenfeuer)
+  mod.testReporter.AddToTestQueueWithDelay(me.TestSoundEnemyAvoidFeenfeuerTiergestalt)
   mod.testReporter.AddToTestQueueWithDelay(me.TestSoundEnemyAvoidHieb)
   mod.testReporter.AddToTestQueueWithDelay(me.TestSoundEnemyAvoidWildeAttacke)
   mod.testReporter.AddToTestQueueWithDelay(me.TestSoundSelfAvoidWucherwurzeln)
   mod.testReporter.AddToTestQueueWithDelay(me.TestSoundSelfAvoidFeenfeuer)
+  mod.testReporter.AddToTestQueueWithDelay(me.TestSoundSelfAvoidFeenfeuerTiergestalt)
   mod.testReporter.AddToTestQueueWithDelay(me.TestSoundSelfAvoidHieb)
   mod.testReporter.AddToTestQueueWithDelay(me.TestSoundSelfAvoidWildeAttacke)
 
@@ -169,10 +172,13 @@ function me.RunAll(playManual)
   mod.testReporter.AddToTestQueue(me.TestParseSchnelligkeitDerNatur)
   mod.testReporter.AddToTestQueue(me.TestParseDownSchnelligkeitDerNatur)
   mod.testReporter.AddToTestQueue(me.TestParseFeenfeuer)
+  mod.testReporter.AddToTestQueue(me.TestParseFeenfeuerTiergestalt)
   mod.testReporter.AddToTestQueue(me.TestParseEnemyAvoidImmuneWucherwurzeln)
   mod.testReporter.AddToTestQueue(me.TestParseEnemyAvoidResistWucherwurzeln)
   mod.testReporter.AddToTestQueue(me.TestParseEnemyAvoidImmuneFeenfeuer)
   mod.testReporter.AddToTestQueue(me.TestParseEnemyAvoidResistFeenfeuer)
+  mod.testReporter.AddToTestQueue(me.TestParseEnemyAvoidImmuneFeenfeuerTiergestalt)
+  mod.testReporter.AddToTestQueue(me.TestParseEnemyAvoidResistFeenfeuerTiergestalt)
   mod.testReporter.AddToTestQueue(me.TestParseEnemyAvoidDodgeHieb)
   mod.testReporter.AddToTestQueue(me.TestParseEnemyAvoidParryHieb)
   mod.testReporter.AddToTestQueue(me.TestParseEnemyAvoidImmuneHieb)
@@ -184,6 +190,8 @@ function me.RunAll(playManual)
   mod.testReporter.AddToTestQueue(me.TestParseSelfAvoidResistWucherwurzeln)
   mod.testReporter.AddToTestQueue(me.TestParseSelfAvoidImmuneFeenfeuer)
   mod.testReporter.AddToTestQueue(me.TestParseSelfAvoidResistFeenfeuer)
+  mod.testReporter.AddToTestQueue(me.TestParseSelfAvoidImmuneFeenfeuerTiergestalt)
+  mod.testReporter.AddToTestQueue(me.TestParseSelfAvoidResistFeenfeuerTiergestalt)
   mod.testReporter.AddToTestQueue(me.TestParseSelfAvoidDodgeHieb)
   mod.testReporter.AddToTestQueue(me.TestParseSelfAvoidParryHieb)
   mod.testReporter.AddToTestQueue(me.TestParseSelfAvoidImmuneHieb)
@@ -315,6 +323,14 @@ function me.TestSoundFeenfeuer()
   )
 end
 
+function me.TestSoundFeenfeuerTiergestalt()
+  mod.testHelper.TestSound(
+    className,
+    "TestSoundFeenfeuerTiergestalt",
+    "feenfeuer_tiergestalt"
+  )
+end
+
 function me.TestSoundEnemyAvoidWucherwurzeln()
   mod.testHelper.TestSoundEnemyAvoid(
     className,
@@ -328,6 +344,14 @@ function me.TestSoundEnemyAvoidFeenfeuer()
     className,
     "TestSoundEnemyAvoidFeenfeuer",
     "feenfeuer"
+  )
+end
+
+function me.TestSoundEnemyAvoidFeenfeuerTiergestalt()
+  mod.testHelper.TestSoundEnemyAvoid(
+    className,
+    "TestSoundEnemyAvoidFeenfeuerTiergestalt",
+    "feenfeuer_tiergestalt"
   )
 end
 
@@ -360,6 +384,14 @@ function me.TestSoundSelfAvoidFeenfeuer()
     className,
     "TestSoundSelfAvoidFeenfeuer",
     "feenfeuer"
+  )
+end
+
+function me.TestSoundSelfAvoidFeenfeuerTiergestalt()
+  mod.testHelper.TestSoundSelfAvoid(
+    className,
+    "TestSoundSelfAvoidFeenfeuerTiergestalt",
+    "feenfeuer_tiergestalt"
   )
 end
 
@@ -529,6 +561,16 @@ function me.TestParseFeenfeuer()
   )
 end
 
+function me.TestParseFeenfeuerTiergestalt()
+  mod.testHelper.TestParse(
+    className,
+    "TestParseFeenfeuerTiergestalt",
+    "feenfeuer_tiergestalt",
+    "Ihr seid von Feenfeuer (Tiergestalt) betroffen.",
+    mod.testHelper.eventTypeSpellPeriodicSelfDamage
+  )
+end
+
 function me.TestParseEnemyAvoidImmuneWucherwurzeln()
   mod.testHelper.TestParseEnemyAvoid(
     className,
@@ -568,6 +610,28 @@ function me.TestParseEnemyAvoidResistFeenfeuer()
     "TestParseEnemyAvoidResistFeenfeuer",
     "feenfeuer",
     "Ihr habt es mit Feenfeuer versucht, aber $player$ hat widerstanden.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    PVPW_CONSTANTS.AVOID_TYPES.RESIST
+  )
+end
+
+function me.TestParseEnemyAvoidImmuneFeenfeuerTiergestalt()
+  mod.testHelper.TestParseEnemyAvoid(
+    className,
+    "TestParseEnemyAvoidImmuneFeenfeuerTiergestalt",
+    "feenfeuer_tiergestalt",
+    "Feenfeuer (Tiergestalt) war ein Fehlschlag. $player$ ist immun.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    PVPW_CONSTANTS.AVOID_TYPES.IMMUNE
+  )
+end
+
+function me.TestParseEnemyAvoidResistFeenfeuerTiergestalt()
+  mod.testHelper.TestParseEnemyAvoid(
+    className,
+    "TestParseEnemyAvoidResistFeenfeuerTiergestalt",
+    "feenfeuer_tiergestalt",
+    "Ihr habt es mit Feenfeuer (Tiergestalt) versucht, aber $player$ hat widerstanden.",
     mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
     PVPW_CONSTANTS.AVOID_TYPES.RESIST
   )
@@ -689,6 +753,28 @@ function me.TestParseSelfAvoidResistFeenfeuer()
     "TestParseSelfAvoidResistFeenfeuer",
     "feenfeuer",
     "$player$ versucht es mit Feenfeuer... widerstanden.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    PVPW_CONSTANTS.AVOID_TYPES.RESIST
+  )
+end
+
+function me.TestParseSelfAvoidImmuneFeenfeuerTiergestalt()
+  mod.testHelper.TestParseSelfAvoid(
+    className,
+    "TestParseSelfAvoidImmuneFeenfeuerTiergestalt",
+    "feenfeuer_tiergestalt",
+    "$player$ versucht es mit Feenfeuer (Tiergestalt)... ein Fehlschlag. Ihr seid immun.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    PVPW_CONSTANTS.AVOID_TYPES.IMMUNE
+  )
+end
+
+function me.TestParseSelfAvoidResistFeenfeuerTiergestalt()
+  mod.testHelper.TestParseSelfAvoid(
+    className,
+    "TestParseSelfAvoidResistFeenfeuerTiergestalt",
+    "feenfeuer_tiergestalt",
+    "$player$ versucht es mit Feenfeuer (Tiergestalt)... widerstanden.",
     mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
     PVPW_CONSTANTS.AVOID_TYPES.RESIST
   )

@@ -1227,6 +1227,18 @@ if (GetLocale() == "deDE") then
           "CHAT_MSG_SPELL_AURA_GONE_OTHER",
           "CHAT_MSG_SPELL_PERIODIC_HOSTILEPLAYER_DAMAGE"
         }
+      },
+      ["feenfeuer_tiergestalt"] = {
+        ["name"] = "Feenfeuer (Tiergestalt)",
+        ["soundFileName"] = "feenfeuer",
+        ["spellID"] = 17392, -- rank 4
+        ["spellIcon"] = "spell_nature_faeriefire",
+        ["hasFade"] = false,
+        ["active"] = true,
+        ["ignoreEvents"] = {
+          "CHAT_MSG_SPELL_AURA_GONE_OTHER",
+          "CHAT_MSG_SPELL_PERIODIC_HOSTILEPLAYER_DAMAGE"
+        }
       }
     },
     ["shaman"] = {
@@ -2998,7 +3010,19 @@ else
       ["faerie_fire"] = {
         ["name"] = "Farie Fire",
         ["soundFileName"] = "faerie_fire",
-        ["spellID"] = 9907,
+        ["spellID"] = 9907, -- rank 4
+        ["spellIcon"] = "spell_nature_faeriefire",
+        ["hasFade"] = false,
+        ["active"] = true,
+        ["ignoreEvents"] = {
+          "CHAT_MSG_SPELL_AURA_GONE_OTHER",
+          "CHAT_MSG_SPELL_PERIODIC_HOSTILEPLAYER_DAMAGE"
+        }
+      },
+      ["faerie_fire_feral"] = {
+        ["name"] = "Farie Fire (Feral)",
+        ["soundFileName"] = "faerie_fire",
+        ["spellID"] = 17392, -- rank 4
         ["spellIcon"] = "spell_nature_faeriefire",
         ["hasFade"] = false,
         ["active"] = true,

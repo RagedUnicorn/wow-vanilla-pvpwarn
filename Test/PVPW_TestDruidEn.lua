@@ -141,12 +141,15 @@ function me.RunAll(playManual)
   mod.testReporter.AddToTestQueueWithDelay(me.TestSoundNaturesSwiftness)
   mod.testReporter.AddToTestQueueWithDelay(me.TestSoundDownNaturesSwiftness)
   mod.testReporter.AddToTestQueueWithDelay(me.TestSoundFaerieFire)
+  mod.testReporter.AddToTestQueueWithDelay(me.TestSoundFaerieFireFeral)
   mod.testReporter.AddToTestQueueWithDelay(me.TestSoundEnemyAvoidEntanglingRoots)
   mod.testReporter.AddToTestQueueWithDelay(me.TestSoundEnemyAvoidFaerieFire)
+  mod.testReporter.AddToTestQueueWithDelay(me.TestSoundEnemyAvoidFaerieFireFeral)
   mod.testReporter.AddToTestQueueWithDelay(me.TestSoundEnemyAvoidBash)
   mod.testReporter.AddToTestQueueWithDelay(me.TestSoundEnemyAvoidFeralChargeEffect)
   mod.testReporter.AddToTestQueueWithDelay(me.TestSoundSelfAvoidEntanglingRoots)
   mod.testReporter.AddToTestQueueWithDelay(me.TestSoundSelfAvoidFaerieFire)
+  mod.testReporter.AddToTestQueueWithDelay(me.TestSoundSelfAvoidFaerieFireFeral)
   mod.testReporter.AddToTestQueueWithDelay(me.TestSoundSelfAvoidBash)
   mod.testReporter.AddToTestQueueWithDelay(me.TestSoundSelfAvoidFeralChargeEffect)
 
@@ -170,10 +173,13 @@ function me.RunAll(playManual)
   mod.testReporter.AddToTestQueue(me.TestParseNaturesSwiftness)
   mod.testReporter.AddToTestQueue(me.TestParseDownNaturesSwiftness)
   mod.testReporter.AddToTestQueue(me.TestParseFaerieFire)
+  mod.testReporter.AddToTestQueue(me.TestParseFaerieFireFeral)
   mod.testReporter.AddToTestQueue(me.TestParseEnemyAvoidImmuneEntanglingRoots)
   mod.testReporter.AddToTestQueue(me.TestParseEnemyAvoidResistEntanglingRoots)
   mod.testReporter.AddToTestQueue(me.TestParseEnemyAvoidImmuneFaerieFire)
   mod.testReporter.AddToTestQueue(me.TestParseEnemyAvoidResistFaerieFire)
+  mod.testReporter.AddToTestQueue(me.TestParseEnemyAvoidImmuneFaerieFireFeral)
+  mod.testReporter.AddToTestQueue(me.TestParseEnemyAvoidResistFaerieFireFeral)
   mod.testReporter.AddToTestQueue(me.TestParseEnemyAvoidDodgeBash)
   mod.testReporter.AddToTestQueue(me.TestParseEnemyAvoidParryBash)
   mod.testReporter.AddToTestQueue(me.TestParseEnemyAvoidImmuneBash)
@@ -185,6 +191,8 @@ function me.RunAll(playManual)
   mod.testReporter.AddToTestQueue(me.TestParseSelfAvoidResistEntanglingRoots)
   mod.testReporter.AddToTestQueue(me.TestParseSelfAvoidImmuneFaerieFire)
   mod.testReporter.AddToTestQueue(me.TestParseSelfAvoidResistFaerieFire)
+  mod.testReporter.AddToTestQueue(me.TestParseSelfAvoidImmuneFaerieFireFeral)
+  mod.testReporter.AddToTestQueue(me.TestParseSelfAvoidResistFaerieFireFeral)
   mod.testReporter.AddToTestQueue(me.TestParseSelfAvoidDodgeBash)
   mod.testReporter.AddToTestQueue(me.TestParseSelfAvoidParryBash)
   mod.testReporter.AddToTestQueue(me.TestParseSelfAvoidImmuneBash)
@@ -316,6 +324,14 @@ function me.TestSoundFaerieFire()
   )
 end
 
+function me.TestSoundFaerieFireFeral()
+  mod.testHelper.TestSound(
+    className,
+    "TestSoundFaerieFireFeral",
+    "faerie_fire_feral"
+  )
+end
+
 function me.TestSoundEnemyAvoidEntanglingRoots()
   mod.testHelper.TestSoundEnemyAvoid(
     className,
@@ -329,6 +345,14 @@ function me.TestSoundEnemyAvoidFaerieFire()
     className,
     "TestSoundEnemyAvoidFaerieFire",
     "faerie_fire"
+  )
+end
+
+function me.TestSoundEnemyAvoidFaerieFireFeral()
+  mod.testHelper.TestSoundEnemyAvoid(
+    className,
+    "TestSoundEnemyAvoidFaerieFireFeral",
+    "faerie_fire_feral"
   )
 end
 
@@ -361,6 +385,14 @@ function me.TestSoundSelfAvoidFaerieFire()
     className,
     "TestSoundSelfAvoidFaerieFire",
     "faerie_fire"
+  )
+end
+
+function me.TestSoundSelfAvoidFaerieFireFeral()
+  mod.testHelper.TestSoundSelfAvoid(
+    className,
+    "TestSoundSelfAvoidFaerieFireFeral",
+    "faerie_fire_feral"
   )
 end
 
@@ -530,6 +562,16 @@ function me.TestParseFaerieFire()
   )
 end
 
+function me.TestParseFaerieFireFeral()
+  mod.testHelper.TestParse(
+    className,
+    "TestParseFaerieFireFeral",
+    "faerie_fire_feral",
+    "You are afflicted by Faerie Fire (Feral).",
+    mod.testHelper.eventTypeSpellPeriodicSelfDamage
+  )
+end
+
 function me.TestParseEnemyAvoidImmuneEntanglingRoots()
   mod.testHelper.TestParseEnemyAvoid(
     className,
@@ -569,6 +611,28 @@ function me.TestParseEnemyAvoidResistFaerieFire()
     "TestParseEnemyAvoidResistFaerieFire",
     "faerie_fire",
     "Your Faerie Fire was resisted by $player$.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    PVPW_CONSTANTS.AVOID_TYPES.RESIST
+  )
+end
+
+function me.TestParseEnemyAvoidImmuneFaerieFireFeral()
+  mod.testHelper.TestParseEnemyAvoid(
+    className,
+    "TestParseEnemyAvoidImmuneFaerieFireFeral",
+    "faerie_fire_feral",
+    "Your Faerie Fire (Feral) failed. $player$ is immune.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    PVPW_CONSTANTS.AVOID_TYPES.IMMUNE
+  )
+end
+
+function me.TestParseEnemyAvoidResistFaerieFireFeral()
+  mod.testHelper.TestParseEnemyAvoid(
+    className,
+    "TestParseEnemyAvoidResistFaerieFireFeral",
+    "faerie_fire_feral",
+    "Your Faerie Fire (Feral) was resisted by $player$.",
     mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
     PVPW_CONSTANTS.AVOID_TYPES.RESIST
   )
@@ -690,6 +754,28 @@ function me.TestParseSelfAvoidResistFaerieFire()
     "TestParseSelfAvoidResistFaerieFire",
     "faerie_fire",
     "$player$'s Faerie Fire was resisted.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    PVPW_CONSTANTS.AVOID_TYPES.RESIST
+  )
+end
+
+function me.TestParseSelfAvoidImmuneFaerieFireFeral()
+  mod.testHelper.TestParseSelfAvoid(
+    className,
+    "TestParseSelfAvoidImmuneFaerieFireFeral",
+    "faerie_fire_feral",
+    "$player$'s Faerie Fire (Feral) failed. You are immune.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    PVPW_CONSTANTS.AVOID_TYPES.IMMUNE
+  )
+end
+
+function me.TestParseSelfAvoidResistFaerieFireFeral()
+  mod.testHelper.TestParseSelfAvoid(
+    className,
+    "TestParseSelfAvoidResistFaerieFireFeral",
+    "faerie_fire_feral",
+    "$player$'s Faerie Fire (Feral) was resisted.",
     mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
     PVPW_CONSTANTS.AVOID_TYPES.RESIST
   )
