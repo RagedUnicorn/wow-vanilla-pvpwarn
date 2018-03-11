@@ -137,6 +137,7 @@ function me.RunAll(playManual)
   mod.testReporter.AddToTestQueueWithDelay(me.TestSoundDownSchildblock)
   mod.testReporter.AddToTestQueueWithDelay(me.TestSoundSchildhieb)
   mod.testReporter.AddToTestQueueWithDelay(me.TestSoundSchildhiebZumSchweigenGebracht)
+  mod.testReporter.AddToTestQueueWithDelay(me.TestSoundSchildschlag)
   mod.testReporter.AddToTestQueueWithDelay(me.TestSoundEnemyAvoidBetaeubungAbfangen)
   mod.testReporter.AddToTestQueueWithDelay(me.TestSoundEnemyAvoidKniesehne)
   mod.testReporter.AddToTestQueueWithDelay(me.TestSoundEnemyAvoidToedlicherStoss)
@@ -148,6 +149,7 @@ function me.RunAll(playManual)
   mod.testReporter.AddToTestQueueWithDelay(me.TestSoundEnemyAvoidErschuetternderSchlag)
   mod.testReporter.AddToTestQueueWithDelay(me.TestSoundEnemyAvoidEntwaffnen)
   mod.testReporter.AddToTestQueueWithDelay(me.TestSoundEnemyAvoidSchildhieb)
+  mod.testReporter.AddToTestQueueWithDelay(me.TestSoundEnemyAvoidSchildschlag)
   mod.testReporter.AddToTestQueueWithDelay(me.TestSoundSelfAvoidBetaeubungAbfangen)
   mod.testReporter.AddToTestQueueWithDelay(me.TestSoundSelfAvoidKniesehne)
   mod.testReporter.AddToTestQueueWithDelay(me.TestSoundSelfAvoidToedlicherStoss)
@@ -159,6 +161,7 @@ function me.RunAll(playManual)
   mod.testReporter.AddToTestQueueWithDelay(me.TestSoundSelfAvoidErschuetternderSchlag)
   mod.testReporter.AddToTestQueueWithDelay(me.TestSoundSelfAvoidEntwaffnen)
   mod.testReporter.AddToTestQueueWithDelay(me.TestSoundSelfAvoidSchildhieb)
+  mod.testReporter.AddToTestQueueWithDelay(me.TestSoundSelfAvoidSchildschlag)
 
   if not playManual then
     mod.testReporter.PlayTestQueueWithDelay()
@@ -190,6 +193,7 @@ function me.RunAll(playManual)
   mod.testReporter.AddToTestQueue(me.TestParseDownSchildblock)
   mod.testReporter.AddToTestQueue(me.TestParseSchildhieb)
   mod.testReporter.AddToTestQueue(me.TestParseSchildhiebZumSchweigenGebacht)
+  mod.testReporter.AddToTestQueue(me.TestParseSchildschlag)
   mod.testReporter.AddToTestQueue(me.TestParseEnemyAvoidImmuneBetaeubungAbfangen)
   mod.testReporter.AddToTestQueue(me.TestParseEnemyAvoidResistBetaeubungAbfangen)
   mod.testReporter.AddToTestQueue(me.TestParseEnemyAvoidDodgeKniesehne)
@@ -232,6 +236,11 @@ function me.RunAll(playManual)
   mod.testReporter.AddToTestQueue(me.TestParseEnemyAvoidImmuneSchildhieb)
   mod.testReporter.AddToTestQueue(me.TestParseEnemyAvoidMissSchildhieb)
   mod.testReporter.AddToTestQueue(me.TestParseEnemyAvoidBlockSchildhieb)
+  mod.testReporter.AddToTestQueue(me.TestParseEnemyAvoidDodgeSchildschlag)
+  mod.testReporter.AddToTestQueue(me.TestParseEnemyAvoidParrySchildschlag)
+  mod.testReporter.AddToTestQueue(me.TestParseEnemyAvoidImmuneSchildschlag)
+  mod.testReporter.AddToTestQueue(me.TestParseEnemyAvoidMissSchildschlag)
+  mod.testReporter.AddToTestQueue(me.TestParseEnemyAvoidBlockSchildschlag)
   mod.testReporter.AddToTestQueue(me.TestParseSelfAvoidImmuneBetaeubungAbfangen)
   mod.testReporter.AddToTestQueue(me.TestParseSelfAvoidResistBetaeubungAbfangen)
   mod.testReporter.AddToTestQueue(me.TestParseSelfAvoidDodgeKniesehne)
@@ -274,6 +283,11 @@ function me.RunAll(playManual)
   mod.testReporter.AddToTestQueue(me.TestParseSelfAvoidImmuneSchildhieb)
   mod.testReporter.AddToTestQueue(me.TestParseSelfAvoidMissSchildhieb)
   mod.testReporter.AddToTestQueue(me.TestParseSelfAvoidBlockSchildhieb)
+  mod.testReporter.AddToTestQueue(me.TestParseSelfAvoidDodgeSchildschlag)
+  mod.testReporter.AddToTestQueue(me.TestParseSelfAvoidParrySchildschlag)
+  mod.testReporter.AddToTestQueue(me.TestParseSelfAvoidImmuneSchildschlag)
+  mod.testReporter.AddToTestQueue(me.TestParseSelfAvoidMissSchildschlag)
+  mod.testReporter.AddToTestQueue(me.TestParseSelfAvoidBlockSchildschlag)
 
   mod.testReporter.PlayTestQueue()
 end
@@ -478,6 +492,14 @@ function me.TestSoundSchildhiebZumSchweigenGebracht()
   )
 end
 
+function me.TestSoundSchildschlag()
+  mod.testHelper.TestSound(
+    className,
+    "TestSoundSchildschlag",
+    "schildschlag"
+  )
+end
+
 function me.TestSoundEnemyAvoidBetaeubungAbfangen()
   mod.testHelper.TestSoundEnemyAvoid(
     className,
@@ -566,6 +588,14 @@ function me.TestSoundEnemyAvoidSchildhieb()
   )
 end
 
+function me.TestSoundEnemyAvoidSchildschlag()
+  mod.testHelper.TestSoundEnemyAvoid(
+    className,
+    "TestSoundEnemyAvoidSchildschlag",
+    "schildschlag"
+  )
+end
+
 function me.TestSoundSelfAvoidBetaeubungAbfangen()
   mod.testHelper.TestSoundSelfAvoid(
     className,
@@ -651,6 +681,14 @@ function me.TestSoundSelfAvoidSchildhieb()
     className,
     "TestSoundSelfAvoidSchildhieb",
     "schildhieb"
+  )
+end
+
+function me.TestSoundSelfAvoidSchildschlag()
+  mod.testHelper.TestSoundSelfAvoid(
+    className,
+    "TestSoundSelfAvoidSchildschlag",
+    "schildschlag"
   )
 end
 
@@ -911,6 +949,16 @@ function me.TestParseSchildhiebZumSchweigenGebacht()
     "schildhieb_zum_schweigen_gebracht",
     "Ihr seid von Schildhieb - zum Schweigen gebracht betroffen.",
     mod.testHelper.eventTypeSpellPeriodicSelfDamage
+  )
+end
+
+function me.TestParseSchildschlag()
+  mod.testHelper.TestParse(
+    className,
+    "TestParseSchildschlag",
+    "schildschlag",
+    "$player$ trifft Euch (mit Schildschlag). Schaden: $amount$.",
+    mod.testHelper.eventTypeSpellHostilePlayerDamage
   )
 end
 
@@ -1376,6 +1424,61 @@ function me.TestParseEnemyAvoidBlockSchildhieb()
   )
 end
 
+function me.TestParseEnemyAvoidDodgeSchildschlag()
+  mod.testHelper.TestParseEnemyAvoid(
+    className,
+    "TestParseEnemyAvoidDodgeSchildschlag",
+    "schildschlag",
+    "$player$ ist Schildschlag ausgewichen.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    PVPW_CONSTANTS.AVOID_TYPES.DODGE
+  )
+end
+
+function me.TestParseEnemyAvoidParrySchildschlag()
+  mod.testHelper.TestParseEnemyAvoid(
+    className,
+    "TestParseEnemyAvoidParrySchildschlag",
+    "schildschlag",
+    "Schildschlag wurde von $player$ pariert.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    PVPW_CONSTANTS.AVOID_TYPES.PARRY
+  )
+end
+
+function me.TestParseEnemyAvoidImmuneSchildschlag()
+  mod.testHelper.TestParseEnemyAvoid(
+    className,
+    "TestParseEnemyAvoidImmuneSchildschlag",
+    "schildschlag",
+    "Schildschlag war ein Fehlschlag. $player$ ist immun.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    PVPW_CONSTANTS.AVOID_TYPES.IMMUNE
+  )
+end
+
+function me.TestParseEnemyAvoidMissSchildschlag()
+  mod.testHelper.TestParseEnemyAvoid(
+    className,
+    "TestParseEnemyAvoidMissSchildschlag",
+    "schildschlag",
+    "Schildschlag hat $player$ verfehlt.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    PVPW_CONSTANTS.AVOID_TYPES.MISS
+  )
+end
+
+function me.TestParseEnemyAvoidBlockSchildschlag()
+  mod.testHelper.TestParseEnemyAvoid(
+    className,
+    "TestParseEnemyAvoidBlockSchildschlag",
+    "schildschlag",
+    "Schildschlag wurde von $player$ geblockt.",
+    mod.testHelper.eventTypeSpellSelfDamage,
+    PVPW_CONSTANTS.AVOID_TYPES.BLOCK
+  )
+end
+
 function me.TestParseSelfAvoidImmuneBetaeubungAbfangen()
   mod.testHelper.TestParseSelfAvoid(
     className,
@@ -1833,6 +1936,61 @@ function me.TestParseSelfAvoidBlockSchildhieb()
     "TestParseSelfAvoidBlockSchildhieb",
     "schildhieb",
     "$player$s Schildhieb wurde geblockt.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    PVPW_CONSTANTS.AVOID_TYPES.BLOCK
+  )
+end
+
+function me.TestParseSelfAvoidDodgeSchildschlag()
+  mod.testHelper.TestParseSelfAvoid(
+    className,
+    "TestParseSelfAvoidDodgeSchildschlag",
+    "schildschlag",
+    "$player$s Schildschlag wurde ausgewichen.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    PVPW_CONSTANTS.AVOID_TYPES.DODGE
+  )
+end
+
+function me.TestParseSelfAvoidParrySchildschlag()
+  mod.testHelper.TestParseSelfAvoid(
+    className,
+    "TestParseSelfAvoidParrySchildschlag",
+    "schildschlag",
+    "Schildschlag von $player$ wurde pariert.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    PVPW_CONSTANTS.AVOID_TYPES.PARRY
+  )
+end
+
+function me.TestParseSelfAvoidImmuneSchildschlag()
+  mod.testHelper.TestParseSelfAvoid(
+    className,
+    "TestParseSelfAvoidImmuneSchildschlag",
+    "schildschlag",
+    "$player$ versucht es mit Schildschlag... ein Fehlschlag. Ihr seid immun.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    PVPW_CONSTANTS.AVOID_TYPES.IMMUNE
+  )
+end
+
+function me.TestParseSelfAvoidMissSchildschlag()
+  mod.testHelper.TestParseSelfAvoid(
+    className,
+    "TestParseSelfAvoidMissSchildschlag",
+    "schildschlag",
+    "$player$ greift an (mit Schildschlag) und verfehlt euch.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    PVPW_CONSTANTS.AVOID_TYPES.MISS
+  )
+end
+
+function me.TestParseSelfAvoidBlockSchildschlag()
+  mod.testHelper.TestParseSelfAvoid(
+    className,
+    "TestParseSelfAvoidBlockSchildschlag",
+    "schildschlag",
+    "$player$s Schildschlag wurde geblockt.",
     mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
     PVPW_CONSTANTS.AVOID_TYPES.BLOCK
   )

@@ -151,6 +151,7 @@ function me.RunAll(playManual)
   mod.testReporter.AddToTestQueueWithDelay(me.TestSoundDownShieldBlock)
   mod.testReporter.AddToTestQueueWithDelay(me.TestSoundShieldBash)
   mod.testReporter.AddToTestQueueWithDelay(me.TestSoundShieldBashSilenced)
+  mod.testReporter.AddToTestQueueWithDelay(me.TestSoundShieldSlam)
   mod.testReporter.AddToTestQueueWithDelay(me.TestSoundEnemyAvoidChargeStun)
   mod.testReporter.AddToTestQueueWithDelay(me.TestSoundEnemyAvoidHamstring)
   mod.testReporter.AddToTestQueueWithDelay(me.TestSoundEnemyAvoidMortalStrike)
@@ -162,6 +163,7 @@ function me.RunAll(playManual)
   mod.testReporter.AddToTestQueueWithDelay(me.TestSoundEnemyAvoidConcussionBlow)
   mod.testReporter.AddToTestQueueWithDelay(me.TestSoundEnemyAvoidDisarm)
   mod.testReporter.AddToTestQueueWithDelay(me.TestSoundEnemyAvoidShieldBash)
+  mod.testReporter.AddToTestQueueWithDelay(me.TestSoundEnemyAvoidShieldSlam)
   mod.testReporter.AddToTestQueueWithDelay(me.TestSoundSelfAvoidChargeStun)
   mod.testReporter.AddToTestQueueWithDelay(me.TestSoundSelfAvoidHamstring)
   mod.testReporter.AddToTestQueueWithDelay(me.TestSoundSelfAvoidMortalStrike)
@@ -173,6 +175,7 @@ function me.RunAll(playManual)
   mod.testReporter.AddToTestQueueWithDelay(me.TestSoundSelfAvoidConcussionBlow)
   mod.testReporter.AddToTestQueueWithDelay(me.TestSoundSelfAvoidDisarm)
   mod.testReporter.AddToTestQueueWithDelay(me.TestSoundSelfAvoidShieldBash)
+  mod.testReporter.AddToTestQueueWithDelay(me.TestSoundSelfAvoidShieldSlam)
 
   if not playManual then
     mod.testReporter.PlayTestQueueWithDelay()
@@ -205,6 +208,7 @@ function me.RunAll(playManual)
   mod.testReporter.AddToTestQueue(me.TestParseDownShieldBlock)
   mod.testReporter.AddToTestQueue(me.TestParseShieldBash)
   mod.testReporter.AddToTestQueue(me.TestParseShieldBashSilenced)
+  mod.testReporter.AddToTestQueue(me.TestParseShieldSlam)
   mod.testReporter.AddToTestQueue(me.TestParseEnemyAvoidImmuneChargeStun)
   mod.testReporter.AddToTestQueue(me.TestParseEnemyAvoidResistChargeStun)
   mod.testReporter.AddToTestQueue(me.TestParseEnemyAvoidDodgeHamstring)
@@ -247,6 +251,11 @@ function me.RunAll(playManual)
   mod.testReporter.AddToTestQueue(me.TestParseEnemyAvoidImmuneShieldBash)
   mod.testReporter.AddToTestQueue(me.TestParseEnemyAvoidMissShieldBash)
   mod.testReporter.AddToTestQueue(me.TestParseEnemyAvoidBlockShieldBash)
+  mod.testReporter.AddToTestQueue(me.TestParseEnemyAvoidDodgeShieldSlam)
+  mod.testReporter.AddToTestQueue(me.TestParseEnemyAvoidParryShieldSlam)
+  mod.testReporter.AddToTestQueue(me.TestParseEnemyAvoidImmuneShieldSlam)
+  mod.testReporter.AddToTestQueue(me.TestParseEnemyAvoidMissShieldSlam)
+  mod.testReporter.AddToTestQueue(me.TestParseEnemyAvoidBlockShieldSlam)
   mod.testReporter.AddToTestQueue(me.TestParseSelfAvoidImmuneChargeStun)
   mod.testReporter.AddToTestQueue(me.TestParseSelfAvoidResistChargeStun)
   mod.testReporter.AddToTestQueue(me.TestParseSelfAvoidDodgeHamstring)
@@ -289,6 +298,11 @@ function me.RunAll(playManual)
   mod.testReporter.AddToTestQueue(me.TestParseSelfAvoidImmuneShieldBash)
   mod.testReporter.AddToTestQueue(me.TestParseSelfAvoidMissShieldBash)
   mod.testReporter.AddToTestQueue(me.TestParseSelfAvoidBlockShieldBash)
+  mod.testReporter.AddToTestQueue(me.TestParseSelfAvoidDodgeShieldSlam)
+  mod.testReporter.AddToTestQueue(me.TestParseSelfAvoidParryShieldSlam)
+  mod.testReporter.AddToTestQueue(me.TestParseSelfAvoidImmuneShieldSlam)
+  mod.testReporter.AddToTestQueue(me.TestParseSelfAvoidMissShieldSlam)
+  mod.testReporter.AddToTestQueue(me.TestParseSelfAvoidBlockShieldSlam)
 
   mod.testReporter.PlayTestQueue()
 end
@@ -493,7 +507,13 @@ function me.TestSoundShieldBashSilenced()
   )
 end
 
-
+function me.TestSoundShieldSlam()
+  mod.testHelper.TestSound(
+    className,
+    "TestSoundShieldSlam",
+    "shield_slam"
+  )
+end
 
 function me.TestSoundEnemyAvoidChargeStun()
   mod.testHelper.TestSoundEnemyAvoid(
@@ -583,6 +603,14 @@ function me.TestSoundEnemyAvoidShieldBash()
   )
 end
 
+function me.TestSoundEnemyAvoidShieldSlam()
+  mod.testHelper.TestSoundEnemyAvoid(
+    className,
+    "TestSoundEnemyAvoidShieldSlam",
+    "shield_slam"
+  )
+end
+
 function me.TestSoundSelfAvoidChargeStun()
   mod.testHelper.TestSoundSelfAvoid(
     className,
@@ -668,6 +696,14 @@ function me.TestSoundSelfAvoidShieldBash()
     className,
     "TestSoundSelfAvoidShieldBash",
     "shield_bash"
+  )
+end
+
+function me.TestSoundSelfAvoidShieldSlam()
+  mod.testHelper.TestSoundSelfAvoid(
+    className,
+    "TestSoundSelfAvoidShieldSlam",
+    "shield_slam"
   )
 end
 
@@ -928,6 +964,16 @@ function me.TestParseShieldBashSilenced()
     "shield_bash_silenced",
     "You are afflicted by Shield Bash - Silenced.",
     mod.testHelper.eventTypeSpellPeriodicSelfDamage
+  )
+end
+
+function me.TestParseShieldSlam()
+  mod.testHelper.TestParse(
+    className,
+    "TestParseShieldSlam",
+    "shield_slam",
+    "$player$'s Shield Slam hits you for $amount$.",
+    mod.testHelper.eventTypeSpellHostilePlayerDamage
   )
 end
 
@@ -1393,6 +1439,61 @@ function me.TestParseEnemyAvoidBlockShieldBash()
   )
 end
 
+function me.TestParseEnemyAvoidDodgeShieldSlam()
+  mod.testHelper.TestParseEnemyAvoid(
+    className,
+    "TestParseEnemyAvoidDodgeShieldSlam",
+    "shield_slam",
+    "Your Shield Slam was dodged by $player$.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    PVPW_CONSTANTS.AVOID_TYPES.DODGE
+  )
+end
+
+function me.TestParseEnemyAvoidParryShieldSlam()
+  mod.testHelper.TestParseEnemyAvoid(
+    className,
+    "TestParseEnemyAvoidParryShieldSlam",
+    "shield_slam",
+    "Your Shield Slam is parried by $player$.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    PVPW_CONSTANTS.AVOID_TYPES.PARRY
+  )
+end
+
+function me.TestParseEnemyAvoidImmuneShieldSlam()
+  mod.testHelper.TestParseEnemyAvoid(
+    className,
+    "TestParseEnemyAvoidImmuneShieldSlam",
+    "shield_slam",
+    "Your Shield Slam failed. $player$ is immune.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    PVPW_CONSTANTS.AVOID_TYPES.IMMUNE
+  )
+end
+
+function me.TestParseEnemyAvoidMissShieldSlam()
+  mod.testHelper.TestParseEnemyAvoid(
+    className,
+    "TestParseEnemyAvoidMissShieldSlam",
+    "shield_slam",
+    "Your Shield Slam missed $player$.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    PVPW_CONSTANTS.AVOID_TYPES.MISS
+  )
+end
+
+function me.TestParseEnemyAvoidBlockShieldSlam()
+  mod.testHelper.TestParseEnemyAvoid(
+    className,
+    "TestParseEnemyAvoidBlockShieldSlam",
+    "shield_slam",
+    "Your Shield Slam was blocked by $player$.",
+    mod.testHelper.eventTypeSpellSelfDamage,
+    PVPW_CONSTANTS.AVOID_TYPES.BLOCK
+  )
+end
+
 function me.TestParseSelfAvoidImmuneChargeStun()
   mod.testHelper.TestParseSelfAvoid(
     className,
@@ -1850,6 +1951,61 @@ function me.TestParseSelfAvoidBlockShieldBash()
     "TestParseSelfAvoidBlockShieldBash",
     "shield_bash",
     "$player$'s Shield Bash was blocked.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    PVPW_CONSTANTS.AVOID_TYPES.BLOCK
+  )
+end
+
+function me.TestParseSelfAvoidDodgeShieldSlam()
+  mod.testHelper.TestParseSelfAvoid(
+    className,
+    "TestParseSelfAvoidDodgeShieldSlam",
+    "shield_slam",
+    "$player$'s Shield Slam was dodged.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    PVPW_CONSTANTS.AVOID_TYPES.DODGE
+  )
+end
+
+function me.TestParseSelfAvoidParryShieldSlam()
+  mod.testHelper.TestParseSelfAvoid(
+    className,
+    "TestParseSelfAvoidParryShieldSlam",
+    "shield_slam",
+    "$player$'s Shield Slam was parried.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    PVPW_CONSTANTS.AVOID_TYPES.PARRY
+  )
+end
+
+function me.TestParseSelfAvoidImmuneShieldSlam()
+  mod.testHelper.TestParseSelfAvoid(
+    className,
+    "TestParseSelfAvoidImmuneShieldSlam",
+    "shield_slam",
+    "$player$'s Shield Slam failed. You are immune.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    PVPW_CONSTANTS.AVOID_TYPES.IMMUNE
+  )
+end
+
+function me.TestParseSelfAvoidMissShieldSlam()
+  mod.testHelper.TestParseSelfAvoid(
+    className,
+    "TestParseSelfAvoidMissShieldSlam",
+    "shield_slam",
+    "$player$'s Shield Slam misses you.",
+    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    PVPW_CONSTANTS.AVOID_TYPES.MISS
+  )
+end
+
+function me.TestParseSelfAvoidBlockShieldSlam()
+  mod.testHelper.TestParseSelfAvoid(
+    className,
+    "TestParseSelfAvoidBlockShieldSlam",
+    "shield_slam",
+    "$player$'s Shield Slam was blocked.",
     mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
     PVPW_CONSTANTS.AVOID_TYPES.BLOCK
   )

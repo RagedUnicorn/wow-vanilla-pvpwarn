@@ -240,6 +240,14 @@ if (GetLocale() == "deDE") then
         ["spellIcon"] = "ability_warrior_shieldbash",
         ["hasFade"] = false,
         ["active"] = true
+      },
+      ["schildschlag"] = {
+        ["name"] = "Schildschlag",
+        ["soundFileName"] = "schildschlag",
+        ["spellID"] = 23925, -- rank 4
+        ["spellIcon"] = "inv_shield_05",
+        ["hasFade"] = false,
+        ["active"] = true
       }
     },
     ["priest"] = {
@@ -2009,6 +2017,14 @@ else
         ["soundFileName"] = "shield_bash_silenced",
         ["spellID"] = 18498,
         ["spellIcon"] = "ability_warrior_shieldbash",
+        ["hasFade"] = false,
+        ["active"] = true
+      },
+      ["shield_slam"] = {
+        ["name"] = "Shield Slam",
+        ["soundFileName"] = "shield_slam",
+        ["spellID"] = 23925, -- rank 4
+        ["spellIcon"] = "inv_shield_05",
         ["hasFade"] = false,
         ["active"] = true
       }

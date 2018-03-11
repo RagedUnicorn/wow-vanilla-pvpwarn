@@ -403,6 +403,20 @@ if (GetLocale() == "deDE") then
         ["resist"] = false,
         ["self_avoid"] = true,
         ["enemy_avoid"] = true
+      },
+      ["schildschlag"] = {
+        ["name"] = "Schildschlag",
+        ["spellID"] = 23925, -- rank 4
+        ["spellIcon"] = "inv_shield_05",
+        ["soundFileName"] = "schildschlag",
+        ["dodge"] = true,
+        ["parry"] = true,
+        ["immune"] = true,
+        ["miss"] = true,
+        ["block"] = true,
+        ["resist"] = false,
+        ["self_avoid"] = true,
+        ["enemy_avoid"] = true
       }
     },
     ["mage"] = {
@@ -1406,6 +1420,20 @@ else
         ["spellID"] = 1672, -- rank 3
         ["spellIcon"] = "ability_warrior_shieldbash",
         ["soundFileName"] = "shield_bash",
+        ["dodge"] = true,
+        ["parry"] = true,
+        ["immune"] = true,
+        ["miss"] = true,
+        ["block"] = true,
+        ["resist"] = false,
+        ["self_avoid"] = true,
+        ["enemy_avoid"] = true
+      },
+      ["shield_slam"] = {
+        ["name"] = "Shield Slam",
+        ["spellID"] = 23925, -- rank 4
+        ["spellIcon"] = "inv_shield_05",
+        ["soundFileName"] = "shield_slam",
         ["dodge"] = true,
         ["parry"] = true,
         ["immune"] = true,
