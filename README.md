@@ -26,12 +26,11 @@ TODO should add a YouTube video with some examples
 
 ### Configure Combatlog Distance
 
-Casts and auras are read from the combatlog. The default range for the combatlog to pick up such casts and auras is 40 yards. Using the following command can increase this up to 100 yards. This can have a negative effect on the performance if a lot of addons are doing this but can also be very helpful picking up events from players that are far away.
+Casts and auras are read from the combatlog. The default range for the combatlog to pick up such casts and auras is 40 yards. Using the following command can increase this up to 100 yards. This can have a negative effect on the performance if a lot of addons are reading the combat log and get overwhelmed with the amount of messages but can also be very helpful picking up events from players that are far away.
 
 `/console SET CombatLogRangeHostilePlayers "100"`
 
 To revert, run the same command with a value of 40.
-
 
 ### Configure Spells
 
@@ -44,9 +43,9 @@ Configurable spells are grouped into different categories. Other than the differ
 | druid, hunter, mage, paladin, priest, rogue, shaman, warlock, warrior | Category for class related spells                                     |
 | racials           | Category for all spells that are considered a racial spell meaning it is only available to certain races                  |
 | items             | Category for items such as trinkets and engineering items                                                                 |
-| misc              | The items category contains potions and usable consumables and everything else that doesn't fit any other category        |
+| misc              | The misc category contains potions and usable consumables and everything else that doesn't fit any other category        |
 
-Inside such a category a list of spells is displayed that can be enabled or disabled. Additionally a spell can be configured whether a sound and a visual warning and its color should be played to the player. The buttons to fire of such an alert are for testing purpose only.
+Inside such a category a list of spells is displayed that can be enabled or disabled. Additionally a spell can be configured to have a sound and a visual warning played to the player upon detection in the combat log. The buttons to fire of such an alert are for testing purpose only.
 
 The category itself is additionally separated into two tabs.
 
@@ -90,17 +89,17 @@ Make sure to recheck the installation part of this Readme and check that the add
 
 #### I'm getting the following warning: Skipping warn message because max age was reached. Why is that?
 
-When a warning events is detected it is put into a queue before it is played to the user. This prevents the addon to play multiple of those warning at the same time to the user. However this means that it can take some time until an event is played when there is already an event playing. The more warning events that are active the higher the chance that an event has to wait until it is played to the player. This can lead to a point that a warning event might be considered as no longer relevant because it happened some seconds ago. While this should usually not be the case if you see this warning often you should consider disabling some of the warning events in the options menu.
+When a warning event is detected it is put into a queue before it is played to the user. This prevents the addon to play multiple of those warning at the same time to the user. However this means that it can take some time until an event is played when there is already an event playing. The more warning events that are active the higher the chance that an event has to wait until it is played to the player. This can lead to a point that a warning event might be considered as no longer relevant because it happened some seconds ago. While this should usually not be the case if you see this warning often you should consider disabling some of the warning events in the options menu.
 
-This is also more likely to happen in a crowed place with lots of players. You can either temporarily disable the addon in the settings or use the option to disable the addon in battlegrounds.
+This is also more likely to happen in a crowded place with lots of players. You can either temporarily disable the addon in the settings or use the option to disable the addon in battlegrounds.
 
 #### No Sound is played when a player used [certain spell]. What should I do?
 
-This can have different reasons. Make sure to check that the spell you would like to be alerted is configured and active in the addon. If you cannot find the spell in the list chances are the spell cannot be tracked or is not yet included in the addon. While certain spells are untraceable others might simply be missing. Create a Github issue with an enhancement request for the spell to be added to the addon.
+This can have different reasons. Make sure to check that the spell you would like to be alerted is configured and active in the addon. If you cannot find the spell in the list chances are the spell cannot be tracked or is not yet included in the addon. While certain spells are untraceable others might simply be missing. Before creating an issued please make sure to check the [limitations](#Limitations) chapter for an explanation why your spell might not be available in the configuration. If you cannot find an entry for that spell feel free to create a Github issue with an enhancement request and I will look into it if it is possible to support that spell.
 
 #### I get a red error (Lua Error) on my screen. What is this?
 
-This is what we call a LUA error and it usually happens because of an oversight or error by the developer (in this case me). Take a screenshot off the error and create a Github Issue with it and I will see if I can resolve it. It also helps if you can add any additional information of what you we're doing at the time.
+This is what we call a LUA error and it usually happens because of an oversight or error by the developer (in this case me). Take a screenshot off the error and create a Github Issue with it and I will see if I can resolve it. It also helps if you can add any additional information of what you we're doing at the time and what other addons you have active. Also if you are able to reproduce the error make sure to check if it still happens if you disable all others addons.
 
 ## Wording
 
@@ -137,7 +136,7 @@ Avoid is used in the context as either the player or an enemy avoided a certain 
 * miss
 * block
 
-Additionally we differentiate between self avoid and enemy avoid. While enemy avoid means that an enemy avoided a spell by the player itself self avoid means the opposite that you as a player avoided an enemy spell.
+Additionally we differentiate between self avoid and enemy avoid. While enemy avoid means that an enemy avoided a spell by the player itself - self avoid means the opposite that you as a player avoided an enemy spell.
 
 #### Enemy avoid
 
@@ -154,6 +153,10 @@ Turning things around and you are a Warrior that walks into a Frost Nova of an e
 > "SomeEnemyPlayer's Frost Nova failed. You are immune."
 
 This is considered a self avoid. You as a player resisted an enemy spell.
+
+## Limitations
+
+This addon has certain limitations for some spells. As a rule of thumb if an event is not showing up in your combat log it cannot be tracked by the addon. This applies to some really important spells such as `Vanish`, `Feign Death` and others. For an overview of supported and unsupported spells see [Spelllist](Docs/SPELLLIST.md).
 
 ## License
 
