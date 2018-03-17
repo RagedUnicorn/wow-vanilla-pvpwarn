@@ -28,14 +28,14 @@ mod.logger = me
   warn - 2
   error 1
 ]]--
-me.logLevel = 4
+me.logLevel = 1
 me.debug = 4
 me.info = 3
 me.warn = 2
 me.error = 1
 
 -- log events
-me.logEvent = true
+me.logEvent = false
 
 me.colors = {}
 me.colors.error = "|cfff00000"  -- red
