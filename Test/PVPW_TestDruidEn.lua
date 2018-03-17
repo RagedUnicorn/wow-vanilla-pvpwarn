@@ -131,7 +131,7 @@ function me.RunAll(playManual)
   mod.testReporter.AddToTestQueueWithDelay(me.TestSoundNaturesGrasp)
   mod.testReporter.AddToTestQueueWithDelay(me.TestSoundDownNaturesGrasp)
   mod.testReporter.AddToTestQueueWithDelay(me.TestSoundBash)
-  mod.testReporter.AddToTestQueueWithDelay(me.TestSoundFeralCharge)
+  mod.testReporter.AddToTestQueueWithDelay(me.TestSoundFeralChargeEffect)
   mod.testReporter.AddToTestQueueWithDelay(me.TestSoundFrenziedRegeneration)
   mod.testReporter.AddToTestQueueWithDelay(me.TestSoundDownFrenziedRegeneration)
   mod.testReporter.AddToTestQueueWithDelay(me.TestSoundAbolishPoison)
@@ -163,7 +163,7 @@ function me.RunAll(playManual)
   mod.testReporter.AddToTestQueue(me.TestParseNaturesGrasp)
   mod.testReporter.AddToTestQueue(me.TestParseDownNaturesGrasp)
   mod.testReporter.AddToTestQueue(me.TestParseBash)
-  mod.testReporter.AddToTestQueue(me.TestParseFeralCharge)
+  mod.testReporter.AddToTestQueue(me.TestParseFeralChargeEffect)
   mod.testReporter.AddToTestQueue(me.TestParseFrenziedRegeneration)
   mod.testReporter.AddToTestQueue(me.TestParseDownFrenziedRegeneration)
   mod.testReporter.AddToTestQueue(me.TestParseAbolishPoison)
@@ -244,10 +244,10 @@ function me.TestSoundBash()
   )
 end
 
-function me.TestSoundFeralCharge()
+function me.TestSoundFeralChargeEffect()
   mod.testHelper.TestSound(
     className,
-    "TestSoundFeralCharge",
+    "TestSoundFeralChargeEffect",
     "feral_charge_effect"
   )
 end
@@ -462,10 +462,10 @@ function me.TestParseBash()
   )
 end
 
-function me.TestParseFeralCharge()
+function me.TestParseFeralChargeEffect()
   mod.testHelper.TestParse(
     className,
-    "TestParseFeralCharge",
+    "TestParseFeralChargeEffect",
     "feral_charge_effect",
     "You are afflicted by Feral Charge Effect.",
     mod.testHelper.eventTypeSpellPeriodicSelfDamage
