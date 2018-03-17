@@ -172,9 +172,10 @@ if (GetLocale() == "deDE") then
       Ihr seid von Verwandlung betroffen
       Ihr seid von Verwandlung: Schwein betroffen.
       Ihr seid von Gegenzauber - zum Schweigen gebracht betroffen.
+      Ihr seid von Feenfeuer (Tiergestalt) betroffen.
 
   ]]--
-  SPELL_PERIODIC_SELF_DAMAGE = "^(Ihr)%sseid%svon%s([\195\159\195\132\195\150\195\156\195\188\195\164\195\182%a%s-:]+)%s(betroffen)%.$"
+  SPELL_PERIODIC_SELF_DAMAGE = "^(Ihr)%sseid%svon%s([\195\159\195\132\195\150\195\156\195\188\195\164\195\182%a%s-:%(%)]+)%s(betroffen)%.$"
 
   --[[
     CHAT_MSG_SPELL_HOSTILEPLAYER_DAMAGE
@@ -448,8 +449,9 @@ else
       You are afflicted by Polymorph.
       You are afflicted by Polymorph: Pig.
       You are afflicted by Counterspell - Silenced.
+      You are afflicted by Faerie Fire (Feral).
   ]]--
-  SPELL_PERIODIC_SELF_DAMAGE = "^(You)%sare%s(afflicted)%sby%s([%a%s:-]+)%.$"
+  SPELL_PERIODIC_SELF_DAMAGE = "^(You)%sare%s(afflicted)%sby%s([%a%s:-%(%)]+)%.$"
 
   --[[
     CHAT_MSG_SPELL_HOSTILEPLAYER_DAMAGE
