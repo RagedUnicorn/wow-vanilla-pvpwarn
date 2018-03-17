@@ -625,10 +625,10 @@ function me.TestParseCritTritt()
   )
 end
 
-function me.TestParseKickZumSchweigenGebracht()
+function me.TestParseTrittZumSchweigenGebracht()
   mod.testHelper.TestParse(
     className,
-    "TestParseKickZumSchweigenGebracht",
+    "TestParseTrittZumSchweigenGebracht",
     "tritt_zum_schweigen_gebracht",
     "Ihr seid von Tritt - zum Schweigen gebracht betroffen.",
     mod.testHelper.eventTypeSpellPeriodicSelfDamage
