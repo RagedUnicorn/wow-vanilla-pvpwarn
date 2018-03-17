@@ -232,9 +232,10 @@ if (GetLocale() == "deDE") then
     examples:
       Ihr habt es mit Zorn versucht, aber $player$ hat widerstanden.
       Ihr habt es mit Feenfeuer versucht, aber $player$ hat widerstanden.
+      Ihr habt es mit Feenfeuer (Tiergestalt) versucht, aber $player$ hat widerstanden.
 
   ]]--
-  SPELL_DAMAGESHIELDS_ON_SELF1 = "^(Ihr)%shabt%ses%smit%s([\195\159\195\132\195\150\195\156\195\188\195\164\195\182%a%s-:]+)%s(versucht),%saber%s(%a+)%shat%s(widerstanden)%.$"
+  SPELL_DAMAGESHIELDS_ON_SELF1 = "^(Ihr)%shabt%ses%smit%s([\195\159\195\132\195\150\195\156\195\188\195\164\195\182%(%)%a%s-:]+)%s(versucht),%saber%s(%a+)%shat%s(widerstanden)%.$"
 
   --[[
     CHAT_MSG_SPELL_DAMAGESHIELDS_ON_SELF
@@ -242,10 +243,11 @@ if (GetLocale() == "deDE") then
 
     examples:
       Feenfeuer war ein Fehlschlag. $player$ ist immun.
+      Feenfeuer (Tiergestalt) war ein Fehlschlag. $player$ ist immun.
       Gegenzauber war ein Fehlschlag. $player$ ist immun.
 
   ]]--
-  SPELL_DAMAGESHIELDS_ON_SELF2 = "^([\195\159\195\132\195\150\195\156\195\188\195\164\195\182%a%s-:]+)%swar%sein%s(Fehlschlag)%.%s(%a+)%sist%s(immun)%.$"
+  SPELL_DAMAGESHIELDS_ON_SELF2 = "^([\195\159\195\132\195\150\195\156\195\188\195\164\195\182%(%)%a%s-:]+)%swar%sein%s(Fehlschlag)%.%s(%a+)%sist%s(immun)%.$"
 
   --[[
     CHAT_MSG_SPELL_DAMAGESHIELDS_ON_SELF
@@ -296,8 +298,9 @@ if (GetLocale() == "deDE") then
 
     examples:
       $player$ versucht es mit Gegenzauber - zum Schweigen gebracht... widerstanden.
+      $player$ versucht es mit Feenfeuer (Tiergestalt)... widerstanden.
   ]]--
-  SPELL_DAMAGESHIELDS_ON_OTHERS1 = "^(%a+)%s(versucht)%ses%smit%s([\195\159\195\132\195\150\195\156\195\188\195\164\195\182%a%s-:]+)%.%.%.%s(widerstanden)%.$"
+  SPELL_DAMAGESHIELDS_ON_OTHERS1 = "^(%a+)%s(versucht)%ses%smit%s([\195\159\195\132\195\150\195\156\195\188\195\164\195\182%(%)%a%s-:]+)%.%.%.%s(widerstanden)%.$"
 
   --[[
     CHAT_MSG_SPELL_DAMAGESHIELDS_ON_OTHERS
@@ -324,8 +327,9 @@ if (GetLocale() == "deDE") then
 
     examples:
       $player$ versucht es mit Blenden... ein Fehlschlag. Ihr seid immun.
+      $player$ versucht es mit Feenfeuer (Tiergestalt)... ein Fehlschlag. Ihr seid immun.
   ]]--
-  SPELL_DAMAGESHIELDS_ON_OTHERS4 = "^(%a+)%s(versucht)%ses%smit%s([\195\159\195\132\195\150\195\156\195\188\195\164\195\182%a%s-:]+)%.%.%.%sein%s(Fehlschlag)%.%sIhr%sseid%s(immun)%.$"
+  SPELL_DAMAGESHIELDS_ON_OTHERS4 = "^(%a+)%s(versucht)%ses%smit%s([\195\159\195\132\195\150\195\156\195\188\195\164\195\182%(%)%a%s-:]+)%.%.%.%sein%s(Fehlschlag)%.%sIhr%sseid%s(immun)%.$"
 
   --[[
     CHAT_MSG_SPELL_DAMAGESHIELDS_ON_OTHERS
@@ -507,9 +511,10 @@ else
     examples:
       Your Wrath was resisted by $player$.
       Your Faerie Fire was resisted by $player$.
+      Your Faerie Fire (Feral) was resisted by $player$.
 
   ]]--
-  SPELL_DAMAGESHIELDS_ON_SELF1 = "^(Your)%s([%a%s'-:]+)%swas%s(resisted)%sby%s(%a+)%.$"
+  SPELL_DAMAGESHIELDS_ON_SELF1 = "^(Your)%s([%(%)%a%s'-:]+)%swas%s(resisted)%sby%s(%a+)%.$"
 
   --[[
     CHAT_MSG_SPELL_DAMAGESHIELDS_ON_SELF
@@ -518,8 +523,9 @@ else
     examples:
       Your Faerie Fire failed. $player$ is immune.
       Your Silence failed. $player$ is immune.
+      Your Faerie Fire (Feral) failed. $player$ is immune.
   ]]--
-  SPELL_DAMAGESHIELDS_ON_SELF2 = "^(Your)%s([%a%s'-:]+)%s(failed)%.%s(%a+)%sis%s(immune)%.$"
+  SPELL_DAMAGESHIELDS_ON_SELF2 = "^(Your)%s([%(%)%a%s'-:]+)%s(failed)%.%s(%a+)%sis%s(immune)%.$"
 
   --[[
     CHAT_MSG_SPELL_DAMAGESHIELDS_ON_SELF
@@ -568,8 +574,9 @@ else
 
     examples:
       $player$'s Counterspell was resisted.
+      $player$'s Faerie Fire (Feral) was resisted.
   ]]--
-  SPELL_DAMAGESHIELDS_ON_OTHERS1 = "^(%a+)'s%s([%a%s'-:]+)%swas%s(resisted)%.$"
+  SPELL_DAMAGESHIELDS_ON_OTHERS1 = "^(%a+)'s%s([%(%)%a%s'-:]+)%swas%s(resisted)%.$"
 
   --[[
     CHAT_MSG_SPELL_DAMAGESHIELDS_ON_OTHERS
@@ -596,8 +603,9 @@ else
 
     examples:
       $player$'s Blind failed. You are immune.
+      $player$'s Faerie Fire (Feral) failed. You are immune.
   ]]--
-  SPELL_DAMAGESHIELDS_ON_OTHERS4 = "^(%a+)'s%s([%a%s'-:]+)%s(failed)%.%sYou%sare%s(immune)%.$"
+  SPELL_DAMAGESHIELDS_ON_OTHERS4 = "^(%a+)'s%s([%(%)%a%s'-:]+)%s(failed)%.%sYou%sare%s(immune)%.$"
 
   --[[
     CHAT_MSG_SPELL_DAMAGESHIELDS_ON_OTHERS
