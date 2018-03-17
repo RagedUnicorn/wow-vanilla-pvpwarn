@@ -130,6 +130,7 @@ function me.RunAll(playManual)
   mod.testReporter.AddToTestQueueWithDelay(me.TestSoundDownFluchVerstaerken)
   mod.testReporter.AddToTestQueueWithDelay(me.TestSoundSchwacherGesundheitsstein)
   mod.testReporter.AddToTestQueueWithDelay(me.TestSoundGeringerGesundheitsstein)
+  mod.testReporter.AddToTestQueueWithDelay(me.TestSoundGesundheitsstein)
   mod.testReporter.AddToTestQueueWithDelay(me.TestSoundGrosserGesundheitsstein)
   mod.testReporter.AddToTestQueueWithDelay(me.TestSoundErheblicherGesundheitsstein)
   mod.testReporter.AddToTestQueueWithDelay(me.TestSoundFluchDerErschoepfung)
@@ -175,6 +176,7 @@ function me.RunAll(playManual)
   mod.testReporter.AddToTestQueue(me.TestParseDownFluchVerstaerken)
   mod.testReporter.AddToTestQueue(me.TestParseSchwacherGesundheitsstein)
   mod.testReporter.AddToTestQueue(me.TestParseGeringerGesundheitsstein)
+  mod.testReporter.AddToTestQueue(me.TestParseGesundheitsstein)
   mod.testReporter.AddToTestQueue(me.TestParseGrosserGesundheitsstein)
   mod.testReporter.AddToTestQueue(me.TestParseErheblicherGesundheitsstein)
   mod.testReporter.AddToTestQueue(me.TestParseFluchDerErschoepfung)
@@ -354,6 +356,14 @@ function me.TestSoundGeringerGesundheitsstein()
     className,
     "TestSoundGeringerGesundheitsstein",
     "geringer_gesundheitsstein"
+  )
+end
+
+function me.TestSoundGesundheitsstein()
+  mod.testHelper.TestSound(
+    className,
+    "TestSoundGesundheitsstein",
+    "gesundheitsstein"
   )
 end
 
@@ -709,6 +719,16 @@ function me.TestParseGeringerGesundheitsstein()
     "TestParseGeringerGesundheitsstein",
     "geringer_gesundheitsstein",
     "$player$s Geringer Gesundheitsstein heilt $player$ um $amount$.",
+    mod.testHelper.eventTypeSpellHostilePlayerBuff
+  )
+end
+
+function me.TestParseGesundheitsstein()
+  mod.testHelper.TestParse(
+    className,
+    "TestParseGesundheitsstein",
+    "gesundheitsstein",
+    "$player$s Gesundheitsstein heilt $player$ um $amount$.",
     mod.testHelper.eventTypeSpellHostilePlayerBuff
   )
 end

@@ -144,6 +144,7 @@ function me.RunAll(playManual)
   mod.testReporter.AddToTestQueueWithDelay(me.TestSoundDownAmplifyCurse)
   mod.testReporter.AddToTestQueueWithDelay(me.TestSoundMinorHealthstone)
   mod.testReporter.AddToTestQueueWithDelay(me.TestSoundLesserHealthstone)
+  mod.testReporter.AddToTestQueueWithDelay(me.TestSoundHealthstone)
   mod.testReporter.AddToTestQueueWithDelay(me.TestSoundGreaterHealthstone)
   mod.testReporter.AddToTestQueueWithDelay(me.TestSoundMajorHealthstone)
   mod.testReporter.AddToTestQueueWithDelay(me.TestSoundCurseOfExhaustion)
@@ -188,6 +189,7 @@ function me.RunAll(playManual)
   mod.testReporter.AddToTestQueue(me.TestParseDownAmplifyCurse)
   mod.testReporter.AddToTestQueue(me.TestParseMinorHealthstone)
   mod.testReporter.AddToTestQueue(me.TestParseLesserHealthstone)
+  mod.testReporter.AddToTestQueue(me.TestParseHealthstone)
   mod.testReporter.AddToTestQueue(me.TestParseGreaterHealthstone)
   mod.testReporter.AddToTestQueue(me.TestParseMajorHealthstone)
   mod.testReporter.AddToTestQueue(me.TestParseCurseOfExhaustion)
@@ -363,6 +365,14 @@ function me.TestSoundLesserHealthstone()
     className,
     "TestSoundLesserHealthstone",
     "lesser_healthstone"
+  )
+end
+
+function me.TestSoundHealthstone()
+  mod.testHelper.TestSound(
+    className,
+    "TestSoundHealthstone",
+    "healthstone"
   )
 end
 
@@ -718,6 +728,16 @@ function me.TestParseLesserHealthstone()
     "TestParseLesserHealthstone",
     "lesser_healthstone",
     "$player$'s Lesser Healthstone heals $player$ for $amount$.",
+    mod.testHelper.eventTypeSpellHostilePlayerBuff
+  )
+end
+
+function me.TestParseHealthstone()
+  mod.testHelper.TestParse(
+    className,
+    "TestParseHealthstone",
+    "healthstone",
+    "$player$'s Healthstone heals $player$ for $amount$.",
     mod.testHelper.eventTypeSpellHostilePlayerBuff
   )
 end

@@ -933,6 +933,14 @@ if (GetLocale() == "deDE") then
         ["hasFade"] = false,
         ["active"] = true
       },
+      ["gesundheitsstein"] = {
+        ["name"] = "Gesundheitsstein",
+        ["soundFileName"] = "gesundheitsstein",
+        ["spellID"] = 5699,
+        ["spellIcon"] = "inv_stone_04",
+        ["hasFade"] = false,
+        ["active"] = true
+      },
       ["grosser_gesundheitsstein"] = {
         ["name"] = "Großer Gesundheitsstein",
         ["soundFileName"] = "grosser_gesundheitsstein",
@@ -2732,6 +2740,14 @@ else
         ["name"] = "Lesser Healthstone",
         ["soundFileName"] = "lesser_healthstone",
         ["spellID"] = 6263,
+        ["spellIcon"] = "inv_stone_04",
+        ["hasFade"] = false,
+        ["active"] = true
+      },
+      ["healthstone"] = {
+        ["name"] = "Healthstone",
+        ["soundFileName"] = "healthstone",
+        ["spellID"] = 5699,
         ["spellIcon"] = "inv_stone_04",
         ["hasFade"] = false,
         ["active"] = true
