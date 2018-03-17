@@ -192,7 +192,7 @@ function me.RunAll(playManual)
   mod.testReporter.AddToTestQueue(me.TestParseSchildblock)
   mod.testReporter.AddToTestQueue(me.TestParseDownSchildblock)
   mod.testReporter.AddToTestQueue(me.TestParseSchildhieb)
-  mod.testReporter.AddToTestQueue(me.TestParseSchildhiebZumSchweigenGebacht)
+  mod.testReporter.AddToTestQueue(me.TestParseSchildhiebZumSchweigenGebracht)
   mod.testReporter.AddToTestQueue(me.TestParseSchildschlag)
   mod.testReporter.AddToTestQueue(me.TestParseEnemyAvoidImmuneBetaeubungAbfangen)
   mod.testReporter.AddToTestQueue(me.TestParseEnemyAvoidResistBetaeubungAbfangen)
@@ -942,10 +942,10 @@ function me.TestParseSchildhieb()
   )
 end
 
-function me.TestParseSchildhiebZumSchweigenGebacht()
+function me.TestParseSchildhiebZumSchweigenGebracht()
   mod.testHelper.TestParse(
     className,
-    "TestParseSchildhiebZumSchweigenGebacht",
+    "TestParseSchildhiebZumSchweigenGebracht",
     "schildhieb_zum_schweigen_gebracht",
     "Ihr seid von Schildhieb - zum Schweigen gebracht betroffen.",
     mod.testHelper.eventTypeSpellPeriodicSelfDamage
