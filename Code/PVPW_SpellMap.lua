@@ -90,7 +90,7 @@ if (GetLocale() == "deDE") then
         ["name"] = "Todeswunsch",
         ["soundFileName"] = "todeswunsch",
         ["spellID"] = 12328,
-        ["spellIcon"] = "ability_criticalstrike",
+        ["spellIcon"] = "spell_shadow_deathpact",
         ["hasFade"] = true,
         ["active"] = true
       },
@@ -1517,7 +1517,7 @@ if (GetLocale() == "deDE") then
         ["spellIcon"] = "ability_ambush",
         ["hasFade"] = true,
         ["active"] = true
-      },
+      }
       --[[ blood fury is not showing in combat log or any event
       ["kochendes_blut"] = {
         ["name"] = "Kochendes Blut",
@@ -1897,7 +1897,7 @@ else
         ["name"] = "Death Wish",
         ["soundFileName"] = "death_wish",
         ["spellID"] = 12328,
-        ["spellIcon"] = "ability_criticalstrike",
+        ["spellIcon"] = "spell_shadow_deathpact",
         ["hasFade"] = true,
         ["active"] = true
       },
@@ -3328,7 +3328,7 @@ else
         ["spellIcon"] = "ability_ambush",
         ["hasFade"] = true,
         ["active"] = true
-      },
+      }
       --[[ blood fury is not showing in combat log or any event
       ["blood_fury"] = {
         ["name"] = "Blood Fury",
