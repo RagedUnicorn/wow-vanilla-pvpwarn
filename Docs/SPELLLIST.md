@@ -21,6 +21,9 @@ Partially supported spells might be supported in some cases but aren't in others
 Another reason that a spell is only partially supported is that it might not work as one expects it. For example a Warriors `Intercept` and `Charge` cannot be detected itself. However the stun can be detected. This means that the addon will only alert the player when he is afflicted of that stun and not at the exact moment the Warrior presses the spell.
 
 
+**Note: This list is in no way complete. It contains spells that the developer of this addon encountered and deemed worthy to be put into the addon**
+
+
 | Category   | Icon                                                                                      | Spellname                        | State                 |
 | -----------| ----------------------------------------------------------------------------------------- | -------------------------------- | --------------------- |
 | warrior    | ![spell_nature_ancestralguardian](icons/spell_nature_ancestralguardian.jpg)               | Berserker Rage                   | `supported`           |
