@@ -55,19 +55,19 @@ A new spell requires at least one new sound file that needs to be categorized in
 
 normal_spell:
 
-`Assets\Sounds\[Category]\[spellname].mp3`
+`Assets\Sounds\[Locale][Category]\[spellname].mp3`
 
 normal_spell_down:
 
-`Assets\Sounds\[Category]\[spellname]_down.mp3`
+`Assets\Sounds\[Locale][Category]\[spellname]_down.mp3`
 
 enemy_avoid:
 
-`Assets\Sounds\[Category]\enemy_avoid\enemy_avoided_[spellname].mp3`
+`Assets\Sounds\[Locale][Category]\enemy_avoid\enemy_avoided_[spellname].mp3`
 
 self_avoid:
 
-`Assets\Sounds\[Category]\enemy_avoid\you_avoided_[spellname].mp3`
+`Assets\Sounds\[Locale][Category]\enemy_avoid\you_avoided_[spellname].mp3`
 
 Additionally depending on the type of the new spell certain tests should be written. Usually two types of tests should be written. One test is for testing the ability to play the sound file while the other should check if the spell combat message is parseable by the parser.
 
