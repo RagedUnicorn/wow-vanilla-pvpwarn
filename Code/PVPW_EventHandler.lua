@@ -27,7 +27,7 @@ me.tag = "EventHandler"
 --[[
   @param {string} msg
   @param {string} event
-]]
+]]--
 function me.HandleEvent(msg, event)
 
   -- if addon disabled ignore event
