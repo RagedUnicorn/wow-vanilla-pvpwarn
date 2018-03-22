@@ -3729,7 +3729,7 @@ end
   @param {number} spellId
   @return ({string}, {table}) | {nil}
 ]]--
-function me.SearchSpellBySpellId(spellId)
+function me.SearchSpellByspellID(spellId)
   if not spellId then return nil end
 
   for category, _ in pairs(spellMap) do
