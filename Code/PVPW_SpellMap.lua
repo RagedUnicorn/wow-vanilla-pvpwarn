@@ -42,6 +42,9 @@ me.tag = "SpellMap"
         {boolean} if set to true means there is a sound file to announce Aura down/fade
       ["canCrit"] = false,
         {boolean} optional field, default false if field is missing
+      ["links"] = { 0000 },
+        {table} optional field, link to other spells by their spellID. Spells that are linked together
+        share their configuration. The can't have a different configuration from eachother
       ["active"] = false,
         -- {boolean} Whether the spell is active or inactive
       ["ignoreEvents"] = {
@@ -1234,6 +1237,7 @@ if (GetLocale() == "deDE") then
         ["spellID"] = 17116,
         ["spellIcon"] = "spell_nature_ravenform",
         ["hasFade"] = true,
+        ["links"] = { 16188 },
         ["active"] = true
       },
       ["feenfeuer"] = {
@@ -1276,6 +1280,7 @@ if (GetLocale() == "deDE") then
         ["spellID"] = 16188,
         ["spellIcon"] = "spell_nature_ravenform",
         ["hasFade"] = true,
+        ["links"] = { 17116 },
         ["active"] = true
       },
       ["totem_des_erdstosses"] = {
@@ -3045,6 +3050,7 @@ else
         ["spellID"] = 17116,
         ["spellIcon"] = "spell_nature_ravenform",
         ["hasFade"] = true,
+        ["links"] = { 16188 },
         ["active"] = true
       },
       ["faerie_fire"] = {
@@ -3087,6 +3093,7 @@ else
         ["spellID"] = 16188,
         ["spellIcon"] = "spell_nature_ravenform",
         ["hasFade"] = true,
+        ["links"] = { 17116 },
         ["active"] = true
       },
       ["tremor_totem"] = {
@@ -3700,8 +3707,8 @@ function me.SearchByName(name)
 
   mod.logger.LogDebug(me.tag, string.format("Searching for %s in spellMap", spellName))
 
-  for class, value in pairs(spellMap) do
-    for key, value in pairs(spellMap[class]) do
+  for class, _ in pairs(spellMap) do
+    for key, _ in pairs(spellMap[class]) do
       if key == spellName then
         mod.logger.LogDebug(me.tag, string.format("Found spell - %s - in spellMap", spellName))
 
@@ -3709,6 +3716,31 @@ function me.SearchByName(name)
         spell.normalizedSpellName = key -- add normalizedSpellName that would get lost otherwise
 
         return class, spell
+      end
+    end
+  end
+
+  return nil
+end
+
+--[[
+  Search a spell by its id
+
+  @param {number} spellId
+  @return ({string}, {table}) | {nil}
+]]--
+function me.SearchSpellBySpellId(spellId)
+  if not spellId then return nil end
+
+  for category, _ in pairs(spellMap) do
+    for spellName, spell in pairs(spellMap[category]) do
+      if spellId == spell.spellID then
+        mod.logger.LogDebug(me.tag, string.format("Found spell with id - %s - in spellMap", spellId))
+
+        local clonedSpell = mod.common.Clone(spellMap[category][spellName])
+        clonedSpell.normalizedSpellName = spellName -- add normalizedSpellName that would get lost otherwise
+
+        return category, clonedSpell
       end
     end
   end

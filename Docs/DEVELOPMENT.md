@@ -38,6 +38,7 @@ Spelltemplate:
     ["spellIcon"] = "",
     ["hasFade"] = ,
     ["canCrit"] = ,
+    ["links"] = ,
     ["active"] = ,
     ["ignoreEvents"] = []
   }
@@ -88,3 +89,41 @@ The WarnQueue Flowchart describes how the addon works through the queue of detec
 ![](/Docs/pvpw_queue_flow.png)
 
 While the `WarnQueueWorker` is working through the queue in a fast interval of 0.1 seconds only one event per second can be shown/played to the player. This is to prevent visual and acoustic events overlapping with other warnings. It is still helpful to have a fast worker to work on an event as fast as possible as soon as it is put to the queue. We have to assume that most of the time the queue will be empty. As soon as an event is prepared for playing the queue is set to busy for 1 second. During this time the worker will skip each tick until the queue is free for work again.
+
+## Linked Spells
+
+Spells with the exact same name have to be linked together because there is no way to differentiate them just from the combatlog.
+
+If there are spells with the same name other then the current one your working on in the spellmap they have to be linked.
+
+Example:
+
+Spell `Nature's Swiftness`
+Druid: id `17116`
+Shaman: id: `16188`
+
+```lua
+["natures_swiftness"] = {
+  ["name"] = "Nature's Swiftness",
+  ["soundFileName"] = "natures_swiftness",
+  ["spellID"] = 17116, -- druid spellid
+  ["spellIcon"] = "spell_nature_ravenform",
+  ["hasFade"] = true,
+  ["links"] = { 16188 }, -- link to shaman spell id
+  ["active"] = true
+}
+
+["natures_swiftness"] = {
+  ["name"] = "Nature's Swiftness",
+  ["soundFileName"] = "natures_swiftness",
+  ["spellID"] = 16188, -- shaman spellid
+  ["spellIcon"] = "spell_nature_ravenform",
+  ["hasFade"] = true,
+  ["links"] = { 17116 }, -- link to druid spell id
+  ["active"] = true
+}
+```
+
+**Note:** A spell can have multiple links
+
+Once the spells are linked together they share the same configuration. Test this by changing a property and verify that the same property was changed for all the links as well.

@@ -300,7 +300,23 @@ end
 ]]--
 function me.SetVisualWarningActive(spellList, categoryName, spellName, state)
   me.SetupPrerequisiteForOptionEntry(spellList, categoryName, spellName)
-  PVPWarnOptions[spellList][categoryName][spellName].visualWarningActive = state
+
+  -- check if the spell has links to other spells
+  local category, spell = mod.spellMap.SearchByName(spellName)
+
+  if spell.links then
+    -- make sure to sync configuration change to all linked spells
+    for i = 1, table.getn(spell.links) do
+      local linkedCategory, linkedSpell = mod.spellMap.SearchSpellBySpellId(spell.links[i])
+      PVPWarnOptions[spellList][linkedCategory][spellName].visualWarningActive = state
+    end
+
+    -- set config for initial spell found as well
+    PVPWarnOptions[spellList][category][spellName].visualWarningActive = state
+  else
+    -- default case for almost all spells
+    PVPWarnOptions[spellList][categoryName][spellName].visualWarningActive = state
+  end
 end
 
 --[[
@@ -379,7 +395,23 @@ end
 ]]--
 function me.SetSoundWarningActive(spellList, categoryName, spellName, state)
   me.SetupPrerequisiteForOptionEntry(spellList, categoryName, spellName)
-  PVPWarnOptions[spellList][categoryName][spellName].soundWarningActive = state
+
+  -- check if the spell has links to other spells
+  local category, spell = mod.spellMap.SearchByName(spellName)
+
+  if spell.links then
+    -- make sure to sync configuration change to all linked spells
+    for i = 1, table.getn(spell.links) do
+      local linkedCategory, linkedSpell = mod.spellMap.SearchSpellBySpellId(spell.links[i])
+      PVPWarnOptions[spellList][linkedCategory][spellName].soundWarningActive = state
+    end
+
+    -- set config for initial spell found as well
+    PVPWarnOptions[spellList][category][spellName].soundWarningActive = state
+  else
+    -- default case for almost all spells
+    PVPWarnOptions[spellList][categoryName][spellName].soundWarningActive = state
+  end
 end
 
 --[[
@@ -396,7 +428,23 @@ end
 ]]--
 function me.SetSoundFadeWarningActive(spellList, categoryName, spellName, state)
   me.SetupPrerequisiteForOptionEntry(spellList, categoryName, spellName)
-  PVPWarnOptions[spellList][categoryName][spellName].soundFadeWarningActive = state
+
+  -- check if the spell has links to other spells
+  local category, spell = mod.spellMap.SearchByName(spellName)
+
+  if spell.links then
+    -- make sure to sync configuration change to all linked spells
+    for i = 1, table.getn(spell.links) do
+      local linkedCategory, linkedSpell = mod.spellMap.SearchSpellBySpellId(spell.links[i])
+      PVPWarnOptions[spellList][linkedCategory][spellName].soundFadeWarningActive = state
+    end
+
+    -- set config for initial spell found as well
+    PVPWarnOptions[spellList][category][spellName].soundFadeWarningActive = state
+  else
+    -- default case for almost all spells
+    PVPWarnOptions[spellList][categoryName][spellName].soundFadeWarningActive = state
+  end
 end
 
 --[[
@@ -435,7 +483,23 @@ end
 ]]--
 function me.SetVisualWarningColor(spellList, categoryName, spellName, color)
   me.SetupPrerequisiteForOptionEntry(spellList, categoryName, spellName)
-  PVPWarnOptions[spellList][categoryName][spellName].visualWarningColor = color
+
+  -- check if the spell has links to other spells
+  local category, spell = mod.spellMap.SearchByName(spellName)
+
+  if spell.links then
+    -- make sure to sync configuration change to all linked spells
+    for i = 1, table.getn(spell.links) do
+      local linkedCategory, linkedSpell = mod.spellMap.SearchSpellBySpellId(spell.links[i])
+      PVPWarnOptions[spellList][linkedCategory][spellName].visualWarningColor = color
+    end
+
+    -- set config for initial spell found as well
+    PVPWarnOptions[spellList][category][spellName].visualWarningColor = color
+  else
+    -- default case for almost all spells
+    PVPWarnOptions[spellList][categoryName][spellName].visualWarningColor = color
+  end
 end
 
 --[[
@@ -483,7 +547,23 @@ end
 ]]--
 function me.SetSpellActive(spellList, categoryName, spellName, state)
   me.SetupPrerequisiteForOptionEntry(spellList, categoryName, spellName)
-  PVPWarnOptions[spellList][categoryName][spellName].spellActive = state
+
+  -- check if the spell has links to other spells
+  local category, spell = mod.spellMap.SearchByName(spellName)
+
+  if spell.links then
+    -- make sure to sync configuration change to all linked spells
+    for i = 1, table.getn(spell.links) do
+      local linkedCategory, linkedSpell = mod.spellMap.SearchSpellBySpellId(spell.links[i])
+      PVPWarnOptions[spellList][linkedCategory][spellName].spellActive = state
+    end
+
+    -- set config for initial spell found as well
+    PVPWarnOptions[spellList][category][spellName].spellActive = state
+  else
+    -- default case for almost all spells
+    PVPWarnOptions[spellList][categoryName][spellName].spellActive = state
+  end
 end
 
 --[[
