@@ -3707,15 +3707,15 @@ function me.SearchByName(name)
 
   mod.logger.LogDebug(me.tag, string.format("Searching for %s in spellMap", spellName))
 
-  for class, _ in pairs(spellMap) do
-    for key, _ in pairs(spellMap[class]) do
-      if key == spellName then
+  for category, _ in pairs(spellMap) do
+    for spellEntry, _ in pairs(spellMap[category]) do
+      if spellEntry == spellName then
         mod.logger.LogDebug(me.tag, string.format("Found spell - %s - in spellMap", spellName))
 
-        local spell = mod.common.Clone(spellMap[class][key])
-        spell.normalizedSpellName = key -- add normalizedSpellName that would get lost otherwise
+        local clonedSpell = mod.common.Clone(spellMap[category][spellEntry])
+        clonedSpell.normalizedSpellName = spellEntry -- add normalizedSpellName that would get lost otherwise
 
-        return class, spell
+        return category, clonedSpell
       end
     end
   end
