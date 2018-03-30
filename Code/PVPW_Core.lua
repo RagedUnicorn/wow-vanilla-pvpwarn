@@ -183,8 +183,8 @@ function me.Initialize()
   math.randomseed(GetTime())
   me.logger.LogDebug(me.tag, "Initialize addon")
 
-  me.timer.CreateTimer("WarnQueueWorker", me.warnQueue.WorkQueue, 0.1, 0.1)
-  me.timer.CreateTimer("WarnQueueWorkingState", me.warnQueue.SetWorkingState, 0.8, 0.8)
+  me.timer.CreateTimer("WarnQueueWorker", me.warnQueue.WorkQueue, 0.1, true)
+  me.timer.CreateTimer("WarnQueueWorkingState", me.warnQueue.SetWorkingState, 0.8, true)
 
   me.timer.StartTimer("WarnQueueWorker")
 

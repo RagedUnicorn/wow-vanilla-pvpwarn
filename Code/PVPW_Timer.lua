@@ -35,7 +35,7 @@ me.Timers = {}
   @param {string} name
   @param {func} func
   @param {number} delay
-  @param {number} rep
+  @param {boolean} rep
 ]]--
 function me.CreateTimer(name, func, delay, rep)
   mod.logger.LogDebug(me.tag, "Creating timer with name: " .. name)
