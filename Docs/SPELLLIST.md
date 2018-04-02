@@ -147,7 +147,7 @@ Another reason that a spell is only partially supported is that it might not wor
 | druid      | ![ability_bullrush](icons/ability_bullrush.jpg)                                           | Frenzied Regeneration            | `supported`           |                                        |
 | druid      | ![spell_nature_nullifypoison_02](icons/spell_nature_nullifypoison_02.jpg)                 | Abolish Poison                   | `supported`           |                                        |
 | druid      | ![spell_nature_lightning](icons/spell_nature_lightning.jpg)                               | Innervate                        | `supported`           |                                        |
-| druid      | ![spell_nature_ravenform](icons/spell_nature_ravenform.jpg)                               | Nature's Swiftness               | `supported`           | Linked with Shaman Nature's Swiftness* |
+| druid      | ![spell_nature_ravenform](icons/spell_nature_ravenform.jpg)                               | Nature's Swiftness               | `supported`           | Linked with Shamans Nature's Swiftness* |
 | druid      | ![spell_nature_faeriefire](icons/spell_nature_faeriefire.jpg)                             | Farie Fire                       | `supported`           |                                        |
 | shaman     | ![spell_nature_wispheal](icons/spell_nature_wispheal.jpg)                                 | Elemental Mastery                | `supported`           |                                        |
 | shaman     | ![spell_nature_ravenform](icons/spell_nature_ravenform.jpg)                               | Nature's Swiftness               | `supported`           | Linked with Druids Nature's Swiftness* |
@@ -216,6 +216,4 @@ Another reason that a spell is only partially supported is that it might not wor
 | misc       | ![inv_potion_22](icons/inv_potion_22.jpg)                                                 | Greater Nature Protection Potion | `supported`           |                                        |
 | misc       | ![inv_potion_83](icons/inv_potion_83.jpg)                                                 | Greater Arcane Protection Potion | `supported`           |                                        |
 
-* Linked Spells
-
-Spells with the exact same name cannot be easily differentiated in the combatlog because the combatlog does not contain the class that casted the spell. Because of this `Nature's Swiftness` which is a spell that both Shamans and Druids have are linked together. This means that they cannot have a configuration that differs from the other. If the spell is activated and sound is enabled for the Druid spell it is for the Shaman Spell as well
+&ast; Linked Spells - Spells with the exact same name cannot be easily differentiated in the combatlog because the combatlog does not contain the class that casted the spell. Because of this `Nature's Swiftness` which is a spell that both Shamans and Druids have are linked together. This means that they cannot have a configuration that differs from the other. If the spell is activated and sound is enabled for the Druid spell it is for the Shaman Spell as well
