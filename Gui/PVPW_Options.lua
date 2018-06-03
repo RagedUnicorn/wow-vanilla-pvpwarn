@@ -305,10 +305,9 @@ end
 function me.SetVisualWarningActive(spellList, categoryName, spellName, state)
   me.SetupPrerequisiteForOptionEntry(spellList, categoryName, spellName)
 
-  -- check if the spell has links to other spells
-  local category, spell = mod.spellMap.SearchByName(spellName)
+  local category, spell = mod.common.SearchSpellInSpellMap(spellList, spellName)
 
-  if spell.links then
+  if spell and spell.links then
     -- make sure to sync configuration change to all linked spells
     for i = 1, table.getn(spell.links) do
       local linkedCategory, linkedSpell = mod.spellMap.SearchSpellByspellID(spell.links[i])
@@ -400,10 +399,9 @@ end
 function me.SetSoundWarningActive(spellList, categoryName, spellName, state)
   me.SetupPrerequisiteForOptionEntry(spellList, categoryName, spellName)
 
-  -- check if the spell has links to other spells
-  local category, spell = mod.spellMap.SearchByName(spellName)
+  local category, spell = mod.common.SearchSpellInSpellMap(spellList, spellName)
 
-  if spell.links then
+  if spell and spell.links then
     -- make sure to sync configuration change to all linked spells
     for i = 1, table.getn(spell.links) do
       local linkedCategory, linkedSpell = mod.spellMap.SearchSpellByspellID(spell.links[i])
@@ -433,10 +431,9 @@ end
 function me.SetSoundFadeWarningActive(spellList, categoryName, spellName, state)
   me.SetupPrerequisiteForOptionEntry(spellList, categoryName, spellName)
 
-  -- check if the spell has links to other spells
-  local category, spell = mod.spellMap.SearchByName(spellName)
+  local category, spell = mod.common.SearchSpellInSpellMap(spellList, spellName)
 
-  if spell.links then
+  if spell and spell.links then
     -- make sure to sync configuration change to all linked spells
     for i = 1, table.getn(spell.links) do
       local linkedCategory, linkedSpell = mod.spellMap.SearchSpellByspellID(spell.links[i])
@@ -488,10 +485,9 @@ end
 function me.SetVisualWarningColor(spellList, categoryName, spellName, color)
   me.SetupPrerequisiteForOptionEntry(spellList, categoryName, spellName)
 
-  -- check if the spell has links to other spells
-  local category, spell = mod.spellMap.SearchByName(spellName)
+  local category, spell = mod.common.SearchSpellInSpellMap(spellList, spellName)
 
-  if spell.links then
+  if spell and spell.links then
     -- make sure to sync configuration change to all linked spells
     for i = 1, table.getn(spell.links) do
       local linkedCategory, linkedSpell = mod.spellMap.SearchSpellByspellID(spell.links[i])
@@ -552,10 +548,9 @@ end
 function me.SetSpellActive(spellList, categoryName, spellName, state)
   me.SetupPrerequisiteForOptionEntry(spellList, categoryName, spellName)
 
-  -- check if the spell has links to other spells
-  local category, spell = mod.spellMap.SearchByName(spellName)
+  local category, spell = mod.common.SearchSpellInSpellMap(spellList, spellName)
 
-  if spell.links then
+  if spell and spell.links then
     -- make sure to sync configuration change to all linked spells
     for i = 1, table.getn(spell.links) do
       local linkedCategory, linkedSpell = mod.spellMap.SearchSpellByspellID(spell.links[i])

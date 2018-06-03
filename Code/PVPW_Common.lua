@@ -206,6 +206,29 @@ function me.GetSpellListType(spellType)
 end
 
 --[[
+  @param {string} spellList
+    decides upon which stored list should be used. Possible values:
+    * spellList - enemy spell detected
+    * spellSelfAvoidList - player avoided spell
+    * spellEnemyAvoidList - enemy player avoided spell
+  @param {string} spellName
+
+  @return {string, table} category, spell
+]]--
+function me.SearchSpellInSpellMap(spellList, spellName)
+  if spellList == PVPW_CONSTANTS.SPELL_TYPE.SPELL then
+    -- check if the spell has links to other spells
+    return mod.spellMap.SearchByName(spellName)
+  elseif spellList == PVPW_CONSTANTS.SPELL_TYPE.SPELL_SELF_AVOID or
+    spellList == PVPW_CONSTANTS.SPELL_TYPE.SPELL_ENEMY_AVOID then
+    return mod.spellAvoidMap.SearchByName(spellName)
+  end
+
+  mod.logger.LogError(me.tag, "Invalid spellList unable to update option")
+  return nil
+end
+
+--[[
   @param {table} obj
     the object that should be cloned
   @return {table}
