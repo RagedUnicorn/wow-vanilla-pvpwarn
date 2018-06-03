@@ -30,11 +30,13 @@ PVPW_CONSTANTS = {
   ADDON_NAME_SHORT = "PVPW",
   ADDON_VERSION = "0.0.1",
 
-  SOUND_TYPES = {
+  SPELL_TYPES = {
     ["SPELL"] = 1,
     ["SPELL_DOWN"] = 2,
     ["ENEMY_AVOIDED"] = 3,
-    ["SELF_AVOIDED"] = 4
+    ["SELF_AVOIDED"] = 4,
+    ["LOCAL_FAILURE"] = 5,
+    ["HOSTILE_DEATH"] = 6
   },
 
   AVOID_TYPES = {

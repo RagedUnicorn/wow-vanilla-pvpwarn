@@ -43,11 +43,11 @@ local _G = getfenv(0)
 
 --[[
   @param {string} soundCategory
-  @param {string} soundType
+  @param {string} spellType
   @param {string} soundFileName
 ]]--
-function _G.__PVPW__DEBUG__PlaySound(soundCategory, soundType, soundFileName)
-  mod.sound.PlaySound(soundCategory, soundType, soundFileName)
+function _G.__PVPW__DEBUG__PlaySound(soundCategory, spellType, soundFileName)
+  mod.sound.PlaySound(soundCategory, spellType, soundFileName)
 end
 
 --[[

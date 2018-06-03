@@ -138,69 +138,69 @@ end
 --[[
   Check if the detected spell is of category ENEMY_AVOIDED
 
-  @param {string} soundType
+  @param {string} spellType
   @return {boolean}
     true if category matched
     false if category does not match
 ]]--
-function me.IsEnemySpellAvoided(soundType)
-  return soundType == PVPW_CONSTANTS.SOUND_TYPES.ENEMY_AVOIDED
+function me.IsEnemySpellAvoided(spellType)
+  return spellType == PVPW_CONSTANTS.SPELL_TYPES.ENEMY_AVOIDED
 end
 
 --[[
   Check if the detected spell is of category SELF_AVOIDED
 
-  @param {string} soundType
+  @param {string} spellType
   @return {boolean}
     true if category matched
     false if category does not match
 ]]--
-function me.IsSelfSpellAvoided(soundType)
-  return soundType == PVPW_CONSTANTS.SOUND_TYPES.SELF_AVOIDED
+function me.IsSelfSpellAvoided(spellType)
+  return spellType == PVPW_CONSTANTS.SPELL_TYPES.SELF_AVOIDED
 end
 
 --[[
   Check if the detected spell is of category SPELL
 
-  @param {string} soundType
+  @param {string} spellType
   @return {boolean}
     true if category matched
     false if category does not match
 ]]--
-function me.IsNormalSpell(soundType)
-  return soundType == PVPW_CONSTANTS.SOUND_TYPES.SPELL
+function me.IsNormalSpell(spellType)
+  return spellType == PVPW_CONSTANTS.SPELL_TYPES.SPELL
 end
 
 --[[
   Check if the detected spell is of category SPELL_DOWN
 
-  @param {string} soundType
+  @param {string} spellType
   @return {boolean}
     true if category matched
     false if category does not match
 ]]--
-function me.IsNormalSpellDown(soundType)
-  return soundType == PVPW_CONSTANTS.SOUND_TYPES.SPELL_DOWN
+function me.IsNormalSpellDown(spellType)
+  return spellType == PVPW_CONSTANTS.SPELL_TYPES.SPELL_DOWN
 end
 
 --[[
   Check to which spellList the spell belongs to and return the name of that spelllist
 
-  @param {string} soundType
+  @param {string} spellType
   @return {string|nil}
   * spellList - enemy spell detected
   * spellSelfAvoidList - player avoided spell
   * spellEnemyAvoidList - enemy player avoided spell
 ]]--
-function me.GetSpellListType(soundType)
-  if me.IsNormalSpell(soundType) or me.IsNormalSpellDown(soundType) then
+function me.GetSpellListType(spellType)
+  if me.IsNormalSpell(spellType) or me.IsNormalSpellDown(spellType) then
     return PVPW_CONSTANTS.SPELL_TYPE.SPELL
-  elseif me.IsSelfSpellAvoided(soundType) then
+  elseif me.IsSelfSpellAvoided(spellType) then
     return PVPW_CONSTANTS.SPELL_TYPE.SPELL_SELF_AVOID
-  elseif me.IsEnemySpellAvoided(soundType) then
+  elseif me.IsEnemySpellAvoided(spellType) then
     return PVPW_CONSTANTS.SPELL_TYPE.SPELL_ENEMY_AVOID
   else
-    mod.logger.LogError(me.tag, "Invalid soundtype")
+    mod.logger.LogError(me.tag, "Invalid spellType")
     return nil
   end
 end

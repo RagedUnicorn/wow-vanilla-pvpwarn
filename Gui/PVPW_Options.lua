@@ -54,13 +54,13 @@ function PVPW_PlaySound_OnClick()
   local parent = this:GetParent()
 
   if parent.spellType == PVPW_CONSTANTS.SPELL_TYPE.SPELL then
-    mod.sound.PlaySound(parent.type, PVPW_CONSTANTS.SOUND_TYPES.SPELL,
+    mod.sound.PlaySound(parent.type, PVPW_CONSTANTS.SPELL_TYPES.SPELL,
       parent.soundFileName)
   elseif parent.spellType == PVPW_CONSTANTS.SPELL_TYPE.SPELL_SELF_AVOID then
-    mod.sound.PlaySound(parent.type, PVPW_CONSTANTS.SOUND_TYPES.SELF_AVOIDED,
+    mod.sound.PlaySound(parent.type, PVPW_CONSTANTS.SPELL_TYPES.SELF_AVOIDED,
       parent.soundFileName)
   elseif parent.spellType == PVPW_CONSTANTS.SPELL_TYPE.SPELL_ENEMY_AVOID then
-    mod.sound.PlaySound(parent.type, PVPW_CONSTANTS.SOUND_TYPES.ENEMY_AVOIDED,
+    mod.sound.PlaySound(parent.type, PVPW_CONSTANTS.SPELL_TYPES.ENEMY_AVOIDED,
       parent.soundFileName)
   end
 end
@@ -71,7 +71,7 @@ end
 function PVPW_PlaySoundFade_OnClick()
   local parent = this:GetParent()
 
-  mod.sound.PlaySound(parent.type, PVPW_CONSTANTS.SOUND_TYPES.SPELL_DOWN,
+  mod.sound.PlaySound(parent.type, PVPW_CONSTANTS.SPELL_TYPES.SPELL_DOWN,
     parent.soundFileName, true)
 end
 

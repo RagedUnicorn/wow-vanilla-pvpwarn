@@ -2,6 +2,7 @@
 ## Title: PVPWarn
 ## Author: Michael Wiesendanger <michael.wiesendanger@gmail.com>
 ## Notes: Addon that warns players visually and acoustically about pvp events
+## Dependencies: LogParser
 ## SavedVariables: PVPWarnOptions, PVPWarnProfiles
 ## SavedVariablesPerCharacter: PVPWarnOptions, PVPWarnProfiles
 
@@ -16,7 +17,6 @@ Localization\deDE.lua
 Code\PVPW_Core.lua
 Code\PVPW_SpellMap.lua
 Code\PVPW_SpellAvoidMap.lua
-Code\PVPW_Parser.lua
 Code\PVPW_Timer.lua
 Code\PVPW_Common.lua
 Code\PVPW_Logger.lua

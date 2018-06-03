@@ -29,10 +29,16 @@ mod.eventHandler = me
 me.tag = "EventHandler"
 
 --[[
-  @param {string} msg
-  @param {string} event
+  Track identifiers of event subscriptions. This allows for later unregistering
+  from the logparser dependency.
 ]]--
-function me.HandleEvent(msg, event)
+local subscriptions = {}
+
+--[[
+  @param {string} status
+  @param {string} spellData
+]]
+function me.HandleEvent(status, spellData)
 
   -- if addon disabled ignore event
   if PVPWarnOptions.disableAddon then
@@ -63,22 +69,17 @@ function me.HandleEvent(msg, event)
     return
   end
 
-  local status, spellData = mod.parser.ParseCombatText(msg, event)
-
   if status ~= 0 then
     local class, spell, fade
 
-    if status == 1 then
-      -- check if event should be ignored
-      if not me.ShouldProcessEvent(spellData) then
-        return
-      end
-
-      -- retrieve spelldata
-      class, spell = me.GetSpellFromSpellMap(spellData)
-    else
+    -- check if event should be ignored
+    if not me.ShouldProcessEvent(spellData) then
+      mod.logger.LogDebug(me.tag, "Should not process event - aborting...")
       return
     end
+
+    -- retrieve spelldata
+    class, spell = me.GetSpellFromSpellMap(spellData)
 
     if class and spell then
       if spellData.faded then
@@ -91,21 +92,14 @@ function me.HandleEvent(msg, event)
         end
       end
 
-      --[[
-        If spell has an ignoreEvents array we should check whether the current event
-        should be ignored
-      ]]--
-      if spell.ignoreEvents then
-        for i = 1, table.getn(spell.ignoreEvents) do
-          if spellData.type == spell.ignoreEvents[i] then
-            mod.logger.LogInfo(me.tag, "Ignoring " .. spellData.type .. " for " .. spell.name)
-            return
-          end
-        end
+      if me.ShouldIgnoreEvent(spellData.type, spell) then
+        mod.logger.LogDebug(me.tag, "Ignoring event - " .. spellData.type .. " - for spell: "
+          .. spell.name)
+        return
       end
 
       mod.warnQueue.AddToQueue(tostring(math.floor(math.random() * 100000)),
-          spell.normalizedSpellName, spellData.soundType, class, spell.soundFileName, fade)
+          spell.normalizedSpellName, spellData.spellType, class, spell.soundFileName, fade)
     else
       mod.logger.LogInfo(me.tag, string.format("Unknown spell %s", spellData.spell))
       return
@@ -135,7 +129,7 @@ function me.GetSpellFromSpellMap(spellData)
 end
 
 --[[
-  Figure whether an event should be processed or not. Note that the event can still
+  Figure out whether an event should be processed or not. Note that the event can still
   be dropped at a latter point because the player deactived the spell in his options
 
   @param {table} spellData
@@ -177,4 +171,111 @@ function me.ShouldProcessEvent(spellData)
     -- if option is deactivated show event in any case
     return true
   end
+end
+
+--[[
+  @param {string} eventType
+  @param {table} spell
+
+  @return {boolean}
+    True if the event should be ignored
+    False if the event should not be ignored
+]]--
+function me.ShouldIgnoreEvent(eventType, spell)
+  if not spell.ignoreEvents then return false end
+
+  for i = 1, table.getn(spell.ignoreEvents) do
+    if spell.ignoreEvents[i] == eventType then
+      return true
+    end
+  end
+
+
+
+  return false
+end
+
+--[[
+  Subscribe to LogParser events
+]]--
+function me.SubscribeEvents()
+  mod.logger.LogInfo(me.tag, "Subscribing to Addon events")
+
+  local identifier
+
+  identifier = lp.subscriptionManager.SubscribeEvent(
+    mod.eventHandler.HandleEvent,
+    "CHAT_MSG_SPELL_PERIODIC_SELF_DAMAGE"
+  )
+
+  table.insert(subscriptions, identifier)
+
+  identifier = lp.subscriptionManager.SubscribeEvent(
+    mod.eventHandler.HandleEvent,
+    "CHAT_MSG_SPELL_PERIODIC_HOSTILEPLAYER_BUFFS"
+  )
+
+  table.insert(subscriptions, identifier)
+
+  identifier = lp.subscriptionManager.SubscribeEvent(
+    mod.eventHandler.HandleEvent,
+    "CHAT_MSG_SPELL_HOSTILEPLAYER_BUFF"
+  )
+
+  table.insert(subscriptions, identifier)
+
+  identifier = lp.subscriptionManager.SubscribeEvent(
+    mod.eventHandler.HandleEvent,
+    "CHAT_MSG_SPELL_HOSTILEPLAYER_DAMAGE"
+  )
+
+  table.insert(subscriptions, identifier)
+
+  identifier = lp.subscriptionManager.SubscribeEvent(
+    mod.eventHandler.HandleEvent,
+    "CHAT_MSG_SPELL_AURA_GONE_OTHER"
+  )
+
+  table.insert(subscriptions, identifier)
+
+  identifier = lp.subscriptionManager.SubscribeEvent(
+    mod.eventHandler.HandleEvent,
+    "CHAT_MSG_SPELL_DAMAGESHIELDS_ON_SELF"
+  )
+
+  table.insert(subscriptions, identifier)
+
+  identifier = lp.subscriptionManager.SubscribeEvent(
+    mod.eventHandler.HandleEvent,
+    "CHAT_MSG_SPELL_SELF_DAMAGE"
+  )
+
+  table.insert(subscriptions, identifier)
+
+  identifier = lp.subscriptionManager.SubscribeEvent(
+    mod.eventHandler.HandleEvent,
+    "CHAT_MSG_SPELL_DAMAGESHIELDS_ON_OTHERS"
+  )
+
+  table.insert(subscriptions, identifier)
+
+  identifier = lp.subscriptionManager.SubscribeEvent(
+    mod.eventHandler.HandleEvent,
+    "CHAT_MSG_SPELL_PERIODIC_HOSTILEPLAYER_DAMAGE"
+  )
+
+  table.insert(subscriptions, identifier)
+end
+
+--[[
+  Unsubscribe to LogParser events
+]]--
+function me.UnsubscribeEvents()
+  mod.logger.LogInfo(me.tag, "Unsubscribing to Addon events")
+
+  for i = 1, table.getn(subscriptions) do
+    lp.subscriptionManager.UnsubscribeEvent(subscriptions[i])
+  end
+
+  subscriptions = {} -- empty
 end

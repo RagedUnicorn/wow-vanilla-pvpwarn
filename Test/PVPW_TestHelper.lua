@@ -546,12 +546,12 @@ end
 function me.TestSound(className, testName, spellName)
   local _, spellData = mod.spellMap.SearchByName(spellName)
   local testType = mod.testHelper.testType.sound
-  local soundType = PVPW_CONSTANTS.SOUND_TYPES.SPELL
+  local spellType = PVPW_CONSTANTS.SPELL_TYPES.SPELL
   local status = 0
 
   mod.testReporter.StartTest(className, testType, testName)
 
-  status = mod.sound.PlaySound(className, soundType, spellData.soundFileName)
+  status = mod.sound.PlaySound(className, spellType, spellData.soundFileName)
 
   if status == 1 then
     mod.testReporter.ReportSuccessTest(className, testName, testType,
@@ -574,12 +574,12 @@ end
 function me.TestSoundDown(className, testName, spellName)
   local _, spellData = mod.spellMap.SearchByName(spellName)
   local testType = mod.testHelper.testType.soundDown
-  local soundType = PVPW_CONSTANTS.SOUND_TYPES.SPELL_DOWN
+  local spellType = PVPW_CONSTANTS.SPELL_TYPES.SPELL_DOWN
   local status = 0
 
   mod.testReporter.StartTest(className, testType, testName)
 
-  status = mod.sound.PlaySound(className, soundType, spellData.soundFileName)
+  status = mod.sound.PlaySound(className, spellType, spellData.soundFileName)
 
   if status == 1 then
     mod.testReporter.ReportSuccessTest(className, testName, testType,
@@ -602,12 +602,12 @@ end
 function me.TestSoundEnemyAvoid(className, testName, spellName)
   local _, spellData = mod.spellAvoidMap.SearchByName(spellName)
   local testType = mod.testHelper.testType.soundAvoid
-  local soundType = PVPW_CONSTANTS.SOUND_TYPES.ENEMY_AVOIDED
+  local spellType = PVPW_CONSTANTS.SPELL_TYPES.ENEMY_AVOIDED
   local status = 0
 
   mod.testReporter.StartTest(className, testType, testName)
 
-  status = mod.sound.PlaySound(className, soundType, spellData.soundFileName)
+  status = mod.sound.PlaySound(className, spellType, spellData.soundFileName)
 
   if status == 1 then
     mod.testReporter.ReportSuccessTest(className, testName, testType,
@@ -630,12 +630,12 @@ end
 function me.TestSoundSelfAvoid(className, testName, spellName)
   local _, spellData = mod.spellAvoidMap.SearchByName(spellName)
   local testType = mod.testHelper.testType.soundSelfAvoid
-  local soundType = PVPW_CONSTANTS.SOUND_TYPES.SELF_AVOIDED
+  local spellType = PVPW_CONSTANTS.SPELL_TYPES.SELF_AVOIDED
   local status = 0
 
   mod.testReporter.StartTest(className, testType, testName)
 
-  status = mod.sound.PlaySound(className, soundType, spellData.soundFileName)
+  status = mod.sound.PlaySound(className, spellType, spellData.soundFileName)
 
   if status == 1 then
     mod.testReporter.ReportSuccessTest(className, testName, testType,

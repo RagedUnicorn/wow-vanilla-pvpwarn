@@ -59,36 +59,36 @@ end
   Play a sound from the assets-folder
   @param {string} soundCategory
     e.g rogue, misc, racials etc
-  @param {number} soundType
-    see constants SOUND_TYPES
+  @param {number} spellType
+    see constants SPELL_TYPES
   @param {string} soundFileName
     part of the name of the soundfile
   @return {number}
     0 if there was a problem
     1 if sound was played
 ]]--
-function me.PlaySound(soundCategory, soundType, soundFileName)
+function me.PlaySound(soundCategory, spellType, soundFileName)
   assert(type(soundCategory) == "string",
     string.format("bad argument #1 to `PlaySound` (expected string got %s)", type(soundCategory)))
 
-  assert(type(soundType) == "number",
-    string.format("bad argument #2 to `PlaySound` (expected number got %s)", type(soundType)))
+  assert(type(spellType) == "number",
+    string.format("bad argument #2 to `PlaySound` (expected number got %s)", type(spellType)))
 
   assert(type(soundFileName) == "string",
     string.format("bad argument #3 to `PlaySound` (expected string got %s)", type(soundFileName)))
 
-  if soundType == PVPW_CONSTANTS.SOUND_TYPES.SPELL then
+  if spellType == PVPW_CONSTANTS.SPELL_TYPES.SPELL then
     soundPath = BASE_PATH .. soundCategory .. "\\" .. soundFileName .. FILE_TYPE
-  elseif soundType == PVPW_CONSTANTS.SOUND_TYPES.SPELL_DOWN then
+  elseif spellType == PVPW_CONSTANTS.SPELL_TYPES.SPELL_DOWN then
     soundPath = BASE_PATH .. soundCategory .. "\\" .. soundFileName .. FILE_NAME_DOWN .. FILE_TYPE
-  elseif soundType == PVPW_CONSTANTS.SOUND_TYPES.ENEMY_AVOIDED then
+  elseif spellType == PVPW_CONSTANTS.SPELL_TYPES.ENEMY_AVOIDED then
     soundPath = BASE_PATH .. soundCategory .. "\\" .. FILE_FOLDER_ENEMY_AVOIDED ..
       "\\" .. FILE_NAME_ENEMY_AVOIDED .. soundFileName .. FILE_TYPE
-  elseif soundType == PVPW_CONSTANTS.SOUND_TYPES.SELF_AVOIDED then
+  elseif spellType == PVPW_CONSTANTS.SPELL_TYPES.SELF_AVOIDED then
     soundPath = BASE_PATH .. soundCategory .. "\\" .. FILE_FOLDER_SELF_AVOIDED ..
       "\\" .. FILE_NAME_SELF_AVOIDED .. soundFileName .. FILE_TYPE
   else
-    mod.logger.LogWarn(me.tag, "Invalid soundType: " .. soundType)
+    mod.logger.LogWarn(me.tag, "Invalid spellType: " .. spellType)
   end
 
   mod.logger.LogDebug(me.tag, string.format("Playing: %s", soundPath))
