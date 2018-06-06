@@ -28,7 +28,7 @@ PVPW_CONSTANTS = {
   ]]--
   ADDON_NAME = "PVPWarn",
   ADDON_NAME_SHORT = "PVPW",
-  ADDON_IDENTIFIER = "ch.ragedunicorn.pvpwarn",
+  ADDON_IDENTIFIER = "com.ragedunicorn.pvpwarn",
   ADDON_VERSION = "0.0.1",
 
   SPELL_TYPES = {
