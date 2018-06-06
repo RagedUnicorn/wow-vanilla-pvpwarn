@@ -138,6 +138,8 @@ function me.Initialize()
   math.randomseed(GetTime())
   me.logger.LogDebug(me.tag, "Initialize addon")
 
+  me.SetupConfiguration()
+
   if PVPWarnOptions.disableAddon == nil or PVPWarnOptions.disableAddon == false then
     -- register callbacks for events
     me.eventHandler.SubscribeEvents()
@@ -151,8 +153,6 @@ function me.Initialize()
   me.timer.StartTimer("WarnQueueWorker")
 
   DEFAULT_CHAT_FRAME:AddMessage(string.format(PVPW_CONSTANTS.ADDON_NAME .. pvpw.L["help"], PVPW_CONSTANTS.ADDON_VERSION))
-
-  me.SetupConfiguration()
 end
 
 function me.SetupConfiguration()
