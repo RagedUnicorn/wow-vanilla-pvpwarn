@@ -190,8 +190,6 @@ function me.ShouldIgnoreEvent(eventType, spell)
     end
   end
 
-
-
   return false
 end
 
@@ -201,70 +199,35 @@ end
 function me.SubscribeEvents()
   mod.logger.LogInfo(me.tag, "Subscribing to Addon events")
 
-  local identifier
-
-  identifier = lp.subscriptionManager.SubscribeEvent(
-    mod.eventHandler.HandleEvent,
-    "CHAT_MSG_SPELL_PERIODIC_SELF_DAMAGE"
-  )
-
-  table.insert(subscriptions, identifier)
-
-  identifier = lp.subscriptionManager.SubscribeEvent(
-    mod.eventHandler.HandleEvent,
-    "CHAT_MSG_SPELL_PERIODIC_HOSTILEPLAYER_BUFFS"
-  )
-
-  table.insert(subscriptions, identifier)
-
-  identifier = lp.subscriptionManager.SubscribeEvent(
-    mod.eventHandler.HandleEvent,
-    "CHAT_MSG_SPELL_HOSTILEPLAYER_BUFF"
-  )
-
-  table.insert(subscriptions, identifier)
-
-  identifier = lp.subscriptionManager.SubscribeEvent(
-    mod.eventHandler.HandleEvent,
-    "CHAT_MSG_SPELL_HOSTILEPLAYER_DAMAGE"
-  )
-
-  table.insert(subscriptions, identifier)
-
-  identifier = lp.subscriptionManager.SubscribeEvent(
-    mod.eventHandler.HandleEvent,
-    "CHAT_MSG_SPELL_AURA_GONE_OTHER"
-  )
-
-  table.insert(subscriptions, identifier)
-
-  identifier = lp.subscriptionManager.SubscribeEvent(
-    mod.eventHandler.HandleEvent,
-    "CHAT_MSG_SPELL_DAMAGESHIELDS_ON_SELF"
-  )
-
-  table.insert(subscriptions, identifier)
-
-  identifier = lp.subscriptionManager.SubscribeEvent(
-    mod.eventHandler.HandleEvent,
-    "CHAT_MSG_SPELL_SELF_DAMAGE"
-  )
-
-  table.insert(subscriptions, identifier)
-
-  identifier = lp.subscriptionManager.SubscribeEvent(
-    mod.eventHandler.HandleEvent,
-    "CHAT_MSG_SPELL_DAMAGESHIELDS_ON_OTHERS"
-  )
-
-  table.insert(subscriptions, identifier)
-
-  identifier = lp.subscriptionManager.SubscribeEvent(
-    mod.eventHandler.HandleEvent,
+  local events = {
+    "CHAT_MSG_SPELL_PERIODIC_SELF_DAMAGE",
+    "CHAT_MSG_SPELL_PERIODIC_HOSTILEPLAYER_BUFFS",
+    "CHAT_MSG_SPELL_HOSTILEPLAYER_BUFF",
+    "CHAT_MSG_SPELL_HOSTILEPLAYER_DAMAGE",
+    "CHAT_MSG_SPELL_AURA_GONE_OTHER",
+    "CHAT_MSG_SPELL_DAMAGESHIELDS_ON_SELF",
+    "CHAT_MSG_SPELL_SELF_DAMAGE",
+    "CHAT_MSG_SPELL_DAMAGESHIELDS_ON_OTHERS",
     "CHAT_MSG_SPELL_PERIODIC_HOSTILEPLAYER_DAMAGE"
-  )
+  }
 
-  table.insert(subscriptions, identifier)
+  for i = 1, table.getn(events) do
+    local identifier
+    local eventType
+
+    if not me.IsAlreadySubscribed(events[i]) then
+      identifier, eventType = lp.subscriptionManager.SubscribeEvent(
+        PVPW_CONSTANTS.ADDON_IDENTIFIER,
+        mod.eventHandler.HandleEvent,
+        events[i]
+      )
+
+      subscriptions[eventType] = identifier
+    else
+      mod.logger.LogInfo(me.tag, "Event - " .. events[i]
+        .. " is already subscribed - skipping...")
+    end
+  end
 end
 
 --[[
@@ -273,9 +236,26 @@ end
 function me.UnsubscribeEvents()
   mod.logger.LogInfo(me.tag, "Unsubscribing to Addon events")
 
-  for i = 1, table.getn(subscriptions) do
-    lp.subscriptionManager.UnsubscribeEvent(subscriptions[i])
+  for _, identifier in pairs(subscriptions) do
+    lp.subscriptionManager.UnsubscribeEvent(identifier)
   end
 
   subscriptions = {} -- empty
+end
+
+--[[
+  @param {string} eventType
+
+  @return {boolean}
+    true - if the event is already subscribed
+    false - if the event is not yet subscribed
+]]--
+function me.IsAlreadySubscribed(eventType)
+  for type, _ in pairs(subscriptions) do
+    if eventType == type then
+      return true
+    end
+  end
+
+  return false
 end

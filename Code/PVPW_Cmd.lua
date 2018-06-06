@@ -61,8 +61,10 @@ function me.SetupSlashCmdList()
       getglobal(PVPW_CONSTANTS.ELEMENT_PVPW_OPTIONS_FRAME):Show()
     elseif msg == "disable" then
       PVPWarnOptions.disableAddon = true
+      mod.eventHandler.UnsubscribeEvents()
     elseif msg == "enable" then
       PVPWarnOptions.disableAddon = false
+      mod.eventHandler.SubscribeEvents()
     elseif msg == "rl" or msg == "reload" then
       ReloadUI()
     else

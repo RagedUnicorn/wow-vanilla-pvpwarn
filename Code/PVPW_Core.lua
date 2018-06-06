@@ -138,8 +138,12 @@ function me.Initialize()
   math.randomseed(GetTime())
   me.logger.LogDebug(me.tag, "Initialize addon")
 
-  -- register callbacks for events
-  me.eventHandler.SubscribeEvents()
+  if PVPWarnOptions.disableAddon == nil or PVPWarnOptions.disableAddon == false then
+    -- register callbacks for events
+    me.eventHandler.SubscribeEvents()
+  else
+    me.logger.LogDebug(me.tag, "Addon is disabled")
+  end
 
   me.timer.CreateTimer("WarnQueueWorker", me.warnQueue.WorkQueue, 0.1, true)
   me.timer.CreateTimer("WarnQueueWorkingState", me.warnQueue.SetWorkingState, 0.8, true)
