@@ -138,6 +138,11 @@ function me.Initialize()
   math.randomseed(GetTime())
   me.logger.LogDebug(me.tag, "Initialize addon")
 
+  if not me.DependencyCheck() then
+    return false
+  end
+
+
   me.SetupConfiguration()
 
   if PVPWarnOptions.disableAddon == nil or PVPWarnOptions.disableAddon == false then
@@ -189,4 +194,36 @@ function me.SetupConfiguration()
   if PVPWarnOptions.spellEnemyAvoidList == nil then
     PVPWarnOptions.spellEnemyAvoidList = me.profile.GetDefaultProfileEnemyAvoidSpells()
   end
+end
+
+--[[
+  Check for installed LogParser dependency and compare its version to the expected version
+
+  @return {boolean}
+    true - if everything is setup as expected
+    false - if either the dependency is missing or the version does not match the expected
+]]--
+function me.DependencyCheck()
+  --[[
+    WoW does not load Addons with missing dependencies as of this the following error
+    should never happen. It can however happen if an addon overwrites lp globally.
+  ]]--
+  if not lp or not type(lp) == "table" then
+    me.logger.LogError(me.tag, "Could not find LogParser dependency. Make sure to install "
+      .. " LogParser. See https://github.com/RagedUnicorn/wow-pvpwarn for more information")
+    return false
+  end
+
+  local actualVersion = lp.version.GetVersion()
+
+  if actualVersion == PVPW_CONSTANTS.LOGPARSER_EXPECTED_VERSION then
+    me.logger.LogDebug(me.tag, pvpw.L["dependency_missing"])
+    return true
+  else
+    me.logger.LogError(me.tag, string.format(pvpw.L["dependency_version_mismatch"],
+      actualVersion, PVPW_CONSTANTS.LOGPARSER_EXPECTED_VERSION))
+    return false
+  end
+
+  return false
 end

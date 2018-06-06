@@ -11,6 +11,10 @@ pvpw.L["enable"] = "|cFFFFFF00enable|r - enable "
 pvpw.L["opt"] = "|cFFFFFF00opt|r - display Optionsmenu"
 pvpw.L["reload"] = "|cFFFFFF00reload|r - reload UI"
 
+-- dependency check messages
+pvpw.L["dependency_missing"] = "Could not find LogParser dependency. PVPWarn does not work without this dependency. See https://github.com/RagedUnicorn/wow-pvpwarn for more information"
+pvpw.L["dependency_version_mismatch"] = "LogParser dependency mismatch! Found version %s expected %s. See https://github.com/RagedUnicorn/wow-pvpwarn for more information"
+
 -- battlegrounds
 pvpw.L["warsong_gulch"] = "Warsong Gulch"
 pvpw.L["arathi_basin"] = "Arathi Basin"

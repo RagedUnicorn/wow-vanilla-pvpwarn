@@ -12,6 +12,10 @@ if (GetLocale() == "deDE") then
   pvpw.L["opt"] = "|cFFFFFF00opt|r - zeige Optionsmenu an"
   pvpw.L["reload"] = "|cFFFFFF00reload|r - UI neu laden"
 
+  -- dependency check messages
+  pvpw.L["dependency_missing"] = "Konnte LogParser Abhängigkeit nicht finden. PVPWarn funktioniert nicht ohne diese Abhängigkeit. Siehe https://github.com/RagedUnicorn/wow-pvpwarn für mehr Informationen"
+  pvpw.L["dependency_version_mismatch"] = "LogParser Abhängigkeit Diskrepanz! Version %s gefunden aber %s erwartet. Siehe https://github.com/RagedUnicorn/wow-pvpwarn für mehr Informationen"
+
   -- battlegrounds
   pvpw.L["warsong_gulch"] = "Warsongschlucht"
   pvpw.L["arathi_basin"] = "Arathibecken"
