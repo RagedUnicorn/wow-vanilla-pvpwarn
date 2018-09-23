@@ -15,6 +15,9 @@
         <include>Code/*.lua</include>
         <include>Gui/*.lua</include>
         <include>Gui/*.xml</include>
+        <include>Assets/Images/*.blp</include>
+        <include>Assets/Images/*.tga</include>
+        <include>Assets/Sounds/**/*.mp3</include>
       </includes>
     </fileSet>
   </fileSets>
