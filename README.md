@@ -174,6 +174,30 @@ This is considered a self avoid. You as a player resisted an enemy spell.
 
 This addon has certain limitations for some spells. As a rule of thumb if an event is not showing up in your combat log it cannot be tracked by the addon. This applies to some really important spells such as `Vanish`, `Feign Death` and others. For an overview of supported and unsupported spells see [Spelllist](Docs/SPELLLIST.md).
 
+## Development
+
+### Switching between Environments
+
+Switching between development and release can be achieved with maven.
+
+```
+mvn generate-resources -Dgenerate.sources.overwrite=true -P development
+```
+
+This generates and overwrites `PVPW_Environment.lua` and `PVPWarn.toc`. You need to specifically specify that you want to overwrite to files to prevent data loss. It is also possible to omit the profile because development is the default profile that will be used.
+
+Switching to release can be done as such:
+
+```
+mvn generate-resources -Dgenerate.sources.overwrite=true -P release
+```
+
+In this case it is mandatory to add the release profile.
+
+**Note:** Switching environments has the effect changing certain files to match an expected value depending on the environment. To be more specific this means that as an example test and debug files are not included when switching to release. It also means that variables such as loglevel change to match the environment.
+
+As to not change those files all the time the repository should always stay in the development environment. Do not commit `PVPWarn.toc` and `PVPW_Environment.lua` in their release state. Changes to those files should always be done inside `build-resources` and their respective template files marked with `.tpl`.
+
 ## License
 
 MIT License

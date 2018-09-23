@@ -23,15 +23,6 @@
 ]]--
 
 PVPW_CONSTANTS = {
-  --[[
-    Addon basic variables
-  ]]--
-  ADDON_NAME = "PVPWarn",
-  ADDON_NAME_SHORT = "PVPW",
-  ADDON_IDENTIFIER = "com.ragedunicorn.pvpwarn",
-  ADDON_VERSION = "0.0.1",
-  LOGPARSER_EXPECTED_VERSION = "0.0.1",
-
   SPELL_TYPES = {
     ["SPELL"] = 1,
     ["SPELL_DOWN"] = 2,

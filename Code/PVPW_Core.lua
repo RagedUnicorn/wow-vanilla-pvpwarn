@@ -157,7 +157,7 @@ function me.Initialize()
 
   me.timer.StartTimer("WarnQueueWorker")
 
-  DEFAULT_CHAT_FRAME:AddMessage(string.format(PVPW_CONSTANTS.ADDON_NAME .. pvpw.L["help"], PVPW_CONSTANTS.ADDON_VERSION))
+  DEFAULT_CHAT_FRAME:AddMessage(string.format(PVPW_ENVIRONMENT.ADDON_NAME .. pvpw.L["help"], PVPW_ENVIRONMENT.ADDON_VERSION))
 end
 
 function me.SetupConfiguration()
@@ -216,12 +216,12 @@ function me.DependencyCheck()
 
   local actualVersion = lp.version.GetVersion()
 
-  if actualVersion == PVPW_CONSTANTS.LOGPARSER_EXPECTED_VERSION then
+  if actualVersion == PVPW_ENVIRONMENT.LOGPARSER_EXPECTED_VERSION then
     me.logger.LogDebug(me.tag, pvpw.L["dependency_missing"])
     return true
   else
     me.logger.LogError(me.tag, string.format(pvpw.L["dependency_version_mismatch"],
-      actualVersion, PVPW_CONSTANTS.LOGPARSER_EXPECTED_VERSION))
+      actualVersion, PVPW_ENVIRONMENT.LOGPARSER_EXPECTED_VERSION))
     return false
   end
 

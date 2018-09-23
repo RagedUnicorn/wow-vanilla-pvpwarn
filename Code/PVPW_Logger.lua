@@ -32,14 +32,14 @@ mod.logger = me
   warn - 2
   error 1
 ]]--
-me.logLevel = 1
+me.logLevel = LP_ENVIRONMENT.LOG_LEVEL
 me.debug = 4
 me.info = 3
 me.warn = 2
 me.error = 1
 
 -- log events
-me.logEvent = false
+me.logEvent = LP_ENVIRONMENT.LOG_EVENT
 
 me.colors = {}
 me.colors.error = "|cfff00000"  -- red
@@ -58,7 +58,7 @@ function me.LogDebug(tag, message)
   end
 
   if me.logLevel == me.debug then
-    DEFAULT_CHAT_FRAME:AddMessage(me.colors.debug .. PVPW_CONSTANTS.ADDON_NAME_SHORT .. ":" ..
+    DEFAULT_CHAT_FRAME:AddMessage(me.colors.debug .. PVPW_ENVIRONMENT.ADDON_NAME_SHORT .. ":" ..
       tag .. " - " .. message)
   end
 end
@@ -73,7 +73,7 @@ function me.LogInfo(tag, message)
   end
 
   if me.logLevel >= me.info then
-    DEFAULT_CHAT_FRAME:AddMessage(me.colors.info .. PVPW_CONSTANTS.ADDON_NAME_SHORT .. ":" ..
+    DEFAULT_CHAT_FRAME:AddMessage(me.colors.info .. PVPW_ENVIRONMENT.ADDON_NAME_SHORT .. ":" ..
       tag .. " - " .. message)
   end
 end
@@ -88,7 +88,7 @@ function me.LogWarn(tag, message)
   end
 
   if me.logLevel >= me.warn then
-    DEFAULT_CHAT_FRAME:AddMessage(me.colors.warn .. PVPW_CONSTANTS.ADDON_NAME_SHORT .. ":" ..
+    DEFAULT_CHAT_FRAME:AddMessage(me.colors.warn .. PVPW_ENVIRONMENT.ADDON_NAME_SHORT .. ":" ..
       tag .. " - " .. message)
   end
 end
@@ -103,7 +103,7 @@ function me.LogError(tag, message)
   end
 
   if me.logLevel >= me.error then
-    DEFAULT_CHAT_FRAME:AddMessage(me.colors.error .. PVPW_CONSTANTS.ADDON_NAME_SHORT .. ":" ..
+    DEFAULT_CHAT_FRAME:AddMessage(me.colors.error .. PVPW_ENVIRONMENT.ADDON_NAME_SHORT .. ":" ..
       tag .. " - " .. message)
   end
 end
@@ -118,7 +118,7 @@ function me.LogEvent(tag, message)
   end
 
   if me.logEvent == true then
-    DEFAULT_CHAT_FRAME:AddMessage(me.colors.event .. PVPW_CONSTANTS.ADDON_NAME_SHORT .. ":" ..
+    DEFAULT_CHAT_FRAME:AddMessage(me.colors.event .. PVPW_ENVIRONMENT.ADDON_NAME_SHORT .. ":" ..
       tag .. " - " .. message)
   end
 end

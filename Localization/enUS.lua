@@ -106,5 +106,5 @@ pvpw.L["spell_resist_tab"] = "SpellAvoid"
 -- about tab
 pvpw.L["author"] = "Author: Michael Wiesendanger"
 pvpw.L["email"] = "E-Mail: michael.wiesendanger@gmail.com"
-pvpw.L["version"] = "Version: " .. PVPW_CONSTANTS.ADDON_VERSION
+pvpw.L["version"] = "Version: " .. PVPW_ENVIRONMENT.ADDON_VERSION
 pvpw.L["issues"] = "Issues: https://github.com/RagedUnicorn/wow-pvpwarn/issues"

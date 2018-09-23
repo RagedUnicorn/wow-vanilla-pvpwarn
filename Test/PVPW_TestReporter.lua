@@ -133,7 +133,7 @@ function me.StartTestClass(className)
     string.format("bad argument #1 to `StartTestClass` (expected string got %s)", type(className)))
 
   local logMessage = string.format(
-    "%s%s: %s Starting testset for %s", me.colors.neutral, PVPW_CONSTANTS.ADDON_NAME_SHORT, me.tag, className)
+    "%s%s: %s Starting testset for %s", me.colors.neutral, PVPW_ENVIRONMENT.ADDON_NAME_SHORT, me.tag, className)
 
   DEFAULT_CHAT_FRAME:AddMessage(logMessage)
   me.AddLine()
@@ -173,7 +173,7 @@ function me.StartTest(className, testType, testName)
     string.format("bad argument #3 to `StartTest` (expected string got %s)", type(testName)))
 
   local logMessage = string.format(
-    "%s%s: %s Starting testset for %s", me.colors.neutral, PVPW_CONSTANTS.ADDON_NAME_SHORT, me.tag, testName)
+    "%s%s: %s Starting testset for %s", me.colors.neutral, PVPW_ENVIRONMENT.ADDON_NAME_SHORT, me.tag, testName)
 
   me.AddLine()
   DEFAULT_CHAT_FRAME:AddMessage(logMessage)
@@ -213,7 +213,7 @@ function me.EndTest(className, testType, testName)
     string.format("bad argument #3 to `EndTest` (expected string got %s)", type(testName)))
 
   local logMessage = string.format(
-    "%s%s: %s End testset for %s", me.colors.neutral, PVPW_CONSTANTS.ADDON_NAME_SHORT, me.tag, testName)
+    "%s%s: %s End testset for %s", me.colors.neutral, PVPW_ENVIRONMENT.ADDON_NAME_SHORT, me.tag, testName)
 
   DEFAULT_CHAT_FRAME:AddMessage(logMessage)
   me.AddLine()
@@ -258,7 +258,7 @@ function me.ReportSuccessTest(className, testName, testType, reason)
     string.format("bad argument #4 to `ReportSuccessTest` (expected string got %s)", type(reason)))
 
   local logMessage = string.format(
-    "%s%s: %s %s", me.colors.success, PVPW_CONSTANTS.ADDON_NAME_SHORT, me.tag, reason)
+    "%s%s: %s %s", me.colors.success, PVPW_ENVIRONMENT.ADDON_NAME_SHORT, me.tag, reason)
 
   DEFAULT_CHAT_FRAME:AddMessage(logMessage)
 
@@ -296,7 +296,7 @@ function me.ReportFailTest(className, testName, testType, reason)
     string.format("bad argument #4 to `ReportFailTest` (expected string got %s)", type(reason)))
 
   local logMessage = string.format(
-    "%s%s: %s %s", me.colors.fail, PVPW_CONSTANTS.ADDON_NAME_SHORT, me.tag, reason)
+    "%s%s: %s %s", me.colors.fail, PVPW_ENVIRONMENT.ADDON_NAME_SHORT, me.tag, reason)
 
   DEFAULT_CHAT_FRAME:AddMessage(logMessage)
 

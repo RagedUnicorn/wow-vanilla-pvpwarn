@@ -217,7 +217,7 @@ function me.SubscribeEvents()
 
     if not me.IsAlreadySubscribed(events[i]) then
       identifier, eventType = lp.subscriptionManager.SubscribeEvent(
-        PVPW_CONSTANTS.ADDON_IDENTIFIER,
+        PVPW_ENVIRONMENT.ADDON_IDENTIFIER,
         mod.eventHandler.HandleEvent,
         events[i]
       )

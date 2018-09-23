@@ -49,35 +49,3 @@ Gui\PVPW_SpellWarnCastTab.lua
 Gui\PVPW_SpellWarnResistTab.lua
 
 Gui\PVPW_Frame.xml
-
-# debug
-Code\PVPW_Debug.lua
-
-# test
-Test\PVPW_TestReporter.lua
-Test\PVPW_TestHelper.lua
-Test\PVPW_TestWarriorEn.lua
-Test\PVPW_TestWarriorDe.lua
-Test\PVPW_TestWarlockEn.lua
-Test\PVPW_TestWarlockDe.lua
-Test\PVPW_TestPriestEn.lua
-Test\PVPW_TestPriestDe.lua
-Test\PVPW_TestRogueEn.lua
-Test\PVPW_TestRogueDe.lua
-Test\PVPW_TestMageEn.lua
-Test\PVPW_TestMageDe.lua
-Test\PVPW_TestHunterEn.lua
-Test\PVPW_TestHunterDe.lua
-Test\PVPW_TestPaladinEn.lua
-Test\PVPW_TestPaladinDe.lua
-Test\PVPW_TestDruidEn.lua
-Test\PVPW_TestDruidDe.lua
-Test\PVPW_TestShamanEn.lua
-Test\PVPW_TestShamanDe.lua
-Test\PVPW_TestRacialsEn.lua
-Test\PVPW_TestRacialsDe.lua
-Test\PVPW_TestItemsEn.lua
-Test\PVPW_TestItemsDe.lua
-Test\PVPW_TestMiscEn.lua
-Test\PVPW_TestMiscDe.lua
-Test\PVPW_TestAll.lua

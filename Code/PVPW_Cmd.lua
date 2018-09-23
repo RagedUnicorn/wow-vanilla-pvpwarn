@@ -32,12 +32,12 @@ me.tag = "Cmd"
   Print cmd options for addon
 ]]--
 local function ShowInfoMessage()
-  local enable = pvpw.L["enable"] .. PVPW_CONSTANTS.ADDON_NAME .. "\n"
-  local disable = pvpw.L["disable"] .. PVPW_CONSTANTS.ADDON_NAME .. "\n"
+  local enable = pvpw.L["enable"] .. PVPW_ENVIRONMENT.ADDON_NAME .. "\n"
+  local disable = pvpw.L["disable"] .. PVPW_ENVIRONMENT.ADDON_NAME .. "\n"
   local opt = pvpw.L["opt"]
   local reload = pvpw.L["reload"]
 
-  DEFAULT_CHAT_FRAME:AddMessage(PVPW_CONSTANTS.ADDON_NAME .. ":\n")
+  DEFAULT_CHAT_FRAME:AddMessage(PVPW_ENVIRONMENT.ADDON_NAME .. ":\n")
   DEFAULT_CHAT_FRAME:AddMessage(enable)
   DEFAULT_CHAT_FRAME:AddMessage(disable)
   DEFAULT_CHAT_FRAME:AddMessage(opt)

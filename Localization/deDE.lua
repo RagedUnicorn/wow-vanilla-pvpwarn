@@ -107,6 +107,6 @@ if (GetLocale() == "deDE") then
   -- about tab
   pvpw.L["author"] = "Autor: Michael Wiesendanger"
   pvpw.L["email"] = "E-Mail: michael.wiesendanger@gmail.com"
-  pvpw.L["version"] = "Version: " .. PVPW_CONSTANTS.ADDON_VERSION
+  pvpw.L["version"] = "Version: " .. PVPW_ENVIRONMENT.ADDON_VERSION
   pvpw.L["issues"] = "Probleme: https://github.com/RagedUnicorn/wow-pvpwarn/issues"
 end
