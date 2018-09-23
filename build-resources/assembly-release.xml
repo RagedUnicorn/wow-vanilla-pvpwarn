@@ -19,6 +19,9 @@
         <include>Assets/Images/*.tga</include>
         <include>Assets/Sounds/**/*.mp3</include>
       </includes>
+      <excludes>
+        <exclude>Code/PVPW_Debug.lua</exclude>
+      </excludes>
     </fileSet>
   </fileSets>
   <files>
