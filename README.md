@@ -95,7 +95,7 @@ Events can be ignored while the player is dead and wishes to not see any warning
 
 This option allows to ignore surrounding events and only report events for your current target.
 
-Note: Events with type `CHAT_MSG_SPELL_PERIODIC_SELF_DAMAGE` will always shown because they have no source. Events like that includes events such as Blind, Fear, Polymorph and have the form of You are afflicted by [some spell].
+Note: Events with type `CHAT_MSG_SPELL_PERIODIC_SELF_DAMAGE` will always be shown because they have no source. This includes events such as Blind, Fear, Polymorph and have the form of "You are afflicted by [some spell]".
 
 ## FAQ
 
