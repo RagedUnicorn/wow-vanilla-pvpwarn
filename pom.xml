@@ -24,6 +24,10 @@
       </activation>
       <properties>
         <profile.id.value>development</profile.id.value>
+        <package.descriptor>${basedir}/build-resources/assembly-development.xml</package.descriptor>
+        <package.filter>${basedir}/build-resources/addon-development.properties</package.filter>
+        <package.finalName>${addon.name}</package.finalName>
+        <package.appendAssemblyId>true</package.appendAssemblyId>
         <generate.sources.skip>false</generate.sources.skip>
         <generate.sources.filter>${basedir}/build-resources/addon-development.properties</generate.sources.filter>
         <generate.sources.descriptor>${basedir}/build-resources/generate-development.xml</generate.sources.descriptor>
@@ -34,6 +38,10 @@
       <id>release</id>
       <properties>
         <profile.id.value>release</profile.id.value>
+        <package.descriptor>${basedir}/build-resources/assembly-release.xml</package.descriptor>
+        <package.filter>${basedir}/build-resources/addon-release.properties</package.filter>
+        <package.finalName>${addon.name}</package.finalName>
+        <package.appendAssemblyId>false</package.appendAssemblyId>
         <generate.sources.skip>false</generate.sources.skip>
         <generate.sources.filter>${basedir}/build-resources/addon-release.properties</generate.sources.filter>
         <generate.sources.descriptor>${basedir}/build-resources/generate-release.xml</generate.sources.descriptor>
@@ -44,7 +52,11 @@
       <id>deploy</id>
       <properties>
         <profile.id.value>deploy</profile.id.value>
-
+        <package.descriptor>${basedir}/build-resources/assembly-release.xml</package.descriptor>
+        <package.filter>${basedir}/build-resources/addon-release.properties</package.filter>
+        <package.finalName>${addon.name}</package.finalName>
+        <package.appendAssemblyId>false</package.appendAssemblyId>
+        <generate.sources.skip>true</generate.sources.skip>
       </properties>
       <build>
         <plugins>
@@ -85,6 +97,23 @@
         <artifactId>maven-assembly-plugin</artifactId>
         <version>3.1.0</version>
         <executions>
+          <execution>
+            <id>default-cli</id>
+            <phase>package</phase>
+            <goals>
+              <goal>single</goal>
+            </goals>
+            <configuration>
+              <descriptors>
+                <descriptor>${package.descriptor}</descriptor>
+              </descriptors>
+              <filters>
+                <filter>${package.filter}</filter>
+              </filters>
+              <finalName>${package.finalName}</finalName>
+              <appendAssemblyId>${package.appendAssemblyId}</appendAssemblyId>
+            </configuration>
+          </execution>
           <execution>
             <id>generate-sources</id>
             <phase>generate-resources</phase>
