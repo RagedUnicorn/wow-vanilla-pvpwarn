@@ -83,8 +83,6 @@ end
   MainFrame OnEvent handler
 ]]--
 function me.OnEvent()
-  local messageType
-
   if event == PVPW_CONSTANTS.PLAYER_LOGIN then
     me.logger.LogEvent(me.tag, PVPW_CONSTANTS.PLAYER_LOGIN)
     me.Initialize()
