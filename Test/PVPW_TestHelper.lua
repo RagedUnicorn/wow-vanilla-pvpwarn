@@ -665,7 +665,7 @@ function me.TestParse(className, testName, spellName, combatMessage, eventType)
   mod.testReporter.StartTest(className, testType, testName)
 
   combatMessage = mod.testHelper.PrepareCombatMessage(combatMessage)
-  status, _ = mod.parser.ParseCombatText(combatMessage, eventType)
+  status, _ = lp.parser.ParseCombatText(combatMessage, eventType)
 
   if status == 1 then
     mod.testReporter.ReportSuccessTest(className, testName, testType,
@@ -694,7 +694,7 @@ function me.TestParseDown(className, testName, spellName, combatMessage, eventTy
   mod.testReporter.StartTest(className, testType, testName)
 
   combatMessage = mod.testHelper.PrepareCombatMessage(combatMessage)
-  status, _ = mod.parser.ParseCombatText(combatMessage, eventType)
+  status, _ = lp.parser.ParseCombatText(combatMessage, eventType)
 
   if status == 1 then
     mod.testReporter.ReportSuccessTest(className, testName, testType,
@@ -724,7 +724,7 @@ function me.TestParseEnemyAvoid(className, testName, spellName, combatMessage, e
   mod.testReporter.StartTest(className, testType, testName)
 
   combatMessage = mod.testHelper.PrepareCombatMessage(combatMessage)
-  status, _ = mod.parser.ParseCombatText(combatMessage, eventType)
+  status, _ = lp.parser.ParseCombatText(combatMessage, eventType)
 
   if status == 1 then
     mod.testReporter.ReportSuccessTest(className, testName, testType,
@@ -756,7 +756,7 @@ function me.TestParseSelfAvoid(className, testName, spellName, combatMessage, ev
   mod.testReporter.StartTest(className, testType, testName)
 
   combatMessage = mod.testHelper.PrepareCombatMessage(combatMessage)
-  status, _ = mod.parser.ParseCombatText(combatMessage, eventType)
+  status, _ = lp.parser.ParseCombatText(combatMessage, eventType)
 
   if status == 1 then
     mod.testReporter.ReportSuccessTest(className, testName, testType,
