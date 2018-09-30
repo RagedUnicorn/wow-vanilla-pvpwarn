@@ -42,6 +42,11 @@ local testQueueWithDelay = {}
 local testQueue = {}
 
 --[[
+  Store logdata for tests
+]]--
+PVPWarnLog = {}
+
+--[[
   Reset SavedVariable for storing logs
 ]]--
 function me.ClearSavedTestReports()

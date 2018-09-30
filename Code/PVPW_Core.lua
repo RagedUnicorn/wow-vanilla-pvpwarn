@@ -43,11 +43,6 @@ local _G = getfenv(0)
 ]]--
 
 --[[
-  Store logdata for tests
-]]--
--- PVPWarnLog = {}
-
---[[
   Saved addon variable
 ]]--
 PVPWarnOptions = {
