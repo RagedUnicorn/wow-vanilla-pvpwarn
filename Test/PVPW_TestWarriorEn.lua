@@ -756,8 +756,8 @@ function me.TestParseDeathWish()
     className,
     "TestParseDeathWish",
     "death_wish",
-    "$player$ gains Death Wish.",
-    mod.testHelper.eventTypeSpellPeriodicHostilePlayerBuffs
+    "$player$ is afflicted by Death Wish.",
+    mod.testHelper.eventTypeSpellPeriodicSpellHostilePlayerDamage
   )
 end
 
