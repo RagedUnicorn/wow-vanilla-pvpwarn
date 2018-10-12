@@ -88,7 +88,7 @@ end
 
 --[[
   Activate a specific tab. Function is either called by an onclick event on one
-  of the tab buttons or initiali when the first tab is activated automatically
+  of the tab buttons or initialy when the first tab is activated automatically
 
   @param {number} position
   @param {number} classID
