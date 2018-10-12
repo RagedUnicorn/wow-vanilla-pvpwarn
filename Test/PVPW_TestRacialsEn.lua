@@ -413,7 +413,7 @@ function me.TestParseEnemyAvoidImmuneWarStomp()
     "TestParseEnemyAvoidImmuneWarStomp",
     "war_stomp",
     "Your War Stomp failed. $player$ is immune.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    mod.testHelper.eventTypeSpellSelfDamage,
     PVPW_CONSTANTS.AVOID_TYPES.IMMUNE
   )
 end
@@ -424,7 +424,7 @@ function me.TestParseEnemyAvoidResistWarStomp()
     "TestParseEnemyAvoidResistWarStomp",
     "war_stomp",
     "Your War Stomp was resisted by $player$.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    mod.testHelper.eventTypeSpellSelfDamage,
     PVPW_CONSTANTS.AVOID_TYPES.RESIST
   )
 end
@@ -435,7 +435,7 @@ function me.TestParseSelfAvoidImmuneWarStomp()
     "TestParseSelfAvoidImmuneWarStomp",
     "war_stomp",
     "$player$'s War Stomp failed. You are immune.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    mod.testHelper.eventTypeSpellHostilePlayerDamage,
     PVPW_CONSTANTS.AVOID_TYPES.IMMUNE
   )
 end
@@ -446,7 +446,7 @@ function me.TestParseSelfAvoidResistWarStomp()
     "TestParseSelfAvoidResistWarStomp",
     "war_stomp",
     "$player$'s War Stomp was resisted.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    mod.testHelper.eventTypeSpellHostilePlayerDamage,
     PVPW_CONSTANTS.AVOID_TYPES.RESIST
   )
 end

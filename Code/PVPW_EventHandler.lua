@@ -117,9 +117,8 @@ end
 function me.GetSpellFromSpellMap(spellData)
   local class, spell
 
-  if spellData.type == PVPW_CONSTANTS.CHAT_MSG_SPELL_DAMAGESHIELDS_ON_SELF
-    or spellData.type == PVPW_CONSTANTS.CHAT_MSG_SPELL_SELF_DAMAGE
-    or spellData.type == PVPW_CONSTANTS.CHAT_MSG_SPELL_DAMAGESHIELDS_ON_OTHERS then
+  if spellData.spellType == PVPW_CONSTANTS.SPELL_TYPES.ENEMY_AVOIDED
+    or spellData.spellType == PVPW_CONSTANTS.SPELL_TYPES.SELF_AVOIDED then
     class, spell = mod.spellAvoidMap.SearchByName(spellData.spell)
   else
     class, spell = mod.spellMap.SearchByName(spellData.spell)
@@ -144,8 +143,7 @@ function me.ShouldProcessEvent(spellData)
       or spellData.type == PVPW_CONSTANTS.CHAT_MSG_SPELL_HOSTILEPLAYER_DAMAGE
       or spellData.type == PVPW_CONSTANTS.CHAT_MSG_SPELL_PERIODIC_HOSTILEPLAYER_DAMAGE
       or spellData.type == PVPW_CONSTANTS.CHAT_MSG_SPELL_AURA_GONE_OTHER
-      or spellData.type == PVPW_CONSTANTS.CHAT_MSG_SPELL_HOSTILEPLAYER_DAMAGE
-      or spellData.type == PVPW_CONSTANTS.CHAT_MSG_SPELL_DAMAGESHIELDS_ON_OTHERS then
+      or spellData.type == PVPW_CONSTANTS.CHAT_MSG_SPELL_HOSTILEPLAYER_DAMAGE then
        if mod.player.IsCurrentTarget(spellData.source) then
          return true
        end
@@ -205,9 +203,7 @@ function me.SubscribeEvents()
     "CHAT_MSG_SPELL_HOSTILEPLAYER_BUFF",
     "CHAT_MSG_SPELL_HOSTILEPLAYER_DAMAGE",
     "CHAT_MSG_SPELL_AURA_GONE_OTHER",
-    "CHAT_MSG_SPELL_DAMAGESHIELDS_ON_SELF",
     "CHAT_MSG_SPELL_SELF_DAMAGE",
-    "CHAT_MSG_SPELL_DAMAGESHIELDS_ON_OTHERS",
     "CHAT_MSG_SPELL_PERIODIC_HOSTILEPLAYER_DAMAGE"
   }
 

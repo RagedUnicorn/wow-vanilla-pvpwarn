@@ -852,7 +852,7 @@ function me.TestParseEnemyAvoidImmuneCurseOfTongues()
     "TestParseEnemyAvoidImmuneCurseOfTongues",
     "curse_of_tongues",
     "Your Curse of Tongues failed. $player$ is immune.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    mod.testHelper.eventTypeSpellSelfDamage,
     PVPW_CONSTANTS.AVOID_TYPES.IMMUNE
   )
 end
@@ -863,7 +863,7 @@ function me.TestParseEnemyAvoidResistCurseOfTongues()
     "TestParseEnemyAvoidResistCurseOfTongues",
     "curse_of_tongues",
     "Your Curse of Tongues was resisted by $player$.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    mod.testHelper.eventTypeSpellSelfDamage,
     PVPW_CONSTANTS.AVOID_TYPES.RESIST
   )
 end
@@ -874,7 +874,7 @@ function me.TestParseEnemyAvoidImmuneDeathCoil()
     "TestParseEnemyAvoidImmuneDeathCoil",
     "death_coil",
     "Your Death Coil failed. $player$ is immune.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    mod.testHelper.eventTypeSpellSelfDamage,
     PVPW_CONSTANTS.AVOID_TYPES.IMMUNE
   )
 end
@@ -885,7 +885,7 @@ function me.TestParseEnemyAvoidResistDeathCoil()
     "TestParseEnemyAvoidResistDeathCoil",
     "death_coil",
     "Your Death Coil was resisted by $player$.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    mod.testHelper.eventTypeSpellSelfDamage,
     PVPW_CONSTANTS.AVOID_TYPES.RESIST
   )
 end
@@ -896,7 +896,7 @@ function me.TestParseEnemyAvoidImmuneFear()
     "TestParseEnemyAvoidImmuneFear",
     "fear",
     "Your Fear failed. $player$ is immune.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    mod.testHelper.eventTypeSpellSelfDamage,
     PVPW_CONSTANTS.AVOID_TYPES.IMMUNE
   )
 end
@@ -907,7 +907,7 @@ function me.TestParseEnemyAvoidResistFear()
     "TestParseEnemyAvoidResistFear",
     "fear",
     "Your Fear was resisted by $player$.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    mod.testHelper.eventTypeSpellSelfDamage,
     PVPW_CONSTANTS.AVOID_TYPES.RESIST
   )
 end
@@ -918,7 +918,7 @@ function me.TestParseEnemyAvoidImmuneHowlOfTerror()
     "TestParseEnemyAvoidImmuneHowlOfTerror",
     "howl_of_terror",
     "Your Howl of Terror failed. $player$ is immune.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    mod.testHelper.eventTypeSpellSelfDamage,
     PVPW_CONSTANTS.AVOID_TYPES.IMMUNE
   )
 end
@@ -929,7 +929,7 @@ function me.TestParseEnemyAvoidResistHowlOfTerror()
     "TestParseEnemyAvoidResistHowlOfTerror",
     "howl_of_terror",
     "Your Howl of Terror was resisted by $player$.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    mod.testHelper.eventTypeSpellSelfDamage,
     PVPW_CONSTANTS.AVOID_TYPES.RESIST
   )
 end
@@ -940,7 +940,7 @@ function me.TestParseEnemyAvoidImmuneShadowburn()
     "TestParseEnemyAvoidImmuneShadowburn",
     "shadowburn",
     "Your Shadowburn failed. $player$ is immune.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    mod.testHelper.eventTypeSpellSelfDamage,
     PVPW_CONSTANTS.AVOID_TYPES.IMMUNE
   )
 end
@@ -951,7 +951,7 @@ function me.TestParseEnemyAvoidResistShadowburn()
     "TestParseEnemyAvoidResistShadowburn",
     "shadowburn",
     "Your Shadowburn was resisted by $player$.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    mod.testHelper.eventTypeSpellSelfDamage,
     PVPW_CONSTANTS.AVOID_TYPES.RESIST
   )
 end
@@ -962,7 +962,7 @@ function me.TestParseSelfAvoidImmuneCurseOfTongues()
     "TestParseSelfAvoidImmuneCurseOfTongues",
     "curse_of_tongues",
     "$player$'s Curse of Tongues failed. You are immune.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    mod.testHelper.eventTypeSpellHostilePlayerDamage,
     PVPW_CONSTANTS.AVOID_TYPES.IMMUNE
   )
 end
@@ -973,7 +973,7 @@ function me.TestParseSelfAvoidResistCurseOfTongues()
     "TestParseSelfAvoidResistCurseOfTongues",
     "curse_of_tongues",
     "$player$'s Curse of Tongues was resisted.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    mod.testHelper.eventTypeSpellHostilePlayerDamage,
     PVPW_CONSTANTS.AVOID_TYPES.RESIST
   )
 end
@@ -984,7 +984,7 @@ function me.TestParseSelfAvoidImmuneDeathCoil()
     "TestParseSelfAvoidImmuneDeathCoil",
     "death_coil",
     "$player$'s Death Coil failed. You are immune.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    mod.testHelper.eventTypeSpellHostilePlayerDamage,
     PVPW_CONSTANTS.AVOID_TYPES.IMMUNE
   )
 end
@@ -995,7 +995,7 @@ function me.TestParseSelfAvoidResistDeathCoil()
     "TestParseSelfAvoidResistDeathCoil",
     "death_coil",
     "$player$'s Death Coil was resisted.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    mod.testHelper.eventTypeSpellHostilePlayerDamage,
     PVPW_CONSTANTS.AVOID_TYPES.RESIST
   )
 end
@@ -1006,7 +1006,7 @@ function me.TestParseSelfAvoidImmuneFear()
     "TestParseSelfAvoidImmuneFear",
     "fear",
     "$player$'s Fear failed. You are immune.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    mod.testHelper.eventTypeSpellHostilePlayerDamage,
     PVPW_CONSTANTS.AVOID_TYPES.IMMUNE
   )
 end
@@ -1017,7 +1017,7 @@ function me.TestParseSelfAvoidResistFear()
     "TestParseSelfAvoidResistFear",
     "fear",
     "$player$'s Fear was resisted.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    mod.testHelper.eventTypeSpellHostilePlayerDamage,
     PVPW_CONSTANTS.AVOID_TYPES.RESIST
   )
 end
@@ -1028,7 +1028,7 @@ function me.TestParseSelfAvoidImmuneHowlOfTerror()
     "TestParseSelfAvoidImmuneHowlOfTerror",
     "howl_of_terror",
     "$player$'s Howl of Terror failed. You are immune.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    mod.testHelper.eventTypeSpellHostilePlayerDamage,
     PVPW_CONSTANTS.AVOID_TYPES.IMMUNE
   )
 end
@@ -1039,7 +1039,7 @@ function me.TestParseSelfAvoidResistHowlOfTerror()
     "TestParseSelfAvoidResistHowlOfTerror",
     "howl_of_terror",
     "$player$'s Howl of Terror was resisted.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    mod.testHelper.eventTypeSpellHostilePlayerDamage,
     PVPW_CONSTANTS.AVOID_TYPES.RESIST
   )
 end
@@ -1050,7 +1050,7 @@ function me.TestParseSelfAvoidImmuneShadowburn()
     "TestParseSelfAvoidImmuneShadowburn",
     "shadowburn",
     "$player$'s Shadowburn failed. You are immune.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    mod.testHelper.eventTypeSpellHostilePlayerDamage,
     PVPW_CONSTANTS.AVOID_TYPES.IMMUNE
   )
 end
@@ -1061,7 +1061,7 @@ function me.TestParseSelfAvoidResistShadowburn()
     "TestParseSelfAvoidResistShadowburn",
     "shadowburn",
     "$player$'s Shadowburn was resisted.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    mod.testHelper.eventTypeSpellHostilePlayerDamage,
     PVPW_CONSTANTS.AVOID_TYPES.RESIST
   )
 end
@@ -1072,7 +1072,7 @@ function me.TestParseSelfAvoidImmuneSpellLock()
     "TestParseSelfAvoidImmuneSpellLock",
     "spell_lock",
     "$player$'s Spell Lock failed. You are immune.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    mod.testHelper.eventTypeSpellHostilePlayerDamage,
     PVPW_CONSTANTS.AVOID_TYPES.IMMUNE
   )
 end
@@ -1083,7 +1083,7 @@ function me.TestParseSelfAvoidResistSpellLock()
     "TestParseSelfAvoidResistSpellLock",
     "spell_lock",
     "$player$'s Spell Lock was resisted.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    mod.testHelper.eventTypeSpellHostilePlayerDamage,
     PVPW_CONSTANTS.AVOID_TYPES.RESIST
   )
 end
@@ -1094,7 +1094,7 @@ function me.TestParseSelfAvoidImmuneSeduction()
     "TestParseSelfAvoidImmuneSeduction",
     "seduction",
     "$player$'s Seduction failed. You are immune.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    mod.testHelper.eventTypeSpellHostilePlayerDamage,
     PVPW_CONSTANTS.AVOID_TYPES.IMMUNE
   )
 end
@@ -1105,7 +1105,7 @@ function me.TestParseSelfAvoidResistSeduction()
     "TestParseSelfAvoidResistSeduction",
     "seduction",
     "$player$'s Seduction was resisted.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    mod.testHelper.eventTypeSpellHostilePlayerDamage,
     PVPW_CONSTANTS.AVOID_TYPES.RESIST
   )
 end

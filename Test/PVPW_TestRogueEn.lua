@@ -781,7 +781,7 @@ function me.TestParseEnemyAvoidDodgeKick()
     "TestParseEnemyAvoidDodgeKick",
     "kick",
     "Your Kick was dodged by $player$.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    mod.testHelper.eventTypeSpellSelfDamage,
     PVPW_CONSTANTS.AVOID_TYPES.DODGE
   )
 end
@@ -792,7 +792,7 @@ function me.TestParseEnemyAvoidParryKick()
     "TestParseEnemyAvoidParryKick",
     "kick",
     "Your Kick is parried by $player$.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    mod.testHelper.eventTypeSpellSelfDamage,
     PVPW_CONSTANTS.AVOID_TYPES.PARRY
   )
 end
@@ -803,7 +803,7 @@ function me.TestParseEnemyAvoidImmuneKick()
     "TestParseEnemyAvoidImmuneKick",
     "kick",
     "Your Kick failed. $player$ is immune.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    mod.testHelper.eventTypeSpellSelfDamage,
     PVPW_CONSTANTS.AVOID_TYPES.IMMUNE
   )
 end
@@ -814,7 +814,7 @@ function me.TestParseEnemyAvoidMissKick()
     "TestParseEnemyAvoidMissKick",
     "kick",
     "Your Kick missed $player$.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    mod.testHelper.eventTypeSpellSelfDamage,
     PVPW_CONSTANTS.AVOID_TYPES.MISS
   )
 end
@@ -836,7 +836,7 @@ function me.TestParseEnemyAvoidImmuneCheapShot()
     "TestParseEnemyAvoidImmuneCheapShot",
     "cheap_shot",
     "Your Cheap Shot failed. $player$ is immune.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    mod.testHelper.eventTypeSpellSelfDamage,
     PVPW_CONSTANTS.AVOID_TYPES.IMMUNE
   )
 end
@@ -847,7 +847,7 @@ function me.TestParseEnemyAvoidMissCheapShot()
     "TestParseEnemyAvoidMissCheapShot",
     "cheap_shot",
     "Your Cheap Shot missed $player$.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    mod.testHelper.eventTypeSpellSelfDamage,
     PVPW_CONSTANTS.AVOID_TYPES.MISS
   )
 end
@@ -858,7 +858,7 @@ function me.TestParseEnemyAvoidResistCheapShot()
     "TestParseEnemyAvoidResistCheapShot",
     "cheap_shot",
     "Your Cheap Shot was resisted by $player$.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    mod.testHelper.eventTypeSpellSelfDamage,
     PVPW_CONSTANTS.AVOID_TYPES.RESIST
   )
 end
@@ -869,7 +869,7 @@ function me.TestParseEnemyAvoidDodgeGouge()
     "TestParseEnemyAvoidDodgeGouge",
     "gouge",
     "Your Gouge was dodged by $player$.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    mod.testHelper.eventTypeSpellSelfDamage,
     PVPW_CONSTANTS.AVOID_TYPES.DODGE
   )
 end
@@ -880,7 +880,7 @@ function me.TestParseEnemyAvoidParryGouge()
     "TestParseEnemyAvoidParryGouge",
     "gouge",
     "Your Gouge is parried by $player$.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    mod.testHelper.eventTypeSpellSelfDamage,
     PVPW_CONSTANTS.AVOID_TYPES.PARRY
   )
 end
@@ -891,7 +891,7 @@ function me.TestParseEnemyAvoidImmuneGouge()
     "TestParseEnemyAvoidImmuneGouge",
     "gouge",
     "Your Gouge failed. $player$ is immune.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    mod.testHelper.eventTypeSpellSelfDamage,
     PVPW_CONSTANTS.AVOID_TYPES.IMMUNE
   )
 end
@@ -902,7 +902,7 @@ function me.TestParseEnemyAvoidMissGouge()
     "TestParseEnemyAvoidMissGouge",
     "gouge",
     "Your Gouge missed $player$.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    mod.testHelper.eventTypeSpellSelfDamage,
     PVPW_CONSTANTS.AVOID_TYPES.MISS
   )
 end
@@ -924,7 +924,7 @@ function me.TestParseEnemyAvoidDodgeRiposte()
     "TestParseEnemyAvoidDodgeRiposte",
     "riposte",
     "Your Riposte was dodged by $player$.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    mod.testHelper.eventTypeSpellSelfDamage,
     PVPW_CONSTANTS.AVOID_TYPES.DODGE
   )
 end
@@ -935,7 +935,7 @@ function me.TestParseEnemyAvoidParryRiposte()
     "TestParseEnemyAvoidParryRiposte",
     "riposte",
     "Your Riposte is parried by $player$.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    mod.testHelper.eventTypeSpellSelfDamage,
     PVPW_CONSTANTS.AVOID_TYPES.PARRY
   )
 end
@@ -946,7 +946,7 @@ function me.TestParseEnemyAvoidImmuneRiposte()
     "TestParseEnemyAvoidImmuneRiposte",
     "riposte",
     "Your Riposte failed. $player$ is immune.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    mod.testHelper.eventTypeSpellSelfDamage,
     PVPW_CONSTANTS.AVOID_TYPES.IMMUNE
   )
 end
@@ -957,7 +957,7 @@ function me.TestParseEnemyAvoidMissRiposte()
     "TestParseEnemyAvoidMissRiposte",
     "riposte",
     "Your Riposte missed $player$.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    mod.testHelper.eventTypeSpellSelfDamage,
     PVPW_CONSTANTS.AVOID_TYPES.MISS
   )
 end
@@ -979,7 +979,7 @@ function me.TestParseEnemyAvoidDodgeKidneyShot()
     "TestParseEnemyAvoidDodgeKidneyShot",
     "kidney_shot",
     "Your Kidney Shot was dodged by $player$.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    mod.testHelper.eventTypeSpellSelfDamage,
     PVPW_CONSTANTS.AVOID_TYPES.DODGE
   )
 end
@@ -990,7 +990,7 @@ function me.TestParseEnemyAvoidParryKidneyShot()
     "TestParseEnemyAvoidParryKidneyShot",
     "kidney_shot",
     "Your Kidney Shot is parried by $player$.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    mod.testHelper.eventTypeSpellSelfDamage,
     PVPW_CONSTANTS.AVOID_TYPES.PARRY
   )
 end
@@ -1001,7 +1001,7 @@ function me.TestParseEnemyAvoidImmuneKidneyShot()
     "TestParseEnemyAvoidImmuneKidneyShot",
     "kidney_shot",
     "Your Kidney Shot failed. $player$ is immune.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    mod.testHelper.eventTypeSpellSelfDamage,
     PVPW_CONSTANTS.AVOID_TYPES.IMMUNE
   )
 end
@@ -1012,7 +1012,7 @@ function me.TestParseEnemyAvoidMissKidneyShot()
     "TestParseEnemyAvoidMissKidneyShot",
     "kidney_shot",
     "Your Kidney Shot missed $player$.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    mod.testHelper.eventTypeSpellSelfDamage,
     PVPW_CONSTANTS.AVOID_TYPES.MISS
   )
 end
@@ -1023,7 +1023,7 @@ function me.TestParseEnemyAvoidResistKidneyShot()
     "TestParseEnemyAvoidResistKidneyShot",
     "kidney_shot",
     "Your Kidney Shot was resisted by $player$.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    mod.testHelper.eventTypeSpellSelfDamage,
     PVPW_CONSTANTS.AVOID_TYPES.RESIST
   )
 end
@@ -1034,7 +1034,7 @@ function me.TestParseEnemyAvoidImmuneBlind()
     "TestParseEnemyAvoidImmuneBlind",
     "blind",
     "Your Blind failed. $player$ is immune.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    mod.testHelper.eventTypeSpellSelfDamage,
     PVPW_CONSTANTS.AVOID_TYPES.IMMUNE
   )
 end
@@ -1045,7 +1045,7 @@ function me.TestParseEnemyAvoidMissBlind()
     "TestParseEnemyAvoidMissBlind",
     "blind",
     "Your Blind missed $player$.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    mod.testHelper.eventTypeSpellSelfDamage,
     PVPW_CONSTANTS.AVOID_TYPES.MISS
   )
 end
@@ -1056,7 +1056,7 @@ function me.TestParseEnemyAvoidDodgeGhostlyStrike()
     "TestParseEnemyAvoidDodgeGhostlyStrike",
     "ghostly_strike",
     "Your Ghostly Strike was dodged by $player$.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    mod.testHelper.eventTypeSpellSelfDamage,
     PVPW_CONSTANTS.AVOID_TYPES.DODGE
   )
 end
@@ -1067,7 +1067,7 @@ function me.TestParseEnemyAvoidParryGhostlyStrike()
     "TestParseEnemyAvoidParryGhostlyStrike",
     "ghostly_strike",
     "Your Ghostly Strike is parried by $player$.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    mod.testHelper.eventTypeSpellSelfDamage,
     PVPW_CONSTANTS.AVOID_TYPES.PARRY
   )
 end
@@ -1078,7 +1078,7 @@ function me.TestParseEnemyAvoidImmuneGhostlyStrike()
     "TestParseEnemyAvoidImmuneGhostlyStrike",
     "ghostly_strike",
     "Your Ghostly Strike failed. $player$ is immune.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    mod.testHelper.eventTypeSpellSelfDamage,
     PVPW_CONSTANTS.AVOID_TYPES.IMMUNE
   )
 end
@@ -1089,7 +1089,7 @@ function me.TestParseEnemyAvoidMissGhostlyStrike()
     "TestParseEnemyAvoidMissGhostlyStrike",
     "ghostly_strike",
     "Your Ghostly Strike missed $player$.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    mod.testHelper.eventTypeSpellSelfDamage,
     PVPW_CONSTANTS.AVOID_TYPES.MISS
   )
 end
@@ -1111,7 +1111,7 @@ function me.TestParseEnemyAvoidImmuneSap()
     "TestParseEnemyAvoidImmuneSap",
     "sap",
     "Your Sap failed. $player$ is immune.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    mod.testHelper.eventTypeSpellSelfDamage,
     PVPW_CONSTANTS.AVOID_TYPES.IMMUNE
   )
 end
@@ -1122,7 +1122,7 @@ function me.TestParseEnemyAvoidImmunePremeditation()
     "TestParseEnemyAvoidImmunePremeditation",
     "premeditation",
     "Your Premeditation failed. $player$ is immune.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    mod.testHelper.eventTypeSpellSelfDamage,
     PVPW_CONSTANTS.AVOID_TYPES.IMMUNE
   )
 end
@@ -1133,7 +1133,7 @@ function me.TestParseEnemyAvoidImmuneDistract()
     "TestParseEnemyAvoidImmuneDistract",
     "distract",
     "Your Distract failed. $player$ is immune.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    mod.testHelper.eventTypeSpellSelfDamage,
     PVPW_CONSTANTS.AVOID_TYPES.IMMUNE
   )
 end
@@ -1144,7 +1144,7 @@ function me.TestParseEnemyAvoidResistDistract()
     "TestParseEnemyAvoidResistDistract",
     "distract",
     "Your Distract was resisted by $player$.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    mod.testHelper.eventTypeSpellSelfDamage,
     PVPW_CONSTANTS.AVOID_TYPES.RESIST
   )
 end
@@ -1155,7 +1155,7 @@ function me.TestParseEnemyAvoidDodgeExposeArmor()
     "TestParseEnemyAvoidDodgeExposeArmor",
     "expose_armor",
     "Your Expose Armor was dodged by $player$.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    mod.testHelper.eventTypeSpellSelfDamage,
     PVPW_CONSTANTS.AVOID_TYPES.DODGE
   )
 end
@@ -1166,7 +1166,7 @@ function me.TestParseEnemyAvoidParryExposeArmor()
     "TestParseEnemyAvoidParryExposeArmor",
     "expose_armor",
     "Your Expose Armor is parried by $player$.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    mod.testHelper.eventTypeSpellSelfDamage,
     PVPW_CONSTANTS.AVOID_TYPES.PARRY
   )
 end
@@ -1177,7 +1177,7 @@ function me.TestParseEnemyAvoidImmuneExposeArmor()
     "TestParseEnemyAvoidImmuneExposeArmor",
     "expose_armor",
     "Your Expose Armor failed. $player$ is immune.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    mod.testHelper.eventTypeSpellSelfDamage,
     PVPW_CONSTANTS.AVOID_TYPES.IMMUNE
   )
 end
@@ -1188,7 +1188,7 @@ function me.TestParseEnemyAvoidMissExposeArmor()
     "TestParseEnemyAvoidMissExposeArmor",
     "expose_armor",
     "Your Expose Armor missed $player$.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    mod.testHelper.eventTypeSpellSelfDamage,
     PVPW_CONSTANTS.AVOID_TYPES.MISS
   )
 end
@@ -1199,7 +1199,7 @@ function me.TestParseEnemyAvoidImmuneGarrote()
     "TestParseEnemyAvoidImmuneGarrote",
     "garrote",
     "Your Garrote failed. $player$ is immune.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    mod.testHelper.eventTypeSpellSelfDamage,
     PVPW_CONSTANTS.AVOID_TYPES.IMMUNE
   )
 end
@@ -1210,7 +1210,7 @@ function me.TestParseEnemyAvoidDodgeRupture()
     "TestParseEnemyAvoidDodgeRupture",
     "rupture",
     "Your Rupture was dodged by $player$.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    mod.testHelper.eventTypeSpellSelfDamage,
     PVPW_CONSTANTS.AVOID_TYPES.DODGE
   )
 end
@@ -1221,7 +1221,7 @@ function me.TestParseEnemyAvoidParryRupture()
     "TestParseEnemyAvoidParryRupture",
     "rupture",
     "Your Rupture is parried by $player$.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    mod.testHelper.eventTypeSpellSelfDamage,
     PVPW_CONSTANTS.AVOID_TYPES.PARRY
   )
 end
@@ -1232,7 +1232,7 @@ function me.TestParseEnemyAvoidImmuneRupture()
     "TestParseEnemyAvoidImmuneRupture",
     "rupture",
     "Your Rupture failed. $player$ is immune.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    mod.testHelper.eventTypeSpellSelfDamage,
     PVPW_CONSTANTS.AVOID_TYPES.IMMUNE
   )
 end
@@ -1243,7 +1243,7 @@ function me.TestParseEnemyAvoidMissRupture()
     "TestParseEnemyAvoidMissRupture",
     "rupture",
     "Your Rupture missed $player$.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    mod.testHelper.eventTypeSpellSelfDamage,
     PVPW_CONSTANTS.AVOID_TYPES.MISS
   )
 end
@@ -1254,7 +1254,7 @@ function me.TestParseSelfAvoidDodgeKick()
     "TestParseSelfAvoidDodgeKick",
     "kick",
     "$player$'s Kick was dodged.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    mod.testHelper.eventTypeSpellHostilePlayerDamage,
     PVPW_CONSTANTS.AVOID_TYPES.DODGE
   )
 end
@@ -1265,7 +1265,7 @@ function me.TestParseSelfAvoidParryKick()
     "TestParseSelfAvoidParryKick",
     "kick",
     "$player$'s Kick was parried.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    mod.testHelper.eventTypeSpellHostilePlayerDamage,
     PVPW_CONSTANTS.AVOID_TYPES.PARRY
   )
 end
@@ -1276,7 +1276,7 @@ function me.TestParseSelfAvoidImmuneKick()
     "TestParseSelfAvoidImmuneKick",
     "kick",
     "$player$'s Kick failed. You are immune.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    mod.testHelper.eventTypeSpellHostilePlayerDamage,
     PVPW_CONSTANTS.AVOID_TYPES.IMMUNE
   )
 end
@@ -1287,7 +1287,7 @@ function me.TestParseSelfAvoidMissKick()
     "TestParseSelfAvoidMissKick",
     "kick",
     "$player$'s Kick misses you.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    mod.testHelper.eventTypeSpellHostilePlayerDamage,
     PVPW_CONSTANTS.AVOID_TYPES.MISS
   )
 end
@@ -1298,7 +1298,7 @@ function me.TestParseSelfAvoidBlockKick()
     "TestParseSelfAvoidBlockKick",
     "kick",
     "$player$'s Kick was blocked.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    mod.testHelper.eventTypeSpellHostilePlayerDamage,
     PVPW_CONSTANTS.AVOID_TYPES.BLOCK
   )
 end
@@ -1309,7 +1309,7 @@ function me.TestParseSelfAvoidImmuneCheapShot()
     "TestParseSelfAvoidImmuneCheapShot",
     "cheap_shot",
     "$player$'s Cheap Shot failed. You are immune.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    mod.testHelper.eventTypeSpellHostilePlayerDamage,
     PVPW_CONSTANTS.AVOID_TYPES.IMMUNE
   )
 end
@@ -1320,7 +1320,7 @@ function me.TestParseSelfAvoidMissCheapShot()
     "TestParseSelfAvoidMissCheapShot",
     "cheap_shot",
     "$player$'s Cheap Shot misses you.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    mod.testHelper.eventTypeSpellHostilePlayerDamage,
     PVPW_CONSTANTS.AVOID_TYPES.MISS
   )
 end
@@ -1331,7 +1331,7 @@ function me.TestParseSelfAvoidResistCheapShot()
     "TestParseSelfAvoidResistCheapShot",
     "cheap_shot",
     "$player$'s Cheap Shot was resisted.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    mod.testHelper.eventTypeSpellHostilePlayerDamage,
     PVPW_CONSTANTS.AVOID_TYPES.RESIST
   )
 end
@@ -1342,7 +1342,7 @@ function me.TestParseSelfAvoidDodgeGouge()
     "TestParseSelfAvoidDodgeGouge",
     "gouge",
     "$player$'s Gouge was dodged.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    mod.testHelper.eventTypeSpellHostilePlayerDamage,
     PVPW_CONSTANTS.AVOID_TYPES.DODGE
   )
 end
@@ -1353,7 +1353,7 @@ function me.TestParseSelfAvoidParryGouge()
     "TestParseSelfAvoidParryGouge",
     "gouge",
     "$player$'s Gouge was parried.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    mod.testHelper.eventTypeSpellHostilePlayerDamage,
     PVPW_CONSTANTS.AVOID_TYPES.PARRY
   )
 end
@@ -1364,7 +1364,7 @@ function me.TestParseSelfAvoidImmuneGouge()
     "TestParseSelfAvoidImmuneGouge",
     "gouge",
     "$player$'s Gouge failed. You are immune.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    mod.testHelper.eventTypeSpellHostilePlayerDamage,
     PVPW_CONSTANTS.AVOID_TYPES.IMMUNE
   )
 end
@@ -1375,7 +1375,7 @@ function me.TestParseSelfAvoidMissGouge()
     "TestParseSelfAvoidMissGouge",
     "gouge",
     "$player$'s Gouge misses you.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    mod.testHelper.eventTypeSpellHostilePlayerDamage,
     PVPW_CONSTANTS.AVOID_TYPES.MISS
   )
 end
@@ -1386,7 +1386,7 @@ function me.TestParseSelfAvoidBlockGouge()
     "TestParseSelfAvoidBlockGouge",
     "gouge",
     "$player$'s Gouge was blocked.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    mod.testHelper.eventTypeSpellHostilePlayerDamage,
     PVPW_CONSTANTS.AVOID_TYPES.BLOCK
   )
 end
@@ -1397,7 +1397,7 @@ function me.TestParseSelfAvoidDodgeRiposte()
     "TestParseSelfAvoidDodgeRiposte",
     "riposte",
     "$player$'s Riposte was dodged.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    mod.testHelper.eventTypeSpellHostilePlayerDamage,
     PVPW_CONSTANTS.AVOID_TYPES.DODGE
   )
 end
@@ -1408,7 +1408,7 @@ function me.TestParseSelfAvoidParryRiposte()
     "TestParseSelfAvoidParryRiposte",
     "riposte",
     "$player$'s Riposte was parried.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    mod.testHelper.eventTypeSpellHostilePlayerDamage,
     PVPW_CONSTANTS.AVOID_TYPES.PARRY
   )
 end
@@ -1419,7 +1419,7 @@ function me.TestParseSelfAvoidImmuneRiposte()
     "TestParseSelfAvoidImmuneRiposte",
     "riposte",
     "$player$'s Riposte failed. You are immune.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    mod.testHelper.eventTypeSpellHostilePlayerDamage,
     PVPW_CONSTANTS.AVOID_TYPES.IMMUNE
   )
 end
@@ -1430,7 +1430,7 @@ function me.TestParseSelfAvoidMissRiposte()
     "TestParseSelfAvoidMissRiposte",
     "riposte",
     "$player$'s Riposte misses you.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    mod.testHelper.eventTypeSpellHostilePlayerDamage,
     PVPW_CONSTANTS.AVOID_TYPES.MISS
   )
 end
@@ -1441,7 +1441,7 @@ function me.TestParseSelfAvoidBlockRiposte()
     "TestParseSelfAvoidBlockRiposte",
     "riposte",
     "$player$'s Riposte was blocked.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    mod.testHelper.eventTypeSpellHostilePlayerDamage,
     PVPW_CONSTANTS.AVOID_TYPES.BLOCK
   )
 end
@@ -1452,7 +1452,7 @@ function me.TestParseSelfAvoidDodgeKidneyShot()
     "TestParseSelfAvoidDodgeKidneyShot",
     "kidney_shot",
     "$player$'s Kidney Shot was dodged.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    mod.testHelper.eventTypeSpellHostilePlayerDamage,
     PVPW_CONSTANTS.AVOID_TYPES.DODGE
   )
 end
@@ -1463,7 +1463,7 @@ function me.TestParseSelfAvoidParryKidneyShot()
     "TestParseSelfAvoidParryKidneyShot",
     "kidney_shot",
     "$player$'s Kidney Shot was parried.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    mod.testHelper.eventTypeSpellHostilePlayerDamage,
     PVPW_CONSTANTS.AVOID_TYPES.PARRY
   )
 end
@@ -1474,7 +1474,7 @@ function me.TestParseSelfAvoidImmuneKidneyShot()
     "TestParseSelfAvoidImmuneKidneyShot",
     "kidney_shot",
     "$player$'s Kidney Shot failed. You are immune.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    mod.testHelper.eventTypeSpellHostilePlayerDamage,
     PVPW_CONSTANTS.AVOID_TYPES.IMMUNE
   )
 end
@@ -1485,7 +1485,7 @@ function me.TestParseSelfAvoidMissKidneyShot()
     "TestParseSelfAvoidMissKidneyShot",
     "kidney_shot",
     "$player$'s Kidney Shot misses you.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    mod.testHelper.eventTypeSpellHostilePlayerDamage,
     PVPW_CONSTANTS.AVOID_TYPES.MISS
   )
 end
@@ -1496,7 +1496,7 @@ function me.TestParseSelfAvoidResistKidneyShot()
     "TestParseSelfAvoidResistKidneyShot",
     "kidney_shot",
     "$player$'s Kidney Shot was resisted.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    mod.testHelper.eventTypeSpellHostilePlayerDamage,
     PVPW_CONSTANTS.AVOID_TYPES.RESIST
   )
 end
@@ -1507,7 +1507,7 @@ function me.TestParseSelfAvoidImmuneBlind()
     "TestParseSelfAvoidImmuneBlind",
     "blind",
     "$player$'s Blind failed. You are immune.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    mod.testHelper.eventTypeSpellHostilePlayerDamage,
     PVPW_CONSTANTS.AVOID_TYPES.IMMUNE
   )
 end
@@ -1518,7 +1518,7 @@ function me.TestParseSelfAvoidMissBlind()
     "TestParseSelfAvoidMissBlind",
     "blind",
     "$player$'s Blind misses you.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    mod.testHelper.eventTypeSpellHostilePlayerDamage,
     PVPW_CONSTANTS.AVOID_TYPES.MISS
   )
 end
@@ -1529,7 +1529,7 @@ function me.TestParseSelfAvoidDodgeGhostlyStrike()
     "TestParseSelfAvoidDodgeGhostlyStrike",
     "ghostly_strike",
     "$player$'s Ghostly Strike was dodged.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    mod.testHelper.eventTypeSpellHostilePlayerDamage,
     PVPW_CONSTANTS.AVOID_TYPES.DODGE
   )
 end
@@ -1540,7 +1540,7 @@ function me.TestParseSelfAvoidParryGhostlyStrike()
     "TestParseSelfAvoidParryGhostlyStrike",
     "ghostly_strike",
     "$player$'s Ghostly Strike was parried.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    mod.testHelper.eventTypeSpellHostilePlayerDamage,
     PVPW_CONSTANTS.AVOID_TYPES.PARRY
   )
 end
@@ -1551,7 +1551,7 @@ function me.TestParseSelfAvoidImmuneGhostlyStrike()
     "TestParseSelfAvoidImmuneGhostlyStrike",
     "ghostly_strike",
     "$player$'s Ghostly Strike failed. You are immune.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    mod.testHelper.eventTypeSpellHostilePlayerDamage,
     PVPW_CONSTANTS.AVOID_TYPES.IMMUNE
   )
 end
@@ -1562,7 +1562,7 @@ function me.TestParseSelfAvoidMissGhostlyStrike()
     "TestParseSelfAvoidMissGhostlyStrike",
     "ghostly_strike",
     "$player$'s Ghostly Strike misses you.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    mod.testHelper.eventTypeSpellHostilePlayerDamage,
     PVPW_CONSTANTS.AVOID_TYPES.MISS
   )
 end
@@ -1573,7 +1573,7 @@ function me.TestParseSelfAvoidBlockGhostlyStrike()
     "TestParseSelfAvoidBlockGhostlyStrike",
     "ghostly_strike",
     "$player$'s Ghostly Strike was blocked.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    mod.testHelper.eventTypeSpellHostilePlayerDamage,
     PVPW_CONSTANTS.AVOID_TYPES.BLOCK
   )
 end
@@ -1584,7 +1584,7 @@ function me.TestParseSelfAvoidImmuneSap()
     "TestParseSelfAvoidImmuneSap",
     "sap",
     "$player$'s Sap failed. You are immune.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    mod.testHelper.eventTypeSpellHostilePlayerDamage,
     PVPW_CONSTANTS.AVOID_TYPES.IMMUNE
   )
 end
@@ -1595,7 +1595,7 @@ function me.TestParseSelfAvoidImmunePremeditation()
     "TestParseSelfAvoidImmunePremeditation",
     "premeditation",
     "$player$'s Premeditation failed. You are immune.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    mod.testHelper.eventTypeSpellHostilePlayerDamage,
     PVPW_CONSTANTS.AVOID_TYPES.IMMUNE
   )
 end
@@ -1606,7 +1606,7 @@ function me.TestParseSelfAvoidImmuneDistract()
     "TestParseSelfAvoidImmuneDistract",
     "distract",
     "$player$'s Distract failed. You are immune.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    mod.testHelper.eventTypeSpellHostilePlayerDamage,
     PVPW_CONSTANTS.AVOID_TYPES.IMMUNE
   )
 end
@@ -1617,7 +1617,7 @@ function me.TestParseSelfAvoidResistDistract()
     "TestParseSelfAvoidResistDistract",
     "distract",
     "$player$'s Distract was resisted.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    mod.testHelper.eventTypeSpellHostilePlayerDamage,
     PVPW_CONSTANTS.AVOID_TYPES.RESIST
   )
 end
@@ -1628,7 +1628,7 @@ function me.TestParseSelfAvoidDodgeExposeArmor()
     "TestParseSelfAvoidDodgeExposeArmor",
     "expose_armor",
     "$player$'s Expose Armor was dodged.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    mod.testHelper.eventTypeSpellHostilePlayerDamage,
     PVPW_CONSTANTS.AVOID_TYPES.DODGE
   )
 end
@@ -1639,7 +1639,7 @@ function me.TestParseSelfAvoidParryExposeArmor()
     "TestParseSelfAvoidParryExposeArmor",
     "expose_armor",
     "$player$'s Expose Armor was parried.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    mod.testHelper.eventTypeSpellHostilePlayerDamage,
     PVPW_CONSTANTS.AVOID_TYPES.PARRY
   )
 end
@@ -1650,7 +1650,7 @@ function me.TestParseSelfAvoidImmuneExposeArmor()
     "TestParseSelfAvoidImmuneExposeArmor",
     "expose_armor",
     "$player$'s Expose Armor failed. You are immune.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    mod.testHelper.eventTypeSpellHostilePlayerDamage,
     PVPW_CONSTANTS.AVOID_TYPES.IMMUNE
   )
 end
@@ -1661,7 +1661,7 @@ function me.TestParseSelfAvoidMissExposeArmor()
     "TestParseSelfAvoidMissExposeArmor",
     "expose_armor",
     "$player$'s Expose Armor misses you.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    mod.testHelper.eventTypeSpellHostilePlayerDamage,
     PVPW_CONSTANTS.AVOID_TYPES.MISS
   )
 end
@@ -1672,7 +1672,7 @@ function me.TestParseSelfAvoidImmuneGarrote()
     "TestParseSelfAvoidImmuneGarrote",
     "garrote",
     "$player$'s Garrote failed. You are immune.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    mod.testHelper.eventTypeSpellHostilePlayerDamage,
     PVPW_CONSTANTS.AVOID_TYPES.IMMUNE
   )
 end
@@ -1683,7 +1683,7 @@ function me.TestParseSelfAvoidDodgeRupture()
     "TestParseSelfAvoidDodgeRupture",
     "rupture",
     "$player$'s Rupture was dodged.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    mod.testHelper.eventTypeSpellHostilePlayerDamage,
     PVPW_CONSTANTS.AVOID_TYPES.DODGE
   )
 end
@@ -1694,7 +1694,7 @@ function me.TestParseSelfAvoidParryRupture()
     "TestParseSelfAvoidParryRupture",
     "rupture",
     "$player$'s Rupture was parried.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    mod.testHelper.eventTypeSpellHostilePlayerDamage,
     PVPW_CONSTANTS.AVOID_TYPES.PARRY
   )
 end
@@ -1705,7 +1705,7 @@ function me.TestParseSelfAvoidImmuneRupture()
     "TestParseSelfAvoidImmuneRupture",
     "rupture",
     "$player$'s Rupture failed. You are immune.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    mod.testHelper.eventTypeSpellHostilePlayerDamage,
     PVPW_CONSTANTS.AVOID_TYPES.IMMUNE
   )
 end
@@ -1716,7 +1716,7 @@ function me.TestParseSelfAvoidMissRupture()
     "TestParseSelfAvoidMissRupture",
     "rupture",
     "$player$'s Rupture misses you.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    mod.testHelper.eventTypeSpellHostilePlayerDamage,
     PVPW_CONSTANTS.AVOID_TYPES.MISS
   )
 end

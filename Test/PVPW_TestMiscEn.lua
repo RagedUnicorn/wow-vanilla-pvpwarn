@@ -610,7 +610,7 @@ function me.TestParseEnemyAvoidResistThoriumGrenade()
     "TestParseEnemyAvoidResistThoriumGrenade",
     "thorium_grenade",
     "Your Thorium Grenade was resisted by $player$.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    mod.testHelper.eventTypeSpellSelfDamage,
     PVPW_CONSTANTS.AVOID_TYPES.RESIST
   )
 end
@@ -621,7 +621,7 @@ function me.TestParseEnemyAvoidImmuneThoriumGrenade()
     "TestParseEnemyAvoidImmuneThoriumGrenade",
     "thorium_grenade",
     "Your Thorium Grenade failed. $player$ is immune.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    mod.testHelper.eventTypeSpellSelfDamage,
     PVPW_CONSTANTS.AVOID_TYPES.IMMUNE
   )
 end
@@ -632,7 +632,7 @@ function me.TestParseEnemyAvoidResistIronGrenade()
     "TestParseEnemyAvoidResistIronGrenade",
     "iron_grenade",
     "Your Iron Grenade was resisted by $player$.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    mod.testHelper.eventTypeSpellSelfDamage,
     PVPW_CONSTANTS.AVOID_TYPES.RESIST
   )
 end
@@ -643,7 +643,7 @@ function me.TestParseEnemyAvoidImmuneIronGrenade()
     "TestParseEnemyAvoidImmuneIronGrenade",
     "iron_grenade",
     "Your Iron Grenade failed. $player$ is immune.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    mod.testHelper.eventTypeSpellSelfDamage,
     PVPW_CONSTANTS.AVOID_TYPES.IMMUNE
   )
 end
@@ -654,7 +654,7 @@ function me.TestParseSelfAvoidResistThoriumGrenade()
     "TestParseSelfAvoidResistThoriumGrenade",
     "thorium_grenade",
     "$player$'s Thorium Grenade was resisted.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    mod.testHelper.eventTypeSpellHostilePlayerDamage,
     PVPW_CONSTANTS.AVOID_TYPES.RESIST
   )
 end
@@ -665,7 +665,7 @@ function me.TestParseSelfAvoidImmuneThoriumGrenade()
     "TestParseSelfAvoidImmuneThoriumGrenade",
     "thorium_grenade",
     "$player$'s Thorium Grenade failed. You are immune.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    mod.testHelper.eventTypeSpellHostilePlayerDamage,
     PVPW_CONSTANTS.AVOID_TYPES.IMMUNE
   )
 end
@@ -676,7 +676,7 @@ function me.TestParseSelfAvoidResistIronGrenade()
     "TestParseSelfAvoidResistIronGrenade",
     "iron_grenade",
     "$player$'s Iron Grenade was resisted.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    mod.testHelper.eventTypeSpellHostilePlayerDamage,
     PVPW_CONSTANTS.AVOID_TYPES.RESIST
   )
 end
@@ -687,7 +687,7 @@ function me.TestParseSelfAvoidImmuneIronGrenade()
     "TestParseSelfAvoidImmuneIronGrenade",
     "iron_grenade",
     "$player$'s Iron Grenade failed. You are immune.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    mod.testHelper.eventTypeSpellHostilePlayerDamage,
     PVPW_CONSTANTS.AVOID_TYPES.IMMUNE
   )
 end

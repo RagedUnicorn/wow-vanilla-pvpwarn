@@ -778,7 +778,7 @@ function me.TestParseEnemyAvoidImmuneHammerOfWrath()
     "TestParseEnemyAvoidImmuneHammerOfWrath",
     "hammer_of_wrath",
     "Your Hammer of Wrath failed. $player$ is immune.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    mod.testHelper.eventTypeSpellSelfDamage,
     PVPW_CONSTANTS.AVOID_TYPES.IMMUNE
   )
 end
@@ -789,7 +789,7 @@ function me.TestParseEnemyAvoidMissHammerOfWrath()
     "TestParseEnemyAvoidMissHammerOfWrath",
     "hammer_of_wrath",
     "Your Hammer of Wrath missed $player$.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    mod.testHelper.eventTypeSpellSelfDamage,
     PVPW_CONSTANTS.AVOID_TYPES.MISS
   )
 end
@@ -800,7 +800,7 @@ function me.TestParseEnemyAvoidImmuneHammerOfJustice()
     "TestParseEnemyAvoidImmuneHammerOfJustice",
     "hammer_of_justice",
     "Your Hammer of Justice failed. $player$ is immune.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    mod.testHelper.eventTypeSpellSelfDamage,
     PVPW_CONSTANTS.AVOID_TYPES.IMMUNE
   )
 end
@@ -811,7 +811,7 @@ function me.TestParseSelfAvoidImmuneHammerOfWrath()
     "TestParseSelfAvoidImmuneHammerOfWrath",
     "hammer_of_wrath",
     "$player$'s Hammer of Wrath failed. You are immune.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    mod.testHelper.eventTypeSpellHostilePlayerDamage,
     PVPW_CONSTANTS.AVOID_TYPES.IMMUNE
   )
 end
@@ -822,7 +822,7 @@ function me.TestParseSelfAvoidMissHammerOfWrath()
     "TestParseSelfAvoidMissHammerOfWrath",
     "hammer_of_wrath",
     "$player$'s Hammer of Wrath misses you.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    mod.testHelper.eventTypeSpellHostilePlayerDamage,
     PVPW_CONSTANTS.AVOID_TYPES.MISS
   )
 end
@@ -833,7 +833,7 @@ function me.TestParseSelfAvoidImmuneHammerOfJustice()
     "TestParseSelfAvoidImmuneHammerOfJustice",
     "hammer_of_justice",
     "$player$'s Hammer of Justice failed. You are immune.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    mod.testHelper.eventTypeSpellHostilePlayerDamage,
     PVPW_CONSTANTS.AVOID_TYPES.IMMUNE
   )
 end

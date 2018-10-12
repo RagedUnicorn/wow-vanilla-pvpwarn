@@ -765,7 +765,7 @@ function me.TestParseEnemyAvoidImmuneHammerDesZorns()
     "TestParseEnemyAvoidImmuneHammerDesZorns",
     "hammer_des_zorns",
     "Hammer des Zorns war ein Fehlschlag. $player$ ist immun.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    mod.testHelper.eventTypeSpellSelfDamage,
     PVPW_CONSTANTS.AVOID_TYPES.IMMUNE
   )
 end
@@ -776,7 +776,7 @@ function me.TestParseEnemyAvoidMissHammerDesZorns()
     "TestParseEnemyAvoidMissHammerDesZorns",
     "hammer_des_zorns",
     "Hammer des Zorns hat $player$ verfehlt.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    mod.testHelper.eventTypeSpellSelfDamage,
     PVPW_CONSTANTS.AVOID_TYPES.MISS
   )
 end
@@ -787,7 +787,7 @@ function me.TestParseEnemyAvoidImmuneHammerDerGerechtigkeit()
     "TestParseEnemyAvoidImmuneHammerDerGerechtigkeit",
     "hammer_der_gerechtigkeit",
     "Hammer der Gerechtigkeit war ein Fehlschlag. $player$ ist immun.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    mod.testHelper.eventTypeSpellSelfDamage,
     PVPW_CONSTANTS.AVOID_TYPES.IMMUNE
   )
 end
@@ -798,7 +798,7 @@ function me.TestParseSelfAvoidImmuneHammerDesZorns()
     "TestParseSelfAvoidImmuneHammerDesZorns",
     "hammer_des_zorns",
     "$player$ versucht es mit Hammer des Zorns... ein Fehlschlag. Ihr seid immun.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    mod.testHelper.eventTypeSpellHostilePlayerDamage,
     PVPW_CONSTANTS.AVOID_TYPES.IMMUNE
   )
 end
@@ -809,7 +809,7 @@ function me.TestParseSelfAvoidMissHammerDesZorns()
     "TestParseSelfAvoidMissHammerDesZorns",
     "hammer_des_zorns",
     "$player$ greift an (mit Hammer des Zorns) und verfehlt euch.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    mod.testHelper.eventTypeSpellHostilePlayerDamage,
     PVPW_CONSTANTS.AVOID_TYPES.MISS
   )
 end
@@ -820,7 +820,7 @@ function me.TestParseSelfAvoidImmuneHammerDerGerechtigkeit()
     "TestParseSelfAvoidImmuneHammerDerGerechtigkeit",
     "hammer_der_gerechtigkeit",
     "$player$ versucht es mit Hammer der Gerechtigkeit... ein Fehlschlag. Ihr seid immun.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    mod.testHelper.eventTypeSpellHostilePlayerDamage,
     PVPW_CONSTANTS.AVOID_TYPES.IMMUNE
   )
 end

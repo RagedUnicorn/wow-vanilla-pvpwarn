@@ -582,7 +582,7 @@ function me.TestParseEnemyAvoidImmuneEntanglingRoots()
     "TestParseEnemyAvoidImmuneEntanglingRoots",
     "entangling_roots",
     "Your Entangling Roots failed. $player$ is immune.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    mod.testHelper.eventTypeSpellSelfDamage,
     PVPW_CONSTANTS.AVOID_TYPES.IMMUNE
   )
 end
@@ -593,7 +593,7 @@ function me.TestParseEnemyAvoidResistEntanglingRoots()
     "TestParseEnemyAvoidResistEntanglingRoots",
     "entangling_roots",
     "Your Entangling Roots was resisted by $player$.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    mod.testHelper.eventTypeSpellSelfDamage,
     PVPW_CONSTANTS.AVOID_TYPES.RESIST
   )
 end
@@ -604,7 +604,7 @@ function me.TestParseEnemyAvoidImmuneFaerieFire()
     "TestParseEnemyAvoidImmuneFaerieFire",
     "faerie_fire",
     "Your Faerie Fire failed. $player$ is immune.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    mod.testHelper.eventTypeSpellSelfDamage,
     PVPW_CONSTANTS.AVOID_TYPES.IMMUNE
   )
 end
@@ -615,7 +615,7 @@ function me.TestParseEnemyAvoidResistFaerieFire()
     "TestParseEnemyAvoidResistFaerieFire",
     "faerie_fire",
     "Your Faerie Fire was resisted by $player$.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    mod.testHelper.eventTypeSpellSelfDamage,
     PVPW_CONSTANTS.AVOID_TYPES.RESIST
   )
 end
@@ -626,7 +626,7 @@ function me.TestParseEnemyAvoidImmuneFaerieFireFeral()
     "TestParseEnemyAvoidImmuneFaerieFireFeral",
     "faerie_fire_feral",
     "Your Faerie Fire (Feral) failed. $player$ is immune.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    mod.testHelper.eventTypeSpellSelfDamage,
     PVPW_CONSTANTS.AVOID_TYPES.IMMUNE
   )
 end
@@ -637,7 +637,7 @@ function me.TestParseEnemyAvoidResistFaerieFireFeral()
     "TestParseEnemyAvoidResistFaerieFireFeral",
     "faerie_fire_feral",
     "Your Faerie Fire (Feral) was resisted by $player$.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    mod.testHelper.eventTypeSpellSelfDamage,
     PVPW_CONSTANTS.AVOID_TYPES.RESIST
   )
 end
@@ -648,7 +648,7 @@ function me.TestParseEnemyAvoidDodgeBash()
     "TestParseEnemyAvoidDodgeBash",
     "bash",
     "Your Bash was dodged by $player$.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    mod.testHelper.eventTypeSpellSelfDamage,
     PVPW_CONSTANTS.AVOID_TYPES.DODGE
   )
 end
@@ -659,7 +659,7 @@ function me.TestParseEnemyAvoidParryBash()
     "TestParseEnemyAvoidParryBash",
     "bash",
     "Your Bash is parried by $player$.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    mod.testHelper.eventTypeSpellSelfDamage,
     PVPW_CONSTANTS.AVOID_TYPES.PARRY
   )
 end
@@ -670,7 +670,7 @@ function me.TestParseEnemyAvoidImmuneBash()
     "TestParseEnemyAvoidImmuneBash",
     "bash",
     "Your Bash failed. $player$ is immune.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    mod.testHelper.eventTypeSpellSelfDamage,
     PVPW_CONSTANTS.AVOID_TYPES.IMMUNE
   )
 end
@@ -681,7 +681,7 @@ function me.TestParseEnemyAvoidMissBash()
     "TestParseEnemyAvoidMissBash",
     "bash",
     "Your Bash missed $player$.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    mod.testHelper.eventTypeSpellSelfDamage,
     PVPW_CONSTANTS.AVOID_TYPES.MISS
   )
 end
@@ -692,7 +692,7 @@ function me.TestParseEnemyAvoidResistBash()
     "TestParseEnemyAvoidResistBash",
     "bash",
     "Your Bash was resisted by $player$.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    mod.testHelper.eventTypeSpellSelfDamage,
     PVPW_CONSTANTS.AVOID_TYPES.RESIST
   )
 end
@@ -703,7 +703,7 @@ function me.TestParseEnemyAvoidImmuneFeralChargeEffect()
     "TestParseEnemyAvoidImmuneFeralChargeEffect",
     "feral_charge_effect",
     "Your Feral Charge Effect failed. $player$ is immune.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    mod.testHelper.eventTypeSpellSelfDamage,
     PVPW_CONSTANTS.AVOID_TYPES.IMMUNE
   )
 end
@@ -714,7 +714,7 @@ function me.TestParseEnemyAvoidResistFeralChargeEffect()
     "TestParseEnemyAvoidResistFeralChargeEffect",
     "feral_charge_effect",
     "Your Feral Charge Effect was resisted by $player$.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    mod.testHelper.eventTypeSpellSelfDamage,
     PVPW_CONSTANTS.AVOID_TYPES.RESIST
   )
 end
@@ -725,7 +725,7 @@ function me.TestParseSelfAvoidImmuneEntanglingRoots()
     "TestParseSelfAvoidImmuneEntanglingRoots",
     "entangling_roots",
     "$player$'s Entangling Roots failed. You are immune.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    mod.testHelper.eventTypeSpellHostilePlayerDamage,
     PVPW_CONSTANTS.AVOID_TYPES.IMMUNE
   )
 end
@@ -736,7 +736,7 @@ function me.TestParseSelfAvoidResistEntanglingRoots()
     "TestParseSelfAvoidResistEntanglingRoots",
     "entangling_roots",
     "$player$'s Entangling Roots was resisted.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    mod.testHelper.eventTypeSpellHostilePlayerDamage,
     PVPW_CONSTANTS.AVOID_TYPES.RESIST
   )
 end
@@ -747,7 +747,7 @@ function me.TestParseSelfAvoidImmuneFaerieFire()
     "TestParseSelfAvoidImmuneFaerieFire",
     "faerie_fire",
     "$player$'s Faerie Fire failed. You are immune.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    mod.testHelper.eventTypeSpellHostilePlayerDamage,
     PVPW_CONSTANTS.AVOID_TYPES.IMMUNE
   )
 end
@@ -758,7 +758,7 @@ function me.TestParseSelfAvoidResistFaerieFire()
     "TestParseSelfAvoidResistFaerieFire",
     "faerie_fire",
     "$player$'s Faerie Fire was resisted.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    mod.testHelper.eventTypeSpellHostilePlayerDamage,
     PVPW_CONSTANTS.AVOID_TYPES.RESIST
   )
 end
@@ -769,7 +769,7 @@ function me.TestParseSelfAvoidImmuneFaerieFireFeral()
     "TestParseSelfAvoidImmuneFaerieFireFeral",
     "faerie_fire_feral",
     "$player$'s Faerie Fire (Feral) failed. You are immune.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    mod.testHelper.eventTypeSpellHostilePlayerDamage,
     PVPW_CONSTANTS.AVOID_TYPES.IMMUNE
   )
 end
@@ -780,7 +780,7 @@ function me.TestParseSelfAvoidResistFaerieFireFeral()
     "TestParseSelfAvoidResistFaerieFireFeral",
     "faerie_fire_feral",
     "$player$'s Faerie Fire (Feral) was resisted.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    mod.testHelper.eventTypeSpellHostilePlayerDamage,
     PVPW_CONSTANTS.AVOID_TYPES.RESIST
   )
 end
@@ -791,7 +791,7 @@ function me.TestParseSelfAvoidDodgeBash()
     "TestParseSelfAvoidDodgeBash",
     "bash",
     "$player$'s Bash was dodged.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    mod.testHelper.eventTypeSpellHostilePlayerDamage,
     PVPW_CONSTANTS.AVOID_TYPES.DODGE
   )
 end
@@ -802,7 +802,7 @@ function me.TestParseSelfAvoidParryBash()
     "TestParseSelfAvoidParryBash",
     "bash",
     "$player$'s Bash was parried.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    mod.testHelper.eventTypeSpellHostilePlayerDamage,
     PVPW_CONSTANTS.AVOID_TYPES.PARRY
   )
 end
@@ -813,7 +813,7 @@ function me.TestParseSelfAvoidImmuneBash()
     "TestParseSelfAvoidImmuneBash",
     "bash",
     "$player$'s Bash failed. You are immune.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    mod.testHelper.eventTypeSpellHostilePlayerDamage,
     PVPW_CONSTANTS.AVOID_TYPES.IMMUNE
   )
 end
@@ -824,7 +824,7 @@ function me.TestParseSelfAvoidMissBash()
     "TestParseSelfAvoidMissBash",
     "bash",
     "$player$'s Bash misses you.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    mod.testHelper.eventTypeSpellHostilePlayerDamage,
     PVPW_CONSTANTS.AVOID_TYPES.MISS
   )
 end
@@ -835,7 +835,7 @@ function me.TestParseSelfAvoidResistBash()
     "TestParseSelfAvoidResistBash",
     "bash",
     "$player$'s Bash was resisted.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    mod.testHelper.eventTypeSpellHostilePlayerDamage,
     PVPW_CONSTANTS.AVOID_TYPES.RESIST
   )
 end
@@ -846,7 +846,7 @@ function me.TestParseSelfAvoidImmuneFeralChargeEffect()
     "TestParseSelfAvoidImmuneFeralChargeEffect",
     "feral_charge_effect",
     "$player$'s Feral Charge Effect failed. You are immune.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    mod.testHelper.eventTypeSpellHostilePlayerDamage,
     PVPW_CONSTANTS.AVOID_TYPES.IMMUNE
   )
 end
@@ -857,7 +857,7 @@ function me.TestParseSelfAvoidResistFeralChargeEffect()
     "TestParseSelfAvoidResistFeralChargeEffect",
     "feral_charge_effect",
     "$player$'s Feral Charge Effect was resisted.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    mod.testHelper.eventTypeSpellHostilePlayerDamage,
     PVPW_CONSTANTS.AVOID_TYPES.RESIST
   )
 end

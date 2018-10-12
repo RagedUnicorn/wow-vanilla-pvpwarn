@@ -398,7 +398,7 @@ function me.TestParseEnemyAvoidImmuneKriegsdonner()
     "TestParseEnemyAvoidImmuneKriegsdonner",
     "kriegsdonner",
     "Kriegsdonner war ein Fehlschlag. $player$ ist immun.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    mod.testHelper.eventTypeSpellSelfDamage,
     PVPW_CONSTANTS.AVOID_TYPES.IMMUNE
   )
 end
@@ -409,7 +409,7 @@ function me.TestParseEnemyAvoidResistKriegsdonner()
     "TestParseEnemyAvoidResistKriegsdonner",
     "kriegsdonner",
     "Ihr habt es mit Kriegsdonner versucht, aber $player$ hat widerstanden.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    mod.testHelper.eventTypeSpellSelfDamage,
     PVPW_CONSTANTS.AVOID_TYPES.RESIST
   )
 end
@@ -420,7 +420,7 @@ function me.TestParseSelfAvoidImmuneKriegsdonner()
     "TestParseSelfAvoidImmuneKriegsdonner",
     "kriegsdonner",
     "$player$ versucht es mit Kriegsdonner... ein Fehlschlag. Ihr seid immun.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    mod.testHelper.eventTypeSpellHostilePlayerDamage,
     PVPW_CONSTANTS.AVOID_TYPES.IMMUNE
   )
 end
@@ -431,7 +431,7 @@ function me.TestParseSelfAvoidResistKriegsdonner()
     "TestParseSelfAvoidResistKriegsdonner",
     "kriegsdonner",
     "$player$ versucht es mit Kriegsdonner... widerstanden.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    mod.testHelper.eventTypeSpellHostilePlayerDamage,
     PVPW_CONSTANTS.AVOID_TYPES.RESIST
   )
 end

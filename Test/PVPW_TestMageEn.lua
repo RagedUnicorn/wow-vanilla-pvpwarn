@@ -818,7 +818,7 @@ function me.TestParseEnemyAvoidResistCounterspellSilenced()
     "TestParseEnemyAvoidResistCounterspellSilenced",
     "counterspell_silenced",
     "Your Counterspell - Silenced was resisted by $player$.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    mod.testHelper.eventTypeSpellSelfDamage,
     PVPW_CONSTANTS.AVOID_TYPES.RESIST
   )
 end
@@ -829,7 +829,7 @@ function me.TestParseEnemyAvoidImmuneCounterspell()
     "TestParseEnemyAvoidImmuneCounterspell",
     "counterspell",
     "Your Counterspell failed. $player$ is immune.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    mod.testHelper.eventTypeSpellSelfDamage,
     PVPW_CONSTANTS.AVOID_TYPES.IMMUNE
   )
 end
@@ -840,7 +840,7 @@ function me.TestParseEnemyAvoidImmunePolymorph()
     "TestParseEnemyAvoidImmunePolymorph",
     "polymorph",
     "Your Polymorph failed. $player$ is immune.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    mod.testHelper.eventTypeSpellSelfDamage,
     PVPW_CONSTANTS.AVOID_TYPES.IMMUNE
   )
 end
@@ -851,7 +851,7 @@ function me.TestParseEnemyAvoidResistPolymorph()
     "TestParseEnemyAvoidResistPolymorph",
     "polymorph",
     "Your Polymorph was resisted by $player$.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    mod.testHelper.eventTypeSpellSelfDamage,
     PVPW_CONSTANTS.AVOID_TYPES.RESIST
   )
 end
@@ -862,7 +862,7 @@ function me.TestParseEnemyAvoidImmunePolymorphCow()
     "TestParseEnemyAvoidImmunePolymorphCow",
     "polymorph_cow",
     "Your Polymorph: Cow failed. $player$ is immune.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    mod.testHelper.eventTypeSpellSelfDamage,
     PVPW_CONSTANTS.AVOID_TYPES.IMMUNE
   )
 end
@@ -873,7 +873,7 @@ function me.TestParseEnemyAvoidResistPolymorphCow()
     "TestParseEnemyAvoidResistPolymorphCow",
     "polymorph_cow",
     "Your Polymorph: Cow was resisted by $player$.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    mod.testHelper.eventTypeSpellSelfDamage,
     PVPW_CONSTANTS.AVOID_TYPES.RESIST
   )
 end
@@ -884,7 +884,7 @@ function me.TestParseEnemyAvoidImmunePolymorphPig()
     "TestParseEnemyAvoidImmunePolymorphPig",
     "polymorph_pig",
     "Your Polymorph: Pig failed. $player$ is immune.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    mod.testHelper.eventTypeSpellSelfDamage,
     PVPW_CONSTANTS.AVOID_TYPES.IMMUNE
   )
 end
@@ -895,7 +895,7 @@ function me.TestParseEnemyAvoidResistPolymorphPig()
     "TestParseEnemyAvoidResistPolymorphPig",
     "polymorph_pig",
     "Your Polymorph: Pig was resisted by $player$.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    mod.testHelper.eventTypeSpellSelfDamage,
     PVPW_CONSTANTS.AVOID_TYPES.RESIST
   )
 end
@@ -906,7 +906,7 @@ function me.TestParseEnemyAvoidImmunePolymorphTurtle()
     "TestParseEnemyAvoidImmunePolymorphTurtle",
     "polymorph_turtle",
     "Your Polymorph: Turtle failed. $player$ is immune.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    mod.testHelper.eventTypeSpellSelfDamage,
     PVPW_CONSTANTS.AVOID_TYPES.IMMUNE
   )
 end
@@ -917,7 +917,7 @@ function me.TestParseEnemyAvoidResistPolymorphTurtle()
     "TestParseEnemyAvoidResistPolymorphTurtle",
     "polymorph_turtle",
     "Your Polymorph: Turtle was resisted by $player$.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    mod.testHelper.eventTypeSpellSelfDamage,
     PVPW_CONSTANTS.AVOID_TYPES.RESIST
   )
 end
@@ -928,7 +928,7 @@ function me.TestParseEnemyAvoidImmuneConeOfCold()
     "TestParseEnemyAvoidImmuneConeOfCold",
     "cone_of_cold",
     "Your Cone Of Cold failed. $player$ is immune.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    mod.testHelper.eventTypeSpellSelfDamage,
     PVPW_CONSTANTS.AVOID_TYPES.IMMUNE
   )
 end
@@ -939,7 +939,7 @@ function me.TestParseEnemyAvoidResistConeOfCold()
     "TestParseEnemyAvoidResistConeOfCold",
     "cone_of_cold",
     "Your Cone Of Cold was resisted by $player$.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    mod.testHelper.eventTypeSpellSelfDamage,
     PVPW_CONSTANTS.AVOID_TYPES.RESIST
   )
 end
@@ -950,7 +950,7 @@ function me.TestParseEnemyAvoidImmuneFrostNova()
     "TestParseEnemyAvoidImmuneFrostNova",
     "frost_nova",
     "Your Frost Nova failed. $player$ is immune.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    mod.testHelper.eventTypeSpellSelfDamage,
     PVPW_CONSTANTS.AVOID_TYPES.IMMUNE
   )
 end
@@ -961,7 +961,7 @@ function me.TestParseEnemyAvoidResistFrostNova()
     "TestParseEnemyAvoidResistFrostNova",
     "frost_nova",
     "Your Frost Nova was resisted by $player$.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    mod.testHelper.eventTypeSpellSelfDamage,
     PVPW_CONSTANTS.AVOID_TYPES.RESIST
   )
 end
@@ -972,7 +972,7 @@ function me.TestParseSelfAvoidResistCounterspellSilenced()
     "TestParseSelfAvoidResistCounterspellSilenced",
     "counterspell_silenced",
     "$player$'s Counterspell - Silenced was resisted.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    mod.testHelper.eventTypeSpellHostilePlayerDamage,
     PVPW_CONSTANTS.AVOID_TYPES.RESIST
   )
 end
@@ -983,7 +983,7 @@ function me.TestParseSelfAvoidImmuneCounterspell()
     "TestParseSelfAvoidImmuneCounterspell",
     "counterspell",
     "$player$'s Counterspell failed. You are immune.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    mod.testHelper.eventTypeSpellHostilePlayerDamage,
     PVPW_CONSTANTS.AVOID_TYPES.IMMUNE
   )
 end
@@ -994,7 +994,7 @@ function me.TestParseSelfAvoidImmunePolymorph()
     "TestParseSelfAvoidImmunePolymorph",
     "polymorph",
     "$player$'s Polymorph failed. You are immune.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    mod.testHelper.eventTypeSpellHostilePlayerDamage,
     PVPW_CONSTANTS.AVOID_TYPES.IMMUNE
   )
 end
@@ -1005,7 +1005,7 @@ function me.TestParseSelfAvoidResistPolymorph()
     "TestParseSelfAvoidResistPolymorph",
     "polymorph_cow",
     "$player$'s Polymorph was resisted.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    mod.testHelper.eventTypeSpellHostilePlayerDamage,
     PVPW_CONSTANTS.AVOID_TYPES.RESIST
   )
 end
@@ -1016,7 +1016,7 @@ function me.TestParseSelfAvoidImmunePolymorphCow()
     "TestParseSelfAvoidImmunePolymorphCow",
     "polymorph_cow",
     "$player$'s Polymorph: Cow failed. You are immune.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    mod.testHelper.eventTypeSpellHostilePlayerDamage,
     PVPW_CONSTANTS.AVOID_TYPES.IMMUNE
   )
 end
@@ -1027,7 +1027,7 @@ function me.TestParseSelfAvoidResistPolymorphCow()
     "TestParseSelfAvoidResistPolymorphCow",
     "polymorph_cow",
     "$player$'s Polymorph: Cow was resisted.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    mod.testHelper.eventTypeSpellHostilePlayerDamage,
     PVPW_CONSTANTS.AVOID_TYPES.RESIST
   )
 end
@@ -1038,7 +1038,7 @@ function me.TestParseSelfAvoidImmunePolymorphPig()
     "TestParseSelfAvoidImmunePolymorphPig",
     "polymorph_pig",
     "$player$'s Polymorph: Pig failed. You are immune.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    mod.testHelper.eventTypeSpellHostilePlayerDamage,
     PVPW_CONSTANTS.AVOID_TYPES.IMMUNE
   )
 end
@@ -1049,7 +1049,7 @@ function me.TestParseSelfAvoidResistPolymorphPig()
     "TestParseSelfAvoidResistPolymorphPig",
     "polymorph_pig",
     "$player$'s Polymorph: Pig was resisted.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    mod.testHelper.eventTypeSpellHostilePlayerDamage,
     PVPW_CONSTANTS.AVOID_TYPES.RESIST
   )
 end
@@ -1060,7 +1060,7 @@ function me.TestParseSelfAvoidImmunePolymorphTurtle()
     "TestParseSelfAvoidImmunePolymorphTurtle",
     "polymorph_turtle",
     "$player$'s Polymorph: Turtle failed. You are immune.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    mod.testHelper.eventTypeSpellHostilePlayerDamage,
     PVPW_CONSTANTS.AVOID_TYPES.IMMUNE
   )
 end
@@ -1071,7 +1071,7 @@ function me.TestParseSelfAvoidResistPolymorphTurtle()
     "TestParseSelfAvoidResistPolymorphTurtle",
     "polymorph_turtle",
     "$player$'s Polymorph: Turtle was resisted.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    mod.testHelper.eventTypeSpellHostilePlayerDamage,
     PVPW_CONSTANTS.AVOID_TYPES.RESIST
   )
 end
@@ -1082,7 +1082,7 @@ function me.TestParseSelfAvoidImmuneConeOfCold()
     "TestParseSelfAvoidImmuneConeOfCold",
     "cone_of_cold",
     "$player$'s Cone Of Cold failed. You are immune.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    mod.testHelper.eventTypeSpellHostilePlayerDamage,
     PVPW_CONSTANTS.AVOID_TYPES.IMMUNE
   )
 end
@@ -1093,7 +1093,7 @@ function me.TestParseSelfAvoidResistConeOfCold()
     "TestParseSelfAvoidResistConeOfCold",
     "cone_of_cold",
     "$player$'s Cone Of Cold was resisted.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    mod.testHelper.eventTypeSpellHostilePlayerDamage,
     PVPW_CONSTANTS.AVOID_TYPES.RESIST
   )
 end
@@ -1104,7 +1104,7 @@ function me.TestParseSelfAvoidImmuneFrostNova()
     "TestParseSelfAvoidImmuneFrostNova",
     "frost_nova",
     "$player$'s Frost Nova failed. You are immune.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    mod.testHelper.eventTypeSpellHostilePlayerDamage,
     PVPW_CONSTANTS.AVOID_TYPES.IMMUNE
   )
 end
@@ -1115,7 +1115,7 @@ function me.TestParseSelfAvoidResistFrostNova()
     "TestParseSelfAvoidResistFrostNova",
     "frost_nova",
     "$player$'s Frost Nova was resisted.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    mod.testHelper.eventTypeSpellHostilePlayerDamage,
     PVPW_CONSTANTS.AVOID_TYPES.RESIST
   )
 end

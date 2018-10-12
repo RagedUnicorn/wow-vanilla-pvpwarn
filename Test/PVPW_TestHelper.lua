@@ -40,8 +40,6 @@ me.eventTypeSpellHostilePlayerDamage = "CHAT_MSG_SPELL_HOSTILEPLAYER_DAMAGE"
 me.eventTypeSpellPeriodicSpellHostilePlayerDamage = "CHAT_MSG_SPELL_PERIODIC_HOSTILEPLAYER_DAMAGE"
 me.eventTypeSpellAuraGoneOther = "CHAT_MSG_SPELL_AURA_GONE_OTHER"
 me.eventTypeSpellSelfDamage = "CHAT_MSG_SPELL_SELF_DAMAGE"
-me.eventTypeSpellDamageShieldsOnSelf = "CHAT_MSG_SPELL_DAMAGESHIELDS_ON_SELF"
-me.eventTypeSpellDamageShieldsOnOthers = "CHAT_MSG_SPELL_DAMAGESHIELDS_ON_OTHERS"
 
 
 me.testType = {

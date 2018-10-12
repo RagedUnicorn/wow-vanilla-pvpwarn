@@ -732,7 +732,7 @@ function me.TestParseEnemyAvoidImmuneEarthShock()
     "TestParseEnemyAvoidImmuneEarthShock",
     "earth_shock",
     "Your Earth Shock failed. $player$ is immune.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    mod.testHelper.eventTypeSpellSelfDamage,
     PVPW_CONSTANTS.AVOID_TYPES.IMMUNE
   )
 end
@@ -743,7 +743,7 @@ function me.TestParseEnemyAvoidResistEarthShock()
     "TestParseEnemyAvoidResistEarthShock",
     "earth_shock",
     "Your Earth Shock was resisted by $player$.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    mod.testHelper.eventTypeSpellSelfDamage,
     PVPW_CONSTANTS.AVOID_TYPES.RESIST
   )
 end
@@ -754,7 +754,7 @@ function me.TestParseEnemyAvoidImmuneFlameShock()
     "TestParseEnemyAvoidImmuneFlameShock",
     "flame_shock",
     "Your Flame Shock failed. $player$ is immune.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    mod.testHelper.eventTypeSpellSelfDamage,
     PVPW_CONSTANTS.AVOID_TYPES.IMMUNE
   )
 end
@@ -765,7 +765,7 @@ function me.TestParseEnemyAvoidResistFlameShock()
     "TestParseEnemyAvoidResistFlameShock",
     "flame_shock",
     "Your Flame Shock was resisted by $player$.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    mod.testHelper.eventTypeSpellSelfDamage,
     PVPW_CONSTANTS.AVOID_TYPES.RESIST
   )
 end
@@ -776,7 +776,7 @@ function me.TestParseEnemyAvoidImmuneFrostShock()
     "TestParseEnemyAvoidImmuneFrostShock",
     "frost_shock",
     "Your Frost Shock failed. $player$ is immune.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    mod.testHelper.eventTypeSpellSelfDamage,
     PVPW_CONSTANTS.AVOID_TYPES.IMMUNE
   )
 end
@@ -787,7 +787,7 @@ function me.TestParseEnemyAvoidResistFrostShock()
     "TestParseEnemyAvoidResistFrostShock",
     "frost_shock",
     "Your Frost Shock was resisted by $player$.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    mod.testHelper.eventTypeSpellSelfDamage,
     PVPW_CONSTANTS.AVOID_TYPES.RESIST
   )
 end
@@ -798,7 +798,7 @@ function me.TestParseSelfAvoidImmuneEarthShock()
     "TestParseSelfAvoidImmuneEarthShock",
     "earth_shock",
     "$player$'s Earth Shock failed. You are immune.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    mod.testHelper.eventTypeSpellHostilePlayerDamage,
     PVPW_CONSTANTS.AVOID_TYPES.IMMUNE
   )
 end
@@ -809,7 +809,7 @@ function me.TestParseSelfAvoidResistEarthShock()
     "TestParseSelfAvoidResistEarthShock",
     "earth_shock",
     "$player$'s Earth Shock was resisted.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    mod.testHelper.eventTypeSpellHostilePlayerDamage,
     PVPW_CONSTANTS.AVOID_TYPES.RESIST
   )
 end
@@ -820,7 +820,7 @@ function me.TestParseSelfAvoidImmuneFlameShock()
     "TestParseSelfAvoidImmuneFlameShock",
     "flame_shock",
     "$player$'s Flame Shock failed. You are immune.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    mod.testHelper.eventTypeSpellHostilePlayerDamage,
     PVPW_CONSTANTS.AVOID_TYPES.IMMUNE
   )
 end
@@ -831,7 +831,7 @@ function me.TestParseSelfAvoidResistFlameShock()
     "TestParseSelfAvoidResistFlameShock",
     "flame_shock",
     "$player$'s Flame Shock was resisted.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    mod.testHelper.eventTypeSpellHostilePlayerDamage,
     PVPW_CONSTANTS.AVOID_TYPES.RESIST
   )
 end
@@ -842,7 +842,7 @@ function me.TestParseSelfAvoidImmuneFrostShock()
     "TestParseSelfAvoidImmuneFrostShock",
     "frost_shock",
     "$player$'s Frost Shock failed. You are immune.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    mod.testHelper.eventTypeSpellHostilePlayerDamage,
     PVPW_CONSTANTS.AVOID_TYPES.IMMUNE
   )
 end
@@ -853,7 +853,7 @@ function me.TestParseSelfAvoidResistFrostShock()
     "TestParseSelfAvoidResistFrostShock",
     "frost_shock",
     "$player$'s Frost Shock was resisted.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    mod.testHelper.eventTypeSpellHostilePlayerDamage,
     PVPW_CONSTANTS.AVOID_TYPES.RESIST
   )
 end

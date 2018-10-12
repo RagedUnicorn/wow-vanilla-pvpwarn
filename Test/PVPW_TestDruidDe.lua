@@ -581,7 +581,7 @@ function me.TestParseEnemyAvoidImmuneWucherwurzeln()
     "TestParseEnemyAvoidImmuneWucherwurzeln",
     "wucherwurzeln",
     "Wucherwurzeln war ein Fehlschlag. $player$ ist immun.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    mod.testHelper.eventTypeSpellSelfDamage,
     PVPW_CONSTANTS.AVOID_TYPES.IMMUNE
   )
 end
@@ -592,7 +592,7 @@ function me.TestParseEnemyAvoidResistWucherwurzeln()
     "TestParseEnemyAvoidResistWucherwurzeln",
     "wucherwurzeln",
     "Ihr habt es mit Wucherwurzeln versucht, aber $player$ hat widerstanden.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    mod.testHelper.eventTypeSpellSelfDamage,
     PVPW_CONSTANTS.AVOID_TYPES.RESIST
   )
 end
@@ -603,7 +603,7 @@ function me.TestParseEnemyAvoidImmuneFeenfeuer()
     "TestParseEnemyAvoidImmuneFeenfeuer",
     "feenfeuer",
     "Feenfeuer war ein Fehlschlag. $player$ ist immun.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    mod.testHelper.eventTypeSpellSelfDamage,
     PVPW_CONSTANTS.AVOID_TYPES.IMMUNE
   )
 end
@@ -614,7 +614,7 @@ function me.TestParseEnemyAvoidResistFeenfeuer()
     "TestParseEnemyAvoidResistFeenfeuer",
     "feenfeuer",
     "Ihr habt es mit Feenfeuer versucht, aber $player$ hat widerstanden.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    mod.testHelper.eventTypeSpellSelfDamage,
     PVPW_CONSTANTS.AVOID_TYPES.RESIST
   )
 end
@@ -625,7 +625,7 @@ function me.TestParseEnemyAvoidImmuneFeenfeuerTiergestalt()
     "TestParseEnemyAvoidImmuneFeenfeuerTiergestalt",
     "feenfeuer_tiergestalt",
     "Feenfeuer (Tiergestalt) war ein Fehlschlag. $player$ ist immun.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    mod.testHelper.eventTypeSpellSelfDamage,
     PVPW_CONSTANTS.AVOID_TYPES.IMMUNE
   )
 end
@@ -636,7 +636,7 @@ function me.TestParseEnemyAvoidResistFeenfeuerTiergestalt()
     "TestParseEnemyAvoidResistFeenfeuerTiergestalt",
     "feenfeuer_tiergestalt",
     "Ihr habt es mit Feenfeuer (Tiergestalt) versucht, aber $player$ hat widerstanden.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    mod.testHelper.eventTypeSpellSelfDamage,
     PVPW_CONSTANTS.AVOID_TYPES.RESIST
   )
 end
@@ -647,7 +647,7 @@ function me.TestParseEnemyAvoidDodgeHieb()
     "TestParseEnemyAvoidDodgeHieb",
     "hieb",
     "$player$ ist Hieb ausgewichen.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    mod.testHelper.eventTypeSpellSelfDamage,
     PVPW_CONSTANTS.AVOID_TYPES.DODGE
   )
 end
@@ -658,7 +658,7 @@ function me.TestParseEnemyAvoidParryHieb()
     "TestParseEnemyAvoidParryHieb",
     "hieb",
     "Hieb wurde von $player$ pariert.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    mod.testHelper.eventTypeSpellSelfDamage,
     PVPW_CONSTANTS.AVOID_TYPES.PARRY
   )
 end
@@ -669,7 +669,7 @@ function me.TestParseEnemyAvoidImmuneHieb()
     "TestParseEnemyAvoidImmuneHieb",
     "hieb",
     "Hieb war ein Fehlschlag. $player$ ist immun.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    mod.testHelper.eventTypeSpellSelfDamage,
     PVPW_CONSTANTS.AVOID_TYPES.IMMUNE
   )
 end
@@ -680,7 +680,7 @@ function me.TestParseEnemyAvoidMissHieb()
     "TestParseEnemyAvoidMissHieb",
     "hieb",
     "Hieb hat $player$ verfehlt.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    mod.testHelper.eventTypeSpellSelfDamage,
     PVPW_CONSTANTS.AVOID_TYPES.MISS
   )
 end
@@ -691,7 +691,7 @@ function me.TestParseEnemyAvoidResistHieb()
     "TestParseEnemyAvoidResistHieb",
     "bash",
     "Ihr habt es mit Hieb versucht, aber $player$ hat widerstanden.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    mod.testHelper.eventTypeSpellSelfDamage,
     PVPW_CONSTANTS.AVOID_TYPES.RESIST
   )
 end
@@ -702,7 +702,7 @@ function me.TestParseEnemyAvoidImmuneWildeAttacke()
     "TestParseEnemyAvoidImmuneWildeAttacke",
     "wilde_attacke",
     "Wilde Attacke war ein Fehlschlag. $player$ ist immun.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    mod.testHelper.eventTypeSpellSelfDamage,
     PVPW_CONSTANTS.AVOID_TYPES.IMMUNE
   )
 end
@@ -713,7 +713,7 @@ function me.TestParseEnemyAvoidResistWildeAttacke()
     "TestParseEnemyAvoidResistWildeAttacke",
     "wilde_attacke",
     "Ihr habt es mit Wilde Attacke versucht, aber $player$ hat widerstanden.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    mod.testHelper.eventTypeSpellSelfDamage,
     PVPW_CONSTANTS.AVOID_TYPES.RESIST
   )
 end
@@ -724,7 +724,7 @@ function me.TestParseSelfAvoidImmuneWucherwurzeln()
     "TestParseSelfAvoidImmuneWucherwurzeln",
     "wucherwurzeln",
     "$player$ versucht es mit Wucherwurzeln... ein Fehlschlag. Ihr seid immun.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    mod.testHelper.eventTypeSpellHostilePlayerDamage,
     PVPW_CONSTANTS.AVOID_TYPES.IMMUNE
   )
 end
@@ -735,7 +735,7 @@ function me.TestParseSelfAvoidResistWucherwurzeln()
     "TestParseSelfAvoidResistWucherwurzeln",
     "wucherwurzeln",
     "$player$ versucht es mit Wucherwurzeln... widerstanden.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    mod.testHelper.eventTypeSpellHostilePlayerDamage,
     PVPW_CONSTANTS.AVOID_TYPES.RESIST
   )
 end
@@ -746,7 +746,7 @@ function me.TestParseSelfAvoidImmuneFeenfeuer()
     "TestParseSelfAvoidImmuneFeenfeuer",
     "feenfeuer",
     "$player$ versucht es mit Feenfeuer... ein Fehlschlag. Ihr seid immun.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    mod.testHelper.eventTypeSpellHostilePlayerDamage,
     PVPW_CONSTANTS.AVOID_TYPES.IMMUNE
   )
 end
@@ -757,7 +757,7 @@ function me.TestParseSelfAvoidResistFeenfeuer()
     "TestParseSelfAvoidResistFeenfeuer",
     "feenfeuer",
     "$player$ versucht es mit Feenfeuer... widerstanden.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    mod.testHelper.eventTypeSpellHostilePlayerDamage,
     PVPW_CONSTANTS.AVOID_TYPES.RESIST
   )
 end
@@ -768,7 +768,7 @@ function me.TestParseSelfAvoidImmuneFeenfeuerTiergestalt()
     "TestParseSelfAvoidImmuneFeenfeuerTiergestalt",
     "feenfeuer_tiergestalt",
     "$player$ versucht es mit Feenfeuer (Tiergestalt)... ein Fehlschlag. Ihr seid immun.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    mod.testHelper.eventTypeSpellHostilePlayerDamage,
     PVPW_CONSTANTS.AVOID_TYPES.IMMUNE
   )
 end
@@ -779,7 +779,7 @@ function me.TestParseSelfAvoidResistFeenfeuerTiergestalt()
     "TestParseSelfAvoidResistFeenfeuerTiergestalt",
     "feenfeuer_tiergestalt",
     "$player$ versucht es mit Feenfeuer (Tiergestalt)... widerstanden.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    mod.testHelper.eventTypeSpellHostilePlayerDamage,
     PVPW_CONSTANTS.AVOID_TYPES.RESIST
   )
 end
@@ -790,7 +790,7 @@ function me.TestParseSelfAvoidDodgeHieb()
     "TestParseSelfAvoidDodgeHieb",
     "hieb",
     "$player$s Hieb wurde ausgewichen.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    mod.testHelper.eventTypeSpellHostilePlayerDamage,
     PVPW_CONSTANTS.AVOID_TYPES.DODGE
   )
 end
@@ -801,7 +801,7 @@ function me.TestParseSelfAvoidParryHieb()
     "TestParseSelfAvoidParryHieb",
     "hieb",
     "Hieb von $player$ wurde pariert.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    mod.testHelper.eventTypeSpellHostilePlayerDamage,
     PVPW_CONSTANTS.AVOID_TYPES.PARRY
   )
 end
@@ -812,7 +812,7 @@ function me.TestParseSelfAvoidImmuneHieb()
     "TestParseSelfAvoidImmuneHieb",
     "hieb",
     "$player$ versucht es mit Hieb... ein Fehlschlag. Ihr seid immun.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    mod.testHelper.eventTypeSpellHostilePlayerDamage,
     PVPW_CONSTANTS.AVOID_TYPES.IMMUNE
   )
 end
@@ -823,7 +823,7 @@ function me.TestParseSelfAvoidMissHieb()
     "TestParseSelfAvoidMissHieb",
     "hieb",
     "$player$ greift an (mit Hieb) und verfehlt euch.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    mod.testHelper.eventTypeSpellHostilePlayerDamage,
     PVPW_CONSTANTS.AVOID_TYPES.MISS
   )
 end
@@ -834,7 +834,7 @@ function me.TestParseSelfAvoidResistHieb()
     "TestParseSelfAvoidResistHieb",
     "hieb",
     "$player$ versucht es mit Hieb... widerstanden.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    mod.testHelper.eventTypeSpellHostilePlayerDamage,
     PVPW_CONSTANTS.AVOID_TYPES.RESIST
   )
 end
@@ -845,7 +845,7 @@ function me.TestParseSelfAvoidImmuneWildeAttacke()
     "TestParseSelfAvoidImmuneWildeAttacke",
     "wilde_attacke",
     "$player$ versucht es mit Wilde Attacke... ein Fehlschlag. Ihr seid immun.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    mod.testHelper.eventTypeSpellHostilePlayerDamage,
     PVPW_CONSTANTS.AVOID_TYPES.IMMUNE
   )
 end
@@ -856,7 +856,7 @@ function me.TestParseSelfAvoidResistWildeAttacke()
     "TestParseSelfAvoidResistWildeAttacke",
     "wilde_attacke",
     "$player$ versucht es mit Wilde Attacke... widerstanden.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    mod.testHelper.eventTypeSpellHostilePlayerDamage,
     PVPW_CONSTANTS.AVOID_TYPES.RESIST
   )
 end

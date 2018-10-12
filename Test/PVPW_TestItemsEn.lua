@@ -1061,7 +1061,7 @@ function me.TestParseEnemyAvoidImmuneTidalCharm()
     "TestParseEnemyAvoidImmuneTidalCharm",
     "tidal_charm",
     "Your Tidal Charm failed. $player$ is immune.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    mod.testHelper.eventTypeSpellSelfDamage,
     PVPW_CONSTANTS.AVOID_TYPES.IMMUNE
   )
 end
@@ -1072,7 +1072,7 @@ function me.TestParseEnemyAvoidResistTidalCharm()
     "TestParseEnemyAvoidResistTidalCharm",
     "tidal_charm",
     "Your Tidal Charm was resisted by $player$.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    mod.testHelper.eventTypeSpellSelfDamage,
     PVPW_CONSTANTS.AVOID_TYPES.RESIST
   )
 end
@@ -1083,7 +1083,7 @@ function me.TestParseEnemyAvoidImmuneRecklessCharge()
     "TestParseEnemyAvoidImmuneRecklessCharge",
     "reckless_charge",
     "Your Reckless Charge failed. $player$ is immune.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    mod.testHelper.eventTypeSpellSelfDamage,
     PVPW_CONSTANTS.AVOID_TYPES.IMMUNE
   )
 end
@@ -1094,7 +1094,7 @@ function me.TestParseEnemyAvoidImmuneNetOMatic()
     "TestParseEnemyAvoidImmuneNetOMatic",
     "net_o_matic",
     "Your Net-o-Matic failed. $player$ is immune.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    mod.testHelper.eventTypeSpellSelfDamage,
     PVPW_CONSTANTS.AVOID_TYPES.IMMUNE
   )
 end
@@ -1105,7 +1105,7 @@ function me.TestParseEnemyAvoidResistNetOMatic()
     "TestParseEnemyAvoidResistNetOMatic",
     "net_o_matic",
     "Your Net-o-Matic was resisted by $player$.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    mod.testHelper.eventTypeSpellSelfDamage,
     PVPW_CONSTANTS.AVOID_TYPES.RESIST
   )
 end
@@ -1116,7 +1116,7 @@ function me.TestParseSelfAvoidImmuneTidalCharm()
     "TestParseSelfAvoidImmuneTidalCharm",
     "tidal_charm",
     "$player$'s Tidal Charm failed. You are immune.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    mod.testHelper.eventTypeSpellHostilePlayerDamage,
     PVPW_CONSTANTS.AVOID_TYPES.IMMUNE
   )
 end
@@ -1127,7 +1127,7 @@ function me.TestParseSelfAvoidResistTidalCharm()
     "TestParseSelfAvoidResistTidalCharm",
     "tidal_charm",
     "$player$'s Tidal Charm was resisted.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    mod.testHelper.eventTypeSpellHostilePlayerDamage,
     PVPW_CONSTANTS.AVOID_TYPES.RESIST
   )
 end
@@ -1138,7 +1138,7 @@ function me.TestParseSelfAvoidImmuneRecklessCharge()
     "TestParseSelfAvoidImmuneRecklessCharge",
     "reckless_charge",
     "$player$'s Reckless Charge failed. You are immune.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    mod.testHelper.eventTypeSpellHostilePlayerDamage,
     PVPW_CONSTANTS.AVOID_TYPES.IMMUNE
   )
 end
@@ -1149,7 +1149,7 @@ function me.TestParseSelfAvoidImmuneNetOMatic()
     "TestParseSelfAvoidImmuneNetOMatic",
     "net_o_matic",
     "$player$'s Net-o-Matic failed. You are immune.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    mod.testHelper.eventTypeSpellHostilePlayerDamage,
     PVPW_CONSTANTS.AVOID_TYPES.IMMUNE
   )
 end
@@ -1160,7 +1160,7 @@ function me.TestParseSelfAvoidResistNetOMatic()
     "TestParseSelfAvoidResistNetOMatic",
     "net_o_matic",
     "$player$'s Net-o-Matic was resisted.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    mod.testHelper.eventTypeSpellHostilePlayerDamage,
     PVPW_CONSTANTS.AVOID_TYPES.RESIST
   )
 end

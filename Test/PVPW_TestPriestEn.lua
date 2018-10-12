@@ -672,7 +672,7 @@ function me.TestParseEnemyAvoidImmuneDevouringPlague()
     "TestParseEnemyAvoidImmuneDevouringPlague",
     "devouring_plague",
     "Your Devouring Plague failed. $player$ is immune.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    mod.testHelper.eventTypeSpellSelfDamage,
     PVPW_CONSTANTS.AVOID_TYPES.IMMUNE
   )
 end
@@ -683,7 +683,7 @@ function me.TestParseEnemyAvoidResistDevouringPlague()
     "TestParseEnemyAvoidResistDevouringPlague",
     "devouring_plague",
     "Your Devouring Plague was resisted by $player$.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    mod.testHelper.eventTypeSpellSelfDamage,
     PVPW_CONSTANTS.AVOID_TYPES.RESIST
   )
 end
@@ -694,7 +694,7 @@ function me.TestParseEnemyAvoidImmuneBlackout()
     "TestParseEnemyAvoidImmuneBlackout",
     "blackout",
     "Your Blackout failed. $player$ is immune.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    mod.testHelper.eventTypeSpellSelfDamage,
     PVPW_CONSTANTS.AVOID_TYPES.IMMUNE
   )
 end
@@ -705,7 +705,7 @@ function me.TestParseEnemyAvoidResistBlackout()
     "TestParseEnemyAvoidResistBlackout",
     "blackout",
     "Your Blackout was resisted by $player$.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    mod.testHelper.eventTypeSpellSelfDamage,
     PVPW_CONSTANTS.AVOID_TYPES.RESIST
   )
 end
@@ -716,7 +716,7 @@ function me.TestParseEnemyAvoidImmuneManaBurn()
     "TestParseEnemyAvoidImmuneManaBurn",
     "mana_burn",
     "Your Mana Burn failed. $player$ is immune.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    mod.testHelper.eventTypeSpellSelfDamage,
     PVPW_CONSTANTS.AVOID_TYPES.IMMUNE
   )
 end
@@ -727,7 +727,7 @@ function me.TestParseEnemyAvoidResistManaBurn()
     "TestParseEnemyAvoidResistManaBurn",
     "mana_burn",
     "Your Mana Burn was resisted by $player$.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    mod.testHelper.eventTypeSpellSelfDamage,
     PVPW_CONSTANTS.AVOID_TYPES.RESIST
   )
 end
@@ -738,7 +738,7 @@ function me.TestParseEnemyAvoidImmuneMindControl()
     "TestParseEnemyAvoidImmuneMindControl",
     "mind_control",
     "Your Mind Control failed. $player$ is immune.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    mod.testHelper.eventTypeSpellSelfDamage,
     PVPW_CONSTANTS.AVOID_TYPES.IMMUNE
   )
 end
@@ -749,7 +749,7 @@ function me.TestParseEnemyAvoidResistMindControl()
     "TestParseEnemyAvoidResistMindControl",
     "mind_control",
     "Your Mind Control was resisted by $player$.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    mod.testHelper.eventTypeSpellSelfDamage,
     PVPW_CONSTANTS.AVOID_TYPES.RESIST
   )
 end
@@ -760,7 +760,7 @@ function me.TestParseEnemyAvoidImmunePsychicScream()
     "TestParseEnemyAvoidImmunePsychicScream",
     "psychic_scream",
     "Your Psychic Scream failed. $player$ is immune.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    mod.testHelper.eventTypeSpellSelfDamage,
     PVPW_CONSTANTS.AVOID_TYPES.IMMUNE
   )
 end
@@ -771,7 +771,7 @@ function me.TestParseEnemyAvoidResistPsychicScream()
     "TestParseEnemyAvoidResistPsychicScream",
     "psychic_scream",
     "Your Psychic Scream was resisted by $player$.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    mod.testHelper.eventTypeSpellSelfDamage,
     PVPW_CONSTANTS.AVOID_TYPES.RESIST
   )
 end
@@ -782,7 +782,7 @@ function me.TestParseEnemyAvoidImmuneShadowWordPain()
     "TestParseEnemyAvoidImmuneShadowWordPain",
     "shadow_word_pain",
     "Your Shadow Word: Pain failed. $player$ is immune.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    mod.testHelper.eventTypeSpellSelfDamage,
     PVPW_CONSTANTS.AVOID_TYPES.IMMUNE
   )
 end
@@ -793,7 +793,7 @@ function me.TestParseEnemyAvoidResistShadowWordPain()
     "TestParseEnemyAvoidResistShadowWordPain",
     "shadow_word_pain",
     "Your Shadow Word: Pain was resisted by $player$.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    mod.testHelper.eventTypeSpellSelfDamage,
     PVPW_CONSTANTS.AVOID_TYPES.RESIST
   )
 end
@@ -804,7 +804,7 @@ function me.TestParseEnemyAvoidImmuneSilence()
     "TestParseEnemyAvoidImmuneSilence",
     "silence",
     "Your Silence failed. $player$ is immune.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    mod.testHelper.eventTypeSpellSelfDamage,
     PVPW_CONSTANTS.AVOID_TYPES.IMMUNE
   )
 end
@@ -815,7 +815,7 @@ function me.TestParseEnemyAvoidResistSilence()
     "TestParseEnemyAvoidResistSilence",
     "silence",
     "Your Silence was resisted by $player$.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    mod.testHelper.eventTypeSpellSelfDamage,
     PVPW_CONSTANTS.AVOID_TYPES.RESIST
   )
 end
@@ -826,7 +826,7 @@ function me.TestParseEnemyAvoidImmuneVampiricEmbrace()
     "TestParseEnemyAvoidImmuneVampiricEmbrace",
     "vampiric_embrace",
     "Your Vampiric Embrace failed. $player$ is immune.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    mod.testHelper.eventTypeSpellSelfDamage,
     PVPW_CONSTANTS.AVOID_TYPES.IMMUNE
   )
 end
@@ -837,7 +837,7 @@ function me.TestParseEnemyAvoidResistVampiricEmbrace()
     "TestParseEnemyAvoidResistVampiricEmbrace",
     "vampiric_embrace",
     "Your Vampiric Embrace was resisted by $player$.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    mod.testHelper.eventTypeSpellSelfDamage,
     PVPW_CONSTANTS.AVOID_TYPES.RESIST
   )
 end
@@ -848,7 +848,7 @@ function me.TestParseSelfAvoidImmuneDevouringPlague()
     "TestParseSelfAvoidImmuneDevouringPlague",
     "devouring_plague",
     "$player$'s Devouring Plague failed. You are immune.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    mod.testHelper.eventTypeSpellHostilePlayerDamage,
     PVPW_CONSTANTS.AVOID_TYPES.IMMUNE
   )
 end
@@ -859,7 +859,7 @@ function me.TestParseSelfAvoidResistDevouringPlague()
     "TestParseSelfAvoidResistDevouringPlague",
     "devouring_plague",
     "$player$'s Devouring Plague was resisted.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    mod.testHelper.eventTypeSpellHostilePlayerDamage,
     PVPW_CONSTANTS.AVOID_TYPES.RESIST
   )
 end
@@ -870,7 +870,7 @@ function me.TestParseSelfAvoidImmuneBlackout()
     "TestParseSelfAvoidImmuneBlackout",
     "blackout",
     "$player$'s Blackout failed. You are immune.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    mod.testHelper.eventTypeSpellHostilePlayerDamage,
     PVPW_CONSTANTS.AVOID_TYPES.IMMUNE
   )
 end
@@ -881,7 +881,7 @@ function me.TestParseSelfAvoidResistBlackout()
     "TestParseSelfAvoidResistBlackout",
     "blackout",
     "$player$'s Blackout was resisted.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    mod.testHelper.eventTypeSpellHostilePlayerDamage,
     PVPW_CONSTANTS.AVOID_TYPES.RESIST
   )
 end
@@ -892,7 +892,7 @@ function me.TestParseSelfAvoidImmuneManaBurn()
     "TestParseSelfAvoidImmuneManaBurn",
     "mana_burn",
     "$player$'s Mana Burn failed. You are immune.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    mod.testHelper.eventTypeSpellHostilePlayerDamage,
     PVPW_CONSTANTS.AVOID_TYPES.IMMUNE
   )
 end
@@ -903,7 +903,7 @@ function me.TestParseSelfAvoidResistManaBurn()
     "TestParseSelfAvoidResistManaBurn",
     "mana_burn",
     "$player$'s Mana Burn was resisted.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    mod.testHelper.eventTypeSpellHostilePlayerDamage,
     PVPW_CONSTANTS.AVOID_TYPES.RESIST
   )
 end
@@ -914,7 +914,7 @@ function me.TestParseSelfAvoidImmuneMindControl()
     "TestParseSelfAvoidImmuneMindControl",
     "mind_control",
     "$player$'s Mind Control failed. You are immune.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    mod.testHelper.eventTypeSpellHostilePlayerDamage,
     PVPW_CONSTANTS.AVOID_TYPES.IMMUNE
   )
 end
@@ -925,7 +925,7 @@ function me.TestParseSelfAvoidResistMindControl()
     "TestParseSelfAvoidResistMindControl",
     "mind_control",
     "$player$'s Mind Control was resisted.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    mod.testHelper.eventTypeSpellHostilePlayerDamage,
     PVPW_CONSTANTS.AVOID_TYPES.RESIST
   )
 end
@@ -936,7 +936,7 @@ function me.TestParseSelfAvoidImmunePsychicScream()
     "TestParseSelfAvoidImmunePsychicScream",
     "psychic_scream",
     "$player$'s Psychic Scream failed. You are immune.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    mod.testHelper.eventTypeSpellHostilePlayerDamage,
     PVPW_CONSTANTS.AVOID_TYPES.IMMUNE
   )
 end
@@ -947,7 +947,7 @@ function me.TestParseSelfAvoidResistPsychicScream()
     "TestParseSelfAvoidResistPsychicScream",
     "psychic_scream",
     "$player$'s Psychic Scream was resisted.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    mod.testHelper.eventTypeSpellHostilePlayerDamage,
     PVPW_CONSTANTS.AVOID_TYPES.RESIST
   )
 end
@@ -958,7 +958,7 @@ function me.TestParseSelfAvoidImmuneShadowWordPain()
     "TestParseSelfAvoidImmuneShadowWordPain",
     "shadow_word_pain",
     "$player$'s Shadow Word: Pain failed. You are immune.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    mod.testHelper.eventTypeSpellHostilePlayerDamage,
     PVPW_CONSTANTS.AVOID_TYPES.IMMUNE
   )
 end
@@ -969,7 +969,7 @@ function me.TestParseSelfAvoidResistShadowWordPain()
     "TestParseSelfAvoidResistShadowWordPain",
     "shadow_word_pain",
     "$player$'s Shadow Word: Pain was resisted.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    mod.testHelper.eventTypeSpellHostilePlayerDamage,
     PVPW_CONSTANTS.AVOID_TYPES.RESIST
   )
 end
@@ -980,7 +980,7 @@ function me.TestParseSelfAvoidImmuneSilence()
     "TestParseSelfAvoidImmuneSilence",
     "silence",
     "$player$'s Silence failed. You are immune.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    mod.testHelper.eventTypeSpellHostilePlayerDamage,
     PVPW_CONSTANTS.AVOID_TYPES.IMMUNE
   )
 end
@@ -991,7 +991,7 @@ function me.TestParseSelfAvoidResistSilence()
     "TestParseSelfAvoidResistSilence",
     "silence",
     "$player$'s Silence was resisted.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    mod.testHelper.eventTypeSpellHostilePlayerDamage,
     PVPW_CONSTANTS.AVOID_TYPES.RESIST
   )
 end
@@ -1002,7 +1002,7 @@ function me.TestParseSelfAvoidImmuneVampiricEmbrace()
     "TestParseSelfAvoidImmuneVampiricEmbrace",
     "vampiric_embrace",
     "$player$'s Vampiric Embrace failed. You are immune.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    mod.testHelper.eventTypeSpellHostilePlayerDamage,
     PVPW_CONSTANTS.AVOID_TYPES.IMMUNE
   )
 end
@@ -1013,7 +1013,7 @@ function me.TestParseSelfAvoidResistVampiricEmbrace()
     "TestParseSelfAvoidResistVampiricEmbrace",
     "vampiric_embrace",
     "$player$'s Vampiric Embrace was resisted.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    mod.testHelper.eventTypeSpellHostilePlayerDamage,
     PVPW_CONSTANTS.AVOID_TYPES.RESIST
   )
 end

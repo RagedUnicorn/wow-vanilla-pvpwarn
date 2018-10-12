@@ -803,7 +803,7 @@ function me.TestParseEnemyAvoidResistGegenzauberZumSchweigenGebracht()
     "TestParseEnemyAvoidResistGegenzauberZumSchweigenGebracht",
     "gegenzauber_zum_schweigen_gebracht",
     "Ihr habt es mit Gegenzauber - zum Schweigen gebracht versucht, aber $player$ hat widerstanden.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    mod.testHelper.eventTypeSpellSelfDamage,
     PVPW_CONSTANTS.AVOID_TYPES.RESIST
   )
 end
@@ -814,7 +814,7 @@ function me.TestParseEnemyAvoidImmuneGegenzauber()
     "TestParseEnemyAvoidImmuneGegenzauber",
     "gegenzauber",
     "Gegenzauber war ein Fehlschlag. $player$ ist immun.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    mod.testHelper.eventTypeSpellSelfDamage,
     PVPW_CONSTANTS.AVOID_TYPES.IMMUNE
   )
 end
@@ -825,7 +825,7 @@ function me.TestParseEnemyAvoidImmuneVerwandlung()
     "TestParseEnemyAvoidImmuneVerwandlung",
     "verwandlung",
     "Gegenzauber war ein Fehlschlag. $player$ ist immun.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    mod.testHelper.eventTypeSpellSelfDamage,
     PVPW_CONSTANTS.AVOID_TYPES.IMMUNE
   )
 end
@@ -836,7 +836,7 @@ function me.TestParseEnemyAvoidResistVerwandlung()
     "TestParseEnemyAvoidResistVerwandlung",
     "verwandlung",
     "Ihr habt es mit Verwandlung versucht, aber $player$ hat widerstanden.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    mod.testHelper.eventTypeSpellSelfDamage,
     PVPW_CONSTANTS.AVOID_TYPES.RESIST
   )
 end
@@ -847,7 +847,7 @@ function me.TestParseEnemyAvoidImmuneVerwandlungKuh()
     "TestParseEnemyAvoidImmuneVerwandlungKuh",
     "verwandlung_kuh",
     "Verwandlung: Kuh war ein Fehlschlag. $player$ ist immun.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    mod.testHelper.eventTypeSpellSelfDamage,
     PVPW_CONSTANTS.AVOID_TYPES.IMMUNE
   )
 end
@@ -858,7 +858,7 @@ function me.TestParseEnemyAvoidResistVerwandlungKuh()
     "TestParseEnemyAvoidResistVerwandlungKuh",
     "verwandlung_kuh",
     "Ihr habt es mit Verwandlung: Kuh versucht, aber $player$ hat widerstanden.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    mod.testHelper.eventTypeSpellSelfDamage,
     PVPW_CONSTANTS.AVOID_TYPES.RESIST
   )
 end
@@ -869,7 +869,7 @@ function me.TestParseEnemyAvoidImmuneVerwandlungSchwein()
     "TestParseEnemyAvoidImmuneVerwandlungSchwein",
     "verwandlung_schwein",
     "Verwandlung: Schwein war ein Fehlschlag. $player$ ist immun.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    mod.testHelper.eventTypeSpellSelfDamage,
     PVPW_CONSTANTS.AVOID_TYPES.IMMUNE
   )
 end
@@ -880,7 +880,7 @@ function me.TestParseEnemyAvoidResistVerwandlungSchwein()
     "TestParseEnemyAvoidResistVerwandlungSchwein",
     "verwandlung_schwein",
     "Ihr habt es mit Verwandlung: Schwein versucht, aber $player$ hat widerstanden.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    mod.testHelper.eventTypeSpellSelfDamage,
     PVPW_CONSTANTS.AVOID_TYPES.RESIST
   )
 end
@@ -891,7 +891,7 @@ function me.TestParseEnemyAvoidImmuneVerwandlungKroete()
     "TestParseEnemyAvoidImmuneVerwandlungKroete",
     "verwandlung_kroete",
     "Verwandlung: Kröte war ein Fehlschlag. $player$ ist immun.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    mod.testHelper.eventTypeSpellSelfDamage,
     PVPW_CONSTANTS.AVOID_TYPES.IMMUNE
   )
 end
@@ -902,7 +902,7 @@ function me.TestParseEnemyAvoidResistVerwandlungKroete()
     "TestParseEnemyAvoidResistVerwandlungKroete",
     "verwandlung_kroete",
     "Ihr habt es mit Verwandlung: Kröte versucht, aber $player$ hat widerstanden.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    mod.testHelper.eventTypeSpellSelfDamage,
     PVPW_CONSTANTS.AVOID_TYPES.RESIST
   )
 end
@@ -913,7 +913,7 @@ function me.TestParseEnemyAvoidImmuneKaeltekegel()
     "TestParseEnemyAvoidImmuneKaeltekegel",
     "kaeltekegel",
     "Kältekegel war ein Fehlschlag. $player$ ist immun.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    mod.testHelper.eventTypeSpellSelfDamage,
     PVPW_CONSTANTS.AVOID_TYPES.IMMUNE
   )
 end
@@ -924,7 +924,7 @@ function me.TestParseEnemyAvoidResistKaeltekegel()
     "TestParseEnemyAvoidResistKaeltekegel",
     "kaeltekegel",
     "Ihr habt es mit Kältekegel versucht, aber $player$ hat widerstanden.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    mod.testHelper.eventTypeSpellSelfDamage,
     PVPW_CONSTANTS.AVOID_TYPES.RESIST
   )
 end
@@ -935,7 +935,7 @@ function me.TestParseEnemyAvoidImmuneFrostnova()
     "TestParseEnemyAvoidImmuneFrostnova",
     "frostnova",
     "Frostnova war ein Fehlschlag. $player$ ist immun.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    mod.testHelper.eventTypeSpellSelfDamage,
     PVPW_CONSTANTS.AVOID_TYPES.IMMUNE
   )
 end
@@ -946,7 +946,7 @@ function me.TestParseEnemyAvoidResistFrostnova()
     "TestParseEnemyAvoidResistFrostnova",
     "frostnova",
     "Ihr habt es mit Frostnova versucht, aber $player$ hat widerstanden.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    mod.testHelper.eventTypeSpellSelfDamage,
     PVPW_CONSTANTS.AVOID_TYPES.RESIST
   )
 end
@@ -957,7 +957,7 @@ function me.TestParseSelfAvoidResistGegenzauberZumSchweigenGebracht()
     "TestParseSelfAvoidResistGegenzauberZumSchweigenGebracht",
     "gegenzauber_zum_schweigen_gebracht",
     "$player$ versucht es mit Gegenzauber - zum Schweigen gebracht... widerstanden.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    mod.testHelper.eventTypeSpellHostilePlayerDamage,
     PVPW_CONSTANTS.AVOID_TYPES.RESIST
   )
 end
@@ -968,7 +968,7 @@ function me.TestParseSelfAvoidImmuneGegenzauber()
     "TestParseSelfAvoidImmuneGegenzauber",
     "gegenzauber",
     "$player$ versucht es mit Gegenzauber... ein Fehlschlag. Ihr seid immun.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    mod.testHelper.eventTypeSpellHostilePlayerDamage,
     PVPW_CONSTANTS.AVOID_TYPES.IMMUNE
   )
 end
@@ -979,7 +979,7 @@ function me.TestParseSelfAvoidImmuneVerwandlung()
     "TestParseSelfAvoidImmuneVerwandlung",
     "polymorph",
     "$player$ versucht es mit Gegenzauber... ein Fehlschlag. Ihr seid immun.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    mod.testHelper.eventTypeSpellHostilePlayerDamage,
     PVPW_CONSTANTS.AVOID_TYPES.IMMUNE
   )
 end
@@ -990,7 +990,7 @@ function me.TestParseSelfAvoidResistVerwandlung()
     "TestParseSelfAvoidResistVerwandlung",
     "polymorph",
     "$player$ versucht es mit Verwandlung... widerstanden.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    mod.testHelper.eventTypeSpellHostilePlayerDamage,
     PVPW_CONSTANTS.AVOID_TYPES.RESIST
   )
 end
@@ -1001,7 +1001,7 @@ function me.TestParseSelfAvoidImmuneVerwandlungKuh()
     "TestParseSelfAvoidImmuneVerwandlungKuh",
     "verwandlung_kuh",
     "$player$ versucht es mit Verwandlung: Kuh... ein Fehlschlag. Ihr seid immun.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    mod.testHelper.eventTypeSpellHostilePlayerDamage,
     PVPW_CONSTANTS.AVOID_TYPES.IMMUNE
   )
 end
@@ -1012,7 +1012,7 @@ function me.TestParseSelfAvoidResistVerwandlungKuh()
     "TestParseSelfAvoidResistVerwandlungKuh",
     "verwandlung_kuh",
     "$player$ versucht es mit Verwandlung: Kuh... widerstanden.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    mod.testHelper.eventTypeSpellHostilePlayerDamage,
     PVPW_CONSTANTS.AVOID_TYPES.RESIST
   )
 end
@@ -1023,7 +1023,7 @@ function me.TestParseSelfAvoidImmuneVerwandlungSchwein()
     "TestParseSelfAvoidImmuneVerwandlungSchwein",
     "verwandlung_schwein",
     "$player$ versucht es mit Verwandlung: Schwein... ein Fehlschlag. Ihr seid immun.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    mod.testHelper.eventTypeSpellHostilePlayerDamage,
     PVPW_CONSTANTS.AVOID_TYPES.IMMUNE
   )
 end
@@ -1034,7 +1034,7 @@ function me.TestParseSelfAvoidResistVerwandlungSchwein()
     "TestParseSelfAvoidResistVerwandlungSchwein",
     "verwandlung_schwein",
     "$player$ versucht es mit Verwandlung: Schwein... widerstanden.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    mod.testHelper.eventTypeSpellHostilePlayerDamage,
     PVPW_CONSTANTS.AVOID_TYPES.RESIST
   )
 end
@@ -1045,7 +1045,7 @@ function me.TestParseSelfAvoidImmuneVerwandlungKroete()
     "TestParseSelfAvoidImmuneVerwandlungKroete",
     "verwandlung_kroete",
     "$player$ versucht es mit Verwandlung: Kröte... ein Fehlschlag. Ihr seid immun.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    mod.testHelper.eventTypeSpellHostilePlayerDamage,
     PVPW_CONSTANTS.AVOID_TYPES.IMMUNE
   )
 end
@@ -1056,7 +1056,7 @@ function me.TestParseSelfAvoidResistVerwandlungKroete()
     "TestParseSelfAvoidResistVerwandlungKroete",
     "verwandlung_kroete",
     "$player$ versucht es mit Verwandlung: Kröte... widerstanden.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    mod.testHelper.eventTypeSpellHostilePlayerDamage,
     PVPW_CONSTANTS.AVOID_TYPES.RESIST
   )
 end
@@ -1067,7 +1067,7 @@ function me.TestParseSelfAvoidImmuneKaeltekegel()
     "TestParseSelfAvoidImmuneKaeltekegel",
     "kaeltekegel",
     "$player$ versucht es mit Kältekegel... ein Fehlschlag. Ihr seid immun.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    mod.testHelper.eventTypeSpellHostilePlayerDamage,
     PVPW_CONSTANTS.AVOID_TYPES.IMMUNE
   )
 end
@@ -1078,7 +1078,7 @@ function me.TestParseSelfAvoidResistKaeltekegel()
     "TestParseSelfAvoidResistKaeltekegel",
     "kaeltekegel",
     "$player$ versucht es mit Kältekegel... widerstanden.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    mod.testHelper.eventTypeSpellHostilePlayerDamage,
     PVPW_CONSTANTS.AVOID_TYPES.RESIST
   )
 end
@@ -1089,7 +1089,7 @@ function me.TestParseSelfAvoidImmuneFrostnova()
     "TestParseSelfAvoidImmuneFrostnova",
     "frostnova",
     "$player$ versucht es mit Frostnova... ein Fehlschlag. Ihr seid immun.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    mod.testHelper.eventTypeSpellHostilePlayerDamage,
     PVPW_CONSTANTS.AVOID_TYPES.IMMUNE
   )
 end
@@ -1100,7 +1100,7 @@ function me.TestParseSelfAvoidResistFrostnova()
     "TestParseSelfAvoidResistFrostnova",
     "frostnova",
     "$player$ versucht es mit Frostnova... widerstanden.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    mod.testHelper.eventTypeSpellHostilePlayerDamage,
     PVPW_CONSTANTS.AVOID_TYPES.RESIST
   )
 end

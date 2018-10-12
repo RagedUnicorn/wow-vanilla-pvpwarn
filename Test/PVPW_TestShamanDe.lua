@@ -717,7 +717,7 @@ function me.TestParseEnemyAvoidImmuneErdschock()
     "TestParseEnemyAvoidImmuneErdschock",
     "erdschock",
     "Zurechtstutzen war ein Fehlschlag. $player$ ist immun.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    mod.testHelper.eventTypeSpellSelfDamage,
     PVPW_CONSTANTS.AVOID_TYPES.IMMUNE
   )
 end
@@ -728,7 +728,7 @@ function me.TestParseEnemyAvoidResistErdschock()
     "TestParseEnemyAvoidResistErdschock",
     "erdschock",
     "Ihr habt es mit Erschütternder Schuss versucht, aber $player$ hat widerstanden.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    mod.testHelper.eventTypeSpellSelfDamage,
     PVPW_CONSTANTS.AVOID_TYPES.RESIST
   )
 end
@@ -739,7 +739,7 @@ function me.TestParseEnemyAvoidImmuneFlammenschock()
     "TestParseEnemyAvoidImmuneFlammenschock",
     "flammenschock",
     "Zurechtstutzen war ein Fehlschlag. $player$ ist immun.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    mod.testHelper.eventTypeSpellSelfDamage,
     PVPW_CONSTANTS.AVOID_TYPES.IMMUNE
   )
 end
@@ -750,7 +750,7 @@ function me.TestParseEnemyAvoidResistFlammenschock()
     "TestParseEnemyAvoidResistFlammenschock",
     "flammenschock",
     "Ihr habt es mit Erschütternder Schuss versucht, aber $player$ hat widerstanden.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    mod.testHelper.eventTypeSpellSelfDamage,
     PVPW_CONSTANTS.AVOID_TYPES.RESIST
   )
 end
@@ -761,7 +761,7 @@ function me.TestParseEnemyAvoidImmuneFrostschock()
     "TestParseEnemyAvoidImmuneFrostschock",
     "frostschock",
     "Zurechtstutzen war ein Fehlschlag. $player$ ist immun.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    mod.testHelper.eventTypeSpellSelfDamage,
     PVPW_CONSTANTS.AVOID_TYPES.IMMUNE
   )
 end
@@ -772,7 +772,7 @@ function me.TestParseEnemyAvoidResistFrostschock()
     "TestParseEnemyAvoidResistFrostschock",
     "frostschock",
     "Ihr habt es mit Erschütternder Schuss versucht, aber $player$ hat widerstanden.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    mod.testHelper.eventTypeSpellSelfDamage,
     PVPW_CONSTANTS.AVOID_TYPES.RESIST
   )
 end
@@ -783,7 +783,7 @@ function me.TestParseSelfAvoidImmuneErdschock()
     "TestParseSelfAvoidImmuneErdschock",
     "erdschock",
     "$player$ versucht es mit Erdschock... ein Fehlschlag. Ihr seid immun.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    mod.testHelper.eventTypeSpellHostilePlayerDamage,
     PVPW_CONSTANTS.AVOID_TYPES.IMMUNE
   )
 end
@@ -794,7 +794,7 @@ function me.TestParseSelfAvoidResistErdschock()
     "TestParseSelfAvoidResistErdschock",
     "erdschock",
     "$player$ versucht es mit Erdschock... widerstanden.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    mod.testHelper.eventTypeSpellHostilePlayerDamage,
     PVPW_CONSTANTS.AVOID_TYPES.RESIST
   )
 end
@@ -805,7 +805,7 @@ function me.TestParseSelfAvoidImmuneFlammenschock()
     "TestParseSelfAvoidImmuneFlammenschock",
     "flammenschock",
     "$player$ versucht es mit Flammenschock... ein Fehlschlag. Ihr seid immun.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    mod.testHelper.eventTypeSpellHostilePlayerDamage,
     PVPW_CONSTANTS.AVOID_TYPES.IMMUNE
   )
 end
@@ -816,7 +816,7 @@ function me.TestParseSelfAvoidResistFlammenschock()
     "TestParseSelfAvoidResistFlammenschock",
     "flammenschock",
     "$player$ versucht es mit Flammenschock... widerstanden.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    mod.testHelper.eventTypeSpellHostilePlayerDamage,
     PVPW_CONSTANTS.AVOID_TYPES.RESIST
   )
 end
@@ -827,7 +827,7 @@ function me.TestParseSelfAvoidImmuneFrostschock()
     "TestParseSelfAvoidImmuneFrostschock",
     "frostschock",
     "$player$ versucht es mit Frostschock... ein Fehlschlag. Ihr seid immun.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    mod.testHelper.eventTypeSpellHostilePlayerDamage,
     PVPW_CONSTANTS.AVOID_TYPES.IMMUNE
   )
 end
@@ -838,7 +838,7 @@ function me.TestParseSelfAvoidResistFrostschock()
     "TestParseSelfAvoidResistFrostschock",
     "frostschock",
     "$player$ versucht es mit Frostschock... widerstanden.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    mod.testHelper.eventTypeSpellHostilePlayerDamage,
     PVPW_CONSTANTS.AVOID_TYPES.RESIST
   )
 end

@@ -1046,7 +1046,7 @@ function me.TestParseEnemyAvoidImmuneGezeitenGluecksbringer()
     "TestParseEnemyAvoidImmuneGezeitenGluecksbringer",
     "gezeiten_gluecksbringer",
     "Gezeiten-Glücksbringer war ein Fehlschlag. $player$ ist immun.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    mod.testHelper.eventTypeSpellSelfDamage,
     PVPW_CONSTANTS.AVOID_TYPES.IMMUNE
   )
 end
@@ -1057,7 +1057,7 @@ function me.TestParseEnemyAvoidResistGezeitenGluecksbringer()
     "TestParseEnemyAvoidResistGezeitenGluecksbringer",
     "gezeiten_gluecksbringer",
     "Ihr habt es mit Gezeiten-Glücksbringer versucht, aber $player$ hat widerstanden.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    mod.testHelper.eventTypeSpellSelfDamage,
     PVPW_CONSTANTS.AVOID_TYPES.RESIST
   )
 end
@@ -1068,7 +1068,7 @@ function me.TestParseEnemyAvoidImmuneTollkuehnesStuermen()
     "TestParseEnemyAvoidImmuneTollkuehnesStuermen",
     "tollkuehnes_stuermen",
     "Tollkühnes Stürmen war ein Fehlschlag. $player$ ist immun.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    mod.testHelper.eventTypeSpellSelfDamage,
     PVPW_CONSTANTS.AVOID_TYPES.IMMUNE
   )
 end
@@ -1079,7 +1079,7 @@ function me.TestParseEnemyAvoidImmuneNetOMatik()
     "TestParseEnemyAvoidImmuneNetOMatik",
     "net_o_matik",
     "Net-o-Matik war ein Fehlschlag. $player$ ist immun.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    mod.testHelper.eventTypeSpellSelfDamage,
     PVPW_CONSTANTS.AVOID_TYPES.IMMUNE
   )
 end
@@ -1090,7 +1090,7 @@ function me.TestParseEnemyAvoidResistNetOMatik()
     "TestParseEnemyAvoidResistNetOMatik",
     "net_o_matik",
     "Ihr habt es mit Net-o-Matik versucht, aber $player$ hat widerstanden.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    mod.testHelper.eventTypeSpellSelfDamage,
     PVPW_CONSTANTS.AVOID_TYPES.RESIST
   )
 end
@@ -1101,7 +1101,7 @@ function me.TestParseSelfAvoidImmuneGezeitenGluecksbringer()
     "TestParseSelfAvoidImmuneGezeitenGluecksbringer",
     "gezeiten_gluecksbringer",
     "$player$ versucht es mit Gezeiten-Glücksbringer... ein Fehlschlag. Ihr seid immun.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    mod.testHelper.eventTypeSpellHostilePlayerDamage,
     PVPW_CONSTANTS.AVOID_TYPES.IMMUNE
   )
 end
@@ -1112,7 +1112,7 @@ function me.TestParseSelfAvoidResistGezeitenGluecksbringer()
     "TestParseSelfAvoidResistGezeitenGluecksbringer",
     "gezeiten_gluecksbringer",
     "$player$ versucht es mit Gezeiten-Glücksbringer... widerstanden.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    mod.testHelper.eventTypeSpellHostilePlayerDamage,
     PVPW_CONSTANTS.AVOID_TYPES.RESIST
   )
 end
@@ -1123,7 +1123,7 @@ function me.TestParseSelfAvoidImmuneTollkuehnesStuermen()
     "TestParseSelfAvoidImmuneTollkuehnesStuermen",
     "tollkuehnes_stuermen",
     "$player$ versucht es mit Tollkühnes Stürmen... ein Fehlschlag. Ihr seid immun.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    mod.testHelper.eventTypeSpellHostilePlayerDamage,
     PVPW_CONSTANTS.AVOID_TYPES.IMMUNE
   )
 end
@@ -1134,7 +1134,7 @@ function me.TestParseSelfAvoidImmuneNetOMatik()
     "TestParseSelfAvoidImmuneNetOMatik",
     "net_o_matik",
     "$player$ versucht es mit Net-o-Matik... ein Fehlschlag. Ihr seid immun.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    mod.testHelper.eventTypeSpellHostilePlayerDamage,
     PVPW_CONSTANTS.AVOID_TYPES.IMMUNE
   )
 end
@@ -1145,7 +1145,7 @@ function me.TestParseSelfAvoidResistNetOMatik()
     "TestParseSelfAvoidResistNetOMatik",
     "net_o_matik",
     "$player$ versucht es mit Net-o-Matik... widerstanden.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    mod.testHelper.eventTypeSpellHostilePlayerDamage,
     PVPW_CONSTANTS.AVOID_TYPES.RESIST
   )
 end

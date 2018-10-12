@@ -598,7 +598,7 @@ function me.TestParseEnemyAvoidResistThoriumgranate()
     "TestParseEnemyAvoidResistThoriumgranate",
     "thoriumgranate",
     "Ihr habt es mit Thoriumgranate versucht, aber $player$ hat widerstanden.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    mod.testHelper.eventTypeSpellSelfDamage,
     PVPW_CONSTANTS.AVOID_TYPES.RESIST
   )
 end
@@ -609,7 +609,7 @@ function me.TestParseEnemyAvoidImmuneThoriumgranate()
     "TestParseEnemyAvoidImmuneThoriumgranate",
     "thoriumgranate",
     "Thoriumgranate war ein Fehlschlag. $player$ ist immun.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    mod.testHelper.eventTypeSpellSelfDamage,
     PVPW_CONSTANTS.AVOID_TYPES.IMMUNE
   )
 end
@@ -620,7 +620,7 @@ function me.TestParseEnemyAvoidResistEisengranate()
     "TestParseEnemyAvoidResistEisengranate",
     "eisengranate",
     "Ihr habt es mit Eisengranate versucht, aber $player$ hat widerstanden.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    mod.testHelper.eventTypeSpellSelfDamage,
     PVPW_CONSTANTS.AVOID_TYPES.RESIST
   )
 end
@@ -631,7 +631,7 @@ function me.TestParseEnemyAvoidImmuneEisengranate()
     "TestParseEnemyAvoidImmuneEisengranate",
     "eisengranate",
     "Eisengranate war ein Fehlschlag. $player$ ist immun.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnSelf,
+    mod.testHelper.eventTypeSpellSelfDamage,
     PVPW_CONSTANTS.AVOID_TYPES.IMMUNE
   )
 end
@@ -642,7 +642,7 @@ function me.TestParseSelfAvoidResistThoriumgranate()
     "TestParseSelfAvoidResistThoriumgranate",
     "thoriumgranate",
     "$player$ versucht es mit Thoriumgranate... widerstanden.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    mod.testHelper.eventTypeSpellHostilePlayerDamage,
     PVPW_CONSTANTS.AVOID_TYPES.RESIST
   )
 end
@@ -653,7 +653,7 @@ function me.TestParseSelfAvoidImmuneThoriumgranate()
     "TestParseSelfAvoidImmuneThoriumgranate",
     "thoriumgranate",
     "$player$ versucht es mit Thoriumgranate... ein Fehlschlag. Ihr seid immun.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    mod.testHelper.eventTypeSpellHostilePlayerDamage,
     PVPW_CONSTANTS.AVOID_TYPES.IMMUNE
   )
 end
@@ -664,7 +664,7 @@ function me.TestParseSelfAvoidResistEisengranate()
     "TestParseSelfAvoidResistEisengranate",
     "eisengranate",
     "$player$ versucht es mit Eisengranate... widerstanden.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    mod.testHelper.eventTypeSpellHostilePlayerDamage,
     PVPW_CONSTANTS.AVOID_TYPES.RESIST
   )
 end
@@ -675,7 +675,7 @@ function me.TestParseSelfAvoidImmuneEisengranate()
     "TestParseSelfAvoidImmuneEisengranate",
     "eisengranate",
     "$player$ versucht es mit Eisengranate... ein Fehlschlag. Ihr seid immun.",
-    mod.testHelper.eventTypeSpellDamageShieldsOnOthers,
+    mod.testHelper.eventTypeSpellHostilePlayerDamage,
     PVPW_CONSTANTS.AVOID_TYPES.IMMUNE
   )
 end
