@@ -58,7 +58,6 @@ function me.SetupSlashCmdList()
       ShowInfoMessage()
     elseif msg == "opt" then
       mod.opt.InitOptionsMenu()
-      getglobal(PVPW_CONSTANTS.ELEMENT_PVPW_OPTIONS_FRAME):Show()
     elseif msg == "disable" then
       PVPWarnOptions.disableAddon = true
       mod.eventHandler.UnsubscribeEvents()

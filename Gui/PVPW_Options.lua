@@ -142,7 +142,10 @@ end
 
 function me.InitOptionsMenu()
   -- set version title
-  getglobal(PVPW_CONSTANTS.ELEMENT_PVPW_OPTIONS_TITLE):SetText(PVPW_ENVIRONMENT.ADDON_NAME .. " " .. PVPW_ENVIRONMENT.ADDON_VERSION)
+  getglobal(PVPW_CONSTANTS.ELEMENT_PVPW_OPTIONS_TITLE)
+    :SetText(PVPW_ENVIRONMENT.ADDON_NAME .. " " .. PVPW_ENVIRONMENT.ADDON_VERSION)
+  -- show optionsframe
+  getglobal(PVPW_CONSTANTS.ELEMENT_PVPW_OPTIONS_FRAME):Show()
 end
 
 --[[
