@@ -470,7 +470,7 @@ function me.CreateSpellFrame(contentFrameName, spellFrameName, position)
     .. " because it did not yet exist")
 
   spellFrame = CreateFrame("Frame", spellFrameName .. position,
-    contentFrame, "PVPW_SpellConfigurationTemplate")
+    contentFrame, PVPW_CONSTANTS.ELEMENT_PVPW_CLASS_SPELL_CONFIGURATION_TEMPLATE)
   spellFrame:SetPoint("TOPLEFT", contentFrame, "TOPLEFT", 0, -position * 140)
 
   local texture = spellFrame:CreateTexture()
