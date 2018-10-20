@@ -238,8 +238,7 @@ function PVPW_Navigation_Button_OnClick()
 
       -- hide content frame
       if navigationEntries[i].class_id then
-        local classFrame = getglobal(PVPW_CONSTANTS.ELEMENT_PVPW_CLASS_FRAME)
-        classFrame:Hide()
+        getglobal(PVPW_CONSTANTS.ELEMENT_PVPW_CLASS_FRAME):Hide()
       else
         me.HideNavigationEntryContent(i)
       end
