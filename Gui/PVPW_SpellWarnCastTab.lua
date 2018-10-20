@@ -48,23 +48,23 @@ function PVPW_InitializeWarnCastMenuDropdown_OnShow()
 end
 
 --[[
-  @param {number} classID
+  @param {number} classId
 ]]--
-function me.Init(classID)
+function me.Init(classId)
   mod.logger.LogDebug(me.tag, "Initialize: " .. me.tag)
-  me.BuildGui(classID)
+  me.BuildGui(classId)
 end
 
 --[[
-  @param {number} classID
+  @param {number} classId
 ]]--
-function me.BuildGui(classID)
+function me.BuildGui(classId)
   local tabFrame = getglobal(PVPW_CONSTANTS.ELEMENT_PVPW_CLASS_CONFIGURATION_TAB_1)
   local classScrollFrame = getglobal(PVPW_CONSTANTS.ELEMENT_PVPW_CLASS_SCROLL_FRAME)
   local classContentFrame = getglobal(PVPW_CONSTANTS.ELEMENT_PVPW_CLASS_CONTENT_FRAME)
   local classScrollFrameSlider = getglobal(PVPW_CONSTANTS.ELEMENT_PVPW_CLASS_SCROLL_FRAME_SLIDER)
-  -- spelllist for the according classID
-  local spellList = mod.spellMap.GetAllForCategory(PVPW_CLASSLIST[classID])
+  -- spelllist for the according classId
+  local spellList = mod.spellMap.GetAllForCategory(PVPW_CLASSLIST[classId])
 
   -- create scrollFrame if it does not yet exist
   if classScrollFrame == nil then
@@ -112,10 +112,10 @@ function me.BuildGui(classID)
       )
     end
 
-    classSpellFrame.type = PVPW_CLASSLIST[classID]
+    classSpellFrame.type = PVPW_CLASSLIST[classId]
     classSpellFrame.spellName = spellName
 
-    spellData.type = PVPW_CLASSLIST[classID]
+    spellData.type = PVPW_CLASSLIST[classId]
     spellData.spellName = spellName
 
     mod.guiHelper.ConfigureSpellFrame(

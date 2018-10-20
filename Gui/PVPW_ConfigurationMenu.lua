@@ -51,7 +51,7 @@ me.tag = "ConfigurationMenu"
 --[[
   Currently active class configuration screen
 ]]--
-me.classID = 0
+me.classId = 0
 
 --[[
   The class configuration menu consists of multiple tabs. This module is responsible
@@ -75,7 +75,7 @@ local navigation = {
 ]]--
 function PVPW_Tab_Navigation_Button_OnClick()
   local tabID = this:GetID()
-  local classID = this:GetParent():GetID()
+  local classId = this:GetParent():GetID()
 
   if navigation[tabID].active then
     -- window is already active
@@ -83,7 +83,7 @@ function PVPW_Tab_Navigation_Button_OnClick()
   end
 
   me.Reset()
-  me.ActivateTab(tabID, classID)
+  me.ActivateTab(tabID, classId)
 end
 
 --[[
@@ -91,17 +91,17 @@ end
   of the tab buttons or initialy when the first tab is activated automatically
 
   @param {number} position
-  @param {number} classID
+  @param {number} classId
 ]]--
-function me.ActivateTab(position, classID)
-  if classID == nil then
+function me.ActivateTab(position, classId)
+  if classId == nil then
     local classFrame = getglobal(PVPW_CONSTANTS.ELEMENT_PVPW_CLASS_FRAME)
-    classID = classFrame:GetID()
+    classId = classFrame:GetID()
   end
 
   navigation[position].active = true
   getglobal(PVPW_CONSTANTS["ELEMENT_PVPW_CLASS_CONFIGURATION_BUTTON_" .. position]):LockHighlight()
-  mod[navigation[position]["func"]].Init(classID)
+  mod[navigation[position]["func"]].Init(classId)
 end
 
 --[[

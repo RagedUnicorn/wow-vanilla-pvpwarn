@@ -62,7 +62,7 @@ end
   @param {string} className
   @return {number | nil}
     Position of the class in PVPW_CLASSLIST (see constants)
-    nil if the classID could not be determined
+    nil if the classId could not be determined
 ]]--
 function me.GetPlayerClassID(className)
   local name = strlower(className)
@@ -73,7 +73,7 @@ function me.GetPlayerClassID(className)
     end
   end
 
-  mod.logger.LogDebug(me.tag, "Unable to determine classID for " .. name)
+  mod.logger.LogDebug(me.tag, "Unable to determine classId for " .. name)
   return nil
 end
 
