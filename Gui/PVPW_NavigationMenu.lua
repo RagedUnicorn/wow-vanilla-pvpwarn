@@ -207,7 +207,7 @@ function PVPW_LeftNavigationMenu_OnShow()
     if navigationEntries[i].class_id then
       getglobal(PVPW_CONSTANTS.ELEMENT_PVPW_CLASS_FRAME):Hide()
     else
-      getglobal(PVPW_CONSTANTS.ELEMENT_PVPW_CONTENT .. navigationEntries[i].name):Hide()
+      me.HideNavigationEntryContent(i)
     end
   end
 
@@ -220,9 +220,7 @@ function PVPW_LeftNavigationMenu_OnShow()
   end
 
   -- set first content window active
-  navigationEntries[1].active = true
-  getglobal(PVPW_CONSTANTS.ELEMENT_PVPW_CONTENT .. navigationEntries[1].name):Show()
-  navigationEntries[1].init()
+  me.ShowNavigationEntryContent(1)
 end
 
 function PVPW_Navigation_Button_OnClick()
@@ -243,7 +241,7 @@ function PVPW_Navigation_Button_OnClick()
         local classFrame = getglobal(PVPW_CONSTANTS.ELEMENT_PVPW_CLASS_FRAME)
         classFrame:Hide()
       else
-        getglobal(PVPW_CONSTANTS.ELEMENT_PVPW_CONTENT .. navigationEntries[i].name):Hide()
+        me.HideNavigationEntryContent(i)
       end
     end
 
@@ -268,7 +266,7 @@ function PVPW_Navigation_Button_OnClick()
       getglobal(name .. "Texture"):Show()
       getglobal(name .. "Text"):SetTextColor(1, 1, 1, 1)
 
-      getglobal(PVPW_CONSTANTS.ELEMENT_PVPW_CONTENT .. navigationEntries[position].name):Show()
+      me.ShowNavigationEntryContent(position)
     end
 
     navigationEntries[position].init()
@@ -282,4 +280,20 @@ function PVPW_Navigation_Button_OnLoad()
   local position = mod.common.ExtractPositionFromName(name)
 
   getglobal(name .. "Text"):SetText(navigationEntries[position].text)
+end
+
+--[[
+  @param {number} position
+]]--
+function me.ShowNavigationEntryContent(position)
+  navigationEntries[position].active = true
+  getglobal(PVPW_CONSTANTS.ELEMENT_PVPW_CONTENT .. navigationEntries[position].name):Show()
+  navigationEntries[position].init()
+end
+
+--[[
+  @param {number} position
+]]--
+function me.HideNavigationEntryContent(position)
+  getglobal(PVPW_CONSTANTS.ELEMENT_PVPW_CONTENT .. navigationEntries[i].name):Hide()
 end
