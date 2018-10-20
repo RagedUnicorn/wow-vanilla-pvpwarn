@@ -170,7 +170,7 @@
         </Frames>
         <Scripts>
           <OnShow>
-            PVPW_LeftNavigationMenu_OnLoad()
+            PVPW_LeftNavigationMenu_OnShow()
           </OnShow>
         </Scripts>
       </Frame>
