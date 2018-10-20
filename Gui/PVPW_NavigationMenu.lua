@@ -281,5 +281,5 @@ function PVPW_Navigation_Button_OnLoad()
   local name = this:GetName()
   local position = mod.common.ExtractPositionFromName(name)
 
-  getglobal(name .."Text"):SetText(navigationEntries[position].text)
+  getglobal(name .. "Text"):SetText(navigationEntries[position].text)
 end
