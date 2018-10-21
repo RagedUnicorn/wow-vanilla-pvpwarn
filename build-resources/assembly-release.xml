@@ -18,6 +18,7 @@
         <include>Assets/Images/*.blp</include>
         <include>Assets/Images/*.tga</include>
         <include>Assets/Sounds/**/*.mp3</include>
+        <include>Localization/*.lua</include>
       </includes>
       <excludes>
         <exclude>Code/PVPW_Debug.lua</exclude>
