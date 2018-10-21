@@ -294,5 +294,5 @@ end
   @param {number} position
 ]]--
 function me.HideNavigationEntryContent(position)
-  getglobal(PVPW_CONSTANTS.ELEMENT_PVPW_CONTENT .. navigationEntries[i].name):Hide()
+  getglobal(PVPW_CONSTANTS.ELEMENT_PVPW_CONTENT .. navigationEntries[position].name):Hide()
 end
