@@ -7,10 +7,11 @@ if (GetLocale() == "deDE") then
 
   -- console
   pvpw.L["help"] = "|cFFFFFF00(%s)|r: Benutze |cFFFFFF00/pvpw|r oder |cFFFFFF00/pvpwarn|r für eine Liste der verfügbaren Optionen"
-  pvpw.L["disable"] = "|cFFFFFF00disable|r - deaktiviere "
-  pvpw.L["enable"] = "|cFFFFFF00enable|r - aktiviere "
+  pvpw.L["disable"] = "|cFFFFFF00disable|r - deaktiviere cFFFFFF00PVPWarn"
+  pvpw.L["enable"] = "|cFFFFFF00enable|r - aktiviere cFFFFFF00PVPWarn"
   pvpw.L["opt"] = "|cFFFFFF00opt|r - zeige Optionsmenu an"
   pvpw.L["reload"] = "|cFFFFFF00reload|r - UI neu laden"
+  pvpw.L["info_title"] = "|cFFFFFF00PVPWarn:|r"
 
   -- dependency check messages
   pvpw.L["dependency_missing"] = "Konnte LogParser Abhängigkeit nicht finden. PVPWarn funktioniert nicht ohne diese Abhängigkeit. Siehe https://github.com/RagedUnicorn/wow-pvpwarn für mehr Informationen"

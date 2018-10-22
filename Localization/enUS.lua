@@ -6,10 +6,11 @@ pvpw.L["name"] = "PVPWarn"
 
 -- console
 pvpw.L["help"] = "|cFFFFFF00(%s)|r: Use |cFFFFFF00/pvpw|r or |cFFFFFF00/pvpwarn|r for a list of options"
-pvpw.L["disable"] = "|cFFFFFF00disable|r - disable "
-pvpw.L["enable"] = "|cFFFFFF00enable|r - enable "
+pvpw.L["disable"] = "|cFFFFFF00disable|r - disable PVPWarn"
+pvpw.L["enable"] = "|cFFFFFF00enable|r - enable PVPWarn"
 pvpw.L["opt"] = "|cFFFFFF00opt|r - display Optionsmenu"
 pvpw.L["reload"] = "|cFFFFFF00reload|r - reload UI"
+pvpw.L["info_title"] = "|cFFFFFF00PVPWarn:|r"
 
 -- dependency check messages
 pvpw.L["dependency_missing"] = "Could not find LogParser dependency. PVPWarn does not work without this dependency. See https://github.com/RagedUnicorn/wow-pvpwarn for more information"
