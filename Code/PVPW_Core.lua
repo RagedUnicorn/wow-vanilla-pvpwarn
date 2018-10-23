@@ -27,22 +27,22 @@ local me = pvpw
 
 me.tag = "Core"
 
-local _G = getfenv(0)
-
 -- localization
 pvpw.L = {}
 
 --[[
   Testing
 
-  Hook GetLocale to return a fixed value. Deactivate in production!
+  Hook GetLocale to return a fixed value.
   Note: This is used for testing only. If the locale doesn't match with the actual
   locale of the combatlog the addon is unable to parse the log.
 ]]--
 --[[
-  function _G.GetLocale()
-    return "deDE"
-  end
+local _G = getfenv(0)
+
+function _G.GetLocale()
+  return "deDE"
+end
 ]]--
 
 --[[
