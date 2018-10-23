@@ -205,15 +205,14 @@ function me.DependencyCheck()
     should never happen. It can however happen if an addon overwrites lp globally.
   ]]--
   if not lp or not type(lp) == "table" then
-    me.logger.LogError(me.tag, "Could not find LogParser dependency. Make sure to install "
-      .. " LogParser. See https://github.com/RagedUnicorn/wow-pvpwarn for more information")
+    me.logger.LogError(me.tag, pvpw.L["dependency_missing"])
     return false
   end
 
   local actualVersion = lp.version.GetVersion()
 
   if actualVersion == PVPW_ENVIRONMENT.LOGPARSER_EXPECTED_VERSION then
-    me.logger.LogDebug(me.tag, pvpw.L["dependency_missing"])
+    me.logger.LogDebug(me.tag, "Found expected LogParser version - " .. PVPW_ENVIRONMENT.LOGPARSER_EXPECTED_VERSION)
     return true
   else
     me.logger.LogError(me.tag, string.format(pvpw.L["dependency_version_mismatch"],
