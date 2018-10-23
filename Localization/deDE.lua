@@ -1,7 +1,3 @@
-pvpw = pvpw or {}
--- localization
-pvpw.L = pvpw.L or {}
-
 if (GetLocale() == "deDE") then
   pvpw.L["name"] = "PVPWarn"
 

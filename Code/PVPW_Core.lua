@@ -29,6 +29,9 @@ me.tag = "Core"
 
 local _G = getfenv(0)
 
+-- localization
+pvpw.L = {}
+
 --[[
   Testing
 

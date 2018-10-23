@@ -1,7 +1,3 @@
-pvpw = pvpw or {}
--- localization
-pvpw.L = pvpw.L or {}
-
 pvpw.L["name"] = "PVPWarn"
 
 -- console
