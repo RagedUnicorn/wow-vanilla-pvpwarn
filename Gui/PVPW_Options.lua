@@ -313,7 +313,7 @@ function me.SetVisualWarningActive(spellList, categoryName, spellName, state)
   if spell and spell.links then
     -- make sure to sync configuration change to all linked spells
     for i = 1, table.getn(spell.links) do
-      local linkedCategory, linkedSpell = mod.spellMap.SearchSpellByspellID(spell.links[i])
+      local linkedCategory, linkedSpell = mod.spellMap.SearchSpellByspellId(spell.links[i])
       PVPWarnOptions[spellList][linkedCategory][spellName].visualWarningActive = state
     end
 
@@ -407,7 +407,7 @@ function me.SetSoundWarningActive(spellList, categoryName, spellName, state)
   if spell and spell.links then
     -- make sure to sync configuration change to all linked spells
     for i = 1, table.getn(spell.links) do
-      local linkedCategory, linkedSpell = mod.spellMap.SearchSpellByspellID(spell.links[i])
+      local linkedCategory, linkedSpell = mod.spellMap.SearchSpellByspellId(spell.links[i])
       PVPWarnOptions[spellList][linkedCategory][spellName].soundWarningActive = state
     end
 
@@ -439,7 +439,7 @@ function me.SetSoundFadeWarningActive(spellList, categoryName, spellName, state)
   if spell and spell.links then
     -- make sure to sync configuration change to all linked spells
     for i = 1, table.getn(spell.links) do
-      local linkedCategory, linkedSpell = mod.spellMap.SearchSpellByspellID(spell.links[i])
+      local linkedCategory, linkedSpell = mod.spellMap.SearchSpellByspellId(spell.links[i])
       PVPWarnOptions[spellList][linkedCategory][spellName].soundFadeWarningActive = state
     end
 
@@ -493,7 +493,7 @@ function me.SetVisualWarningColor(spellList, categoryName, spellName, color)
   if spell and spell.links then
     -- make sure to sync configuration change to all linked spells
     for i = 1, table.getn(spell.links) do
-      local linkedCategory, linkedSpell = mod.spellMap.SearchSpellByspellID(spell.links[i])
+      local linkedCategory, linkedSpell = mod.spellMap.SearchSpellByspellId(spell.links[i])
       PVPWarnOptions[spellList][linkedCategory][spellName].visualWarningColor = color
     end
 
@@ -556,7 +556,7 @@ function me.SetSpellActive(spellList, categoryName, spellName, state)
   if spell and spell.links then
     -- make sure to sync configuration change to all linked spells
     for i = 1, table.getn(spell.links) do
-      local linkedCategory, linkedSpell = mod.spellMap.SearchSpellByspellID(spell.links[i])
+      local linkedCategory, linkedSpell = mod.spellMap.SearchSpellByspellId(spell.links[i])
       PVPWarnOptions[spellList][linkedCategory][spellName].spellActive = state
     end
 

@@ -493,7 +493,7 @@ end
 ]]--
 function me.ConfigureSpellFrame(spellFrame, spellData, spellType, initializeDropdownCallback)
   -- set data on spellFrame
-  spellFrame:SetID(spellData.spellID)
+  spellFrame:SetID(spellData.spellId)
   spellFrame.soundFileName = spellData.soundFileName
   spellFrame.spellType = spellType
 

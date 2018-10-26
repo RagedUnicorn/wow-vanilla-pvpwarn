@@ -11,7 +11,7 @@ Spelltemplate:
   ["spellname"] = {
     ["name"] = "",
     ["soundFileName"] = "",
-    ["spellID"] = ,
+    ["spellId"] = ,
     ["spellIcon"] = "",
     ["hasFade"] = ,
     ["active"] =
@@ -33,8 +33,8 @@ Spelltemplate:
   ["spell_name"] = {
     ["name"] = "",
     ["soundFileName"] = "",
-    ["itemID"] = ,
-    ["spellID"] = ,
+    ["itemId"] = ,
+    ["spellId"] = ,
     ["spellIcon"] = "",
     ["hasFade"] = ,
     ["canCrit"] = ,
@@ -106,7 +106,7 @@ Shaman: id: `16188`
 ["natures_swiftness"] = {
   ["name"] = "Nature's Swiftness",
   ["soundFileName"] = "natures_swiftness",
-  ["spellID"] = 17116, -- druid spellid
+  ["spellId"] = 17116, -- druid spellid
   ["spellIcon"] = "spell_nature_ravenform",
   ["hasFade"] = true,
   ["links"] = { 16188 }, -- link to shaman spell id
@@ -116,7 +116,7 @@ Shaman: id: `16188`
 ["natures_swiftness"] = {
   ["name"] = "Nature's Swiftness",
   ["soundFileName"] = "natures_swiftness",
-  ["spellID"] = 16188, -- shaman spellid
+  ["spellId"] = 16188, -- shaman spellid
   ["spellIcon"] = "spell_nature_ravenform",
   ["hasFade"] = true,
   ["links"] = { 17116 }, -- link to druid spell id

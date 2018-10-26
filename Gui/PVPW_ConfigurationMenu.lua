@@ -74,16 +74,16 @@ local navigation = {
   Callback for tab navigation buttons
 ]]--
 function PVPW_Tab_Navigation_Button_OnClick()
-  local tabID = this:GetID()
+  local tabId = this:GetID()
   local classId = this:GetParent():GetID()
 
-  if navigation[tabID].active then
+  if navigation[tabId].active then
     -- window is already active
     return
   end
 
   me.Reset()
-  me.ActivateTab(tabID, classId)
+  me.ActivateTab(tabId, classId)
 end
 
 --[[
