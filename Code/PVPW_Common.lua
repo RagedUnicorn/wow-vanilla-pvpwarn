@@ -57,27 +57,6 @@ function me.GetChildByName(frame, pattern)
 end
 
 --[[
-  Get the classid from pvpw constants. This id is used iternaly only
-
-  @param {string} className
-  @return {number | nil}
-    Position of the class in PVPW_CLASSLIST (see constants)
-    nil if the classId could not be determined
-]]--
-function me.GetPlayerClassID(className)
-  local name = strlower(className)
-
-  for i = 1, table.getn(PVPW_CONSTANTS.PVPW_CLASSLIST) do
-    if PVPW_CONSTANTS.PVPW_CLASSLIST[i] == name then
-      return i
-    end
-  end
-
-  mod.logger.LogDebug(me.tag, "Unable to determine classId for " .. name)
-  return nil
-end
-
---[[
   Extract position from a string
 
   @param {string} name
