@@ -32,14 +32,14 @@ mod.logger = me
   warn - 2
   error 1
 ]]--
-me.logLevel = LP_ENVIRONMENT.LOG_LEVEL
+me.logLevel = PVPW_ENVIRONMENT.LOG_LEVEL
 me.debug = 4
 me.info = 3
 me.warn = 2
 me.error = 1
 
 -- log events
-me.logEvent = LP_ENVIRONMENT.LOG_EVENT
+me.logEvent = PVPW_ENVIRONMENT.LOG_EVENT
 
 me.colors = {}
 me.colors.error = "|cfff00000"  -- red
