@@ -27,9 +27,6 @@ local me = pvpw
 
 me.tag = "Core"
 
--- localization
-pvpw.L = {}
-
 --[[
   Testing
 

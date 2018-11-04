@@ -1,3 +1,6 @@
+pvpw = pvpw or {}
+pvpw.L = {}
+
 pvpw.L["name"] = "PVPWarn"
 
 -- console

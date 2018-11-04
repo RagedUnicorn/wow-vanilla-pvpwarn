@@ -1,4 +1,7 @@
 if (GetLocale() == "deDE") then
+  pvpw = pvpw or {}
+  pvpw.L = {}
+
   pvpw.L["name"] = "PVPWarn"
 
   -- console

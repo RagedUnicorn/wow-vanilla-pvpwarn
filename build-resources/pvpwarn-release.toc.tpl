@@ -11,6 +11,10 @@ Code\PVPW_Constants.lua
 # environment variables
 Code\PVPW_Environment.lua
 
+# localization
+Localization\enUS.lua
+Localization\deDE.lua
+
 # code
 Code\PVPW_Core.lua
 Code\PVPW_SpellMap.lua
@@ -27,10 +31,6 @@ Code\PVPW_Player.lua
 Code\PVPW_Zone.lua
 Code\PVPW_Profile.lua
 Code\PVPW_Cmd.lua
-
-# localization
-Localization\enUS.lua
-Localization\deDE.lua
 
 # gui
 Gui\PVPW_Gui.lua
