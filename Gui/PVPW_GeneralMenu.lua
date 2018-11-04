@@ -75,7 +75,7 @@ end
   OnEnter callback for checkbuttons - hide tooltip
 ]]--
 function PVPW_Opt_Tooltip_OnLeave()
-  GameTooltip:Hide()
+  getglobal(PVPW_CONSTANTS.ELEMENT_TOOLTIP):Hide()
 end
 
 function PVPW_DisableAddon_OnShow()

@@ -29,13 +29,4 @@
   </Frame>
 
   <Frame name="PVPW_AlertFrame" parent="UIParent" inherits="ScrollingMessageFrame" hidden="true" strata="BACKGROUND"></Frame>
-
-  <!-- Gametooltip -->
-  <GameTooltip name="PVPW_Tooltip" inherits="GameTooltipTemplate">
-    <Scripts>
-      <OnLoad>
-        this:SetOwner(WorldFrame, "ANCHOR_NONE")
-      </OnLoad>
-    </Scripts>
-  </GameTooltip>
 </Ui>

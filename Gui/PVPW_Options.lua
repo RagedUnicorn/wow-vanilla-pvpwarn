@@ -37,14 +37,14 @@ end
     - show tooltip
 ]]
 function PVPW_SpellCheckButtonTooltip_OnEnter()
-  mod.tooltip.BuildHintTooltipForSpell(this)
+  mod.tooltip.BuildHintTooltipForSpell()
 end
 
 --[[
   OnLeave callback for spell checkbuttons in categogries - hide tooltip
 ]]
 function PVPW_SpellCheckButtonTooltip_OnLeave()
-  GameTooltip:Hide()
+  getglobal(PVPW_CONSTANTS.ELEMENT_TOOLTIP):Hide()
 end
 
 --[[

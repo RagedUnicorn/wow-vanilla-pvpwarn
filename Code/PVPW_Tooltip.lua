@@ -46,10 +46,12 @@ local options = {
   @param {table} this
     reference to the object that was "entered"
 ]]--
-function me.BuildHintTooltipForSpell(this)
+function me.BuildHintTooltipForSpell()
+  local tooltip = getglobal(PVPW_CONSTANTS.ELEMENT_TOOLTIP)
   local name = this:GetName()
-  local line1, line2
   local tooltipData
+
+  GameTooltip_SetDefaultAnchor(tooltip, this)
 
   if string.find(name or "", "SpellStatus$") then
     tooltipData = me.FindOptionsText("SpellStatus")
@@ -62,23 +64,19 @@ function me.BuildHintTooltipForSpell(this)
   end
 
   if tooltipData then
-    -- grab title for tooltip
-    line1 = tooltipData[2]
-    -- grab description for tooltip
-    line2 = tooltipData[3]
+    -- title for tooltip
+    tooltip:AddLine(tooltipData[2])
+    -- description for tooltip
+    tooltip:AddLine(tooltipData[3], .8, .8, .8, 1)
+
+    tooltip:Show()
+  else
+    mod.logger.LogError(me.tag, "Failed to retrieve tooltipData for: " .. name)
   end
-
-  GameTooltip_SetDefaultAnchor(GameTooltip, this)
-
-  GameTooltip:AddLine(line1)
-  GameTooltip:AddLine(line2, .8, .8, .8, 1)
-
-  GameTooltip:Show()
 end
 
 --[[
   Find options text from options table
-
   @param {string} fieldName
   @return {table}
 ]]--
@@ -90,16 +88,17 @@ function me.FindOptionsText(fieldName)
   end
 end
 
-
 --[[
   @param {string} line1
   @param {string} line2
 ]]--
 function me.BuildTooltipForOption(line1, line2)
-  GameTooltip_SetDefaultAnchor(GameTooltip, this)
+  local tooltip = getglobal(PVPW_CONSTANTS.ELEMENT_TOOLTIP)
 
-  GameTooltip:AddLine(line1)
-  GameTooltip:AddLine(line2, .8, .8, .8, 1)
+  GameTooltip_SetDefaultAnchor(tooltip, this)
 
-  GameTooltip:Show()
+  tooltip:AddLine(line1)
+  tooltip:AddLine(line2, .8, .8, .8, 1)
+
+  tooltip:Show()
 end

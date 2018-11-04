@@ -143,7 +143,7 @@ PVPW_CONSTANTS = {
     generalmenu
   ]]--
   ELEMENT_PVPW_Opt = "PVPW_Opt",
-  ELEMENT_PVPW_TOOLTIP = "PVPW_Tooltip",
+  ELEMENT_TOOLTIP = "GameTooltip",
 
   --[[
     profiles
