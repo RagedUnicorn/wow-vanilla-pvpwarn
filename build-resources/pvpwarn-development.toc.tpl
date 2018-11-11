@@ -3,7 +3,6 @@
 ## Author: Michael Wiesendanger <michael.wiesendanger@gmail.com>
 ## Notes: Addon that warns players visually and acoustically about pvp events
 ## Dependencies: LogParser
-## SavedVariables: PVPWarnOptions, PVPWarnProfiles
 ## SavedVariablesPerCharacter: PVPWarnOptions, PVPWarnProfiles
 
 # constant values
