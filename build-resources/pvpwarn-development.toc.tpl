@@ -16,11 +16,12 @@ Localization\deDE.lua
 
 # code
 Code\PVPW_Core.lua
+Code\PVPW_Cmd.lua
+Code\PVPW_Common.lua
+Code\PVPW_Logger.lua
 Code\PVPW_SpellMap.lua
 Code\PVPW_SpellAvoidMap.lua
 Code\PVPW_Timer.lua
-Code\PVPW_Common.lua
-Code\PVPW_Logger.lua
 Code\PVPW_EventHandler.lua
 Code\PVPW_Sound.lua
 Code\PVPW_Visual.lua
@@ -29,7 +30,7 @@ Code\PVPW_Tooltip.lua
 Code\PVPW_Player.lua
 Code\PVPW_Zone.lua
 Code\PVPW_Profile.lua
-Code\PVPW_Cmd.lua
+Code\PVPW_AddonOptions.lua
 
 # gui
 Gui\PVPW_Gui.lua

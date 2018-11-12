@@ -80,7 +80,7 @@ end
 
 function PVPW_DisableAddon_OnShow()
   -- load status from config-object
-  if PVPWarnOptions.disableAddon then
+  if mod.addonOptions.IsAddonDisabled() then
     this:SetChecked(true)
   else
     this:SetChecked(false)
@@ -91,15 +91,15 @@ function PVPW_DisableAddon_OnClick()
   local enabled = this:GetChecked()
 
   if enabled == 1 then
-    PVPWarnOptions.disableAddon = true
+    mod.addonOptions.DisableAddon()
   else
-    PVPWarnOptions.disableAddon = false
+    mod.addonOptions.EnableAddon()
   end
 end
 
 function PVPW_DisableAddonInBattlegrounds_OnShow()
   -- load status from config-object
-  if PVPWarnOptions.disableAddonInBattlegrounds then
+  if mod.addonOptions.IsAddonDisabledInBattlegrounds() then
     this:SetChecked(true)
   else
     this:SetChecked(false)
@@ -110,16 +110,16 @@ function PVPW_DisableAddonInBattlegrounds_OnClick()
   local enabled = this:GetChecked()
 
   if enabled == 1 then
-    PVPWarnOptions.disableAddonInBattlegrounds = true
+    mod.addonOptions.DisableAddonInBattlegrounds()
   else
-    PVPWarnOptions.disableAddonInBattlegrounds = false
+    mod.addonOptions.EnableAddonInBattlegrounds()
   end
 end
 
 
 function PVPW_IgnoreEventsWhileDead_OnShow()
   -- load status from config-object
-  if PVPWarnOptions.ignoreEventsWhileDead then
+  if mod.addonOptions.IsIgnoreEventsWhileDeadEnabled() then
     this:SetChecked(true)
   else
     this:SetChecked(false)
@@ -130,15 +130,15 @@ function PVPW_IgnoreEventsWhileDead_OnClick()
   local enabled = this:GetChecked()
 
   if enabled == 1 then
-    PVPWarnOptions.ignoreEventsWhileDead = true
+    mod.addonOptions.EnableIgnoreEventsWhileDead()
   else
-    PVPWarnOptions.ignoreEventsWhileDead = false
+    mod.addonOptions.DisableIgnoreEventsWhileDead()
   end
 end
 
 function PVPW_ShowEventsForTargetOnly_OnShow()
   -- load status from config-object
-  if PVPWarnOptions.showEventsForTargetOnly then
+  if mod.addonOptions.IsShowEventsForTargetOnlyEnabled() then
     this:SetChecked(true)
   else
     this:SetChecked(false)
@@ -149,8 +149,8 @@ function PVPW_ShowEventsForTargetOnly_OnClick()
   local enabled = this:GetChecked()
 
   if enabled == 1 then
-    PVPWarnOptions.showEventsForTargetOnly = true
+    mod.addonOptions.EnableShowEventsForTargetOnly()
   else
-    PVPWarnOptions.showEventsForTargetOnly = false
+    mod.addonOptions.DisableShowEventsForTargetOnly()
   end
 end
