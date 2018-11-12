@@ -92,6 +92,34 @@ function me.SetupConfiguration()
 end
 
 --[[
+  Set addon version on addon options. Before setting a new version make sure
+  to run through migration paths. As of right now there is no migration path.
+]]--
+function me.SetAddonVersion()
+  -- if no version set so far make sure to set the current one
+  if PVPWarnOptions.addonVersion == nil then
+    PVPWarnOptions.addonVersion = PVPW_ENVIRONMENT.ADDON_VERSION
+  end
+
+  me.MigrationPath()
+  -- migration done update addon version to current
+  PVPWarnOptions.addonVersion = PVPW_ENVIRONMENT.ADDON_VERSION
+end
+
+--[[
+  Migration path for older version to newest version. For now this migration path
+  is running each time the addon starts. Later versions should consider the save addon
+  version before running a migration path
+]]--
+function me.MigrationPath()
+  --[[
+  if PVPWarnOptions.addonVersion == "x.x.x" then
+    me.PrexxxMigration()
+  end
+  ]]--
+end
+
+--[[
   Disable the addon
 ]]--
 function me.DisableAddon()
