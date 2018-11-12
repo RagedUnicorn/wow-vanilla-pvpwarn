@@ -29,6 +29,69 @@ mod.addonOptions = me
 me.tag = "AddonOptions"
 
 --[[
+  Saved addon variable
+]]--
+PVPWarnOptions = {
+  ["disableAddon"] = false,
+  ["disableAddonInBattlegrounds"] = false,
+  ["showEventsForTargetOnly"] = false,
+  ["ignoreEventsWhileDead"] = false,
+  --[[
+    Enemy spells being casted/used/activated
+  ]]--
+  ["spellList"] = nil,
+  --[[
+    Spells that the player avoided
+  ]]--
+  ["spellSelfAvoidList"] = nil,
+  --[[
+    Spells that an enemy player avoided
+  ]]--
+  ["spellEnemyAvoidList"] = nil
+}
+
+--[[
+  Saved addon variable
+]]--
+PVPWarnProfiles = {}
+
+--[[
+    Set default values if property is nil. This might happen after an addon upgrade
+  ]]--
+function me.SetupConfiguration()
+  if PVPWarnOptions.disableAddon == nil then
+    PVPWarnOptions.disableAddon = false
+  end
+
+  if PVPWarnOptions.disableAddonInBattlegrounds == nil then
+    PVPWarnOptions.disableAddonInBattlegrounds = false
+  end
+
+  if PVPWarnOptions.showEventsForTargetOnly == nil then
+    PVPWarnOptions.showEventsForTargetOnly = false
+  end
+
+  if PVPWarnOptions.ignoreEventsWhileDead == nil then
+    PVPWarnOptions.ignoreEventsWhileDead = false
+  end
+
+  -- initialize spelllist for the first time with default profile
+  if PVPWarnOptions.spellList == nil then
+    PVPWarnOptions.spellList = mod.profile.GetDefaultProfile()
+  end
+
+  -- initialize self avoid spelllist for the first time with default profile
+  if PVPWarnOptions.spellSelfAvoidList == nil then
+    PVPWarnOptions.spellSelfAvoidList = mod.profile.GetDefaultProfileSelfAvoidSpells()
+  end
+
+  -- initialize enemy avoid spelllist for the first time with default profile
+  if PVPWarnOptions.spellEnemyAvoidList == nil then
+    PVPWarnOptions.spellEnemyAvoidList = mod.profile.GetDefaultProfileEnemyAvoidSpells()
+  end
+end
+
+--[[
   Disable the addon
 ]]--
 function me.DisableAddon()

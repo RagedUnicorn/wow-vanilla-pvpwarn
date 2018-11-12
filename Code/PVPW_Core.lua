@@ -43,30 +43,6 @@ end
 ]]--
 
 --[[
-  Saved addon variable
-]]--
-PVPWarnOptions = {
-  ["disableAddon"] = false,
-  ["disableAddonInBattlegrounds"] = false,
-  ["showEventsForTargetOnly"] = false,
-  ["ignoreEventsWhileDead"] = false,
-  --[[
-    Enemy spells being casted/used/activated
-  ]]--
-  ["spellList"] = nil,
-  --[[
-    Spells that the player avoided
-  ]]--
-  ["spellSelfAvoidList"] = nil,
-  --[[
-    Spells that an enemy player avoided
-  ]]--
-  ["spellEnemyAvoidList"] = nil
-}
-
-PVPWarnProfiles = {}
-
---[[
   Addon load
 ]]--
 function me.OnLoad()
@@ -136,7 +112,7 @@ function me.Initialize()
   end
 
 
-  me.SetupConfiguration()
+  me.addonOptions.SetupConfiguration()
 
   if PVPWarnOptions.disableAddon == nil or PVPWarnOptions.disableAddon == false then
     -- register callbacks for events
@@ -151,42 +127,6 @@ function me.Initialize()
   me.timer.StartTimer("WarnQueueWorker")
 
   DEFAULT_CHAT_FRAME:AddMessage(string.format(PVPW_ENVIRONMENT.ADDON_NAME .. pvpw.L["help"], PVPW_ENVIRONMENT.ADDON_VERSION))
-end
-
-function me.SetupConfiguration()
-  --[[
-      Set default values if property is nil. This might happen after an addon upgrade
-    ]]--
-  if PVPWarnOptions.disableAddon == nil then
-    PVPWarnOptions.disableAddon = false
-  end
-
-  if PVPWarnOptions.disableAddonInBattlegrounds == nil then
-    PVPWarnOptions.disableAddonInBattlegrounds = false
-  end
-
-  if PVPWarnOptions.showEventsForTargetOnly == nil then
-    PVPWarnOptions.showEventsForTargetOnly = false
-  end
-
-  if PVPWarnOptions.ignoreEventsWhileDead == nil then
-    PVPWarnOptions.ignoreEventsWhileDead = false
-  end
-
-  -- initialize spelllist for the first time with default profile
-  if PVPWarnOptions.spellList == nil then
-    PVPWarnOptions.spellList = me.profile.GetDefaultProfile()
-  end
-
-  -- initialize self avoid spelllist for the first time with default profile
-  if PVPWarnOptions.spellSelfAvoidList == nil then
-    PVPWarnOptions.spellSelfAvoidList = me.profile.GetDefaultProfileSelfAvoidSpells()
-  end
-
-  -- initialize enemy avoid spelllist for the first time with default profile
-  if PVPWarnOptions.spellEnemyAvoidList == nil then
-    PVPWarnOptions.spellEnemyAvoidList = me.profile.GetDefaultProfileEnemyAvoidSpells()
-  end
 end
 
 --[[
