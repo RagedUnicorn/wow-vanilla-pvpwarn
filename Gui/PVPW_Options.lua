@@ -28,7 +28,18 @@ mod.opt = me
 
 me.tag = "Options"
 
-function PVPW_CloseButton_OnClick()
+function me.InitOptionsMenu()
+  -- set version title
+  getglobal(PVPW_CONSTANTS.ELEMENT_PVPW_OPTIONS_TITLE)
+    :SetText(PVPW_ENVIRONMENT.ADDON_NAME .. " " .. PVPW_ENVIRONMENT.ADDON_VERSION)
+  -- show optionsframe
+  getglobal(PVPW_CONSTANTS.ELEMENT_PVPW_OPTIONS_FRAME):Show()
+end
+
+--[[
+  Close the optionsmenu by hiding it
+]]--
+function me.OptionCloseButtonOnClick()
   getglobal(PVPW_CONSTANTS.ELEMENT_PVPW_OPTIONS_FRAME):Hide()
 end
 
@@ -138,14 +149,6 @@ function PVPW_ToggleSoundDownWarning_OnClick()
   -- after updating status in configuration update visual appearance
   mod.guiHelper.ToggleSpellFrame(this:GetParent(), spellFrame.type,
     spellFrame.spellName, spellFrame.spellType)
-end
-
-function me.InitOptionsMenu()
-  -- set version title
-  getglobal(PVPW_CONSTANTS.ELEMENT_PVPW_OPTIONS_TITLE)
-    :SetText(PVPW_ENVIRONMENT.ADDON_NAME .. " " .. PVPW_ENVIRONMENT.ADDON_VERSION)
-  -- show optionsframe
-  getglobal(PVPW_CONSTANTS.ELEMENT_PVPW_OPTIONS_FRAME):Show()
 end
 
 --[[

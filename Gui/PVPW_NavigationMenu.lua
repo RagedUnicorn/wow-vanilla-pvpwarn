@@ -193,7 +193,7 @@ local navigationEntries = {
 --[[
   Set first navigation point and content frame active in optionsframe
 ]]--
-function PVPW_LeftNavigationMenu_OnShow()
+function me.LeftNavigationMenuOnShow()
   -- reset tab buttons and content frame
   for i = 1, table.getn(navigationEntries) do
     navigationEntries[i].active = false

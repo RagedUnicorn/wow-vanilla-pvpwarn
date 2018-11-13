@@ -56,7 +56,7 @@
         </DisabledTexture>
         <Scripts>
           <OnClick>
-            PVPW_CloseButton_OnClick()
+            pvpw.opt.OptionCloseButtonOnClick()
           </OnClick>
         </Scripts>
       </Button>
@@ -170,7 +170,7 @@
         </Frames>
         <Scripts>
           <OnShow>
-            PVPW_LeftNavigationMenu_OnShow()
+            pvpw.navigationMenu.LeftNavigationMenuOnShow()
           </OnShow>
         </Scripts>
       </Frame>
@@ -213,10 +213,10 @@
                 </Anchors>
                 <Scripts>
                   <OnClick>
-                    PVPW_DisableAddon_OnClick()
+                    pvpw.generalMenu.DisableAddonOnClick()
                   </OnClick>
                   <OnShow>
-                    PVPW_DisableAddon_OnShow()
+                    pvpw.generalMenu.DisableAddonOnShow()
                   </OnShow>
                 </Scripts>
               </CheckButton>
@@ -230,10 +230,10 @@
                 </Anchors>
                 <Scripts>
                   <OnClick>
-                    PVPW_DisableAddonInBattlegrounds_OnClick()
+                    pvpw.generalMenu.DisableAddonInBattlegroundsOnClick()
                   </OnClick>
                   <OnShow>
-                    PVPW_DisableAddonInBattlegrounds_OnShow()
+                    pvpw.generalMenu.DisableAddonInBattlegroundsOnShow()
                   </OnShow>
                 </Scripts>
               </CheckButton>
@@ -247,10 +247,10 @@
                 </Anchors>
                 <Scripts>
                   <OnClick>
-                    PVPW_IgnoreEventsWhileDead_OnClick()
+                    pvpw.generalMenu.IgnoreEventsWhileDeadOnClick()
                   </OnClick>
                   <OnShow>
-                    PVPW_IgnoreEventsWhileDead_OnShow()
+                    pvpw.generalMenu.IgnoreEventsWhileDeadOnShow()
                   </OnShow>
                 </Scripts>
               </CheckButton>
@@ -264,17 +264,17 @@
                 </Anchors>
                 <Scripts>
                   <OnClick>
-                    PVPW_ShowEventsForTargetOnly_OnClick()
+                    pvpw.generalMenu.ShowEventsForTargetOnlyOnClick()
                   </OnClick>
                   <OnShow>
-                    PVPW_ShowEventsForTargetOnly_OnShow()
+                    pvpw.generalMenu.ShowEventsForTargetOnlyOnShow()
                   </OnShow>
                 </Scripts>
               </CheckButton>
             </Frames>
             <Scripts>
               <OnShow>
-                PVPW_InitGeneralMenu()
+                pvpw.generalMenu.InitGeneralMenu()
               </OnShow>
             </Scripts>
           </Frame>

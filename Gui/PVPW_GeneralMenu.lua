@@ -28,9 +28,6 @@ mod.generalMenu = me
 
 me.tag = "GeneralMenu"
 
---[[
-  Private
-]]
 local options = {
   {"DisableAddon", pvpw.L["disable_addon"], pvpw.L["disable_addon_tooltip"]},
   {"DisableAddonInBattlegrounds", pvpw.L["disable_addon_in_battlegrounds"], pvpw.L["disable_addon_in_battlegrounds_tooltip"]},
@@ -38,7 +35,7 @@ local options = {
   {"ShowEventsForTargetOnly", pvpw.L["show_events_for_target_only"], pvpw.L["show_events_for_target_only_tooltip"]}
 }
 
-function PVPW_InitGeneralMenu()
+function me.InitGeneralMenu()
   local item
 
   for i = 1, table.getn(options) do
@@ -50,8 +47,8 @@ function PVPW_InitGeneralMenu()
       itemTextObject:SetTextColor(.95, .95, .95)
 
       -- configure script-handlers
-      item:SetScript("OnEnter", PVPW_Opt_Tooltip_OnEnter)
-      item:SetScript("OnLeave", PVPW_Opt_Tooltip_OnLeave)
+      item:SetScript("OnEnter", me.OptTooltipOnEnter)
+      item:SetScript("OnLeave", me.OptTooltipOnLeave)
     end
   end
 end
@@ -59,7 +56,7 @@ end
 --[[
   OnEnter callback for checkbuttons - show tooltip
 ]]--
-function PVPW_Opt_Tooltip_OnEnter()
+function me.OptTooltipOnEnter()
   local name = this:GetName()
 
   if not name then return end
@@ -74,11 +71,14 @@ end
 --[[
   OnEnter callback for checkbuttons - hide tooltip
 ]]--
-function PVPW_Opt_Tooltip_OnLeave()
+function me.OptTooltipOnLeave()
   getglobal(PVPW_CONSTANTS.ELEMENT_TOOLTIP):Hide()
 end
 
-function PVPW_DisableAddon_OnShow()
+--[[
+  OnShow callback for checkbuttons - disable addon
+]]--
+function me.DisableAddonOnShow()
   -- load status from config-object
   if mod.addonOptions.IsAddonDisabled() then
     this:SetChecked(true)
@@ -87,7 +87,10 @@ function PVPW_DisableAddon_OnShow()
   end
 end
 
-function PVPW_DisableAddon_OnClick()
+--[[
+  OnClick callback for checkbuttons - disable addon
+]]--
+function me.DisableAddonOnClick()
   local enabled = this:GetChecked()
 
   if enabled == 1 then
@@ -97,7 +100,10 @@ function PVPW_DisableAddon_OnClick()
   end
 end
 
-function PVPW_DisableAddonInBattlegrounds_OnShow()
+--[[
+  OnShow callback for checkbuttons - disable addon in battlegrounds
+]]--
+function me.DisableAddonInBattlegroundsOnShow()
   -- load status from config-object
   if mod.addonOptions.IsAddonDisabledInBattlegrounds() then
     this:SetChecked(true)
@@ -106,7 +112,10 @@ function PVPW_DisableAddonInBattlegrounds_OnShow()
   end
 end
 
-function PVPW_DisableAddonInBattlegrounds_OnClick()
+--[[
+  OnShow callback for checkbuttons - disable addon in battlegrounds
+]]--
+function me.DisableAddonInBattlegroundsOnClick()
   local enabled = this:GetChecked()
 
   if enabled == 1 then
@@ -116,8 +125,10 @@ function PVPW_DisableAddonInBattlegrounds_OnClick()
   end
 end
 
-
-function PVPW_IgnoreEventsWhileDead_OnShow()
+--[[
+  OnShow callback for checkbuttons - ignore events while the player is dead
+]]--
+function me.IgnoreEventsWhileDeadOnShow()
   -- load status from config-object
   if mod.addonOptions.IsIgnoreEventsWhileDeadEnabled() then
     this:SetChecked(true)
@@ -126,7 +137,10 @@ function PVPW_IgnoreEventsWhileDead_OnShow()
   end
 end
 
-function PVPW_IgnoreEventsWhileDead_OnClick()
+--[[
+  OnClick callback for checkbuttons - ignore events while the player is dead
+]]--
+function me.IgnoreEventsWhileDeadOnClick()
   local enabled = this:GetChecked()
 
   if enabled == 1 then
@@ -136,7 +150,10 @@ function PVPW_IgnoreEventsWhileDead_OnClick()
   end
 end
 
-function PVPW_ShowEventsForTargetOnly_OnShow()
+--[[
+  OnShow callback for checkbuttons - show events only for the current target
+]]--
+function me.ShowEventsForTargetOnlyOnShow()
   -- load status from config-object
   if mod.addonOptions.IsShowEventsForTargetOnlyEnabled() then
     this:SetChecked(true)
@@ -145,7 +162,10 @@ function PVPW_ShowEventsForTargetOnly_OnShow()
   end
 end
 
-function PVPW_ShowEventsForTargetOnly_OnClick()
+--[[
+  OnClick callback for checkbuttons - show events only for the current target
+]]--
+function me.ShowEventsForTargetOnlyOnClick()
   local enabled = this:GetChecked()
 
   if enabled == 1 then
