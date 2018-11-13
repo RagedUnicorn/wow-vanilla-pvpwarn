@@ -100,7 +100,7 @@ StaticPopupDialogs["PVPW_CHANGE_PROFILE_WARNING"] = {
   preferredIndex = 4
 }
 
-function PVPW_InitProfilesMenu()
+function me.InitProfilesMenu()
   mod.logger.LogDebug(me.tag, "Loaded ProfilesMenu")
 
   me.SetupUI()

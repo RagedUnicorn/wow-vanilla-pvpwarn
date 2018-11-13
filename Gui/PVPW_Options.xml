@@ -435,7 +435,7 @@
             </Frames>
             <Scripts>
               <OnShow>
-                PVPW_InitProfilesMenu()
+                pvpw.profilesMenu.InitProfilesMenu()
               </OnShow>
             </Scripts>
           </Frame>
