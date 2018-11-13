@@ -23,7 +23,7 @@
   <Frame name="PVPW_TimersFrame" hidden="true">
     <Scripts>
       <OnUpdate>
-        PVPW_TimersFrame_OnUpdate()
+        pvpw.timer.TimersFrameOnUpdate()
       </OnUpdate>
     </Scripts>
   </Frame>

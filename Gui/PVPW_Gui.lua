@@ -27,10 +27,3 @@ local me = {}
 mod.gui = me
 
 me.tag = "Gui"
-
---[[
-  Timersframe onupdate callback
-]]--
-function PVPW_TimersFrame_OnUpdate()
-  mod.timer.TimersFrame_OnUpdate()
-end
