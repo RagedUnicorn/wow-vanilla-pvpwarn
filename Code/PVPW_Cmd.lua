@@ -54,11 +54,9 @@ function me.SetupSlashCmdList()
     elseif msg == "opt" then
       mod.opt.InitOptionsMenu()
     elseif msg == "disable" then
-      PVPWarnOptions.disableAddon = true
-      mod.eventHandler.UnsubscribeEvents()
+      mod.addonOptions.DisableAddon()
     elseif msg == "enable" then
-      PVPWarnOptions.disableAddon = false
-      mod.eventHandler.SubscribeEvents()
+      mod.addonOptions.EnableAddon()
     elseif msg == "rl" or msg == "reload" then
       ReloadUI()
     else
