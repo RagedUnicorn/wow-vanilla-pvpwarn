@@ -223,7 +223,7 @@ function me.LeftNavigationMenuOnShow()
   me.ShowNavigationEntryContent(1)
 end
 
-function PVPW_Navigation_Button_OnClick()
+function me.NavigationButtonOnClick()
   local name = this:GetName()
   local position = mod.common.ExtractPositionFromName(name)
 
@@ -274,7 +274,7 @@ function PVPW_Navigation_Button_OnClick()
   end
 end
 
-function PVPW_Navigation_Button_OnLoad()
+function me.NavigationButtonOnLoad()
   local name = this:GetName()
   local position = mod.common.ExtractPositionFromName(name)
 

@@ -73,7 +73,7 @@ local navigation = {
 --[[
   Callback for tab navigation buttons
 ]]--
-function PVPW_Tab_Navigation_Button_OnClick()
+function me.TabNavigationButtonOnClick()
   local tabId = this:GetID()
   local classId = this:GetParent():GetID()
 

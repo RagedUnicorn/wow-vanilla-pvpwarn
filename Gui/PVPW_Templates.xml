@@ -28,10 +28,10 @@
     </Layers>
     <Scripts>
       <OnLoad>
-        PVPW_Navigation_Button_OnLoad()
+        pvpw.navigationMenu.NavigationButtonOnLoad()
       </OnLoad>
       <OnClick>
-        PVPW_Navigation_Button_OnClick()
+        pvpw.navigationMenu.NavigationButtonOnClick()
       </OnClick>
     </Scripts>
     <HighlightTexture file="Interface\AddOns\PVPWarn\Assets\Images\UI-Listbox-Highlight.tga" alphaMode="ADD"/>
@@ -40,7 +40,7 @@
   <Button name="PVPW_TabNavigationButtonTemplate" inherits="TabButtonTemplate" virtual="true">
     <Scripts>
       <OnClick>
-        PVPW_Tab_Navigation_Button_OnClick()
+        pvpw.configurationMenu.TabNavigationButtonOnClick()
       </OnClick>
     </Scripts>
   </Button>
