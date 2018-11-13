@@ -33,7 +33,6 @@ Code\PVPW_Profile.lua
 Code\PVPW_AddonOptions.lua
 
 # gui
-Gui\PVPW_Gui.lua
 Gui\PVPW_NavigationMenu.lua
 Gui\PVPW_Options.lua
 Gui\PVPW_Options.xml
