@@ -568,7 +568,6 @@ function me.SetSpellIcon(button, spellData)
   end
 end
 
-
 --[[
   Attach OnEnter and OnLeave scripthandlers to a checkbutton for showing and
   hiding a tooltip
@@ -577,8 +576,8 @@ end
     a reference to a checkbutton
 ]]--
 function me.SetTooltipCallbackHandlers(frame)
-  frame:SetScript("OnEnter", PVPW_SpellCheckButtonTooltip_OnEnter)
-  frame:SetScript("OnLeave", PVPW_SpellCheckButtonTooltip_OnLeave)
+  frame:SetScript("OnEnter", mod.opt.SpellCheckButtonTooltipOnEnter)
+  frame:SetScript("OnLeave", mod.opt.SpellCheckButtonTooltipOnLeave)
 end
 
 --[[

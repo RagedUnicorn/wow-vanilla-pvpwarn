@@ -47,21 +47,21 @@ end
   OnEnter callback for spell checkbuttons in categogries
     - show tooltip
 ]]
-function PVPW_SpellCheckButtonTooltip_OnEnter()
+function me.SpellCheckButtonTooltipOnEnter()
   mod.tooltip.BuildHintTooltipForSpell()
 end
 
 --[[
   OnLeave callback for spell checkbuttons in categogries - hide tooltip
 ]]
-function PVPW_SpellCheckButtonTooltip_OnLeave()
+function me.SpellCheckButtonTooltipOnLeave()
   getglobal(PVPW_CONSTANTS.ELEMENT_TOOLTIP):Hide()
 end
 
 --[[
   Global Callback for playsound button - used to play the choosen sound
 ]]--
-function PVPW_PlaySound_OnClick()
+function me.PlaySoundOnClick()
   local parent = this:GetParent()
 
   if parent.spellType == PVPW_CONSTANTS.SPELL_TYPE.SPELL then
@@ -79,7 +79,7 @@ end
 --[[
   Global Callback for playsound fade button - used to play the choosen sound
 ]]--
-function PVPW_PlaySoundFade_OnClick()
+function me.PlaySoundFadeOnClick()
   local parent = this:GetParent()
 
   mod.sound.PlaySound(parent.type, PVPW_CONSTANTS.SPELL_TYPES.SPELL_DOWN,
@@ -89,7 +89,7 @@ end
 --[[
   Global Callback for showvisual button - used to show an example of the choosen color
 ]]--
-function PVPW_ShowVisual_OnClick()
+function me.ShowVisualOnClick()
   local parent = this:GetParent()
 
   local color = mod.opt.GetVisualWarningColor(parent.spellType,
@@ -103,7 +103,7 @@ end
   enabled or disabled. Disabled spells will not trigger any warning independent
   whether acoustic or visual warning is activated or not
 ]]--
-function PVPW_ToggleSpellStatus_OnClick()
+function me.ToggleSpellStatusOnClick()
   local spellFrame = this:GetParent()
 
   mod.opt.ToggleSpellState(spellFrame.spellType, spellFrame.type, spellFrame.spellName)
@@ -116,7 +116,7 @@ end
   Callback for sound warning checkbox. Toggling whether an acoustic warning should be
   displayed for the respective spell
 ]]--
-function PVPW_ToggleSoundWarning_OnClick()
+function me.ToggleSoundWarningOnClick()
   local spellFrame = this:GetParent()
 
   mod.opt.ToggleSoundWarning(spellFrame.spellType, spellFrame.type, spellFrame.spellName)
@@ -129,7 +129,7 @@ end
   Callback for visual warning checkbox. Toggling whether a visual warning should be
   displayed for the respective spell
 ]]--
-function PVPW_ToggleVisualWarning_OnClick()
+function me.ToggleVisualWarningOnClick()
   local spellFrame = this:GetParent()
 
   mod.opt.ToggleVisualWarning(spellFrame.spellType, spellFrame.type, spellFrame.spellName)
@@ -142,7 +142,7 @@ end
   Callback for sound down warning checkbox. Toggling whether an acoustic warning should be
   displayed for the respective spell when it fades from an enemy player
 ]]--
-function PVPW_ToggleSoundDownWarning_OnClick()
+function me.ToggleSoundDownWarningOnClick()
   local spellFrame = this:GetParent()
 
   mod.opt.ToggleSoundDownWarning(spellFrame.spellType, spellFrame.type, spellFrame.spellName)

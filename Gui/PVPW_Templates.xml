@@ -112,7 +112,7 @@
         </Anchors>
         <Scripts>
           <OnClick>
-              PVPW_ToggleSpellStatus_OnClick()
+              pvpw.opt.ToggleSpellStatusOnClick()
           </OnClick>
         </Scripts>
       </CheckButton>
@@ -126,7 +126,7 @@
         </Anchors>
         <Scripts>
           <OnClick>
-              PVPW_ToggleSoundWarning_OnClick()
+              pvpw.opt.ToggleSoundWarningOnClick()
           </OnClick>
         </Scripts>
       </CheckButton>
@@ -140,7 +140,7 @@
         </Anchors>
         <Scripts>
           <OnClick>
-              PVPW_ToggleSoundDownWarning_OnClick()
+              pvpw.opt.ToggleSoundDownWarningOnClick()
           </OnClick>
         </Scripts>
       </CheckButton>
@@ -154,7 +154,7 @@
         </Anchors>
         <Scripts>
           <OnClick>
-              PVPW_ToggleVisualWarning_OnClick()
+              pvpw.opt.ToggleVisualWarningOnClick()
           </OnClick>
         </Scripts>
       </CheckButton>
@@ -177,7 +177,7 @@
         </Anchors>
         <Scripts>
           <OnClick>
-            PVPW_PlaySound_OnClick()
+            pvpw.opt.PlaySoundOnClick()
           </OnClick>
         </Scripts>
       </Button>
@@ -190,7 +190,7 @@
         </Anchors>
         <Scripts>
           <OnClick>
-            PVPW_PlaySoundFade_OnClick()
+            pvpw.opt.PlaySoundFadeOnClick()
           </OnClick>
         </Scripts>
       </Button>
@@ -203,7 +203,7 @@
         </Anchors>
         <Scripts>
           <OnClick>
-            PVPW_ShowVisual_OnClick()
+            pvpw.opt.ShowVisualOnClick()
           </OnClick>
         </Scripts>
       </Button>
