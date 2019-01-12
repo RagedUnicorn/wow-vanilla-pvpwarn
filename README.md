@@ -54,12 +54,12 @@ Configurable spells are grouped into different categories. Other than the differ
 
 ![](/Docs/pvpw_doc_navigation.png)
 
-| Category          | Description                                                                                                               |
-| ----------------- | ------------------------------------------------------------------------------------------------------------------------- |
-| druid, hunter, mage, paladin, priest, rogue, shaman, warlock, warrior | Category for class related spells                                     |
-| racials           | Category for all spells that are considered a racial spell meaning it is only available to certain races                  |
-| items             | Category for items such as trinkets and engineering items                                                                 |
-| misc              | The misc category contains potions and usable consumables and everything else that doesn't fit any other category        |
+| Category                                                              | Description                                                                                                       |
+|-----------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------|
+| druid, hunter, mage, paladin, priest, rogue, shaman, warlock, warrior | Category for class related spells                                                                                 |
+| racials                                                               | Category for all spells that are considered a racial spell meaning it is only available to certain races          |
+| items                                                                 | Category for items such as trinkets and engineering items                                                         |
+| misc                                                                  | The misc category contains potions and usable consumables and everything else that doesn't fit any other category |
 
 Inside such a category a list of spells is displayed that can be enabled or disabled. Additionally a spell can be configured to have a sound and a visual warning played to the player upon detection in the combat log. The buttons to fire of such an alert are for testing purpose only.
 
