@@ -73,7 +73,7 @@
                 </goals>
                 <configuration>
                   <owner>ragedunicorn</owner>
-                  <repository>wow-pvpwarn</repository>
+                  <repository>wow-vanilla-pvpwarn</repository>
                   <server>github-oauth</server>
                   <tagName>${addon.tag.version}</tagName>
                   <name>${addon.tag.version}</name>

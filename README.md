@@ -14,13 +14,13 @@ WoW-Addons are installed directly in your WoW directory:
 
 Make sure to get the newest version of the Addon from the releases tab:
 
-[PVPWarn-Releases](https://github.com/RagedUnicorn/wow-pvpwarn/releases)
+[PVPWarn-Releases](https://github.com/RagedUnicorn/wow-vanilla-pvpwarn/releases)
 
 > Note: If the Addon is not showing up in your ingame Addonlist make sure that the Addon is named `PVPWarn` in your Addons folder
 
 ### Dependency
 
-This Addon is using [LogParser](https://github.com/RagedUnicorn/wow-logparser) for parsing its events. `PvPWarn` cannot run without it make sure to install it.
+This Addon is using [LogParser](https://github.com/RagedUnicorn/wow-vanilla-logparser) for parsing its events. `PvPWarn` cannot run without it make sure to install it.
 
 **Note:** `PvPWarn` will check on upstart if `LogParser` is present and if the version matches the expected one. WoW however already prevents loading Addons that are missing their dependencies. In your Addon Tab you can see if the Addon can be loaded.
 

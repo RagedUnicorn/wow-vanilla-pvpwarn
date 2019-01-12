@@ -13,8 +13,8 @@ if (GetLocale() == "deDE") then
   pvpw.L["info_title"] = "|cFFFFFF00PVPWarn:|r"
 
   -- dependency check messages
-  pvpw.L["dependency_missing"] = "Konnte LogParser Abhängigkeit nicht finden. PVPWarn funktioniert nicht ohne diese Abhängigkeit. Siehe https://github.com/RagedUnicorn/wow-pvpwarn für mehr Informationen"
-  pvpw.L["dependency_version_mismatch"] = "LogParser Abhängigkeit Diskrepanz! Version %s gefunden aber %s erwartet. Siehe https://github.com/RagedUnicorn/wow-pvpwarn für mehr Informationen"
+  pvpw.L["dependency_missing"] = "Konnte LogParser Abhängigkeit nicht finden. PVPWarn funktioniert nicht ohne diese Abhängigkeit. Siehe https://github.com/RagedUnicorn/wow-vanilla-pvpwarn für mehr Informationen"
+  pvpw.L["dependency_version_mismatch"] = "LogParser Abhängigkeit Diskrepanz! Version %s gefunden aber %s erwartet. Siehe https://github.com/RagedUnicorn/wow-vanilla-pvpwarn für mehr Informationen"
 
   -- battlegrounds
   pvpw.L["warsong_gulch"] = "Warsongschlucht"
@@ -108,5 +108,5 @@ if (GetLocale() == "deDE") then
   pvpw.L["author"] = "Autor: Michael Wiesendanger"
   pvpw.L["email"] = "E-Mail: michael.wiesendanger@gmail.com"
   pvpw.L["version"] = "Version: " .. PVPW_ENVIRONMENT.ADDON_VERSION
-  pvpw.L["issues"] = "Probleme: https://github.com/RagedUnicorn/wow-pvpwarn/issues"
+  pvpw.L["issues"] = "Probleme: https://github.com/RagedUnicorn/wow-vanilla-pvpwarn/issues"
 end

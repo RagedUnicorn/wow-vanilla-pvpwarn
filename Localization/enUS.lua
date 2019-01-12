@@ -12,8 +12,8 @@ pvpw.L["reload"] = "|cFFFFFF00reload|r - reload UI"
 pvpw.L["info_title"] = "|cFFFFFF00PVPWarn:|r"
 
 -- dependency check messages
-pvpw.L["dependency_missing"] = "Could not find LogParser dependency. PVPWarn does not work without this dependency. See https://github.com/RagedUnicorn/wow-pvpwarn for more information"
-pvpw.L["dependency_version_mismatch"] = "LogParser dependency mismatch! Found version %s expected %s. See https://github.com/RagedUnicorn/wow-pvpwarn for more information"
+pvpw.L["dependency_missing"] = "Could not find LogParser dependency. PVPWarn does not work without this dependency. See https://github.com/RagedUnicorn/wow-vanilla-pvpwarn for more information"
+pvpw.L["dependency_version_mismatch"] = "LogParser dependency mismatch! Found version %s expected %s. See https://github.com/RagedUnicorn/wow-vanilla-pvpwarn for more information"
 
 -- battlegrounds
 pvpw.L["warsong_gulch"] = "Warsong Gulch"
@@ -107,4 +107,4 @@ pvpw.L["spell_resist_tab"] = "SpellAvoid"
 pvpw.L["author"] = "Author: Michael Wiesendanger"
 pvpw.L["email"] = "E-Mail: michael.wiesendanger@gmail.com"
 pvpw.L["version"] = "Version: " .. PVPW_ENVIRONMENT.ADDON_VERSION
-pvpw.L["issues"] = "Issues: https://github.com/RagedUnicorn/wow-pvpwarn/issues"
+pvpw.L["issues"] = "Issues: https://github.com/RagedUnicorn/wow-vanilla-pvpwarn/issues"
