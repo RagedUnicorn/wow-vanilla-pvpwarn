@@ -1,6 +1,6 @@
 # PVPWarn
 
-![](/Docs/pvpw_raged_unicorn_logo.png)
+![](/Docs/pvpw_ragedunicorn_love_vanilla.png)
 
 > PVPWarn aims to help the player to hear and see enemy spells casted on himself and also spells that an enemy player resisted or spells that the player himself resisted
 
