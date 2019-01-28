@@ -36,7 +36,7 @@ When you have LogParser installed but it is disabled WoW will warn you about it 
 
 ## Demo
 
-TODO should add a YouTube video with some examples
+[![](/Docs/pvpw_spelllist_collage_github_white.png)](https://youtu.be/37wnjQI6F9Q)
 
 ## Configuration
 
