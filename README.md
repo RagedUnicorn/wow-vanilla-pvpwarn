@@ -111,11 +111,11 @@ This is also more likely to happen in a crowded place with lots of players. You 
 
 #### No Sound is played when a player used [certain spell]. What should I do?
 
-This can have different reasons. Make sure to check that the spell you would like to be alerted is configured and active in the addon. If you cannot find the spell in the list chances are the spell cannot be tracked or is not yet included in the addon. While certain spells are untraceable others might simply be missing. Before creating an issued please make sure to check the [limitations](#Limitations) chapter for an explanation why your spell might not be available in the configuration. If you cannot find an entry for that spell feel free to create a Github issue with an enhancement request and I will look into it if it is possible to support that spell.
+This can have different reasons. Make sure to check that the spell you would like to be alerted is configured and active in the addon. If you cannot find the spell in the list chances are the spell cannot be tracked or is not yet included in the addon. While certain spells are untraceable others might simply be missing. Before creating an issue please make sure to check the [limitations](#Limitations) chapter for an explanation why your spell might not be available in the configuration. If you cannot find an entry for that spell feel free to create a GitHub issue with an enhancement request and I will look into it and see if it is possible to support that spell.
 
 #### I get a red error (Lua Error) on my screen. What is this?
 
-This is what we call a LUA error and it usually happens because of an oversight or error by the developer (in this case me). Take a screenshot off the error and create a Github Issue with it and I will see if I can resolve it. It also helps if you can add any additional information of what you we're doing at the time and what other addons you have active. Also if you are able to reproduce the error make sure to check if it still happens if you disable all others addons.
+This is what we call a LUA error and it usually happens because of an oversight or error by the developer (in this case me). Take a screenshot off the error and create a GitHub Issue with it and I will see if I can resolve it. It also helps if you can add any additional information of what you we're doing at the time and what other addons you have active. Also if you are able to reproduce the error make sure to check if it still happens if you disable all others addons.
 
 ## Wording
 
