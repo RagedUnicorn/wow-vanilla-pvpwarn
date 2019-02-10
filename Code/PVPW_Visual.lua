@@ -40,6 +40,8 @@ local TEXTURE_BASE_PATH = "Interface\\AddOns\\PVPWarn\\Assets\\Images\\"
   @param {string} colorValue
     see PVPW_CONSTANTS.TEXTURES for color values
 ]]--
+-- TODO rename to ShowVisualAlert
+-- TODO parameter warnName unnused
 function me.ShowVisual(warnName, colorValue)
   local basePath = TEXTURE_BASE_PATH
   local colorTexture
@@ -78,4 +80,37 @@ function me.ShowVisual(warnName, colorValue)
   texture:SetAllPoints(WorldFrame)
   PVPW_AlertFrame.texture = texture
   UIFrameFlash(PVPW_AlertFrame, .2, .5, .7, false, 0, 0)
+end
+
+function me.CreateVisualIconFrame()
+  local alertIconFrame = CreateFrame("Frame", PVPW_CONSTANTS.ELEMENT_ALERT_ICON_FRAME, UIParent)
+  local alertIconHolder = CreateFrame("Button", PVPW_CONSTANTS.ELEMENT_ALERT_ICON_HOLDER, alertIconFrame)
+
+  alertIconFrame:SetWidth(32)
+  alertIconFrame:SetHeight(32)
+  alertIconFrame:SetMovable(true)
+  alertIconFrame:EnableMouse(true)
+
+
+  alertIconFrame:SetBackdropColor(0, 0, 0, 1)
+  alertIconFrame:SetBackdropBorderColor(0, 0, 0, 1)
+  alertIconFrame:SetPoint("CENTER", UIParent)
+
+  -- create texture holder
+  alertIconHolder.texture = alertIconHolder:CreateTexture(PVPW_CONSTANTS.ELEMENT_ALERT_ICON_TEXTURE, "OVERLAY")
+end
+
+--[[
+  @param {string} spellIconName
+]]--
+function me.ShowVisualAlertIcon(spellIconName)
+  local alertIconHolder = getglobal(PVPW_CONSTANTS.ELEMENT_ALERT_ICON_HOLDER)
+  for _, region in ipairs({alertIconHolder:GetRegions()}) do
+    if string.find(region:GetName(), PVPW_CONSTANTS.ELEMENT_ALERT_ICON_TEXTURE) then
+      region:SetTexture("Interface\\Icons\\" .. spellIconName)
+      region:SetAllPoints(getglobal(PVPW_CONSTANTS.ELEMENT_ALERT_ICON_FRAME))
+    end
+  end
+
+  UIFrameFlash(alertIconHolder, 1, 2, 8, false, 0, 5)
 end

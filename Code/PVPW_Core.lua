@@ -111,7 +111,6 @@ function me.Initialize()
     return false
   end
 
-
   me.addonOptions.SetupConfiguration()
 
   if PVPWarnOptions.disableAddon == nil or PVPWarnOptions.disableAddon == false then
@@ -120,6 +119,9 @@ function me.Initialize()
   else
     me.logger.LogDebug(me.tag, "Addon is disabled")
   end
+
+  -- TODO setup gui
+  me.visual.CreateVisualIconFrame()
 
   me.timer.CreateTimer("WarnQueueWorker", me.warnQueue.WorkQueue, 0.1, true)
   me.timer.CreateTimer("WarnQueueWorkingState", me.warnQueue.SetWorkingState, 0.8, true)

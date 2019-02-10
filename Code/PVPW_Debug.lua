@@ -42,12 +42,22 @@ me.tag = "Debug"
 local _G = getfenv(0)
 
 --[[
+  Play a sound to the player
+
   @param {string} soundCategory
   @param {string} spellType
   @param {string} soundFileName
 ]]--
 function _G.__PVPW__DEBUG__PlaySound(soundCategory, spellType, soundFileName)
   mod.sound.PlaySound(soundCategory, spellType, soundFileName)
+end
+
+--[[
+  Display an alertIcon on the players screen. For icon names see `PVPW_SpellMap.lua`
+]]--
+function _G.__PVPW__DEBUG__DisplayAlertIcon()
+  local spellIconName = "spell_nature_ancestralguardian"
+  mod.visual.ShowVisualAlertIcon(spellIconName)
 end
 
 --[[

@@ -126,6 +126,15 @@ PVPW_CONSTANTS = {
   CHAT_MSG_SPELL_PERIODIC_HOSTILEPLAYER_DAMAGE = "CHAT_MSG_SPELL_PERIODIC_HOSTILEPLAYER_DAMAGE",
 
   --[[
+    alert ui elements
+  ]]--
+  -- TODO move PVPW_AlertTexture here
+
+  ELEMENT_ALERT_ICON_FRAME = "PVPW_AlertIconFrame",
+  ELEMENT_ALERT_ICON_HOLDER = "PVPW_AlertIconHolder",
+  ELEMENT_ALERT_ICON_TEXTURE = "PVPW_AlertIconTexture",
+
+  --[[
     timersframe
   ]]--
   ELEMENT_TIMERS_FRAME = "PVPW_TimersFrame",
