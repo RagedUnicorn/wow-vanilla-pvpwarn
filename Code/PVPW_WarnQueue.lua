@@ -81,7 +81,7 @@ end
   @param {boolean} soundDown
     whether it is a sound that faded or not
 ]]--
-function me.AddToQueue(warnName, normalizedSpellName, spellType, soundCategory, soundFileName, soundDown)
+function me.AddToQueue(warnName, normalizedSpellName, spellType, soundCategory, soundFileName, spellIcon, soundDown)
   local spellList = mod.common.GetSpellListType(spellType)
 
   -- check whether a certain spell is activated for the player or not
@@ -96,6 +96,7 @@ function me.AddToQueue(warnName, normalizedSpellName, spellType, soundCategory, 
     ["spellType"] = spellType, -- see constants SPELL_TYPES
     ["soundFileName"] = soundFileName, -- part of the sound fileName
     ["soundCategory"] = soundCategory, -- sound type e.g. a class or item
+    ["spellIcon"] = spellIcon, -- name of the spell icon
     ["soundDown"] = soundDown, -- whether sound is fading or not
     ["visualName"] = mod.opt.GetVisualWarningColor(spellList, soundCategory, normalizedSpellName), -- name of a visual alert e.g. blue
     ["startTime"] = GetTime() -- time to track expiry timer
@@ -151,6 +152,10 @@ function me.WorkQueue()
         else
           mod.logger.LogDebug(me.tag, "Skipping playing visual for spell - " .. warning.normalizedSpellName
             .. " because visual is disabled for this spell")
+        end
+
+        if mod.addonOptions.IsVisualAlertIconEnabled() then
+          mod.visual.ShowVisualAlertIcon(warning.spellIcon)
         end
       elseif mod.common.IsNormalSpellDown(warning.spellType) then
         if mod.opt.IsSoundFadeWarningActive(spellList, warning.soundCategory, warning.normalizedSpellName) then

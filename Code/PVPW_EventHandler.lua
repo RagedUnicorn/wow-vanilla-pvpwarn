@@ -99,7 +99,7 @@ function me.HandleEvent(status, spellData)
       end
 
       mod.warnQueue.AddToQueue(tostring(math.floor(math.random() * 100000)),
-          spell.normalizedSpellName, spellData.spellType, class, spell.soundFileName, fade)
+          spell.normalizedSpellName, spellData.spellType, class, spell.soundFileName, spell.spellIcon, fade)
     else
       mod.logger.LogInfo(me.tag, string.format("Unknown spell %s", spellData.spell))
       return

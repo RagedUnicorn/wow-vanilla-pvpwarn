@@ -86,15 +86,24 @@ function me.CreateVisualIconFrame()
   local alertIconFrame = CreateFrame("Frame", PVPW_CONSTANTS.ELEMENT_ALERT_ICON_FRAME, UIParent)
   local alertIconHolder = CreateFrame("Button", PVPW_CONSTANTS.ELEMENT_ALERT_ICON_HOLDER, alertIconFrame)
 
-  alertIconFrame:SetWidth(32)
-  alertIconFrame:SetHeight(32)
-  alertIconFrame:SetMovable(true)
-  alertIconFrame:EnableMouse(true)
-
-
+  alertIconFrame:SetWidth(40)
+  alertIconFrame:SetHeight(40)
   alertIconFrame:SetBackdropColor(0, 0, 0, 1)
   alertIconFrame:SetBackdropBorderColor(0, 0, 0, 1)
-  alertIconFrame:SetPoint("CENTER", UIParent)
+
+  local framePosition = mod.addonOptions.GetUserPlacedFramePosition(
+    PVPW_CONSTANTS.ELEMENT_ALERT_ICON_FRAME)
+
+  if framePosition ~= nil then
+    alertIconFrame:SetPoint(
+      "TOPLEFT",
+      framePosition.posX,
+      framePosition.posY
+    )
+  else
+    -- initial position for first time use
+    alertIconFrame:SetPoint("CENTER", UIParent)
+  end
 
   -- create texture holder
   alertIconHolder.texture = alertIconHolder:CreateTexture(PVPW_CONSTANTS.ELEMENT_ALERT_ICON_TEXTURE, "OVERLAY")
@@ -112,5 +121,59 @@ function me.ShowVisualAlertIcon(spellIconName)
     end
   end
 
+  -- TODO document parameters
   UIFrameFlash(alertIconHolder, 1, 2, 8, false, 0, 5)
+end
+
+function me.ConfigureVisualAlertIcon(enableConfigurationMode)
+  local alertIconFrame = getglobal(PVPW_CONSTANTS.ELEMENT_ALERT_ICON_FRAME)
+  local alertIconHolder = getglobal(PVPW_CONSTANTS.ELEMENT_ALERT_ICON_HOLDER)
+
+  if enableConfigurationMode then
+    local spellIconName = "ability_criticalstrike"
+
+    for _, region in ipairs({alertIconHolder:GetRegions()}) do
+      if string.find(region:GetName(), PVPW_CONSTANTS.ELEMENT_ALERT_ICON_TEXTURE) then
+        region:SetTexture("Interface\\Icons\\" .. spellIconName)
+        region:SetAllPoints(getglobal(PVPW_CONSTANTS.ELEMENT_ALERT_ICON_FRAME))
+      end
+    end
+
+    alertIconFrame:SetMovable(true)
+    alertIconFrame:EnableMouse(true)
+    alertIconFrame:RegisterForDrag("LeftButton")
+    alertIconFrame:SetScript("OnMouseDown", me.StartMovingOnMouseDown)
+    alertIconFrame:SetScript("OnMouseUp", me.StopMovingOrSizingOnMouseUp)
+
+    alertIconHolder:Show()
+  else
+    alertIconFrame:SetMovable(false)
+    alertIconFrame:EnableMouse(false)
+    alertIconFrame:SetScript("OnMouseDown", nil)
+    alertIconFrame:SetScript("OnMouseUp", nil)
+
+    alertIconHolder:Hide()
+  end
+end
+
+--[[
+  Callbackhandler for alertIconFrame onMouseDown
+]]--
+function me.StartMovingOnMouseDown()
+  this:StartMoving()
+end
+
+--[[
+  Callbackhandler for alertIconFrame onMouseUp
+]]--
+function me.StopMovingOrSizingOnMouseUp()
+  this:StopMovingOrSizing()
+
+  local _, _, _, posX, posY = this:GetPoint()
+
+  mod.addonOptions.SaveUserPlacedFramePosition(
+    PVPW_CONSTANTS.ELEMENT_ALERT_ICON_FRAME,
+    posX,
+    posY
+  )
 end

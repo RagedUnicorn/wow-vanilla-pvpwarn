@@ -47,7 +47,20 @@ PVPWarnOptions = {
   --[[
     Spells that an enemy player avoided
   ]]--
-  ["spellEnemyAvoidList"] = nil
+  ["spellEnemyAvoidList"] = nil,
+  ["enableVisualAlertIcon"] = true,
+  --[[
+    Framepositions for user draggable Frames
+    frames = {
+      -- should match the actual frame name
+      ["PVPW_AlertIconFrame"] = {
+        posX: 0,
+        posY: 0
+      }
+      ...
+    }
+  ]]--
+  ["frames"] = {}
 }
 
 --[[
@@ -88,6 +101,14 @@ function me.SetupConfiguration()
   -- initialize enemy avoid spelllist for the first time with default profile
   if PVPWarnOptions.spellEnemyAvoidList == nil then
     PVPWarnOptions.spellEnemyAvoidList = mod.profile.GetDefaultProfileEnemyAvoidSpells()
+  end
+
+  if PVPWarnOptions.enableVisualAlertIcon == nil then
+    PVPWarnOptions.enableVisualAlertIcon = true
+  end
+
+  if PVPWarnOptions.frames == nil then
+    PVPWarnOptions.frames = {}
   end
 end
 
@@ -215,4 +236,67 @@ end
 ]]--
 function me.IsShowEventsForTargetOnlyEnabled()
   return PVPWarnOptions.ignoreEventsWhileDead
+end
+
+--[[
+  Disable visual alert icon
+]]--
+function me.DisableVisualAlertIcon()
+  PVPWarnOptions.enableVisualAlertIcon = false
+end
+
+--[[
+  Enable visual alert icon
+]]--
+function me.EnableVisualAlertIcon()
+  PVPWarnOptions.enableVisualAlertIcon = true
+end
+
+--[[
+  @return {boolean}
+    true - if visual alert icon is enabeld
+    false - if visual alert icon is disabled
+]]--
+function me.IsVisualAlertIconEnabled()
+  return PVPWarnOptions.enableVisualAlertIcon
+end
+
+--[[
+  Save the position of a frame in the addon variables allowing to persist its
+  position
+
+  @param {string} frameName
+  @param {number} posX
+  @param {number} posY
+]]--
+function me.SaveUserPlacedFramePosition(frameName, posX, posY)
+  if PVPWarnOptions.frames[frameName] == nil then
+    mod.logger.LogDebug(me.tag, "Create new Frame cache for - " .. frameName)
+    PVPWarnOptions.frames[frameName] = {}
+  end
+
+  PVPWarnOptions.frames[frameName].posX = posX
+  PVPWarnOptions.frames[frameName].posY = posY
+
+  mod.logger.LogDebug(me.tag, "Saved frame position for - " .. frameName
+    .. " - new pos: posX " .. posX .. " posY " .. posY)
+end
+
+--[[
+  Frames that reuse the position should make sure to set the point to "TOPLEFT"
+
+  @param {string} frameName
+
+  @return {table | nil}
+    table - the returned x and y position
+    nil - if no frame with the passed name could be found
+]]--
+function me.GetUserPlacedFramePosition(frameName)
+  local frameConfig = PVPWarnOptions.frames[frameName]
+
+  if type(frameConfig) == "table" then
+    return frameConfig
+  end
+
+  return nil
 end

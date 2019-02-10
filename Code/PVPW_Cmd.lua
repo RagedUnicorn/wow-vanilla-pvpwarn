@@ -47,18 +47,34 @@ function me.SetupSlashCmdList()
   SLASH_PVPWARN2 = "/pvpwarn"
 
   SlashCmdList["PVPWARN"] = function(msg)
+    local args = {}
+
     mod.logger.LogDebug(me.tag, "/pvpw passed argument: " .. msg)
 
-    if msg == "" or msg == "info" then
+    -- parse arguments by whitespace
+    for arg in string.gfind(msg, "%S+") do
+      table.insert(args, arg)
+    end
+
+
+    if args[1] == "" or args[1] == "info" or table.getn(args) == 0 then
       ShowInfoMessage()
-    elseif msg == "opt" then
+    elseif args[1] == "opt" then
       mod.opt.InitOptionsMenu()
-    elseif msg == "disable" then
+    elseif args[1] == "disable" then
       mod.addonOptions.DisableAddon()
-    elseif msg == "enable" then
+    elseif args[1] == "enable" then
       mod.addonOptions.EnableAddon()
-    elseif msg == "rl" or msg == "reload" then
+    elseif args[1] == "rl" or args[1] == "reload" then
       ReloadUI()
+    elseif args[1] == "conf" or "configure" then
+      if args[2] == "enable" then
+        mod.visual.ConfigureVisualAlertIcon(true)
+      elseif args[2] == "disable" then
+        mod.visual.ConfigureVisualAlertIcon(false)
+      else
+        mod.logger.PrintUserError("Invalid argument passed")
+      end
     else
       mod.logger.PrintUserError("Invalid argument passed")
     end
