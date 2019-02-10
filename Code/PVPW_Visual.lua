@@ -121,8 +121,23 @@ function me.ShowVisualAlertIcon(spellIconName)
     end
   end
 
-  -- TODO document parameters
-  UIFrameFlash(alertIconHolder, 1, 2, 8, false, 0, 5)
+  --[[
+    @param {table} frame
+      Frame Pointer - frame to fade in / out.
+    @param {number} fadeInTime
+      Number - duration of the fade in effect.
+    @param {number} fadeOutTime
+      Number - duration of the fade out effect.
+    @param {number} flashDuration
+      Number - number of seconds to keep repeating the fade in / out cycle.
+    @param {boolean} showWhenDone
+      Boolean - should the frame be visible at the end?
+    @param {number} flashInHoldTime
+      Number - number of seconds to hold the fully hidden state.
+    @param {number} flashOutHoldTime
+      Number - number of seconds to hold the fully visible state.
+  ]]--
+  UIFrameFlash(alertIconHolder, 1, 2, 6, false, 0, 0)
 end
 
 function me.ConfigureVisualAlertIcon(enableConfigurationMode)
