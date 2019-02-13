@@ -252,4 +252,23 @@
       </OnLeave>
     </Scripts>
   </Button>
+
+  <!-- Slot template for alert icons -->
+  <CheckButton name="PVPW_AlertIconSlotTemplate" virtual="true" hidden="true">
+    <Size>
+      <AbsDimension x="36" y="36"/>
+    </Size>
+    <Anchors>
+      <Anchor point="TOPLEFT" relativeTo="$parent" relativePoint="TOPLEFT">
+        <Offset>
+          <AbsDimension x="0" y="0"/>
+        </Offset>
+      </Anchor>
+    </Anchors>
+    <Layers>
+      <Layer level="BACKGROUND">
+        <Texture name="$parent_SpellTexture"/>
+      </Layer>
+    </Layers>
+  </CheckButton>
 </Ui>

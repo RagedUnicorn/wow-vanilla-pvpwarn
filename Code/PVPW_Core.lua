@@ -125,8 +125,10 @@ function me.Initialize()
 
   me.timer.CreateTimer("WarnQueueWorker", me.warnQueue.WorkQueue, 0.1, true)
   me.timer.CreateTimer("WarnQueueWorkingState", me.warnQueue.SetWorkingState, 0.8, true)
+  me.timer.CreateTimer("AlertIconHolderState", me.visual.UpdateAlertIconHolderState, 0.8, true)
 
   me.timer.StartTimer("WarnQueueWorker")
+  me.timer.StartTimer("AlertIconHolderState")
 
   DEFAULT_CHAT_FRAME:AddMessage(string.format(PVPW_ENVIRONMENT.ADDON_NAME .. pvpw.L["help"], PVPW_ENVIRONMENT.ADDON_VERSION))
 end

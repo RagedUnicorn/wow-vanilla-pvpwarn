@@ -32,6 +32,33 @@ me.tag = "Visual"
   Private
 ]]--
 local TEXTURE_BASE_PATH = "Interface\\AddOns\\PVPWarn\\Assets\\Images\\"
+local ICON_TEXTURE_BASE_PATH = "Interface\\Icons\\"
+
+--[[
+  Watch over alert icons slots and whether they are in use or not
+]]--
+local alertIconSlotStateHolder = {
+  [1] = {
+    ["inUse"] = false,
+    ["startTime"] = nil
+  },
+  [2] = {
+    ["inUse"] = false,
+    ["startTime"] = nil
+  },
+  [3] = {
+    ["inUse"] = false,
+    ["startTime"] = nil
+  },
+  [4] = {
+    ["inUse"] = false,
+    ["startTime"] = nil
+  },
+  [5] = {
+    ["inUse"] = false,
+    ["startTime"] = nil
+  }
+}
 
 --[[
   Show a visual warning to the user
@@ -82,14 +109,15 @@ function me.ShowVisual(warnName, colorValue)
   UIFrameFlash(PVPW_AlertFrame, .2, .5, .7, false, 0, 0)
 end
 
+--[[
+  Setup the basic frame that hold icon alert slots
+]]--
 function me.CreateVisualIconFrame()
   local alertIconFrame = CreateFrame("Frame", PVPW_CONSTANTS.ELEMENT_ALERT_ICON_FRAME, UIParent)
-  local alertIconHolder = CreateFrame("Button", PVPW_CONSTANTS.ELEMENT_ALERT_ICON_HOLDER, alertIconFrame)
-
-  alertIconFrame:SetWidth(40)
-  alertIconFrame:SetHeight(40)
-  alertIconFrame:SetBackdropColor(0, 0, 0, 1)
-  alertIconFrame:SetBackdropBorderColor(0, 0, 0, 1)
+  alertIconFrame:SetWidth(PVPW_CONSTANTS.MAX_ALERT_ICON_SLOTS * PVPW_CONSTANTS.ELEMENT_ALERT_ICON_SLOT_WIDTH)
+  alertIconFrame:SetHeight(PVPW_CONSTANTS.ELEMENT_ALERT_ICON_SLOT_HEIGHT)
+  alertIconFrame:SetBackdropColor(0.3, 0.5, 0.5, 1)
+  alertIconFrame:SetBackdropBorderColor(0.3, 0, 0.5, 1)
 
   local framePosition = mod.addonOptions.GetUserPlacedFramePosition(
     PVPW_CONSTANTS.ELEMENT_ALERT_ICON_FRAME)
@@ -105,90 +133,176 @@ function me.CreateVisualIconFrame()
     alertIconFrame:SetPoint("CENTER", UIParent)
   end
 
-  -- create texture holder
-  alertIconHolder.texture = alertIconHolder:CreateTexture(PVPW_CONSTANTS.ELEMENT_ALERT_ICON_TEXTURE, "OVERLAY")
+  me.CreateAlertIconSlots(alertIconFrame)
+end
+
+--[[
+  create alert icon slots
+
+  @param {table} parentFrame
+]]--
+function me.CreateAlertIconSlots(parentFrame)
+  local position = 0
+
+  for i = 1, PVPW_CONSTANTS.MAX_ALERT_ICON_SLOTS  do
+    local alertIconSlot = CreateFrame(
+      "CheckButton",
+      PVPW_CONSTANTS.ELEMENT_ALERT_ICON_HOLDER .. i,
+      parentFrame,
+      PVPW_CONSTANTS.ELEMENT_ALERT_ICON_SLOT_TEMPLATE
+    )
+
+    alertIconSlot:SetPoint(
+      "TOPLEFT",
+      parentFrame,
+      "TOPLEFT",
+      2 + position * 36,
+      -2
+    )
+
+    position = position + 1
+  end
 end
 
 --[[
   @param {string} spellIconName
 ]]--
 function me.ShowVisualAlertIcon(spellIconName)
-  local alertIconHolder = getglobal(PVPW_CONSTANTS.ELEMENT_ALERT_ICON_HOLDER)
-  for _, region in ipairs({alertIconHolder:GetRegions()}) do
-    if string.find(region:GetName(), PVPW_CONSTANTS.ELEMENT_ALERT_ICON_TEXTURE) then
-      region:SetTexture("Interface\\Icons\\" .. spellIconName)
-      region:SetAllPoints(getglobal(PVPW_CONSTANTS.ELEMENT_ALERT_ICON_FRAME))
-    end
-  end
+  local slotPosition = me.FindEmptyAlertIconSlot()
 
-  --[[
-    @param {table} frame
-      Frame Pointer - frame to fade in / out.
-    @param {number} fadeInTime
-      Number - duration of the fade in effect.
-    @param {number} fadeOutTime
-      Number - duration of the fade out effect.
-    @param {number} flashDuration
-      Number - number of seconds to keep repeating the fade in / out cycle.
-    @param {boolean} showWhenDone
-      Boolean - should the frame be visible at the end?
-    @param {number} flashInHoldTime
-      Number - number of seconds to hold the fully hidden state.
-    @param {number} flashOutHoldTime
-      Number - number of seconds to hold the fully visible state.
-  ]]--
-  UIFrameFlash(alertIconHolder, 1, 2, 6, false, 0, 0)
-end
-
-function me.ConfigureVisualAlertIcon(enableConfigurationMode)
-  local alertIconFrame = getglobal(PVPW_CONSTANTS.ELEMENT_ALERT_ICON_FRAME)
-  local alertIconHolder = getglobal(PVPW_CONSTANTS.ELEMENT_ALERT_ICON_HOLDER)
-
-  if enableConfigurationMode then
-    local spellIconName = "ability_criticalstrike"
-
+  if slotPosition ~= nil then
+    local alertIconHolder = getglobal(PVPW_CONSTANTS.ELEMENT_ALERT_ICON_HOLDER .. slotPosition)
     for _, region in ipairs({alertIconHolder:GetRegions()}) do
-      if string.find(region:GetName(), PVPW_CONSTANTS.ELEMENT_ALERT_ICON_TEXTURE) then
-        region:SetTexture("Interface\\Icons\\" .. spellIconName)
-        region:SetAllPoints(getglobal(PVPW_CONSTANTS.ELEMENT_ALERT_ICON_FRAME))
+      if string.find(region:GetName(), PVPW_CONSTANTS.ELEMENT_ALERT_ICON_TEXTURE .. "$") then
+        region:SetTexture(ICON_TEXTURE_BASE_PATH .. spellIconName)
       end
     end
 
-    alertIconFrame:SetMovable(true)
-    alertIconFrame:EnableMouse(true)
-    alertIconFrame:RegisterForDrag("LeftButton")
-    alertIconFrame:SetScript("OnMouseDown", me.StartMovingOnMouseDown)
-    alertIconFrame:SetScript("OnMouseUp", me.StopMovingOrSizingOnMouseUp)
-
-    alertIconHolder:Show()
+    --[[
+      @param {table} frame
+        Frame Pointer - frame to fade in / out.
+      @param {number} fadeInTime
+        Number - duration of the fade in effect.
+      @param {number} fadeOutTime
+        Number - duration of the fade out effect.
+      @param {number} flashDuration
+        Number - number of seconds to keep repeating the fade in / out cycle.
+      @param {boolean} showWhenDone
+        Boolean - should the frame be visible at the end?
+      @param {number} flashInHoldTime
+        Number - number of seconds to hold the fully hidden state.
+      @param {number} flashOutHoldTime
+        Number - number of seconds to hold the fully visible state.
+    ]]--
+    UIFrameFlash(alertIconHolder, 1, 2, 6, false, 0, 0)
   else
-    alertIconFrame:SetMovable(false)
-    alertIconFrame:EnableMouse(false)
-    alertIconFrame:SetScript("OnMouseDown", nil)
-    alertIconFrame:SetScript("OnMouseUp", nil)
-
-    alertIconHolder:Hide()
+    mod.logger.LogWarn(me.tag, "Unable to find an empty alert icon slot - skipping")
   end
 end
 
 --[[
-  Callbackhandler for alertIconFrame onMouseDown
+  @param {boolean} enableConfigurationMode
+    true - for enabling configuration mode
+    false - for disabling configuration mode
 ]]--
-function me.StartMovingOnMouseDown()
-  this:StartMoving()
+function me.ConfigureVisualAlertIcon(enableConfigurationMode)
+  local alertIconFrame = getglobal(PVPW_CONSTANTS.ELEMENT_ALERT_ICON_FRAME)
+
+  if enableConfigurationMode then
+    for i = 1, PVPW_CONSTANTS.MAX_ALERT_ICON_SLOTS  do
+      local alertIconHolder = getglobal(PVPW_CONSTANTS.ELEMENT_ALERT_ICON_HOLDER .. i)
+      local spellIconName = PVPW_CONSTANTS.ELEMENT_ALERT_ICON_CONFIGURE_ICON
+
+      for _, region in ipairs({alertIconHolder:GetRegions()}) do
+        if string.find(region:GetName(), PVPW_CONSTANTS.ELEMENT_ALERT_ICON_TEXTURE .. "$") then
+          region:SetTexture(ICON_TEXTURE_BASE_PATH .. spellIconName)
+        end
+      end
+
+      alertIconHolder:EnableMouse(true)
+      alertIconHolder:RegisterForDrag("LeftButton")
+      alertIconHolder:SetScript("OnMouseDown", me.StartMovingOnMouseDown)
+      alertIconHolder:SetScript("OnMouseUp", me.StopMovingOrSizingOnMouseUp)
+
+      alertIconHolder:Show()
+    end
+
+    alertIconFrame:SetMovable(true)
+    alertIconFrame:Show()
+  else
+    for i = 1, PVPW_CONSTANTS.MAX_ALERT_ICON_SLOTS  do
+      local alertIconHolder = getglobal(PVPW_CONSTANTS.ELEMENT_ALERT_ICON_HOLDER .. i)
+
+      alertIconHolder:SetMovable(false)
+      alertIconHolder:EnableMouse(false)
+      alertIconHolder:RegisterForDrag("LeftButton")
+      alertIconHolder:SetScript("OnMouseDown", nil)
+      alertIconHolder:SetScript("OnMouseUp", nil)
+
+      alertIconHolder:Hide()
+    end
+
+    alertIconFrame:SetMovable(false)
+  end
 end
 
 --[[
-  Callbackhandler for alertIconFrame onMouseUp
+  Callbackhandler for alertIconFrame onMouseDown. Start moving the parentframe and not
+  the icon slot itself
+]]--
+function me.StartMovingOnMouseDown()
+  this:GetParent():StartMoving()
+end
+
+--[[
+  Callbackhandler for alertIconFrame onMouseUp. Stop moving the parentframe and
+  not the icon slot itself
 ]]--
 function me.StopMovingOrSizingOnMouseUp()
-  this:StopMovingOrSizing()
+  this:GetParent():StopMovingOrSizing()
 
-  local _, _, _, posX, posY = this:GetPoint()
+  -- retrieve point of parentframe
+  local _, _, _, posX, posY = this:GetParent():GetPoint()
 
   mod.addonOptions.SaveUserPlacedFramePosition(
     PVPW_CONSTANTS.ELEMENT_ALERT_ICON_FRAME,
     posX,
     posY
   )
+end
+
+--[[
+  Update alert icon holder slots based on their startTime and set them to free
+  if time ran out
+]]--
+function me.UpdateAlertIconHolderState()
+  for i = 1, table.getn(alertIconSlotStateHolder) do
+    if alertIconSlotStateHolder[i].inUse then
+      if GetTime() - alertIconSlotStateHolder[i].startTime >= PVPW_CONSTANTS.ALERT_ICON_FLASH_TIME then
+        alertIconSlotStateHolder[i].inUse = false
+        alertIconSlotStateHolder[i].startTime = nil
+        mod.logger.LogInfo(me.tag, "Resetting alertIconSlot(pos" .. i ..  ") to free")
+      end
+    end
+  end
+end
+
+--[[
+  Search for an empty alert icon slot
+
+  @return {number | nil}
+    number - slot position that is free
+    nil - if no free position could be found
+]]--
+function me.FindEmptyAlertIconSlot()
+  for i = 1, table.getn(alertIconSlotStateHolder) do
+    if not alertIconSlotStateHolder[i].inUse then
+      alertIconSlotStateHolder[i].inUse = true
+      alertIconSlotStateHolder[i].startTime = GetTime()
+      -- slot is free
+      return i
+    end
+  end
+
+  return nil
 end

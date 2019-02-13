@@ -126,13 +126,24 @@ PVPW_CONSTANTS = {
   CHAT_MSG_SPELL_PERIODIC_HOSTILEPLAYER_DAMAGE = "CHAT_MSG_SPELL_PERIODIC_HOSTILEPLAYER_DAMAGE",
 
   --[[
-    alert ui elements
+    Alert UI
   ]]--
   -- TODO move PVPW_AlertTexture here
-
+  --[[
+    The maximum amount of slots for displaying alert icons
+  ]]--
+  MAX_ALERT_ICON_SLOTS = 5,
+  --[[
+    Total time an alert icon is occupying a slot
+  ]]--
+  ALERT_ICON_FLASH_TIME = 6,
   ELEMENT_ALERT_ICON_FRAME = "PVPW_AlertIconFrame",
+  ELEMENT_ALERT_ICON_SLOT_HEIGHT = 36,
+  ELEMENT_ALERT_ICON_SLOT_WIDTH = 36,
   ELEMENT_ALERT_ICON_HOLDER = "PVPW_AlertIconHolder",
-  ELEMENT_ALERT_ICON_TEXTURE = "PVPW_AlertIconTexture",
+  ELEMENT_ALERT_ICON_TEXTURE = "_SpellTexture",
+  ELEMENT_ALERT_ICON_CONFIGURE_ICON = "ability_criticalstrike",
+  ELEMENT_ALERT_ICON_SLOT_TEMPLATE = "PVPW_AlertIconSlotTemplate",
 
   --[[
     timersframe
