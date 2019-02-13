@@ -271,6 +271,23 @@
                   </OnShow>
                 </Scripts>
               </CheckButton>
+              <CheckButton name="PVPW_OptDisableAlertIcons" inherits="PVPW_CheckButtonTemplate">
+                <Anchors>
+                  <Anchor point="TOPLEFT" relativeTo="PVPW_RightContentMenu" relativePoint="TOPLEFT">
+                    <Offset>
+                      <AbsDimension x="10" y="-130"/>
+                    </Offset>
+                  </Anchor>
+                </Anchors>
+                <Scripts>
+                  <OnClick>
+                    pvpw.generalMenu.DisableAlertIconsOnClick()
+                  </OnClick>
+                  <OnShow>
+                    pvpw.generalMenu.DisableAlertIconsOnShow()
+                  </OnShow>
+                </Scripts>
+              </CheckButton>
             </Frames>
             <Scripts>
               <OnShow>

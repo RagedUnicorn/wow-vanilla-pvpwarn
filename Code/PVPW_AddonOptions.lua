@@ -48,7 +48,10 @@ PVPWarnOptions = {
     Spells that an enemy player avoided
   ]]--
   ["spellEnemyAvoidList"] = nil,
-  ["enableVisualAlertIcon"] = true,
+  --[[
+    Whether to not show an alert icon when a spell is detected
+  ]]--
+  ["disableVisualAlertIcons"] = false,
   --[[
     Framepositions for user draggable Frames
     frames = {
@@ -103,8 +106,8 @@ function me.SetupConfiguration()
     PVPWarnOptions.spellEnemyAvoidList = mod.profile.GetDefaultProfileEnemyAvoidSpells()
   end
 
-  if PVPWarnOptions.enableVisualAlertIcon == nil then
-    PVPWarnOptions.enableVisualAlertIcon = true
+  if PVPWarnOptions.disableVisualAlertIcons == nil then
+    PVPWarnOptions.disableVisualAlertIcons = false
   end
 
   if PVPWarnOptions.frames == nil then
@@ -242,23 +245,23 @@ end
   Disable visual alert icon
 ]]--
 function me.DisableVisualAlertIcon()
-  PVPWarnOptions.enableVisualAlertIcon = false
+  PVPWarnOptions.disableVisualAlertIcons = true
 end
 
 --[[
   Enable visual alert icon
 ]]--
 function me.EnableVisualAlertIcon()
-  PVPWarnOptions.enableVisualAlertIcon = true
+  PVPWarnOptions.disableVisualAlertIcons = false
 end
 
 --[[
   @return {boolean}
-    true - if visual alert icon is enabeld
-    false - if visual alert icon is disabled
+    true - if visual alert icon is disabled
+    false - if visual alert icon is enabled
 ]]--
-function me.IsVisualAlertIconEnabled()
-  return PVPWarnOptions.enableVisualAlertIcon
+function me.IsVisualAlertIconDisabled()
+  return PVPWarnOptions.disableVisualAlertIcons
 end
 
 --[[

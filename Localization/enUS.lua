@@ -47,6 +47,8 @@ pvpw.L["ignore_events_while_dead"] = "Ignore events while player is dead"
 pvpw.L["ignore_events_while_dead_tooltip"] = "Ignore events while the player is dead or in ghostform"
 pvpw.L["show_events_for_target_only"] = "Show Events for current target only"
 pvpw.L["show_events_for_target_only_tooltip"] = "Do not show events for targets other than the players current target"
+pvpw.L["disable_alert_icons"] = "Disable Alert Icons"
+pvpw.L["disable_alert_icons_tooltip"] = "Disable showing of an alert icon when a spell is detected"
 
 -- profilesmenu
 pvpw.L["profiles_menu_label"] = "Profiles:"

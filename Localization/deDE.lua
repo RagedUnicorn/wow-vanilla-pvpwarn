@@ -48,6 +48,8 @@ if (GetLocale() == "deDE") then
   pvpw.L["ignore_events_while_dead_tooltip"] = "Ignore Warnungen solange der Spiele tot oder in Geistesform ist"
   pvpw.L["show_events_for_target_only"] = "Zeige Warnungen nur für aktuelles Ziel"
   pvpw.L["show_events_for_target_only_tooltip"] = "Zeige Warnungen nur an wenn sie vom aktuellen Ziel des Spielers ausgehen"
+  pvpw.L["disable_alert_icons"] = "Deaktiviere Warn Symbole"
+  pvpw.L["disable_alert_icons_tooltip"] = "Deaktiviere das anzeigen eines Warnsymbols when ein Zauber entdeckt wird"
 
   -- profilesmenu
   pvpw.L["profiles_menu_label"] = "Profile:"

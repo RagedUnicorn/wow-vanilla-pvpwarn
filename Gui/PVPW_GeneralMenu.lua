@@ -32,7 +32,8 @@ local options = {
   {"DisableAddon", pvpw.L["disable_addon"], pvpw.L["disable_addon_tooltip"]},
   {"DisableAddonInBattlegrounds", pvpw.L["disable_addon_in_battlegrounds"], pvpw.L["disable_addon_in_battlegrounds_tooltip"]},
   {"IgnoreEventsWhileDead", pvpw.L["ignore_events_while_dead"], pvpw.L["ignore_events_while_dead_tooltip"]},
-  {"ShowEventsForTargetOnly", pvpw.L["show_events_for_target_only"], pvpw.L["show_events_for_target_only_tooltip"]}
+  {"ShowEventsForTargetOnly", pvpw.L["show_events_for_target_only"], pvpw.L["show_events_for_target_only_tooltip"]},
+  {"DisableAlertIcons", pvpw.L["disable_alert_icons"], pvpw.L["disable_alert_icons_tooltip"]}
 }
 
 function me.InitGeneralMenu()
@@ -172,5 +173,30 @@ function me.ShowEventsForTargetOnlyOnClick()
     mod.addonOptions.EnableShowEventsForTargetOnly()
   else
     mod.addonOptions.DisableShowEventsForTargetOnly()
+  end
+end
+
+--[[
+  OnShow callback for checkbuttons - disable showing of alert icons
+]]--
+function me.DisableAlertIconsOnShow()
+  -- load status from config-object
+  if mod.addonOptions.IsVisualAlertIconDisabled() then
+    this:SetChecked(true)
+  else
+    this:SetChecked(false)
+  end
+end
+
+--[[
+  OnClick callback for checkbuttons - disable showing of alert icons
+]]--
+function me.DisableAlertIconsOnClick()
+  local enabled = this:GetChecked()
+
+  if enabled == 1 then
+    mod.addonOptions.DisableVisualAlertIcon()
+  else
+    mod.addonOptions.EnableVisualAlertIcon()
   end
 end
