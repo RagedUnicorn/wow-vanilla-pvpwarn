@@ -120,8 +120,9 @@ function me.Initialize()
     me.logger.LogDebug(me.tag, "Addon is disabled")
   end
 
-  -- TODO setup gui
-  me.visual.CreateVisualIconFrame()
+  -- setup alert ui
+  me.visual.CreateVisualAlertIconFrame()
+  me.visual.CreateVisualAlertFrame()
 
   me.timer.CreateTimer("WarnQueueWorker", me.warnQueue.WorkQueue, 0.1, true)
   me.timer.CreateTimer("WarnQueueWorkingState", me.warnQueue.SetWorkingState, 0.8, true)

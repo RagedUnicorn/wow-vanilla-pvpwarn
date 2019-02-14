@@ -87,15 +87,15 @@ function me.PlaySoundFadeOnClick()
 end
 
 --[[
-  Global Callback for showvisual button - used to show an example of the choosen color
+  Global Callback for showvisualalert button - used to show an example of the choosen color
 ]]--
-function me.ShowVisualOnClick()
+function me.ShowVisualAlertOnClick()
   local parent = this:GetParent()
 
   local color = mod.opt.GetVisualWarningColor(parent.spellType,
     parent.type, parent.spellName)
 
-  mod.visual.ShowVisual("gui_alert_config", color)
+  mod.visual.ShowVisualAlert(color)
 end
 
 --[[

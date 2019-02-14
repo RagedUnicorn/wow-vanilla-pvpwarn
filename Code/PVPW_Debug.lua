@@ -83,40 +83,68 @@ end
   Display yellow alert texture
 ]]--
 function _G.__PVPW__DEBUG_ShowYellowAlert()
-  mod.visual.ShowVisual("yellow_debug_test", "yellow")
+  mod.visual.ShowVisualAlert(1)
 end
 
 --[[
   Display violet alert texture
 ]]--
 function _G.__PVPW__DEBUG_ShowVioletAlert()
-  mod.visual.ShowVisual("violet_debug_test", "violet")
+  mod.visual.ShowVisualAlert(2)
 end
 
 --[[
   Display red alert texture
 ]]--
 function _G.__PVPW__DEBUG_ShowRedAlert()
-  mod.visual.ShowVisual("red_debug_test", "red")
+  mod.visual.ShowVisualAlert(3)
 end
 
 --[[
   Display orange alert texture
 ]]--
 function _G.__PVPW__DEBUG_ShowOrangeAlert()
-  mod.visual.ShowVisual("orange_debug_test", "orange")
+  mod.visual.ShowVisualAlert(4)
 end
 
 --[[
   Display green alert texture
 ]]--
 function _G.__PVPW__DEBUG_ShowGreenAlert()
-  mod.visual.ShowVisual("green_debug_test", "green")
+  mod.visual.ShowVisualAlert(5)
 end
 
 --[[
   Display blue alert texture
 ]]--
 function _G.__PVPW__DEBUG_ShowBlueAlert()
-  mod.visual.ShowVisual("blue_debug_test", "blue")
+  mod.visual.ShowVisualAlert(6)
+end
+
+--[[
+  Display brown alert texture
+]]--
+function _G.__PVPW__DEBUG_ShowBrownAlert()
+  mod.visual.ShowVisualAlert(7)
+end
+
+--[[
+  Display white alert texture
+]]--
+function _G.__PVPW__DEBUG_ShowWhiteAlert()
+  mod.visual.ShowVisualAlert(8)
+end
+
+--[[
+  Display pink alert texture
+]]--
+function _G.__PVPW__DEBUG_ShowPinkAlert()
+  mod.visual.ShowVisualAlert(9)
+end
+
+--[[
+  Display light blue alert texture
+]]--
+function _G.__PVPW__DEBUG_ShowLightBlueAlert()
+  mod.visual.ShowVisualAlert(10)
 end

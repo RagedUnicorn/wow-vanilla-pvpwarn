@@ -203,7 +203,7 @@
         </Anchors>
         <Scripts>
           <OnClick>
-            pvpw.opt.ShowVisualOnClick()
+            pvpw.opt.ShowVisualAlertOnClick()
           </OnClick>
         </Scripts>
       </Button>

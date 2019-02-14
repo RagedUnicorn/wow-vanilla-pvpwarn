@@ -27,6 +27,4 @@
       </OnUpdate>
     </Scripts>
   </Frame>
-
-  <Frame name="PVPW_AlertFrame" parent="UIParent" inherits="ScrollingMessageFrame" hidden="true" strata="BACKGROUND"></Frame>
 </Ui>

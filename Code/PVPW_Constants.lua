@@ -128,7 +128,8 @@ PVPW_CONSTANTS = {
   --[[
     Alert UI
   ]]--
-  -- TODO move PVPW_AlertTexture here
+  ELEMENT_ALERT_FRAME = "PVPW_AlertFrame",
+  ELEMENT_ALERT_TEXTURE = "PVPW_AlertTexture",
   --[[
     The maximum amount of slots for displaying alert icons
   ]]--

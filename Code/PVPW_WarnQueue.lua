@@ -148,7 +148,7 @@ function me.WorkQueue()
 
         if mod.opt.IsVisualWarningActive(spellList, warning.soundCategory, warning.normalizedSpellName) then
           workingState = true
-          mod.visual.ShowVisual(warning.warnName, warning.visualName)
+          mod.visual.ShowVisualAlert(warning.visualName)
         else
           mod.logger.LogDebug(me.tag, "Skipping playing visual for spell - " .. warning.normalizedSpellName
             .. " because visual is disabled for this spell")
@@ -168,7 +168,7 @@ function me.WorkQueue()
 
         if mod.opt.IsVisualWarningActive(spellList, warning.soundCategory, warning.normalizedSpellName) then
           workingState = true
-          mod.visual.ShowVisual(warning.warnName, warning.visualName)
+          mod.visual.ShowVisualAlert(warning.visualName)
         else
           mod.logger.LogDebug(me.tag, "Skipping playing visual for spell - " .. warning.normalizedSpellName
             .. " because visual is disabled for this spell")

@@ -61,18 +61,26 @@ local alertIconSlotStateHolder = {
 }
 
 --[[
+  Create the basic world frame and its texture that displays alert flashes
+]]--
+function me.CreateVisualAlertFrame()
+  local alertFrame = CreateFrame("Frame", PVPW_CONSTANTS.ELEMENT_ALERT_FRAME, UIParent)
+  local texture = alertFrame:CreateTexture(PVPW_CONSTANTS.ELEMENT_ALERT_TEXTURE, "BACKGROUND")
+
+  texture:SetBlendMode("ADD")
+  texture:SetAllPoints(WorldFrame)
+end
+
+--[[
   Show a visual warning to the user
 
-  @param {string} warnName
-  @param {string} colorValue
+  @param {number} colorValue
     see PVPW_CONSTANTS.TEXTURES for color values
 ]]--
--- TODO rename to ShowVisualAlert
--- TODO parameter warnName unnused
-function me.ShowVisual(warnName, colorValue)
-  local basePath = TEXTURE_BASE_PATH
+function me.ShowVisualAlert(colorValue)
+  local alertFrame = getglobal(PVPW_CONSTANTS.ELEMENT_ALERT_FRAME)
   local colorTexture
-  local texturePath, texture
+  local texturePath
 
   for _, color in pairs(PVPW_CONSTANTS.TEXTURES) do
     if color.colorValue == tonumber(colorValue) then
@@ -85,34 +93,17 @@ function me.ShowVisual(warnName, colorValue)
     return
   end
 
-  texturePath = basePath .. colorTexture
-
+  texturePath = TEXTURE_BASE_PATH .. colorTexture
   mod.logger.LogDebug(me.tag, "Displaying warning texture - " .. texturePath)
 
-  --[[
-    If a new texture is created each time they will overlap each other. Avoid
-    this by reusing once a texture is created
-  ]]--
-  if PVPW_AlertTexture == nil then
-    mod.logger.LogDebug(me.tag, "Texture not found - creating")
-    texture = PVPW_AlertFrame:CreateTexture("PVPW_AlertTexture", "BACKGROUND")
-  else
-    mod.logger.LogDebug(me.tag, "Texture already exists - reusing")
-    texture = PVPW_AlertTexture
-  end
-
-  texture:SetBlendMode("ADD")
-  texture:SetTexture(texturePath)
-
-  texture:SetAllPoints(WorldFrame)
-  PVPW_AlertFrame.texture = texture
-  UIFrameFlash(PVPW_AlertFrame, .2, .5, .7, false, 0, 0)
+  getglobal(PVPW_CONSTANTS.ELEMENT_ALERT_TEXTURE):SetTexture(texturePath)
+  UIFrameFlash(alertFrame, .2, .5, .7, false, 0, 0)
 end
 
 --[[
   Setup the basic frame that hold icon alert slots
 ]]--
-function me.CreateVisualIconFrame()
+function me.CreateVisualAlertIconFrame()
   local alertIconFrame = CreateFrame("Frame", PVPW_CONSTANTS.ELEMENT_ALERT_ICON_FRAME, UIParent)
   alertIconFrame:SetWidth(PVPW_CONSTANTS.MAX_ALERT_ICON_SLOTS * PVPW_CONSTANTS.ELEMENT_ALERT_ICON_SLOT_WIDTH)
   alertIconFrame:SetHeight(PVPW_CONSTANTS.ELEMENT_ALERT_ICON_SLOT_HEIGHT)
