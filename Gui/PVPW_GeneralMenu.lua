@@ -40,7 +40,7 @@ function me.InitGeneralMenu()
   local item
 
   for i = 1, table.getn(options) do
-    item = getglobal(PVPW_CONSTANTS.ELEMENT_PVPW_Opt .. options[i][1])
+    item = getglobal(PVPW_CONSTANTS.ELEMENT_PVPW_OPT .. options[i][1])
 
     if item then
       local itemTextObject = getglobal(item:GetName() .. "Text")
@@ -63,7 +63,7 @@ function me.OptTooltipOnEnter()
   if not name then return end
 
   for i = 1, table.getn(options) do
-    if name == PVPW_CONSTANTS.ELEMENT_PVPW_Opt .. options[i][1] then
+    if name == PVPW_CONSTANTS.ELEMENT_PVPW_OPT .. options[i][1] then
       mod.tooltip.BuildTooltipForOption(options[i][2], options[i][3])
     end
   end
