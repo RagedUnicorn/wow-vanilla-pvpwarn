@@ -38,6 +38,14 @@ When you have LogParser installed but it is disabled WoW will warn you about it 
 
 [![](/Docs/pvpw_spelllist_collage_github_white.png)](https://youtu.be/37wnjQI6F9Q)
 
+### More Features
+
+#### Alert Icons
+
+PVPWarn shows a flashing icon of the detected enemy spell. It can show up to 5 spells and will ignore the spell if there is no slot free to display the spell.
+
+![](Docs\pvpw_doc_alert_icon.gif)
+
 ## Configuration
 
 ### Configure Combatlog Distance
@@ -83,7 +91,7 @@ For the opposite warning if an enemy player resisted an important spell of yours
 
 *Note:* A spell that is enabled but has no sound and no visual warning enabled will not show a warning to the player. The spell is tracked by the addon but never alerted to the player.
 
-### Disable Addon
+### Disable Addon / Disable Addon in Battlegrounds
 
 The addon can be configured to be either completely disabled or only disabled in all Battlegrounds. This includes `Warsong Gulch`, `Arathi Basin` and `Alterac Valley`. This can be useful to prevent the warnQueue to get to annoying in places where a lot of such events are triggered. Also consider reducing the spells that are enabled if this is the case.
 
@@ -96,6 +104,30 @@ Events can be ignored while the player is dead and wishes to not see any warning
 This option allows to ignore surrounding events and only report events for your current target.
 
 Note: Events with type `CHAT_MSG_SPELL_PERIODIC_SELF_DAMAGE` will always be shown because they have no source. This includes events such as Blind, Fear, Polymorph and have the form of "You are afflicted by [some spell]".
+
+### Disable Alert Icons
+
+The Alert icons with detected spells that are displayed by default can be disabled with this configuration.
+
+### Configure Alert Icons Placement
+
+![](Docs\pvpw_doc_alert_icon_configure.gif)
+
+To configure the placement of those icons use:
+
+```
+/pvpw configure enable
+```
+
+Then drag the frame to whatever position works best for you. To leave the configuration mode use:
+
+```
+/pvpw configure disable
+```
+
+Keep in mind that the iconbar will be filled with spells from left to right when you choose your new placement.
+
+**Note:** To make sure that the placement is remembered next time you login do not forget to make a proper logout instead of using Alt+F4 when closing WoW.
 
 ## FAQ
 
