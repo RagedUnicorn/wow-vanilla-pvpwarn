@@ -44,7 +44,7 @@ When you have LogParser installed but it is disabled WoW will warn you about it 
 
 PVPWarn shows a flashing icon of the detected enemy spell. It can show up to 5 spells and will ignore the spell if there is no slot free to display the spell.
 
-![](Docs\pvpw_doc_alert_icon.gif)
+![](Docs/pvpw_doc_alert_icon.gif)
 
 ## Configuration
 
@@ -111,7 +111,7 @@ The Alert icons with detected spells that are displayed by default can be disabl
 
 ### Configure Alert Icons Placement
 
-![](Docs\pvpw_doc_alert_icon_configure.gif)
+![](Docs/pvpw_doc_alert_icon_configure.gif)
 
 To configure the placement of those icons use:
 
