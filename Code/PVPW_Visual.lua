@@ -159,6 +159,11 @@ end
   @param {string} spellIconName
 ]]--
 function me.ShowVisualAlertIcon(spellIconName)
+  if mod.addonOptions.IsVisualAlertIconDisabled() then
+    mod.logger.LogDebug(me.tag, "ShowVisualAlertIcon is disabled - skipping ...")
+    return
+  end
+
   local slotPosition = me.FindEmptyAlertIconSlot()
 
   if slotPosition ~= nil then

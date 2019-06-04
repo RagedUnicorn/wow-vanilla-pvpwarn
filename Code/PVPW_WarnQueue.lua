@@ -154,9 +154,7 @@ function me.WorkQueue()
             .. " because visual is disabled for this spell")
         end
 
-        if not mod.addonOptions.IsVisualAlertIconDisabled() then
-          mod.visual.ShowVisualAlertIcon(warning.spellIcon)
-        end
+        mod.visual.ShowVisualAlertIcon(warning.spellIcon)
       elseif mod.common.IsNormalSpellDown(warning.spellType) then
         if mod.opt.IsSoundFadeWarningActive(spellList, warning.soundCategory, warning.normalizedSpellName) then
           workingState = true
