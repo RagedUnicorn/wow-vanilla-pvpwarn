@@ -26,7 +26,7 @@ local mod = pvpw
 local me = {}
 mod.tooltip = me
 
-me.tag = "tooltip"
+me.tag = "Tooltip"
 
 --[[
   Private
