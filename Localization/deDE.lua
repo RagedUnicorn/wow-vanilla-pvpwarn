@@ -9,6 +9,7 @@ if (GetLocale() == "deDE") then
   pvpw.L["disable"] = "|cFFFFFF00disable|r - deaktiviere cFFFFFF00PVPWarn"
   pvpw.L["enable"] = "|cFFFFFF00enable|r - aktiviere cFFFFFF00PVPWarn"
   pvpw.L["opt"] = "|cFFFFFF00opt|r - zeige Optionsmenu an"
+  pvpw.L["conf"] = "|cFFFFFF00conf|r - Konfiguriere die Position der visuellen Warnsymbole"
   pvpw.L["reload"] = "|cFFFFFF00reload|r - UI neu laden"
   pvpw.L["info_title"] = "|cFFFFFF00PVPWarn:|r"
 

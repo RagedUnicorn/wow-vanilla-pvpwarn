@@ -36,6 +36,7 @@ local function ShowInfoMessage()
   DEFAULT_CHAT_FRAME:AddMessage(pvpw.L["enable"])
   DEFAULT_CHAT_FRAME:AddMessage(pvpw.L["disable"])
   DEFAULT_CHAT_FRAME:AddMessage(pvpw.L["opt"])
+  DEFAULT_CHAT_FRAME:AddMessage(pvpw.L["conf"])
   DEFAULT_CHAT_FRAME:AddMessage(pvpw.L["reload"])
 end
 

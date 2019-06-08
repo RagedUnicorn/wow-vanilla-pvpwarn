@@ -8,6 +8,7 @@ pvpw.L["help"] = "|cFFFFFF00(%s)|r: Use |cFFFFFF00/pvpw|r or |cFFFFFF00/pvpwarn|
 pvpw.L["disable"] = "|cFFFFFF00disable|r - disable PVPWarn"
 pvpw.L["enable"] = "|cFFFFFF00enable|r - enable PVPWarn"
 pvpw.L["opt"] = "|cFFFFFF00opt|r - display Optionsmenu"
+pvpw.L["conf"] = "|cFFFFFF00conf|r - configure the position of the visual alert icons"
 pvpw.L["reload"] = "|cFFFFFF00reload|r - reload UI"
 pvpw.L["info_title"] = "|cFFFFFF00PVPWarn:|r"
 
