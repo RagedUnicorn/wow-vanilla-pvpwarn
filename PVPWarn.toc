@@ -2,6 +2,7 @@
 ## Title: PVPWarn
 ## Author: Michael Wiesendanger <michael.wiesendanger@gmail.com>
 ## Notes: Addon that warns players visually and acoustically about pvp events
+## Version: v1.1.0
 ## Dependencies: LogParser
 ## SavedVariablesPerCharacter: PVPWarnOptions, PVPWarnProfiles
 

@@ -1,7 +1,8 @@
-## Interface: 11200
-## Title: PVPWarn
-## Author: Michael Wiesendanger <michael.wiesendanger@gmail.com>
+## Interface: ${addon.interface}
+## Title: ${addon.name}
+## Author: ${addon.author}
 ## Notes: Addon that warns players visually and acoustically about pvp events
+## Version: ${addon.tag.version}
 ## Dependencies: LogParser
 ## SavedVariablesPerCharacter: PVPWarnOptions, PVPWarnProfiles
 

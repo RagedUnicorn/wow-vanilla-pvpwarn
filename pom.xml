@@ -9,9 +9,11 @@
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <addon.author>Michael Wiesendanger &lt;michael.wiesendanger@gmail.com&gt;</addon.author>
     <addon.name>PVPWarn</addon.name>
     <addon.name.short>PVPW</addon.name.short>
     <addon.tag.version>v${project.version}</addon.tag.version>
+    <addon.interface>11200</addon.interface>
     <addon.identifier>com.ragedunicorn.wow.vanilla.pvpwarn</addon.identifier>
     <addon.logparser.expected.version>1.1.1</addon.logparser.expected.version>
   </properties>
