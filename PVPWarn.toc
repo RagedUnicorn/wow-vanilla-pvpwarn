@@ -1,3 +1,5 @@
+# THIS FILE IS AUTO-GENERATED. ALL CHANGES ARE OVERWRITTEN
+
 ## Interface: 11200
 ## Title: PVPWarn
 ## Author: Michael Wiesendanger <michael.wiesendanger@gmail.com>
