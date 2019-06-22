@@ -92,7 +92,7 @@ function me.PlaySound(soundCategory, spellType, soundFileName)
   end
 
   mod.logger.LogDebug(me.tag, string.format("Playing: %s", soundPath))
-  status = PlaySoundFile(soundPath, "Master")
+  local status = PlaySoundFile(soundPath, "Master")
 
   if not status then
     -- this also happens when sound is deactivated
