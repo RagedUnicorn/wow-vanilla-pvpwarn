@@ -63,7 +63,7 @@ end
   @return {number}
 ]]--
 function me.ExtractPositionFromName(name)
-  _, _, position = strfind(name, "(%d+)")
+  local _, _, position = strfind(name, "(%d+)")
 
   return tonumber(position)
 end
