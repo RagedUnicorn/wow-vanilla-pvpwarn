@@ -75,7 +75,7 @@ end
 ]]--
 if (GetLocale() == "deDE") then
   --[[
-    Normalize spellName by replacing spaces with underscores and removing special characters
+    Normalize spellName by replacing spaces with underscores and removing special characters including german umlaute
 
     @param {string} spellName
     @return {string}
@@ -97,7 +97,6 @@ if (GetLocale() == "deDE") then
 else
   --[[
     Normalize spellName by replacing spaces with underscores and removing special characters
-    including german umlaute
 
     @param {string} spellName
     @return {string}
