@@ -6,6 +6,10 @@
 
 PVPWarn uses both visual and acoustic effects to make the player aware of certain events. The addon aims to be configurable to the players preferences and allows customization on exactly what spells should be brought to the attention of the player and in what form.
 
+![](/docs/badge_wow_vanilla.png)
+
+**Note:** With the release of World of Warcraft classic this addon is entering maintenance only mode. This means that no new features will be implemented and only the most important bugs are fixed. For the classic version of this addon see [PVPWarn-Classic](https://github.com/RagedUnicorn/wow-classic-pvpwarn).
+
 ## Installation
 
 WoW-Addons are installed directly in your WoW directory:
