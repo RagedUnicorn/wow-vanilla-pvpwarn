@@ -30,7 +30,7 @@
 PVPW_ENVIRONMENT = {
   ADDON_NAME = "PVPWarn",
   ADDON_NAME_SHORT = "PVPW",
-  ADDON_VERSION = "1.1.0",
+  ADDON_VERSION = "1.1.1",
   ADDON_IDENTIFIER = "com.ragedunicorn.wow.vanilla.pvpwarn",
   LOGPARSER_EXPECTED_VERSION = "1.1.1",
   LOG_LEVEL = 4,
