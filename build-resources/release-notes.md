@@ -1,1 +1,4 @@
-* Add support for alert icons. PVPWarn shows a flashing icon of the detected enemy spell. It can show up to 5 spells and will ignore the spell if there is no slot free to display the spell.
+# Fixes
+
+* Fix #6 - a wrong value was returned when checking whether the option showEventsForTargetOnly is active or not
+* Cleanup repository with minor code smells
