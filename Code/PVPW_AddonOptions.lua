@@ -238,7 +238,7 @@ end
     false - if events are shown for all targets
 ]]--
 function me.IsShowEventsForTargetOnlyEnabled()
-  return PVPWarnOptions.ignoreEventsWhileDead
+  return PVPWarnOptions.showEventsForTargetOnly
 end
 
 --[[
